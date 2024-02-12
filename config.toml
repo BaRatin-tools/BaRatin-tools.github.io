@@ -1,4 +1,4 @@
-baseURL = 'https://baratin.github.io/'
+baseURL = 'https://baratin-tools.github.io/'
 title = "BaRatin - Bayesian Rating Curves"
 theme = "hugo-universal-theme"
 summaryLength = 25

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on BaRatin - Bayesian Rating Curves</title>
-    <link>https://baratin.github.io/en/blog/</link>
+    <link>https://baratin-tools.github.io/en/blog/</link>
     <description>Recent content in Blogs on BaRatin - Bayesian Rating Curves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://baratin.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://baratin-tools.github.io/en/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>XXX</title>
-      <link>https://baratin.github.io/en/blog/dummy-second-post/</link>
+      <link>https://baratin-tools.github.io/en/blog/dummy-second-post/</link>
       <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/en/blog/dummy-second-post/</guid>
+      <guid>https://baratin-tools.github.io/en/blog/dummy-second-post/</guid>
       <description>I have absolutely nothing to say.</description>
     </item>
     <item>
       <title>Dummy first post</title>
-      <link>https://baratin.github.io/en/blog/dummy-first-post/</link>
+      <link>https://baratin-tools.github.io/en/blog/dummy-first-post/</link>
       <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/en/blog/dummy-first-post/</guid>
+      <guid>https://baratin-tools.github.io/en/blog/dummy-first-post/</guid>
       <description>blabla</description>
     </item>
   </channel>

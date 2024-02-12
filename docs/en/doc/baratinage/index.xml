@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BaRatinAGE Online Help on BaRatin - Bayesian Rating Curves</title>
-    <link>https://baratin.github.io/en/doc/baratinage/</link>
+    <link>https://baratin-tools.github.io/en/doc/baratinage/</link>
     <description>Recent content in BaRatinAGE Online Help on BaRatin - Bayesian Rating Curves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <atom:link href="https://baratin.github.io/en/doc/baratinage/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://baratin-tools.github.io/en/doc/baratinage/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

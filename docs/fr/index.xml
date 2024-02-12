@@ -2,185 +2,185 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bienvenue on BaRatin - Bayesian Rating Curves</title>
-    <link>https://baratin.github.io/fr/</link>
+    <link>https://baratin-tools.github.io/fr/</link>
     <description>Recent content in Bienvenue on BaRatin - Bayesian Rating Curves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
     <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://baratin.github.io/fr/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://baratin-tools.github.io/fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>L&#39;analyse hydraulique</title>
-      <link>https://baratin.github.io/fr/doc/topics/analyse-hydraulique/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/analyse-hydraulique/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Premier cas d&#39;étude</title>
-      <link>https://baratin.github.io/fr/doc/case/cs1/</link>
+      <link>https://baratin-tools.github.io/fr/doc/case/cs1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/case/cs1/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/case/cs1/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Tour d&#39;horizon</title>
-      <link>https://baratin.github.io/fr/doc/baratinage/tour-d-horizon/</link>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/baratinage/tour-d-horizon/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</guid>
       <description>Généralités BaRatinAGE est un logiciel permettant d’estimer des courbes de tarage ainsi que leurs incertitudes, et de propager ces incertitudes aux hydrogrammes. La méthode est basée sur une XXX analyse hydraulique de la station hydrométrique et sur l’XXX estimation bayésienne de la courbe de tarage.</description>
     </item>
     <item>
       <title>Contrôles hydrauliques</title>
-      <link>https://baratin.github.io/fr/doc/topics/controles-hydrauliques/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/controles-hydrauliques/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Fenêtre principale</title>
-      <link>https://baratin.github.io/fr/doc/baratinage/fenetre-principale/</link>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/baratinage/fenetre-principale/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/</guid>
       <description>Organisation générale La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE. Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
     </item>
     <item>
       <title>Second cas d&#39;étude</title>
-      <link>https://baratin.github.io/fr/doc/case/cs2/</link>
+      <link>https://baratin-tools.github.io/fr/doc/case/cs2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/case/cs2/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/case/cs2/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Configuration hydraulique</title>
-      <link>https://baratin.github.io/fr/doc/baratinage/configuration-hydraulique/</link>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/baratinage/configuration-hydraulique/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Incertitudes sur les jaugeages</title>
-      <link>https://baratin.github.io/fr/doc/topics/jaugeages/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/jaugeages/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Equation de la courbe de tarage</title>
-      <link>https://baratin.github.io/fr/doc/topics/courbe-de-tarage/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/courbe-de-tarage/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Jaugeages</title>
-      <link>https://baratin.github.io/fr/doc/baratinage/jaugeages/</link>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/baratinage/jaugeages/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Erreurs structurelles</title>
-      <link>https://baratin.github.io/fr/doc/baratinage/erreurs-structurelles/</link>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/baratinage/erreurs-structurelles/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Incertitudes dans les limnigrammes</title>
-      <link>https://baratin.github.io/fr/doc/topics/limni/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/limni/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/limni/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/limni/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Incertitudes dans les hydrogrammes</title>
-      <link>https://baratin.github.io/fr/doc/topics/hydrogrammes/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/hydrogrammes/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Limnigramme</title>
-      <link>https://baratin.github.io/fr/doc/baratinage/limnigramme/</link>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/baratinage/limnigramme/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Courbe de tarage</title>
-      <link>https://baratin.github.io/fr/doc/baratinage/courbe-de-tarage/</link>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/baratinage/courbe-de-tarage/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Les bases de l’inférence Bayesienne</title>
-      <link>https://baratin.github.io/fr/doc/topics/bayesien/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/bayesien/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/bayesien/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/bayesien/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Hydrogramme</title>
-      <link>https://baratin.github.io/fr/doc/baratinage/hydrogramme/</link>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/hydrogramme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/baratinage/hydrogramme/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/hydrogramme/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Modèle statistique utilisé dans BaRatin</title>
-      <link>https://baratin.github.io/fr/doc/topics/modele-stat/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/modele-stat/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Méthodes MCMC</title>
-      <link>https://baratin.github.io/fr/doc/topics/mcmc/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/mcmc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/mcmc/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/mcmc/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Pour aller plus loin</title>
-      <link>https://baratin.github.io/fr/doc/baratinage/aller-plus-loin/</link>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/baratinage/aller-plus-loin/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Foire aux questions</title>
-      <link>https://baratin.github.io/fr/doc/baratinage/faq/</link>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/baratinage/faq/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/faq/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>XXX</title>
-      <link>https://baratin.github.io/fr/blog/mon-second-post/</link>
+      <link>https://baratin-tools.github.io/fr/blog/mon-second-post/</link>
       <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/blog/mon-second-post/</guid>
+      <guid>https://baratin-tools.github.io/fr/blog/mon-second-post/</guid>
       <description>I have absolutely nothing to say.</description>
     </item>
     <item>
       <title>Mon premier post</title>
-      <link>https://baratin.github.io/fr/blog/mon-premier-post/</link>
+      <link>https://baratin-tools.github.io/fr/blog/mon-premier-post/</link>
       <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/blog/mon-premier-post/</guid>
+      <guid>https://baratin-tools.github.io/fr/blog/mon-premier-post/</guid>
       <description>blabla</description>
     </item>
     <item>
       <title>A propos de ce site</title>
-      <link>https://baratin.github.io/fr/a-propos/</link>
+      <link>https://baratin-tools.github.io/fr/a-propos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/a-propos/</guid>
+      <guid>https://baratin-tools.github.io/fr/a-propos/</guid>
       <description>XXX \(\alpha\)&#xA;XXX&#xA;XXX XXX</description>
     </item>
     <item>
       <title>Téléchargement</title>
-      <link>https://baratin.github.io/fr/telechargement/</link>
+      <link>https://baratin-tools.github.io/fr/telechargement/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/telechargement/</guid>
+      <guid>https://baratin-tools.github.io/fr/telechargement/</guid>
       <description>La dernière version de BaRatinAGE est ici.</description>
     </item>
   </channel>

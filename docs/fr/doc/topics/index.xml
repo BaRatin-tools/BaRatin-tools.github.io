@@ -2,72 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fiches thématiques on BaRatin - Bayesian Rating Curves</title>
-    <link>https://baratin.github.io/fr/doc/topics/</link>
+    <link>https://baratin-tools.github.io/fr/doc/topics/</link>
     <description>Recent content in Fiches thématiques on BaRatin - Bayesian Rating Curves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <atom:link href="https://baratin.github.io/fr/doc/topics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://baratin-tools.github.io/fr/doc/topics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>L&#39;analyse hydraulique</title>
-      <link>https://baratin.github.io/fr/doc/topics/analyse-hydraulique/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/analyse-hydraulique/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Contrôles hydrauliques</title>
-      <link>https://baratin.github.io/fr/doc/topics/controles-hydrauliques/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/controles-hydrauliques/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Incertitudes sur les jaugeages</title>
-      <link>https://baratin.github.io/fr/doc/topics/jaugeages/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/jaugeages/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Equation de la courbe de tarage</title>
-      <link>https://baratin.github.io/fr/doc/topics/courbe-de-tarage/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/courbe-de-tarage/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Incertitudes dans les limnigrammes</title>
-      <link>https://baratin.github.io/fr/doc/topics/limni/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/limni/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/limni/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/limni/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Incertitudes dans les hydrogrammes</title>
-      <link>https://baratin.github.io/fr/doc/topics/hydrogrammes/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/hydrogrammes/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Les bases de l’inférence Bayesienne</title>
-      <link>https://baratin.github.io/fr/doc/topics/bayesien/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/bayesien/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/bayesien/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/bayesien/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Modèle statistique utilisé dans BaRatin</title>
-      <link>https://baratin.github.io/fr/doc/topics/modele-stat/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/modele-stat/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</guid>
       <description>XXX</description>
     </item>
     <item>
       <title>Méthodes MCMC</title>
-      <link>https://baratin.github.io/fr/doc/topics/mcmc/</link>
+      <link>https://baratin-tools.github.io/fr/doc/topics/mcmc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin.github.io/fr/doc/topics/mcmc/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/mcmc/</guid>
       <description>XXX</description>
     </item>
   </channel>
