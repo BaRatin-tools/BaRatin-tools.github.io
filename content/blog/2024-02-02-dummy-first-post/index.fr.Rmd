@@ -1,0 +1,13 @@
+---
+title: "Mon premier post"
+author: "Anonymous"
+thumbnail_title: "Mon premier post"
+thumbnail_subtitle: "Rien d'interessant"
+date: '2024-02-02'
+slug: "mon-premier-post"
+categories: ["general"]
+tags: ["dummy"]
+---
+
+blabla
+

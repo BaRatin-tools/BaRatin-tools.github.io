@@ -1,0 +1,9 @@
+---
+title: "Foire aux questions"
+slug: "faq"
+weight: 10
+layout: "doc_BaRatinAGEPage"
+inTOC: "BaRatinAGE"
+---
+
+XXX

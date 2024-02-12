@@ -1,0 +1,145 @@
+baseURL = 'https://baratin.github.io/'
+title = "BaRatin - Bayesian Rating Curves"
+theme = "hugo-universal-theme"
+summaryLength = 25
+publishDir= "docs"
+paginate = 12
+tableOfContents=true
+
+# languages
+defaultContentLanguage = 'fr'
+defaultContentLanguageInSubdir = true
+[languages]
+  [languages.fr]
+    disabled = false
+    languageCode = 'fr'
+    languageName = 'Français'
+    weight = 1
+    [[languages.fr.menu.main]]
+	  name = "Accueil"
+	  weight = 10
+	  url = "/fr"
+	[[languages.fr.menu.main]]
+	  name = "Documentation"
+	  weight = 20
+	[[languages.fr.menu.main]]
+	  name = "BaRatinAGE"
+	  weight = 10
+	  url = "/fr/doc/baratinage"
+	  parent="Documentation"
+	[[languages.fr.menu.main]]
+	  name = "Fiches Thématiques"
+	  weight = 20
+	  url = "/fr/doc/topics"
+	  parent="Documentation"	  
+	[[languages.fr.menu.main]]
+	  name = "Cas d'étude"
+	  weight = 30
+	  url = "/fr/doc/case"
+	  parent="Documentation"	  
+	[[languages.fr.menu.main]]
+	  name = "Téléchargement"
+	  weight =40
+	  url = "/fr/telechargement" 
+	[[languages.fr.menu.main]]
+	  name = "Blog"
+	  weight = 50
+	  identifier = "blog"
+	  url = "/fr/blog/"
+	[[languages.fr.menu.main]]
+	  name = "A propos"
+	  weight =60
+	  url = "/fr/a-propos"
+	[[languages.fr.menu.main]]
+	  name = "rss"
+	  weight = 70
+	  url = "/fr/index.xml"
+    [[languages.fr.menu.main]]
+	  name = "🇬🇧 en"
+	  weight = 80
+	  url = "/en"
+  [languages.en]
+    disabled = false
+    languageCode = 'en'
+    languageName = 'English'
+    weight = 2
+    [[languages.en.menu.main]]
+	  name = "Home"
+	  weight = 10
+	  url = "/en"
+	[[languages.en.menu.main]]
+	  name = "Documentation"
+	  weight = 20
+	[[languages.en.menu.main]]
+	  name = "BaRatinAGE"
+	  weight = 10
+	  url = "/en/doc/baratinage"
+	  parent="Documentation"
+	[[languages.en.menu.main]]
+	  name = "Topic sheets"
+	  weight = 20
+	  url = "/en/doc/topics"
+	  parent="Documentation"	
+	[[languages.en.menu.main]]
+	  name = "Case Studies"
+	  weight = 30
+	  url = "/en/doc/case"
+	  parent="Documentation"	  
+	[[languages.en.menu.main]]
+	  name = "Download"
+	  weight =40
+	  url = "/en/download" 
+	[[languages.en.menu.main]]
+	  name = "Blog"
+	  weight = 50
+	  identifier = "blog"
+	  url = "/en/blog"
+	[[languages.en.menu.main]]
+	  name = "About"
+	  weight =60
+	  url = "/en/about"
+	[[languages.en.menu.main]]
+	  name = "rss"
+	  weight = 70
+	  url = "/en/index.xml"
+	 [[languages.en.menu.main]]
+	  name = "🇫🇷 fr"
+	  weight = 80
+	  url = "/fr"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+[params]
+    date_format = "2 January 2006"
+    disabled_logo = false
+    logo = "img/logoWithText.png"
+    logo_small = "img/logo.png"
+    style = "blue"
+    math = true
+
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+            
+[params.widgets]
+    categories = true
+    tags = true
+    search = true
+    
+[params.recent_posts]
+    enable = true
+    hide_summary = false
+
+[params.topbar]
+    enable = false
+
+[[menu.topbar]]
+    weight = 1
+    name = "GitHub"
+    url = "https://github.com/baratin-tools"
+    pre = "<i class='fab fa-2x fa-github'></i>"

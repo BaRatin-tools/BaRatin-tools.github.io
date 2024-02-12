@@ -1,0 +1,9 @@
+---
+title: "Jaugeages"
+slug: "jaugeages"
+weight: 4
+layout: "doc_BaRatinAGEPage"
+inTOC: "BaRatinAGE"
+---
+
+XXX

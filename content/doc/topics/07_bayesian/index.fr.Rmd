@@ -1,0 +1,9 @@
+---
+title: "Les bases de l’inférence Bayesienne"
+slug: "bayesien"
+weight: 7
+layout: "doc_topicsPage"
+inTOC: "topics"
+---
+
+XXX

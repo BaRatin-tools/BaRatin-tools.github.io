@@ -1,0 +1,22 @@
+
+  <div class="container">
+  	<h3> Sections </h3>
+    {{ $paginator := where .Site.RegularPages ".Params.inTOC" "BaRatinAGE" }}
+    {{ $current := .Page}}
+    {{ range $paginator }}
+		{{if eq .Title $current.Title}}
+		<div style="background-color:beige;">
+		   <strong> <a href="{{ .Permalink }}">{{ .Title }}</a> </strong></br>
+		</div>
+		</br>
+		{{else}}
+		    <a href="{{ .Permalink }}">{{ .Title }}</a> </br> </br>
+		{{ end }}
+    {{ end }}
+         
+  
+  </div>
+    
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  <head>
+     {{ if .Param "math" }}
+	    {{ partialCached "math.html" . }}
+    {{ end }}
+    {{ partial "headers.html" . }}
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        {{ partial "top.html" . }}
+
+        {{ partial "nav.html" . }}
+
+        {{ partial "breadcrumbs.html" . }}
+        
+        <div id="content">        
+        <div class="container">
+         {{ .Content }}
+         
+         {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.mainSections) }}
+         <ol>
+         {{ range $paginator.Pages }}
+             <li> <a href="{{ .Permalink }}">{{ .Title }}</a> </li>
+         {{ end }}
+         </ol>
+         </div>
+         <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+  </body>
+</html>

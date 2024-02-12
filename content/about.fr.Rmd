@@ -1,0 +1,16 @@
+---
+title: "A propos de ce site"
+slug: "a-propos"
+toc: yes
+autoCollapseToc: yes
+---
+
+# XXX
+
+$\alpha$
+
+XXX
+
+# XXX
+
+XXX

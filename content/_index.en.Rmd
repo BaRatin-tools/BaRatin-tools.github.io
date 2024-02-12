@@ -1,0 +1,15 @@
+---
+title: "Welcome"
+toc: yes
+autoCollapseToc: yes
+---
+
+# Welcome on BaRatin web page!
+
+XXX
+
+YYY
+
+
+
+

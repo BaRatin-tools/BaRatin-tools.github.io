@@ -1,0 +1,9 @@
+---
+title: "Courbe de tarage"
+slug: "courbe-de-tarage"
+weight: 7
+layout: "doc_BaRatinAGEPage"
+inTOC: "BaRatinAGE"
+---
+
+XXX

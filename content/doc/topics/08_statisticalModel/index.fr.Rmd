@@ -1,0 +1,9 @@
+---
+title: "Modèle statistique utilisé dans BaRatin"
+slug: "modele-stat"
+weight: 8
+layout: "doc_topicsPage"
+inTOC: "topics"
+---
+
+XXX

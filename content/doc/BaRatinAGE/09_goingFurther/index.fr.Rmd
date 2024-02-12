@@ -1,0 +1,9 @@
+---
+title: "Pour aller plus loin"
+slug: "aller-plus-loin"
+weight: 9
+layout: "doc_BaRatinAGEPage"
+inTOC: "BaRatinAGE"
+---
+
+XXX

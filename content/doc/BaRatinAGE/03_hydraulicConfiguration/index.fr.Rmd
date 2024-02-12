@@ -1,0 +1,9 @@
+---
+title: "Configuration hydraulique"
+slug: "configuration-hydraulique"
+weight: 3
+layout: "doc_BaRatinAGEPage"
+inTOC: "BaRatinAGE"
+---
+
+XXX

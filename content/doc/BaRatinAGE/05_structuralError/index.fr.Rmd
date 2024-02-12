@@ -1,0 +1,9 @@
+---
+title: "Erreurs structurelles"
+slug: "erreurs-structurelles"
+weight: 5
+layout: "doc_BaRatinAGEPage"
+inTOC: "BaRatinAGE"
+---
+
+XXX

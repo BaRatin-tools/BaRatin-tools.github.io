@@ -1,0 +1,9 @@
+---
+title: "Méthodes MCMC"
+slug: "mcmc"
+weight: 9
+layout: "doc_topicsPage"
+inTOC: "topics"
+---
+
+XXX

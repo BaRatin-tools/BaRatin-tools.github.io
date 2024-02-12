@@ -1,0 +1,8 @@
+---
+title: "Download"
+slug: "download"
+toc: yes
+autoCollapseToc: yes
+---
+
+The latest version of BaRatinAGE is available [here](https://github.com/BaRatin-tools/BaRatinAGE/releases).

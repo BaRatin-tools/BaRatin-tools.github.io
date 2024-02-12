@@ -1,0 +1,9 @@
+---
+title: "Equation de la courbe de tarage"
+slug: "courbe-de-tarage"
+weight: 4
+layout: "doc_topicsPage"
+inTOC: "topics"
+---
+
+XXX

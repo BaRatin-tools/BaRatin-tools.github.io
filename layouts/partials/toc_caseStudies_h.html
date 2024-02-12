@@ -1,0 +1,24 @@
+
+  <div class="container">
+    {{ $paginator := where .Site.RegularPages ".Params.inTOC" "caseStudies" }}
+    {{ $current := .Page}}
+
+    {{ range $paginator }}
+		{{if eq .Title $current.Title}}
+		   <strong> <a href="{{ .Permalink }}">{{ .Title }}</a> </strong> 
+
+		{{else}}
+		    <a href="{{ .Permalink }}">{{ .Title }}</a> 
+		{{ end }}
+
+		{{ if ne .Weight $paginator.Len}}
+		    &nbsp; | &nbsp;
+		{{ end }}
+    {{ end }}
+         
+  
+  </div>
+    
+
+
+

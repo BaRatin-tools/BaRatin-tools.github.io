@@ -1,0 +1,12 @@
+---
+title: "Dummy first post"
+author: Anonymous
+thumbnail_title: 'Dummy first post'
+thumbnail_subtitle: 'Nothing interesting here'
+date: '2024-02-02'
+slug: dummy-first-post
+categories: []
+tags: []
+---
+
+blabla

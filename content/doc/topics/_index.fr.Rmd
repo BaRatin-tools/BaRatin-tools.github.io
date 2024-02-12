@@ -1,0 +1,9 @@
+---
+title: "Fiches thématiques"
+slug: "fiches"
+toc: yes
+autoCollapseToc: yes
+---
+
+Cette page propose un ensemble de fiches qui détaillent certaines thématiques. Voici les fiches disponibles:
+
