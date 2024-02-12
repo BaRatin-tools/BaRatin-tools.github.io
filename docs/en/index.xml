@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome on BaRatin - Bayesian Rating Curves</title>
+    <link>https://baratin.github.io/en/</link>
+    <description>Recent content in Welcome on BaRatin - Bayesian Rating Curves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://baratin.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XXX</title>
+      <link>https://baratin.github.io/en/blog/dummy-second-post/</link>
+      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://baratin.github.io/en/blog/dummy-second-post/</guid>
+      <description>I have absolutely nothing to say.</description>
+    </item>
+    <item>
+      <title>Dummy first post</title>
+      <link>https://baratin.github.io/en/blog/dummy-first-post/</link>
+      <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://baratin.github.io/en/blog/dummy-first-post/</guid>
+      <description>blabla</description>
+    </item>
+    <item>
+      <title>About this website</title>
+      <link>https://baratin.github.io/en/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin.github.io/en/about/</guid>
+      <description>XXX XXX&#xA;XXX XXX</description>
+    </item>
+    <item>
+      <title>Download</title>
+      <link>https://baratin.github.io/en/download/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin.github.io/en/download/</guid>
+      <description>The latest version of BaRatinAGE is available here.</description>
+    </item>
+  </channel>
+</rss>
