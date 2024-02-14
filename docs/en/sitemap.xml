@@ -142,16 +142,16 @@
                 href="https://baratin-tools.github.io/en/doc/"
                 />
   </url><url>
-    <loc>https://baratin-tools.github.io/en/download/</loc>
+    <loc>https://baratin-tools.github.io/en/resources/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://baratin-tools.github.io/fr/telechargement/"
+                href="https://baratin-tools.github.io/fr/ressources/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://baratin-tools.github.io/en/download/"
+                href="https://baratin-tools.github.io/en/resources/"
                 />
   </url>
 </urlset>

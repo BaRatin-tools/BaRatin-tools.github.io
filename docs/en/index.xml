@@ -30,11 +30,11 @@
       <description>XXX XXX&#xA;XXX XXX</description>
     </item>
     <item>
-      <title>Download</title>
-      <link>https://baratin-tools.github.io/en/download/</link>
+      <title>Resources</title>
+      <link>https://baratin-tools.github.io/en/resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/download/</guid>
-      <description>The latest version of BaRatinAGE is available here.</description>
+      <guid>https://baratin-tools.github.io/en/resources/</guid>
+      <description>The latest version of BaRatinAGE is available here.&#xA;A webinar on BaRatin (also available in french).&#xA;Slides describing the principles behind BaRatin (also available in french and spanish).</description>
     </item>
   </channel>
 </rss>

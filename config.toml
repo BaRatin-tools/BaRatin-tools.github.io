@@ -38,9 +38,9 @@ defaultContentLanguageInSubdir = true
 	  url = "/fr/doc/case"
 	  parent="Documentation"	  
 	[[languages.fr.menu.main]]
-	  name = "Téléchargement"
+	  name = "Ressources"
 	  weight =40
-	  url = "/fr/telechargement" 
+	  url = "/fr/ressources" 
 	[[languages.fr.menu.main]]
 	  name = "Blog"
 	  weight = 50
@@ -86,9 +86,9 @@ defaultContentLanguageInSubdir = true
 	  url = "/en/doc/case"
 	  parent="Documentation"	  
 	[[languages.en.menu.main]]
-	  name = "Download"
+	  name = "Resources"
 	  weight =40
-	  url = "/en/download" 
+	  url = "/en/resources" 
 	[[languages.en.menu.main]]
 	  name = "Blog"
 	  weight = 50

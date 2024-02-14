@@ -3,5 +3,4 @@
 .RData
 .Ruserdata
 .hugo_build.lock
-resources/
 docs/**/*.Rmd

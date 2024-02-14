@@ -177,11 +177,11 @@
       <description>XXX \(\alpha\)&#xA;XXX&#xA;XXX XXX</description>
     </item>
     <item>
-      <title>Téléchargement</title>
-      <link>https://baratin-tools.github.io/fr/telechargement/</link>
+      <title>Ressources</title>
+      <link>https://baratin-tools.github.io/fr/ressources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/telechargement/</guid>
-      <description>La dernière version de BaRatinAGE est ici.</description>
+      <guid>https://baratin-tools.github.io/fr/ressources/</guid>
+      <description>La dernière version de BaRatinAGE est téléchargeable ici.&#xA;Un webinaire sur la méthode BaRatin (également disponible en anglais).&#xA;Des diapositives décrivant les principes de la méthode BaRatin (également disponibles en anglais et en espagnol).</description>
     </item>
   </channel>
 </rss>

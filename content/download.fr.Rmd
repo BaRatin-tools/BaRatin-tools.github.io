@@ -1,8 +1,0 @@
----
-title: "Téléchargement"
-slug: "telechargement"
-toc: yes
-autoCollapseToc: yes
----
-
-La dernière version de BaRatinAGE est [ici](https://github.com/BaRatin-tools/BaRatinAGE/releases).

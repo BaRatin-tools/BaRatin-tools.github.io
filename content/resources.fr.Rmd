@@ -1,0 +1,12 @@
+---
+title: "Ressources"
+slug: "ressources"
+toc: yes
+autoCollapseToc: yes
+---
+
+La dernière version de BaRatinAGE est téléchargeable [ici](https://github.com/BaRatin-tools/BaRatinAGE/releases).
+
+Un [webinaire](https://youtu.be/dUutJkCaAro?feature=shared) sur la méthode BaRatin (également disponible en [anglais](https://youtu.be/TdRH1jmFhZQ?feature=shared)). 
+
+Des [diapositives](/doc/BaRatin_principes_FRANCAIS_2021.pdf) décrivant les principes de la méthode BaRatin (également disponibles en [anglais](/doc/BaRatin_principles_ENGLISH_2022.pdf) et en [espagnol](/doc/BaRatin_principios_ESPANOL_2022.pdf)).
