@@ -6,4 +6,32 @@ layout: "doc_topicsPage"
 inTOC: "topics"
 ---
 
-XXX
+# La relation hauteur-débit : les contrôles hydrauliques
+
+Dans la section de cours d'eau où est située la station hydrométrique, la relation entre la hauteur d'eau et le débit est déterminée par des caractéristiques physiques du chenal que l'on appelle « contrôles hydrauliques ».
+
+## Deux grandes familles de contrôles hydrauliques
+
+### Contrôle par une section
+
+La relation hauteur-débit est déterminée presque uniquement par la géométrie de la section de contrôle, où l'écoulement passe par le régime critique, ce qui se matérialise par une **chute** et une ligne d'eau quasi horizontale en amont. Exemples : seuil rectangulaire, seuil triangulaire, orifice en charge.
+
+<img src="controlSection_schematics.png" width="60%">
+<p style="text-align: center;color: gray;"> Figure 1: Schéma d'un contrôle section (la hauteur h est sous influence de la chute). </p>
+
+<br>
+
+<img src="controlSection_real.jpg" width="80%">
+<p style="text-align: center;color: gray;"> Figure 2. Exemple d'un site réel. Pour le débit effectif au moment de la photo, la hauteur d'eau au capteur (situé sous le pont amont) est contrôlée par le seuil naturel visible au premier plan. </p>
+
+### Contrôle par un chenal
+
+L'écoulement est supposé uniforme, aucune chute ne contrôle la hauteur d'eau. Celle-ci est alors gouvernée par la géométrie et la résistance à l'écoulement du chenal, parfois abusivement appelée « rugosité ». Le chenal de contrôle comprend l'ensemble du tronçon homogène qui s'étend non seulement à l'aval, mais aussi à l'amont du point de mesure.
+
+<img src="controlChannel_schematics.png" width="60%">
+<p style="text-align: center;color: gray;"> Figure 3. Schéma d'un contrôle chenal (le trait rouge représente le point de mesure). </p>
+
+## Les contrôles-types
+
+Les contrôles-types sont des contrôles hydrauliques spécifiques qui ont été beaucoup étudiés et pour lesquels il existe des formules Q(h) liant le débit à la hauteur d'eau (voir la page sur les [contrôles hydrauliques](/fr/doc/topics/controles-hydrauliques)).
+
