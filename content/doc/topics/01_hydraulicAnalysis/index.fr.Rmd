@@ -76,6 +76,7 @@ L'analyse hydraulique est une phase fondamentale de compréhension de l'écoulem
 Une courbe de tarage relie la hauteur au débit. Cette courbe commence pour une certaine hauteur d'eau minimale qu'il est important d'estimer. Concrètement, c'est la hauteur minimale pour laquelle le modèle choisi pour le premier contrôle reste valide. En pratique, il convient que cette hauteur soit inférieure à la hauteur minimale qui peut être rencontrée sur le site.
 
 ### Hauteur maximale
+
 Il est également important d'estimer la hauteur maximale au-delà de laquelle la courbe de tarage n'est plus pertinente. Il s'agit le plus souvent de la hauteur à partir de laquelle la hauteur mesurée n'est plus représentative du débit (exemple: contournement de la station par une partie du cours d'eau). Il peut également s'agir de la hauteur au-delà de laquelle on estime être incapable de prédire la relation hauteur-débit. Malheureusement, il peut arriver que la hauteur maximale d'application de la courbe de tarage soit inférieure à la hauteur maximale enregistrée à la station...
 
 ## Identifier les contrôles hydrauliques et leur enchaînement
@@ -138,7 +139,7 @@ Dans la méthode BaRatin, et en particulier dans l'interface graphique du logici
 <img src="matrix1.fr.png" width="60%">
 <p style="text-align: center;color: gray;"> Figure 8. Exemple de matrice des contrôles dans BaRatinAGE. </p>
 
-Les segments sont des segments de hauteur pour lesquels le nombre de contrôles influençant la hauteur d'eau ne varie pas. Par exemple si à partir d'une certaine hauteur, un nouveau contrôle entre en jeu, alors le segment précédent se termine et un nouveau segment commence. Il y a par conséquent autant de segments que de contrôles identifiés.
+Les segments sont des segments de hauteur pour lesquels les contrôles influençant la hauteur d'eau ne varient pas. Par exemple si à partir d'une certaine hauteur, un nouveau contrôle entre en jeu, alors le segment précédent se termine et un nouveau segment commence. Il y a par conséquent autant de segments que de contrôles identifiés.
 
 Les segments sont numérotés par hauteur d'eau croissante. Ainsi le segment 1, et donc le contrôle 1 correspondent toujours aux plus faibles débits observés. 
 
