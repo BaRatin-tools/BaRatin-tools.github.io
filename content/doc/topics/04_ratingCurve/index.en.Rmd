@@ -25,5 +25,5 @@ $$ b_j=\kappa_j - \left(
 a_i(\kappa_j-b_i)^{c_i}
 \right)^{1/c_j}$$
 
-![](matrix.en.png)
+![](matrix.en.svg)
 <p style="text-align: center;color: gray;"> Figure: Example of a matrix of controls corresponding to a frequent case (two successive section controls at low flows, then control channel by the main channel plus a control channel by the floodplain). </p>

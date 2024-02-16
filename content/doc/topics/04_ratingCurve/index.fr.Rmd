@@ -31,5 +31,5 @@ a_i(\kappa_j-b_i)^{c_i}
 
 <br>
 
-![](matrix.fr.png)
+![](matrix.fr.svg)
 <p style="text-align: center;color: gray;"> Figure: Exemple de matrice des contrôles correspondant à un cas fréquemment rencontré en pratique (deux seuils successifs en basses eaux, puis contrôle chenal par le lit mineur auquel s’ajoute un contrôle chenal par le lit majeur). </p>
