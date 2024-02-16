@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hydraulic analysis</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1708103818" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="Hydraulic analysis">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Hydraulic analysis">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/en/">
+                    
+                      <img src="/img/logoWithText.png" alt="Hydraulic analysis logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Hydraulic analysis logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Hydraulic analysis - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">Home</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/en/doc/baratinage">BaRatinAGE</a></li>
+                            
+                            <li><a href="/en/doc/topics">Topic sheets</a></li>
+                            
+                            <li><a href="/en/doc/case">Case Studies</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/resources">Resources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/blog">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/about">About</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">🇫🇷 fr</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Hydraulic analysis</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+<div id="TOC">
+<ul>
+<li><a href="#the-stage-discharge-relation-hydraulic-controls" id="toc-the-stage-discharge-relation-hydraulic-controls"><span class="toc-section-number">1</span> The stage-discharge relation: hydraulic controls</a>
+<ul>
+<li><a href="#two-main-types-of-controls" id="toc-two-main-types-of-controls"><span class="toc-section-number">1.1</span> Two main types of controls</a>
+<ul>
+<li><a href="#section-control" id="toc-section-control"><span class="toc-section-number">1.1.1</span> Section control</a></li>
+<li><a href="#channel-control" id="toc-channel-control"><span class="toc-section-number">1.1.2</span> Channel control</a></li>
+</ul></li>
+<li><a href="#standard-controls" id="toc-standard-controls"><span class="toc-section-number">1.2</span> Standard controls</a></li>
+<li><a href="#approximation-of-real-controls-by-standard-controls" id="toc-approximation-of-real-controls-by-standard-controls"><span class="toc-section-number">1.3</span> Approximation of real controls by standard controls</a></li>
+</ul></li>
+<li><a href="#hydraulic-analysis" id="toc-hydraulic-analysis"><span class="toc-section-number">2</span> Hydraulic analysis</a>
+<ul>
+<li><a href="#application-range-of-the-rating-curve" id="toc-application-range-of-the-rating-curve"><span class="toc-section-number">2.1</span> Application range of the rating curve</a>
+<ul>
+<li><a href="#minimum-stage" id="toc-minimum-stage"><span class="toc-section-number">2.1.1</span> Minimum stage</a></li>
+<li><a href="#maximum-stage" id="toc-maximum-stage"><span class="toc-section-number">2.1.2</span> Maximum stage</a></li>
+</ul></li>
+<li><a href="#identifying-the-controls-and-their-succession" id="toc-identifying-the-controls-and-their-succession"><span class="toc-section-number">2.2</span> Identifying the controls and their succession</a></li>
+<li><a href="#equivalent-geometry" id="toc-equivalent-geometry"><span class="toc-section-number">2.3</span> Equivalent geometry</a>
+<ul>
+<li><a href="#example-of-control-by-the-main-channel-and-the-floodplain" id="toc-example-of-control-by-the-main-channel-and-the-floodplain"><span class="toc-section-number">2.3.1</span> Example of control by the main channel and the floodplain</a></li>
+<li><a href="#example-for-successive-riffles" id="toc-example-for-successive-riffles"><span class="toc-section-number">2.3.2</span> Example for successive riffles</a></li>
+</ul></li>
+<li><a href="#the-matrix-of-controls" id="toc-the-matrix-of-controls"><span class="toc-section-number">2.4</span> The matrix of controls</a></li>
+</ul></li>
+<li><a href="#conclusions" id="toc-conclusions"><span class="toc-section-number">3</span> Conclusions</a></li>
+</ul>
+</div>
+
+<div id="the-stage-discharge-relation-hydraulic-controls" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> The stage-discharge relation: hydraulic controls</h1>
+<p>In the river section where the hydrometric station is located, the relation between the water depth and the discharge is determined by the physical characteristics of the channel called “hydraulic controls” or “controls”.</p>
+<div id="two-main-types-of-controls" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Two main types of controls</h2>
+<div id="section-control" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Section control</h3>
+<p>The stage-discharge relation is determined almost solely by the geometry of the controlling cross-section, where the flow becomes critical, which is materialised by a <strong>fall</strong> and an almost horizontal water line upstream. Typically: rectangular weir/sill, triangular weir, pressurised orifice.</p>
+<img src="controlSection_schematics.png" width="60%">
+<p style="text-align: center;color: gray;">
+Figure 1: Diagram of a section control (water depth h is under the influence of the fall).
+</p>
+<p><br></p>
+<img src="controlSection_real.jpg" width="80%">
+<p style="text-align: center;color: gray;">
+Figure 2. Example of a real site. For the actual discharge at the time of the photo, the water level at the gauge (located under the bridge upstream) is controlled by the natural weir (riffles) visible in the foreground.
+</p>
+</div>
+<div id="channel-control" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Channel control</h3>
+<p>The flow is assumed to be uniform. No fall will control the water level. It is then governed by the geometry and the flow resistance of the channel, sometimes incorrectly called “roughness”. The controlling channel corresponds to an homogeneous section which extends not only downstream, but also upstream of the gauge.</p>
+<img src="controlChannel_schematics.png" width="60%">
+<p style="text-align: center;color: gray;">
+Figure 3. Diagram of a channel control (the red line represents the gauge site).
+</p>
+</div>
+</div>
+<div id="standard-controls" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Standard controls</h2>
+<p>Standard controls are specific hydraulic controls which have been extensively studied and for which
+there are stage-discharge formulas (see <a href="/en/doc/topics/hydraulic-controls">hydraulic controls</a> page).</p>
+<p>The standard controls used in BaRatin are:</p>
+<ul>
+<li>Rectangular, triangular and parabolic weir</li>
+<li>Orifice</li>
+<li>wide rectangular, triangular and parabolic channel</li>
+</ul>
+<p>In a hydraulic analysis, each identified control should be compared to a standard control, or broken down into a combination of standard controls, according to a compound channel (or “divided channel”) approach. In the example of the previous real site, the natural weir will thus be approximated by a rectangular weir equation.</p>
+</div>
+<div id="approximation-of-real-controls-by-standard-controls" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Approximation of real controls by standard controls</h2>
+<p>The assimilation of a real control to a standard control is obviously an approximation; Nevertheless, the practice shows that it is often acceptable, in the sense that it properly matches the gaugings while maintaining a physical meaning (see <a href="/en/doc/topics/hydraulic-controls">hydraulic controls</a> page for details).</p>
+<p>In a hydraulic analysis, for each newly identified control, the questions defining which standard control to consider are summarised in the following flowchart. Of course, with experience, such investigation becomes natural. The first question should always be whether the water level is controlled by a fall or not: “<em>If I modified this fall, and lowered or raised it, would it change the stage at the gauge?</em>”.</p>
+<img src="logigram.en.png" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 4. Diagram for selecting a standard control to represent a real control.
+</p>
+<p>In the case of a downstream bridge or opening still not completely pressurised, there is no standard control, with a classic formula, hence the question mark. These cases are always unique, and only hydraulic modelling can help to express their probable hydraulic behaviour (see <a href="/en/doc/topics/hydraulic-controls">hydraulic controls</a> page).</p>
+</div>
+</div>
+<div id="hydraulic-analysis" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Hydraulic analysis</h1>
+<p>Hydraulic analysis is a fundamental step towards understanding the flow. Part of this analysis is to determine the range of stage where the rating curve is valid. Thereafter, it proceeds with the systematic identification of hydraulic controls influencing stage throughout the valid range. Each identified control is modelled by a standard control with a Q(h) formula.</p>
+<div id="application-range-of-the-rating-curve" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Application range of the rating curve</h2>
+<div id="minimum-stage" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Minimum stage</h3>
+<p>A rating curve relates stage to discharge. This curve starts at a minimum water level which must be estimated. Specifically, it is the minimum stage at which the model chosen for the first control is valid. In practice, it is appropriate for this stage to be less than the minimum gauge height that can be recorded at the site.</p>
+</div>
+<div id="maximum-stage" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Maximum stage</h3>
+<p>It is also important to estimate the maximum stage beyond which the rating curve no longer applies. This is usually the elevation above which the measured stage is no longer representative of the flow (e.g. station is bypassed through a side channel). It can also be the stage beyond which it is not possible to predict the stage-discharge relation. Unfortunately, the maximum applicable stage for the rating curve may be lower than the maximum stage recorded at the station…</p>
+</div>
+</div>
+<div id="identifying-the-controls-and-their-succession" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Identifying the controls and their succession</h2>
+<p>When discharge and stage increase, active controls may follow on another or be added to each other,
+as shown by the simple but typical example in the next figure.</p>
+<img src="controls_schematics.png" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 5. Simplified illustration of controls at a typical gauging station: right, longitudinal profile of the bottom and water lines for different discharge values; left, water levels are shown on the cross-section of the station.
+</p>
+<p>The hydraulic analysis usually begins with the study of lower flows and gradually extends to increasingly higher flows.</p>
+<p>To find out if an element of the site is a hydraulic control, it is helpful to imagine the effect on the water level of a significant change to this element (e.g., bed scour or aggradation, widening or narrowing of the section, changing the width of a riffle, the bed roughness, etc.). If the water level would likely be influenced by the supposed change, then the studied site element is a hydraulic control or at least one of its components.</p>
+<p>Example of hydraulic analysis at the dummy station (Figure 5):</p>
+<ul>
+<li>For very low flows
+<ul>
+<li>The water level is controlled by a small natural riffle.</li>
+<li>This control can be approximated with a rectangular weir control.</li>
+</ul></li>
+<li>For low flows
+<ul>
+<li>The first smaller riffle is flooded. The water level is then visibly controlled by a second natural riffle further downstream and displaying a greater fall.</li>
+<li>The second control can be approximated with a rectangular weir control.</li>
+</ul></li>
+<li>For moderate to high flows, before overbank flow
+<ul>
+<li>This second riffle is in turn flooded and there is no longer any fall controlling the water level. The water level is then controlled by the main river channel.</li>
+<li>This control can be approximated with a standard uniform channel control, with a wide rectangular cross-section.</li>
+</ul></li>
+<li>For high flows, beyond overbank flow
+<ul>
+<li>When the overbank flow occurs, a control by floodplain is added to the main channel control. The water level is then under the simultaneous and added influence of both controls. The hydraulic interaction between the two flows is ignored.</li>
+<li>The floodplain control is still treated as a standard uniform channel control, with a wide rectangular cross-section.</li>
+</ul></li>
+</ul>
+<p>Notes: Although optional for a BaRatin analysis, hydraulic modeling can be useful for the hydraulic analysis, to help identify the sequence of controls, including their zone of influence relative to stage and their association within complex channels (cf. example <a href="/en/doc/case/Sarre-Sarrebourg">the Sarre River at Sarrebourg</a>).</p>
+</div>
+<div id="equivalent-geometry" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Equivalent geometry</h2>
+<p>Downstream and near the hydrometric station, the water flows through one or more controls. In a hydraulic analysis, we seek to ensure that we adequately addressed all the water “paths”, so as to not miss any control. This is to combine simple geometries of standard controls to best represent the possibly complex geometry of real controls.</p>
+<div id="example-of-control-by-the-main-channel-and-the-floodplain" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Example of control by the main channel and the floodplain</h3>
+<p>To represent a real channel control, we may combine as many rectangular channel standard controls as needed to model the actual geometry. Figure 6 shows how well the uneven riverbed is represented by an equivalent rectangular channel width B, and how the floodplain is represented by an equivalent rectangular channel width B’.</p>
+<p>Note: remind that the vertical and horizontal scales of graphics are generally very distorted. Controls are often very flat, therefore neglecting the vertical edges in the calculation of the wetted perimeter is acceptable. The vertical water boundary between the two channels is especially very small compared to the horizontal extent of the riverbed.</p>
+<img src="equivalentChannels.png" width="80%">
+<p style="text-align: center;color: gray;">
+Figure 6. Approximation of main channel and floodplain by equivalent rectangular channels.
+</p>
+</div>
+<div id="example-for-successive-riffles" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Example for successive riffles</h3>
+<p>The figure below shows the representative cross-section of a site where at very low discharge, the flow is concentrated in a kind of “notch” which is the first control. This can be modelled by a rectangular weir standard control of width B’. For a little higher discharge, the flow takes the full width of the riverbed. For the second segment of the rating curve, the situation will be modelled using a single rectangular weir standard control of width B whose geometry encompasses that of the notch. For this segment, the first control is no longer considered active since it is integrated in the second control.</p>
+<img src="equivalentRiffles.png" width="80%">
+<p style="text-align: center;color: gray;">
+Figure 7. Approximation of two successive riffles by equivalent rectangular weirs.
+</p>
+</div>
+</div>
+<div id="the-matrix-of-controls" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> The matrix of controls</h2>
+<p>In the BaRatin method, and in particular in the BaRatinAGE GUI software, the hydraulic analysis is summarised as a matrix of controls. It comes in the form presented below.</p>
+<img src="matrix1.en.png" width="60%">
+<p style="text-align: center;color: gray;">
+Figure 8. Exemple of a matrix of controls in BaRatinAGE.
+</p>
+<p>Segments are stage segments for which the controls affecting the water level do not change. For example if from a certain stage, a new control becomes active then the previous segment ends and a new segment begins. There are therefore as many segments as identified controls.</p>
+<p>The segments are numbered in increasing stage. Thus segment 1, and therefore control 1 always, correspond to the lowest considered flows.</p>
+<p>On the row of a stage segment, a green cell means that the corresponding control affects the stage of the segment. On the same row / segment, several controls can influence the water level.</p>
+<p>When a control is no longer active on a segment, it will no longer be active on a later segment. For instance, a weir flooded at a given stage cannot be unflooded at a greater stage.</p>
+<p>Getting back to the example of the fictitious station (Figure 5) presented earlier, we counted four controls, so four stage segments:</p>
+<ul>
+<li>Segment 1 : First natural riffle - rectangular weir (control 1)</li>
+<li>Segment 2 : Second natural riffle - rectangular weir (control 2)</li>
+<li>Segment 3 : Main channel (control 3)</li>
+<li>Segment 4 : Main channel (control 3) + Floodplain (control 4)</li>
+</ul>
+<p>The matrix of controls for this hydraulic analysis is shown below.</p>
+<img src="matrix2.en.png" width="60%">
+<p style="text-align: center;color: gray;">
+Figure 9. Matrix of controls for the fictitious station presented in Figure 5.
+</p>
+</div>
+</div>
+<div id="conclusions" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Conclusions</h1>
+<p>With some practice, identifying the controls of a hydrometric station is not difficult. This does not require extensive expertise in hydraulics but mostly common sense in observing the essential elements on the site and the flows for various discharges. It is obviously always useful to collect the knowledge of field hydrologists that operated the station and all of the station’s record. Attention: normally gaugings should not be used for hydraulic analysis; However, if some gaugings are still considered essential to this analysis they must be removed from the set of gaugings used for BaRatin calculations. Valuable information on the nature, geometry and operation of controls can generally be deduced from photos of the flows, topographic maps, GIS such as Google Earth or national GIS portals, surveys of cross-sections and bridges, an last but not least… field visits!</p>
+<p>The following diagram summarises the steps of a hydraulic analysis.</p>
+<img src="concludingSchematics.en.jpg" width="90%">
+<p style="text-align: center;color: gray;">
+Figure 10. General diagram of a hydraulic analysis.
+</p>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                    
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> </strong></br>
+		</div>
+		</br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> </br> </br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

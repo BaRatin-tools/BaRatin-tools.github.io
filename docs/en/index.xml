@@ -9,6 +9,27 @@
     <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://baratin-tools.github.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Hydraulic analysis</title>
+      <link>https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/</guid>
+      <description>1 The stage-discharge relation: hydraulic controls 1.1 Two main types of controls 1.1.1 Section control 1.1.2 Channel control 1.2 Standard controls 1.3 Approximation of real controls by standard controls 2 Hydraulic analysis 2.</description>
+    </item>
+    <item>
+      <title>Gaugings</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/gaugings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/gaugings/</guid>
+      <description>The gaugings are nice…</description>
+    </item>
+    <item>
+      <title>Rating curve equation</title>
+      <link>https://baratin-tools.github.io/en/doc/topics/rating-curve/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/topics/rating-curve/</guid>
+      <description>The equation of the rating curve used in BaRatinAGE is entirely determined by the matrix of controls, an example of which is recalled in the Figure below.</description>
+    </item>
+    <item>
       <title>XXX</title>
       <link>https://baratin-tools.github.io/en/blog/dummy-second-post/</link>
       <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>

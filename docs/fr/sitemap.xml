@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/case/cs1/</loc>
   </url><url>
@@ -19,8 +29,28 @@
     <loc>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</loc>
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/rating-curve/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/baratinage/gaugings/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</loc>
   </url><url>
@@ -187,6 +217,16 @@
                 />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/ressources/</loc>
     <xhtml:link

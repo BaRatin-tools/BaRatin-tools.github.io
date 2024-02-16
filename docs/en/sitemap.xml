@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/"
+                />
+  </url><url>
+    <loc>https://baratin-tools.github.io/en/doc/baratinage/gaugings/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/baratinage/gaugings/"
+                />
+  </url><url>
+    <loc>https://baratin-tools.github.io/en/doc/topics/rating-curve/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/rating-curve/"
+                />
+  </url><url>
     <loc>https://baratin-tools.github.io/en/blog/</loc>
     <lastmod>2024-02-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -152,6 +188,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://baratin-tools.github.io/en/resources/"
+                />
+  </url><url>
+    <loc>https://baratin-tools.github.io/en/doc/topics/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/"
                 />
   </url>
 </urlset>
