@@ -120,7 +120,7 @@ $$Q(H) = C_o \sqrt{2g} A_w (H-b)^c $$
 Pour chaque contrôle modélisé par un orifice dénoyé (l’écoulement remplit tout l’orifice mais sort librement à l’aval, sans influence de la hauteur d’eau aval sur la relation hauteur-débit, voir Figure 4), les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
 
 * $\kappa$ = la hauteur d’eau (en $m$) à partir de laquelle le contrôle devient actif ;
-* $\A_w$ = l'aire mouillée (en $m²$) de la section de l’orifice.
+* $A_w$ = l'aire mouillée (en $m²$) de la section de l’orifice.
 
 Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
