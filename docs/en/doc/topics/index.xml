@@ -15,6 +15,13 @@
       <description>1 The stage-discharge relation: hydraulic controls 1.1 Two main types of controls 1.1.1 Section control 1.1.2 Channel control 1.2 Standard controls 1.3 Approximation of real controls by standard controls 2 Hydraulic analysis 2.</description>
     </item>
     <item>
+      <title>Hydraulic controls</title>
+      <link>https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/</guid>
+      <description>1 Controls 1.1 The basic equation 1.2 Section controls and channel controls 2 Equations of the standard controls 2.1 Rectangular weir 2.2 Parabolic weir 2.</description>
+    </item>
+    <item>
       <title>Rating curve equation</title>
       <link>https://baratin-tools.github.io/en/doc/topics/rating-curve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

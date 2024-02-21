@@ -19,6 +19,16 @@
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</loc>
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/</loc>
   </url><url>

@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1708103818" rel="stylesheet">
+<link href="/css/custom.css?1708523527" rel="stylesheet">
 
 
 
@@ -316,7 +316,7 @@
 <li><a href="#chennal-triangulaire" id="toc-chennal-triangulaire"><span class="toc-section-number">2.7</span> Chennal triangulaire</a></li>
 <li><a href="#autres-types-de-contrôles" id="toc-autres-types-de-contrôles"><span class="toc-section-number">2.8</span> Autres types de contrôles</a></li>
 </ul></li>
-<li><a href="#estimation-des-a-priori" id="toc-estimation-des-a-priori"><span class="toc-section-number">3</span> Estimation des a priori</a>
+<li><a href="#spécification-des-a-priori" id="toc-spécification-des-a-priori"><span class="toc-section-number">3</span> Spécification des a priori</a>
 <ul>
 <li><a href="#détermination-des-paramètres-a-priori" id="toc-détermination-des-paramètres-a-priori"><span class="toc-section-number">3.1</span> Détermination des paramètres a priori</a></li>
 <li><a href="#approximation-des-contrôles-réels-complexes" id="toc-approximation-des-contrôles-réels-complexes"><span class="toc-section-number">3.2</span> Approximation des contrôles réels complexes</a></li>
@@ -329,19 +329,19 @@
 <h1><span class="header-section-number">1</span> Contrôles</h1>
 <div id="equation-de-base" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Equation de base</h2>
-<p>Pour tous les contrôles-types utilisés dans BaRatinAGE, la relation hauteur-débit est décrite par une loi puissance qui s’active à partir d’une certaine hauteur. L’équation de base est la suivante:</p>
+<p>Pour tous les contrôles-types utilisés dans BaRatinAGE, la relation hauteur-débit est décrite par une loi puissance qui s’active à partir d’une certaine hauteur. L’équation de base est la suivante :</p>
 <p><span class="math display">\[ Q(H) =
 \begin{cases}
-0 \text{ si } h \leq b \text{ ou } h \leq \kappa \\
+0 \text{ si } H \leq b \text{ ou } h \leq \kappa \\
 a(H-b)^c \text { sinon}
 \end{cases}
 \]</span></p>
 <ul>
 <li><span class="math inline">\(Q\)</span> est le débit et <span class="math inline">\(H\)</span> est la hauteur d’eau</li>
-<li><span class="math inline">\(\kappa\)</span> est la hauteur d’activation ; quand la hauteur descend sous la valeur <span class="math inline">\(\kappa\)</span>, le contrôle devient inactif</li>
-<li><span class="math inline">\(a\)</span> est le coefficient, qui dépend des propriétés physiques du contrôle</li>
-<li><span class="math inline">\(c\)</span> est l’exposant, qui dépend uniquement du type de contrôle</li>
-<li><span class="math inline">\(b\)</span> est l’offset ; quand la hauteur descend sous la valeur b, le débit est nul.</li>
+<li><span class="math inline">\(\kappa\)</span> est la <em>hauteur d’activation</em> ; quand la hauteur descend sous la valeur <span class="math inline">\(\kappa\)</span>, le contrôle devient inactif</li>
+<li><span class="math inline">\(a\)</span> est le <em>coefficient</em>, qui dépend des propriétés physiques du contrôle</li>
+<li><span class="math inline">\(c\)</span> est l’<em>exposant</em>, qui dépend uniquement du type de contrôle</li>
+<li><span class="math inline">\(b\)</span> est l’<em>offset</em> ; quand la hauteur descend sous la valeur <span class="math inline">\(b\)</span>, le débit est nul.</li>
 </ul>
 <p>Notez que ce dernier paramètre est en général différent de la hauteur d’activation <span class="math inline">\(\kappa\)</span>. A titre d’exemple, pour un contrôle par chenal qui succède à un contrôle par seuil, le paramètre <span class="math inline">\(b\)</span> représente la cote moyenne du fond du lit, mais le contrôle ne s’active qu’au-delà de la hauteur d’ennoiement du seuil, qui est différente de <span class="math inline">\(b\)</span>.</p>
 </div>
@@ -424,14 +424,14 @@ Figure 3: Déversoir triangulaire : vue en long (à gauche) et vue en travers de
 <h2><span class="header-section-number">2.4</span> Orifice dénoyé</h2>
 <img src="orifice.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure : Orifice dénoyé : vue en long (à gauche) et vue en travers de la section de contrôle (à droite).
+Figure 4 : Orifice dénoyé : vue en long (à gauche) et vue en travers de la section de contrôle (à droite).
 </p>
 <p>L’équation de ce type de contrôle est :
 <span class="math display">\[Q(H) = C_o \sqrt{2g} A_w (H-b)^c \]</span></p>
 <p>Pour chaque contrôle modélisé par un orifice dénoyé (l’écoulement remplit tout l’orifice mais sort librement à l’aval, sans influence de la hauteur d’eau aval sur la relation hauteur-débit, voir Figure 4), les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
 <ul>
 <li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ;</li>
-<li><span class="math inline">\(\A_w\)</span> = l’aire mouillée (en <span class="math inline">\(m²\)</span>) de la section de l’orifice.</li>
+<li><span class="math inline">\(A_w\)</span> = l’aire mouillée (en <span class="math inline">\(m²\)</span>) de la section de l’orifice.</li>
 </ul>
 <p>Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :</p>
 <ul>
@@ -488,7 +488,7 @@ cote (par exemple au plein-bord).</li>
 </ul>
 <p>Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :</p>
 <ul>
-<li><span class="math inline">\(c\)</span> = exposant pour un chenal rectangulaire large <span class="math inline">\(\approx 2.17 ± 0.05\)</span></li>
+<li><span class="math inline">\(c\)</span> = exposant pour un chenal parabolique large <span class="math inline">\(\approx 2.17 ± 0.05\)</span></li>
 </ul>
 </div>
 <div id="chennal-triangulaire" class="section level2" number="2.7">
@@ -510,7 +510,7 @@ Figure 7: Chennal triangulaire : vue en long (à gauche) et section en travers �
 </ul>
 <p>Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :</p>
 <ul>
-<li><span class="math inline">\(c\)</span> = exposant pour un chenal rectangulaire large <span class="math inline">\(\approx 2.67 ± 0.05\)</span></li>
+<li><span class="math inline">\(c\)</span> = exposant pour un chenal triangulaire large <span class="math inline">\(\approx 2.67 ± 0.05\)</span></li>
 </ul>
 </div>
 <div id="autres-types-de-contrôles" class="section level2" number="2.8">
@@ -527,8 +527,8 @@ Figure 8: Déversoir triangulaire confiné par des parois verticales: vue en lon
 </p>
 </div>
 </div>
-<div id="estimation-des-a-priori" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Estimation des a priori</h1>
+<div id="spécification-des-a-priori" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Spécification des a priori</h1>
 <div id="détermination-des-paramètres-a-priori" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Détermination des paramètres a priori</h2>
 <p>L’analyse hydraulique (la matrice des contrôles) induit le modèle mathématique de la courbe de tarage en combinant les équations des contrôles-type (pour plus de détails sur l’équation de la courbe de tarage, voir <a href="/fr/doc/topics/courbe-de-tarage/">cette page</a>).</p>
