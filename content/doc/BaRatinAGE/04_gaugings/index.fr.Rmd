@@ -18,9 +18,9 @@ Il vous sera possible de renommer ce nouveau jeu de jaugeages et d'en saisir une
 
 -   Hauteur d'eau exprimée en mètres ;
 -   Débit exprimé en mètres cubes par seconde ;
--   Incertitude élargie du débit jaugé, exprimée en pourcentage de ce débit ;
+-   Incertitude élargie du débit jaugé, exprimée en pourcentage de ce débit.
 
-A titre d'exemple, vous pouvez sélectionner le fichier *gauging_set.csv* dans le répertoire *example*, qui contient 58 jaugeages pour l'Aisne à Verrières, en spécifiant les paramètres suivant :
+A titre d'exemple, vous pouvez sélectionner le fichier *gauging_set.csv* dans le répertoire *example*, qui contient 58 jaugeages pour l'Aisne à Verrières, en spécifiant les paramètres d'import suivants :
 
 ![](Gaugings_Verrieres_Import.fr.png)
 

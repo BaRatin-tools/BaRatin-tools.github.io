@@ -6,4 +6,53 @@ layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---
 
-XXX
+# Création d'un limnigramme
+
+Un limnigramme est une série temporelle de hauteurs d'eau.
+
+Par défaut, un limnigramme nommé *Ht (1)* pré-existe et peut être utilisé. Vous pouvez créer un nouveau limnigramme de plusieurs façons :
+
+-   via le menu *Composants...Créer un nouveau limnigramme* ;
+-   en effectuant un clic droit sur le noeud ![](limnigraph.svg) *Limnigramme* dans l'arborescence de l'Explorateur des composants ;
+-   en cliquant sur le bouton ![](limnigraph_add.svg) dans la barre d'outils.
+
+Il vous sera possible de renommer ce nouveau limnigramme et d'en saisir une description. Il ne vous reste plus qu'à importer le fichier de limnigramme en cliquant sur le bouton *Importer un limnigramme*, en sélectionnant le fichier texte de votre choix, et en en spécifiant le format. Le fichier de limnigramme est un fichier texte de format libre mais devant comporter au moins cinq colonnes avec les données suivantes :
+
+-    La date/heure, à un format à spécifier (*AAAA/MM/JJ hh:mm:ss* ou une variante) ;
+-    La hauteur d'eau enregistrée, en mètres ;
+-    L'incertitude élargie liée aux erreurs non-systématiques ;
+-    L'index de période à erreur systématique constante ;
+-    L'ncertitude élargie liée l'erreur systématique constante.
+
+Le traitement des incertitudes sur le limnigramme permet en effet de différencier deux types d'erreurs de mesure des hauteurs d'eau : les erreurs non-systématiques (qui varient à chaque pas de temps) et les erreurs systématiques (qui restent identiques sur un ensemble de pas de temps). Typiquement, les erreurs non-systématiques sont associées au bruit du capteur et au batillage ; les erreurs systématiques sont associées au recalage périodique du capteur par rapport à l'échelle de référence (pour une explication plus détaillée, voir **ce document** XX LIEN ? XX). Ce dernier type d'erreur constitue en fait un biais inconnu, qui est supposé constant entre deux recalages du capteur. Un index de valeur 0 signifie que cette erreur est ignorée. On entrera la valeur 1 sur toutes les lignes correspondant à la première période, puis la valeur 2 pour la seconde période, etc.
+
+
+A titre d'exemple, vous pouvez sélectionner le fichier *limnigraph_mv.csv* dans le répertoire *example*, qui contient un limnigramme pour l'Aisne à Verrières pour les mois d'avril et mai 2022 (avec des lacunes codées *NA*), en spécifiant les paramètres d'import suivants :
+
+![](StageSeries_Import_mv.fr.png)
+
+
+*********
+
+
+
+
+
+Le tableau contient les colonnes suivantes :
+
+-    La date, au format AAAA/MM/JJ hh:mm:ss ;
+-    La hauteur enregistrée, en mètres ;
+-    Incertitude étendue liée aux erreurs non-systématiques ;
+-    Erreurs systématiques: index de l'erreur ;
+-    Erreurs systématiques: incertitude étendue liée au biais inconnu.
+
+
+
+# Formats de fichiers
+
+Pour le limnigramme, un unique format de fichier est supporté pour le moment : le format .csv. Comme pour les jaugeages, il s'agit d'un format avec séparateur point-virgule (vous pouvez ouvrir le fichier "Verrieres_limni_april_may_2022.csv" dans votre éditeur de texte pour observer le format). Le contenu du fichier est exactement ce que vous voyez dans le tableau de BaRatinAGE représenté ci-dessus (à l'exception du fait que la date est ventilée sur 6 colonnes : année, mois, jour, heure, minute, seconde). La simplicité de ce format fait que vous pouvez aisément créer/manipuler des fichiers de limnigramme avec votre tableur favori.
+Remarques sur la gestion du limnigramme dans BaRatinAGE
+
+A l'heure actuelle, le limnigramme ne peut pas être modifié directement dans BaRatinAGE : vous devez créer et modifier vous-même le fichier source au format .csv. Les futures versions de BaRatinAGE proposeront des outils plus développés pour la gestion du limnigramme et de ses incertitudes.
+
+De plus, signalons que les fichiers de limnigramme peuvent devenir volumineux lorsque le pas d'échantillonnage est faible et/ou la durée est longue. Ceci peut créer un léger ralentissement pour le tracé du graphique. Ceci sera également amélioré dans les futures versions de BaRatinAGE en proposant des outils de sous-échantillonnage.
