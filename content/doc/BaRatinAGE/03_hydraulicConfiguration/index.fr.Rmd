@@ -12,7 +12,7 @@ La configuration hydraulique est la définition de l'ensemble des contrôles qui
 
 La spécification d'une configuration hydraulique doit résulter d'une analyse hydraulique du fonctionnement de la station hydrométrique. Pour une rivière naturelle, on rencontre par exemple fréquemment la situation suivante : en basses eaux, la relation hauteur-débit est contrôlée par la géométrie d’une section critique au niveau d’un ou plusieurs déversoirs (naturels ou artificiels). Lorsque la hauteur d'eau augmente, le déversoir s'ennoie et la relation hauteur-débit est alors contrôlée par la géométrie et la rugosité moyennes du chenal du lit actif. Pour une hauteur d'eau encore plus importante, une partie de l'écoulement peut s'effectuer dans le lit moyen ou par-dessus les bancs du lit mineur : la relation hauteur-débit est alors contrôlée par deux chenaux, celui du lit actif et celui du lit moyen.
 
-BaRatinAGE permet de formaliser cette analyse hydraulique pour une grande variété de situations, qui couvrent la grande majorité des cas pratiques rencontrés en rivières naturelles (quitte à effectuer quelques approximations acceptables). La pratique recommandée dans BaRatinAGE est de décomposer les sections critiques en déversoirs ou orifices idéalisés, et les chenaux de contrôles en chenaux rectangulaires larges équivalents. Chaque contrôle ainsi introduit doit correspondre à des éléments physiques clairement identifiés sur le terrain. Pour plus de détails sur l'analyse hydraulique d'une station hydrométrique, vous pouvez consulter ce **document**. XXX LIEN? XXX
+BaRatinAGE permet de formaliser cette analyse hydraulique pour une grande variété de situations, qui couvrent la grande majorité des cas pratiques rencontrés en rivières naturelles (quitte à effectuer quelques approximations acceptables). La pratique recommandée dans BaRatinAGE est de décomposer les sections critiques en déversoirs ou orifices idéalisés, et les chenaux de contrôles en chenaux rectangulaires larges équivalents. Chaque contrôle ainsi introduit doit correspondre à des éléments physiques clairement identifiés sur le terrain. Pour plus de détails sur l'analyse hydraulique d'une station hydrométrique, vous pouvez consulter [ce document](/fr/doc/topics/analyse-hydraulique).
 
 # Création d'une configuration hydraulique
 
@@ -48,7 +48,7 @@ Il est possible de renverser l'affichage de la matrice des contrôles, en décoc
 
 Note 1 : Il existe quelques restrictions sur le remplissage de la matrice des contrôles (par exemple, un contrôle qui a été désactivé ne peut pas se ré-activer sur un segment supérieur, etc.), ce qui explique pourquoi toutes les cases de la matrice ne sont pas cliquables.
 
-Note 2 : L'information contenue dans la matrice des contrôles suffit à écrire l'équation de la courbe de tarage. Pour plus de détails sur cette équation, vous pouvez consulter **ce document**.  XX LIEN? XX
+Note 2 : L'information contenue dans la matrice des contrôles suffit à écrire l'équation de la courbe de tarage. Pour plus de détails sur cette équation, vous pouvez consulter [ce document](/fr/doc/topics/courbe-de-tarage).
 
 
 # Spécification des contrôles hydrauliques
@@ -64,7 +64,7 @@ $Q = a(H-b)^c$ pour $H > k$ (et $Q = 0$ si $H \leq b$)
 -    $c$ est l'*exposant*, qui dépend uniquement du type de contrôle ;
 -    $b$ est l'*offset* ; quand la hauteur d'eau descend sous la valeur $b$, le débit est nul. Notez que ce paramètre est en général différent de la hauteur d'activation $k$. A titre d'exemple, pour un contrôle par chenal qui succède à un contrôle par déversoir, le paramètre $b$ représente la cote moyenne du fond du lit, mais le contrôle ne s'active qu'au-delà de la hauteur $k$ d'ennoiement du déversoir, qui est différente de $b$.
 
-Chacun de ces paramètres peut être relié à des caractéristiques physiques du contrôle, comme expliqué en détail dans **ce document**.  XX LIEN? XX. Il est donc possible de spécifier des valeurs pour chaque paramètre, ces valeurs étant assorties d'une incertitude (potentiellement importante). On parle de spécification des paramètres a priori, le terme a priori étant utilisé ici pour signifier que cette première estimation grossière peut et même doit se faire sans utiliser aucun jaugeage. Pour finir, précisons qu'en pratique, la spécification des a priori ne se fait que sur les paramètres $k$, $a$ et $c$. En effet, la continuité de la courbe de tarage impose une contrainte qui implique que le paramètre $b$ se déduit automatiquement des trois autres paramètres.
+Chacun de ces paramètres peut être relié à des caractéristiques physiques du contrôle, comme expliqué en détail dans [ce document](/fr/doc/topics/controles-hydrauliques). Il est donc possible de spécifier des valeurs pour chaque paramètre, ces valeurs étant assorties d'une incertitude (potentiellement importante). On parle de spécification des paramètres a priori, le terme a priori étant utilisé ici pour signifier que cette première estimation grossière peut et même doit se faire sans utiliser aucun jaugeage. Pour finir, précisons qu'en pratique, la spécification des a priori ne se fait que sur les paramètres $k$, $a$ et $c$. En effet, la continuité de la courbe de tarage impose une contrainte qui implique que le paramètre $b$ se déduit automatiquement des trois autres paramètres.
 
 
 

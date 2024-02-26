@@ -6,4 +6,48 @@ layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---
 
-XXX
+
+
+*Note : cette section sera mise à jour au fil des questions que nous recevrons.*
+
+# Installation
+
+Question : je travaille sous Linux, puis-je utiliser BaRatinAGE ?
+
+Réponse : oui, BaRatinAGE 3 peut être utilisé sous Windows et Linux !
+
+***
+
+Question : je travaille sous Mac, puis-je utiliser BaRatinAGE ?
+
+Réponse : pas pour le moment. Si vous le souhaitez, nous pouvons néanmoins vous accompagner pour tenter de compiler une version Mac du logiciel. Dans ce cas, contactez-nous!
+
+***
+
+# Formation
+
+Question : existe-t-il des formations à BaRatinAGE ?
+
+Réponse : oui, plusieurs options sont à votre disposition :
+
+-    Utiliser les supports de formation en [français](/doc/BaRatin_principes_FRANCAIS_2021.pdf), [anglais](/doc/BaRatin_principles_ENGLISH_2022.pdf) et [espagnol](/doc/BaRatin_principios_ESPANOL_2022.pdf) ainsi que les webinaires disponibles en ligne en [français](https://youtu.be/dUutJkCaAro?si=y6XToumLqfu9lxs5) et en [anglais](https://youtu.be/TdRH1jmFhZQ?si=E2fwIphVebe86nDT) ;
+-    Suivre la formation courbe de tarage de l'IFORE ;
+-    Suivre la formation Statistiques avancées pour le calcul d'incertitude de l'IFORE ;
+-    Nous pouvons organiser à la demande des sessions dédiées à BaRatinAGE, typiquement sur 2 jours. Pour plus d'informations sur ces "baratinades", contactez-nous !
+
+***
+
+# Licence, codes sources, etc.
+
+Question : puis-je distribuer BaRatinAGE 3 à tous mes collègues, ou sur mon site web ?
+
+Réponse : oui. Cependant, nous recommandons à chaque utilisateur de nous envoyer un courriel pour demander l'inscription à la liste de diffusion des utilisateurs de BaRatinAGE. Ceci permet de recevoir des informations sur les nouvelles versions du logiciel.
+
+
+***
+
+Question : puis-je avoir accès au code source de BaRatinAGE ?
+
+Réponse : BaRatinAGE et BaM! sont open source (licence GPL3) et disponibles sur [GitHub](https://github.com/BaRatin-tools/BaRatinAGE).
+
+***

@@ -24,6 +24,8 @@ Il ne vous reste plus qu'à importer le fichier de jaugeages en cliquant sur le 
 -   Débit exprimé en mètres cubes par seconde ;
 -   Incertitude élargie du débit jaugé, exprimée en pourcentage de ce débit.
 
+Des détails sur la spécification des incertitudes des jaugeages sont donnés dans [ce document](/fr/doc/topics/jaugeages).
+
 A titre d'exemple, vous pouvez sélectionner le fichier *gauging_set.csv* dans le répertoire *example*, qui contient 58 jaugeages pour l'Aisne à Verrières, en spécifiant les paramètres d'import suivants :
 
 ![](Gaugings_Verrieres_Import.fr.png)

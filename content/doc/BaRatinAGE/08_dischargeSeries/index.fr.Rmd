@@ -28,9 +28,9 @@ Vous êtes à présent prêts à lancer le calcul de l'hydrogramme, en cliquant 
 
 ![](Hydrograph.fr.png)
 
-Note : Le temps de calcul à cette étape peut être important, et il est principalement déterminé par le nombre de pas de temps que contient le limnigramme. En guise d'ordre de grandeur, il faut s'attendre à un temps de calcul de l'ordre de la minute pour un limnigramme contenant 10 000 pas de temps. Ceci est dû au mode de calcul utilisé par BaRatinAGE pour l'estimation des incertitudes. En effet, pour calculer les intervalles d'incertitudes autour de l'hydrogramme, ce sont plusieurs centaines d'hydrogrammes qui sont en fait calculés, en propageant à la fois les incertitudes du limnigramme et celles liées à l'estimation de la courbe de tarage (approche spaghetti). Pour plus de détails sur ce calcul, vous pouvez consulter **ce document** XX LIEN ? XX).
+Note : Le temps de calcul à cette étape peut être important, et il est principalement déterminé par le nombre de pas de temps que contient le limnigramme. En guise d'ordre de grandeur, il faut s'attendre à un temps de calcul de l'ordre de la minute pour un limnigramme contenant 10 000 pas de temps. Ceci est dû au mode de calcul utilisé par BaRatinAGE pour l'estimation des incertitudes. En effet, pour calculer les intervalles d'incertitudes autour de l'hydrogramme, ce sont plusieurs centaines d'hydrogrammes qui sont en fait calculés, en propageant à la fois les incertitudes du limnigramme et celles liées à l'estimation de la courbe de tarage (approche spaghetti). Pour plus de détails sur ce calcul, vous pouvez consulter [ce document](/fr/doc/topics/hydrogrammes)).
 
-L'hydrogramme et ses intervalles d'incertitude à 95% sont disopnibles sous forme d'un tableau :
+L'hydrogramme et ses intervalles d'incertitude à 95% sont disponibles sous forme d'un tableau :
 
 ![](Hydrograph_Table.fr.png)
 

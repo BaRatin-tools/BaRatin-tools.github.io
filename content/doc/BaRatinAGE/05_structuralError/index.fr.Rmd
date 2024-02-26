@@ -1,5 +1,5 @@
 ---
-title: "Erreurs structurelles"
+title: "Modèle d'erreur structurelle"
 slug: "erreurs-structurelles"
 weight: 5
 layout: "doc_BaRatinAGEPage"
@@ -31,4 +31,4 @@ En pratique, nous recommandons d'utiliser la deuxième option ($\sigma = \gamma_
 Si on déverrouille les champs, il est possible de spécifier soi-même les distributions des paramètres $\gamma_1$ et $\gamma_2$. Par exemple, la borne supérieure par défaut (10000 m$^3$/s) de la distribution uniforme de $\gamma_1$ peut ne pas être forcément bien adaptée à l'ordre de grandeur des débits les plus forts enregistrés à la station hydrométrique. Il peut alors être utile de l'augmenter ou de la diminuer.
 
 
-Une description plus formelle et plus complète des modèles d'*erreur structurelle*, et plus généralement des modèles statistiques utilisés dans BaRatinAGE, est disponible dans **ce document** XX LIEN? XX.
+Une description plus formelle et plus complète des modèles d'*erreur structurelle*, et plus généralement des modèles statistiques utilisés dans BaRatinAGE, est disponible dans [ce document](/fr/doc/topics/modele-stat).
