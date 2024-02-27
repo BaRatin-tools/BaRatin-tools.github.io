@@ -4,3 +4,5 @@
 .Ruserdata
 .hugo_build.lock
 docs/**/*.Rmd
+docs/**/*.pptx
+/docs/fr/doc/baratinage/Aisne_Verrieres.fr.bam
