@@ -13,8 +13,8 @@ Un hydrogramme est une série temporelle de débit.
 Par défaut, un hydrogramme nommé *Qt (1)* pré-existe et peut être utilisé. Vous pouvez créer un nouvel hydrogramme de plusieurs façons :
 
 -   via le menu *Composants...Créer un nouvel hydrogramme* ;
--   en effectuant un clic droit sur le noeud ![](hydrograph.svg) *Hydrogramme* dans l'arborescence de l'Explorateur des composants ;
--   en cliquant sur le bouton ![](hydrograph_add.svg) dans la barre d'outils.
+-   en effectuant un clic droit sur le noeud <img src="hydrograph.svg" style="display:inline-block"> *Hydrogramme* dans l'arborescence de l'Explorateur des composants ;
+-   en cliquant sur le bouton <img src="hydrograph_add.svg" style="display:inline-block"> dans la barre d'outils.
 
 Il vous sera possible de renommer ce nouvel hydrogramme et d'en saisir une description.  Un hydrogramme existant peut être dupliqué ou supprimé.
 

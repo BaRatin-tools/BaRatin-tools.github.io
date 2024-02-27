@@ -13,8 +13,8 @@ Un jaugeage est un couple de mesures ponctuelles de hauteur d'eau et débit simu
 Par défaut, un jeu de jaugeages vierge nommé *JJ (1)* pré-existe et peut être utilisé. Vous pouvez créer un nouveau jeu de jaugeages de plusieurs façons :
 
 -   via le menu *Composants...Créer un nouveau jeu de jaugeages* ;
--   en effectuant un clic droit sur le noeud ![](gaugings.svg) *Jeu de jaugeages* dans l'arborescence de l'Explorateur des composants ;
--   en cliquant sur le bouton ![](gaugings_add.svg) dans la barre d'outils.
+-   en effectuant un clic droit sur le noeud <img src="gaugings.svg" style="display:inline-block"> *Jeu de jaugeages* dans l'arborescence de l'Explorateur des composants ;
+-   en cliquant sur le bouton <img src="gaugings_add.svg" style="display:inline-block"> dans la barre d'outils.
 
 Il vous sera possible de renommer ce nouveau jeu de jaugeages et d'en saisir une description.  Un jeu de jaugeages existant peut être dupliqué ou supprimé.
 

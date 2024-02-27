@@ -8,7 +8,7 @@ inTOC: "BaRatinAGE"
 
 # Organisation générale
 
-La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE :
+La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE v3 :
 
 ![](MainFrame.fr.png)
 
@@ -22,9 +22,7 @@ Outre les classiques barres de menus et d'outils (dont le fonctionnement sera d�
 
 Dans BaRatinAGE au démarrage, un composant de chaque type pré-existe, avec des champs vierges ou renseignés par défaut.
 
-
-
-Pour illustrer plus efficacement le fonctionnement de BaRatinAGE, nous allons ouvrir une étude pré-enregistrée. Pour ce faire, cliquez sur l'outil ![](folder.svg) *Ouvrir un projet...* ou dans le menu *Fichier...Ouvrir un projet...* (Ctrl+O), et ouvrez le fichier nommé *Aisne_Verrieres_Example.bam* dans le répertoire *example* (ce répertoire est situé dans le dossier où vous avez installé BaRatinAGE).
+Pour illustrer plus efficacement le fonctionnement de BaRatinAGE, nous allons ouvrir une étude pré-enregistrée. Pour ce faire, cliquez sur l'outil <img src="folder.svg" style="display:inline-block"> *Ouvrir un projet...* ou dans le menu *Fichier...Ouvrir un projet...* (Ctrl+O), et ouvrez le fichier nommé *Aisne_Verrieres_Example.bam* dans le répertoire *example* (ce répertoire est situé dans le dossier où vous avez installé BaRatinAGE).
 
 
 # Navigation dans l'interface graphique

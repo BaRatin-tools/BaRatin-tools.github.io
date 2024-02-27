@@ -13,7 +13,17 @@ Imaginons la situation suivante, qui est idéalisée et donc forcément irréali
 
 Plus généralement, on observe fréquemment que les incertitudes des jaugeages et l'incertitude liée à l'estimation des paramètres de la courbe ne suffisent pas à expliquer la dispersion des jaugeages autour de la courbe. Il "reste" donc une source d'erreur, qui a certainement de multiples origines: erreur structurelle de la courbe de tarage (c'est-à-dire le fait que l'équation utilisée n'est qu'une approximation de la vraie relation physique hauteur-débit), légers détarages non détectés, phénomène d'hystérésis ignoré, incertitudes sur les jaugeages sous-estimées, etc.
 
-Pour faire face à ce problème, BaRatinAGE introduit le concept d'erreur restante, qui sera appelée *erreur structurelle* pour simplifier l'interprétation, qui est utilisée pour ajouter l'incertitude qui manque pour expliquer la dispersion des jaugeages autour de la courbe de tarage, sans vraiment préjuger de l'origine de cette incertitude manquante. C'est en quelque sorte le ramasse miettes des incertitudes (d'où l'icône utilisée).
+Pour faire face à ce problème, BaRatinAGE introduit le concept d'erreur restante, qui sera appelée *erreur structurelle* pour simplifier l'interprétation, qui est utilisée pour ajouter l'incertitude qui manque pour expliquer la dispersion des jaugeages autour de la courbe de tarage, sans vraiment préjuger de l'origine de cette incertitude manquante. C'est en quelque sorte le ramasse miettes des incertitudes (d'où l'icône utilisée : <img src="structural_error_model.svg" style="display:inline-block">).
+
+# Création d'un modèle d'erreur structurelle
+
+Par défaut, un modèle d'erreur structurelle vierge nommé *ES (1)* pré-existe et peut être utilisé. Vous pouvez créer un modèle d'erreur structurelle de plusieurs façons :
+
+-    via le menu *Composants... Créer un nouveau modèle d'erreur structurelle* ;
+-    en effectuant un clic droit sur le noeud <img src="structural_error_model.svg" style="display:inline-block"> *Modèle d'erreur structurelle* dans l'arborescence de l'explorateur ;
+-    en cliquant sur le bouton <img src="structural_error_model_add.svg" style="display:inline-block"> dans la barre d'outils.
+
+Il vous sera possible de renommer ce nouveau modèle d'erreur structurelle et d’en saisir une description. Un modèle d'erreur structurelle existant peut être dupliqué ou supprimé.
 
 # Modèles disponibles dans BaRatinAGE
 
@@ -28,7 +38,7 @@ En pratique, nous recommandons d'utiliser la deuxième option ($\sigma = \gamma_
 ![](StructError.png)
 
 
-Si on déverrouille les champs, il est possible de spécifier soi-même les distributions des paramètres $\gamma_1$ et $\gamma_2$. Par exemple, la borne supérieure par défaut (10000 m$^3$/s) de la distribution uniforme de $\gamma_1$ peut ne pas être forcément bien adaptée à l'ordre de grandeur des débits les plus forts enregistrés à la station hydrométrique. Il peut alors être utile de l'augmenter ou de la diminuer.
+Si on déverrouille les champs, il est possible de spécifier soi-même les distributions des paramètres $\gamma_1$ et $\gamma_2$. Par exemple, la borne supérieure par défaut (10000 m$^3$/s) de la distribution uniforme de $\gamma_1$ peut ne pas être forcément bien adaptée à l'ordre de grandeur des débits les plus forts enregistrés à la station hydrométrique. Il peut alors être utile de l'augmenter ou de la diminuer. On peut également sélectionner "Valeur fixe" : dans ce cas, le paramètre ne sera pas estimé mais fixé à la valeur spécifiée.
 
 
-Une description plus formelle et plus complète des modèles d'*erreur structurelle*, et plus généralement des modèles statistiques utilisés dans BaRatinAGE, est disponible dans [ce document](/fr/doc/topics/modele-stat).
+Une description plus formelle et plus complète des *modèles d'erreur structurelle*, et plus généralement des modèles statistiques utilisés dans BaRatinAGE, est disponible dans [ce document](/fr/doc/topics/modele-stat).

@@ -13,8 +13,8 @@ Une courbe de tarage est une fonction donnant le débit en fonction de la hauteu
 Par défaut, une courbe de tarage vierge nommée *CT (1)* pré-existe et peut être utilisée. Vous pouvez créer une nouvelle courbe de tarage de plusieurs façons :
 
 -   via le menu *Composants...Créer une nouvelle courbe de tarage* ;
--   en effectuant un clic droit sur le noeud ![](rating_curve.svg) *Courbe de tarage* dans l'arborescence de l'Explorateur des composants ;
--   en cliquant sur le bouton ![](rating_curve_add.svg) dans la barre d'outils.
+-   en effectuant un clic droit sur le noeud <img src="rating_curve.svg" style="display:inline-block"> *Courbe de tarage* dans l'arborescence de l'Explorateur des composants ;
+-   en cliquant sur le bouton <img src="rating_curve_add.svg" style="display:inline-block"> dans la barre d'outils.
 
 Il vous sera possible de renommer cette nouvelle courbe de tarage et d'en saisir une description. Une courbe de tarage existante peut être dupliquée ou supprimée.
 
@@ -61,7 +61,7 @@ Il est particulièrement important de vérifier que les paramètres estimés a p
 
 Le graphique ci-dessus permet d'évaluer comment la connaissance a priori des paramètres (distributions en bleu) a été transformée en connaissance a posteriori (histogrammes en rouge) par l'information apportée par les jaugeages.
 
-La même information est également disponible sous forme de tableau, avec pour chaque paramètre de la courbe de tarage une comparaison entre les estimations a priori et a posteriori, sous la forme des bornes inférieures et supérieures de leurs intervalles  à 95%. Un test de cohérence entre a priori et a posteriori est affiché pour chaque paramètre. XXX Quel test? écart normalisé? XXX Il est possible d'exporter ces résultats au format CSV ou de les copier dans le presse-papier.
+La même information est également disponible sous forme de tableau, avec pour chaque paramètre de la courbe de tarage une comparaison entre les estimations a priori et a posteriori, sous la forme des bornes inférieures et supérieures de leurs intervalles  à 95%. Un test de cohérence entre a priori et a posteriori est affiché pour chaque paramètre. ***XXX Quel test? écart normalisé? XXX*** Il est possible d'exporter ces résultats au format CSV ou de les copier dans le presse-papier.
 
 ![](RC_Verrieres_Param_Summary.fr.png)
 
@@ -71,5 +71,5 @@ La même information est également disponible sous forme de tableau, avec pour 
 
 Le graphique des traces MCMC représente les valeurs de paramètres simulées depuis la distribution a posteriori grâce au simulateur MCMC (tous les détails techniques sont expliqués dans [ce document](/fr/doc/topics/mcmc). Notez que le graphique ne montre que 500 valeurs simulées, mais en fait 10 000 valeurs ont été initialement générées, les 5 000 premières étant éliminées. Ces 5 000 valeurs initiales ont simplement été décimées et réduites à 500 valeurs pour éviter de conserver un nombre de simulations trop important. 
 
-Outre les paramètres $k$, $a$, $b$, et $c$ de chaque contrôle, les échantillons des paramètres $\gamma_1$ et $\gamma_2$ de l'écart-type de l'erreur structurelle ainsi que le logarithme de la densité a posteriori ("LogPost") sont également tracés. La position du jeu de paramètres maxpost (maximisant la distribution a posteriori) est indiquée par une ligne verticale rouge pour chaque paramètre. Ces résultats peuvent être exportés au format CSV.
+Outre les paramètres $\kappa$, $a$, $b$, et $c$ de chaque contrôle, les échantillons des paramètres $\gamma_1$ et $\gamma_2$ de l'écart-type de l'erreur structurelle ainsi que le logarithme de la densité a posteriori ("LogPost") sont également tracés. La position du jeu de paramètres maxpost (maximisant la distribution a posteriori) est indiquée par une ligne verticale rouge pour chaque paramètre. Ces résultats peuvent être exportés au format CSV.
 

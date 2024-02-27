@@ -13,8 +13,8 @@ Un limnigramme est une série temporelle de hauteurs d'eau.
 Par défaut, un limnigramme nommé *Ht (1)* pré-existe et peut être utilisé. Vous pouvez créer un nouveau limnigramme de plusieurs façons :
 
 -   via le menu *Composants...Créer un nouveau limnigramme* ;
--   en effectuant un clic droit sur le noeud ![](limnigraph.svg) *Limnigramme* dans l'arborescence de l'Explorateur des composants ;
--   en cliquant sur le bouton ![](limnigraph_add.svg) dans la barre d'outils.
+-   en effectuant un clic droit sur le noeud <img src="limnigraph.svg" style="display:inline-block"> *Limnigramme* dans l'arborescence de l'Explorateur des composants ;
+-   en cliquant sur le bouton <img src="limnigraph_add.svg" style="display:inline-block"> dans la barre d'outils.
 
 Il vous sera possible de renommer ce nouveau limnigramme et d'en saisir une description.  Un limnigramme existant peut être dupliqué ou supprimé.
 
@@ -34,7 +34,7 @@ A titre d'exemple, vous pouvez sélectionner le fichier *limnigraph_mv.csv* dans
 ![](StageSeries_Import_mv.fr.png)
 
 
-La fenêtre se met alors à jour en affichant le tableau du limnigramme ainsi que le graphique dans l'onglet ![](limnigraph.svg) *Graphique* :
+La fenêtre se met alors à jour en affichant le tableau du limnigramme ainsi que le graphique dans l'onglet <img src="limnigraph.svg" style="display:inline-block"> *Graphique* :
 
 
 ![](StageSeries.fr.png)
@@ -47,9 +47,9 @@ Le tableau contient les colonnes suivantes :
 -    Le quantile à 2.5%, calculé à partir des informations d'incertitude ;
 -    Le quantile à 97.5%, calculé à partir des informations d'incertitude.
 
-Dans l'onglet ![](limnigraph.svg) *Graphique*, ces quantiles sont représentés sur le graphique sous la forme d'une enveloppe d'incertitude (jaune) autour du limnigramme.
+Dans l'onglet <img src="limnigraph.svg" style="display:inline-block"> *Graphique*, ces quantiles sont représentés sur le graphique sous la forme d'une enveloppe d'incertitude (jaune) autour du limnigramme.
 
-Dans l'onglet ![](errors.svg) *Incertitude limnimétrique*, les données de hauteur d'eau et incertitudes importées sont présentées dans l'onglet *Hauteur d'eau et incertitude*, tandis que les valeurs de hauteur d'eau échantillonnées ayant servi à établir les quantiles sont présentées dans l'onglet *Echantillons de limnigrammes avec erreurs*.
+Dans l'onglet <img src="errors.svg" style="display:inline-block"> *Incertitude limnimétrique*, les données de hauteur d'eau et incertitudes importées sont présentées dans l'onglet *Hauteur d'eau et incertitude*, tandis que les valeurs de hauteur d'eau échantillonnées ayant servi à établir les quantiles sont présentées dans l'onglet *Echantillons de limnigrammes avec erreurs*.
 
 Dans chaque onglet, il est possible d'exporter les valeurs au format CSV ou de les copier dans le presse-papier. Il est également possible d'ouvrir le graphique du limnigramme dans une nouvelle fenêtre, d'exporter l'image au format SVG ou PNG, ou encore de la copier dans le presse-papier.
 
