@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1708688321" rel="stylesheet">
+<link href="/css/custom.css?1709046419" rel="stylesheet">
 
 
 
@@ -301,19 +301,22 @@
 
 <div id="création-dun-jeu-de-jaugeages" class="section level1">
 <h1>Création d’un jeu de jaugeages</h1>
+<p>Un jaugeage est un couple de mesures ponctuelles de hauteur d’eau et débit simultanés, assortis de leurs incertitudes.</p>
 <p>Par défaut, un jeu de jaugeages vierge nommé <em>JJ (1)</em> pré-existe et peut être utilisé. Vous pouvez créer un nouveau jeu de jaugeages de plusieurs façons :</p>
 <ul>
 <li>via le menu <em>Composants…Créer un nouveau jeu de jaugeages</em> ;</li>
 <li>en effectuant un clic droit sur le noeud <img src="gaugings.svg" /> <em>Jeu de jaugeages</em> dans l’arborescence de l’Explorateur des composants ;</li>
 <li>en cliquant sur le bouton <img src="gaugings_add.svg" /> dans la barre d’outils.</li>
 </ul>
-<p>Il vous sera possible de renommer ce nouveau jeu de jaugeages et d’en saisir une description. Il ne vous reste plus qu’à importer le fichier de jaugeages en cliquant sur le bouton <em>Importer un jeu de jaugeages</em>, en sélectionnant le fichier texte de votre choix, et en en spécifiant le format. Le fichier de jaugeage est un fichier texte de format libre mais devant comporter au moins trois colonnes avec les données suivantes :</p>
+<p>Il vous sera possible de renommer ce nouveau jeu de jaugeages et d’en saisir une description. Un jeu de jaugeages existant peut être dupliqué ou supprimé.</p>
+<p>Il ne vous reste plus qu’à importer le fichier de jaugeages en cliquant sur le bouton <em>Importer un jeu de jaugeages</em>, en sélectionnant le fichier texte de votre choix, et en en spécifiant le format. Le fichier de jaugeage est un fichier texte de format libre mais devant comporter au moins trois colonnes avec les données suivantes :</p>
 <ul>
 <li>Hauteur d’eau exprimée en mètres ;</li>
 <li>Débit exprimé en mètres cubes par seconde ;</li>
-<li>Incertitude élargie du débit jaugé, exprimée en pourcentage de ce débit ;</li>
+<li>Incertitude élargie du débit jaugé, exprimée en pourcentage de ce débit.</li>
 </ul>
-<p>A titre d’exemple, vous pouvez sélectionner le fichier <em>gauging_set.csv</em> dans le répertoire <em>example</em>, qui contient 58 jaugeages pour l’Aisne à Verrières, en spécifiant les paramètres suivant :</p>
+<p>Des détails sur la spécification des incertitudes des jaugeages sont donnés dans <a href="/fr/doc/topics/jaugeages">ce document</a>.</p>
+<p>A titre d’exemple, vous pouvez sélectionner le fichier <em>gauging_set.csv</em> dans le répertoire <em>example</em>, qui contient 58 jaugeages pour l’Aisne à Verrières, en spécifiant les paramètres d’import suivants :</p>
 <p><img src="Gaugings_Verrieres_Import.fr.png" /></p>
 <p>Le panneau se met alors à jour comme ceci, après avoir désactivé l’avant-dernier jaugeage :</p>
 <p><img src="Gaugings_Verrieres.fr.png" /></p>
@@ -324,10 +327,10 @@
 <li>Incertitude élargie du débit jaugé, exprimée en pourcentage de ce débit ;</li>
 <li>Statut du jaugeage : si la case est décochée, le jaugeage sera “inactif”, c’est-à-dire qu’il ne sera pas utilisé pour l’estimation de la courbe de tarage.</li>
 </ul>
+<p>Il est possible d’exporter le jeu de jaugeages au format CSV ou de le copier dans le presse-papier. Il est également possible d’ouvrir le graphique du jeu de jaugeages dans une nouvelle fenêtre, d’exporter l’image au format SVG ou PNG, ou encore de la copier dans le presse-papier.</p>
 </div>
 <div id="gestion-des-jaugeages-dans-baratinage" class="section level1">
 <h1>Gestion des jaugeages dans BaRatinAGE</h1>
-<p>Il est possible d’exporter le jeu de jaugeages au format CSV ou de le copier dans le presse-papier. Il est également possible d’ouvrir le graphique du jeu de jaugeages dans une nouvelle fenêtre, d’exporter l’image au format SVG ou PNG, ou encore de la copier dans le presse-papier. Un jeu de jaugeages existant peut être dupliqué ou supprimé.</p>
 <p>A l’heure actuelle, la gestion des jaugeages est rudimentaire dans BaRatinAGE : la seule modification possible est l’activation/désactivation d’un jaugeage. Si vous souhaitez modifier une valeur ou ajouter un jaugeage, vous devez modifier le fichier source. La raison est qu’il existe déjà des logiciels spécialisés dans la gestion des jaugeages (Barème, Jacinthe en particulier), et qu’il nous semble préférable de favoriser la compatibilité avec ces logiciels plutôt que de ré-inventer la roue. Néanmoins, nous implémenterons quelques outils simples dans les futures versions de BaRatinAGE (saisie et modification des jaugeages, inclusion des dates et des méthodes de jaugeages, filtres élémentaires).</p>
 </div>
 
@@ -373,15 +376,7 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> 
-		
-
-		
-		    &nbsp; | &nbsp;
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> 
 		
 
 		
@@ -390,6 +385,14 @@
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
 		
 
 		
@@ -463,15 +466,15 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> </br> </br>
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> </br> </br>
 		
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
 		
     
 		

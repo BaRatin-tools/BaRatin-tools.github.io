@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1708688321" rel="stylesheet">
+<link href="/css/custom.css?1709046419" rel="stylesheet">
 
 
 
@@ -303,7 +303,7 @@
 <h1>Généralités</h1>
 <p>La configuration hydraulique est la définition de l’ensemble des contrôles qui gouvernent la relation physique hauteur-débit, et de leur succession/combinaison lorsque la hauteur d’eau augmente. Elle joue un rôle capital dans une analyse avec BaRatinAGE car elle induit l’équation qui sera utilisée pour la courbe de tarage.</p>
 <p>La spécification d’une configuration hydraulique doit résulter d’une analyse hydraulique du fonctionnement de la station hydrométrique. Pour une rivière naturelle, on rencontre par exemple fréquemment la situation suivante : en basses eaux, la relation hauteur-débit est contrôlée par la géométrie d’une section critique au niveau d’un ou plusieurs déversoirs (naturels ou artificiels). Lorsque la hauteur d’eau augmente, le déversoir s’ennoie et la relation hauteur-débit est alors contrôlée par la géométrie et la rugosité moyennes du chenal du lit actif. Pour une hauteur d’eau encore plus importante, une partie de l’écoulement peut s’effectuer dans le lit moyen ou par-dessus les bancs du lit mineur : la relation hauteur-débit est alors contrôlée par deux chenaux, celui du lit actif et celui du lit moyen.</p>
-<p>BaRatinAGE permet de formaliser cette analyse hydraulique pour une grande variété de situations, qui couvrent la grande majorité des cas pratiques rencontrés en rivières naturelles (quitte à effectuer quelques approximations acceptables). La pratique recommandée dans BaRatinAGE est de décomposer les sections critiques en déversoirs ou orifices idéalisés, et les chenaux de contrôles en chenaux rectangulaires larges équivalents. Chaque contrôle ainsi introduit doit correspondre à des éléments physiques clairement identifiés sur le terrain. Pour plus de détails sur l’analyse hydraulique d’une station hydrométrique, vous pouvez consulter ce <strong>document</strong>. XXX LIEN? XXX</p>
+<p>BaRatinAGE permet de formaliser cette analyse hydraulique pour une grande variété de situations, qui couvrent la grande majorité des cas pratiques rencontrés en rivières naturelles (quitte à effectuer quelques approximations acceptables). La pratique recommandée dans BaRatinAGE est de décomposer les sections critiques en déversoirs ou orifices idéalisés, et les chenaux de contrôles en chenaux rectangulaires larges équivalents. Chaque contrôle ainsi introduit doit correspondre à des éléments physiques clairement identifiés sur le terrain. Pour plus de détails sur l’analyse hydraulique d’une station hydrométrique, vous pouvez consulter <a href="/fr/doc/topics/analyse-hydraulique">ce document</a>.</p>
 </div>
 <div id="création-dune-configuration-hydraulique" class="section level1">
 <h1>Création d’une configuration hydraulique</h1>
@@ -327,7 +327,7 @@
 <p>Il est possible de renverser l’affichage de la matrice des contrôles, en décochant la case <em>Inverser l’ordre des segments</em>, de façon que le segment des plus basses eaux apparaissent en bas, et celui des plus hautes eaux apparaissent en haut:</p>
 <p><img src="Matrix_Verrieres_mirror.fr.png" /></p>
 <p>Note 1 : Il existe quelques restrictions sur le remplissage de la matrice des contrôles (par exemple, un contrôle qui a été désactivé ne peut pas se ré-activer sur un segment supérieur, etc.), ce qui explique pourquoi toutes les cases de la matrice ne sont pas cliquables.</p>
-<p>Note 2 : L’information contenue dans la matrice des contrôles suffit à écrire l’équation de la courbe de tarage. Pour plus de détails sur cette équation, vous pouvez consulter <strong>ce document</strong>. XX LIEN? XX</p>
+<p>Note 2 : L’information contenue dans la matrice des contrôles suffit à écrire l’équation de la courbe de tarage. Pour plus de détails sur cette équation, vous pouvez consulter <a href="/fr/doc/topics/courbe-de-tarage">ce document</a>.</p>
 </div>
 <div id="spécification-des-contrôles-hydrauliques" class="section level1">
 <h1>Spécification des contrôles hydrauliques</h1>
@@ -340,7 +340,7 @@
 <li><span class="math inline">\(c\)</span> est l’<em>exposant</em>, qui dépend uniquement du type de contrôle ;</li>
 <li><span class="math inline">\(b\)</span> est l’<em>offset</em> ; quand la hauteur d’eau descend sous la valeur <span class="math inline">\(b\)</span>, le débit est nul. Notez que ce paramètre est en général différent de la hauteur d’activation <span class="math inline">\(k\)</span>. A titre d’exemple, pour un contrôle par chenal qui succède à un contrôle par déversoir, le paramètre <span class="math inline">\(b\)</span> représente la cote moyenne du fond du lit, mais le contrôle ne s’active qu’au-delà de la hauteur <span class="math inline">\(k\)</span> d’ennoiement du déversoir, qui est différente de <span class="math inline">\(b\)</span>.</li>
 </ul>
-<p>Chacun de ces paramètres peut être relié à des caractéristiques physiques du contrôle, comme expliqué en détail dans <strong>ce document</strong>. XX LIEN? XX. Il est donc possible de spécifier des valeurs pour chaque paramètre, ces valeurs étant assorties d’une incertitude (potentiellement importante). On parle de spécification des paramètres a priori, le terme a priori étant utilisé ici pour signifier que cette première estimation grossière peut et même doit se faire sans utiliser aucun jaugeage. Pour finir, précisons qu’en pratique, la spécification des a priori ne se fait que sur les paramètres <span class="math inline">\(k\)</span>, <span class="math inline">\(a\)</span> et <span class="math inline">\(c\)</span>. En effet, la continuité de la courbe de tarage impose une contrainte qui implique que le paramètre <span class="math inline">\(b\)</span> se déduit automatiquement des trois autres paramètres.</p>
+<p>Chacun de ces paramètres peut être relié à des caractéristiques physiques du contrôle, comme expliqué en détail dans <a href="/fr/doc/topics/controles-hydrauliques">ce document</a>. Il est donc possible de spécifier des valeurs pour chaque paramètre, ces valeurs étant assorties d’une incertitude (potentiellement importante). On parle de spécification des paramètres a priori, le terme a priori étant utilisé ici pour signifier que cette première estimation grossière peut et même doit se faire sans utiliser aucun jaugeage. Pour finir, précisons qu’en pratique, la spécification des a priori ne se fait que sur les paramètres <span class="math inline">\(k\)</span>, <span class="math inline">\(a\)</span> et <span class="math inline">\(c\)</span>. En effet, la continuité de la courbe de tarage impose une contrainte qui implique que le paramètre <span class="math inline">\(b\)</span> se déduit automatiquement des trois autres paramètres.</p>
 <p>La spécification des paramètres a priori se fait dans l’onglet <img src="prior_densities.svg" /> <em>Spécification des paramètres a priori</em>, où chaque contrôle est associé à un onglet. En reprenant l’exemple considéré jusqu’ici, on peut spécifier les caractéristiques du premier contrôle en saisissant une description du contrôle, puis en sélectionnant son type dans le menu déroulant (ici, <img src="hc_rect_weir.svg" /> <em>Déversoir rectangulaire</em>). La formule hydraulique du contrôle comportant ses paramètres physiques est affichée pour rappeler leur lien avec les paramètres <span class="math inline">\(k\)</span>, <span class="math inline">\(a\)</span> et <span class="math inline">\(c\)</span> de la courbe de tarage à estimer.</p>
 <p>Vous pouvez renseigner les valeurs incertaines des paramètres physiques dans les champs situés dans la partie haute de la fenêtre. Certains champs sont pré-remplis car ils ne dépendent que du type de contrôle, mais vous pouvez toujours les modifier si vous le souhaitez. Certains paramètres sont même fixés mais vous pouvez libérer leurs valeurs en décochant la case située à droite de leur champ.Notez que partout dans BaRatinAGE, les incertitudes sont exprimées sous la forme d’incertitudes élargies à 95%, c’est-à-dire comme la demi-longueur d’un intervalle de confiance à 95%. Pour une distribution gaussienne, cela correspond à 1.96 fois l’écart-type. En reprenant l’exemple de l’Aisne à Verrières, le premier contrôle (déversoir) peut être spécifié ainsi :</p>
 <p><img src="SpecPriors_Verrieres.fr.png" /></p>
@@ -417,15 +417,7 @@ Et pour le lit moyen :</p>
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> 
-		
-
-		
-		    &nbsp; | &nbsp;
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> 
 		
 
 		
@@ -434,6 +426,14 @@ Et pour le lit moyen :</p>
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
 		
 
 		
@@ -507,15 +507,15 @@ Et pour le lit moyen :</p>
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> </br> </br>
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> </br> </br>
 		
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
 		
     
 		

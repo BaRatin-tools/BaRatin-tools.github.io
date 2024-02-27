@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1708688321" rel="stylesheet">
+<link href="/css/custom.css?1709046419" rel="stylesheet">
 
 
 
@@ -301,22 +301,22 @@
 
 <div id="généralités" class="section level1">
 <h1>Généralités</h1>
-<p>BaRatinAGE est un logiciel permettant d’estimer des courbes de tarage ainsi que leurs incertitudes, et de propager ces incertitudes aux hydrogrammes. La méthode est basée sur une <a href="HydraulicAnalysis.pdf">XXX analyse hydraulique</a> de la station hydrométrique et sur l’<a href="../../topics/bayesien">XXX estimation bayésienne</a> de la courbe de tarage. BaRatinAGE est l’acronyme de BAyesian RATINg curve Advanced Graphical Environment.</p>
-<p>Pour installer BaRatinAGE, il vous suffit d’extraire le fichier zip que vous avez dû télécharger <a href="https://github.com/BaRatin-tools/BaRatinAGE/releases">ici</a>, <strong>pourvu que vous ayez les droits d’écriture dans ce dossier</strong>. Double-cliquez sur le fichier <strong>BaRatinAGE.exe</strong> (sous Linux: <strong>bin/BaRatinAGE</strong>), et (si tout va bien…) c’est parti!</p>
-<p>Note : la langue par défaut au premier lancement de BaRatinAGE est le français. Vous pouvez changer la langue via le menu Options…Langue</p>
+<p>BaRatinAGE est un logiciel permettant d’estimer des courbes de tarage ainsi que leurs incertitudes, et de propager ces incertitudes aux hydrogrammes. La méthode est basée sur une <a href="/fr/doc/topics/analyse-hydraulique">analyse hydraulique</a> de la station hydrométrique et sur l’<a href="/fr/doc/topics/bayesien">estimation bayésienne</a> de la courbe de tarage. BaRatinAGE est l’acronyme de BAyesian RATINg curve Advanced Graphical Environment.</p>
+<p>Pour installer BaRatinAGE, il vous suffit d’extraire le fichier zip que vous avez dû télécharger <a href="https://github.com/BaRatin-tools/BaRatinAGE/releases">ici</a>, <strong>pourvu que vous ayez les droits d’écriture dans ce dossier</strong>. Double-cliquez sur le fichier <strong>BaRatinAGE.exe</strong> (sous Linux : <strong>bin/BaRatinAGE</strong>), et (si tout va bien…) c’est parti!</p>
+<p>Note : la langue par défaut au premier lancement de BaRatinAGE est le français. Vous pouvez changer la langue via le menu <em>Options…Changer de langue</em>.</p>
 </div>
-<div id="principaux-objets-dans-baratinage" class="section level1">
-<h1>Principaux objets dans BaRatinAGE</h1>
-<p>BaRatinAGE manipule les objets suivants, dont le fonctionnement sera détaillé dans les pages qui suivent:</p>
+<div id="principaux-composants-dans-baratinage" class="section level1">
+<h1>Principaux composants dans BaRatinAGE</h1>
+<p>BaRatinAGE manipule les composants suivants, dont le fonctionnement sera détaillé dans les pages qui suivent:</p>
 <ul>
-<li>La <em>configuration hydraulique</em> est la définition de l’ensemble des contrôles qui gouvernent la relation physique hauteur-débit, et de leur succession/combinaison lorsque la hauteur d’eau augmente. La configuration hydraulique induit l’équation qui sera utilisée pour la courbe de tarage.</li>
+<li>La <em>configuration hydraulique</em> est la définition de l’ensemble des contrôles (hydrauliques) qui gouvernent la relation physique hauteur-débit, et de leur succession/combinaison lorsque la hauteur d’eau augmente. La configuration hydraulique induit l’équation qui sera utilisée pour la courbe de tarage.</li>
 <li>Le <em>jeu de jaugeages</em> est l’ensemble des mesures ponctuelles de hauteur et de débit qui seront utilisées pour estimer les paramètres de la courbe de tarage.</li>
-<li>Le modèle d’<em>erreur restante</em> définit les propriétés de l’erreur structurelle de la courbe de tarage.</li>
+<li>Le <em>modèle d’erreur structurelle</em> définit les propriétés de l’erreur structurelle (ou “restante”) de la courbe de tarage.</li>
+<li>La <em>courbe de tarage</em> est le modèle hauteur-débit estimé à partir d’une configuration hydraulique, d’un jeu de jaugeages et d’un modèle d’erreur structurelle.</li>
 <li>Le <em>limnigramme</em> est la série temporelle de hauteur mesurée en continu au droit de la station hydrométrique.</li>
-<li>La <em>courbe de tarage</em> est la relation hauteur-débit estimée à partir d’une configuration hydraulique, d’un jeu de jaugeages et d’un modèle d’erreur restante.</li>
 <li>L’<em>hydrogramme</em> est la série temporelle de débit calculée à partir d’un limnigramme et d’une courbe de tarage.</li>
 </ul>
-<p>Les quatre premiers objets dans la liste ci-dessus sont des données d’entrée pour les calculs effectués par BaRatinAGE, et doivent donc être spécifiés par l’utilisateur. A l’opposé, les objets <em>courbe de tarage</em> et <em>hydrogramme</em> représentent les résultats des calculs effectués par BaRatinAGE. Ils pourront être exportés sous différents formats.</p>
+<p>Les quatre composants <em>configuration hydraulique</em>, <em>jeu de jaugeages</em>, <em>modèle d’erreur structurelle</em> et <em>limnigramme</em> sont des données d’entrée pour les calculs effectués par BaRatinAGE, et doivent donc être spécifiés par l’utilisateur. A l’opposé, les composants <em>courbe de tarage</em> et <em>hydrogramme</em> sont les résultats des calculs effectués par BaRatinAGE. Ils pourront être exportés sous différents formats.</p>
 </div>
 
 
@@ -361,15 +361,7 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> 
-		
-
-		
-		    &nbsp; | &nbsp;
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> 
 		
 
 		
@@ -378,6 +370,14 @@
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
 		
 
 		
@@ -451,15 +451,15 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> </br> </br>
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> </br> </br>
 		
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
 		
     
 		

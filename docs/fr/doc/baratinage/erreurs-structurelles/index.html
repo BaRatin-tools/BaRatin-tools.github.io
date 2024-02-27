@@ -22,7 +22,7 @@
 <meta name="googlebot" content="index,follow,snippet,archive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Erreurs structurelles</title>
+<title>Modèle d&amp;rsquo;erreur structurelle</title>
 <meta name="author" content="" />
 
 
@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1708688321" rel="stylesheet">
+<link href="/css/custom.css?1709046419" rel="stylesheet">
 
 
 
@@ -75,7 +75,7 @@
 
 <meta property="og:locale" content="fr">
 <meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
-<meta property="og:title" content="Erreurs structurelles">
+<meta property="og:title" content="Modèle d&amp;rsquo;erreur structurelle">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/" />
 <meta property="og:description" content="">
@@ -94,7 +94,7 @@
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:title" content="Erreurs structurelles">
+<meta name="twitter:title" content="Modèle d&amp;rsquo;erreur structurelle">
 
 <meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
 
@@ -116,10 +116,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand home" href="/fr/">
                     
-                      <img src="/img/logoWithText.png" alt="Erreurs structurelles logo" class="hidden-xs hidden-sm" />
-                      <img src="/img/logo.png" alt="Erreurs structurelles logo" class="visible-xs visible-sm" />
+                      <img src="/img/logoWithText.png" alt="Modèle d&#39;erreur structurelle logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Modèle d&#39;erreur structurelle logo" class="visible-xs visible-sm" />
                     
-                    <span class="sr-only">Erreurs structurelles - aller à l&#39;accueil</span>
+                    <span class="sr-only">Modèle d&#39;erreur structurelle - aller à l&#39;accueil</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -279,7 +279,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Erreurs structurelles</h1>
+                <h1>Modèle d&#39;erreur structurelle</h1>
             </div>
         </div>
     </div>
@@ -299,7 +299,25 @@
                           
 
 
-<p>XXX</p>
+<div id="généralités" class="section level1">
+<h1>Généralités</h1>
+<p>Imaginons la situation suivante, qui est idéalisée et donc forcément irréaliste : sur une station hydrométrique, nous disposons de jaugeages parfaits (sans aucune incertitude), et en très grand nombre. En conséquence, il est possible d’estimer très précisément les paramètres de la courbe de tarage, et donc l’incertitude autour de la courbe de tarage est très faible - disons qu’elle est même négligeable pour simplifier. Malgré tout, on s’attend toujours à ce que les jaugeages ne s’alignent pas parfaitement sur la courbe de tarage. Il existe donc toujours une dispersion des jaugeages autour de la courbe qui n’est due ni à l’incertitude des jaugeages (qui est nulle), ni à celle du calage des paramètres de la courbe (qui est négligeable).</p>
+<p>Plus généralement, on observe fréquemment que les incertitudes des jaugeages et l’incertitude liée à l’estimation des paramètres de la courbe ne suffisent pas à expliquer la dispersion des jaugeages autour de la courbe. Il “reste” donc une source d’erreur, qui a certainement de multiples origines: erreur structurelle de la courbe de tarage (c’est-à-dire le fait que l’équation utilisée n’est qu’une approximation de la vraie relation physique hauteur-débit), légers détarages non détectés, phénomène d’hystérésis ignoré, incertitudes sur les jaugeages sous-estimées, etc.</p>
+<p>Pour faire face à ce problème, BaRatinAGE introduit le concept d’erreur restante, qui sera appelée <em>erreur structurelle</em> pour simplifier l’interprétation, qui est utilisée pour ajouter l’incertitude qui manque pour expliquer la dispersion des jaugeages autour de la courbe de tarage, sans vraiment préjuger de l’origine de cette incertitude manquante. C’est en quelque sorte le ramasse miettes des incertitudes (d’où l’icône utilisée).</p>
+</div>
+<div id="modèles-disponibles-dans-baratinage" class="section level1">
+<h1>Modèles disponibles dans BaRatinAGE</h1>
+<p>L’<em>erreur structurelle</em> est supposée indépendante d’un jaugeage à l’autre, gaussienne, de moyenne nulle, et d’écart-type inconnu <span class="math inline">\(\sigma\)</span>. Cet écart-type sera donc estimé en même temps que les paramètres de la courbe de tarage. Plusieurs options pour cet écart-type inconnu ont été étudiées :</p>
+<ul>
+<li>L’écart-type est constant, il y a donc un unique paramètre supplémentaire à estimer. L’expérience montre que cette hypothèse n’est pas très adaptée aux cas typiquement rencontrés en pratique. Plus précisément, on observe fréquemment que l’écart-type est plus grand pour les forts débits.</li>
+<li>Pour tenir compte de cette observation, la seconde option est de supposer que l’écart-type <span class="math inline">\(\sigma\)</span> est une fonction affine du débit calculé par la courbe de tarage : <span class="math inline">\(\sigma = \gamma_1 + \gamma_2 \ Q\)</span>. Dans ce cas, il y a deux paramètres à estimer, <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span>.</li>
+<li>La troisième option est une version purement proportionnelle de l’option précédente : <span class="math inline">\(\sigma = \gamma_2 \ Q\)</span>.</li>
+</ul>
+<p>En pratique, nous recommandons d’utiliser la deuxième option (<span class="math inline">\(\sigma = \gamma_1 + \gamma_2 \ Q\)</span>), car elle permet généralement de distribuer l’<em>erreur structurelle</em> sur toute la gamme de débit de façon réaliste. Pour l’instant, seul ce modèle d’<em>erreur structurelle</em> est implémentée dans BaRatinAGE (les deux autres le seront sans doute dans de futures versions du logiciel). Par défaut, des distributions uniformes sont choisies pour les paramètres <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span> :</p>
+<p><img src="StructError.png" /></p>
+<p>Si on déverrouille les champs, il est possible de spécifier soi-même les distributions des paramètres <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span>. Par exemple, la borne supérieure par défaut (10000 m<span class="math inline">\(^3\)</span>/s) de la distribution uniforme de <span class="math inline">\(\gamma_1\)</span> peut ne pas être forcément bien adaptée à l’ordre de grandeur des débits les plus forts enregistrés à la station hydrométrique. Il peut alors être utile de l’augmenter ou de la diminuer.</p>
+<p>Une description plus formelle et plus complète des modèles d’<em>erreur structurelle</em>, et plus généralement des modèles statistiques utilisés dans BaRatinAGE, est disponible dans <a href="/fr/doc/topics/modele-stat">ce document</a>.</p>
+</div>
 
 
                         </div>                        
@@ -342,16 +360,8 @@
 		
     
 		
-		   <strong> <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> </strong> 
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> </strong> 
 
-		
-
-		
-		    &nbsp; | &nbsp;
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
 		
 
 		
@@ -360,6 +370,14 @@
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
 		
 
 		
@@ -431,17 +449,17 @@
     
 		
 		<div style="background-color:beige;">
-		   <strong> <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> </strong></br>
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> </strong></br>
 		</div>
 		</br>
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> </br> </br>
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
 		
     
 		

@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1708688321" rel="stylesheet">
+<link href="/css/custom.css?1709046419" rel="stylesheet">
 
 
 
@@ -299,7 +299,45 @@
                           
 
 
-<p>XXX</p>
+<div id="création-dun-limnigramme" class="section level1">
+<h1>Création d’un limnigramme</h1>
+<p>Un limnigramme est une série temporelle de hauteurs d’eau.</p>
+<p>Par défaut, un limnigramme nommé <em>Ht (1)</em> pré-existe et peut être utilisé. Vous pouvez créer un nouveau limnigramme de plusieurs façons :</p>
+<ul>
+<li>via le menu <em>Composants…Créer un nouveau limnigramme</em> ;</li>
+<li>en effectuant un clic droit sur le noeud <img src="limnigraph.svg" /> <em>Limnigramme</em> dans l’arborescence de l’Explorateur des composants ;</li>
+<li>en cliquant sur le bouton <img src="limnigraph_add.svg" /> dans la barre d’outils.</li>
+</ul>
+<p>Il vous sera possible de renommer ce nouveau limnigramme et d’en saisir une description. Un limnigramme existant peut être dupliqué ou supprimé.</p>
+<p>Il ne vous reste plus qu’à importer le fichier de limnigramme en cliquant sur le bouton <em>Importer un limnigramme</em>, en sélectionnant le fichier texte de votre choix, et en en spécifiant le format. Le fichier de limnigramme est un fichier texte de format libre mais devant comporter au moins cinq colonnes avec les données suivantes :</p>
+<ul>
+<li>La date/heure, à un format à spécifier (<em>AAAA/MM/JJ hh:mm:ss</em> ou une variante) ;</li>
+<li>La hauteur d’eau enregistrée, en mètres ;</li>
+<li>L’incertitude élargie liée aux erreurs non-systématiques ;</li>
+<li>L’index de période à erreur systématique constante ;</li>
+<li>L’ncertitude élargie liée l’erreur systématique constante.</li>
+</ul>
+<p>Le traitement des incertitudes sur le limnigramme permet en effet de différencier deux types d’erreurs de mesure des hauteurs d’eau : les erreurs non-systématiques (qui varient à chaque pas de temps) et les erreurs systématiques (qui restent identiques sur un ensemble de pas de temps). Typiquement, les erreurs non-systématiques sont associées au bruit du capteur et au batillage ; les erreurs systématiques sont associées au recalage périodique du capteur par rapport à l’échelle de référence (pour une explication plus détaillée, voir <a href="/fr/doc/topics/limni">ce document</a>). Ce dernier type d’erreur constitue en fait un biais inconnu, qui est supposé constant entre deux recalages du capteur. Un index de valeur 0 signifie que cette erreur est ignorée. On entrera la valeur 1 sur toutes les lignes correspondant à la première période, puis la valeur 2 pour la seconde période, etc.</p>
+<p>A titre d’exemple, vous pouvez sélectionner le fichier <em>limnigraph_mv.csv</em> dans le répertoire <em>example</em>, qui contient un limnigramme pour l’Aisne à Verrières pour les mois d’avril et mai 2022 (avec des lacunes codées <em>NA</em>), en spécifiant les paramètres d’import suivants :</p>
+<p><img src="StageSeries_Import_mv.fr.png" /></p>
+<p>La fenêtre se met alors à jour en affichant le tableau du limnigramme ainsi que le graphique dans l’onglet <img src="limnigraph.svg" /> <em>Graphique</em> :</p>
+<p><img src="StageSeries.fr.png" /></p>
+<p>Le tableau contient les colonnes suivantes :</p>
+<ul>
+<li>La date, au format AAAA-MM-JJ hh:mm:ss ;</li>
+<li>La hauteur d’eau enregistrée, en mètres ;</li>
+<li>Le quantile à 2.5%, calculé à partir des informations d’incertitude ;</li>
+<li>Le quantile à 97.5%, calculé à partir des informations d’incertitude.</li>
+</ul>
+<p>Dans l’onglet <img src="limnigraph.svg" /> <em>Graphique</em>, ces quantiles sont représentés sur le graphique sous la forme d’une enveloppe d’incertitude (jaune) autour du limnigramme.</p>
+<p>Dans l’onglet <img src="errors.svg" /> <em>Incertitude limnimétrique</em>, les données de hauteur d’eau et incertitudes importées sont présentées dans l’onglet <em>Hauteur d’eau et incertitude</em>, tandis que les valeurs de hauteur d’eau échantillonnées ayant servi à établir les quantiles sont présentées dans l’onglet <em>Echantillons de limnigrammes avec erreurs</em>.</p>
+<p>Dans chaque onglet, il est possible d’exporter les valeurs au format CSV ou de les copier dans le presse-papier. Il est également possible d’ouvrir le graphique du limnigramme dans une nouvelle fenêtre, d’exporter l’image au format SVG ou PNG, ou encore de la copier dans le presse-papier.</p>
+</div>
+<div id="remarques-sur-la-gestion-du-limnigramme-dans-baratinage" class="section level1">
+<h1>Remarques sur la gestion du limnigramme dans BaRatinAGE</h1>
+<p>A l’heure actuelle, le limnigramme ne peut pas être modifié directement dans BaRatinAGE : vous devez créer et modifier vous-même le fichier source au format CSV. Les futures versions de BaRatinAGE proposeront des outils plus développés pour la gestion du limnigramme et de ses incertitudes.</p>
+<p>De plus, signalons que les fichiers de limnigramme peuvent devenir volumineux lorsque le pas d’échantillonnage est faible et/ou la durée est longue. Ceci peut créer un léger ralentissement pour le tracé du graphique. Ceci sera également amélioré dans les futures versions de BaRatinAGE en proposant des outils de sous-échantillonnage.</p>
+</div>
 
 
                         </div>                        
@@ -342,7 +380,15 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> 
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> 
 		
 
 		
@@ -352,14 +398,6 @@
 		
 		   <strong> <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </strong> 
 
-		
-
-		
-		    &nbsp; | &nbsp;
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> 
 		
 
 		
@@ -430,7 +468,11 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> </br> </br>
 		
     
 		
@@ -438,10 +480,6 @@
 		   <strong> <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </strong></br>
 		</div>
 		</br>
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> </br> </br>
 		
     
 		

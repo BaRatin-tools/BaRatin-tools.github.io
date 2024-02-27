@@ -27,7 +27,7 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</guid>
-      <description>Généralités&#xD;BaRatinAGE est un logiciel permettant d’estimer des courbes de tarage ainsi que leurs incertitudes, et de propager ces incertitudes aux hydrogrammes. La méthode est basée sur une XXX analyse hydraulique de la station hydrométrique et sur l’XXX estimation bayésienne de la courbe de tarage.</description>
+      <description>Généralités&#xD;BaRatinAGE est un logiciel permettant d’estimer des courbes de tarage ainsi que leurs incertitudes, et de propager ces incertitudes aux hydrogrammes. La méthode est basée sur une analyse hydraulique de la station hydrométrique et sur l’estimation bayésienne de la courbe de tarage.</description>
     </item>
     <item>
       <title>Contrôles hydrauliques</title>
@@ -41,7 +41,7 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/</guid>
-      <description>Organisation générale&#xD;La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE. Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
+      <description>Organisation générale&#xD;La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE :&#xA;Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
     </item>
     <item>
       <title>Second cas d&#39;étude</title>
@@ -76,14 +76,7 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/</guid>
-      <description>Création d’un jeu de jaugeages&#xD;Par défaut, un jeu de jaugeages vierge nommé JJ (1) pré-existe et peut être utilisé. Vous pouvez créer un nouveau jeu de jaugeages de plusieurs façons :</description>
-    </item>
-    <item>
-      <title>Erreurs structurelles</title>
-      <link>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</guid>
-      <description>XXX</description>
+      <description>Création d’un jeu de jaugeages&#xD;Un jaugeage est un couple de mesures ponctuelles de hauteur d’eau et débit simultanés, assortis de leurs incertitudes.&#xA;Par défaut, un jeu de jaugeages vierge nommé JJ (1) pré-existe et peut être utilisé.</description>
     </item>
     <item>
       <title>Incertitudes dans les limnigrammes</title>
@@ -93,24 +86,24 @@
       <description>XXX</description>
     </item>
     <item>
-      <title>Incertitudes dans les hydrogrammes</title>
-      <link>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</link>
+      <title>Modèle d&#39;erreur structurelle</title>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</guid>
-      <description>XXX</description>
-    </item>
-    <item>
-      <title>Limnigramme</title>
-      <link>https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/</guid>
-      <description>XXX</description>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</guid>
+      <description>Généralités&#xD;Imaginons la situation suivante, qui est idéalisée et donc forcément irréaliste : sur une station hydrométrique, nous disposons de jaugeages parfaits (sans aucune incertitude), et en très grand nombre.</description>
     </item>
     <item>
       <title>Courbe de tarage</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/</guid>
+      <description>Création d’une courbe de tarage&#xD;Une courbe de tarage est une fonction donnant le débit en fonction de la hauteur d’eau.&#xA;Par défaut, une courbe de tarage vierge nommée CT (1) pré-existe et peut être utilisée.</description>
+    </item>
+    <item>
+      <title>Incertitudes dans les hydrogrammes</title>
+      <link>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</guid>
       <description>XXX</description>
     </item>
     <item>
@@ -121,11 +114,18 @@
       <description>XXX</description>
     </item>
     <item>
+      <title>Limnigramme</title>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/</guid>
+      <description>Création d’un limnigramme&#xD;Un limnigramme est une série temporelle de hauteurs d’eau.&#xA;Par défaut, un limnigramme nommé Ht (1) pré-existe et peut être utilisé. Vous pouvez créer un nouveau limnigramme de plusieurs façons :</description>
+    </item>
+    <item>
       <title>Hydrogramme</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/hydrogramme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/hydrogramme/</guid>
-      <description>XXX</description>
+      <description>Création d’un hydrogramme&#xD;Un hydrogramme est une série temporelle de débit.&#xA;Par défaut, un hydrogramme nommé Qt (1) pré-existe et peut être utilisé. Vous pouvez créer un nouvel hydrogramme de plusieurs façons :</description>
     </item>
     <item>
       <title>Modèle statistique utilisé dans BaRatin</title>
@@ -146,14 +146,14 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</guid>
-      <description>XXX</description>
+      <description>Utilisation du contenu du fichier .bam&#xD;Le fichier de sauvegarde au format .bam n’est en fait rien d’autre qu’un fichier zip qui contient l’intégralité des informations générées par BaRatinAGE, sous la forme de simples fichiers textes.</description>
     </item>
     <item>
       <title>Foire aux questions</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/faq/</guid>
-      <description>XXX</description>
+      <description>Note : cette section sera mise à jour au fil des questions que nous recevrons.&#xA;Installation&#xD;Question : je travaille sous Linux, puis-je utiliser BaRatinAGE ?</description>
     </item>
     <item>
       <title>XXX</title>

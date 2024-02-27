@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1708688321" rel="stylesheet">
+<link href="/css/custom.css?1709046419" rel="stylesheet">
 
 
 
@@ -299,7 +299,50 @@
                           
 
 
-<p>XXX</p>
+<div id="création-dun-hydrogramme" class="section level1">
+<h1>Création d’un hydrogramme</h1>
+<p>Un hydrogramme est une série temporelle de débit.</p>
+<p>Par défaut, un hydrogramme nommé <em>Qt (1)</em> pré-existe et peut être utilisé. Vous pouvez créer un nouvel hydrogramme de plusieurs façons :</p>
+<ul>
+<li>via le menu <em>Composants…Créer un nouvel hydrogramme</em> ;</li>
+<li>en effectuant un clic droit sur le noeud <img src="hydrograph.svg" /> <em>Hydrogramme</em> dans l’arborescence de l’Explorateur des composants ;</li>
+<li>en cliquant sur le bouton <img src="hydrograph_add.svg" /> dans la barre d’outils.</li>
+</ul>
+<p>Il vous sera possible de renommer ce nouvel hydrogramme et d’en saisir une description. Un hydrogramme existant peut être dupliqué ou supprimé.</p>
+<p>La spécification des propriétés de l’hydrogramme se fait alors en sélectionnant :</p>
+<ul>
+<li>Une courbe de tarage ;</li>
+<li>Un limnigramme.</li>
+</ul>
+<p>Vous êtes à présent prêts à lancer le calcul de l’hydrogramme, en cliquant sur le bouton <em>Calculer l’hydrogramme</em>. A l’issue du calcul, le panneau se met à jour comme ceci :</p>
+<p><img src="Hydrograph.fr.png" /></p>
+<p>Note : Le temps de calcul à cette étape peut être important, et il est principalement déterminé par le nombre de pas de temps que contient le limnigramme. En guise d’ordre de grandeur, il faut s’attendre à un temps de calcul de l’ordre de la minute pour un limnigramme contenant 10 000 pas de temps. Ceci est dû au mode de calcul utilisé par BaRatinAGE pour l’estimation des incertitudes. En effet, pour calculer les intervalles d’incertitudes autour de l’hydrogramme, ce sont plusieurs centaines d’hydrogrammes qui sont en fait calculés, en propageant à la fois les incertitudes du limnigramme et celles liées à l’estimation de la courbe de tarage (approche spaghetti). Pour plus de détails sur ce calcul, vous pouvez consulter <a href="/fr/doc/topics/hydrogrammes">ce document</a>).</p>
+<p>L’hydrogramme et ses intervalles d’incertitude à 95% sont disponibles sous forme d’un tableau :</p>
+<p><img src="Hydrograph_Table.fr.png" /></p>
+<p>Le tableau contient les colonnes suivantes :</p>
+<ul>
+<li>La date, au format AAAA-MM-JJ hh:mm:ss ;</li>
+<li>Le <em>débit a posteriori</em> (maxpost) en m<span class="math inline">\(^3\)</span>/s ;</li>
+<li>La borne inférieure de l’intervalle d’incertitude <em>paramétrique</em> à 95%, en m<span class="math inline">\(^3\)</span>/s ;</li>
+<li>La borne supérieure de l’intervalle d’incertitude <em>paramétrique</em> à 95%, en m<span class="math inline">\(^3\)</span>/s ;</li>
+<li>La borne inférieure de l’intervalle d’incertitude <em>totale</em> à 95%, en m<span class="math inline">\(^3\)</span>/s ;</li>
+<li>La borne supérieure de l’intervalle d’incertitude <em>totale</em> à 95%, en m<span class="math inline">\(^3\)</span>/s.</li>
+</ul>
+<p>Il est possible d’exporter ces résultats au format CSV ou de les copier dans le presse-papier.</p>
+</div>
+<div id="représentations-graphiques" class="section level1">
+<h1>Représentations graphiques</h1>
+<p>En zoomant dans le panneau graphique, on voit apparaître plusieurs intervalles d’incertitude autour de l’hydrogramme calculé, comme représenté ci-dessous :</p>
+<p><img src="Hydrograph_Zoom.fr.png" /></p>
+<p>Les éléments de ce graphique doivent être interprétés comme ceci :</p>
+<ul>
+<li>La <strong>courbe noire</strong> représente l’hydrogramme calculé en propageant le limnigramme (sans incertitudes) dans la <em>courbe de tarage a posteriori</em> (maxpost, donc sans incertitudes) ;</li>
+<li>L’<strong>intervalle jaune</strong> représente l’<em>incertitude limnimétrique</em> induite uniquement par les erreurs du limnigramme : l’incertitude du limnigramme est propagée dans la courbe de tarage maxpost (donc sans incertitudes) ;</li>
+<li>L’<strong>intervalle rouge clair</strong> représente l’<em>incertitude paramétrique</em> induite à la fois par le limnigramme et par les paramètres de la courbe de tarage: l’incertitude du limnigramme est propagée dans un grand nombre de courbes de tarage, dont les paramètres varient suivant les simulations MCMC effectuées lors de l’estimation de la courbe de tarage ;</li>
+<li>L’<strong>intervalle rouge foncé</strong> représente l’<em>incertitude totale</em> : en plus des deux sources d’incertitude décrites ci-dessus, on ajoute l’incertitude induite par l’erreur structurelle.</li>
+</ul>
+<p>La décomposition des incertitudes présentée dans ce graphique est riche d’information : on voit par exemple que pour l’extrait représenté ci-dessus, l’incertitude liée au limnigramme (jaune) est dominante dans le budget d’incertitude, en raison de la faible sensibilité du contrôle (déversoir horizontal) pour les basses eaux. On observe aussi que, pour cette gamme de débit, l’incertitude paramétrique (rouge clair) est plus faible que l’incertitude stucturelle, qui contribue à l’intervalle d’incertitude totale (en rouge foncé). Ceci suggère que, toujours pour cette gamme de débit, la quantité d’information a priori et de jaugeages est suffisante pour estimer précisément le modèle de courbe de tarage (la configuration hydraulique), mais que ce dernier pourrait peut-être être amélioré pour diminuer l’incertitude de l’hydrogramme.</p>
+</div>
 
 
                         </div>                        
@@ -342,15 +385,7 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> 
-		
-
-		
-		    &nbsp; | &nbsp;
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> 
 		
 
 		
@@ -359,6 +394,14 @@
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
 		
 
 		
@@ -430,15 +473,15 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Erreurs structurelles</a> </br> </br>
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> </br> </br>
 		
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
 		
     
 		
