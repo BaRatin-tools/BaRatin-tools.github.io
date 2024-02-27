@@ -12,28 +12,28 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</guid>
-      <description>Généralités BaRatinAGE est un logiciel permettant d’estimer des courbes de tarage ainsi que leurs incertitudes, et de propager ces incertitudes aux hydrogrammes. La méthode est basée sur une XXX analyse hydraulique de la station hydrométrique et sur l’XXX estimation bayésienne de la courbe de tarage.</description>
+      <description>Généralités&#xD;BaRatinAGE est un logiciel permettant d’estimer des courbes de tarage ainsi que leurs incertitudes, et de propager ces incertitudes aux hydrogrammes. La méthode est basée sur une XXX analyse hydraulique de la station hydrométrique et sur l’XXX estimation bayésienne de la courbe de tarage.</description>
     </item>
     <item>
       <title>Fenêtre principale</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/</guid>
-      <description>Organisation générale La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE. Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
+      <description>Organisation générale&#xD;La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE. Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
     </item>
     <item>
       <title>Configuration hydraulique</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/</guid>
-      <description>XXX</description>
+      <description>Généralités&#xD;La configuration hydraulique est la définition de l’ensemble des contrôles qui gouvernent la relation physique hauteur-débit, et de leur succession/combinaison lorsque la hauteur d’eau augmente.</description>
     </item>
     <item>
       <title>Jaugeages</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/</guid>
-      <description>XXX</description>
+      <description>Création d’un jeu de jaugeages&#xD;Par défaut, un jeu de jaugeages vierge nommé JJ (1) pré-existe et peut être utilisé. Vous pouvez créer un nouveau jeu de jaugeages de plusieurs façons :</description>
     </item>
     <item>
       <title>Erreurs structurelles</title>

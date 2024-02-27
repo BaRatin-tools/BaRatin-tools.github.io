@@ -14,9 +14,17 @@ Le fichier de sauvegarde au format .bam n'est en fait rien d'autre qu'un fichier
 Malheureusement, la documentation de ces fichiers bruts est pour le moment rudimentaire. Nous améliorerons cette documentation dans les futures versions de BaratinAGE (via des en-têtes plus explicites dans les fichiers, et la rédaction d'une aide spécifique). En attendant, vous pouvez toujours envoyer un courriel à l'équipe de développement de BaRatinAGE si vous souhaitez en savoir plus sur ces fichiers.
 
 
-# Pilotage de l'exécutable BaM.exe
+# Pilotage de l'exécutable BaM!
 
-L'environnement de travail BaRatinAGE 3 travaille en pilotant le fichier exécutable BaM.exe, qui effectue tous les calculs, et qui se trouve dans le répertoire "exe" du dossier d'installation de BaRatinAGE. Le pilotage de cet exécutable s'effectue intégralement en manipulant quelques fichiers de configuration qui sont en pratique de simples fichiers textes. Ceci implique que vous pouvez si vous le souhaitez piloter directement l'exécutable BaM.exe, sans passer par l'interface BaRatinAGE. Ceci peut être utile par exemple si vous utilisez un langage de programmation et souhaitez effectuer des calculs directement dans un de vos programmes.
+L'environnement de travail BaRatinAGE 3 travaille en pilotant le fichier exécutable [BaM!](https://github.com/BaM-tools), qui effectue tous les calculs, et qui se trouve dans le répertoire "exe" du dossier d'installation de BaRatinAGE. Le pilotage de cet exécutable s'effectue intégralement en manipulant quelques fichiers de configuration qui sont en pratique de simples fichiers textes. Ceci implique que vous pouvez si vous le souhaitez piloter directement l'exécutable BaM!, sans passer par l'interface BaRatinAGE. Ceci peut être utile par exemple si vous utilisez un langage de programmation et souhaitez effectuer des calculs directement dans un de vos programmes.
+
+XXX notamment sur R, voir RBaM ici : https://github.com/BaM-tools/RBaM
+(l'exemple fourni est le modèle BaRatin)
+
+XXX Renvoi à l'écosystème BaM ici, si vous voulez aller plus loin en ayant accès à l'exécutable et aux fichiers de configuration : 
+
+https://github.com/BaM-tools/BaMdocs
+XXX
 
 Vous pouvez toujours envoyer un mail à l'équipe de développement de BaRatinAGE si vous souhaitez en savoir plus.
 

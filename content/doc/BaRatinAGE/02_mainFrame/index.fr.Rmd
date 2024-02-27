@@ -75,9 +75,10 @@ Ce menu permet de modifier les options suivantes :
 
 -   *changer de langue* : langue de BaRatinAGE (27 langues disponibles à ce jour, n'hésitez pas à en ajouter !).
 
-Options à venir, développements en cours :
+<!--- Options à venir, développements en cours :
 
 -   *Préférences* : choix entre plusieurs coutumes régionales (choix entre les coefficients de Strickler ou de Manning, choix du système d'unités, etc.) ;
 -   *Répertoire par défaut* : définit le répertoire par défaut qui sera proposé pour toutes les actions de sauvegarde, export, ouverture de fichiers, etc. (par défaut, ce répertoire est le dossier dans lequel est installé BaRatinAGE) ;
 -   *Options MCMC* : permet de régler les propriétés de l'échantillonneur MCMC ([détails techniques](/fr/doc/topics/mcmc)).
 -   *Options de sauvegarde* : permet d'activer ou de désactiver la sauvegarde de certains composants pouvant être très volumineux. L'activation de cette sauvegarde peut générer des fichiers extrêmement volumineux (potentiellement plusieurs Go !) et ralentir notablement les actions d'ouverture et de sauvegarde.
+-->
