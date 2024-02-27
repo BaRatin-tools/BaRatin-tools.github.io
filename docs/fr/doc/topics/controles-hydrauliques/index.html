@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709048219" rel="stylesheet">
+<link href="/css/custom.css?1709048732" rel="stylesheet">
 
 
 
@@ -298,8 +298,344 @@
                         <div id="post-content">
                           
 
+<div id="TOC">
+<ul>
+<li><a href="#contrôles" id="toc-contrôles"><span class="toc-section-number">1</span> Contrôles</a>
+<ul>
+<li><a href="#equation-de-base" id="toc-equation-de-base"><span class="toc-section-number">1.1</span> Equation de base</a></li>
+<li><a href="#contrôles-par-section-et-contrôles-par-chenal" id="toc-contrôles-par-section-et-contrôles-par-chenal"><span class="toc-section-number">1.2</span> Contrôles par section et contrôles par chenal</a></li>
+</ul></li>
+<li><a href="#equations-des-contrôles-types" id="toc-equations-des-contrôles-types"><span class="toc-section-number">2</span> Equations des contrôles-types</a>
+<ul>
+<li><a href="#déversoir-rectangulaire" id="toc-déversoir-rectangulaire"><span class="toc-section-number">2.1</span> Déversoir rectangulaire</a></li>
+<li><a href="#déversoir-parabolique" id="toc-déversoir-parabolique"><span class="toc-section-number">2.2</span> Déversoir parabolique</a></li>
+<li><a href="#déversoir-triangulaire" id="toc-déversoir-triangulaire"><span class="toc-section-number">2.3</span> Déversoir triangulaire</a></li>
+<li><a href="#orifice-dénoyé" id="toc-orifice-dénoyé"><span class="toc-section-number">2.4</span> Orifice dénoyé</a></li>
+<li><a href="#chennal-rectangulaire-large" id="toc-chennal-rectangulaire-large"><span class="toc-section-number">2.5</span> Chennal rectangulaire (large)</a></li>
+<li><a href="#chennal-parabolique-large" id="toc-chennal-parabolique-large"><span class="toc-section-number">2.6</span> Chennal parabolique (large)</a></li>
+<li><a href="#chennal-triangulaire" id="toc-chennal-triangulaire"><span class="toc-section-number">2.7</span> Chennal triangulaire</a></li>
+<li><a href="#autres-types-de-contrôles" id="toc-autres-types-de-contrôles"><span class="toc-section-number">2.8</span> Autres types de contrôles</a></li>
+</ul></li>
+<li><a href="#spécification-des-a-priori" id="toc-spécification-des-a-priori"><span class="toc-section-number">3</span> Spécification des a priori</a>
+<ul>
+<li><a href="#détermination-des-paramètres-a-priori" id="toc-détermination-des-paramètres-a-priori"><span class="toc-section-number">3.1</span> Détermination des paramètres a priori</a></li>
+<li><a href="#approximation-des-contrôles-réels-complexes" id="toc-approximation-des-contrôles-réels-complexes"><span class="toc-section-number">3.2</span> Approximation des contrôles réels complexes</a></li>
+<li><a href="#remarques" id="toc-remarques"><span class="toc-section-number">3.3</span> Remarques</a></li>
+</ul></li>
+</ul>
+</div>
 
-<p>XXX</p>
+<div id="contrôles" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Contrôles</h1>
+<div id="equation-de-base" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Equation de base</h2>
+<p>Pour tous les contrôles-types utilisés dans BaRatinAGE, la relation hauteur-débit est décrite par une loi puissance qui s’active à partir d’une certaine hauteur. L’équation de base est la suivante :</p>
+<p><span class="math display">\[ Q(H) =
+\begin{cases}
+0 \text{ si } H \leq b \text{ ou } h \leq \kappa \\
+a(H-b)^c \text { sinon}
+\end{cases}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Q\)</span> est le débit et <span class="math inline">\(H\)</span> est la hauteur d’eau</li>
+<li><span class="math inline">\(\kappa\)</span> est la <em>hauteur d’activation</em> ; quand la hauteur descend sous la valeur <span class="math inline">\(\kappa\)</span>, le contrôle devient inactif</li>
+<li><span class="math inline">\(a\)</span> est le <em>coefficient</em>, qui dépend des propriétés physiques du contrôle</li>
+<li><span class="math inline">\(c\)</span> est l’<em>exposant</em>, qui dépend uniquement du type de contrôle</li>
+<li><span class="math inline">\(b\)</span> est l’<em>offset</em> ; quand la hauteur descend sous la valeur <span class="math inline">\(b\)</span>, le débit est nul.</li>
+</ul>
+<p>Notez que ce dernier paramètre est en général différent de la hauteur d’activation <span class="math inline">\(\kappa\)</span>. A titre d’exemple, pour un contrôle par chenal qui succède à un contrôle par seuil, le paramètre <span class="math inline">\(b\)</span> représente la cote moyenne du fond du lit, mais le contrôle ne s’active qu’au-delà de la hauteur d’ennoiement du seuil, qui est différente de <span class="math inline">\(b\)</span>.</p>
+</div>
+<div id="contrôles-par-section-et-contrôles-par-chenal" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Contrôles par section et contrôles par chenal</h2>
+<p>Pour les contrôles par section, la relation hauteur-débit à la section de mesure est déterminée par le passage de l’écoulement par le régime critique (nombre de Froude égal à 1) au niveau de la section de contrôle. En appliquant le principe de Bernoulli (conservation de l’énergie) entre ces deux sections, on établit l’équation suivante :</p>
+<p><span class="math display">\[Q(H) = CA_w\sqrt{2gD_h}\]</span></p>
+<p>avec <span class="math inline">\(C\)</span> un coefficient de débit dépendant de la forme de la section de contrôle et reflétant les pertes de charge entre la section de mesure et la section critique située à l’aval, <span class="math inline">\(A_w\)</span> l’aire mouillée (en <span class="math inline">\(m^2\)</span>), <span class="math inline">\(g\)</span> l’accélération de la gravité (<span class="math inline">\(g \approx 9.81 m.s^{-2}\)</span>) et <span class="math inline">\(D_h=A_w/B_w\)</span> la profondeur hydraulique (en <span class="math inline">\(m\)</span>), définie comme le ratio entre l’aire mouillée <span class="math inline">\(A_w\)</span> et la largeur au miroir <span class="math inline">\(B_w\)</span>.</p>
+<p>Pour les contrôles par chenal, i.e. quand la relation hauteur-débit est déterminée par les frottements, on établit l’équation puissance à partir de la formule de Manning-Strickler appliquée à la géométrie du chenal. La formule de Manning-Strickler s’écrit :</p>
+<p><span class="math display">\[Q(H) = K_S A_w R_h^{2/3} \sqrt{S_f}\]</span></p>
+<p>Avec <span class="math inline">\(K_S\)</span> = le coefficient de résistance à l’écoulement (coefficient de Strickler en <span class="math inline">\(m^{1/3}.s^{-1}\)</span>) ; le
+coefficient de Manning <span class="math inline">\(n = 1 / K_S\)</span> (en <span class="math inline">\(m^{-1/3}.s\)</span>) peut être utilisé à la place. <span class="math inline">\(A_w\)</span> = aire mouillée (en <span class="math inline">\(m^2\)</span>), <span class="math inline">\(R_h=A_w/P_w\)</span> = rayon hydraulique (en <span class="math inline">\(m\)</span>), <span class="math inline">\(P_w\)</span> = périmètre mouillé (en <span class="math inline">\(m\)</span>), <span class="math inline">\(S_f\)</span> = pente de la ligne d’énergie (ou pente de frottement), approximée par la pente longitudinale du fond ou de la ligne d’eau pour un écoulement permanent uniforme.</p>
+</div>
+</div>
+<div id="equations-des-contrôles-types" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Equations des contrôles-types</h1>
+<div id="déversoir-rectangulaire" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Déversoir rectangulaire</h2>
+<img src="rectangular_weir.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 1: Déversoir rectangulaire : vue en long (à gauche) et vue en travers de la section de contrôle (à droite).
+</p>
+<p>L’équation de ce type de contrôle est :
+<span class="math display">\[Q(H) = C_r \sqrt{2g} B_w (H-b)^c \]</span></p>
+<p>Pour chaque contrôle modélisé par un déversoir rectangulaire, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
+<ul>
+<li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote <span class="math inline">\(b\)</span> de la crête du déversoir ;</li>
+<li><span class="math inline">\(B_w\)</span> = la largeur déversante (en <span class="math inline">\(m\)</span>), i.e. la longueur transversale du déversoir, perpendiculairement à la direction de l’écoulement.</li>
+</ul>
+<p>Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :</p>
+<ul>
+<li><span class="math inline">\(C_r\)</span> = coefficient de débit <span class="math inline">\(\approx 0.4 ± 0.1\)</span></li>
+<li><span class="math inline">\(g\)</span> = accélération de la gravité <span class="math inline">\(\approx 9.81 ± 0.01 m.s^{-2}\)</span></li>
+<li><span class="math inline">\(c\)</span> = exposant pour une section critique rectangulaire <span class="math inline">\(\approx 1.5 ± 0.05\)</span></li>
+</ul>
+</div>
+<div id="déversoir-parabolique" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Déversoir parabolique</h2>
+<img src="parabolic_weir.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 2. Déversoir parabolique : vue en long (à gauche) et vue en travers de la section de contrôle (à droite).
+</p>
+<p>L’équation de ce type de contrôle est :</p>
+<p><span class="math display">\[Q(H) = C_p \sqrt{2g} \frac{B_p}{\sqrt{H_p}} (H-b)^c \]</span></p>
+<p>Pour chaque contrôle modélisé par un déversoir parabolique, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
+<ul>
+<li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote <span class="math inline">\(b\)</span> de la crête du déversoir au centre de la parabole ;</li>
+<li><span class="math inline">\(B_p\)</span> et <span class="math inline">\(H_p\)</span> = respectivement la largeur et la hauteur de la parabole (en <span class="math inline">\(m\)</span>), mesurés à la même cote (par exemple au plein-bord).</li>
+</ul>
+<p>Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :</p>
+<ul>
+<li><span class="math inline">\(C_p\)</span> = coefficient de débit <span class="math inline">\(\approx 0.22 ± 0.04\)</span> (<a href="https://doi.org/10.1016/j.biosystemseng.2006.09.006">Igathinathane et al. 2007</a>)</li>
+<li><span class="math inline">\(g\)</span> = accélération de la gravité <span class="math inline">\(\approx 9.81 ± 0.01 m.s^{-2}\)</span></li>
+<li><span class="math inline">\(c\)</span> = exposant pour une section critique parabolique <span class="math inline">\(\approx 2.0 ± 0.05\)</span></li>
+</ul>
+<p>Note: le coefficient de débit semble être plus grand que 0.22 pour les déversoirs paraboliques les
+plus larges : selon les résultats d’<a href="https://doi.org/10.1016/j.biosystemseng.2006.09.006">Igathinathane et al. (2007)</a>, <span class="math inline">\(C_p \approx 0.25\)</span> pour <span class="math inline">\(B_p=2H_p\)</span>. Nous ne disposons pas d’information précise sur le coefficient des déversoirs paraboliques très larges ou à seuil épais.</p>
+</div>
+<div id="déversoir-triangulaire" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Déversoir triangulaire</h2>
+<img src="triangular_weir.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 3: Déversoir triangulaire : vue en long (à gauche) et vue en travers de la section de contrôle (à droite).
+</p>
+<p>L’équation de ce type de contrôle est :
+<span class="math display">\[Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-b)^c \]</span></p>
+<p>Pour chaque contrôle modélisé par un déversoir triangulaire, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
+<ul>
+<li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote <span class="math inline">\(b\)</span> de la pointe du déversoir ;</li>
+<li><span class="math inline">\(\nu\)</span> = l’angle d’ouverture du triangle (en degrés).</li>
+</ul>
+<p>Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :</p>
+<ul>
+<li><span class="math inline">\(C_t\)</span> = coefficient de débit <span class="math inline">\(\approx 0.31 ± 0.05\)</span></li>
+<li><span class="math inline">\(g\)</span> = accélération de la gravité <span class="math inline">\(\approx 9.81 ± 0.01 m.s^{-2}\)</span></li>
+<li><span class="math inline">\(c\)</span> = exposant pour une section critique triangulaire <span class="math inline">\(\approx 2.5 ± 0.05\)</span></li>
+</ul>
+</div>
+<div id="orifice-dénoyé" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Orifice dénoyé</h2>
+<img src="orifice.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 4 : Orifice dénoyé : vue en long (à gauche) et vue en travers de la section de contrôle (à droite).
+</p>
+<p>L’équation de ce type de contrôle est :
+<span class="math display">\[Q(H) = C_o \sqrt{2g} A_w (H-b)^c \]</span></p>
+<p>Pour chaque contrôle modélisé par un orifice dénoyé (l’écoulement remplit tout l’orifice mais sort librement à l’aval, sans influence de la hauteur d’eau aval sur la relation hauteur-débit, voir Figure 4), les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
+<ul>
+<li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ;</li>
+<li><span class="math inline">\(A_w\)</span> = l’aire mouillée (en <span class="math inline">\(m²\)</span>) de la section de l’orifice.</li>
+</ul>
+<p>Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :</p>
+<ul>
+<li><span class="math inline">\(C_o\)</span> = coefficient de débit <span class="math inline">\(\approx 0.6 ± 0.1\)</span></li>
+<li><span class="math inline">\(g\)</span> = accélération de la gravité <span class="math inline">\(\approx 9.81 ± 0.01 m.s^{-2}\)</span></li>
+<li><span class="math inline">\(c\)</span> = exposant pour une section critique triangulaire <span class="math inline">\(\approx 0.5 ± 0.05\)</span></li>
+</ul>
+<p>Note : souvent l’ouvrage comprenant l’orifice produit un remous hydraulique qui influence la hauteur d’eau avant que l’orifice ne soit complètement rempli et que la loi précédente puisse s’appliquer. La modélisation hydraulique peut alors permettre de représenter cette phase de transition et l’effet de ce remous spécifique.</p>
+</div>
+<div id="chennal-rectangulaire-large" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Chennal rectangulaire (large)</h2>
+<img src="rectangular_channel.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 5: Chennal rectangulaire large : vue en long (à gauche) et section en travers à l’échelle (à droite).
+</p>
+<p>La formule de Manning-Strickler est appliquée à un chenal rectangulaire large, i.e. <span class="math inline">\(H-b \ll B_w\)</span> (typiquement <span class="math inline">\(5(H-b) &lt; B_w\)</span>).</p>
+<p>L’équation de ce type de contrôle est :</p>
+<p><span class="math display">\[Q(H) = K_S \sqrt{S} B_w (H-b)^c \]</span></p>
+<p>Pour chaque contrôle modélisé par un chennal rectangulaire large, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
+<ul>
+<li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote moyenne <span class="math inline">\(b\)</span> du fond du chenal ;</li>
+<li><span class="math inline">\(B_w\)</span> = la largeur (en <span class="math inline">\(m\)</span>), du chenal.</li>
+<li><span class="math inline">\(S\)</span> = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
+0.01 pour 1%, etc.)</li>
+<li><span class="math inline">\(K_S\)</span> = le coefficient de résistance à l’écoulement (coefficient de Strickler en <span class="math inline">\(m^{1/3}.s^{-1}\)</span>)</li>
+<li>Le coefficient de Manning <span class="math inline">\(n=1/K_S\)</span> (<span class="math inline">\(m^{-1/3}.s\)</span>) peut être utilisé à la place.</li>
+</ul>
+<p>Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :</p>
+<ul>
+<li><span class="math inline">\(c\)</span> = exposant pour un chenal rectangulaire large <span class="math inline">\(\approx 1.67 ± 0.05\)</span></li>
+</ul>
+</div>
+<div id="chennal-parabolique-large" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Chennal parabolique (large)</h2>
+<img src="parabolic_channel.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 6: Chennal parabolique large : vue en long (à gauche) et section en travers à l’échelle (à droite).
+</p>
+<p>La formule de Manning-Strickler est appliquée à un chenal parabolique large, i.e. :
+<span class="math display">\[H-b \ll \frac{3}{8}\frac{B_p^2}{H_p}\]</span></p>
+<p>Typiquement, la condition prise est :</p>
+<p><span class="math display">\[5(H-b) &lt; \frac{3}{8}\frac{B_p^2}{H_p}\]</span></p>
+<p>L’équation de ce type de contrôle est :</p>
+<p><span class="math display">\[Q(H) = K_S \sqrt{S} \left( \frac{2}{3} \right)^{5/3}\frac{B_p}{H_p} (H-b)^c \]</span></p>
+<p>Pour chaque contrôle modélisé par un chennal rectangulaire large, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
+<ul>
+<li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote moyenne <span class="math inline">\(b\)</span> du fond du chenal (thalweg) ;</li>
+<li><span class="math inline">\(B_p\)</span> et <span class="math inline">\(H_p\)</span> = respectivement la largeur et la hauteur de la parabole (en <span class="math inline">\(m\)</span>), mesurés à la même
+cote (par exemple au plein-bord).</li>
+<li><span class="math inline">\(S\)</span> = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
+0.01 pour 1%, etc.)</li>
+<li><span class="math inline">\(K_S\)</span> = le coefficient de résistance à l’écoulement (coefficient de Strickler en <span class="math inline">\(m^{1/3}.s^{-1}\)</span>)</li>
+<li>Le coefficient de Manning <span class="math inline">\(n=1/K_S\)</span> (<span class="math inline">\(m^{-1/3}.s\)</span>) peut être utilisé à la place.</li>
+</ul>
+<p>Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :</p>
+<ul>
+<li><span class="math inline">\(c\)</span> = exposant pour un chenal parabolique large <span class="math inline">\(\approx 2.17 ± 0.05\)</span></li>
+</ul>
+</div>
+<div id="chennal-triangulaire" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Chennal triangulaire</h2>
+<img src="triangular_channel.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 7: Chennal triangulaire : vue en long (à gauche) et section en travers à l’échelle (à droite).
+</p>
+<p>La formule de Manning-Strickler est appliquée à un chenal triangulaire. L’équation de ce type de contrôle est :</p>
+<p><span class="math display">\[Q(H) = K_S \sqrt{S} \tan(\nu/2) \left( \frac{\sin(\nu/2)}{2} \right)^{2/3} (H-b)^c \]</span></p>
+<p>Pour chaque contrôle modélisé par un chennal triangulaire, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
+<ul>
+<li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote moyenne <span class="math inline">\(b\)</span> du fond du chenal (thalweg) ;</li>
+<li><span class="math inline">\(\nu\)</span> = l’angle d’ouverture du triangle (en degrés) ;</li>
+<li><span class="math inline">\(S\)</span> = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
+0.01 pour 1%, etc.) ;</li>
+<li><span class="math inline">\(K_S\)</span> = le coefficient de résistance à l’écoulement (coefficient de Strickler en <span class="math inline">\(m^{1/3}.s^{-1}\)</span>)</li>
+<li>Le coefficient de Manning <span class="math inline">\(n=1/K_S\)</span> (<span class="math inline">\(m^{-1/3}.s\)</span>) peut être utilisé à la place.</li>
+</ul>
+<p>Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :</p>
+<ul>
+<li><span class="math inline">\(c\)</span> = exposant pour un chenal triangulaire large <span class="math inline">\(\approx 2.67 ± 0.05\)</span></li>
+</ul>
+</div>
+<div id="autres-types-de-contrôles" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Autres types de contrôles</h2>
+<p>L’expérience montre qu’avec le petit nombre de contrôles-type présentés jusqu’ici, on peut décrire de très nombreuses situations rencontrées en pratique. La clé est de combiner ces contrôles-type (en les faisant se succéder les uns aux autres ou en les ajoutant) pour décrire au mieux la configuration hydraulique.</p>
+<p>Il existe néanmoins certains contrôles qui ne peuvent pas être modélisés de façon triviale en combinant les contrôles-type. La Figure 8 ci-dessous fournit un exemple : un seuil triangulaire dont l’évasement s’interrompt à partir d’une certaine hauteur pour être bordé de parois verticales. La meilleure façon de modéliser ce type d’ouvrage serait d’ajouter un déversoir triangulaire « négatif » au déversoir triangulaire réel pour retrancher l’excès de section mouillée quand la hauteur d’eau atteint les parois verticales.</p>
+<p>L’équation de ce type de contrôle (« triangle tronqué ») serait donc :</p>
+<p><span class="math display">\[ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-b)^c - C_t \sqrt{2g} \tan(\nu/2) (H-b&#39;)^c \]</span></p>
+<p>pour <span class="math inline">\(H&gt;b&#39;\)</span> avec <span class="math inline">\(b&#39;\)</span> = la cote à laquelle les bords du triangle rencontrent les parois verticales. Ceci ne pourrait cependant pas être implémenté dans BaRatinAGE puisque les coefficients négatifs n’y sont pas autorisés.</p>
+<p>Un moyen commode de modéliser ce type de situation est de combiner un déversoir triangulaire pour les bas débits et un déversoir rectangulaire pour les hauts débits. Pour les débits intermédiaires, une transition acceptable entre les approximations triangles et rectangles peut être calculée avec un déversoir parabolique équivalent, d’offset intermédiaire et de dimensions appropriées.</p>
+<img src="Charbo_weir.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 8: Déversoir triangulaire confiné par des parois verticales: vue en long (à gauche) et vue en travers de la section de contrôle (à droite).
+</p>
+</div>
+</div>
+<div id="spécification-des-a-priori" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Spécification des a priori</h1>
+<div id="détermination-des-paramètres-a-priori" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Détermination des paramètres a priori</h2>
+<p>L’analyse hydraulique (la matrice des contrôles) induit le modèle mathématique de la courbe de tarage en combinant les équations des contrôles-type (pour plus de détails sur l’équation de la courbe de tarage, voir <a href="/fr/doc/topics/courbe-de-tarage/">cette page</a>).</p>
+<p>A cette étape de la méthode il s’agit de donner des valeurs vraisemblables aux différents paramètres
+de ce modèle. En effet l’inférence bayésienne, fondement de la méthode, implique d’attribuer à
+chacun des paramètres une valeur ET une incertitude non nulle. C’est ce que nous appelons les
+paramètres a priori (voir la page <a href="/fr/doc/topics/bayesien/">inférence Bayésienne</a>).</p>
+<p>Pour chaque contrôle il faut donc spécifier un a priori sur les paramètres <span class="math inline">\(\kappa\)</span>, <span class="math inline">\(a\)</span> et <span class="math inline">\(c\)</span>. Il n’est par contre pas nécessaire d’en spécifier un pour le paramètre <span class="math inline">\(b\)</span> : en effet, la continuité de la courbe de tarage impose une contrainte qui implique que le paramètre <span class="math inline">\(b\)</span> se déduit automatiquement des trois autres paramètres.</p>
+<p>Dans BaRatinAGE, un a priori se compose d’une valeur et d’une incertitude de type “±” exprimée dans la même unité que le paramètre auquel elle est attribuée. Cette incertitude élargie est égale à deux fois l’incertitude-type (écart-type). L’hypothèse sous-jacente est que l’incertitude a priori sur la valeur du paramètre est exprimée comme une loi gaussienne.</p>
+<p>Notes:</p>
+<ul>
+<li>La valeur a priori doit être estimée avec soin par l’utilisateur mais <strong>sans jamais utiliser les jaugeages</strong>. Si malgré tout un ou plusieurs jaugeages sont utilisés pour estimer un a priori, il faut retirer ces jaugeages du jeu de données qui sera utilisé par BaRatin pour produire la courbe de tarage.</li>
+<li>Il n’est que très rarement indispensable d’utiliser des jaugeages pour estimer les a priori car les paramètres des lois des contrôles-type sont des paramètres physiques relativement faciles à déterminer comme on le verra par la suite dans les exemples.</li>
+</ul>
+<p>BaRatinAGE propose une aide au paramétrage a priori de l’équation de chacun des différents contrôles-types présentés plus haut. Dans ces formules, le coefficient <span class="math inline">\(a\)</span> de l’équation de base <span class="math inline">\(a(H-b)^c\)</span> est une fonction de plusieurs paramètres physiques, dont l’utilisateur doit spécifier une valeur centrale et une incertitude (moyenne et deux fois l’écart-type de la distribution gaussienne sous-jacente).</p>
+<p>BaRatinAGE calcule ensuite la valeur centrale du coefficient <span class="math inline">\(a\)</span> et son incertitude, par la méthode de propagation des incertitudes proposée par le GUM (<a href="https://www.iso.org/sites/JCGM/GUM/JCGM100/C045315e-html/C045315e.html?csnumber=50461">JCGM, 2008</a>), soit un développement limité de série de Taylor au premier ordre. Les formules implémentées pour les différents contrôles-types sont détaillées ci-dessous. On rappelle que les incertitudes-types notées <span class="math inline">\(u\)</span> valent la moitié des incertitudes élargies visibles dans l’interface de BaRatinAGE.</p>
+<p><strong>Formule générale de propagation</strong></p>
+<p><span class="math display">\[
+\begin{align}
+a = &amp; f(x_1,\ldots,x_p) \\
+u^2(a) = &amp; \sum_{i=1}^p \left( \frac{\partial f(x_1,\ldots,x_p)}{\partial x_i} \right)^2 u^2(x_i)
+\end{align}
+\]</span>
+<strong>Déversoir rectangulaire</strong></p>
+<p><span class="math display">\[
+\begin{align}
+a= &amp; C_r \sqrt{2g} B_w  \\
+u^2(a) = &amp; \left( \sqrt{2g} B_w \right)^2 u^2(C_r) +
+\left(\frac{C_r B_w}{\sqrt{2g}}  \right)^2 u^2(g)+
+\left( C_r \sqrt{2g} \right)^2 u^2(B_w)
+\end{align}
+\]</span>
+<strong>Déversoir parabolique</strong></p>
+<p><span class="math display">\[
+\begin{align}
+a = &amp; C_p \sqrt{2g} \frac{B_p}{\sqrt{H_p}}  \\
+u^2(a) = &amp; \left(\sqrt{2g} \frac{B_p}{\sqrt{H_p}} \right)^2 u^2(C_p)+
+\left( C_p  \frac{B_p}{\sqrt{2g}\sqrt{H_p}} \right)^2 u^2(g)+
+\left( \frac{C_p \sqrt{2g}}{\sqrt{H_p}} \right)^2 u^2(B_p)+
+\left( C_p \sqrt{2g} \frac{B_p}{2H_p^{3/2}} \right)^2 u^2(H_p)
+\end{align}
+\]</span></p>
+<p><strong>Déversoir triangulaire</strong></p>
+<p><span class="math display">\[
+\begin{align}
+a = &amp; C_t \sqrt{2g} \tan(\nu/2)  \\
+u^2(a) = &amp; \left( \sqrt{2g} \tan(\nu/2) \right)^2 u^2(C_t)+
+\left( \frac{C_t \tan(\nu/2)}{\sqrt{2g}} \right)^2 u^2(g)+
+\left( \frac{C_t \sqrt{2g}}{2\cos^2(\nu/2)} \right)^2 u^2(\nu)
+\end{align}
+\]</span>
+<strong>Orifice dénoyé</strong></p>
+<p><span class="math display">\[
+\begin{align}
+a = &amp; C_o \sqrt{2g} A_w  \\
+u^2(a) = &amp; \left( \sqrt{2g} A_w \right)^2 u^2(C_o) +
+\left(\frac{C_o A_w}{\sqrt{2g}}  \right)^2 u^2(g)+
+\left( C_o \sqrt{2g} \right)^2 u^2(A_w)
+\end{align}
+\]</span>
+<strong>Chenal rectangulaire large</strong></p>
+<p><span class="math display">\[
+\begin{align}
+a = &amp; K_S \sqrt{S} B_w  \\
+u^2(a) = &amp; \left( \sqrt{S} B_w \right)^2 u^2(K_S) +
+\left(\frac{K_S B_w}{2\sqrt{S}}  \right)^2 u^2(S)+
+\left( K_S \sqrt{S} \right)^2 u^2(B_w)
+\end{align}
+\]</span></p>
+<p><strong>Chenal parabolique large</strong></p>
+<p><span class="math display">\[
+\begin{align}
+a = &amp; K_S \left( \frac{2}{3}\right)^{5/3}  \sqrt{S} \frac{B_p}{\sqrt{H_p}} \\
+u^2(a) = &amp; \left( \frac{2}{3}\right)^{10/3} \left[
+\left( \sqrt{S} \frac{B_p}{\sqrt{H_p}}  \right)^2 u^2(K_S)+
+\left( \frac{K_S B_p}{2 \sqrt{S} \sqrt{H_p}} \right)^2 u^2(S)+
+\left(  \frac{K_S \sqrt{S}}{\sqrt{H_p}} \right)^2 u^2(B_p)+
+\left(  \frac{K_S \sqrt{S} B_p}{2H_p^{3/2}} \right)^2 u^2(H_p) \right]
+\end{align}
+\]</span></p>
+<p><strong>Chenal triangulaire</strong></p>
+<p><span class="math display">\[
+\begin{align}
+a = &amp; K_S \sqrt{S} \tan(\nu/2) \left( \frac{\sin(\nu/2)}{2} \right)^{2/3}  \\
+u^2(a) = &amp; \left( \sqrt{S} \tan(\nu/2) \left( \frac{\sin(\nu/2)}{2} \right)^{2/3} \right)^2 u^2(K_S)+
+\left( \frac{K_S \tan(\nu/2) \left( \frac{\sin(\nu/2)}{2} \right)^{2/3}}{2\sqrt{S}} \right)^2 u^2(S)+
+\left( K_S \sqrt{S} \left( \frac{1}{2} \right)^{5/3} \sin^{2/3}(\nu/2) \left( \frac{1}{\cos^2(\nu/2)}+\frac{2}{3} \right) \right)^2 u^2(\nu)
+\end{align}
+\]</span></p>
+</div>
+<div id="approximation-des-contrôles-réels-complexes" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Approximation des contrôles réels complexes</h2>
+<p>Modéliser les contrôles reels avec des contrôles-types idéalisés nécessite d’approximer la géométrie réelle par une forme simple équivalente. Par exemple, pour estimer les paramètres a priori des contrôles rectangulaires par section ou par chenal, il faut trouver le rectangle qui fournit la meilleure approximation de la forme moyenne du radier naturel ou du chenal moyen (voir Figure 9). Attention, le chenal de contrôle “moyen” s’étend en fait à l’amont et à l’aval de la station, de sorte que l’approximation devrait être conduite à l’échelle du tronçon, à partir de sections en travers représentatives.</p>
+<img src="equivalentRectangle.fr.png" width="60%">
+<p style="text-align: center;color: gray;">
+Figure 9. Profil en travers du chenal de contrôle et principe de sa modélisation par un rectangle équivalent (en vert).
+</p>
+<p>Le paramètre de résistance à l’écoulement <span class="math inline">\(K_S\)</span> ou <span class="math inline">\(n\)</span> des contrôles par chenal est souvent délicat à déterminer. Il existe des tables des valeurs courantes (par exemple <a href="Chow_fr.xlsx">table de Chow</a>) mais également des modes de calcul qui s’appuient sur une description plus fine des conditions d’écoulement (par exemple <a href="Cowan_fr.xlsx">méthode de Cowan</a>).</p>
+<p>Pour les contrôles par chenal, la pente de frottement est approchée par la pente longitudinale <span class="math inline">\(S\)</span> du fond du chenal moyen ou de la ligne d’eau. La pente de la ligne d’eau en crue est rarement connue, à défaut on utilisera la pente moyenne du fond ou celle de la ligne d’eau d’étiage, plus facile à mesurer.</p>
+</div>
+<div id="remarques" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Remarques</h2>
+<p>Les a priori sont le reflet de ce que connaît l’utilisateur du fonctionnement hydraulique de la station étudiée, mais aussi de l’incertitude de ces connaissances. Il ne s’agit pas de trouver le paramètre “juste”, il s’agit de trouver des a priori “honnêtes”, c’est à dire raisonnablement estimés, que ce soit la valeur ou l’incertitude attribuée à cette valeur.</p>
+<p>Par exemple, pour un seuil rectangulaire, une largeur de cours d’eau ne recevra pas la même incertitude selon qu’elle ait été estimée “à l’oeil” ou avec un appareil topographique.</p>
+<p>Cette approche affranchit du complexe du modélisateur cherchant la valeur parfaite. Les phénomènes modélisés sont si complexes que même le plus pointu des modèles, calé par les meilleurs algorithmes contiendra TOUJOURS une part d’incertitude. La valeur parfaite d’existe pas. Il y a seulement des valeurs probables, il faut les approcher de notre mieux mais avec modestie. Les incertitudes sur les valeurs physiques doivent donc être simplement représentative de la fiabilité que l’on attribue à notre estimation de ces valeurs. Quelques exemples de cas sont traités dans la partie <a href="/fr/doc/case">cas d’étude</a>.</p>
+</div>
+</div>
 
 
                         </div>                        

@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709048219" rel="stylesheet">
+<link href="/css/custom.css?1709048732" rel="stylesheet">
 
 
 
@@ -299,7 +299,30 @@
                           
 
 
-<p>XXX</p>
+<p>L’équation de la courbe de tarage utilisée dans BaRatinAGE est entièrement déterminée par la matrice des contrôles, dont un exemple est rappelé dans la figure ci-dessous. Cette équation s’écrit de la façon suivante :</p>
+<p><span class="math display">\[
+Q(h) = \sum_{r=1}^{N_{segment}} \left(
+1_{[\kappa_r;\kappa_{r+1}]}(h) \times
+\sum_{j=1}^{N_{control}} M(r,j) \times a_j(h-b_j)^{c_j}
+\right)
+\]</span></p>
+<p>Dans l’équation ci-dessus, <span class="math inline">\(M(r,j)\)</span> représente la matrice des contrôles, et la notation $1_I(h) $ désigne
+une fonction qui vaut 1 si <span class="math inline">\(h\)</span> est inclus dans l’intervalle <span class="math inline">\(I\)</span>, et zéro sinon. On voit donc que la relation
+hauteur-débit est une combinaison de lois puissances, et la matrice des contrôles est utilisée pour
+spécifier comment cette combinaison s’opère (contrôles se succédant ou s’ajoutant).</p>
+<p>Afin d’assurer la continuité de la courbe de tarage, les paramètres <span class="math inline">\(b_j\)</span> de l’équation ci-dessus sont en
+fait déduits des autres paramètres, en résolvant une équation de continuité à chaque hauteur d’activation <span class="math inline">\((Q(\kappa_{r+1}) = Q(\kappa_r))\)</span>, ce qui conduit à :
+<span class="math display">\[ b_1=\kappa_1 \text{, puis pour } j&gt;1:\]</span>
+<span class="math display">\[ b_j=\kappa_j - \left(
+\frac{1}{a_j} \sum_{i=1}^{j-1}
+\left( M(j-1,i)-M(j,i) \right) \times
+a_i(\kappa_j-b_i)^{c_i}
+\right)^{1/c_j}\]</span></p>
+<p><br></p>
+<img src="matrix.fr.svg" />
+<p style="text-align: center;color: gray;">
+Figure: Exemple de matrice des contrôles correspondant à un cas fréquemment rencontré en pratique (deux seuils successifs en basses eaux, puis contrôle chenal par le lit mineur auquel s’ajoute un contrôle chenal par le lit majeur).
+</p>
 
 
                         </div>                        

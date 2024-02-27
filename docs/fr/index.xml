@@ -13,7 +13,7 @@
       <link>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</guid>
-      <description>XXX</description>
+      <description>1 La relation hauteur-débit : les contrôles hydrauliques&#xD;1.1 Deux grandes familles de contrôles hydrauliques&#xD;1.1.1 Contrôle par une section&#xD;1.1.2 Contrôle par un chenal&#xD;1.</description>
     </item>
     <item>
       <title>Premier cas d&#39;étude</title>
@@ -34,7 +34,7 @@
       <link>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</guid>
-      <description>XXX</description>
+      <description>1 Contrôles&#xD;1.1 Equation de base&#xD;1.2 Contrôles par section et contrôles par chenal&#xD;2 Equations des contrôles-types&#xD;2.1 Déversoir rectangulaire&#xD;2.2 Déversoir parabolique&#xD;2.</description>
     </item>
     <item>
       <title>Fenêtre principale</title>
@@ -69,7 +69,7 @@
       <link>https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/</guid>
-      <description>XXX</description>
+      <description>L’équation de la courbe de tarage utilisée dans BaRatinAGE est entièrement déterminée par la matrice des contrôles, dont un exemple est rappelé dans la figure ci-dessous.</description>
     </item>
     <item>
       <title>Jaugeages</title>
