@@ -12,7 +12,6 @@ BaRatinAGE v3 est un logiciel permettant d'estimer des courbes de tarage ainsi q
 
 Pour installer BaRatinAGE v3, il vous suffit d'extraire le fichier zip que vous avez dû télécharger [ici](https://github.com/BaRatin-tools/BaRatinAGE/releases), **pourvu que vous ayez les droits d'écriture dans ce dossier**. Double-cliquez sur le fichier **BaRatinAGE.exe** (sous Linux : **bin/BaRatinAGE**), et (si tout va bien...) c'est parti!
 
-
 Note : la langue par défaut au premier lancement de BaRatinAGE est le français. Vous pouvez changer la langue via le menu *Options...Changer de langue*.
 
 # Principaux composants dans BaRatinAGE

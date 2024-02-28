@@ -6,12 +6,36 @@ layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---
 
+# Ajout d'une nouvelle langue
 
-# Utilisation du contenu du fichier .bam
+Pour ajouter une langue à l'interface, il "suffit" d'ajouter une colonne dans le fichier glossaire */resources/i18n/translations.csv* (dans le répertoire d'installation de BaRatinAGE v3), et de traduire chaque item apparaissant dans l'interface graphique. Ce fichier texte (que vous pouvez ouvrir avec Notepad++ par exemple) comporte en effet une colonne par langue, après une première colonne correspondant à la clé de chaque item à traduire, et une deuxième colonne pouvant contenir un commentaire. Les colonnes sont séparées par des tabulations \t. La clé utilisée pour désigner la langue, dans la première ligne du fichier, **doit** être le code en deux lettres de la [norme ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes). Une fois ceci fait, BaRatinAGE v3 devrait, après redémarrage, vous proposer la nouvelle langue créée via le menu *Options...Changer de langue*. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.
 
-Le fichier de sauvegarde au format .bam n'est en fait rien d'autre qu'un fichier zip qui contient l'intégralité des informations générées par BaRatinAGE, sous la forme de simples fichiers textes. Par exemple, utilisez votre application ZIP favorite pour dézipper le fichier nommé Aisne_Verrieres.bam dans le répertoire exemple. Vous obtenez alors une arborescence de dossiers qui suit exactement l'organisation des objets dans BaRatinAGE. En parcourant ces dossiers, vous pouvez alors récupérer les fichers textes bruts qui vous intéressent, et les traiter comme bon vous semble.
 
-Malheureusement, la documentation de ces fichiers bruts est pour le moment rudimentaire. Nous améliorerons cette documentation dans les futures versions de BaratinAGE (via des en-têtes plus explicites dans les fichiers, et la rédaction d'une aide spécifique). En attendant, vous pouvez toujours envoyer un courriel à l'équipe de développement de BaRatinAGE si vous souhaitez en savoir plus sur ces fichiers.
+# Contenu du fichier de sauvegarde .bam
+
+Le fichier de sauvegarde au format .bam n'est en fait rien d'autre qu'un fichier zip qui contient l'intégralité des informations générées par BaRatinAGE. On peut donc la décompresser pour accéder à son contenu, notamment :
+
+-    un fichier principal de configuration nommé *main_config.json* (plus de détails ci-dessous) ;
+-    des fichiers .zip pour chaque run de BaM! : 
+     -    nom du fichier : combine date de création et identifiant aléatoire AAAAMMDD_HHMMSS_XXXXX.zip (par exemple, 20240228_084817_63cf9.zip)
+     -    contenu : tous les fichiers de configuration de BaM et les résultats correspondants
+-    des fichiers texte qui contiennent les données importées pour les jaugeages et les limnigrammes:
+     -    nom du fichier : nom original du fichier importé suivi d'un identifiant aleatoire (par exemple, limni_sauze_999rs072520.txt)
+     -    format du fichier : colonnes séparées par des points-virgules et présence d'en-têtes
+     -    date : ce n'est pas un format lisible par un humain mais un nombre de secondes depuis 1970-01-01T00:00:00Z
+
+Le fichier main_config.json est au format json, un format très utilisé,  facile à lire par les machines et les humains. En deux mots, le format du fichier consiste en des paires de clé/valeur groupées entre des accolades, avec la possibilité d'imbriquer les accolades, ou d'utiliser des listes entre crochets. Voici la structure du fichier:
+
+-    bamProjectType: texte indiquant le type de projet, pour le moment, tous les projets sont de type "BARATIN"
+-    bamItem: une liste [] de tous les composants du projet et de leurs configurations ; chaque composant comporte les élements de configuration suivants :
+     -    name : nom donné au composant
+     -    description : description donnée au composant
+     -    id : identifiant aléatoire du composant
+     -    type : type de composant, HYDRAULIC_CONFIG, GAUGINGS; STRUCTURAL_ERROR; LIMNIGRAPH, RATING_CURVE, HYDROGRAPH
+     -    config : la configuration du composant, dont la structure est differente pour chaque type de composant
+-    selectedItemId : identifiant du composant sélectionné
+-    fileVersion : version du fichier de sauvegarde
+
 
 
 # Pilotage de l'exécutable BaM

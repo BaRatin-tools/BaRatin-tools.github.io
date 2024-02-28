@@ -73,6 +73,8 @@ Ce menu permet de modifier les options suivantes :
 
 -   *changer de langue* : langue de BaRatinAGE (27 langues disponibles à ce jour, n'hésitez pas à en ajouter !).
 
+
+
 <!--- Options à venir, développements en cours :
 
 -   *Préférences* : choix entre plusieurs coutumes régionales (choix entre les coefficients de Strickler ou de Manning, choix du système d'unités, etc.) ;
