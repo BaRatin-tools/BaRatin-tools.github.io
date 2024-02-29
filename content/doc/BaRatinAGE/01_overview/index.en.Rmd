@@ -1,0 +1,29 @@
+---
+title: "Overview"
+slug: "overview"
+weight: 1
+layout: "doc_BaRatinAGEPage"
+inTOC: "BaRatinAGE"
+---
+
+# General information
+
+BaRatinAGE v3 is a software package for estimating rating curves and their uncertainties, and for propagating these uncertainties to discharge series. The BaRatin (*BAyesian RATINg curve*) method is based on a [hydraulic analysis](/en/doc/topics/hydraulic-analysis) of the hydrometric station and [Bayesian estimation](/en/doc/topics/bayesian) of the rating curve. BaRatinAGE is the acronym for *BaRatin Advanced Graphical Environment*.
+
+To install BaRatinAGE v3, simply extract the zip file that you must have downloaded [here](https://github.com/BaRatin-tools/BaRatinAGE/releases), **provided you have write access to this folder**. Double-click on the file **BaRatinAGE.exe** (for Linux: **bin/BaRatinAGE**), and (hopefully...) off you go!
+
+Note: the default language when BaRatinAGE is first launched is French. You can change the language via the menu *Options...Change language*.
+
+# Main components in BaRatinAGE
+
+BaRatinAGE handles the following components, whose operation will be detailed in the following pages:
+
+* The *hydraulic configuration* is the definition of the set of (hydraulic) controls that govern the physical stage-discharge relation, and their succession/combination as stage increases. The hydraulic configuration induces the equation that will be used for the rating curve.
+* The *set of gaugings* is the set of discrete measurements of stage and discharge which will be used to estimate the parameters of the rating curve.
+* The *structural error model* defines the properties of the structural (or "remnant") error of the rating curve.
+* The *rating curve* is the stage-discharge model estimated from a hydraulic configuration, a set of gaugings and a structural error model.
+* The *stage series* is the stage time series (or stage hydrograph) measured continuously at the hydrometric station.
+* The *discharge series* is the discharge time (or discharge hydrograph) calculated from a stage series and a rating curve.
+
+The four components *hydraulic configuration*, *set of gaugings*, *structural error model* and *stage series* are input data for the calculations carried out by BaRatinAGE, and must therefore be specified by the user. In contrast, the components *rating curve* and *discharge series* are the results of calculations carried out by BaRatinAGE. They can be exported in various formats.
+
