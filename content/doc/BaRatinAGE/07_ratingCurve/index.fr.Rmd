@@ -61,7 +61,7 @@ Il est particulièrement important de vérifier que les paramètres estimés a p
 
 Le graphique ci-dessus permet d'évaluer comment la connaissance a priori des paramètres (distributions en bleu) a été transformée en connaissance a posteriori (histogrammes en rouge) par l'information apportée par les jaugeages.
 
-La même information est également disponible sous forme de tableau, avec pour chaque paramètre de la courbe de tarage une comparaison entre les estimations a priori et a posteriori, sous la forme des bornes inférieures et supérieures de leurs intervalles  à 95%. Un test de cohérence entre a priori et a posteriori est affiché pour chaque paramètre : les résultats sont jugés cohérents si la fréquence de non-dépassement de chaque échantillon MCMC par un échantillon tiré de la distribution a priori est comprise entre 0.01 et 0.99. Il est possible d'exporter ces résultats au format CSV ou de les copier dans le presse-papier.
+La même information est également disponible sous forme de tableau, avec pour chaque paramètre de la courbe de tarage une comparaison entre les estimations a priori et a posteriori, sous la forme des bornes inférieures et supérieures de leurs intervalles  à 95%. Un test de cohérence entre a priori et a posteriori est affiché pour chaque paramètre : une incohérence est détectée pour un paramètre donné si au moins 99% des échantillons MCMC sont supérieurs (ou inférieurs) aux échantillons tirés de la loi a priori de ce paramètre. Il est possible d'exporter ces résultats au format CSV ou de les copier dans le presse-papier.
 
 ![](RC_Verrieres_Param_Summary.fr.png)
 
