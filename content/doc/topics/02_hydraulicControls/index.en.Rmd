@@ -33,12 +33,12 @@ Note that the offset is generally different from the activation stage $\kappa$. 
 
 ## Section controls and channel controls
 
-For section controls, the stage-discharge relation at the measurement cross-section is determined by a downstream cross-section where the flow is critical (Froude number is equal to 1). Applying the Bernoulli principle (energy conservation) between these two cross-sections leads to the followinf equation: 
+For section controls, the stage-discharge relation at the measurement cross-section is determined by a downstream cross-section where the flow is critical (Froude number is equal to 1). For simple cross-section shapes such as the ones used in BaRatinAGE (rectangular, triangular, parabolic), the following equation holds: 
 
-$$Q(H) = CA_w\sqrt{2gD_h}$$
+$$Q(H) = C\sqrt{2g}A_w(H)\sqrt{H-b}$$
 
 where $C$ is a discharge coefficient accounting for the head losses between the measurement cross-section (upstream) and the critical cross-section (downstream) and depending on the cross-section shape, $A_w$ is the wetted area ($m^2$), $g$ is the gravity
-acceleration ($g \approx 9.81 m.s^{-2}$) and $D_h=A_w/B_w$ is the hydraulic depth ($m$), defined as the ratio between the wetted area $A_w$ and the width $B_w$.
+acceleration ($g \approx 9.81 m.s^{-2}$).
 
 For channel controls, i.e. when the stage-discharge relation is determined by friction, equation 1 is established from the Manning-Strickler equation applied to the given geometry of the channel. The Manning-Strickler equation is:
 
