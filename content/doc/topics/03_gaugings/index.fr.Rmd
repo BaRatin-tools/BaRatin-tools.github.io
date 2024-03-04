@@ -4,6 +4,10 @@ slug: "jaugeages"
 weight: 3
 layout: "doc_topicsPage"
 inTOC: "topics"
+output:
+  blogdown::html_page:
+    number_sections: true
+    toc: true
 ---
 
 # Les jaugeages incertains comme données de calage

@@ -4,6 +4,10 @@ slug: "gaugings"
 weight: 3
 layout: "doc_topicsPage"
 inTOC: "topics"
+output:
+  blogdown::html_page:
+    number_sections: true
+    toc: true
 ---
 
 # Uncertain gaugings as calibration data
