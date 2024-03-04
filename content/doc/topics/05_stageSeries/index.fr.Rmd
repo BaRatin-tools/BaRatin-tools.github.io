@@ -4,6 +4,82 @@ slug: "limni"
 weight: 5
 layout: "doc_topicsPage"
 inTOC: "topics"
+output:
+  blogdown::html_page:
+    number_sections: true
+    toc: true
 ---
 
-XXX
+# Sources d'erreur
+
+Aux abords d’une station hydrométrique, une échelle graduée externe, appelée échelle limnimétrique, est classiquement fixée sur une pile de pont ou sur un support vertical dans l’écoulement ou sur la berge. Cette échelle externe permet une lecture visuelle de la hauteur d’eau. Elle constitue la référence de mesure des hauteurs d’eau pour la station. Lorsque la station en est munie, le puits de tranquillisation est équipé d’une échelle graduée interne.
+
+Les hauteurs d’eau sont mesurées en continu par un limnigraphe (ou capteur de niveau) et un enregistreur de données (centrale d’acquisition). Les hauteurs d’eau sont enregistrées à pas de temps fixe ou variable. Le capteur doit être calé avec l’échelle interne (s’il y en a une) et avec l’échelle extérieure, qui est toujours la référence. Ce calage est le plus souvent vérifié et ajusté périodiquement, lors des tournées de terrain.
+
+Les séries de hauteur d’eau (limnigrammes) ainsi obtenus sont affectés par des erreurs ayant des origines et des caractéristiques diverses. Les principales sources d’erreur du limnigramme peuvent être listées et modélisées comme suit.
+
+## Erreurs instrumentales ou « bruit de mesure »
+
+Quel que soit le type de technologie utilisée (flotteur, capteur de pression à membrane ou pneumatique, capteurs à contact électrique, à capacité, palpeur mécanique, radar (immergé ou aérien), ultrasons, télémétrie satellitaire, …), même avec des conditions d’écoulement idéales (niveau d’eau parfaitement constant) et un calage parfait du capteur, une mesure de niveau sera toujours affectée d’une erreur d’origine instrumentale. Des mesures répétées d’une même hauteur d’eau réelle fourniront un jeu de valeurs légèrement différentes les unes des autres. Il est raisonnable de supposer que ces erreurs sont complètement indépendantes d’un pas de temps à un autre et qu’elles suivent une distribution gaussienne de moyenne nulle.
+
+## Erreurs dues aux fluctuations de la surface libre
+
+La surface libre d’un cours d’eau est rarement complètement horizontale. En fonction des conditions d’écoulement et d’autres variables environnementales telles que le vent, la surface de l’eau peut localement fluctuer autour d’une valeur moyenne. De ce fait, les mesures de hauteur d’eau seront affectées d’erreurs non-systématiques dues aux vagues incohérentes (batillage). A nouveau, il est raisonnable de supposer que ces erreurs sont complètement indépendantes d’un pas de temps à un autre et qu’elles suivent une distribution gaussienne de moyenne nulle.
+
+## Erreurs dues au calage du capteur
+
+Le calage du capteur consiste à vérifier et corriger les écarts entre le capteur et l’échelle limnimétrique. Le calage n’est jamais parfait en raison de l’erreur faite lors de la lecture de l’échelle limnimétrique, à cause de sa résolution, son encrassement, un faible éclairage, une eau très claire, des vaguelettes, etc. De plus une dérive du calage du capteur est souvent constatée, en raison du vieillissement ou dysfonctionnement de certains composants du capteur, ou d’autres causes. Une telle dérive est très difficile à quantifier du fait de son évolution inconnue au cours du temps (évolution lente, de quelques jours à quelques semaines, ou très soudaine). L’erreur liée au calage du capteur peut être approximée par une erreur inconnue et constante sur la période séparant deux recalages. Cependant, cette erreur est ré-échantillonnée après chaque recalage. On suppose alors que les valeurs que peut prendre (pour toutes les périodes identifiées) cette erreur systématique inconnue suivent une distribution gaussienne de moyenne nulle.
+
+## Erreurs de représentativité du niveau moyen
+
+La hauteur d’eau mesurée au niveau de l’échelle limnimétrique peut ne pas être représentative de la hauteur d’eau moyenne à l’échelle du tronçon de cours d’eau, i.e. représentative des conditions d’écoulement 1D qui déterminent la courbe de tarage. En particulier, les déformations dues aux obstacles et singularités, aux piles de ponts notamment, ou à la sinuosité du cours d’eau, peuvent entraîner une erreur de représentativité de la hauteur d’eau. Ce type d’erreur est sans doute difficile à estimer et à corriger : il restera alors une erreur systématique résiduelle inconnue, qui pourra à nouveau être modélisée par une distribution gaussienne de moyenne nulle.
+
+# Modèle d’erreur utilisé dans BaRatinAGE
+
+La diverses erreurs identifiées sont de deux types distincts : les erreurs non-systématiques (bruit instrumental et fluctuations de la surface libre) et les erreurs systématiques (calage du capteur et représentativité). Cela conduit à construire un modèle d’erreur parcimonieux comportant deux termes d’erreur :
+
+* Un terme d’erreur non-systématique : les erreurs supposées indépendantes sont ré-échantillonnées à chaque pas de temps ;
+* Un terme d’erreur systématique : les erreurs sont constantes dans le temps et peuvent être ré-échantillonnées périodiquement.
+
+Le modèle d’erreur est le suivant :
+
+$$h(t)= \tilde{h}(t)+\varepsilon(t)+\delta$$
+où
+
+* $h(t)$ est le vrai limnigramme (inconnu)
+* $\tilde{h}(t)$ est le limnigramme mesuré
+* $\varepsilon(t)$ est le terme d’erreur non-systématique : $\varepsilon(t) \sim \mathcal{N}(0,\sigma_A)$
+* $\delta$ est le terme d’erreur systématique : $\delta \sim \mathcal{N}(0,\sigma_B)$
+
+Pour définir les incertitudes associées à un limnigramme, il est donc nécessaire de fournir, pour chaque pas de temps :
+
+* L’incertitude étendue correspondant aux erreurs non-systématiques : $1.96 \times \sigma_A$
+* L’incertitude étendue correspondant aux erreurs systématiques : $1.96 \times \sigma_B$
+* Un indice (un nombre entier) identifiant la période sur laquelle s’applique l’erreur systématique. A chaque changement de période (quand l’indice change), l’erreur systématique est ré-échantillonnée. Dans la version actuelle de BaRatinAGE, des nombres entiers croissants sont à utiliser pour l’identification des périodes.
+
+# Comment estimer les incertitudes associées au limnigramme
+
+Pour mettre en œuvre la propagation des incertitudes par BaRatinAGE, il est nécessaire d’estimer les deux écarts-types décrivant les erreurs associées aux mesures des hauteurs d’eau, $\sigma_A$ et $\sigma_B$, et de connaître les pas de temps de recalage du capteur (ou à défaut, une périodicité moyenne). Les deux écarts-types doivent idéalement être estimés au cas par cas, pour chaque station.
+
+## Incertitudes dues aux erreurs non-systématiques $(\sigma_A)$
+
+Les deux composantes liées au bruit instrumental $(\sigma_{A_1})$ et aux fluctuations de la surface libre $(\sigma_{A_2})$ peuvent être estimées séparément :
+
+* $(\sigma_{A_1})$ peut être estimée à partir des spécifications du fabriquant. Il est également possible de le mesurer directement en laboratoire par des essais en conditions de répétabilité ;
+* $(\sigma_{A_2})$ peut être estimée à partir de l’amplitude des oscillations de la surface-libre de l’écoulement au niveau du point de mesure.
+
+En considérant que les deux composantes sont indépendantes l’une de l’autre, on a :
+
+$$\sigma_{A}=\sqrt{\sigma_{A_1}^2+\sigma_{A_2}^2}$$
+
+Une estimation directe de $\sigma_{A}$ peut aussi être faite, par exemple, avec l’écart-type d’une série de mesures successives in-situ dans des conditions où la hauteur d’eau réelle ne varie pas. De telles mesures engloberaient les deux sources d’erreurs non-systématiques.
+
+Il est également possible que la valeur de $\sigma_{A}$ dépende de la hauteur d’eau $ℎ$. BaRatinAGE prévoit cette
+possibilité, en proposant à l’utilisateur de faire varier sa valeur à chaque pas de temps et donc selon $ℎ$ pour inclure, par exemple, des erreurs bien plus importantes en crue où les vagues seraient beaucoup plus grandes.
+
+## Incertitudes dues aux erreurs systématiques $(\sigma_B)$
+
+Nous proposons ici deux méthodes permettant l’estimation de cet écart-type :
+
+* La première méthode, la plus recommandée, nécessite d’avoir les dates des recalages du capteur et les écarts constatés entre capteur et échelle extérieure à l’occasion des visites terrain depuis la mise en service du capteur. L’écart-type de ces écarts peut alors être pris directement pour estimer $\sigma_B$. Les dates de recalage permettent de définir les points de ré-échantillonnage de $\delta$. Il est important de noter qu’une visite terrain n’ayant pas entraîné de recalage n’est pas à prendre en compte.
+* Lorsque ces informations-là ne sont pas disponibles, il est possible d’estimer grossièrement l’écart-type $\sigma_B$ par la valeur typique des écarts constatés entre échelle et capteur, à dire d’expert. Une estimation de la périodicité moyenne des recalages doit également être faite, afin de choisir des pas de temps uniformément espacés pour le ré-échantillonnage de $\delta$.

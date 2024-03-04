@@ -1,0 +1,84 @@
+---
+title: "Uncertainties in stage time series"
+slug: "stage-series"
+weight: 5
+layout: "doc_topicsPage"
+inTOC: "topics"
+output:
+  blogdown::html_page:
+    number_sections: true
+    toc: true
+---
+
+# Error sources
+
+At a hydrometric station, an outer staff gauge is conventionally attached to a bridge pier or to a vertical structure in the flow or on the bank. The outer staff gauge allows visual reading of the water level (or stage). It is the baseline measurement of water levels for the station. When applicable, the stilling well of the station is equipped with an inner staff gauge.
+
+The stage is continuously measured at fixed or variable time intervals using a water level sensor and a datalogger. The sensor requires calibration with the inner staff gauge (if any) and the outer staff gauge, which is always the reference. The calibration is usually checked and adjusted periodically, during field visits.
+
+The stage series thus obtained are affected by errors with various origins and characteristics. The primary sources of stage errors may be listed and modelled as follows.
+
+## Instrumental errors or « measurement noise »
+
+Irrespective of the type of technology used (float, piezometric sensor, pneumatic sensor, electrical contact sensors, capacity, mechanical sensor, radar, ultrasonic transit-time (submerged or air), satellite telemetry, etc.) even in ideal flow conditions (perfectly constant water level) and a perfect sensor calibration, a stage measurement will always be affected by an instrumental error. Successive measurements of the same actual stage will provide slightly variable values. It is reasonable to assume that such non-systematic errors are independent over successive time steps and that they follow a Gaussian distribution with zero mean.
+
+## Errors due to free-surface fluctuations
+
+The free-surface of a stream is rarely completely horizontal. Depending on flow conditions and other factors such as wind, the water surface may locally fluctuate around an average value. Therefore, the stage measurements will be affected by non-systematic error due to incoherent waves. Again, it is reasonable to assume that such non-systematic errors are independent over successive time steps and that they follow a Gaussian distribution with zero mean.
+
+## Errors due to sensor calibration
+
+Sensor calibration aims at checking and correcting the observed difference between the sensor and the staff gauge. Calibration is never perfect because of the error made when reading the staff gauge, due to staff gauge resolution, fouling, low light, very clear water, small waves, etc. Also, a sensor calibration drift is often observed, due to the aging or malfunctioning of some components, or other causes. Such drift is very difficult to quantify because of its behaviour over time is unknown (slow evolution from days to weeks, or very sudden shift). The sensor calibration error may be approximated by a constant and unknown error on the period between recalibrations. However, this error is resampled after each recalibration. It is assumed that the possible values of this unknown, systematic error follow a Gaussian distribution with zero mean.
+
+## Stage representativeness errors
+
+The stage measured at the gauge may not be representative of the average water level across the stream reach, i.e. representative of 1D flow conditions that determine the rating curve. In particular, the deformations due to obstacles and singularities, bridge piers in particular, or the stream sinuosity, can cause stage representativeness errors. This type of error can be difficult to estimate and correct: it will then remain an unknown residual systematic error, which can again be modelled with a Gaussian distribution with zero mean.
+
+# Error model used in BaRatinAGE
+
+The various errors identified are of two distinct types: non-systematic errors (instrumental noise and free-surface fluctuations) and systematic errors (sensor calibration and stage representativeness). This leads to a parsimonious error model with two components:
+
+* A non-systematic error component: errors are independently resampled from one time step to the next;
+* A systematic error component: errors are constant over time and may be periodically resampled.
+
+The error model is as follows:
+
+$$h(t)= \tilde{h}(t)+\varepsilon(t)+\delta$$
+where
+
+* $h(t)$ is the true stage series (unknown);
+* $\tilde{h}(t)$ is the measured stage series;
+* $\varepsilon(t)$ is the non-systematic error component: $\varepsilon(t) \sim \mathcal{N}(0,\sigma_A)$
+* $\delta$ is the systematic error component: $\delta \sim \mathcal{N}(0,\sigma_B)$
+
+To set the uncertainties associated with a stage series, it is necessary to provide, for each time step:
+
+* The expanded uncertainty related to the non-systematic errors: $1.96 \times \sigma_A$
+* The expanded uncertainty related to the systematic errors: $1.96 \times \sigma_B$
+* An index (an integer) identifying the period over which the simulated systematic error applies. At each change of period, i.e. when the index changes, the systematic error is resampled. In the current version of BaRatinAGE, increasing integers are used to identify periods.
+
+# How to estimate stage series uncertainties
+
+To implement the uncertainty propagation by BaRatinAGE, it is necessary to estimate the two standard deviations describing stage measurement errors,, $\sigma_A$ and $\sigma_B$, and to know the times of sensor recalibrations (or alternatively, an average frequency). The two standard deviations should ideally be estimated in each case, for each station.
+
+## Uncertainties due to non-systematic errors $(\sigma_A)$
+
+The two components related to instrumental noise $(\sigma_{A_1})$ and free surface fluctuations $(\sigma_{A_2})$ can be estimated separately:
+
+* $(\sigma_{A_1})$ can be estimated from manufacturer specifications. It is also possible to measure it directly through repeatability testing;
+* $(\sigma_{A_2})$ can be estimated from the amplitude of oscillations of the flow free surface at the measuring point.
+
+Considering that the two components are independent from one another, we have:
+
+$$\sigma_{A}=\sqrt{\sigma_{A_1}^2+\sigma_{A_2}^2}$$
+
+A direct estimate of $\sigma_{A}$ can also be made, for example, with the standard deviation of a series of successive measurements in situ under conditions where the actual water level does not change. Such measurements would include the two sources of non-systematic errors.
+
+It is also possible that the value of $\sigma_{A}$ depends on the water level $ℎ$. BaRatinAGE allows for this possibility, allowing the user to vary its value at each time step and hence according to $ℎ$ in order to consider, for instance, larger errors during floods when waves would be much larger.
+
+## Uncertainties due to systematic errors $(\sigma_B)$
+
+We suggest two methods for estimating the standard deviation $\sigma_B$:
+
+* This first method is also the most recommended and requires knowing the sensor recalibration dates and the discrepancies between the sensor and the outer staff gauge during field visits. The standard deviation of these differences is a direct estimate of $\sigma_B$. Recalibration dates define the times for resampling $\delta$. It is important to note that a field visit which did not result in sensor recalibration should not to be considered in these computations.
+* When such information is not available, it is possible to roughly estimate the standard deviation $\sigma_B$ as a typical difference between staff gauge and sensor, based on expert knowledge. An estimate of the average frequency of sensor recalibration can be made, to resample $\delta$ at regular time intervals.
