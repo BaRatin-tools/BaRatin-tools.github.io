@@ -19,7 +19,7 @@ The equation combining these various steps is given below:
 
 $$Q_i(t) = \underbrace{f \left( 
 \overbrace{\tilde{h}(t) + \varepsilon_i^h(t) + \delta_i^h}^{h_i(t)}
-| \boldsymbol{\theta}_i \right)}_{\hat{Q}_i(t)}
+; \boldsymbol{\theta}_i \right)}_{\hat{Q}_i(t)}
 + \varepsilon_i^f(t)$$
 
 The figure below illustrates and summarizes the successive computational steps.
@@ -27,4 +27,4 @@ The figure below illustrates and summarizes the successive computational steps.
 <img src="propagation.en.png" width="60%">
 <p style="text-align: center;color: gray;"> Principle of the propagation method illustrated with two parameter sets $\boldsymbol{\theta}_{i_1}$ (red) and $\boldsymbol{\theta}_{i_2}$ (blue): from the measured stage series to the two flow series (each corresponding to a parameter set, i.e. a possible rating curve and a possible stage series). </p>
 
-The MaxPost (most probable) rating curve is obtained by ignoring all error sources: $Q_{MP}(t) = f(\tilde{h}(t) | \boldsymbol{\theta}_{MP})$ where $\boldsymbol{\theta}_{MP}$ is the paameter set defining the MaxPost rating curve.
+The MaxPost (most probable) rating curve is obtained by ignoring all error sources: $Q_{MP}(t) = f(\tilde{h}(t) ; \boldsymbol{\theta}_{MP})$ where $\boldsymbol{\theta}_{MP}$ is the paameter set defining the MaxPost rating curve.

@@ -1,0 +1,98 @@
+---
+title: "Statistical model"
+slug: "statistical-model"
+weight: 6
+layout: "doc_topicsPage"
+inTOC: "topics"
+output:
+  blogdown::html_page:
+    number_sections: true
+    toc: true
+---
+
+# Model and hypotheses
+
+## Gauging errors
+
+BaRatin statistical model assumes that stage/discharge measurements $(\tilde{H}_i,\tilde{Q}_i)$ are affected by Gaussian errors with zero mean (no bias) and known standard deviations $u_{H_i}$ and $u_{Q_i}$. In general, we recommend ignoring stage uncertainty for gaugings ($u_{H_i}=0$), at least as a first approximation. The case of non-negligible stage uncertainty will be described at the end of this page. The following statistical model is therefore used:
+
+$$\tilde{H}_i = H_i$$
+$$\tilde{Q}_i = Q_i + \varepsilon_i^Q, \text{ with } \varepsilon_i^Q \sim \mathcal{N}(0,u_{Q_i})$$
+
+where $H_i$ and $Q_i$ denote the true stage/discharge values and $\varepsilon_i^Q$ denotes the discharge error.
+
+## Structural error
+
+The rating curve is formalized as a function $f(h;\boldsymbol{\theta})$, where $h$ is the stage and $\boldsymbol{\theta}=(\theta_1,\ldots,\theta_m)$ is the vector containing the $m$ parameters of the rating curve (see the [rating curve equation](/en/doc/topics/rating-curve) page). We assume that the difference between the true discharge and its simplified mathematical representation $f$ is a realisation from a Gaussian distribution with zero mean and standard deviation $\sigma_f(h)$. The latter may vary as a function of stage:
+
+$$Q_i = f(H_i;\boldsymbol{\theta}) + \varepsilon_i^f, \text{ with } \varepsilon_i^f \sim \mathcal{N}(0,\sigma_f(H_i)) $$
+
+The variation of the standard deviation $\sigma_f(h)$ with stage is parameterised as a function of the discharge computed from the rating curve, which allows reflecting the usual observation that structural uncertainty increases with discharge:
+
+$$\sigma_f(h;\boldsymbol{\gamma}) = \gamma_1 + \gamma_2 \times f(h;\boldsymbol{\theta})$$
+
+## Total error
+
+Assuming that the remnant error and the gauging error are independent, the total error can be written as follows by combining the preceding equations:
+
+$$\tilde{Q}_i = f(\tilde{H}_i;\boldsymbol{\theta}) + \varepsilon_i^f + \varepsilon_i^Q, \text{ with } \varepsilon_i^f + \varepsilon_i^Q \sim \mathcal{N} \left( 0, \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})} \right) $$
+
+where $\tilde{H}_i$ and $\tilde{Q}_i$ are the gauged stage/discharge, and $\varepsilon_i^f$ and $\varepsilon_i^Q$ are the Gaussian structural and gauging errors, respectively. This equation therefore states that the gauged discharge is equal to the discharge computed with the rating curve, plus an error due to gauging uncertainty, plus an error due to the imperfect formulation of the rating curve.
+
+Several unknown quantities appear in the equation above: the rating curve parameters $\boldsymbol{\theta}$ and the parameters $\boldsymbol{\gamma}$ describing the standard deviation of strutural errors. Inference for these unknown quantities is based on a Bayesian approach(see [bayesian estimation](/en/doc/topics/bayesian) page). This requires deriving the likelihood function and specifying a prior distribution, as described next.
+
+# Bayesian estimation
+
+## Information brought by the gaugings: likelihood
+
+Acccording to the equation above, the gauged discharge $\tilde{Q}_i$ is a realisation from a Gaussian distribution with mean  $f(\tilde{H}_i;\boldsymbol{\theta})$ (i.e. the rating curve discharge) and standard deviation $\sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}$. Assuming that arors affecting all gauged discharges are mutually independent, the likelihood can be written as:
+
+$$p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \tilde{\boldsymbol{H}}\right)
+=\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \tilde{Q}_i ; f(\tilde{H}_i;\boldsymbol{\theta}), \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\right)}$$
+
+where $\tilde{\boldsymbol{Q}} = (\tilde{Q}_1,\ldots,\tilde{Q}_N)$ denote the $N$ gauged discharge and $d_{\mathcal{N}}(z;m,s)$ denote the probability density function (pdf) of a Gaussian distribution with mean $m$ and standard deviation $s$, evaluated at some value $z$.
+
+## Information brought by hydraulics: prior distribution
+
+The prior distribution offers the opportunity to include hydraulic knowledge, as discussed in the page [hydraulic controls](/en/doc/topics/hydraulic-controls/). BaRatinAGE uses independent prior distributions for each inferred parameter, leading to the joint prior distribution:
+
+$$p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} \right)=p(\gamma_1)p(\gamma_2)\prod_{i=1}^{m}{p(\theta_i)}$$
+
+## Bayes theorem and posterior distribution
+
+As explained in the page [Bayesian estimation](/en/doc/topics/bayesian), Bayes theorem is used to compute the pdf of the posterior distribution (up to a constant of proportionality):
+
+$$p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} | \tilde{\boldsymbol{Q}},\tilde{\boldsymbol{H}}\right)
+\propto p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \tilde{\boldsymbol{H}}\right) p \left( \boldsymbol{\theta}, \boldsymbol{\gamma}\right)
+$$
+
+As explained in the page on [MCMC methods](/en/doc/topics/mcmc), a Markov Chain Monte Carlo (MCMC) sampler is then used to explore the posterior distribution. This results in a large number of realisations $\left( \boldsymbol{\theta}^{(j)}, \boldsymbol{\gamma}^{(j)} \right)_{j=1,\ldots,M}$ from the posterior distribution. Each realisation can be associated with a rating curve (with parameters$\boldsymbol{\theta}^{(j)}$), which yields an ensemble of rating curves that are plausible given the gaugings and the hydraulic knowledge.
+
+# [Advanced] Handling stage uncertainty in gaugings
+
+Abandoning the hypothesis that gauged stages are perfectly measured leads to the following equation:
+
+$$\tilde{H}_i = H_i + \varepsilon_i^H, \text{ with } \varepsilon_i^H \sim \mathcal{N}(0,u_{H_i})$$
+
+The equation describing the total error and used to compute the likelihood therefore has to be modified to include this non-zero stage error:
+
+$$\tilde{Q}_i = f(\tilde{H}_i - \varepsilon_i^H ; \boldsymbol{\theta}) + \varepsilon_i^f + \varepsilon_i^Q, \text{ with } \varepsilon_i^f + \varepsilon_i^Q \sim \mathcal{N} \left( 0, \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})} \right) $$
+
+Unfortunately, this equation does not yield a closed-form expression for the likelihood. This is because the stage error $\varepsilon_i^H$ propagates through the nonlinear rating curve function $f$. Consequently, the discharge error resulting from the stage error is not Gaussian. In order to circumvent this difficulty, the stage error $\varepsilon_i^H$ is considered as a new unknown quantity that needs to be estimated (equivalently, this can be viewed as estimating the true stage or correcting the gauged stage). This estimation is constrained by the specified stage uncertainty $u_{H_i}$, that is used here as a prior information.
+
+Adding the stage errors $\boldsymbol{\varepsilon}=(\varepsilon_1^H,\ldots,\varepsilon_N^H)$ into the list of unknown parameters, the likelihood becomes:
+
+$$p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \boldsymbol{\varepsilon},  \tilde{\boldsymbol{H}}\right)
+=\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \tilde{Q}_i ; f(\tilde{H}_i - \varepsilon_i^H;\boldsymbol{\theta}), \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\right)}$$
+
+The prior distribution becomes:
+
+$$p \left( \boldsymbol{\theta}, \boldsymbol{\gamma}, \boldsymbol{\varepsilon} \right)=p(\gamma_1)p(\gamma_2)\prod_{i=1}^{m}{p(\theta_i)}\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \varepsilon_i^H;0,u_{H_i} \right)}$$
+
+The posterior distribution is then derived (up to a constant of proportionality) using Bayes theorem:
+
+$$p \left( \boldsymbol{\theta}, \boldsymbol{\gamma},\boldsymbol{\varepsilon} | \tilde{\boldsymbol{Q}},\tilde{\boldsymbol{H}}\right)
+\propto p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma},\boldsymbol{\varepsilon}, \tilde{\boldsymbol{H}}\right) p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} ,\boldsymbol{\varepsilon} \right) $$
+
+Explicitly accounting for stage uncertainty in gaugings therefore has an important computational cost, because each stage value considered as uncertain correspond to an additional unknown parameter. Note however that these additional parameters are strongly constrained by the specified stage uncertainty (as long as $u_{H_i}$ is not too large), which makes this estimation feasible in general.
+

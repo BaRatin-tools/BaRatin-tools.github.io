@@ -1,9 +1,99 @@
 ---
-title: "Modèle statistique utilisé dans BaRatin"
+title: "Modèle statistique"
 slug: "modele-stat"
 weight: 6
 layout: "doc_topicsPage"
 inTOC: "topics"
+output:
+  blogdown::html_page:
+    number_sections: true
+    toc: true
 ---
 
-XXX
+# Modèles et hypothèses
+
+## Erreurs sur les jaugeages
+
+Le modèle statistique de BaRatin suppose que les mesures de niveau et de débit des jaugeages $(\tilde{H}_i,\tilde{Q}_i)$ sont affectées par des erreurs gaussiennes de moyenne nulle (pas de biais) et d'écarts-types $u_{H_i}$ et $u_{Q_i}$, qui sont les incertitudes-types des jaugeages. En première approche, il est recommandé d’ignorer l’incertitude sur les hauteurs jaugées ($u_{H_i}=0$) : le cas où cette incertitude n’est pas nulle sera décrit plus loin. Mathématiquement, on utilise donc le modèle suivant :
+
+$$\tilde{H}_i = H_i$$
+$$\tilde{Q}_i = Q_i + \varepsilon_i^Q, \text{ avec } \varepsilon_i^Q \sim \mathcal{N}(0,u_{Q_i})$$
+
+où $H_i$ et $Q_i$ représentent les valeurs réelles de hauteur et de débit, et $\varepsilon_i^Q$ l’erreur sur le débit jaugé.
+
+## Erreur structurelle
+
+La courbe de tarage est formalisée comme une fonction $f(h;\boldsymbol{\theta})$, où $h$ est le niveau d'eau et $\boldsymbol{\theta}=(\theta_1,\ldots,\theta_m)$ est le vecteur des $m$ paramètres de la courbe de tarage (voir la page sur l'[équation de la courbe](/fr/doc/topics/courbe-de-tarage)). On suppose que l'écart entre le débit réel et sa représentation mathématique $f$, forcément simplifiée, est une erreur gaussienne de moyenne nulle et d'écart-type $\sigma_f(h)$ qui peut varier en fonction de la hauteur :
+
+$$Q_i = f(H_i;\boldsymbol{\theta}) + \varepsilon_i^f, \text{ avec } \varepsilon_i^f \sim \mathcal{N}(0,\sigma_f(H_i)) $$
+
+La façon dont l’écart-type de l’erreur structurelle peut varier en fonction de la hauteur est paramétrée comme une fonction du débit donné par la courbe de tarage, pour refléter l'observation fréquente que l’incertitude structurelle tend à augmenter avec le débit de la courbe :
+
+$$\sigma_f(h;\boldsymbol{\gamma}) = \gamma_1 + \gamma_2 \times f(h;\boldsymbol{\theta})$$
+
+## Erreur totale
+
+On suppose que l’erreur structurelle est indépendante de l’erreur de jaugeage. En combinant les équations précédentes, on aboutit au modèle d'erreur totale suivant :
+
+$$\tilde{Q}_i = f(\tilde{H}_i;\boldsymbol{\theta}) + \varepsilon_i^f + \varepsilon_i^Q, \text{ avec } \varepsilon_i^f + \varepsilon_i^Q \sim \mathcal{N} \left( 0, \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})} \right) $$
+
+Où $\tilde{H}_i$ et $\tilde{Q}_i$ sont les hauteurs et débits jaugés, et $\varepsilon_i^f$ et $\varepsilon_i^Q$ sont les erreurs gaussiennes sur la formulation mathématique de la courbe de tarage et sur les débits jaugés, respectivement. L’équation ci-dessus stipule donc que le débit jaugé est égal au débit prédit par la courbe de tarage, plus une erreur liée à l’incertitude de jaugeage, plus une erreur liée à l’imperfection de la courbe de tarage.
+
+L’équation ci-dessus comporte plusieurs quantités inconnues: les paramètres $\boldsymbol{\theta}$ de la courbe de tarage et les paramètres $\boldsymbol{\gamma}$ gouvernant l'écart-type structurel. L'inférence sur ces quantités se fait en utilisant le formalisme bayésien (voir page sur l'[estimation bayésienne](/fr/doc/topics/bayesien)). Il faut donc définir la vraisemblance et spécifier une distribution a priori comme décrit ci-après.
+
+# Estimation Bayésienne
+
+## Information portée par les jaugeages : vraisemblance
+
+D’après l’équation ci-dessus, un débit jaugé $\tilde{Q}_i$ suit une loi normale de moyenne $f(\tilde{H}_i;\boldsymbol{\theta})$ (i.e. le débit prédit par la courbe de tarage) et d’écart-type $\sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}$. En supposant que les erreurs affectant chaque débit jaugé sont indépendantes, on obtient la vraisemblance suivante :
+
+$$p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \tilde{\boldsymbol{H}}\right)
+=\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \tilde{Q}_i ; f(\tilde{H}_i;\boldsymbol{\theta}), \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\right)}$$
+
+où $\tilde{\boldsymbol{Q}} = (\tilde{Q}_1,\ldots,\tilde{Q}_N)$ sont les $N$ débits jaugés et $d_{\mathcal{N}}(z;m,s)$ représente la densité de probabilité d’une loi normale de moyenne $m$ et d’écart-type $s$, évaluée en une valeur $z$.
+
+## Information liée aux connaissances hydraulique : distribution a priori
+
+La distribution a priori permet d’intégrer les connaissances hydrauliques discutées dans la page [contrôles hydrauliques](/fr/doc/topics/controles-hydrauliques/). Dans BaRatinAGE, on utilise des distributions a priori indépendantes sur chaque paramètre à estimer, conduisant à :
+
+$$p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} \right)=p(\gamma_1)p(\gamma_2)\prod_{i=1}^{m}{p(\theta_i)}$$
+
+## Théorème de Bayes et distribution a posteriori
+
+Comme détaillé dans la page [estimation bayésienne](/fr/doc/topics/bayesien), le théorème de Bayes est ensuite utilisé pour calculer densité de la distribution a posteriori (à une constante de proportionnalité près):
+
+
+$$p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} | \tilde{\boldsymbol{Q}},\tilde{\boldsymbol{H}}\right)
+\propto p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \tilde{\boldsymbol{H}}\right) p \left( \boldsymbol{\theta}, \boldsymbol{\gamma}\right)
+$$
+
+Comme détaillé dans la page sur les [méthodes MCMC](/fr/doc/topics/mcmc), on utilise un algorithme de Monte Carlo par Chaîne de Markov (MCMC) pour explorer cette distribution a posteriori. On obtient ainsi un grand nombre de réalisations $\left( \boldsymbol{\theta}^{(j)}, \boldsymbol{\gamma}^{(j)} \right)_{j=1,\ldots,M}$ issues de la distribution a posteriori. A chacune de ces réalisations correspond une courbe de tarage (de paramètres $\boldsymbol{\theta}^{(j)}$), ce qui conduit à générer un ensemble de courbes de tarage plausibles au vu des jaugeages et des connaissances hydrauliques a priori.
+
+# [Avancé] Cas des hauteurs jaugées incertaines
+
+Si on s’affranchit de l’hypothèse que les hauteurs jaugées sont parfaites, on a :
+
+$$\tilde{H}_i = H_i + \varepsilon_i^H, \text{ avec } \varepsilon_i^H \sim \mathcal{N}(0,u_{H_i})$$
+
+L’équation représentant l’erreur totale et utilisée pour calculer la vraisemblance doit donc être modifiée pour incorporer l’erreur sur la hauteur jaugée :
+
+$$\tilde{Q}_i = f(\tilde{H}_i - \varepsilon_i^H ; \boldsymbol{\theta}) + \varepsilon_i^f + \varepsilon_i^Q, \text{ avec } \varepsilon_i^f + \varepsilon_i^Q \sim \mathcal{N} \left( 0, \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})} \right) $$
+
+Malheureusement, cette équation ne permet pas directement d’écrire la vraisemblance. En effet, l’erreur sur la hauteur transite à travers le modèle non-linéaire de courbe de tarage. En conséquence, l’erreur de débit résultant de cette erreur de hauteur n’est pas gaussienne. Pour s’affranchir de ce problème, on considère dans BaRatinAGE que l’erreur $\varepsilon_i^H$ est un paramètre inconnu que l’on va chercher à estimer (ou de manière équivalente, on va chercher à estimer la vraie hauteur, ou à corriger la hauteur jaugée). Cette estimation sera contrainte par l’incertitude spécifiée pour la hauteur jaugée, que l’on utilisera ici comme une distribution a priori.
+
+Si l’on incorpore les erreurs de hauteur $\boldsymbol{\varepsilon}=(\varepsilon_1^H,\ldots,\varepsilon_N^H)$ dans la liste des paramètres à estimer, la vraisemblance s’écrit:
+
+$$p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \boldsymbol{\varepsilon},  \tilde{\boldsymbol{H}}\right)
+=\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \tilde{Q}_i ; f(\tilde{H}_i - \varepsilon_i^H;\boldsymbol{\theta}), \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\right)}$$
+
+La distribution a priori devient :
+
+$$p \left( \boldsymbol{\theta}, \boldsymbol{\gamma}, \boldsymbol{\varepsilon} \right)=p(\gamma_1)p(\gamma_2)\prod_{i=1}^{m}{p(\theta_i)}\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \varepsilon_i^H;0,u_{H_i} \right)}$$
+
+La distribution a posteriori s’obtient classiquement avec le théorème de Bayes :
+
+$$p \left( \boldsymbol{\theta}, \boldsymbol{\gamma},\boldsymbol{\varepsilon} | \tilde{\boldsymbol{Q}},\tilde{\boldsymbol{H}}\right)
+\propto p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma},\boldsymbol{\varepsilon}, \tilde{\boldsymbol{H}}\right) p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} ,\boldsymbol{\varepsilon} \right) $$
+
+La prise en compte explicite de l’incertitude sur les hauteurs jaugées a donc un coût important en termes de complexité et de temps de calcul, puisque chaque hauteur considérée comme incertaine ajoute un paramètre à estimer. Précisons néanmoins que ces paramètres sont en général très fortement contraints par l’incertitude de hauteur (tant que $u_{H_i}$ n’est pas trop grand), ce qui rend cette estimation possible en général.
+
