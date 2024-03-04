@@ -12,21 +12,21 @@
       <link>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</guid>
-      <description>1 La relation hauteur-débit : les contrôles hydrauliques&#xD;1.1 Deux grandes familles de contrôles hydrauliques&#xD;1.1.1 Contrôle par une section&#xD;1.1.2 Contrôle par un chenal&#xD;1.</description>
+      <description>1 La relation hauteur-débit : les contrôles hydrauliques 1.1 Deux grandes familles de contrôles hydrauliques 1.1.1 Contrôle par une section 1.1.2 Contrôle par un chenal 1.</description>
     </item>
     <item>
       <title>Contrôles hydrauliques</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</guid>
-      <description>1 Contrôles&#xD;1.1 Equation de base&#xD;1.2 Contrôles par section et contrôles par chenal&#xD;2 Equations des contrôles-types&#xD;2.1 Déversoir rectangulaire&#xD;2.2 Déversoir parabolique&#xD;2.</description>
+      <description>1 Contrôles 1.1 Equation de base 1.2 Contrôles par section et contrôles par chenal 2 Equations des contrôles-types 2.1 Déversoir rectangulaire 2.2 Déversoir parabolique 2.</description>
     </item>
     <item>
       <title>Incertitudes sur les jaugeages</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</guid>
-      <description>XXX</description>
+      <description>1 Les jaugeages incertains comme données de calage 2 Incertitude des débits jaugés 3 Incertitude des hauteurs jaugées 1 Les jaugeages incertains comme données de calage Pour l’analyse d’une courbe de tarage avec BaRatin, il faut fournir un ensemble de jaugeages représentatifs de la relation hauteur-débit pour la période considérée.</description>
     </item>
     <item>
       <title>Equation de la courbe de tarage</title>
@@ -40,27 +40,27 @@
       <link>https://baratin-tools.github.io/fr/doc/topics/limni/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/limni/</guid>
-      <description>XXX</description>
+      <description>1 Sources d’erreur 1.1 Erreurs instrumentales ou « bruit de mesure » 1.2 Erreurs dues aux fluctuations de la surface libre 1.3 Erreurs dues au calage du capteur 1.</description>
+    </item>
+    <item>
+      <title>Modèle statistique</title>
+      <link>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</guid>
+      <description>1 Modèles et hypothèses 1.1 Erreurs sur les jaugeages 1.2 Erreur structurelle 1.3 Erreur totale 2 Estimation Bayésienne 2.1 Information portée par les jaugeages : vraisemblance 2.</description>
     </item>
     <item>
       <title>Incertitudes dans les hydrogrammes</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</guid>
-      <description>XXX</description>
+      <description>Cette page décrit comment les erreurs provenant de la courbe de tarage (erreurs paramétriques et erreurs structurelles) et celles provenant du limnigramme (erreurs non-systématiques et erreurs systématiques) sont propagées aux hydrogrammes dans BaRatinAGE.</description>
     </item>
     <item>
       <title>Les bases de l’inférence Bayesienne</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/bayesien/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/bayesien/</guid>
-      <description>XXX</description>
-    </item>
-    <item>
-      <title>Modèle statistique utilisé dans BaRatin</title>
-      <link>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</guid>
       <description>XXX</description>
     </item>
     <item>

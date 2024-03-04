@@ -17,6 +17,16 @@
     <loc>https://baratin-tools.github.io/fr/doc/case/cs1/</loc>
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/baratinage/overview/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</loc>
     <xhtml:link
@@ -31,12 +41,32 @@
                 />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/baratinage/main-frame/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/case/cs2/</loc>
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/</loc>
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/gaugings/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/jaugeages/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/</loc>
     <xhtml:link
@@ -63,20 +93,50 @@
                 />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/limni/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/stage-series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/limni/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</loc>
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/</loc>
   </url><url>
-    <loc>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</loc>
+    <loc>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/statistical-model/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/"
+                />
   </url><url>
-    <loc>https://baratin-tools.github.io/fr/doc/topics/bayesien/</loc>
+    <loc>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/discharge-series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/</loc>
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/hydrogramme/</loc>
   </url><url>
-    <loc>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</loc>
+    <loc>https://baratin-tools.github.io/fr/doc/topics/bayesien/</loc>
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/mcmc/</loc>
   </url><url>

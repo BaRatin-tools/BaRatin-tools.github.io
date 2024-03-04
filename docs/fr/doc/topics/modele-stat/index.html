@@ -22,7 +22,7 @@
 <meta name="googlebot" content="index,follow,snippet,archive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Modèle statistique utilisé dans BaRatin</title>
+<title>Modèle statistique</title>
 <meta name="author" content="" />
 
 
@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709048732" rel="stylesheet">
+<link href="/css/custom.css?1709572208" rel="stylesheet">
 
 
 
@@ -75,7 +75,7 @@
 
 <meta property="og:locale" content="fr">
 <meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
-<meta property="og:title" content="Modèle statistique utilisé dans BaRatin">
+<meta property="og:title" content="Modèle statistique">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://baratin-tools.github.io/fr/doc/topics/modele-stat/" />
 <meta property="og:description" content="">
@@ -94,7 +94,7 @@
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:title" content="Modèle statistique utilisé dans BaRatin">
+<meta name="twitter:title" content="Modèle statistique">
 
 <meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
 
@@ -116,10 +116,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand home" href="/fr/">
                     
-                      <img src="/img/logoWithText.png" alt="Modèle statistique utilisé dans BaRatin logo" class="hidden-xs hidden-sm" />
-                      <img src="/img/logo.png" alt="Modèle statistique utilisé dans BaRatin logo" class="visible-xs visible-sm" />
+                      <img src="/img/logoWithText.png" alt="Modèle statistique logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Modèle statistique logo" class="visible-xs visible-sm" />
                     
-                    <span class="sr-only">Modèle statistique utilisé dans BaRatin - aller à l&#39;accueil</span>
+                    <span class="sr-only">Modèle statistique - aller à l&#39;accueil</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -279,7 +279,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Modèle statistique utilisé dans BaRatin</h1>
+                <h1>Modèle statistique</h1>
             </div>
         </div>
     </div>
@@ -298,8 +298,88 @@
                         <div id="post-content">
                           
 
+<div id="TOC">
+<ul>
+<li><a href="#modèles-et-hypothèses" id="toc-modèles-et-hypothèses"><span class="toc-section-number">1</span> Modèles et hypothèses</a>
+<ul>
+<li><a href="#erreurs-sur-les-jaugeages" id="toc-erreurs-sur-les-jaugeages"><span class="toc-section-number">1.1</span> Erreurs sur les jaugeages</a></li>
+<li><a href="#erreur-structurelle" id="toc-erreur-structurelle"><span class="toc-section-number">1.2</span> Erreur structurelle</a></li>
+<li><a href="#erreur-totale" id="toc-erreur-totale"><span class="toc-section-number">1.3</span> Erreur totale</a></li>
+</ul></li>
+<li><a href="#estimation-bayésienne" id="toc-estimation-bayésienne"><span class="toc-section-number">2</span> Estimation Bayésienne</a>
+<ul>
+<li><a href="#information-portée-par-les-jaugeages-vraisemblance" id="toc-information-portée-par-les-jaugeages-vraisemblance"><span class="toc-section-number">2.1</span> Information portée par les jaugeages : vraisemblance</a></li>
+<li><a href="#information-liée-aux-connaissances-hydraulique-distribution-a-priori" id="toc-information-liée-aux-connaissances-hydraulique-distribution-a-priori"><span class="toc-section-number">2.2</span> Information liée aux connaissances hydraulique : distribution a priori</a></li>
+<li><a href="#théorème-de-bayes-et-distribution-a-posteriori" id="toc-théorème-de-bayes-et-distribution-a-posteriori"><span class="toc-section-number">2.3</span> Théorème de Bayes et distribution a posteriori</a></li>
+</ul></li>
+<li><a href="#avancé-cas-des-hauteurs-jaugées-incertaines" id="toc-avancé-cas-des-hauteurs-jaugées-incertaines"><span class="toc-section-number">3</span> [Avancé] Cas des hauteurs jaugées incertaines</a></li>
+</ul>
+</div>
 
-<p>XXX</p>
+<div id="modèles-et-hypothèses" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Modèles et hypothèses</h1>
+<div id="erreurs-sur-les-jaugeages" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Erreurs sur les jaugeages</h2>
+<p>Le modèle statistique de BaRatin suppose que les mesures de niveau et de débit des jaugeages <span class="math inline">\((\tilde{H}_i,\tilde{Q}_i)\)</span> sont affectées par des erreurs gaussiennes de moyenne nulle (pas de biais) et d’écarts-types <span class="math inline">\(u_{H_i}\)</span> et <span class="math inline">\(u_{Q_i}\)</span>, qui sont les incertitudes-types des jaugeages. En première approche, il est recommandé d’ignorer l’incertitude sur les hauteurs jaugées (<span class="math inline">\(u_{H_i}=0\)</span>) : le cas où cette incertitude n’est pas nulle sera décrit plus loin. Mathématiquement, on utilise donc le modèle suivant :</p>
+<p><span class="math display">\[\tilde{H}_i = H_i\]</span>
+<span class="math display">\[\tilde{Q}_i = Q_i + \varepsilon_i^Q, \text{ avec } \varepsilon_i^Q \sim \mathcal{N}(0,u_{Q_i})\]</span></p>
+<p>où <span class="math inline">\(H_i\)</span> et <span class="math inline">\(Q_i\)</span> représentent les valeurs réelles de hauteur et de débit, et <span class="math inline">\(\varepsilon_i^Q\)</span> l’erreur sur le débit jaugé.</p>
+</div>
+<div id="erreur-structurelle" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Erreur structurelle</h2>
+<p>La courbe de tarage est formalisée comme une fonction <span class="math inline">\(f(h;\boldsymbol{\theta})\)</span>, où <span class="math inline">\(h\)</span> est le niveau d’eau et <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\ldots,\theta_m)\)</span> est le vecteur des <span class="math inline">\(m\)</span> paramètres de la courbe de tarage (voir la page sur l’<a href="/fr/doc/topics/courbe-de-tarage">équation de la courbe</a>). On suppose que l’écart entre le débit réel et sa représentation mathématique <span class="math inline">\(f\)</span>, forcément simplifiée, est une erreur gaussienne de moyenne nulle et d’écart-type <span class="math inline">\(\sigma_f(h)\)</span> qui peut varier en fonction de la hauteur :</p>
+<p><span class="math display">\[Q_i = f(H_i;\boldsymbol{\theta}) + \varepsilon_i^f, \text{ avec } \varepsilon_i^f \sim \mathcal{N}(0,\sigma_f(H_i)) \]</span></p>
+<p>La façon dont l’écart-type de l’erreur structurelle peut varier en fonction de la hauteur est paramétrée comme une fonction du débit donné par la courbe de tarage, pour refléter l’observation fréquente que l’incertitude structurelle tend à augmenter avec le débit de la courbe :</p>
+<p><span class="math display">\[\sigma_f(h;\boldsymbol{\gamma}) = \gamma_1 + \gamma_2 \times f(h;\boldsymbol{\theta})\]</span></p>
+</div>
+<div id="erreur-totale" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Erreur totale</h2>
+<p>On suppose que l’erreur structurelle est indépendante de l’erreur de jaugeage. En combinant les équations précédentes, on aboutit au modèle d’erreur totale suivant :</p>
+<p><span class="math display">\[\tilde{Q}_i = f(\tilde{H}_i;\boldsymbol{\theta}) + \varepsilon_i^f + \varepsilon_i^Q, \text{ avec } \varepsilon_i^f + \varepsilon_i^Q \sim \mathcal{N} \left( 0, \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})} \right) \]</span></p>
+<p>Où <span class="math inline">\(\tilde{H}_i\)</span> et <span class="math inline">\(\tilde{Q}_i\)</span> sont les hauteurs et débits jaugés, et <span class="math inline">\(\varepsilon_i^f\)</span> et <span class="math inline">\(\varepsilon_i^Q\)</span> sont les erreurs gaussiennes sur la formulation mathématique de la courbe de tarage et sur les débits jaugés, respectivement. L’équation ci-dessus stipule donc que le débit jaugé est égal au débit prédit par la courbe de tarage, plus une erreur liée à l’incertitude de jaugeage, plus une erreur liée à l’imperfection de la courbe de tarage.</p>
+<p>L’équation ci-dessus comporte plusieurs quantités inconnues: les paramètres <span class="math inline">\(\boldsymbol{\theta}\)</span> de la courbe de tarage et les paramètres <span class="math inline">\(\boldsymbol{\gamma}\)</span> gouvernant l’écart-type structurel. L’inférence sur ces quantités se fait en utilisant le formalisme bayésien (voir page sur l’<a href="/fr/doc/topics/bayesien">estimation bayésienne</a>). Il faut donc définir la vraisemblance et spécifier une distribution a priori comme décrit ci-après.</p>
+</div>
+</div>
+<div id="estimation-bayésienne" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Estimation Bayésienne</h1>
+<div id="information-portée-par-les-jaugeages-vraisemblance" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Information portée par les jaugeages : vraisemblance</h2>
+<p>D’après l’équation ci-dessus, un débit jaugé <span class="math inline">\(\tilde{Q}_i\)</span> suit une loi normale de moyenne <span class="math inline">\(f(\tilde{H}_i;\boldsymbol{\theta})\)</span> (i.e. le débit prédit par la courbe de tarage) et d’écart-type <span class="math inline">\(\sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\)</span>. En supposant que les erreurs affectant chaque débit jaugé sont indépendantes, on obtient la vraisemblance suivante :</p>
+<p><span class="math display">\[p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \tilde{\boldsymbol{H}}\right)
+=\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \tilde{Q}_i ; f(\tilde{H}_i;\boldsymbol{\theta}), \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\right)}\]</span></p>
+<p>où <span class="math inline">\(\tilde{\boldsymbol{Q}} = (\tilde{Q}_1,\ldots,\tilde{Q}_N)\)</span> sont les <span class="math inline">\(N\)</span> débits jaugés et <span class="math inline">\(d_{\mathcal{N}}(z;m,s)\)</span> représente la densité de probabilité d’une loi normale de moyenne <span class="math inline">\(m\)</span> et d’écart-type <span class="math inline">\(s\)</span>, évaluée en une valeur <span class="math inline">\(z\)</span>.</p>
+</div>
+<div id="information-liée-aux-connaissances-hydraulique-distribution-a-priori" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Information liée aux connaissances hydraulique : distribution a priori</h2>
+<p>La distribution a priori permet d’intégrer les connaissances hydrauliques discutées dans la page <a href="/fr/doc/topics/controles-hydrauliques/">contrôles hydrauliques</a>. Dans BaRatinAGE, on utilise des distributions a priori indépendantes sur chaque paramètre à estimer, conduisant à :</p>
+<p><span class="math display">\[p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} \right)=p(\gamma_1)p(\gamma_2)\prod_{i=1}^{m}{p(\theta_i)}\]</span></p>
+</div>
+<div id="théorème-de-bayes-et-distribution-a-posteriori" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Théorème de Bayes et distribution a posteriori</h2>
+<p>Comme détaillé dans la page <a href="/fr/doc/topics/bayesien">estimation bayésienne</a>, le théorème de Bayes est ensuite utilisé pour calculer densité de la distribution a posteriori (à une constante de proportionnalité près):</p>
+<p><span class="math display">\[p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} | \tilde{\boldsymbol{Q}},\tilde{\boldsymbol{H}}\right)
+\propto p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \tilde{\boldsymbol{H}}\right) p \left( \boldsymbol{\theta}, \boldsymbol{\gamma}\right)
+\]</span></p>
+<p>Comme détaillé dans la page sur les <a href="/fr/doc/topics/mcmc">méthodes MCMC</a>, on utilise un algorithme de Monte Carlo par Chaîne de Markov (MCMC) pour explorer cette distribution a posteriori. On obtient ainsi un grand nombre de réalisations <span class="math inline">\(\left( \boldsymbol{\theta}^{(j)}, \boldsymbol{\gamma}^{(j)} \right)_{j=1,\ldots,M}\)</span> issues de la distribution a posteriori. A chacune de ces réalisations correspond une courbe de tarage (de paramètres <span class="math inline">\(\boldsymbol{\theta}^{(j)}\)</span>), ce qui conduit à générer un ensemble de courbes de tarage plausibles au vu des jaugeages et des connaissances hydrauliques a priori.</p>
+</div>
+</div>
+<div id="avancé-cas-des-hauteurs-jaugées-incertaines" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> [Avancé] Cas des hauteurs jaugées incertaines</h1>
+<p>Si on s’affranchit de l’hypothèse que les hauteurs jaugées sont parfaites, on a :</p>
+<p><span class="math display">\[\tilde{H}_i = H_i + \varepsilon_i^H, \text{ avec } \varepsilon_i^H \sim \mathcal{N}(0,u_{H_i})\]</span></p>
+<p>L’équation représentant l’erreur totale et utilisée pour calculer la vraisemblance doit donc être modifiée pour incorporer l’erreur sur la hauteur jaugée :</p>
+<p><span class="math display">\[\tilde{Q}_i = f(\tilde{H}_i - \varepsilon_i^H ; \boldsymbol{\theta}) + \varepsilon_i^f + \varepsilon_i^Q, \text{ avec } \varepsilon_i^f + \varepsilon_i^Q \sim \mathcal{N} \left( 0, \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})} \right) \]</span></p>
+<p>Malheureusement, cette équation ne permet pas directement d’écrire la vraisemblance. En effet, l’erreur sur la hauteur transite à travers le modèle non-linéaire de courbe de tarage. En conséquence, l’erreur de débit résultant de cette erreur de hauteur n’est pas gaussienne. Pour s’affranchir de ce problème, on considère dans BaRatinAGE que l’erreur <span class="math inline">\(\varepsilon_i^H\)</span> est un paramètre inconnu que l’on va chercher à estimer (ou de manière équivalente, on va chercher à estimer la vraie hauteur, ou à corriger la hauteur jaugée). Cette estimation sera contrainte par l’incertitude spécifiée pour la hauteur jaugée, que l’on utilisera ici comme une distribution a priori.</p>
+<p>Si l’on incorpore les erreurs de hauteur <span class="math inline">\(\boldsymbol{\varepsilon}=(\varepsilon_1^H,\ldots,\varepsilon_N^H)\)</span> dans la liste des paramètres à estimer, la vraisemblance s’écrit:</p>
+<p><span class="math display">\[p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \boldsymbol{\varepsilon},  \tilde{\boldsymbol{H}}\right)
+=\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \tilde{Q}_i ; f(\tilde{H}_i - \varepsilon_i^H;\boldsymbol{\theta}), \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\right)}\]</span></p>
+<p>La distribution a priori devient :</p>
+<p><span class="math display">\[p \left( \boldsymbol{\theta}, \boldsymbol{\gamma}, \boldsymbol{\varepsilon} \right)=p(\gamma_1)p(\gamma_2)\prod_{i=1}^{m}{p(\theta_i)}\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \varepsilon_i^H;0,u_{H_i} \right)}\]</span></p>
+<p>La distribution a posteriori s’obtient classiquement avec le théorème de Bayes :</p>
+<p><span class="math display">\[p \left( \boldsymbol{\theta}, \boldsymbol{\gamma},\boldsymbol{\varepsilon} | \tilde{\boldsymbol{Q}},\tilde{\boldsymbol{H}}\right)
+\propto p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma},\boldsymbol{\varepsilon}, \tilde{\boldsymbol{H}}\right) p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} ,\boldsymbol{\varepsilon} \right) \]</span></p>
+<p>La prise en compte explicite de l’incertitude sur les hauteurs jaugées a donc un coût important en termes de complexité et de temps de calcul, puisque chaque hauteur considérée comme incertaine ajoute un paramètre à estimer. Précisons néanmoins que ces paramètres sont en général très fortement contraints par l’incertitude de hauteur (tant que <span class="math inline">\(u_{H_i}\)</span> n’est pas trop grand), ce qui rend cette estimation possible en général.</p>
+</div>
 
 
                         </div>                        
@@ -350,6 +430,15 @@
 		
     
 		
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/">Incertitudes dans les hydrogrammes</a> 
 		
 
@@ -359,15 +448,6 @@
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Les bases de l’inférence Bayesienne</a> 
-		
-
-		
-		    &nbsp; | &nbsp;
-		
-    
-		
-		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique utilisé dans BaRatin</a> </strong> 
-
 		
 
 		
@@ -426,18 +506,18 @@
 		
     
 		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique</a> </strong></br>
+		</div>
+		</br>
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/">Incertitudes dans les hydrogrammes</a> </br> </br>
 		
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Les bases de l’inférence Bayesienne</a> </br> </br>
-		
-    
-		
-		<div style="background-color:beige;">
-		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique utilisé dans BaRatin</a> </strong></br>
-		</div>
-		</br>
 		
     
 		

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Uncertainties in stage time series</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1709572208" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="Uncertainties in stage time series">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/en/doc/topics/stage-series/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Uncertainties in stage time series">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/en/">
+                    
+                      <img src="/img/logoWithText.png" alt="Uncertainties in stage time series logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Uncertainties in stage time series logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Uncertainties in stage time series - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">Home</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/en/doc/baratinage">BaRatinAGE</a></li>
+                            
+                            <li><a href="/en/doc/topics">Topic sheets</a></li>
+                            
+                            <li><a href="/en/doc/case">Case Studies</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/resources">Resources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/blog">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/about">About</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">🇫🇷 fr</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Uncertainties in stage time series</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+<div id="TOC">
+<ul>
+<li><a href="#error-sources" id="toc-error-sources"><span class="toc-section-number">1</span> Error sources</a>
+<ul>
+<li><a href="#instrumental-errors-or-measurement-noise" id="toc-instrumental-errors-or-measurement-noise"><span class="toc-section-number">1.1</span> Instrumental errors or « measurement noise »</a></li>
+<li><a href="#errors-due-to-free-surface-fluctuations" id="toc-errors-due-to-free-surface-fluctuations"><span class="toc-section-number">1.2</span> Errors due to free-surface fluctuations</a></li>
+<li><a href="#errors-due-to-sensor-calibration" id="toc-errors-due-to-sensor-calibration"><span class="toc-section-number">1.3</span> Errors due to sensor calibration</a></li>
+<li><a href="#stage-representativeness-errors" id="toc-stage-representativeness-errors"><span class="toc-section-number">1.4</span> Stage representativeness errors</a></li>
+</ul></li>
+<li><a href="#error-model-used-in-baratinage" id="toc-error-model-used-in-baratinage"><span class="toc-section-number">2</span> Error model used in BaRatinAGE</a></li>
+<li><a href="#how-to-estimate-stage-series-uncertainties" id="toc-how-to-estimate-stage-series-uncertainties"><span class="toc-section-number">3</span> How to estimate stage series uncertainties</a>
+<ul>
+<li><a href="#uncertainties-due-to-non-systematic-errors-sigma_a" id="toc-uncertainties-due-to-non-systematic-errors-sigma_a"><span class="toc-section-number">3.1</span> Uncertainties due to non-systematic errors <span class="math inline">\((\sigma_A)\)</span></a></li>
+<li><a href="#uncertainties-due-to-systematic-errors-sigma_b" id="toc-uncertainties-due-to-systematic-errors-sigma_b"><span class="toc-section-number">3.2</span> Uncertainties due to systematic errors <span class="math inline">\((\sigma_B)\)</span></a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="error-sources" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Error sources</h1>
+<p>At a hydrometric station, an outer staff gauge is conventionally attached to a bridge pier or to a vertical structure in the flow or on the bank. The outer staff gauge allows visual reading of the water level (or stage). It is the baseline measurement of water levels for the station. When applicable, the stilling well of the station is equipped with an inner staff gauge.</p>
+<p>The stage is continuously measured at fixed or variable time intervals using a water level sensor and a datalogger. The sensor requires calibration with the inner staff gauge (if any) and the outer staff gauge, which is always the reference. The calibration is usually checked and adjusted periodically, during field visits.</p>
+<p>The stage series thus obtained are affected by errors with various origins and characteristics. The primary sources of stage errors may be listed and modelled as follows.</p>
+<div id="instrumental-errors-or-measurement-noise" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Instrumental errors or « measurement noise »</h2>
+<p>Irrespective of the type of technology used (float, piezometric sensor, pneumatic sensor, electrical contact sensors, capacity, mechanical sensor, radar, ultrasonic transit-time (submerged or air), satellite telemetry, etc.) even in ideal flow conditions (perfectly constant water level) and a perfect sensor calibration, a stage measurement will always be affected by an instrumental error. Successive measurements of the same actual stage will provide slightly variable values. It is reasonable to assume that such non-systematic errors are independent over successive time steps and that they follow a Gaussian distribution with zero mean.</p>
+</div>
+<div id="errors-due-to-free-surface-fluctuations" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Errors due to free-surface fluctuations</h2>
+<p>The free-surface of a stream is rarely completely horizontal. Depending on flow conditions and other factors such as wind, the water surface may locally fluctuate around an average value. Therefore, the stage measurements will be affected by non-systematic error due to incoherent waves. Again, it is reasonable to assume that such non-systematic errors are independent over successive time steps and that they follow a Gaussian distribution with zero mean.</p>
+</div>
+<div id="errors-due-to-sensor-calibration" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Errors due to sensor calibration</h2>
+<p>Sensor calibration aims at checking and correcting the observed difference between the sensor and the staff gauge. Calibration is never perfect because of the error made when reading the staff gauge, due to staff gauge resolution, fouling, low light, very clear water, small waves, etc. Also, a sensor calibration drift is often observed, due to the aging or malfunctioning of some components, or other causes. Such drift is very difficult to quantify because of its behaviour over time is unknown (slow evolution from days to weeks, or very sudden shift). The sensor calibration error may be approximated by a constant and unknown error on the period between recalibrations. However, this error is resampled after each recalibration. It is assumed that the possible values of this unknown, systematic error follow a Gaussian distribution with zero mean.</p>
+</div>
+<div id="stage-representativeness-errors" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Stage representativeness errors</h2>
+<p>The stage measured at the gauge may not be representative of the average water level across the stream reach, i.e. representative of 1D flow conditions that determine the rating curve. In particular, the deformations due to obstacles and singularities, bridge piers in particular, or the stream sinuosity, can cause stage representativeness errors. This type of error can be difficult to estimate and correct: it will then remain an unknown residual systematic error, which can again be modelled with a Gaussian distribution with zero mean.</p>
+</div>
+</div>
+<div id="error-model-used-in-baratinage" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Error model used in BaRatinAGE</h1>
+<p>The various errors identified are of two distinct types: non-systematic errors (instrumental noise and free-surface fluctuations) and systematic errors (sensor calibration and stage representativeness). This leads to a parsimonious error model with two components:</p>
+<ul>
+<li>A non-systematic error component: errors are independently resampled from one time step to the next;</li>
+<li>A systematic error component: errors are constant over time and may be periodically resampled.</li>
+</ul>
+<p>The error model is as follows:</p>
+<p><span class="math display">\[h(t)= \tilde{h}(t)+\varepsilon(t)+\delta\]</span>
+where</p>
+<ul>
+<li><span class="math inline">\(h(t)\)</span> is the true stage series (unknown);</li>
+<li><span class="math inline">\(\tilde{h}(t)\)</span> is the measured stage series;</li>
+<li><span class="math inline">\(\varepsilon(t)\)</span> is the non-systematic error component: <span class="math inline">\(\varepsilon(t) \sim \mathcal{N}(0,\sigma_A)\)</span></li>
+<li><span class="math inline">\(\delta\)</span> is the systematic error component: <span class="math inline">\(\delta \sim \mathcal{N}(0,\sigma_B)\)</span></li>
+</ul>
+<p>To set the uncertainties associated with a stage series, it is necessary to provide, for each time step:</p>
+<ul>
+<li>The expanded uncertainty related to the non-systematic errors: <span class="math inline">\(1.96 \times \sigma_A\)</span></li>
+<li>The expanded uncertainty related to the systematic errors: <span class="math inline">\(1.96 \times \sigma_B\)</span></li>
+<li>An index (an integer) identifying the period over which the simulated systematic error applies. At each change of period, i.e. when the index changes, the systematic error is resampled. In the current version of BaRatinAGE, increasing integers are used to identify periods.</li>
+</ul>
+</div>
+<div id="how-to-estimate-stage-series-uncertainties" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> How to estimate stage series uncertainties</h1>
+<p>To implement the uncertainty propagation by BaRatinAGE, it is necessary to estimate the two standard deviations describing stage measurement errors,, <span class="math inline">\(\sigma_A\)</span> and <span class="math inline">\(\sigma_B\)</span>, and to know the times of sensor recalibrations (or alternatively, an average frequency). The two standard deviations should ideally be estimated in each case, for each station.</p>
+<div id="uncertainties-due-to-non-systematic-errors-sigma_a" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Uncertainties due to non-systematic errors <span class="math inline">\((\sigma_A)\)</span></h2>
+<p>The two components related to instrumental noise <span class="math inline">\((\sigma_{A_1})\)</span> and free surface fluctuations <span class="math inline">\((\sigma_{A_2})\)</span> can be estimated separately:</p>
+<ul>
+<li><span class="math inline">\((\sigma_{A_1})\)</span> can be estimated from manufacturer specifications. It is also possible to measure it directly through repeatability testing;</li>
+<li><span class="math inline">\((\sigma_{A_2})\)</span> can be estimated from the amplitude of oscillations of the flow free surface at the measuring point.</li>
+</ul>
+<p>Considering that the two components are independent from one another, we have:</p>
+<p><span class="math display">\[\sigma_{A}=\sqrt{\sigma_{A_1}^2+\sigma_{A_2}^2}\]</span></p>
+<p>A direct estimate of <span class="math inline">\(\sigma_{A}\)</span> can also be made, for example, with the standard deviation of a series of successive measurements in situ under conditions where the actual water level does not change. Such measurements would include the two sources of non-systematic errors.</p>
+<p>It is also possible that the value of <span class="math inline">\(\sigma_{A}\)</span> depends on the water level <span class="math inline">\(ℎ\)</span>. BaRatinAGE allows for this possibility, allowing the user to vary its value at each time step and hence according to <span class="math inline">\(ℎ\)</span> in order to consider, for instance, larger errors during floods when waves would be much larger.</p>
+</div>
+<div id="uncertainties-due-to-systematic-errors-sigma_b" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Uncertainties due to systematic errors <span class="math inline">\((\sigma_B)\)</span></h2>
+<p>We suggest two methods for estimating the standard deviation <span class="math inline">\(\sigma_B\)</span>:</p>
+<ul>
+<li>This first method is also the most recommended and requires knowing the sensor recalibration dates and the discrepancies between the sensor and the outer staff gauge during field visits. The standard deviation of these differences is a direct estimate of <span class="math inline">\(\sigma_B\)</span>. Recalibration dates define the times for resampling <span class="math inline">\(\delta\)</span>. It is important to note that a field visit which did not result in sensor recalibration should not to be considered in these computations.</li>
+<li>When such information is not available, it is possible to roughly estimate the standard deviation <span class="math inline">\(\sigma_B\)</span> as a typical difference between staff gauge and sensor, based on expert knowledge. An estimate of the average frequency of sensor recalibration can be made, to resample <span class="math inline">\(\delta\)</span> at regular time intervals.</li>
+</ul>
+</div>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> 
+		
+
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                    
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> </strong></br>
+		</div>
+		</br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> </br> </br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

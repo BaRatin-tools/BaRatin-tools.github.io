@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709048732" rel="stylesheet">
+<link href="/css/custom.css?1709572208" rel="stylesheet">
 
 
 
@@ -303,7 +303,17 @@
 <h1>Généralités</h1>
 <p>Imaginons la situation suivante, qui est idéalisée et donc forcément irréaliste : sur une station hydrométrique, nous disposons de jaugeages parfaits (sans aucune incertitude), et en très grand nombre. En conséquence, il est possible d’estimer très précisément les paramètres de la courbe de tarage, et donc l’incertitude autour de la courbe de tarage est très faible - disons qu’elle est même négligeable pour simplifier. Malgré tout, on s’attend toujours à ce que les jaugeages ne s’alignent pas parfaitement sur la courbe de tarage. Il existe donc toujours une dispersion des jaugeages autour de la courbe qui n’est due ni à l’incertitude des jaugeages (qui est nulle), ni à celle du calage des paramètres de la courbe (qui est négligeable).</p>
 <p>Plus généralement, on observe fréquemment que les incertitudes des jaugeages et l’incertitude liée à l’estimation des paramètres de la courbe ne suffisent pas à expliquer la dispersion des jaugeages autour de la courbe. Il “reste” donc une source d’erreur, qui a certainement de multiples origines: erreur structurelle de la courbe de tarage (c’est-à-dire le fait que l’équation utilisée n’est qu’une approximation de la vraie relation physique hauteur-débit), légers détarages non détectés, phénomène d’hystérésis ignoré, incertitudes sur les jaugeages sous-estimées, etc.</p>
-<p>Pour faire face à ce problème, BaRatinAGE introduit le concept d’erreur restante, qui sera appelée <em>erreur structurelle</em> pour simplifier l’interprétation, qui est utilisée pour ajouter l’incertitude qui manque pour expliquer la dispersion des jaugeages autour de la courbe de tarage, sans vraiment préjuger de l’origine de cette incertitude manquante. C’est en quelque sorte le ramasse miettes des incertitudes (d’où l’icône utilisée).</p>
+<p>Pour faire face à ce problème, BaRatinAGE introduit le concept d’erreur restante, qui sera appelée <em>erreur structurelle</em> pour simplifier l’interprétation, qui est utilisée pour ajouter l’incertitude qui manque pour expliquer la dispersion des jaugeages autour de la courbe de tarage, sans vraiment préjuger de l’origine de cette incertitude manquante. C’est en quelque sorte le ramasse miettes des incertitudes (d’où l’icône utilisée : <img src="structural_error_model.svg" style="display:inline-block">).</p>
+</div>
+<div id="création-dun-modèle-derreur-structurelle" class="section level1">
+<h1>Création d’un modèle d’erreur structurelle</h1>
+<p>Par défaut, un modèle d’erreur structurelle vierge nommé <em>ES (1)</em> pré-existe et peut être utilisé. Vous pouvez créer un modèle d’erreur structurelle de plusieurs façons :</p>
+<ul>
+<li>via le menu <em>Composants… Créer un nouveau modèle d’erreur structurelle</em> ;</li>
+<li>en effectuant un clic droit sur le noeud <img src="structural_error_model.svg" style="display:inline-block"> <em>Modèle d’erreur structurelle</em> dans l’arborescence de l’explorateur ;</li>
+<li>en cliquant sur le bouton <img src="structural_error_model_add.svg" style="display:inline-block"> dans la barre d’outils.</li>
+</ul>
+<p>Il vous sera possible de renommer ce nouveau modèle d’erreur structurelle et d’en saisir une description. Un modèle d’erreur structurelle existant peut être dupliqué ou supprimé.</p>
 </div>
 <div id="modèles-disponibles-dans-baratinage" class="section level1">
 <h1>Modèles disponibles dans BaRatinAGE</h1>
@@ -315,8 +325,8 @@
 </ul>
 <p>En pratique, nous recommandons d’utiliser la deuxième option (<span class="math inline">\(\sigma = \gamma_1 + \gamma_2 \ Q\)</span>), car elle permet généralement de distribuer l’<em>erreur structurelle</em> sur toute la gamme de débit de façon réaliste. Pour l’instant, seul ce modèle d’<em>erreur structurelle</em> est implémentée dans BaRatinAGE (les deux autres le seront sans doute dans de futures versions du logiciel). Par défaut, des distributions uniformes sont choisies pour les paramètres <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span> :</p>
 <p><img src="StructError.png" /></p>
-<p>Si on déverrouille les champs, il est possible de spécifier soi-même les distributions des paramètres <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span>. Par exemple, la borne supérieure par défaut (10000 m<span class="math inline">\(^3\)</span>/s) de la distribution uniforme de <span class="math inline">\(\gamma_1\)</span> peut ne pas être forcément bien adaptée à l’ordre de grandeur des débits les plus forts enregistrés à la station hydrométrique. Il peut alors être utile de l’augmenter ou de la diminuer.</p>
-<p>Une description plus formelle et plus complète des modèles d’<em>erreur structurelle</em>, et plus généralement des modèles statistiques utilisés dans BaRatinAGE, est disponible dans <a href="/fr/doc/topics/modele-stat">ce document</a>.</p>
+<p>Si on déverrouille les champs, il est possible de spécifier soi-même les distributions des paramètres <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span>. Par exemple, la borne supérieure par défaut (10000 m<span class="math inline">\(^3\)</span>/s) de la distribution uniforme de <span class="math inline">\(\gamma_1\)</span> peut ne pas être forcément bien adaptée à l’ordre de grandeur des débits les plus forts enregistrés à la station hydrométrique. Il peut alors être utile de l’augmenter ou de la diminuer. On peut également sélectionner “Valeur fixe” : dans ce cas, le paramètre ne sera pas estimé mais fixé à la valeur spécifiée.</p>
+<p>Une description plus formelle et plus complète des <em>modèles d’erreur structurelle</em>, et plus généralement des modèles statistiques utilisés dans BaRatinAGE, est disponible dans <a href="/fr/doc/topics/modele-stat">ce document</a>.</p>
 </div>
 
 

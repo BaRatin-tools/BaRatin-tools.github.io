@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709048732" rel="stylesheet">
+<link href="/css/custom.css?1709572208" rel="stylesheet">
 
 
 
@@ -347,10 +347,10 @@ a(H-b)^c \text { sinon}
 </div>
 <div id="section-controls-and-channel-controls" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Section controls and channel controls</h2>
-<p>For section controls, the stage-discharge relation at the measurement cross-section is determined by a downstream cross-section where the flow is critical (Froude number is equal to 1). Applying the Bernoulli principle (energy conservation) between these two cross-sections leads to the followinf equation:</p>
-<p><span class="math display">\[Q(H) = CA_w\sqrt{2gD_h}\]</span></p>
+<p>For section controls, the stage-discharge relation at the measurement cross-section is determined by a downstream cross-section where the flow is critical (Froude number is equal to 1). For simple cross-section shapes such as the ones used in BaRatinAGE (rectangular, triangular, parabolic), the following equation holds:</p>
+<p><span class="math display">\[Q(H) = C\sqrt{2g}A_w(H)\sqrt{H-b}\]</span></p>
 <p>where <span class="math inline">\(C\)</span> is a discharge coefficient accounting for the head losses between the measurement cross-section (upstream) and the critical cross-section (downstream) and depending on the cross-section shape, <span class="math inline">\(A_w\)</span> is the wetted area (<span class="math inline">\(m^2\)</span>), <span class="math inline">\(g\)</span> is the gravity
-acceleration (<span class="math inline">\(g \approx 9.81 m.s^{-2}\)</span>) and <span class="math inline">\(D_h=A_w/B_w\)</span> is the hydraulic depth (<span class="math inline">\(m\)</span>), defined as the ratio between the wetted area <span class="math inline">\(A_w\)</span> and the width <span class="math inline">\(B_w\)</span>.</p>
+acceleration (<span class="math inline">\(g \approx 9.81 m.s^{-2}\)</span>).</p>
 <p>For channel controls, i.e. when the stage-discharge relation is determined by friction, equation 1 is established from the Manning-Strickler equation applied to the given geometry of the channel. The Manning-Strickler equation is:</p>
 <p><span class="math display">\[Q(H) = K_S A_w R_h^{2/3} \sqrt{S_f}\]</span></p>
 <p>where <span class="math inline">\(K_S\)</span> = flow resistance coefficient (Strickler coefficient in <span class="math inline">\(m^{1/3}.s^{-1}\)</span>) ; Manning coefficient <span class="math inline">\(n = 1 / K_S\)</span> (<span class="math inline">\(m^{-1/3}.s\)</span>) can be used instead. <span class="math inline">\(A_w\)</span> = wetted area (<span class="math inline">\(m^2\)</span>), <span class="math inline">\(R_h=A_w/P_w\)</span> = hydraulic radius (<span class="math inline">\(m\)</span>), <span class="math inline">\(P_w\)</span> = wetted perimeter (<span class="math inline">\(m\)</span>), <span class="math inline">\(S_f\)</span> = head line slope (or friction slope), approximated by the longitudinal slope of the bed or of the water profile for steady uniform flows.</p>
@@ -666,11 +666,41 @@ examples are provided in the <a href="/en/doc/case">case study</a> section.</p>
 		
     
 		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> 
 		
 
 		
 		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> 
+		
+
 		
     
          
@@ -710,7 +740,23 @@ examples are provided in the <a href="/en/doc/case">case study</a> section.</p>
 		
     
 		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> </br> </br>
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> </br> </br>
 		
     
          

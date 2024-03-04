@@ -8,6 +8,20 @@
     <language>en</language>
     <atom:link href="https://baratin-tools.github.io/en/doc/baratinage/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Overview</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/overview/</guid>
+      <description>General information BaRatinAGE v3 is a software package for estimating rating curves and their uncertainties, and for propagating these uncertainties to discharge series. The BaRatin (BAyesian RATINg curve) method is based on a hydraulic analysis of the hydrometric station and Bayesian estimation of the rating curve.</description>
+    </item>
+    <item>
+      <title>Main frame</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/main-frame/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/main-frame/</guid>
+      <description>Organisation générale La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE v3 :&#xA;Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
+    </item>
+    <item>
       <title>Gaugings</title>
       <link>https://baratin-tools.github.io/en/doc/baratinage/gaugings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

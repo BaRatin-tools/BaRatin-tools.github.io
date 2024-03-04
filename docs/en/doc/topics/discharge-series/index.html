@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Uncertainties in discharge time series</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1709572208" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="Uncertainties in discharge time series">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/en/doc/topics/discharge-series/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Uncertainties in discharge time series">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/en/">
+                    
+                      <img src="/img/logoWithText.png" alt="Uncertainties in discharge time series logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Uncertainties in discharge time series logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Uncertainties in discharge time series - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">Home</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/en/doc/baratinage">BaRatinAGE</a></li>
+                            
+                            <li><a href="/en/doc/topics">Topic sheets</a></li>
+                            
+                            <li><a href="/en/doc/case">Case Studies</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/resources">Resources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/blog">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/about">About</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">🇫🇷 fr</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Uncertainties in discharge time series</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+
+<p>This document describes how errors <a href="/en/doc/topics/stat-model">from the rating curve</a> (parametric errors and structural errors) and those <a href="/en/doc/topics/stage-series">from the stage time series</a> (non-systematic and systematic stage measurement errors) are propagated to the discharge time series in BaRatinAGE.</p>
+<p>The estimation of a rating curve in BaRatinAGE is actually based on 500 rating curves, each corresponding to a parameter set (parameters are those of the equation of the rating curve, <span class="math inline">\(\boldsymbol{\theta}\)</span>, along with parameters <span class="math inline">\(\boldsymbol{\gamma}=(\gamma_1,\gamma_2)\)</span> used to define the standard deviation of structural errors). The stage series is a time series of recorded water levels <span class="math inline">\(\tilde{h}(t)\)</span>. Standard deviations <span class="math inline">\(\sigma_A^h\)</span> and <span class="math inline">\(\sigma_B^h\)</span> (corresponding to non-systematic and systematic errors affecting the stage series) can be used to generate 500 stage series. The propagation method is described below for a rating curve <span class="math inline">\(i\)</span> (i.e., one particular parameter set):</p>
+<ol style="list-style-type: decimal">
+<li>At each time step <span class="math inline">\(t\)</span>, an error <span class="math inline">\(\varepsilon_i^h(t)\)</span> is sampled from the Gaussian distribution <span class="math inline">\(\mathcal{N}(0,\sigma_A^h)\)</span>. The error is added to the measured stage <span class="math inline">\(\tilde{h}(t)\)</span>.</li>
+<li>For each period during which the systematic error affecting the stage series is constant, an error <span class="math inline">\(\delta_i^h\)</span> is sampled from the Gaussian distribution <span class="math inline">\(\mathcal{N}(0,\sigma_B^h)\)</span>. The error is added to the measured stage already affected by non-systematic errors. The <span class="math inline">\(i\)</span>th stage series is hence obtained as: <span class="math inline">\(h_i(t) = \tilde{h}(t) + \varepsilon_i^h(t) + \delta_i^h\)</span>.</li>
+<li>At each time step <span class="math inline">\(t\)</span>, the discharge <span class="math inline">\(\hat{Q}_i(t)\)</span> is computed from the stage series <span class="math inline">\(h_i(t)\)</span> and the rating curve equation <span class="math inline">\(f\)</span> with parameters <span class="math inline">\(\boldsymbol{\theta}_i\)</span>.</li>
+<li>At each time step <span class="math inline">\(t\)</span>, a structural error rating curve <span class="math inline">\(\varepsilon_i^f(t)\)</span> is finally added to the computed discharge <span class="math inline">\(\hat{Q}_i(t)\)</span>. The error is sampled from the Gaussian distribution <span class="math inline">\(\mathcal{N}\left( 0,\gamma_1 + \gamma_2 \hat{Q}_i(t) \right)\)</span>.</li>
+</ol>
+<p>The equation combining these various steps is given below:</p>
+<p><span class="math display">\[Q_i(t) = \underbrace{f \left(
+\overbrace{\tilde{h}(t) + \varepsilon_i^h(t) + \delta_i^h}^{h_i(t)}
+; \boldsymbol{\theta}_i \right)}_{\hat{Q}_i(t)}
++ \varepsilon_i^f(t)\]</span></p>
+<p>The figure below illustrates and summarizes the successive computational steps.</p>
+<img src="propagation.en.png" width="60%">
+<p style="text-align: center;color: gray;">
+Principle of the propagation method illustrated with two parameter sets <span class="math inline">\(\boldsymbol{\theta}_{i_1}\)</span> (red) and <span class="math inline">\(\boldsymbol{\theta}_{i_2}\)</span> (blue): from the measured stage series to the two flow series (each corresponding to a parameter set, i.e. a possible rating curve and a possible stage series).
+</p>
+<p>The MaxPost (most probable) rating curve is obtained by ignoring all error sources: <span class="math inline">\(Q_{MP}(t) = f(\tilde{h}(t) ; \boldsymbol{\theta}_{MP})\)</span> where <span class="math inline">\(\boldsymbol{\theta}_{MP}\)</span> is the paameter set defining the MaxPost rating curve.</p>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> </strong> 
+
+		
+
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                    
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> </strong></br>
+		</div>
+		</br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

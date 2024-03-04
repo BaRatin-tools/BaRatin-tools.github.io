@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Statistical model</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1709572208" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="Statistical model">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/en/doc/topics/statistical-model/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Statistical model">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/en/">
+                    
+                      <img src="/img/logoWithText.png" alt="Statistical model logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Statistical model logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Statistical model - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">Home</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/en/doc/baratinage">BaRatinAGE</a></li>
+                            
+                            <li><a href="/en/doc/topics">Topic sheets</a></li>
+                            
+                            <li><a href="/en/doc/case">Case Studies</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/resources">Resources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/blog">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/about">About</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">🇫🇷 fr</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Statistical model</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+<div id="TOC">
+<ul>
+<li><a href="#model-and-hypotheses" id="toc-model-and-hypotheses"><span class="toc-section-number">1</span> Model and hypotheses</a>
+<ul>
+<li><a href="#gauging-errors" id="toc-gauging-errors"><span class="toc-section-number">1.1</span> Gauging errors</a></li>
+<li><a href="#structural-error" id="toc-structural-error"><span class="toc-section-number">1.2</span> Structural error</a></li>
+<li><a href="#total-error" id="toc-total-error"><span class="toc-section-number">1.3</span> Total error</a></li>
+</ul></li>
+<li><a href="#bayesian-estimation" id="toc-bayesian-estimation"><span class="toc-section-number">2</span> Bayesian estimation</a>
+<ul>
+<li><a href="#information-brought-by-the-gaugings-likelihood" id="toc-information-brought-by-the-gaugings-likelihood"><span class="toc-section-number">2.1</span> Information brought by the gaugings: likelihood</a></li>
+<li><a href="#information-brought-by-hydraulics-prior-distribution" id="toc-information-brought-by-hydraulics-prior-distribution"><span class="toc-section-number">2.2</span> Information brought by hydraulics: prior distribution</a></li>
+<li><a href="#bayes-theorem-and-posterior-distribution" id="toc-bayes-theorem-and-posterior-distribution"><span class="toc-section-number">2.3</span> Bayes theorem and posterior distribution</a></li>
+</ul></li>
+<li><a href="#advanced-handling-stage-uncertainty-in-gaugings" id="toc-advanced-handling-stage-uncertainty-in-gaugings"><span class="toc-section-number">3</span> [Advanced] Handling stage uncertainty in gaugings</a></li>
+</ul>
+</div>
+
+<div id="model-and-hypotheses" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Model and hypotheses</h1>
+<div id="gauging-errors" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Gauging errors</h2>
+<p>BaRatin statistical model assumes that stage/discharge measurements <span class="math inline">\((\tilde{H}_i,\tilde{Q}_i)\)</span> are affected by Gaussian errors with zero mean (no bias) and known standard deviations <span class="math inline">\(u_{H_i}\)</span> and <span class="math inline">\(u_{Q_i}\)</span>. In general, we recommend ignoring stage uncertainty for gaugings (<span class="math inline">\(u_{H_i}=0\)</span>), at least as a first approximation. The case of non-negligible stage uncertainty will be described at the end of this page. The following statistical model is therefore used:</p>
+<p><span class="math display">\[\tilde{H}_i = H_i\]</span>
+<span class="math display">\[\tilde{Q}_i = Q_i + \varepsilon_i^Q, \text{ with } \varepsilon_i^Q \sim \mathcal{N}(0,u_{Q_i})\]</span></p>
+<p>where <span class="math inline">\(H_i\)</span> and <span class="math inline">\(Q_i\)</span> denote the true stage/discharge values and <span class="math inline">\(\varepsilon_i^Q\)</span> denotes the discharge error.</p>
+</div>
+<div id="structural-error" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Structural error</h2>
+<p>The rating curve is formalized as a function <span class="math inline">\(f(h;\boldsymbol{\theta})\)</span>, where <span class="math inline">\(h\)</span> is the stage and <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\ldots,\theta_m)\)</span> is the vector containing the <span class="math inline">\(m\)</span> parameters of the rating curve (see the <a href="/en/doc/topics/rating-curve">rating curve equation</a> page). We assume that the difference between the true discharge and its simplified mathematical representation <span class="math inline">\(f\)</span> is a realisation from a Gaussian distribution with zero mean and standard deviation <span class="math inline">\(\sigma_f(h)\)</span>. The latter may vary as a function of stage:</p>
+<p><span class="math display">\[Q_i = f(H_i;\boldsymbol{\theta}) + \varepsilon_i^f, \text{ with } \varepsilon_i^f \sim \mathcal{N}(0,\sigma_f(H_i)) \]</span></p>
+<p>The variation of the standard deviation <span class="math inline">\(\sigma_f(h)\)</span> with stage is parameterised as a function of the discharge computed from the rating curve, which allows reflecting the usual observation that structural uncertainty increases with discharge:</p>
+<p><span class="math display">\[\sigma_f(h;\boldsymbol{\gamma}) = \gamma_1 + \gamma_2 \times f(h;\boldsymbol{\theta})\]</span></p>
+</div>
+<div id="total-error" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Total error</h2>
+<p>Assuming that the remnant error and the gauging error are independent, the total error can be written as follows by combining the preceding equations:</p>
+<p><span class="math display">\[\tilde{Q}_i = f(\tilde{H}_i;\boldsymbol{\theta}) + \varepsilon_i^f + \varepsilon_i^Q, \text{ with } \varepsilon_i^f + \varepsilon_i^Q \sim \mathcal{N} \left( 0, \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})} \right) \]</span></p>
+<p>where <span class="math inline">\(\tilde{H}_i\)</span> and <span class="math inline">\(\tilde{Q}_i\)</span> are the gauged stage/discharge, and <span class="math inline">\(\varepsilon_i^f\)</span> and <span class="math inline">\(\varepsilon_i^Q\)</span> are the Gaussian structural and gauging errors, respectively. This equation therefore states that the gauged discharge is equal to the discharge computed with the rating curve, plus an error due to gauging uncertainty, plus an error due to the imperfect formulation of the rating curve.</p>
+<p>Several unknown quantities appear in the equation above: the rating curve parameters <span class="math inline">\(\boldsymbol{\theta}\)</span> and the parameters <span class="math inline">\(\boldsymbol{\gamma}\)</span> describing the standard deviation of strutural errors. Inference for these unknown quantities is based on a Bayesian approach(see <a href="/en/doc/topics/bayesian">bayesian estimation</a> page). This requires deriving the likelihood function and specifying a prior distribution, as described next.</p>
+</div>
+</div>
+<div id="bayesian-estimation" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Bayesian estimation</h1>
+<div id="information-brought-by-the-gaugings-likelihood" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Information brought by the gaugings: likelihood</h2>
+<p>Acccording to the equation above, the gauged discharge <span class="math inline">\(\tilde{Q}_i\)</span> is a realisation from a Gaussian distribution with mean <span class="math inline">\(f(\tilde{H}_i;\boldsymbol{\theta})\)</span> (i.e. the rating curve discharge) and standard deviation <span class="math inline">\(\sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\)</span>. Assuming that arors affecting all gauged discharges are mutually independent, the likelihood can be written as:</p>
+<p><span class="math display">\[p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \tilde{\boldsymbol{H}}\right)
+=\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \tilde{Q}_i ; f(\tilde{H}_i;\boldsymbol{\theta}), \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\right)}\]</span></p>
+<p>where <span class="math inline">\(\tilde{\boldsymbol{Q}} = (\tilde{Q}_1,\ldots,\tilde{Q}_N)\)</span> denote the <span class="math inline">\(N\)</span> gauged discharge and <span class="math inline">\(d_{\mathcal{N}}(z;m,s)\)</span> denote the probability density function (pdf) of a Gaussian distribution with mean <span class="math inline">\(m\)</span> and standard deviation <span class="math inline">\(s\)</span>, evaluated at some value <span class="math inline">\(z\)</span>.</p>
+</div>
+<div id="information-brought-by-hydraulics-prior-distribution" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Information brought by hydraulics: prior distribution</h2>
+<p>The prior distribution offers the opportunity to include hydraulic knowledge, as discussed in the page <a href="/en/doc/topics/hydraulic-controls/">hydraulic controls</a>. BaRatinAGE uses independent prior distributions for each inferred parameter, leading to the joint prior distribution:</p>
+<p><span class="math display">\[p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} \right)=p(\gamma_1)p(\gamma_2)\prod_{i=1}^{m}{p(\theta_i)}\]</span></p>
+</div>
+<div id="bayes-theorem-and-posterior-distribution" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Bayes theorem and posterior distribution</h2>
+<p>As explained in the page <a href="/en/doc/topics/bayesian">Bayesian estimation</a>, Bayes theorem is used to compute the pdf of the posterior distribution (up to a constant of proportionality):</p>
+<p><span class="math display">\[p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} | \tilde{\boldsymbol{Q}},\tilde{\boldsymbol{H}}\right)
+\propto p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \tilde{\boldsymbol{H}}\right) p \left( \boldsymbol{\theta}, \boldsymbol{\gamma}\right)
+\]</span></p>
+<p>As explained in the page on <a href="/en/doc/topics/mcmc">MCMC methods</a>, a Markov Chain Monte Carlo (MCMC) sampler is then used to explore the posterior distribution. This results in a large number of realisations <span class="math inline">\(\left( \boldsymbol{\theta}^{(j)}, \boldsymbol{\gamma}^{(j)} \right)_{j=1,\ldots,M}\)</span> from the posterior distribution. Each realisation can be associated with a rating curve (with parameters<span class="math inline">\(\boldsymbol{\theta}^{(j)}\)</span>), which yields an ensemble of rating curves that are plausible given the gaugings and the hydraulic knowledge.</p>
+</div>
+</div>
+<div id="advanced-handling-stage-uncertainty-in-gaugings" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> [Advanced] Handling stage uncertainty in gaugings</h1>
+<p>Abandoning the hypothesis that gauged stages are perfectly measured leads to the following equation:</p>
+<p><span class="math display">\[\tilde{H}_i = H_i + \varepsilon_i^H, \text{ with } \varepsilon_i^H \sim \mathcal{N}(0,u_{H_i})\]</span></p>
+<p>The equation describing the total error and used to compute the likelihood therefore has to be modified to include this non-zero stage error:</p>
+<p><span class="math display">\[\tilde{Q}_i = f(\tilde{H}_i - \varepsilon_i^H ; \boldsymbol{\theta}) + \varepsilon_i^f + \varepsilon_i^Q, \text{ with } \varepsilon_i^f + \varepsilon_i^Q \sim \mathcal{N} \left( 0, \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})} \right) \]</span></p>
+<p>Unfortunately, this equation does not yield a closed-form expression for the likelihood. This is because the stage error <span class="math inline">\(\varepsilon_i^H\)</span> propagates through the nonlinear rating curve function <span class="math inline">\(f\)</span>. Consequently, the discharge error resulting from the stage error is not Gaussian. In order to circumvent this difficulty, the stage error <span class="math inline">\(\varepsilon_i^H\)</span> is considered as a new unknown quantity that needs to be estimated (equivalently, this can be viewed as estimating the true stage or correcting the gauged stage). This estimation is constrained by the specified stage uncertainty <span class="math inline">\(u_{H_i}\)</span>, that is used here as a prior information.</p>
+<p>Adding the stage errors <span class="math inline">\(\boldsymbol{\varepsilon}=(\varepsilon_1^H,\ldots,\varepsilon_N^H)\)</span> into the list of unknown parameters, the likelihood becomes:</p>
+<p><span class="math display">\[p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \boldsymbol{\varepsilon},  \tilde{\boldsymbol{H}}\right)
+=\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \tilde{Q}_i ; f(\tilde{H}_i - \varepsilon_i^H;\boldsymbol{\theta}), \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\right)}\]</span></p>
+<p>The prior distribution becomes:</p>
+<p><span class="math display">\[p \left( \boldsymbol{\theta}, \boldsymbol{\gamma}, \boldsymbol{\varepsilon} \right)=p(\gamma_1)p(\gamma_2)\prod_{i=1}^{m}{p(\theta_i)}\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \varepsilon_i^H;0,u_{H_i} \right)}\]</span></p>
+<p>The posterior distribution is then derived (up to a constant of proportionality) using Bayes theorem:</p>
+<p><span class="math display">\[p \left( \boldsymbol{\theta}, \boldsymbol{\gamma},\boldsymbol{\varepsilon} | \tilde{\boldsymbol{Q}},\tilde{\boldsymbol{H}}\right)
+\propto p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma},\boldsymbol{\varepsilon}, \tilde{\boldsymbol{H}}\right) p \left( \boldsymbol{\theta}, \boldsymbol{\gamma} ,\boldsymbol{\varepsilon} \right) \]</span></p>
+<p>Explicitly accounting for stage uncertainty in gaugings therefore has an important computational cost, because each stage value considered as uncertain correspond to an additional unknown parameter. Note however that these additional parameters are strongly constrained by the specified stage uncertainty (as long as <span class="math inline">\(u_{H_i}\)</span> is not too large), which makes this estimation feasible in general.</p>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> 
+		
+
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                    
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> </strong></br>
+		</div>
+		</br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> </br> </br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

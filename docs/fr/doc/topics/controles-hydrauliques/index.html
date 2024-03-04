@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709048732" rel="stylesheet">
+<link href="/css/custom.css?1709572208" rel="stylesheet">
 
 
 
@@ -347,9 +347,9 @@ a(H-b)^c \text { sinon}
 </div>
 <div id="contrôles-par-section-et-contrôles-par-chenal" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Contrôles par section et contrôles par chenal</h2>
-<p>Pour les contrôles par section, la relation hauteur-débit à la section de mesure est déterminée par le passage de l’écoulement par le régime critique (nombre de Froude égal à 1) au niveau de la section de contrôle. En appliquant le principe de Bernoulli (conservation de l’énergie) entre ces deux sections, on établit l’équation suivante :</p>
-<p><span class="math display">\[Q(H) = CA_w\sqrt{2gD_h}\]</span></p>
-<p>avec <span class="math inline">\(C\)</span> un coefficient de débit dépendant de la forme de la section de contrôle et reflétant les pertes de charge entre la section de mesure et la section critique située à l’aval, <span class="math inline">\(A_w\)</span> l’aire mouillée (en <span class="math inline">\(m^2\)</span>), <span class="math inline">\(g\)</span> l’accélération de la gravité (<span class="math inline">\(g \approx 9.81 m.s^{-2}\)</span>) et <span class="math inline">\(D_h=A_w/B_w\)</span> la profondeur hydraulique (en <span class="math inline">\(m\)</span>), définie comme le ratio entre l’aire mouillée <span class="math inline">\(A_w\)</span> et la largeur au miroir <span class="math inline">\(B_w\)</span>.</p>
+<p>Pour les contrôles par section, la relation hauteur-débit à la section de mesure est déterminée par le passage de l’écoulement par le régime critique (nombre de Froude égal à 1) au niveau d’une section de contrôle située à l’aval du point de mesure. Pour les formes de section simples telles que celles considérées dans BaRatinAGE (cas rectangle, triangle, parabole), on établit l’équation ci-dessous :</p>
+<p><span class="math display">\[Q(H) = C\sqrt{2g}A_w(H)\sqrt{H-b}\]</span></p>
+<p>avec <span class="math inline">\(C\)</span> un coefficient de débit dépendant de la forme de la section de contrôle et reflétant les pertes de charge entre la section de mesure et la section critique située à l’aval, <span class="math inline">\(A_w\)</span> l’aire mouillée (en <span class="math inline">\(m^2\)</span>), <span class="math inline">\(g\)</span> l’accélération de la gravité (<span class="math inline">\(g \approx 9.81 m.s^{-2}\)</span>).</p>
 <p>Pour les contrôles par chenal, i.e. quand la relation hauteur-débit est déterminée par les frottements, on établit l’équation puissance à partir de la formule de Manning-Strickler appliquée à la géométrie du chenal. La formule de Manning-Strickler s’écrit :</p>
 <p><span class="math display">\[Q(H) = K_S A_w R_h^{2/3} \sqrt{S_f}\]</span></p>
 <p>Avec <span class="math inline">\(K_S\)</span> = le coefficient de résistance à l’écoulement (coefficient de Strickler en <span class="math inline">\(m^{1/3}.s^{-1}\)</span>) ; le
@@ -687,6 +687,14 @@ Figure 9. Profil en travers du chenal de contrôle et principe de sa modélisati
 		
     
 		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/">Incertitudes dans les hydrogrammes</a> 
 		
 
@@ -696,14 +704,6 @@ Figure 9. Profil en travers du chenal de contrôle et principe de sa modélisati
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Les bases de l’inférence Bayesienne</a> 
-		
-
-		
-		    &nbsp; | &nbsp;
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique utilisé dans BaRatin</a> 
 		
 
 		
@@ -765,15 +765,15 @@ Figure 9. Profil en travers du chenal de contrôle et principe de sa modélisati
 		
     
 		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique</a> </br> </br>
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/">Incertitudes dans les hydrogrammes</a> </br> </br>
 		
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Les bases de l’inférence Bayesienne</a> </br> </br>
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique utilisé dans BaRatin</a> </br> </br>
 		
     
 		

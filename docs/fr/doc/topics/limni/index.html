@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709048732" rel="stylesheet">
+<link href="/css/custom.css?1709572208" rel="stylesheet">
 
 
 
@@ -298,8 +298,94 @@
                         <div id="post-content">
                           
 
+<div id="TOC">
+<ul>
+<li><a href="#sources-derreur" id="toc-sources-derreur"><span class="toc-section-number">1</span> Sources d’erreur</a>
+<ul>
+<li><a href="#erreurs-instrumentales-ou-bruit-de-mesure" id="toc-erreurs-instrumentales-ou-bruit-de-mesure"><span class="toc-section-number">1.1</span> Erreurs instrumentales ou « bruit de mesure »</a></li>
+<li><a href="#erreurs-dues-aux-fluctuations-de-la-surface-libre" id="toc-erreurs-dues-aux-fluctuations-de-la-surface-libre"><span class="toc-section-number">1.2</span> Erreurs dues aux fluctuations de la surface libre</a></li>
+<li><a href="#erreurs-dues-au-calage-du-capteur" id="toc-erreurs-dues-au-calage-du-capteur"><span class="toc-section-number">1.3</span> Erreurs dues au calage du capteur</a></li>
+<li><a href="#erreurs-de-représentativité-du-niveau-moyen" id="toc-erreurs-de-représentativité-du-niveau-moyen"><span class="toc-section-number">1.4</span> Erreurs de représentativité du niveau moyen</a></li>
+</ul></li>
+<li><a href="#modèle-derreur-utilisé-dans-baratinage" id="toc-modèle-derreur-utilisé-dans-baratinage"><span class="toc-section-number">2</span> Modèle d’erreur utilisé dans BaRatinAGE</a></li>
+<li><a href="#comment-estimer-les-incertitudes-associées-au-limnigramme" id="toc-comment-estimer-les-incertitudes-associées-au-limnigramme"><span class="toc-section-number">3</span> Comment estimer les incertitudes associées au limnigramme</a>
+<ul>
+<li><a href="#incertitudes-dues-aux-erreurs-non-systématiques-sigma_a" id="toc-incertitudes-dues-aux-erreurs-non-systématiques-sigma_a"><span class="toc-section-number">3.1</span> Incertitudes dues aux erreurs non-systématiques <span class="math inline">\((\sigma_A)\)</span></a></li>
+<li><a href="#incertitudes-dues-aux-erreurs-systématiques-sigma_b" id="toc-incertitudes-dues-aux-erreurs-systématiques-sigma_b"><span class="toc-section-number">3.2</span> Incertitudes dues aux erreurs systématiques <span class="math inline">\((\sigma_B)\)</span></a></li>
+</ul></li>
+</ul>
+</div>
 
-<p>XXX</p>
+<div id="sources-derreur" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Sources d’erreur</h1>
+<p>Aux abords d’une station hydrométrique, une échelle graduée externe, appelée échelle limnimétrique, est classiquement fixée sur une pile de pont ou sur un support vertical dans l’écoulement ou sur la berge. Cette échelle externe permet une lecture visuelle de la hauteur d’eau. Elle constitue la référence de mesure des hauteurs d’eau pour la station. Lorsque la station en est munie, le puits de tranquillisation est équipé d’une échelle graduée interne.</p>
+<p>Les hauteurs d’eau sont mesurées en continu par un limnigraphe (ou capteur de niveau) et un enregistreur de données (centrale d’acquisition). Les hauteurs d’eau sont enregistrées à pas de temps fixe ou variable. Le capteur doit être calé avec l’échelle interne (s’il y en a une) et avec l’échelle extérieure, qui est toujours la référence. Ce calage est le plus souvent vérifié et ajusté périodiquement, lors des tournées de terrain.</p>
+<p>Les séries de hauteur d’eau (limnigrammes) ainsi obtenus sont affectés par des erreurs ayant des origines et des caractéristiques diverses. Les principales sources d’erreur du limnigramme peuvent être listées et modélisées comme suit.</p>
+<div id="erreurs-instrumentales-ou-bruit-de-mesure" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Erreurs instrumentales ou « bruit de mesure »</h2>
+<p>Quel que soit le type de technologie utilisée (flotteur, capteur de pression à membrane ou pneumatique, capteurs à contact électrique, à capacité, palpeur mécanique, radar (immergé ou aérien), ultrasons, télémétrie satellitaire, …), même avec des conditions d’écoulement idéales (niveau d’eau parfaitement constant) et un calage parfait du capteur, une mesure de niveau sera toujours affectée d’une erreur d’origine instrumentale. Des mesures répétées d’une même hauteur d’eau réelle fourniront un jeu de valeurs légèrement différentes les unes des autres. Il est raisonnable de supposer que ces erreurs sont complètement indépendantes d’un pas de temps à un autre et qu’elles suivent une distribution gaussienne de moyenne nulle.</p>
+</div>
+<div id="erreurs-dues-aux-fluctuations-de-la-surface-libre" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Erreurs dues aux fluctuations de la surface libre</h2>
+<p>La surface libre d’un cours d’eau est rarement complètement horizontale. En fonction des conditions d’écoulement et d’autres variables environnementales telles que le vent, la surface de l’eau peut localement fluctuer autour d’une valeur moyenne. De ce fait, les mesures de hauteur d’eau seront affectées d’erreurs non-systématiques dues aux vagues incohérentes (batillage). A nouveau, il est raisonnable de supposer que ces erreurs sont complètement indépendantes d’un pas de temps à un autre et qu’elles suivent une distribution gaussienne de moyenne nulle.</p>
+</div>
+<div id="erreurs-dues-au-calage-du-capteur" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Erreurs dues au calage du capteur</h2>
+<p>Le calage du capteur consiste à vérifier et corriger les écarts entre le capteur et l’échelle limnimétrique. Le calage n’est jamais parfait en raison de l’erreur faite lors de la lecture de l’échelle limnimétrique, à cause de sa résolution, son encrassement, un faible éclairage, une eau très claire, des vaguelettes, etc. De plus une dérive du calage du capteur est souvent constatée, en raison du vieillissement ou dysfonctionnement de certains composants du capteur, ou d’autres causes. Une telle dérive est très difficile à quantifier du fait de son évolution inconnue au cours du temps (évolution lente, de quelques jours à quelques semaines, ou très soudaine). L’erreur liée au calage du capteur peut être approximée par une erreur inconnue et constante sur la période séparant deux recalages. Cependant, cette erreur est ré-échantillonnée après chaque recalage. On suppose alors que les valeurs que peut prendre (pour toutes les périodes identifiées) cette erreur systématique inconnue suivent une distribution gaussienne de moyenne nulle.</p>
+</div>
+<div id="erreurs-de-représentativité-du-niveau-moyen" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Erreurs de représentativité du niveau moyen</h2>
+<p>La hauteur d’eau mesurée au niveau de l’échelle limnimétrique peut ne pas être représentative de la hauteur d’eau moyenne à l’échelle du tronçon de cours d’eau, i.e. représentative des conditions d’écoulement 1D qui déterminent la courbe de tarage. En particulier, les déformations dues aux obstacles et singularités, aux piles de ponts notamment, ou à la sinuosité du cours d’eau, peuvent entraîner une erreur de représentativité de la hauteur d’eau. Ce type d’erreur est sans doute difficile à estimer et à corriger : il restera alors une erreur systématique résiduelle inconnue, qui pourra à nouveau être modélisée par une distribution gaussienne de moyenne nulle.</p>
+</div>
+</div>
+<div id="modèle-derreur-utilisé-dans-baratinage" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Modèle d’erreur utilisé dans BaRatinAGE</h1>
+<p>La diverses erreurs identifiées sont de deux types distincts : les erreurs non-systématiques (bruit instrumental et fluctuations de la surface libre) et les erreurs systématiques (calage du capteur et représentativité). Cela conduit à construire un modèle d’erreur parcimonieux comportant deux termes d’erreur :</p>
+<ul>
+<li>Un terme d’erreur non-systématique : les erreurs supposées indépendantes sont ré-échantillonnées à chaque pas de temps ;</li>
+<li>Un terme d’erreur systématique : les erreurs sont constantes dans le temps et peuvent être ré-échantillonnées périodiquement.</li>
+</ul>
+<p>Le modèle d’erreur est le suivant :</p>
+<p><span class="math display">\[h(t)= \tilde{h}(t)+\varepsilon(t)+\delta\]</span>
+où</p>
+<ul>
+<li><span class="math inline">\(h(t)\)</span> est le vrai limnigramme (inconnu)</li>
+<li><span class="math inline">\(\tilde{h}(t)\)</span> est le limnigramme mesuré</li>
+<li><span class="math inline">\(\varepsilon(t)\)</span> est le terme d’erreur non-systématique : <span class="math inline">\(\varepsilon(t) \sim \mathcal{N}(0,\sigma_A)\)</span></li>
+<li><span class="math inline">\(\delta\)</span> est le terme d’erreur systématique : <span class="math inline">\(\delta \sim \mathcal{N}(0,\sigma_B)\)</span></li>
+</ul>
+<p>Pour définir les incertitudes associées à un limnigramme, il est donc nécessaire de fournir, pour chaque pas de temps :</p>
+<ul>
+<li>L’incertitude étendue correspondant aux erreurs non-systématiques : <span class="math inline">\(1.96 \times \sigma_A\)</span></li>
+<li>L’incertitude étendue correspondant aux erreurs systématiques : <span class="math inline">\(1.96 \times \sigma_B\)</span></li>
+<li>Un indice (un nombre entier) identifiant la période sur laquelle s’applique l’erreur systématique. A chaque changement de période (quand l’indice change), l’erreur systématique est ré-échantillonnée. Dans la version actuelle de BaRatinAGE, des nombres entiers croissants sont à utiliser pour l’identification des périodes.</li>
+</ul>
+</div>
+<div id="comment-estimer-les-incertitudes-associées-au-limnigramme" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Comment estimer les incertitudes associées au limnigramme</h1>
+<p>Pour mettre en œuvre la propagation des incertitudes par BaRatinAGE, il est nécessaire d’estimer les deux écarts-types décrivant les erreurs associées aux mesures des hauteurs d’eau, <span class="math inline">\(\sigma_A\)</span> et <span class="math inline">\(\sigma_B\)</span>, et de connaître les pas de temps de recalage du capteur (ou à défaut, une périodicité moyenne). Les deux écarts-types doivent idéalement être estimés au cas par cas, pour chaque station.</p>
+<div id="incertitudes-dues-aux-erreurs-non-systématiques-sigma_a" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Incertitudes dues aux erreurs non-systématiques <span class="math inline">\((\sigma_A)\)</span></h2>
+<p>Les deux composantes liées au bruit instrumental <span class="math inline">\((\sigma_{A_1})\)</span> et aux fluctuations de la surface libre <span class="math inline">\((\sigma_{A_2})\)</span> peuvent être estimées séparément :</p>
+<ul>
+<li><span class="math inline">\((\sigma_{A_1})\)</span> peut être estimée à partir des spécifications du fabriquant. Il est également possible de le mesurer directement en laboratoire par des essais en conditions de répétabilité ;</li>
+<li><span class="math inline">\((\sigma_{A_2})\)</span> peut être estimée à partir de l’amplitude des oscillations de la surface-libre de l’écoulement au niveau du point de mesure.</li>
+</ul>
+<p>En considérant que les deux composantes sont indépendantes l’une de l’autre, on a :</p>
+<p><span class="math display">\[\sigma_{A}=\sqrt{\sigma_{A_1}^2+\sigma_{A_2}^2}\]</span></p>
+<p>Une estimation directe de <span class="math inline">\(\sigma_{A}\)</span> peut aussi être faite, par exemple, avec l’écart-type d’une série de mesures successives in-situ dans des conditions où la hauteur d’eau réelle ne varie pas. De telles mesures engloberaient les deux sources d’erreurs non-systématiques.</p>
+<p>Il est également possible que la valeur de <span class="math inline">\(\sigma_{A}\)</span> dépende de la hauteur d’eau <span class="math inline">\(ℎ\)</span>. BaRatinAGE prévoit cette
+possibilité, en proposant à l’utilisateur de faire varier sa valeur à chaque pas de temps et donc selon <span class="math inline">\(ℎ\)</span> pour inclure, par exemple, des erreurs bien plus importantes en crue où les vagues seraient beaucoup plus grandes.</p>
+</div>
+<div id="incertitudes-dues-aux-erreurs-systématiques-sigma_b" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Incertitudes dues aux erreurs systématiques <span class="math inline">\((\sigma_B)\)</span></h2>
+<p>Nous proposons ici deux méthodes permettant l’estimation de cet écart-type :</p>
+<ul>
+<li>La première méthode, la plus recommandée, nécessite d’avoir les dates des recalages du capteur et les écarts constatés entre capteur et échelle extérieure à l’occasion des visites terrain depuis la mise en service du capteur. L’écart-type de ces écarts peut alors être pris directement pour estimer <span class="math inline">\(\sigma_B\)</span>. Les dates de recalage permettent de définir les points de ré-échantillonnage de <span class="math inline">\(\delta\)</span>. Il est important de noter qu’une visite terrain n’ayant pas entraîné de recalage n’est pas à prendre en compte.</li>
+<li>Lorsque ces informations-là ne sont pas disponibles, il est possible d’estimer grossièrement l’écart-type <span class="math inline">\(\sigma_B\)</span> par la valeur typique des écarts constatés entre échelle et capteur, à dire d’expert. Une estimation de la périodicité moyenne des recalages doit également être faite, afin de choisir des pas de temps uniformément espacés pour le ré-échantillonnage de <span class="math inline">\(\delta\)</span>.</li>
+</ul>
+</div>
+</div>
 
 
                         </div>                        
@@ -351,6 +437,14 @@
 		
     
 		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/">Incertitudes dans les hydrogrammes</a> 
 		
 
@@ -360,14 +454,6 @@
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Les bases de l’inférence Bayesienne</a> 
-		
-
-		
-		    &nbsp; | &nbsp;
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique utilisé dans BaRatin</a> 
 		
 
 		
@@ -429,15 +515,15 @@
 		
     
 		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique</a> </br> </br>
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/">Incertitudes dans les hydrogrammes</a> </br> </br>
 		
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Les bases de l’inférence Bayesienne</a> </br> </br>
-		
-    
-		
-		    <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique utilisé dans BaRatin</a> </br> </br>
 		
     
 		

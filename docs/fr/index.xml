@@ -13,7 +13,7 @@
       <link>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/</guid>
-      <description>1 La relation hauteur-débit : les contrôles hydrauliques&#xD;1.1 Deux grandes familles de contrôles hydrauliques&#xD;1.1.1 Contrôle par une section&#xD;1.1.2 Contrôle par un chenal&#xD;1.</description>
+      <description>1 La relation hauteur-débit : les contrôles hydrauliques 1.1 Deux grandes familles de contrôles hydrauliques 1.1.1 Contrôle par une section 1.1.2 Contrôle par un chenal 1.</description>
     </item>
     <item>
       <title>Premier cas d&#39;étude</title>
@@ -27,21 +27,21 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</guid>
-      <description>Généralités&#xD;BaRatinAGE est un logiciel permettant d’estimer des courbes de tarage ainsi que leurs incertitudes, et de propager ces incertitudes aux hydrogrammes. La méthode est basée sur une analyse hydraulique de la station hydrométrique et sur l’estimation bayésienne de la courbe de tarage.</description>
+      <description>Généralités BaRatinAGE v3 est un logiciel permettant d’estimer des courbes de tarage ainsi que leurs incertitudes, et de propager ces incertitudes aux hydrogrammes. La méthode BaRatin (BAyesian RATINg curve) est basée sur une analyse hydraulique de la station hydrométrique et sur l’estimation bayésienne de la courbe de tarage.</description>
     </item>
     <item>
       <title>Contrôles hydrauliques</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/</guid>
-      <description>1 Contrôles&#xD;1.1 Equation de base&#xD;1.2 Contrôles par section et contrôles par chenal&#xD;2 Equations des contrôles-types&#xD;2.1 Déversoir rectangulaire&#xD;2.2 Déversoir parabolique&#xD;2.</description>
+      <description>1 Contrôles 1.1 Equation de base 1.2 Contrôles par section et contrôles par chenal 2 Equations des contrôles-types 2.1 Déversoir rectangulaire 2.2 Déversoir parabolique 2.</description>
     </item>
     <item>
       <title>Fenêtre principale</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/</guid>
-      <description>Organisation générale&#xD;La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE :&#xA;Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
+      <description>Organisation générale La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE v3 :&#xA;Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
     </item>
     <item>
       <title>Second cas d&#39;étude</title>
@@ -55,14 +55,14 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/</guid>
-      <description>Généralités&#xD;La configuration hydraulique est la définition de l’ensemble des contrôles qui gouvernent la relation physique hauteur-débit, et de leur succession/combinaison lorsque la hauteur d’eau augmente.</description>
+      <description>Généralités La configuration hydraulique est la définition de l’ensemble des contrôles qui gouvernent la relation physique hauteur-débit, et de leur succession/combinaison lorsque la hauteur d’eau augmente.</description>
     </item>
     <item>
       <title>Incertitudes sur les jaugeages</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</guid>
-      <description>XXX</description>
+      <description>1 Les jaugeages incertains comme données de calage 2 Incertitude des débits jaugés 3 Incertitude des hauteurs jaugées 1 Les jaugeages incertains comme données de calage Pour l’analyse d’une courbe de tarage avec BaRatin, il faut fournir un ensemble de jaugeages représentatifs de la relation hauteur-débit pour la période considérée.</description>
     </item>
     <item>
       <title>Equation de la courbe de tarage</title>
@@ -76,62 +76,62 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/</guid>
-      <description>Création d’un jeu de jaugeages&#xD;Un jaugeage est un couple de mesures ponctuelles de hauteur d’eau et débit simultanés, assortis de leurs incertitudes.&#xA;Par défaut, un jeu de jaugeages vierge nommé JJ (1) pré-existe et peut être utilisé.</description>
+      <description>Création d’un jeu de jaugeages Un jaugeage est un couple de mesures ponctuelles de hauteur d’eau et débit simultanés, assortis de leurs incertitudes.&#xA;Par défaut, un jeu de jaugeages vierge nommé JJ (1) pré-existe et peut être utilisé.</description>
     </item>
     <item>
       <title>Incertitudes dans les limnigrammes</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/limni/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/limni/</guid>
-      <description>XXX</description>
+      <description>1 Sources d’erreur 1.1 Erreurs instrumentales ou « bruit de mesure » 1.2 Erreurs dues aux fluctuations de la surface libre 1.3 Erreurs dues au calage du capteur 1.</description>
     </item>
     <item>
       <title>Modèle d&#39;erreur structurelle</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</guid>
-      <description>Généralités&#xD;Imaginons la situation suivante, qui est idéalisée et donc forcément irréaliste : sur une station hydrométrique, nous disposons de jaugeages parfaits (sans aucune incertitude), et en très grand nombre.</description>
+      <description>Généralités Imaginons la situation suivante, qui est idéalisée et donc forcément irréaliste : sur une station hydrométrique, nous disposons de jaugeages parfaits (sans aucune incertitude), et en très grand nombre.</description>
     </item>
     <item>
       <title>Courbe de tarage</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/</guid>
-      <description>Création d’une courbe de tarage&#xD;Une courbe de tarage est une fonction donnant le débit en fonction de la hauteur d’eau.&#xA;Par défaut, une courbe de tarage vierge nommée CT (1) pré-existe et peut être utilisée.</description>
+      <description>Création d’une courbe de tarage Une courbe de tarage est une fonction donnant le débit en fonction de la hauteur d’eau.&#xA;Par défaut, une courbe de tarage vierge nommée CT (1) pré-existe et peut être utilisée.</description>
+    </item>
+    <item>
+      <title>Modèle statistique</title>
+      <link>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</guid>
+      <description>1 Modèles et hypothèses 1.1 Erreurs sur les jaugeages 1.2 Erreur structurelle 1.3 Erreur totale 2 Estimation Bayésienne 2.1 Information portée par les jaugeages : vraisemblance 2.</description>
     </item>
     <item>
       <title>Incertitudes dans les hydrogrammes</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/</guid>
-      <description>XXX</description>
-    </item>
-    <item>
-      <title>Les bases de l’inférence Bayesienne</title>
-      <link>https://baratin-tools.github.io/fr/doc/topics/bayesien/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/topics/bayesien/</guid>
-      <description>XXX</description>
+      <description>Cette page décrit comment les erreurs provenant de la courbe de tarage (erreurs paramétriques et erreurs structurelles) et celles provenant du limnigramme (erreurs non-systématiques et erreurs systématiques) sont propagées aux hydrogrammes dans BaRatinAGE.</description>
     </item>
     <item>
       <title>Limnigramme</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/</guid>
-      <description>Création d’un limnigramme&#xD;Un limnigramme est une série temporelle de hauteurs d’eau.&#xA;Par défaut, un limnigramme nommé Ht (1) pré-existe et peut être utilisé. Vous pouvez créer un nouveau limnigramme de plusieurs façons :</description>
+      <description>Création d’un limnigramme Un limnigramme est une série temporelle de hauteurs d’eau.&#xA;Par défaut, un limnigramme nommé Ht (1) pré-existe et peut être utilisé. Vous pouvez créer un nouveau limnigramme de plusieurs façons :</description>
     </item>
     <item>
       <title>Hydrogramme</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/hydrogramme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/hydrogramme/</guid>
-      <description>Création d’un hydrogramme&#xD;Un hydrogramme est une série temporelle de débit.&#xA;Par défaut, un hydrogramme nommé Qt (1) pré-existe et peut être utilisé. Vous pouvez créer un nouvel hydrogramme de plusieurs façons :</description>
+      <description>Création d’un hydrogramme Un hydrogramme est une série temporelle de débit.&#xA;Par défaut, un hydrogramme nommé Qt (1) pré-existe et peut être utilisé. Vous pouvez créer un nouvel hydrogramme de plusieurs façons :</description>
     </item>
     <item>
-      <title>Modèle statistique utilisé dans BaRatin</title>
-      <link>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</link>
+      <title>Les bases de l’inférence Bayesienne</title>
+      <link>https://baratin-tools.github.io/fr/doc/topics/bayesien/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/topics/modele-stat/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/bayesien/</guid>
       <description>XXX</description>
     </item>
     <item>
@@ -146,14 +146,14 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</guid>
-      <description>Utilisation du contenu du fichier .bam&#xD;Le fichier de sauvegarde au format .bam n’est en fait rien d’autre qu’un fichier zip qui contient l’intégralité des informations générées par BaRatinAGE, sous la forme de simples fichiers textes.</description>
+      <description>Ajout d’une nouvelle langue Pour ajouter une langue à l’interface, il “suffit” d’ajouter une colonne dans le fichier glossaire /resources/i18n/translations.csv (dans le répertoire d’installation de BaRatinAGE v3), et de traduire chaque item apparaissant dans l’interface graphique.</description>
     </item>
     <item>
       <title>Foire aux questions</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/faq/</guid>
-      <description>Note : cette section sera mise à jour au fil des questions que nous recevrons.&#xA;Installation&#xD;Question : je travaille sous Linux, puis-je utiliser BaRatinAGE ?</description>
+      <description>Note : cette section sera mise à jour au fil des questions que nous recevrons.&#xA;Installation Question : je travaille sous Linux, puis-je utiliser BaRatinAGE ?</description>
     </item>
     <item>
       <title>XXX</title>
@@ -174,7 +174,7 @@
       <link>https://baratin-tools.github.io/fr/a-propos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/a-propos/</guid>
-      <description>XXX&#xD;\(\alpha\)&#xA;XXX&#xA;XXX&#xD;XXX</description>
+      <description>XXX \(\alpha\)&#xA;XXX&#xA;XXX XXX</description>
     </item>
     <item>
       <title>Ressources</title>

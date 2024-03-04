@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>The uncertainties of gaugings</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1709572208" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="The uncertainties of gaugings">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/en/doc/topics/gaugings/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="The uncertainties of gaugings">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/en/">
+                    
+                      <img src="/img/logoWithText.png" alt="The uncertainties of gaugings logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="The uncertainties of gaugings logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">The uncertainties of gaugings - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">Home</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/en/doc/baratinage">BaRatinAGE</a></li>
+                            
+                            <li><a href="/en/doc/topics">Topic sheets</a></li>
+                            
+                            <li><a href="/en/doc/case">Case Studies</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/resources">Resources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/blog">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/about">About</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">🇫🇷 fr</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>The uncertainties of gaugings</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+<div id="TOC">
+<ul>
+<li><a href="#uncertain-gaugings-as-calibration-data" id="toc-uncertain-gaugings-as-calibration-data"><span class="toc-section-number">1</span> Uncertain gaugings as calibration data</a></li>
+<li><a href="#uncertainties-of-gauged-discharges" id="toc-uncertainties-of-gauged-discharges"><span class="toc-section-number">2</span> Uncertainties of gauged discharges</a></li>
+<li><a href="#uncertainties-of-gauged-stages" id="toc-uncertainties-of-gauged-stages"><span class="toc-section-number">3</span> Uncertainties of gauged stages</a></li>
+</ul>
+</div>
+
+<div id="uncertain-gaugings-as-calibration-data" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Uncertain gaugings as calibration data</h1>
+<p>For the analysis of a rating curve with BaRatin, you need to provide a set of gaugings representative of the stage-discharge relation for the study period. The validity of these gaugings must be checked (quality assurance) beforehand in order to avoid outliers, to ensure the continuity of their stage with respect to the staff gauge of the station, and to control and document measurement errors. It is especially important to consider:
+* The measurement technique and gauging procedure;
+* The date and hydraulic conditions at the time of the measurement, including: vegetation, flood, rating changes, etc.;
+* The datum of the gauged stage, particularly when the staff gauge of reference has undergone changes or displacement, or if multiple staff gauges were used simultaneously.</p>
+<p>BaRatin allows consideration of uncertainties on the gauged discharges and stages that are potentially different for each measurement. We recommend to ignore the uncertainties affecting gauged stages, at least as a first step, and to rather focus on uncertainties affecting gauged discharges. The latter are of particlar interest to enable the use of more uncertain gaugings (e.g. surface velocity gaugings, historic gaugings that are poorly documented) or discharge estimates (e.g. post-flood survey and slope-area method) in stage ranges with few or no gaugings, because their contribution is weighted by their information content. It is important to specify realistic gauging uncertainty values, neither overestimated nor underestimated, as they impact both the fitting of the curve and the width of its uncertainty envelope.</p>
+<p>A (strong) assumption of BaRatin is that the measurement errors are independent from a gauging to another gauging. This assumption is clearly violated if BaRatin receives some gaugings performed under repeatability conditions, typically with the same instrument at the same place on the same day in the same hydraulic conditions, etc. This can lead to an underestimation of the uncertainty of the rating curve. We must therefore avoid including repeated gauging (e.g. successive ADCP gaugings of a constant discharge), but either sub-sample them or average them together.</p>
+<blockquote>
+<p>WARNING: in BaRatinAGE, gauging uncertainty is expressed as the half-length of a 95% uncertainty interval (corresponding to 1.96 standard deviations assuming errors follow a normal distribution) and in relative terms (in %) for the gauged discharges and in metres for the gauged stages.</p>
+</blockquote>
+</div>
+<div id="uncertainties-of-gauged-discharges" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Uncertainties of gauged discharges</h1>
+<p>Uncertainty of the gauged discharge can be estimated from the available information on discharge measurements or calculated by methods of propagation of uncertainty. For velocity-area gaugings, uncertainty calculations can be done with the methods of the ISO748 or ISO1088 standard, or alternative methods: IVE (USGS), Q+ (French national hydrological services) or FLAURE (EDF) methods. All of these methods have limitations.</p>
+<p>According to the technique used and the measurement conditions, the individual gauging uncertainty can be evaluated simply by means of simplified calculations. Inter-laboratory comparisons are also used to determine empirically the uncertainty of gauging technologies deployed in the measurement conditions of the experiments. This uncertainty is typically taken to be ±7% for streamflows gauged using a current meter with at least a dozen verticals correctly sampling the flow field, and ±5% for a gauging by ADCP achieved in good conditions (±10% in bad conditions).</p>
+<p>The following table provides typical discharge uncertainty values (expanded to 95% level) for the main gauging techniques. <strong>Note that these typical uncertainty values are provided only as examples. Uncertainty analysis of discharge measurements in each case, at least by categories, is highly recommended.</strong>.</p>
+<ul>
+<li><strong>Volumetry</strong>: from ±5% (optimal conditions) to ±10% (poor conditions)</li>
+<li><strong>Velocity-area methods</strong>
+<ul>
+<li><strong>ADCP</strong>: from ±5% to ±10%</li>
+<li><strong>Current meter</strong>: from ±7% to ±15%</li>
+<li><strong>Floats</strong>: from ±10% to ±50%</li>
+<li><strong>Radar or LSPIV</strong>: from ±10% to ±20%</li>
+</ul></li>
+<li><strong>Tracer dilution</strong>: from ±3% to ±10%</li>
+<li><strong>Hydraulic formulas</strong>: from ±5% to ±40%</li>
+</ul>
+</div>
+<div id="uncertainties-of-gauged-stages" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Uncertainties of gauged stages</h1>
+<p>In addition to uncertainty in gauged discharges, BaRatinAGE also allows taking into account the uncertainty of gauged stages. However, as a first approach and routinely, it is recommended to ignore it, by specifying it as zero for all the gaugings. Indeed, considering this uncertainty significantly increases the complexity and duration of the computations since the stage error of each gauging becomes an additional parameter to estimate, in addition to those of the rating curve and of the remnant uncertainty. Moreover, the results are generally very similar, unless the stage uncertainty of gaugings important for the rating calibration is high.</p>
+<p>Unlike discharge uncertainty, stage uncertainty is never expressed in relative terms (in %) but always in metres. The main sources of error in the gauged stage include the reading of the staff gauge, the resolution, the waves, the deformation of the free surface near the gauge, the datum of the gauging when it was measured at another staff gauge, the time lag if the staff gauge reading is not made during the gauging operations, and importantly the variation in water level during the gauging operations, particularly in situations of flood rise or flood recession. The latter uncertainty component can be estimated simply as (95% expanded uncertainty):</p>
+<p><span class="math display">\[U=\frac{h_{max}-h_{min}}{sqrt(3)}\]</span></p>
+<p>where <span class="math inline">\(h_{max}\)</span> and <span class="math inline">\(h_{min}\)</span> are the maximum and minimum stages attained during the measurement. As these various sources of errors are assumed to be independent, the combined uncertainty is obtained by quadratic sum of elementary uncertainties.</p>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> 
+		
+
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                    
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> </strong></br>
+		</div>
+		</br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> </br> </br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

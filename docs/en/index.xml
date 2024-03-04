@@ -13,14 +13,35 @@
       <link>https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/</guid>
-      <description>1 The stage-discharge relation: hydraulic controls&#xD;1.1 Two main types of controls&#xD;1.1.1 Section control&#xD;1.1.2 Channel control&#xD;1.2 Standard controls&#xD;1.3 Approximation of real controls by standard controls&#xD;2 Hydraulic analysis&#xD;2.</description>
+      <description>1 The stage-discharge relation: hydraulic controls 1.1 Two main types of controls 1.1.1 Section control 1.1.2 Channel control 1.2 Standard controls 1.3 Approximation of real controls by standard controls 2 Hydraulic analysis 2.</description>
+    </item>
+    <item>
+      <title>Overview</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/overview/</guid>
+      <description>General information BaRatinAGE v3 is a software package for estimating rating curves and their uncertainties, and for propagating these uncertainties to discharge series. The BaRatin (BAyesian RATINg curve) method is based on a hydraulic analysis of the hydrometric station and Bayesian estimation of the rating curve.</description>
     </item>
     <item>
       <title>Hydraulic controls</title>
       <link>https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/</guid>
-      <description>1 Controls&#xD;1.1 The basic equation&#xD;1.2 Section controls and channel controls&#xD;2 Equations of the standard controls&#xD;2.1 Rectangular weir&#xD;2.2 Parabolic weir&#xD;2.</description>
+      <description>1 Controls 1.1 The basic equation 1.2 Section controls and channel controls 2 Equations of the standard controls 2.1 Rectangular weir 2.2 Parabolic weir 2.</description>
+    </item>
+    <item>
+      <title>Main frame</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/main-frame/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/main-frame/</guid>
+      <description>Organisation générale La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE v3 :&#xA;Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
+    </item>
+    <item>
+      <title>The uncertainties of gaugings</title>
+      <link>https://baratin-tools.github.io/en/doc/topics/gaugings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/topics/gaugings/</guid>
+      <description>1 Uncertain gaugings as calibration data 2 Uncertainties of gauged discharges 3 Uncertainties of gauged stages 1 Uncertain gaugings as calibration data For the analysis of a rating curve with BaRatin, you need to provide a set of gaugings representative of the stage-discharge relation for the study period.</description>
     </item>
     <item>
       <title>Gaugings</title>
@@ -35,6 +56,27 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/rating-curve/</guid>
       <description>The equation of the rating curve used in BaRatinAGE is entirely determined by the matrix of controls, an example of which is recalled in the Figure below.</description>
+    </item>
+    <item>
+      <title>Uncertainties in stage time series</title>
+      <link>https://baratin-tools.github.io/en/doc/topics/stage-series/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/topics/stage-series/</guid>
+      <description>1 Error sources 1.1 Instrumental errors or « measurement noise » 1.2 Errors due to free-surface fluctuations 1.3 Errors due to sensor calibration 1.4 Stage representativeness errors 2 Error model used in BaRatinAGE 3 How to estimate stage series uncertainties 3.</description>
+    </item>
+    <item>
+      <title>Statistical model</title>
+      <link>https://baratin-tools.github.io/en/doc/topics/statistical-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/topics/statistical-model/</guid>
+      <description>1 Model and hypotheses 1.1 Gauging errors 1.2 Structural error 1.3 Total error 2 Bayesian estimation 2.1 Information brought by the gaugings: likelihood 2.2 Information brought by hydraulics: prior distribution 2.</description>
+    </item>
+    <item>
+      <title>Uncertainties in discharge time series</title>
+      <link>https://baratin-tools.github.io/en/doc/topics/discharge-series/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/topics/discharge-series/</guid>
+      <description>This document describes how errors from the rating curve (parametric errors and structural errors) and those from the stage time series (non-systematic and systematic stage measurement errors) are propagated to the discharge time series in BaRatinAGE.</description>
     </item>
     <item>
       <title>XXX</title>
@@ -55,7 +97,7 @@
       <link>https://baratin-tools.github.io/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/about/</guid>
-      <description>XXX&#xD;XXX&#xA;XXX&#xD;XXX</description>
+      <description>XXX XXX&#xA;XXX XXX</description>
     </item>
     <item>
       <title>Resources</title>
