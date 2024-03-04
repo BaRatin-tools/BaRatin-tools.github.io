@@ -1,0 +1,48 @@
+---
+title: "The uncertainties of gaugings"
+slug: "gaugings"
+weight: 3
+layout: "doc_topicsPage"
+inTOC: "topics"
+---
+
+# Uncertain gaugings as calibration data
+
+For the analysis of a rating curve with BaRatin, you need to provide a set of gaugings representative of the stage-discharge relation for the study period. The validity of these gaugings must be checked (quality assurance) beforehand in order to avoid outliers, to ensure the continuity of their stage with respect to the staff gauge of the station, and to control and document measurement errors. It is especially important to consider:
+* The measurement technique and gauging procedure;
+* The date and hydraulic conditions at the time of the measurement, including: vegetation, flood, rating changes, etc.;
+* The datum of the gauged stage, particularly when the staff gauge of reference has undergone changes or displacement, or if multiple staff gauges were used simultaneously.
+
+BaRatin allows consideration of uncertainties on the gauged discharges and stages that are potentially different for each measurement. We recommend to ignore the uncertainties affecting gauged stages, at least as a first step, and to rather focus on uncertainties affecting gauged discharges. The latter are of particlar interest to enable the use of more uncertain gaugings (e.g. surface velocity gaugings, historic gaugings that are poorly documented) or discharge estimates (e.g. post-flood survey and slope-area method) in stage ranges with few or no gaugings, because their contribution is weighted by their information content. It is important to specify realistic gauging uncertainty values, neither overestimated nor underestimated, as they impact both the fitting of the curve and the width of its uncertainty envelope.
+
+A (strong) assumption of BaRatin is that the measurement errors are independent from a gauging to another gauging. This assumption is clearly violated if BaRatin receives some gaugings performed under repeatability conditions, typically with the same instrument at the same place on the same day in the same hydraulic conditions, etc. This can lead to an underestimation of the uncertainty of the rating curve. We must therefore avoid including repeated gauging (e.g. successive ADCP gaugings of a constant discharge), but either sub-sample them or average them together.
+
+> WARNING: in BaRatinAGE, gauging uncertainty is expressed as the half-length of a 95% uncertainty interval (corresponding to 1.96 standard deviations assuming errors follow a normal distribution) and in relative terms (in %) for the gauged discharges and in metres for the gauged stages.
+
+# Uncertainties of gauged discharges
+
+Uncertainty of the gauged discharge can be estimated from the available information on discharge measurements or calculated by methods of propagation of uncertainty. For velocity-area gaugings, uncertainty calculations can be done with the methods of the ISO748 or ISO1088 standard, or alternative methods: IVE (USGS), Q+ (French national hydrological services) or FLAURE (EDF) methods. All of these methods have limitations.
+
+According to the technique used and the measurement conditions, the individual gauging uncertainty can be evaluated simply by means of simplified calculations. Inter-laboratory comparisons are also used to determine empirically the uncertainty of gauging technologies deployed in the measurement conditions of the experiments. This uncertainty is typically taken to be ±7% for streamflows gauged using a current meter with at least a dozen verticals correctly sampling the flow field, and ±5% for a gauging by ADCP achieved in good conditions (±10% in bad conditions).
+
+The following table provides typical discharge uncertainty values (expanded to 95% level) for the main gauging techniques. **Note that these typical uncertainty values are provided only as examples. Uncertainty analysis of discharge measurements in each case, at least by categories, is highly recommended.**.
+
+* **Volumetry**: from ±5\% (optimal conditions) to ±10\% (poor conditions)
+* **Velocity-area methods**
+    * **ADCP**: from ±5\% to ±10\% 
+    * **Current meter**: from ±7\% to ±15\%
+    * **Floats**: from ±10\% to ±50\%
+    * **Radar or LSPIV**: from ±10\% to ±20\%
+* **Tracer dilution**: from ±3\% to ±10\%
+* **Hydraulic formulas**: from ±5\% to ±40\%
+
+# Uncertainties of gauged stages
+
+In addition to uncertainty in gauged discharges, BaRatinAGE also allows taking into account the uncertainty of gauged stages. However, as a first approach and routinely, it is recommended to ignore it, by specifying it as zero for all the gaugings. Indeed, considering this uncertainty significantly increases the complexity and duration of the computations since the stage error of each gauging becomes an additional parameter to estimate, in addition to those of the rating curve and of the remnant uncertainty. Moreover, the results are generally very similar, unless the stage uncertainty of gaugings important for the rating calibration is high. 
+
+Unlike discharge uncertainty, stage uncertainty is never expressed in relative terms (in %) but always in metres. The main sources of error in the gauged stage include the reading of the staff gauge, the resolution, the waves, the deformation of the free surface near the gauge, the datum of the gauging when it was measured at another staff gauge, the time lag if the staff gauge reading is not made during the gauging operations, and importantly the variation in water level during the gauging operations, particularly in situations of flood rise or flood recession. The latter uncertainty component can be estimated simply as (95% expanded uncertainty):
+
+$$U=\frac{h_{max}-h_{min}}{sqrt(3)}$$
+
+where $h_{max}$ and $h_{min}$ are the maximum and minimum stages attained during the measurement. As these various sources of errors are assumed to be independent, the combined uncertainty is obtained by quadratic sum of elementary uncertainties.
+
