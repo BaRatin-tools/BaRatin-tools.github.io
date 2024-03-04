@@ -46,7 +46,7 @@ In addition to uncertainty in gauged discharges, BaRatinAGE also allows taking i
 
 Unlike discharge uncertainty, stage uncertainty is never expressed in relative terms (in %) but always in metres. The main sources of error in the gauged stage include the reading of the staff gauge, the resolution, the waves, the deformation of the free surface near the gauge, the datum of the gauging when it was measured at another staff gauge, the time lag if the staff gauge reading is not made during the gauging operations, and importantly the variation in water level during the gauging operations, particularly in situations of flood rise or flood recession. The latter uncertainty component can be estimated simply as (95% expanded uncertainty):
 
-$$U=\frac{h_{max}-h_{min}}{sqrt(3)}$$
+$$U=\frac{h_{max}-h_{min}}{\sqrt{3}}$$
 
 where $h_{max}$ and $h_{min}$ are the maximum and minimum stages attained during the measurement. As these various sources of errors are assumed to be independent, the combined uncertainty is obtained by quadratic sum of elementary uncertainties.
 

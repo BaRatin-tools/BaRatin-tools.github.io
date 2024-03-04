@@ -48,7 +48,7 @@ Outre l’incertitude des débits jaugés, BaRatinAGE permet aussi de prendre en
 
 Contrairement à l’incertitude des débits, cette incertitude sur les hauteurs n’est jamais exprimée en valeur relative (en %) mais toujours en mètres. Les principales sources d’erreur sur la hauteur jaugée incluent : la lecture de l’échelle, sa résolution, le batillage, la déformation de la surface libre à proximité de l’échelle, le raccordement du jaugeage lorsqu’il a été mesuré avec une autre échelle, le décalage temporel si la lecture d’échelle n’est pas faite pendant le jaugeage, et surtout la variation du niveau d’eau pendant les opérations de jaugeage, en particulier en situation de crue ou de décrue. Cette dernière composante d’incertitude peut s’estimer simplement ainsi (incertitude élargie à 95%) :
 
-$$U=\frac{h_{max}-h_{min}}{sqrt(3)}$$
+$$U=\frac{h_{max}-h_{min}}{\sqrt{3}}$$
 
 avec $h_{max}$ et $h_{min}$ les hauteurs maximum et minimum atteintes en cours de jaugeage. Ces différentes sources d’erreurs étant supposées indépendantes, l’incertitude combinée s’obtient par somme quadratique de toutes les incertitudes élémentaires.
 
