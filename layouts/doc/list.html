@@ -25,7 +25,11 @@
          {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.mainSections) }}
          <ol>
          {{ range $paginator.Pages }}
-             <li> <a href="{{ .Permalink }}">{{ .Title }}</a> </li>
+              {{ if .Params.subtitle}}
+ 	            <li> <a href="{{ .Permalink }}">{{ .Title }} : {{ .Params.subtitle }} </a> </li>
+ 	          {{ else}}
+  	            <li> <a href="{{ .Permalink }}">{{ .Title }} </a> </li>
+  	          {{ end }}
          {{ end }}
          </ol>
          </div>

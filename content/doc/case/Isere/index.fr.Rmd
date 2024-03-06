@@ -1,0 +1,60 @@
+---
+title: "L'Isère à Grenoble-Campus"
+subtitle: "une configuration hydraulique simple"
+slug: "isere-grenoble"
+weight: 2
+layout: "doc_caseStudiesPage"
+inTOC: "caseStudies"
+output:
+  blogdown::html_page:
+    number_sections: true
+    toc: true
+---
+
+> Téléchargez le fichier BaRatinAGE de ce cas d'étude: [Isere-Grenoble.bam](/bam/Isere-Grenoble.bam)
+
+# Analyse hydraulique
+
+Cette station peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous). En effet, même les débits les plus faibles ne font pas apparaître de contrôle par section, et les débordements sont fortement limités par des digues très serrées. L'impact du débordement sur les pieds de digues boisés est très faible en raison de la forte rugosité et de la très faible largeur de ce lit moyen additionnel. Le chenal de contrôle présente un gabarit rectangulaire relativement uniforme en amont en aval de la station, dont la section de jaugeage est jugée représentative.
+
+$$
+\begin{array}{|c|c|c|}
+\hline
+  \text{Contrôle} & \text{Nature} & \text{Type} \\ 
+\hline
+     1 & \text{Lit endigué} & \text{chenal} \\ 
+\hline
+\end{array}
+$$
+
+<img src="IsereAnalysis.jpg" width="80%">
+<p style="text-align: center;color: gray;"> Figure 1. Analyse des contrôles hydrauliques pour l’Isère à Grenoble-Campus. (a) vue du chenal vers l'amont ; (b) levé topographique de la section de jaugeage, représentative du chenal moyen.</p>
+
+Etant donné qu'il n'y a qu'un seul contrôle, la matrice des contrôles est triviale:
+
+$$
+\begin{array}{|c|}
+\hline
+  &\text{contrôle 1} \\
+\hline
+  \text{segment 1} &\color{lime}{1}\\
+\hline
+\end{array}
+$$
+
+La hauteur minimale $h_{min}$ d’application de la courbe de tarage est inférieure aux plus faibles hauteurs mesurées, puisqu’elles restent suffisamment au-dessus du niveau du fond et que le contrôle chenal unique reste valable. La hauteur maximale $h_{max}$ d’application de la courbe de tarage peut être prise égale à la hauteur de submersion des digues, au-delà de laquelle de nouveaux contrôles, voire un contournement de la station vont se manifester.
+
+# Spécification des a priori
+
+La spécification des a priori de l’unique contrôle est basée sur les raisonnements suivants:
+
+* D'après les observations et le profil en travers, il est possible de dire que le contrôle chenal s'active pour une hauteur échelle de $\kappa = -0.5 \mathrm{m} \pm 0.5 \mathrm{m}$
+* D'après le profil en travers disponible, la largeur du chenal représentatif est estimée à $B_w = 65 \mathrm{m} \pm 10 \mathrm{m}$
+* La propreté du lit, sa nature endiguée et entretenue induit une rugosité assez faible, que l'on estime à $K_S = 25 \pm 5$
+* La pente du chenal a été estimée à $S = 0.0005 \pm 0.00025$.
+
+Avec ces spécifications, on obtient la courbe de tarage a priori représentée ci-dessous.
+
+<br>
+<img src="IserePrior.fr.svg" width="75%">
+<p style="text-align: center;color: gray;"> Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.</p>

@@ -6,11 +6,11 @@
     {{ range $paginator }}
 		{{if eq .Title $current.Title}}
 		<div style="background-color:beige;">
-		   <strong> <a href="{{ .Permalink }}">{{ .Title }}</a> </strong></br>
+		   <strong> <a href="{{ .Permalink }}">{{ .Title }} : <br> {{ .Params.subtitle }}</a> </strong></br>
 		</div>
 		</br>
 		{{else}}
-		    <a href="{{ .Permalink }}">{{ .Title }}</a> </br> </br>
+		    <a href="{{ .Permalink }}">{{ .Title }} : <br> {{ .Params.subtitle }}</a> </br> </br>
 		{{ end }}
     {{ end }}
          
