@@ -23,7 +23,7 @@ defaultContentLanguageInSubdir = true
 	  name = "Documentation"
 	  weight = 20
 	[[languages.fr.menu.main]]
-	  name = "BaRatinAGE"
+	  name = "BaRatinAGE v3"
 	  weight = 10
 	  url = "/fr/doc/baratinage"
 	  parent="Documentation"
@@ -71,7 +71,7 @@ defaultContentLanguageInSubdir = true
 	  name = "Documentation"
 	  weight = 20
 	[[languages.en.menu.main]]
-	  name = "BaRatinAGE"
+	  name = "BaRatinAGE v3"
 	  weight = 10
 	  url = "/en/doc/baratinage"
 	  parent="Documentation"
