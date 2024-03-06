@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>MCMC Sampling</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1709721801" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="MCMC Sampling">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/en/doc/topics/mcmc/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="MCMC Sampling">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/en/">
+                    
+                      <img src="/img/logoWithText.png" alt="MCMC Sampling logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="MCMC Sampling logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">MCMC Sampling - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">Home</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/en/doc/baratinage">BaRatinAGE</a></li>
+                            
+                            <li><a href="/en/doc/topics">Topic sheets</a></li>
+                            
+                            <li><a href="/en/doc/case">Case Studies</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/resources">Resources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/blog">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/about">About</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">🇫🇷 fr</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>MCMC Sampling</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="#general-principle-of-mcmc-samplers" id="toc-general-principle-of-mcmc-samplers"><span class="toc-section-number">2</span> General principle of MCMC samplers</a></li>
+<li><a href="#the-metropolis-algorithm" id="toc-the-metropolis-algorithm"><span class="toc-section-number">3</span> The Metropolis algorithm</a></li>
+<li><a href="#convergence-and-representativeness-of-mcmc-simulations" id="toc-convergence-and-representativeness-of-mcmc-simulations"><span class="toc-section-number">4</span> Convergence and representativeness of MCMC simulations</a></li>
+<li><a href="#building-efficient-mcmc-samplers" id="toc-building-efficient-mcmc-samplers"><span class="toc-section-number">5</span> Building efficient MCMC samplers</a></li>
+<li><a href="#mcmc-algorithm-implemented-in-baratinage" id="toc-mcmc-algorithm-implemented-in-baratinage"><span class="toc-section-number">6</span> MCMC algorithm implemented in BaRatinAGE</a></li>
+</ul>
+</div>
+
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>The tutorials proposed in the <a href="/en/doc/topics/bayesian">Bayesian Basics</a> page have one peculiarity: there is only one unknown parameter <span class="math inline">\(\theta\)</span>. One can easily imagine that the practical implementation of Bayesian inference gets more complicated when the number of unknown parameters increases. For instance, when the vector of unknown parameters <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\theta_2,\theta_3)\)</span> has 3 components, the posterior pdf <span class="math inline">\(p(\theta_1,\theta_2,\theta_3|\boldsymbol{y})\)</span> is 3-dimensional: it cannot even be represented graphically in a simple 2-D plot.</p>
+<p>This issue can be tackled by means of a Monte Carlo approach: instead of graphically representing the posterior distribution, the idea is to generate many realizations from it, and to use these simulated values to describe properties of the posterior distribution. A particular family of Monte Carlo simulator is used for this purpose and is described in this note: Markov Chain Monte Carlo (MCMC) samplers.</p>
+</div>
+<div id="general-principle-of-mcmc-samplers" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> General principle of MCMC samplers</h1>
+<p>Consider the posterior pdf schematized in Figure 1. There are 2 unknown parameters <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\theta_2)\)</span> , and the pdf <span class="math inline">\(p(\theta_1,\theta_2|\boldsymbol{y})\)</span> is shown from above as a contour plot. Simulating realizations from this pdf seems challenging for the following reasons:</p>
+<ol style="list-style-type: decimal">
+<li>The distribution is multidimensional.</li>
+<li>The shape of the pdf looks quite weird, and does not look like any “standard” distribution. There is therefore little hope to find an existing off-the-shelf algorithm for this
+particular pdf in Excel, R, Python, Matlab, etc.</li>
+<li>Moreover, remember that in practice the posterior pdf is only evaluated up to a constant of proportionality (see <a href="/en/doc/topics/bayesian">Bayesian Basics</a>). Figure 1 is therefore only proportional to
+the posterior pdf.</li>
+</ol>
+<img src="mcmcPrinciple.en.jpg" width="80%">
+<p style="text-align: center;color: gray;">
+Figure 1. Illustration of the general principle behind MCMC sampling: a candidate parameter is generated by jumping from the current parameter, using an easy-to-simulate distribution (typically, a Gaussian distribution). The candidate is accepted or rejected depending on the
+ratio between the new and the old posterior pdf.
+</p>
+<p>Bad news: in most cases, posterior pdfs are affected by the three issues above. But good news: none of these issues is problematic for a MCMC sampler! This is precisely the reason why MCMC samplers have become Bayesians’ best friends.</p>
+<p>The general principle of a MCMC sampler is the following: since directly simulating values from a complex target distribution (such as the one shown in Figure 1) is difficult, the simulation is done indirectly. To this aim, a MCMC sampler visits the parameter space by means of successive jumps. Each jump is generated from an easy-to-simulate distribution (typically, a Gaussian distribution). After the jump, the “candidate” parameter <span class="math inline">\(\boldsymbol{\theta}^{(*)}\)</span> is accepted or rejected depending on the “elevation difference”, or more precisely, depending on the ratio between the new and the old posterior pdf value. The next section gives more details for the most standard MCMC algorithm: the Metropolis sampler.</p>
+</div>
+<div id="the-metropolis-algorithm" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> The Metropolis algorithm</h1>
+<p>Algorithm 1 describes the Metropolis sampler. Given the current parameter <span class="math inline">\(\boldsymbol{\theta}^{(i-1)}\)</span>, the candidate parameter <span class="math inline">\(\boldsymbol{\theta}^{(*)}\)</span> is generated by randomly jumping from <span class="math inline">\(\boldsymbol{\theta}^{(i-1)}\)</span> (step 1.a.).The jump size and orientation are controlled by the covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span>.The next step is to accept or reject the candidate. The acceptance rule is given in step 1.c: uphill jumps(<span class="math inline">\(\tau \ge 1\)</span>) are always accepted, while downhill jumps (<span class="math inline">\(\tau \lt 1\)</span>) are randomly accepted, with acceptance probability equal to <span class="math inline">\(\tau\)</span>. If the candidate is rejected, the current parameter stays at the same location <span class="math inline">\((\boldsymbol{\theta}^{(i)}=\boldsymbol{\theta}^{(i-1)})\)</span>. It can be proven that with this acceptance rule, the random walk thus generated is a realization from the posterior distribution (if the number of simulations is large enough).</p>
+<p style="text-align: center;color: gray;">
+Algorithme 1: Metropolis. For the sake of correctness, the Metropolis algorithm is actually more general than this: the Gaussian jump distribution can be replaced by any symmetrical distribution.
+</p>
+<div style="border-style: solid;border-width: thin;">
+<ol start="0" style="list-style-type: decimal">
+<li>Choose a starting point <span class="math inline">\(\boldsymbol{\theta}^{(0)}\)</span> and a covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span>.</li>
+<li>Repeat for <span class="math inline">\(i=1:N_{sim}\)</span> :
+<ol style="list-style-type: lower-alpha">
+<li>Generate the candidate <span class="math inline">\(\boldsymbol{\theta}^{(*)}\)</span> from a Gaussian distribution centered on the current parameter <span class="math inline">\(\boldsymbol{\theta}^{(i-1)}\)</span> and with covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span> : <span class="math inline">\(\boldsymbol{\theta}^{(*)} \leftarrow \mathcal{N}(\boldsymbol{\theta}^{(i-1)},\boldsymbol{\Sigma})\)</span></li>
+<li>Compute the ratio between the new and the old posterior pdf: <span class="math inline">\(\tau=\frac{p(\boldsymbol{\theta}^{(*)}|\boldsymbol{y})}{p(\boldsymbol{\theta}^{(i-1)}|\boldsymbol{y})}\)</span></li>
+<li>Accept the candidate <span class="math inline">\((\boldsymbol{\theta}^{(i)}=\boldsymbol{\theta}^{(*)})\)</span> with probability <span class="math inline">\(min(\tau;1)\)</span>; otherwise, reject the candidate <span class="math inline">\((\boldsymbol{\theta}^{(i)}=\boldsymbol{\theta}^{(i-1)})\)</span></li>
+</ol></li>
+</ol>
+</div>
+<p><br></p>
+<p>Note that in Algorithm 1, the posterior pdf is only used to compute the ratio <span class="math inline">\(\tau\)</span>. This explains why it is sufficient to know the posterior pdf up to a constant of proportionality: this constant simply cancels out in the ratio.</p>
+<p>As an aside, the term “Markov Chain” is used in the naming “MCMC” to refer to the “memoryless” property of simulated values: indeed, the value simulated at iteration <span class="math inline">\(i+1\)</span> (“future”) depends on the result of iteration <span class="math inline">\(i\)</span> (“present”) but not on previous iterations (“past”). This type of stochastic process is known as a Markov chain, in tribute to the Russian mathematician Andreï Andreïevitch Markov (Image 1) who developed the theoretical framework for such processes.</p>
+<p>Lastly, and before moving on to the practice, let us note that MCMC samplers are not intrinsically linked to Bayesian inference: a MCMC sampler can indeed be applied to any target distribution (not only posteriors).</p>
+<p><br></p>
+<img src="Andrei_Markov.jpg" width="40%">
+<p style="text-align: center;color: gray;">
+Image 1. Andrey Andreyevich Markov (1856 – 1922). Source: <a href="https://en.wikipedia.org/wiki/Andrey_Markov">Wikipedia</a>
+</p>
+<p><br></p>
+<blockquote>
+<p><a href="TP_MCMC.en.zip"><strong>Tutorial 1. Bayesian-MCMC approach, discrete case</strong></a>. The Excel file implements the Metropolis algorithm for the occurrences of a flood larger than the estimated 10-year flood (see Tutorial 1 in <a href="/en/doc/topics/bayesian">Bayesian Basics</a> page).</p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Observe the rows of iterations 0 and 1 cell by cell in order to understand the way the algorithm is implemented, and verify that it is consistent with Algorithm 1.</li>
+<li>Plot simulated values, then modify the jump size (C3) and observe how it impacts simulated values.</li>
+<li>Create a histogram of simulated values (you can use the “analysis tools” in the tab “Data”). Compute a 90% credibility interval.</li>
+<li>Some people prefer using return periods rather than occurrence probabilities. Compute and represent the posterior distribution of this return period (you have to fill in empty cells in the “Extras…” columns), then compute a 90% credibility interval. In your opinion, should the colleague who estimated the 10-year flood be fired?</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>Note: appart from its didactic aspect, implementing a MCMC sampler with Excel is a dubious idea, which is likely to fail for analyses more complicated than those presented in these introductory tutorials (computing time, crashes with too many rows/columns, reliability of the random number generator implemented in Excel, limited graphical capabilities, etc.). R, Python or Matlab languages provide implementations of MCMC samplers.</p>
+</blockquote>
+<blockquote>
+<p><a href="TP_MCMC.en.zip"><strong>Tutorial 2. Bayesian-MCMC approach, continuous case</strong></a>. The Excel file is similar to the previous one, but is adapted for the inter-event duration data at Sommières (see Tutorial 2 in <a href="/en/doc/topics/bayesian">Bayesian Basics</a> page).</p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Create an histogram of simulated values and compute a 90% credibility interval.</li>
+<li>For every simulated value, compute the associated cumulated distribution function (cdf; you have to fill in empty cells in the “Extras…” columns). Represent all these cdfs graphically (or at least the first ~100 cdfs, Excel may crash if you plot them all…).</li>
+<li>Based on these “spaghettis”, what is the probability of waiting less than 10 years between two events? Less than 100 years? Less than 1000 years?</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><a href="TP_MCMC.en.zip"><strong>Tutorial 3. Bayesian-MCMC approach, linear regression</strong></a>. The Excel file is again similar to the previous ones, but is adapted for the rainfall-runoff regression data (see Tutorial 5 in <a href="/en/doc/topics/bayesian">Bayesian Basics</a> page). However, there is a noticeable difference: there are two unknown parameters(<span class="math inline">\(\theta\)</span>, the regression slope, and <span class="math inline">\(\sigma\)</span>, the residual standard deviation).</p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Observe the row of iteration 1 to understand the way the algorithm was adapted to the case of several unknown parameters.</li>
+<li>Plot simulated values of <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\sigma\)</span> in two separate panels, then the scatterplot of simulated <span class="math inline">\((\theta,\sigma)\)</span> pairs. What information can be gained from the latter figure?</li>
+<li>For every simulated value of <span class="math inline">\(\theta\)</span>, compute the corresponding regression line (you have to fill empty cells in the “Extras…Parametric Uncertainty” columns). Plot all these regression lines (or at least the first ~100), then add the observed (rainfall; runoff) values.</li>
+<li>The previous representation ignores the fact that the regression model contains an error term <span class="math inline">\(\varepsilon\)</span>, assumed to be a realization from a Gaussian distribution <span class="math inline">\(\mathcal{N}(0,\sigma)\)</span>. Modify the previous regression lines by adding, for every point, an error simulated from a distribution <span class="math inline">\(\mathcal{N}(0,\sigma)\)</span> (you have to fill empty cells in the “Extras…Total Uncertainty” columns). Plot all these curves (or at least the first ~100).</li>
+<li>Superimpose both figures (you can copy the graphic of question 3, and paste it into the graphic of question 4). Comment on the interpretation of this plot.</li>
+</ol>
+</blockquote>
+</div>
+<div id="convergence-and-representativeness-of-mcmc-simulations" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Convergence and representativeness of MCMC simulations</h1>
+<p>Some care is needed before using MCMC-simulate values: one should indeed first asses their convergence and their representativeness.</p>
+<p>Consider the MCMC simulations in Figure 2, which correspond to the inter-event durations data of Tutorial 2. The starting point was set to <span class="math inline">\(\theta=300\)</span>, which is much too high and corresponds to a near-zero posterior pdf. Consequently, the random walk needs some iterations before reaching the range of “better” values (say 10-100), corresponding to higher posterior pdf values.</p>
+<p>In such a case, the first part of iterations cannot be considered as representative of the posterior distribution: the MCMC simulations did not reach convergence yet. The solution to this issue is very simple: the first part of iterations is discarded and only iterations beyond the ~1000th are preserved for further analysis. This is called the “burn-in period”, or alternatively, the first 1000 iterations are said to be “burned”.</p>
+<img src="mcmcConvergence.en.png" width="50%">
+<p style="text-align: center;color: gray;">
+MCMC simulations for Tutorial 2 with a poorly-chosen starting point <span class="math inline">\(\theta=300\)</span>.
+</p>
+<p>Consider now the three MCMC chains shown in Figure 3 (still related to Tutorial 2), corresponding to three different jump sizes. The first chain (Figure 3a) correspond to a very small jump size: the candidate parameter is very close to the current parameter, leading to a Metropolis ratio <span class="math inline">\(\tau\)</span> very close to 1. The candidate parameter therefore tends to be systematically accepted. In this particular case, the acceptance ratio is equal to 97%.</p>
+<p>Figure 3b corresponds to the opposite situation: the jump size is very large, so that most candidates are generated in an area where the posterior pdf is close to zero. The Metropolis ratio <span class="math inline">\(\tau\)</span> is hence also very close to zero, and the candidate parameter therefore tends to be systematically rejected: the acceptance ratio is equal to 3% here.</p>
+<p>Although opposite, both situations lead to same problem: the number of iterations necessary to properly visit the whole parameter space is prohibitive, and probably amounts to hundreds of thousands. As a consequence, subsequent estimations based on a too small number of iterations may be poorly representative. Figure 3c shows the case of a well-chosen jump size: the acceptance rate is equal to 50% here.</p>
+<img src="mcmcJump.en.png" width="100%">
+<p style="text-align: center;color: gray;">
+MCMC simulations for Tutorial 2 with different jump sizes. (a) Jump size is too small (<span class="math inline">\(=1\)</span>); (b) jump size is too large (<span class="math inline">\(=500\)</span>); (c) jump size is well chosen (<span class="math inline">\(=20\)</span>).
+</p>
+<p>Several simple, good-practice verifications exist to tackle the issues raised above. The first one is to systematically plot the simulated values: obvious problems such as a poorly chosen starting point or jump size can generally be diagnosed by eye. Computing the acceptance rate is also useful: values close to 0% or 100% should alert on a possible problem. In BaRatinAGE, MCMC simulations can be visualized on a dedicated tab of the « Rating Curve » component.</p>
+<p>Another strategy is to simulate several MCMC chains, whith different starting points, and to verify that they yield similar estimations (after burning the first iterations). If this is not the case, it suggests that the number of iterations is too small and / or that the jump size is poorly-chosen. More generally, there exist many advanced tools to monitor the convergence and the representativeness of MCMC simulations (not yet implemented in BaRatinAGE). The interested reader can refer to the following references: the book by <a href="http://www.stat.columbia.edu/~gelman/book/">Gelman et al., 2013</a> proposes a general description of such techniques; the paper by <a href="https://doi.org/10.1016/j.csda.2005.04.018">El Adlouni et al., 2006</a> makes a complete review; the R package <a href="https://cran.r-project.org/package=coda">coda</a> implements several tools.</p>
+</div>
+<div id="building-efficient-mcmc-samplers" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Building efficient MCMC samplers</h1>
+<p>The Metropolis algorithm is the simplest MCMC sampler and its performance are largely sufficient for cases with small to moderate complexity. However, many other MCMC samplers have been developed over the years to tackle more challenging cases. The objective of this section is not to make a review of existing MCMC samplers (they are aplenty!), but rather to explain a few general strategies to improve the efficiency of MCMC sampling.</p>
+<p>The previous section and the tutorials have demonstrated that the efficiency of the Metropolis algorithm is mostly controlled by the jump sizes (which, in turn, are controlled by the diagonal elements of the covariance matrix <span class="math inline">\(\boldsymbol{\Sigma}\)</span> in Algorithm 1). When some parameters are strongly correlated, the jump orientation may also be important (off-diagonal terms in <span class="math inline">\(\boldsymbol{\Sigma}\)</span>): the jump should be made in the direction suggested by the correlation. Overall, a “good” jump distribution should look like the posterior distribution, at least in terms of size and orientation.</p>
+<p>This last sentence sounds paradoxical: the objective of MCMC simulations is precisely to explore the properties of the posterior distribution. How could these unknown properties be used to tune the MCMC sampler? The answer is to develop adaptive algorithms: the jump distribution is modified as iterations unfold, using the previously-generated values. For instance, it is possible to modify the jump sizes depending on the acceptance rate computed on previously-generated values. A small acceptance rate suggests too large jumps (see previous section) and the jump size should therefore be decreased, and inversely is the acceptance rate is large.</p>
+<p>Another strategy can be very efficient when the parameter vector <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\ldots,\theta_p)\)</span> has a large dimension (i.e. <span class="math inline">\(p\)</span> is large). It is based on jumping for an unique component of <span class="math inline">\(\boldsymbol{\theta}\)</span> at a time. For instance, at iteration <span class="math inline">\((i-1)\)</span>, the jump will be made from current parameter <span class="math inline">\(\left(\theta_1^{(i-1)},\theta_2^{(i-1)},\ldots, \theta_p^{(i-1)}\right)\)</span>to candidate parameter <span class="math inline">\(\left(\theta_1^{(*)},\theta_2^{(i-1)},\ldots, \theta_p^{(i-1)}\right)\)</span> (only the first component jumps). After acceptance or rejection, the first component is updated and the current parameter vector becomes <span class="math inline">\(\left(\theta_1^{(i)},\theta_2^{(i-1)},\ldots, \theta_p^{(i-1)}\right)\)</span>. One can then do the same thing for the second component, jumping from current parameter to candidate parameter <span class="math inline">\(\left(\theta_1^{(i)},\theta_2^{(*)},\ldots, \theta_p^{(i-1)}\right)\)</span>, accepting/rejecting to get <span class="math inline">\(\left(\theta_1^{(i)},\theta_2^{(i)},\theta_3^{(i-1)},\ldots, \theta_p^{(i-1)}\right)\)</span>, and so forth until all components are updated. The interest of this approach
+is that it replaces a single jump in a <span class="math inline">\(p\)</span>-dimensional space by <span class="math inline">\(p\)</span> jumps in a one-dimensional space. The
+latter are much easier to tune, especially using an adaptive approach as described previously.</p>
+</div>
+<div id="mcmc-algorithm-implemented-in-baratinage" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> MCMC algorithm implemented in BaRatinAGE</h1>
+<p>The MCMC algorithm implemented in BaRatinAGE uses both strategies described above (for a complete description, see <a href="https://doi.org/10.1029/2005WR004591">Renard et al., 2006</a>). It can be summarized as shown below.</p>
+<p style="text-align: center;color: gray;">
+Algorithm 2. MCMC algorithm implemented in BaRatinAGE.
+</p>
+<div style="border-style: solid;border-width: thin;">
+<ol start="0" style="list-style-type: decimal">
+<li>Choose a starting point <span class="math inline">\(\boldsymbol{\theta}^{(0)}=\left(\theta_1^{(0)},\ldots, \theta_p^{(0)}\right)\)</span> and initial jump variances <span class="math inline">\(\boldsymbol{\nu}^{(0)}=\left(\nu_1,\ldots, \nu_p\right)\)</span>.</li>
+<li><span class="math inline">\(k=0\)</span> <span style="color: DarkSeaGreen"> # Initialize counter </span></li>
+<li>Repeat for <span class="math inline">\(i=1:N_{cycles}\)</span>: <span style="color: DarkSeaGreen"> # After each cycle the jump variance is adapted </span>
+<ol style="list-style-type: lower-alpha">
+<li>Repeat for <span class="math inline">\(j=1:N_{adapt}\)</span>: <span style="color: DarkSeaGreen"> # Loop with no adaption of the jump variances </span>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(k=k+1\)</span> <span style="color: DarkSeaGreen"> # Increment counter </span></li>
+<li>Repeat for <span class="math inline">\(d=1:p\)</span>: <span style="color: DarkSeaGreen"> # Loop on each component of vector <span class="math inline">\(\boldsymbol{\theta}\)</span> </span>
+<ul>
+<li>Generate a candidate <span class="math inline">\(\theta_d^{(*)}\)</span> from a Gaussian distribution with mean <span class="math inline">\(\theta_d^{(k-1)}\)</span> and variance <span class="math inline">\(\nu_d\)</span>;</li>
+<li>Compute the ratio between the new and the old posterior pdf values: <span class="math inline">\(\tau=\frac{p \left( \theta_1^{(k)},\ldots,\theta_{d-1}^{(k)},\theta_d^{(*)},\theta_{d+1}^{(k-1)},\ldots,\theta_{p}^{(k-1)} |\boldsymbol{y} \right)}{p \left( \theta_1^{(k)},\ldots,\theta_{d-1}^{(k)},\theta_d^{(k-1)},\theta_{d+1}^{(k-1)},\ldots,\theta_{p}^{(k-1)} |\boldsymbol{y} \right)}\)</span>;</li>
+<li>Accept the candidate <span class="math inline">\(\left( \theta_d^{(k)}=\theta_d^{(*)} \right)\)</span> with probability <span class="math inline">\(min(\tau;1)\)</span>; otherwise, reject the candidate <span class="math inline">\(\left( \theta_d^{(k)}=\theta_d^{(k-1)} \right)\)</span></li>
+</ul></li>
+</ol></li>
+<li>Update jump variances
+<ol style="list-style-type: lower-roman">
+<li>Repeat for <span class="math inline">\(d=1:p\)</span>: <span style="color: DarkSeaGreen"> # Loop on each component of vector <span class="math inline">\(\boldsymbol{\theta}\)</span> </span>
+<ul>
+<li>Compute the acceptance rate <span class="math inline">\(\alpha_d\)</span> for the <span class="math inline">\(d\)</span>th component;</li>
+<li>If <span class="math inline">\(\alpha_d \le \alpha_{min}\)</span> , <span class="math inline">\(\nu_d=\phi^{-}\times\nu_d\)</span> <span style="color: DarkSeaGreen"> # acceptance rate is too low =&gt; decrease jump variance </span></li>
+<li>If <span class="math inline">\(\alpha_d \ge \alpha_{max}\)</span> , <span class="math inline">\(\nu_d=\phi^{+}\times\nu_d\)</span> <span style="color: DarkSeaGreen"> # acceptance rate is too high =&gt; increase jump variance </span></li>
+<li>Otherwise keep <span class="math inline">\(\nu_d\)</span> <span style="color: DarkSeaGreen"> # acceptance rate is between the specified bounds <span class="math inline">\([\alpha_{min};\alpha_{max}]\)</span>, the jump variance is therefore preserved </span></li>
+</ul></li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+<p><br></p>
+<p>In the algorithm above, the values of <span class="math inline">\(N_{cycles}\)</span>, <span class="math inline">\(N_{adapt}\)</span>, <span class="math inline">\(\alpha_{min}\)</span>, <span class="math inline">\(\alpha_{max}\)</span>, <span class="math inline">\(\phi^{-}\)</span> and <span class="math inline">\(\phi^{+}\)</span> can be modified to tune the properties of the MCMC sampler. The default values defined in BaRatinAGE (<span class="math inline">\(N_{cycles}=100\)</span>, <span class="math inline">\(N_{adapt}=100\)</span>, <span class="math inline">\(\alpha_{min}=0.1\)</span>, <span class="math inline">\(\alpha_{max}=0.5\)</span>, <span class="math inline">\(\phi^{-}=0.9\)</span> and <span class="math inline">\(\phi^{+}=1.1\)</span>) should work well in most cases.</p>
+<p>Finally, the raw simulations from the algorithm above are post-treated as follows:</p>
+<ul>
+<li>Burn-in: the first part of iterations is discarded, as explained in a previous section. In BaRatinAGE, the default burn-in factor is set to 0.5 (i.e. the first half is discarded);</li>
+<li>Slimming: for the remaining values, only one every <span class="math inline">\(N_{affinage}\)</span> is preserved. In BaRatinAGE, the default value is set to <span class="math inline">\(N_{affinage}=10\)</span>. The resulting information loss is actually quite small because the raw MCMC simulations are generally strongly autocorrelated.</li>
+</ul>
+<p>Consequently, with the default values in BaRatinAGE, the MCMC algorithm generates 10,000 values, but after post-treatment, only 500 simulations are preserved for further analyzes. This is in general largely sufficient, and has the positive effect of decreasing both computing time (for computing discharge time series in particular) and memory requirements.</p>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/bayesian/">Bayesian basics</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/mcmc/">MCMC Sampling</a> </strong> 
+
+		
+
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                    
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/bayesian/">Bayesian basics</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/mcmc/">MCMC Sampling</a> </strong></br>
+		</div>
+		</br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

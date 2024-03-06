@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Bayesian basics</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1709721801" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="Bayesian basics">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/en/doc/topics/bayesian/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Bayesian basics">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/en/">
+                    
+                      <img src="/img/logoWithText.png" alt="Bayesian basics logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Bayesian basics logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Bayesian basics - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">Home</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/en/doc/baratinage">BaRatinAGE</a></li>
+                            
+                            <li><a href="/en/doc/topics">Topic sheets</a></li>
+                            
+                            <li><a href="/en/doc/case">Case Studies</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/resources">Resources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/blog">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/about">About</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">🇫🇷 fr</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Bayesian basics</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction-statistical-inference" id="toc-introduction-statistical-inference"><span class="toc-section-number">1</span> Introduction : statistical inference</a></li>
+<li><a href="#likelihood" id="toc-likelihood"><span class="toc-section-number">2</span> Likelihood</a>
+<ul>
+<li><a href="#definition" id="toc-definition"><span class="toc-section-number">2.1</span> Definition</a>
+<ul>
+<li><a href="#discrete-random-variable" id="toc-discrete-random-variable"><span class="toc-section-number">2.1.1</span> Discrete random variable</a></li>
+<li><a href="#continuous-random-variable" id="toc-continuous-random-variable"><span class="toc-section-number">2.1.2</span> Continuous random variable</a></li>
+</ul></li>
+<li><a href="#maximum-likelihood-estimation" id="toc-maximum-likelihood-estimation"><span class="toc-section-number">2.2</span> Maximum likelihood estimation</a></li>
+</ul></li>
+<li><a href="#bayesian-inference" id="toc-bayesian-inference"><span class="toc-section-number">3</span> Bayesian inference</a>
+<ul>
+<li><a href="#likelihood-1" id="toc-likelihood-1"><span class="toc-section-number">3.1</span> Likelihood</a></li>
+<li><a href="#prior-distribution" id="toc-prior-distribution"><span class="toc-section-number">3.2</span> Prior distribution</a></li>
+<li><a href="#posterior-distribution" id="toc-posterior-distribution"><span class="toc-section-number">3.3</span> Posterior distribution</a></li>
+</ul></li>
+</ul>
+</div>
+
+<p>The objective of this document is to describe the basics of Bayesian inference. The text is supplemented by a set of tutorials that can be dowloaded <a href="TP_bayesian.en.zip">here</a>.</p>
+<div id="introduction-statistical-inference" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction : statistical inference</h1>
+<p>Statistical inference refers to the use of observed data to estimate some properties of a probabilistic model – typically, unknown parameters. This is a very well-developed field in Statistics, and we will only discuss two particular estimation methods in this document: maximum likelihood and Bayesian estimation, the latter being the estimation method used in BaRatinAGE.</p>
+<p>The general notation is defined as follows. Let <span class="math inline">\((y_1,\ldots,y_n)\)</span> denote the observed values, considered as realisations from the random variables <span class="math inline">\((Y_1,\ldots,Y_n)\)</span>. An assumption on the distribution of <span class="math inline">\((Y_1,\ldots,Y_n)\)</span> has to be made: for instance, all <span class="math inline">\(Y_i\)</span>’s may be assumed to follow a Gaussian distribution with unknown parameters <span class="math inline">\((\mu,\sigma)\)</span>. The objective is to estimate the value of parameters <span class="math inline">\((\mu,\sigma)\)</span> from the observed data <span class="math inline">\((y_1,\ldots,y_n)\)</span>. More generally, <span class="math inline">\(\boldsymbol{\theta}\)</span> denotes the vector of unknown parameters and <span class="math inline">\(f(z;\boldsymbol{\theta})\)</span> denotes the probability density function (pdf) of the distribution assumed for <span class="math inline">\(Y_i\)</span>’s. In this latter notation, <span class="math inline">\(z\)</span> is the value at which the pdf is evaluated, while the notation «<span class="math inline">\(;\boldsymbol{\theta}\)</span>» aims at making unknown parameters explicit in the notation.</p>
+</div>
+<div id="likelihood" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Likelihood</h1>
+<p>The concept of likelihood is central in Statistics, because it is at the core of several estimation methods, including Bayesian inference. The objective of this section is to define the concept of likelihood and to describe its practical computation from a given observed dataset and a given probabilistic model. We will also describe the principles of maximum likelihood estimation.</p>
+<div id="definition" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Definition</h2>
+<div id="discrete-random-variable" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Discrete random variable</h3>
+<p>In intuitive terms, the likelihood is equal to the probability of observing the data according to the probabilistic model. As an illustration, consider a coin tossing game, for which after two successive trials, the outcome is tail then head. Let <span class="math inline">\(Y_1\)</span> denote the random variable describing the outcome of the first trial (with <span class="math inline">\(Y_1=0\)</span> for tail and <span class="math inline">\(Y_1=1\)</span> for head), and similarly let <span class="math inline">\(Y_2\)</span> describe the outcome of the second trial. Observations can be written as <span class="math inline">\(\boldsymbol{y}=(y_1,y_2)=(0,1)\)</span>. If the coin is fair, the random variables <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> both follow a Bernoulli distribution with parameter <span class="math inline">\(p=1/2\)</span> : this is the probabilistic model we will use here. The likelihood <span class="math inline">\(V(\boldsymbol{y})\)</span> associated with data <span class="math inline">\(\boldsymbol{y}\)</span> is hence equal to:</p>
+<p><span class="math display">\[ \begin{align}
+V(\boldsymbol{y}) &amp;= Pr(Y_1=y_1 \cap Y_2=y_2)\\
+&amp;= Pr(Y_1=0 \cap Y_2=1)\\
+&amp;= Pr(Y_1=0) \times Pr( Y_2=1) \text{ (independant trials)}\\
+&amp;= 1/2 \times 1/2 = 1/4
+\end{align}
+\]</span>
+This intuitive definition can be formalized as follows. Let <span class="math inline">\(\boldsymbol{y}=(y_1,\ldots,y_n)\)</span> denote observed data and <span class="math inline">\(\boldsymbol{Y}=(Y_1,\ldots,Y_n)\)</span> denote the parent random variables, which we assume mutually independent. Moreover, the probability mass function (pmf) of <span class="math inline">\(Y_i\)</span> is noted <span class="math inline">\(f_{Y_i}(z)=Pr(Y_i=z)\)</span>. The likelihood <span class="math inline">\(V(\boldsymbol{y})\)</span> is defined as follows:</p>
+<p><span class="math display">\[V(\boldsymbol{y}) = \prod_{i=1}^{n}{f_{Y_i}(y_i)}\]</span></p>
+<p><strong>Remark 1</strong> : The independence hypothesis is necessary to write the likelihood as the simple product of the equation above. We won’t consider the non-independence case in this document.</p>
+<p><strong>Remark 2</strong> : It is frequently assumed that the data are identically distributed, i.e. that all random
+variables have the same pmf: <span class="math inline">\(f_{Y_1}(z)=f_{Y_2}(z)=\ldots=f_{Y_n}(z)\)</span>. Noting this common pmf <span class="math inline">\(f(z)\)</span>, the likelihood simplifies to:</p>
+<p><span class="math display">\[V(\boldsymbol{y}) = \prod_{i=1}^{n}{f(y_i)}\]</span></p>
+<p><strong>Remark 3</strong> : The acronym <em>iid</em> is used to refer to such independent and identically distributed random
+variables.</p>
+<blockquote>
+<p><a href="TP_bayesian.en.zip"><strong>Tutorial 1. Likelihood computation for a discrete variable</strong></a>. The data file describes the occurrence of a flood exceeding the 10-year event (or more precisely, an estimated 10-year event): 1 if the 10-year flood is exceeded, 0 otherwise. It is assumed that data are <em>iid</em> realisations from a Bernoulli distribution with parameter <span class="math inline">\(p=0.1\)</span>. Compute the likelihood, then repeat the computation with <span class="math inline">\(p=0.3\)</span> and <span class="math inline">\(p=0.5\)</span>. How do you interpret these likelihood values?</p>
+</blockquote>
+</div>
+<div id="continuous-random-variable" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Continuous random variable</h3>
+<p>For a continuous random variable, the likelihood can still be computed with the equations given for the discrete case, with <span class="math inline">\(f_{Y_i}(z)\)</span> denoting the pdf instead of the pmf. The interpretation is slightly different since the likelihood is not equal to the <em>probability</em> of having observed the data, but is rather equal to the <em>probability density</em> of the data. Given the strong similarity between discrete and continuous variables, we will only focus on the latter in the remainder of this document. The case of discrete variables can be obtained by simply replacing « pdf » by « pmf ».</p>
+<blockquote>
+<p><a href="TP_bayesian.en.zip"><strong>Tutorial 2. Likelihood computation for a continuous variable</strong></a>. The picture below has been taken in the city of Sommières, along the Vidourle River (Mediterranean France). The flood marks allow computing the duration between two successive flood events. We assume that these durations are <em>iid</em> and are realisations from an exponential distribution with parameter <span class="math inline">\(\lambda=25\)</span> (the pdf of the exponential distribution is <span class="math inline">\(f(z)=\frac{e^{-z/\lambda}}{\lambda}\)</span>). Compute the likelihood, then repeat the computation with <span class="math inline">\(\lambda=10\)</span> and <span class="math inline">\(\lambda=100\)</span>. How do you interpret these likelihood values?</p>
+</blockquote>
+<img src="Vidourles.jpg" width="60%">
+<p style="text-align: center;color: gray;">
+Picture taken in the city of Sommières showing flood marks on a building. Photo : Diane Laberge, <a href="http://www.dianelaberge.com/blogue/2012/11/09/laccent-du-sud/">http://www.dianelaberge.com/blogue/2012/11/09/laccent-du-sud/</a>.
+</p>
+</div>
+</div>
+<div id="maximum-likelihood-estimation" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Maximum likelihood estimation</h2>
+<p>The idea behind maximum likelihood estimation should be intuitive after the tutorials proposed in the previous section: an estimate can be obtained by picking up the parameter maximizing the likelihood. This can be formalized as follows, using the same notation as in previous sections: <span class="math inline">\(\boldsymbol{y}=(y_1,\ldots,y_n)\)</span> denote the data, and <span class="math inline">\(\boldsymbol{Y}=(Y_1,\ldots,Y_n)\)</span> the corresponding random variables. We now assume that the pdf of the random variable <span class="math inline">\(Y_i\)</span> depends on one or several unknown parameters denoted by <span class="math inline">\(\boldsymbol{\theta}\)</span>. This pdf is noted <span class="math inline">\(f_{Y_i}(z;\boldsymbol{\theta})\)</span>. The likelihood <span class="math inline">\(V(\boldsymbol{y};\boldsymbol{\theta})\)</span> is then equal to:</p>
+<p><span class="math display">\[V(\boldsymbol{y};\boldsymbol{\theta}) = \prod_{i=1}^{n}{f_{Y_i}(y_i;\boldsymbol{\theta})}\]</span></p>
+<p>This equation is basically identical to the preceding likelihood equations, except that unknown parameters <span class="math inline">\(\boldsymbol{\theta}\)</span> are made explicit in the notation. The maximum likelihood estimator <span class="math inline">\(\hat{\boldsymbol{\theta}}\)</span> then corresponds to the parameter vector maximizing the likelihood:</p>
+<p><span class="math display">\[\hat{\boldsymbol{\theta}} = \mathop{\mathrm{argmax}}_{\boldsymbol{\theta}} V(\boldsymbol{y};\boldsymbol{\theta})\]</span></p>
+<blockquote>
+<p><a href="TP_bayesian.en.zip"><strong>Tutorial 3. Maximum likelihood estimation, discrete case</strong></a>. Using the data of Tutorial 1, compute the likelihood for a grid of values of parameter <span class="math inline">\(p\)</span>. Plot the likelihood as a function of <span class="math inline">\(p\)</span>, and deduce the maximum likelihood estimate. Is there any other information one could use in this likelihood function?</p>
+</blockquote>
+<blockquote>
+<p><a href="TP_bayesian.en.zip"><strong>Tutorial 4. Maximum likelihood estimation, continuous case</strong></a>. Using the data of Tutorial 2, compute the likelihood for a grid of values of parameter <span class="math inline">\(\lambda\)</span>. Plot the likelihood as a function of <span class="math inline">\(\lambda\)</span>, and deduce the maximum likelihood estimate. Is there any other information one could use in this likelihood function?</p>
+</blockquote>
+<blockquote>
+<p><a href="TP_bayesian.en.zip"><strong>Tutorial 5. Maximum likelihood estimation for a linear regression</strong></a>. Consider the data in the figure below, representing annual precipitation(<span class="math inline">\(X\)</span>) and annual streamflow (<span class="math inline">\(Y\)</span>) for some
+catchment. A roughly linear link being apparent in this figure, a linear relation is assumed as follows:</p>
+</blockquote>
+<p><span class="math display">\[y_i=\theta  x_i + \varepsilon_i \text{ with }  \varepsilon_i \sim \mathcal{N}(0,\sigma)\]</span></p>
+<img src="linear.en.jpg" width="50%">
+<p style="text-align: center;color: gray;">
+Relation between annual precipitation <span class="math inline">\(X\)</span> and annual streamflow <span class="math inline">\(Y\)</span>
+</p>
+<blockquote>
+<p>This relation assumes that the annual streamflow is equal to a fraction <span class="math inline">\(\theta\)</span> of the annual precipitation, plus a residual value varying from year to year. The residuals are further assumed to be <em>iid</em> realisations from a Gaussian distribution with mean zero and unknown standard deviation <span class="math inline">\(\sigma\)</span>. Under these hypotheses, the <span class="math inline">\(i\)</span>th annual streamflow is a realisation from a Gaussian distribution <span class="math inline">\(\mathcal{N}(\theta x_i,\sigma)\)</span>: in other words, the linear regression model gives the mean of the annual streamflow, while the residual standard deviation gives the uncertainty on the predicted annual streamflow. Note that the annual streamflow data <span class="math inline">\(\boldsymbol{y}\)</span> are not identically distributed here (because the mean is different every year).</p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Plot the data along with the regression line for <span class="math inline">\(\theta=0.1\)</span>.</li>
+<li>Compute the likelihood of data <span class="math inline">\(\boldsymbol{y}\)</span> for <span class="math inline">\(\theta=0.1\)</span> and <span class="math inline">\(\sigma=50\)</span>.</li>
+<li>By trial-and-error, compute the maximum likelihood estimate of <span class="math inline">\(\theta\)</span> (keeping <span class="math inline">\(\sigma=50\)</span> fixed).</li>
+<li>Compare the maximum likelihood regression line with the one computed by Excel (right click…Add Trendline).</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>Remark: although very simple, this example provides an excellent illustration of the way parameters from a deterministic model can be estimated. Here the deterministic model is the simple linear relation <span class="math inline">\(y_{sim}=\theta x\)</span>. Streamflow <span class="math inline">\(y_{sim}\)</span> is the output variable (also called predictand), precipitation <span class="math inline">\(x\)</span> is the input variable (also called predictor), and <span class="math inline">\(\theta\)</span> is the unknown parameter to be estimated. The example can be generalized to much more complex models, including rating curves or hydrologic models.</p>
+</blockquote>
+</div>
+</div>
+<div id="bayesian-inference" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Bayesian inference</h1>
+<p>As maximum likelihood, the Bayesian approach is an estimation method. Some of its properties are of particular interest in a hydrologic context, in particular in terms of uncertainty quantification. Here we describe the building blocks of Bayesian estimation: likelihood, prior distribution and posterior distribution.</p>
+<div id="likelihood-1" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Likelihood</h2>
+<p>Bayesian estimation uses the likelihood as defined in the preceding sections. However in a Bayesian context, the likelihood is generally noted <span class="math inline">\(p(\boldsymbol{y}|\boldsymbol{\theta})\)</span> instead of <span class="math inline">\(V(\boldsymbol{y};\boldsymbol{\theta})\)</span>):</p>
+<p><span class="math display">\[p(\boldsymbol{y}|\boldsymbol{\theta}) = \prod_{i=1}^{n}{f_{Y_i}(y_i;\boldsymbol{\theta})}\]</span></p>
+<p>The likelihood quantifies the information brought by the data about the unknown parameters <span class="math inline">\(\boldsymbol{\theta}\)</span>. However, unlike with maximum likelihood estimation, we will not attempt to maximize it here.</p>
+</div>
+<div id="prior-distribution" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Prior distribution</h2>
+<p>The Bayesian does not only use the information brought by the data, but allows including any knowledge on <span class="math inline">\(\boldsymbol{\theta}\)</span> that would be available even before acquiring the data. This prior information is encoded as a distribution, whose pdf is noted <span class="math inline">\(p(\boldsymbol{\theta})\)</span>. As suggested by this notation, the prior distribution does not depend on the data<span class="math inline">\(\boldsymbol{y}\)</span>. This is actually a golden rule: the data should never be used to specify the prior distribution, since this would be akin to using the same data twice, leading to a strong under-estimation of uncertainties.</p>
+<p>The specification of a prior distribution is completely context-dependent, and there is therefore no universal rule to follow. This specification is entirely the responsibility of the analyst, who has to translate his/her knowledge in the form of a distribution. This introduces an additional subjective step into the analysis, which led to vigorous debates between supporters and opponents of the Bayesian approach. One may still argue that: (1) fully objective computations sometimes lead to unrealistic results; (2) in most data analyses, there exist many subjective choices anyway; (3) the prior distribution at least forces the analyst to formalize this subjectivity, and makes it transparent (the prior distribution should always be communicated along with the results of the analysis!); (4) subjectivity and knowledge are not antithetical.</p>
+<p>The tutorials will illustrate practical examples of prior specification. In the meantime, the following cases show that prior knowledge often exists in Hydrology:</p>
+<ul>
+<li>Consider the precipitation-streamflow regression in Tutorial 5: in most cases it is realistic to restrict <span class="math inline">\(\theta\)</span> between 0 and 1 (except if strong groundwater import is expected), and therefore it makes sense to use a prior distribution that induces this constraint (e.g. a uniform distribution between 0 and 1). Moreover, given the catchment size and its geographic location, one may have more information on the value of this parameter, which represents a runoff coefficient. For instance, in an arid or semi-arid region, a runoff coefficient as high as 0.8 would be unlikely for a medium-sized natural catchment (more than a few km²).</li>
+<li>Rating curves provide an excellent illustration of the availability of prior knowledge: rating curve parameters can indeed be linked with measurable hydraulic properties (e.g. geometry of a channel or a cross-section, slope of a channel, etc.), for which a rigorous quantification is possible. This is one underlying principle of BaRatin.</li>
+<li>Although using the data <span class="math inline">\(\boldsymbol{y}\)</span> to specify the prior distribution is strictly forbidden, it is not forbidden to use other data! This idea can for instance be used in flood frequency analysis for regionalisation purposes: sites nearby and similar (in some sense) to the target site can be used to specify a prior distribution; this information is then combined with the data at the target site <span class="math inline">\(\boldsymbol{y}\)</span> with a Bayesian analysis (see for instance <a href="https://hal.inrae.fr/tel-02590034">Ribatet 2007</a>).</li>
+</ul>
+<p>Finally, remind that in general <span class="math inline">\(\boldsymbol{\theta}\)</span> is a vector (as soon as there are several unknown parameters). The prior distribution is therefore multi-dimensional. A simple and frequently used approach to specify a multi-dimensional prior distribution is to use independent priors for each parameter. A joint prior distribution can then be obtained with a simple multiplication:</p>
+<p><span class="math display">\[p(\boldsymbol{\theta})=p(\theta_1,\ldots,\theta_p)=\prod_{i=1}^{p}{p(\theta_i)}\]</span></p>
+</div>
+<div id="posterior-distribution" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Posterior distribution</h2>
+<p>Bayes theorem (image below) allows combining the information brought by the data (through the likelihood) with prior information into a distribution for the unknown parameter <span class="math inline">\(\boldsymbol{\theta}\)</span> , termed the
+posterior distribution. The pdf of the posterior distribution, noted <span class="math inline">\(p(\boldsymbol{\theta}|\boldsymbol{y})\)</span>, is defined by:</p>
+<p><span class="math display">\[ p(\boldsymbol{\theta}|\boldsymbol{y}) = \frac{
+\overbrace{p(\boldsymbol{y}|\boldsymbol{\theta})}^{\text{likelihood}}
+\times \overbrace{p(\boldsymbol{\theta})}^{\text{prior}}
+}
+{\underbrace{\int p(\boldsymbol{y}|\boldsymbol{\nu}) \times p(\boldsymbol{\nu})d\boldsymbol{\nu}}_{\text{normalization constant}}}\]</span></p>
+<img src="Thomas_Bayes.gif" width="40%">
+<p style="text-align: center;color: gray;">
+Thomas Bayes. Source : <a href="https://en.wikipedia.org/wiki/Thomas_Bayes">Wikipedia</a>
+</p>
+<p>The numerator is simply the product of the likelihood and the prior pdf. The denominator looks more
+complex, since it requires integrating this product with respect to unknown parameters. However, this denominator is in fact just a constant: the data <span class="math inline">\(\boldsymbol{y}\)</span> are given and fixed, and parameters <span class="math inline">\(\boldsymbol{\nu}\)</span> disappear from the denominator since they correspond to the integration variables. Consequently, the denominator only serves as a normalizing constant: it ensures that the area below the posterior pdf is equal to 1 (which is required for any pdf). In practice, it is actually not even necessary to compute this constant in general (the reason will be explained in page on <a href="/en/doc/topics/mcmc">MCMC methods MCMC</a>). This allows simplifying Bayes theorem as follows:</p>
+<p><span class="math display">\[ p(\boldsymbol{\theta}|\boldsymbol{y}) \propto p(\boldsymbol{y}|\boldsymbol{\theta}) p(\boldsymbol{\theta})\]</span></p>
+<p>where the symbol « <span class="math inline">\(\propto\)</span> » stands for « is proportional to ». This equation shows that the derivation of the posterior pdf (up to a constant of proportionality) is disarmingly simple: it is just the product of the likelihood and the prior pdf! The resulting posterior pdf quantifies the knowledge on parameters <span class="math inline">\(\boldsymbol{\theta}\)</span>, given two sources of information: the data and prior knowledge.</p>
+<p>It is worth noting that the raw result of Bayesian estimation is a distribution, as opposed to a value (as in other estimation methods such as moments, maximum likelihood, etc.). This remark calls for further comments:</p>
+<ul>
+<li>The raw result of Bayesian inference directly provides a quantification of uncertainty.</li>
+<li>This does not mean that quantifying uncertainty is impossible with other estimation methods: in fact, most estimation methods come with a solid and well-developed theory for uncertainty quantification. But this quantification only comes in a second step, after having estimated a particular value.</li>
+<li>Conversely, this does not mean that estimating a value is impossible with Bayesian estimation: typically, the maximum of the posterior pdf is a standard choice. This can be considered as the Bayesian version of the maximum likelihood estimate, and it is often abbreviated as the Maxpost estimate (or alternatively the MAP estimate for Maximum A Posteriori).</li>
+</ul>
+<p>The comments above show that all estimation methods can provide both a point-estimate (i.e. a value) and a quantification of uncertainty. Bred-in-the-bone Bayesians may argue that uncertainty quantification is somewhat more natural in a Bayesian framework, because uncertainty is the raw result and point-estimate is the by-product (while it’s the contrary with other estimation methods).</p>
+<blockquote>
+<p><a href="TP_bayesian.en.zip"><strong>Tutorial 6. Bayesian estimation, discrete case</strong></a>. Complete Tutorial 3 to perform a full Bayesian analysis, which requires: (1) specifying a prior pdf; (2) computing the posterior pdf (up to a constant of proportionality). Plot the likelihood, the prior pdf and the posterior pdf and compare them.</p>
+</blockquote>
+<blockquote>
+<p>The person who estimated the 10-year flood let you know that she/he did not used your data to make her/his estimation;moreover, she/he performed an analysis suggesting that the uncertainty on the exceedance probability of the estimated 10-year flood could be represented by a lognormal distribution<span class="math inline">\(Log\mathcal{N}(\mu=log(0.1),\sigma=0.75)\)</span>. Use this information.</p>
+</blockquote>
+<blockquote>
+<p><a href="TP_bayesian.en.zip"><strong>Tutorial 7. Bayesian estimation, continuous case</strong></a>. Complete Tutorial 4 to perform a full Bayesian analysis. Moreover, a colleague who made some hydrology/hydraulics study for this area let you know that the return period associated with a flooding of this building is comprised between 10 and 100 years, at a confidence level of 95%. Use this information.</p>
+</blockquote>
+<blockquote>
+<p><a href="TP_bayesian.en.zip"><strong>Tutorial 8. Bayesian estimation for a linear regression</strong></a>. Complete Tutorial 5 to perform a full Bayesian analysis for parameter <span class="math inline">\(\theta\)</span> (keep <span class="math inline">\(\sigma=50\)</span> as a known value). Plot the likelihood, the prior pdf and the posterior pdf. Repeat the computation with other values for <span class="math inline">\(\sigma\)</span>, and comment on the results.</p>
+</blockquote>
+</div>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/bayesian/">Bayesian basics</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/mcmc/">MCMC Sampling</a> 
+		
+
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                    
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/">Hydraulic analysis</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/">Hydraulic controls</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/gaugings/">The uncertainties of gaugings</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/rating-curve/">Rating curve equation</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/stage-series/">Uncertainties in stage time series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/statistical-model/">Statistical model</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/topics/bayesian/">Bayesian basics</a> </strong></br>
+		</div>
+		</br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/mcmc/">MCMC Sampling</a> </br> </br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

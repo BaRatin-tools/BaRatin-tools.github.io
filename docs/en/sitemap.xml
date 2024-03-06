@@ -122,6 +122,30 @@
                 href="https://baratin-tools.github.io/en/doc/topics/discharge-series/"
                 />
   </url><url>
+    <loc>https://baratin-tools.github.io/en/doc/topics/bayesian/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/bayesien/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/bayesian/"
+                />
+  </url><url>
+    <loc>https://baratin-tools.github.io/en/doc/topics/mcmc/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/mcmc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/mcmc/"
+                />
+  </url><url>
     <loc>https://baratin-tools.github.io/en/blog/</loc>
     <lastmod>2024-02-09T00:00:00+00:00</lastmod>
     <xhtml:link

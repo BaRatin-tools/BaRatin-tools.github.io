@@ -57,18 +57,18 @@
       <description>Cette page décrit comment les erreurs provenant de la courbe de tarage (erreurs paramétriques et erreurs structurelles) et celles provenant du limnigramme (erreurs non-systématiques et erreurs systématiques) sont propagées aux hydrogrammes dans BaRatinAGE.</description>
     </item>
     <item>
-      <title>Les bases de l’inférence Bayesienne</title>
+      <title>Le B.A.-BA de l’inférence Bayesienne</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/bayesien/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/bayesien/</guid>
-      <description>XXX</description>
+      <description>1 Introduction : l’inférence statistique 2 La notion de vraisemblance 2.1 Définition 2.1.1 Variable aléatoire discrète 2.1.2 Variable aléatoire continue 2.2 Estimation par maximum de vraisemblance 3 L’approche bayésienne 3.</description>
     </item>
     <item>
-      <title>Méthodes MCMC</title>
+      <title>Algorithmes MCMC</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/mcmc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/mcmc/</guid>
-      <description>XXX</description>
+      <description>1 Introduction 2 Principe général des méthodes MCMC 3 L’algorithme de Metropolis 4 Convergence et représentativité des simulations MCMC 5 Construire des simulateurs MCMC efficaces 6 L’algorithme MCMC implémenté dans BaRatin 1 Introduction Les TPs proposés dans la page B.</description>
     </item>
   </channel>
 </rss>

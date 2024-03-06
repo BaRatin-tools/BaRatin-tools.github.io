@@ -22,7 +22,7 @@
 <meta name="googlebot" content="index,follow,snippet,archive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Les bases de l’inférence Bayesienne</title>
+<title>Le B.A.-BA de l’inférence Bayesienne</title>
 <meta name="author" content="" />
 
 
@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709572208" rel="stylesheet">
+<link href="/css/custom.css?1709721801" rel="stylesheet">
 
 
 
@@ -75,7 +75,7 @@
 
 <meta property="og:locale" content="fr">
 <meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
-<meta property="og:title" content="Les bases de l’inférence Bayesienne">
+<meta property="og:title" content="Le B.A.-BA de l’inférence Bayesienne">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://baratin-tools.github.io/fr/doc/topics/bayesien/" />
 <meta property="og:description" content="">
@@ -94,7 +94,7 @@
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:title" content="Les bases de l’inférence Bayesienne">
+<meta name="twitter:title" content="Le B.A.-BA de l’inférence Bayesienne">
 
 <meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
 
@@ -116,10 +116,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand home" href="/fr/">
                     
-                      <img src="/img/logoWithText.png" alt="Les bases de l’inférence Bayesienne logo" class="hidden-xs hidden-sm" />
-                      <img src="/img/logo.png" alt="Les bases de l’inférence Bayesienne logo" class="visible-xs visible-sm" />
+                      <img src="/img/logoWithText.png" alt="Le B.A.-BA de l’inférence Bayesienne logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Le B.A.-BA de l’inférence Bayesienne logo" class="visible-xs visible-sm" />
                     
-                    <span class="sr-only">Les bases de l’inférence Bayesienne - aller à l&#39;accueil</span>
+                    <span class="sr-only">Le B.A.-BA de l’inférence Bayesienne - aller à l&#39;accueil</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -279,7 +279,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Les bases de l’inférence Bayesienne</h1>
+                <h1>Le B.A.-BA de l’inférence Bayesienne</h1>
             </div>
         </div>
     </div>
@@ -298,8 +298,169 @@
                         <div id="post-content">
                           
 
+<div id="TOC">
+<ul>
+<li><a href="#introduction-linférence-statistique" id="toc-introduction-linférence-statistique"><span class="toc-section-number">1</span> Introduction : l’inférence statistique</a></li>
+<li><a href="#la-notion-de-vraisemblance" id="toc-la-notion-de-vraisemblance"><span class="toc-section-number">2</span> La notion de vraisemblance</a>
+<ul>
+<li><a href="#définition" id="toc-définition"><span class="toc-section-number">2.1</span> Définition</a>
+<ul>
+<li><a href="#variable-aléatoire-discrète" id="toc-variable-aléatoire-discrète"><span class="toc-section-number">2.1.1</span> Variable aléatoire discrète</a></li>
+<li><a href="#variable-aléatoire-continue" id="toc-variable-aléatoire-continue"><span class="toc-section-number">2.1.2</span> Variable aléatoire continue</a></li>
+</ul></li>
+<li><a href="#estimation-par-maximum-de-vraisemblance" id="toc-estimation-par-maximum-de-vraisemblance"><span class="toc-section-number">2.2</span> Estimation par maximum de vraisemblance</a></li>
+</ul></li>
+<li><a href="#lapproche-bayésienne" id="toc-lapproche-bayésienne"><span class="toc-section-number">3</span> L’approche bayésienne</a>
+<ul>
+<li><a href="#vraisemblance" id="toc-vraisemblance"><span class="toc-section-number">3.1</span> Vraisemblance</a></li>
+<li><a href="#distribution-a-priori" id="toc-distribution-a-priori"><span class="toc-section-number">3.2</span> Distribution a priori</a></li>
+<li><a href="#distribution-a-posteriori" id="toc-distribution-a-posteriori"><span class="toc-section-number">3.3</span> Distribution a posteriori</a></li>
+</ul></li>
+</ul>
+</div>
 
-<p>XXX</p>
+<p>L’objectif de ce document est de présenter les bases de l’inférence Bayesienne. Le texte est complété par un ensemble de travaux pratiques qui sont téléchargeables <a href="TP_bayesian.fr.zip">ici</a>.</p>
+<div id="introduction-linférence-statistique" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction : l’inférence statistique</h1>
+<p>L’inférence statistique consiste à utiliser des données observées pour estimer certaines propriétés d’un modèle probabiliste – typiquement des paramètres inconnus que l’on doit estimer. C’est un domaine important et vaste des Statistiques. Dans cette fiche, nous nous focalisons sur deux méthodes d’estimation particulières : l’estimation par maximum de vraisemblance, et surtout l’estimation bayésienne, qui est implémentée dans BaRatinAGE.</p>
+<p>Le cadre général est le suivant : on dispose d’un échantillon d’observations <span class="math inline">\((y_1,\ldots,y_n)\)</span>, réalisations de variables aléatoires <span class="math inline">\((Y_1,\ldots,Y_n)\)</span>. Nous allons émettre une hypothèse sur la distribution de <span class="math inline">\((Y_1,\ldots,Y_n)\)</span> : par exemple on supposera que tous les <span class="math inline">\(Y_i\)</span> suivent une loi normale de paramètres inconnus <span class="math inline">\((\mu,\sigma)\)</span>. L’objectif est d’estimer la valeur des paramètres <span class="math inline">\((\mu,\sigma)\)</span> à partir des données observées <span class="math inline">\((y_1,\ldots,y_n)\)</span>. De manière général, on désigne par <span class="math inline">\(\boldsymbol{\theta}\)</span> le vecteur de paramètres à estimer et <span class="math inline">\(f(z;\boldsymbol{\theta})\)</span> la densité de la distribution supposée des <span class="math inline">\(Y_i\)</span>. Dans cette notation, <span class="math inline">\(z\)</span> est une valeur quelconque où la densité est calculée, tandis que la notation «<span class="math inline">\(;\boldsymbol{\theta}\)</span>» vise à rendre explicite les paramètres inconnus.</p>
+</div>
+<div id="la-notion-de-vraisemblance" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> La notion de vraisemblance</h1>
+<p>Le concept de vraisemblance est central en Statistiques, car il est à la base de plusieurs méthodes d’estimation, dont l’estimation bayésienne. L’objectif de cette section est de définir ce qu’est une vraisemblance, et de décrire la manière pratique de la calculer à partir d’un jeu de données et d’un modèle probabiliste. Nous en profiterons pour décrire l’estimation par maximum de vraisemblance.</p>
+<div id="définition" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Définition</h2>
+<div id="variable-aléatoire-discrète" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Variable aléatoire discrète</h3>
+<p>En termes intuitifs, la vraisemblance est simplement égale à la probabilité d’avoir observé les données d’après le modèle probabiliste. Considérons par exemple un jeu de pile ou face, pour lequel après deux lancers successifs, nous obtenons pile puis face. Notons <span class="math inline">\(Y_1\)</span> la variable aléatoire décrivant l’issue du premier lancer (avec par convention <span class="math inline">\(Y_1=0\)</span> pour pile et <span class="math inline">\(Y_1=1\)</span> pour face), et <span class="math inline">\(Y_2\)</span> la variable aléatoire décrivant l’issue du second lancer. Les observations peuvent donc être notées <span class="math inline">\(\boldsymbol{y}=(y_1,y_2)=(0,1)\)</span>. Si la pièce n’est pas truquée, les variables aléatoires <span class="math inline">\(Y_1\)</span> et <span class="math inline">\(Y_2\)</span> suivent une loi de Bernoulli de paramètre <span class="math inline">\(p=1/2\)</span> : c’est le modele probabiliste que nous utiliserons. La vraisemblance <span class="math inline">\(V(\boldsymbol{y})\)</span> associée aux données <span class="math inline">\(\boldsymbol{y}\)</span> est donc égale à :</p>
+<p><span class="math display">\[ \begin{align}
+V(\boldsymbol{y}) &amp;= Pr(Y_1=y_1 \cap Y_2=y_2)\\
+&amp;= Pr(Y_1=0 \cap Y_2=1)\\
+&amp;= Pr(Y_1=0) \times Pr( Y_2=1) \text{ (car les lancers sont indépendants)}\\
+&amp;= 1/2 \times 1/2 = 1/4
+\end{align}
+\]</span>
+Cette définition intuitive peut être formalisée mathématiquement de la manière suivante. Notons <span class="math inline">\(\boldsymbol{y}=(y_1,\ldots,y_n)\)</span> les données, et <span class="math inline">\(\boldsymbol{Y}=(Y_1,\ldots,Y_n)\)</span> les variables aléatoires ayant généré chaque observation. On suppose que ces variables aléatoires sont indépendantes deux à deux. De plus, la fonction de masse de la variable aléatoire <span class="math inline">\(Y_i\)</span> est notée <span class="math inline">\(f_{Y_i}(z)=Pr(Y_i=z)\)</span>. La vraisemblance <span class="math inline">\(V(\boldsymbol{y})\)</span> est alors définie par :</p>
+<p><span class="math display">\[V(\boldsymbol{y}) = \prod_{i=1}^{n}{f_{Y_i}(y_i)}\]</span></p>
+<p><strong>Remarque 1</strong> : L’hypothèse d’indépendance est importante, en son absence la vraisemblance est plus complexe que le simple produit de l’équation ci-dessus – mais nous n’aborderons pas ce cas de figure ici.</p>
+<p><strong>Remarque 2</strong> : Il est fréquent de supposer également que les données sont identiquement distribuées, c’est-à-dire que toutes les variables aléatoires ont la même fonction de masse : <span class="math inline">\(f_{Y_1}(z)=f_{Y_2}(z)=\ldots=f_{Y_n}(z)\)</span>. Si l’on note <span class="math inline">\(f(z)\)</span> cette fonction de masse commune, la vraisemblance s’écrit simplement :</p>
+<p><span class="math display">\[V(\boldsymbol{y}) = \prod_{i=1}^{n}{f(y_i)}\]</span></p>
+<p><strong>Remarque 3</strong> : Lorsque les données sont supposées indépendantes et identiquement distribuées, on utilise l’acronyme <em>iid</em>.</p>
+<blockquote>
+<p><a href="TP_bayesian.fr.zip"><strong>TP 1. Calcul d’une vraisemblance discrète</strong></a>. Le fichier de données contient les occurrences d’un dépassement de la crue décennale (ou, pour être plus précis, de la crue estimée comme décennale) : 1 si la crue décennale est dépassée au cours d’une année, 0 sinon. On suppose que ces données sont <em>iid</em> suivant une distribution de Bernoulli de paramètre <span class="math inline">\(p=0.1\)</span>. Calculez la vraisemblance, puis recommencez le calcul avec <span class="math inline">\(p=0.3\)</span> et <span class="math inline">\(p=0.5\)</span>. Comment interprétez-vous ces différentes vraisemblances ?</p>
+</blockquote>
+</div>
+<div id="variable-aléatoire-continue" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Variable aléatoire continue</h3>
+<p>Dans le cas d’une variable aléatoire continue, la définition de la vraisemblance est identique à celle des equations précédentes pour le cas discret, à l’exception du fait que <span class="math inline">\(f_{Y_i}(z)\)</span> désigne la densité de probabilité (au lieu de la fonction de masse dans le cas discret). En termes d’interprétation, la vraisemblance n’est donc plus égale à la probabilité d’avoir observé les données, mais plutôt à la densité de probabilité des données. Etant donné cette grande similarité entre variables discrètes et continues, nous nous focaliserons sur les variables continues dans la suite de ce document. Le passage à une variable discrète pourra être fait en remplaçant simplement « densité de probabilité » par « fonction de masse ».</p>
+<blockquote>
+<p><a href="TP_bayesian.fr.zip"><strong>TP 2. Calcul d’une vraisemblance continue</strong></a>. La photo ci-dessous a été prise à Sommières, à proximité du Vidourle. Les dates des crues permettent de calculer la durée ayant séparé des événements successifs. On suppose que ces durées sont <em>iid</em> suivant une loi exponentielle de paramètre <span class="math inline">\(\lambda=25\)</span>, dont la densité s’écrit <span class="math inline">\(f(z)=\frac{e^{-z/\lambda}}{\lambda}\)</span>. Calculez la vraisemblance, puis recommencez le calcul avec <span class="math inline">\(\lambda=10\)</span> et <span class="math inline">\(\lambda=100\)</span>. Comment interprétez-vous ces différentes vraisemblances ?</p>
+</blockquote>
+<img src="Vidourles.jpg" width="60%">
+<p style="text-align: center;color: gray;">
+Marques de crue au détour d’une rue de Sommières. Crédit photo : Diane Laberge, <a href="http://www.dianelaberge.com/blogue/2012/11/09/laccent-du-sud/">http://www.dianelaberge.com/blogue/2012/11/09/laccent-du-sud/</a>.
+</p>
+</div>
+</div>
+<div id="estimation-par-maximum-de-vraisemblance" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Estimation par maximum de vraisemblance</h2>
+<p>Le principe de l’estimation par maximum de vraisemblance apparaît intuitivement suite aux TPs proposés dans la section précédente : il s’agit simplement de choisir le paramètre qui maximise la vraisemblance. Cette approche peut être formalisée de la façon suivante, en reprenant les notations
+introduites dans les sections précédentes : les données sont notées <span class="math inline">\(\boldsymbol{y}=(y_1,\ldots,y_n)\)</span>, et <span class="math inline">\(\boldsymbol{Y}=(Y_1,\ldots,Y_n)\)</span> représentent les variables aléatoires ayant généré chaque observation. On suppose à présent que la densité de probabilité de la variable aléatoire <span class="math inline">\(Y_i\)</span> dépend d’un ou plusieurs paramètres inconnus, que nous noterons <span class="math inline">\(\boldsymbol{\theta}\)</span>. Cette densité peut être notée <span class="math inline">\(f_{Y_i}(z;\boldsymbol{\theta})\)</span>. La vraisemblance <span class="math inline">\(V(\boldsymbol{y};\boldsymbol{\theta})\)</span> est alors définie par :</p>
+<p><span class="math display">\[V(\boldsymbol{y};\boldsymbol{\theta}) = \prod_{i=1}^{n}{f_{Y_i}(y_i;\boldsymbol{\theta})}\]</span></p>
+<p>Tout ce que nous avons réalisé ici est de rendre explicite le vecteur contenant les paramètres inconnus <span class="math inline">\(\boldsymbol{\theta}\)</span> dans les équations. L’estimateur du maximum de vraisemblance est alors défini comme le vecteur de paramètre qui maximise la vraisemblance:</p>
+<p><span class="math display">\[\hat{\boldsymbol{\theta}} = \mathop{\mathrm{argmax}}_{\boldsymbol{\theta}} V(\boldsymbol{y};\boldsymbol{\theta})\]</span></p>
+<blockquote>
+<p><a href="TP_bayesian.fr.zip"><strong>TP 3. Estimation par maximum de vraisemblance, cas discret</strong></a>. Reprenez les données d’occurrence du TP 1, et calculez la vraisemblance pour une grille de valeurs du paramètre <span class="math inline">\(p\)</span>. Tracez la vraisemblance comme une fonction de <span class="math inline">\(p\)</span>, et déduisez-en l’estimateur du maximum de vraisemblance. Quelle autre information utile peut-on tirer de cette fonction de vraisemblance ?</p>
+</blockquote>
+<blockquote>
+<p><a href="TP_bayesian.fr.zip"><strong>TP 4. Estimation par maximum de vraisemblance, cas continu</strong></a>. Reprenez les données de durée inter-événements du TP 2, et calculez la vraisemblance pour une grille de valeurs du paramètre <span class="math inline">\(\lambda\)</span>. Tracez la vraisemblance comme une fonction de <span class="math inline">\(\lambda\)</span>, et déduisez-en l’estimateur du maximum de vraisemblance. Quelle autre information utile peut-on tirer de cette fonction de vraisemblance ?</p>
+</blockquote>
+<blockquote>
+<p><a href="TP_bayesian.fr.zip"><strong>TP 5. Estimation d’une régression linéaire</strong></a>. Considérons les données représentées dans la figure ci-dessous, qui correspondent à des précipitations (<span class="math inline">\(X\)</span>) et des débits moyens annuels (<span class="math inline">\(Y\)</span>) pour un certain bassin versant. Un lien entre ces deux variables étant apparent dans cette figure, on cherche à établir une relation linéaire du type :</p>
+</blockquote>
+<p><span class="math display">\[y_i=\theta  x_i + \varepsilon_i \text{ avec }  \varepsilon_i \sim \mathcal{N}(0,\sigma)\]</span></p>
+<img src="linear.fr.jpg" width="50%">
+<p style="text-align: center;color: gray;">
+Relation entre la précipitation annuelle <span class="math inline">\(X\)</span> et le débit annuel <span class="math inline">\(Y\)</span>
+</p>
+<blockquote>
+<p>Cette relation suppose que le débit annuel est égal à une fraction <span class="math inline">\(\theta\)</span> de la précipitation annuelle, plus un résidu variant d’année en année. Ces résidus sont supposées être des réalisations d’une loi normale de moyenne nulle et d’écart-type inconnu <span class="math inline">\(\sigma\)</span>. Sous ces hypothèses, il est possible de montrer que le <span class="math inline">\(i\)</span>e débit annuel est une réalisation d’une loi normale <span class="math inline">\(\mathcal{N}(\theta x_i,\sigma)\)</span> : en d’autres termes, le modèle de régression linéaire donne l’espérance du débit annuel, tandis que l’écart-type des résidus donne l’incertitude sur le débit annuel qui sera effectivement observé. Notez en particulier que les données <span class="math inline">\(\boldsymbol{y}\)</span> ne sont pas identiquement distribuées ici (puisque la moyenne change chaque année).</p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Tracez les données ainsi que la droite de régression pour <span class="math inline">\(\theta=0.1\)</span>.</li>
+<li>Calculez la vraisemblance des données <span class="math inline">\(\boldsymbol{y}\)</span> pour <span class="math inline">\(\theta=0.1\)</span> et <span class="math inline">\(\sigma=50\)</span>.</li>
+<li>Recherchez en tâtonnant l’estimateur du maximum de vraisemblance de <span class="math inline">\(\theta\)</span> (on gardera <span class="math inline">\(\sigma=50\)</span>).</li>
+<li>Comparez la droite de régression ainsi obtenue avec celle proposée par Excel (clic droit…Ajouter une courbe de tendance).</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>Remarque : cet exemple, bien qu’extrêmement simple, fournit une excellente illustration de l’estimation des paramètres d’un modèle déterministe. Ici, le modèle est la simple relation linéaire <span class="math inline">\(y_{sim}=\theta x\)</span>. Le débit <span class="math inline">\(y_{sim}\)</span> est la variable de sortie du modèle (aussi appelé prédictande), la précipitation <span class="math inline">\(x\)</span> est la variable d’entrée (aussi appelé prédicteur), et <span class="math inline">\(\theta\)</span> le paramètre à estimer. L’exemple se généralise à des modèles bien plus complexes, et en particulier à des courbes de tarage !</p>
+</blockquote>
+</div>
+</div>
+<div id="lapproche-bayésienne" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> L’approche bayésienne</h1>
+<p>L’approche bayésienne est une méthode d’estimation, tout comme la méthode du maximum de vraisemblance décrite précédemment. Certaines de ses propriétés sont particulièrement intéressantes dans le contexte hydrologique, notamment en termes de quantification des incertitudes. Nous décrivons ici les briques de bases qui composent l’édifice bayésien : vraisemblance, distribution a priori et distribution a posteriori.</p>
+<div id="vraisemblance" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Vraisemblance</h2>
+<p>L’estimation bayésienne utilise la vraisemblance telle que définie dans la section précédente. En reprenant
+les notations définies précédemment, <span class="math inline">\(\boldsymbol{y}=(y_1,\ldots,y_n)\)</span> représentent les données et <span class="math inline">\(\boldsymbol{Y}=(Y_1,\ldots,Y_n)\)</span> les variables aléatoires ayant généré chaque observation. Dans un contexte bayésien, la vraisemblance est notée <span class="math inline">\(p(\boldsymbol{y}|\boldsymbol{\theta})\)</span> (plutôt que <span class="math inline">\(V(\boldsymbol{y};\boldsymbol{\theta})\)</span>), et nous adopterons donc cette notation dorénavant :</p>
+<p><span class="math display">\[p(\boldsymbol{y}|\boldsymbol{\theta}) = \prod_{i=1}^{n}{f_{Y_i}(y_i;\boldsymbol{\theta})}\]</span></p>
+<p>La vraisemblance quantifie l’information portée par les données à propos des paramètres inconnus <span class="math inline">\(\boldsymbol{\theta}\)</span>. Cependant, contrairement à l’estimation par maximum de vraisemblance, nous ne chercherons pas à la maximiser ici.</p>
+</div>
+<div id="distribution-a-priori" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Distribution a priori</h2>
+<p>L’approche bayésienne ne se contente pas d’utiliser l’information portée par les données : elle permet également d’intégrer toute connaissance sur <span class="math inline">\(\boldsymbol{\theta}\)</span> qui serait disponible avant même d’avoir vu les données. Cette information est encodée sous la forme d’une distribution, dont la densité de probabilité est notée <span class="math inline">\(p(\boldsymbol{\theta})\)</span>. Comme suggéré par cette notation, cette distribution ne dépend aucunement des données <span class="math inline">\(\boldsymbol{y}\)</span>. Il s’agit même là d’une règle d’or : il est strictement interdit de s’aider des données pour spécifier la distribution a priori, car cela reviendrait à utiliser chaque donnée en double, et conduirait à une forte sous-estimation des incertitudes.</p>
+<p>La spécification de la distribution a priori est complètement dépendante du contexte, et il n’existe donc pas de procédure universelle pour la définir : cette spécification est de la responsabilité du modélisateur, qui doit traduire ses connaissances sous la forme d’une distribution. Ceci introduit inévitablement une part de subjectivité dans l’analyse, ce qui a donné lieu à d’interminables débats entre partisans et opposants de l’approche bayésienne. On peut cependant argumenter que : (1) des calculs totalement objectifs et automatisés conduisent parfois à des résultats extravagants; (2) dans la plupart des analyses de données, il existe en fait de nombreuses autres étapes où des choix subjectifs sont faits ; (3) le mérite de l’a priori est de forcer l’analyste à formaliser cette subjectivité, et à la rendre transparente (il faut toujours communiquer l’a priori que vous avez utilisé !) ; (4) subjectivité et connaissance ne sont pas antinomiques.</p>
+<p>Nous verrons des exemples pratiques de spécification des a priori lors des TPs. D’ici là, les quelques exemples ci-dessous visent à illustrer qu’une connaissance a priori existe souvent en Hydrologie :</p>
+<ul>
+<li>Considérons le cas de la régression pluie-débit du TP 5 : on peut déjà supposer que <span class="math inline">\(\theta\)</span> est compris entre 0 et 1 (sauf si on soupçonne des apports sous-terrain importants d’un autre bassin versant), et donc le refléter dans l’a priori (par exemple en spécifiant une distribution a priori uniforme entre 0 et 1). De plus, en fonction de la région climatique où se trouve le bassin versant et de sa taille, on aura vraisemblablement un ordre de grandeur sur la valeur de ce paramètre, qui représente un coefficient d’écoulement. Par exemple, dans une région aride ou semi-aride, on serait étonné de trouver un coefficient de 0.8 pour un bassin naturel de taille moyenne (plus de quelques km²).</li>
+<li>Les courbes de tarage fournissent un excellent exemple d’un cas où une connaissance a priori assez forte existe : en effet, les paramètres d’une courbe de tarage peuvent être reliés à des propriétés hydrauliques mesurables (géométrie de la section ou du chenal, pente, etc.), pour lesquelles une quantification rigoureuse des incertitudes de mesure est possible. C’est un des principe de base de BaRatin.</li>
+<li>Bien qu’il soit strictement interdit d’utiliser les données <span class="math inline">\(\boldsymbol{y}\)</span> pour spécifier la distribution a priori, il n’est pas interdit d’en utiliser d’autres ! Cette idée est utilisée pour la prédétermination en utilisant le concept de régionalisation : on utilise des sites « similaires » au site cible pour spécifier une distribution a priori ; cette information est alors combinée avec les données du site cible <span class="math inline">\(\boldsymbol{y}\)</span> via une analyse bayésienne (voir par exemple <a href="https://hal.inrae.fr/tel-02590034">Ribatet 2007</a>).</li>
+</ul>
+<p>Pour finir, rappelons que dans le cas général, <span class="math inline">\(\boldsymbol{\theta}\)</span> est un vecteur (dès qu’il y a plusieurs paramètres inconnus à estimer). La distribution a priori est alors multi-dimensionnelle. Une approche fréquemment utilisée est d’utiliser des distributions a priori indépendantes sur chaque paramètre, la distribution sur le vecteur (appelée distribution jointe) étant alors obtenue par simple multiplication :</p>
+<p><span class="math display">\[p(\boldsymbol{\theta})=p(\theta_1,\ldots,\theta_p)=\prod_{i=1}^{p}{p(\theta_i)}\]</span></p>
+</div>
+<div id="distribution-a-posteriori" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Distribution a posteriori</h2>
+<p>Le théorème de Bayes (image ci-dessous) permet de combiner l’information portée par les données (via la vraisemblance) et l’information a priori en une unique distribution portant sur le vecteur de paramètres inconnus <span class="math inline">\(\boldsymbol{\theta}\)</span> , nommée distribution a posteriori. La densité de probabilité a posteriori, notée <span class="math inline">\(p(\boldsymbol{\theta}|\boldsymbol{y})\)</span> , est définie par :</p>
+<p><span class="math display">\[ p(\boldsymbol{\theta}|\boldsymbol{y}) = \frac{
+\overbrace{p(\boldsymbol{y}|\boldsymbol{\theta})}^{\text{vraisemblance}}
+\times \overbrace{p(\boldsymbol{\theta})}^{\text{a priori}}
+}
+{\underbrace{\int p(\boldsymbol{y}|\boldsymbol{\nu}) \times p(\boldsymbol{\nu})d\boldsymbol{\nu}}_{\text{constante de normalisation}}}\]</span></p>
+<img src="Thomas_Bayes.gif" width="40%">
+<p style="text-align: center;color: gray;">
+Thomas Bayes. Source : <a href="https://fr.wikipedia.org/wiki/Thomas_Bayes">Wikipedia</a>
+</p>
+<p>On voit apparaître au numérateur le produit de la vraisemblance et de la densité a priori. Le dénominateur est plus complexe, puisqu’il s’agit d’intégrer ce produit par rapport au vecteur de paramètres. Néanmoins, on peut remarquer que le dénominateur est en fait une constante : les données <span class="math inline">\(\boldsymbol{y}\)</span> sont fixées, et le paramètre <span class="math inline">\(\boldsymbol{\nu}\)</span> disparait puisqu’il s’agit de la variable d’intégration. Cette constante est en fait une simple constante de normalisation : elle permet d’assurer que l’aire sous la densité a posteriori vaut 1 (ce qui, rappelons-le, est une propriété nécessaire de toute densité). Il se trouve qu’il n’est pas nécessaire de calculer cette constante en pratique (nous verrons pourquoi dans la page sur les <a href="/fr/doc/topics/mcmc">méthodes MCMC</a>). Ceci permet de simplifier la présentation du théorème de Bayes de la manière suivante :</p>
+<p><span class="math display">\[ p(\boldsymbol{\theta}|\boldsymbol{y}) \propto p(\boldsymbol{y}|\boldsymbol{\theta}) p(\boldsymbol{\theta})\]</span></p>
+<p>où le symbole « <span class="math inline">\(\propto\)</span> » signifie « est proportionnel à… ». Cette équation montre que l’obtention de la densité a posteriori (à une constante près) est d’une simplicité absolue : il suffit de multiplier la vraisemblance par la densité a priori. Le résultat quantifie la connaissance sur les paramètres <span class="math inline">\(\boldsymbol{\theta}\)</span>, étant donné les deux sources d’information que sont les données et la connaissance a priori.</p>
+<p>Il est intéressant de noter que le résultat brut d’une estimation bayésienne est une distribution. A titre de comparaison, le résultat brut des autres méthodes d’estimation (moments, maximum de vraisemblance, etc.) est un nombre. Cette observation appelle les remarques suivantes :</p>
+<ul>
+<li>Le résultat brut de l’estimation bayésienne fournit directement une incertitude.</li>
+<li>Ceci ne signifie pas qu’il est impossible de quantifier l’incertitude avec les autres méthodes d’estimation : en fait, elles possèdent toutes une théorie solide et bien développée à cet effet. Mais cette quantification se fait seulement dans un second temps, après avoir estimé une valeur.</li>
+<li>Inversement, ceci ne signifie pas non plus qu’il est impossible d’obtenir une valeur estimée avec l’approche bayésienne : typiquement, le maximum de la densité a posteriori est couramment utilisé à cet effet. C’est en quelque sorte l’équivalent bayésien du maximum de vraisemblance. On appellera cet estimateur l’estimateur Maxpost (« estimateur MAP » est également utilisé pour Maximum A Posteriori).</li>
+</ul>
+<p>Les remarques ci-dessus montrent que toutes les méthodes d’estimation peuvent fournir une estimation ponctuelle (i.e. une valeur) ainsi qu’une incertitude. Les bayésiens convaincus prétendront néanmoins que la quantification de l’incertitude est plus naturelle dans le cadre bayésien, car l’incertitude est le résultat brut, et l’estimation ponctuelle le produit dérivé (alors que c’est l’inverse avec les autres méthodes d’estimation).</p>
+<blockquote>
+<p><a href="TP_bayesian.fr.zip"><strong>TP 6. Estimation bayésienne, cas discret</strong></a>. Reprenez les calculs effectués dans le TP 3 et complétez-les pour effectuer une analyse bayésienne complète. Ceci implique de : (1) spécifier une densité a priori ; (2) calculer la densité a posteriori. Tracez la vraisemblance, la densité a priori et la densité a posteriori et comparez-les.</p>
+</blockquote>
+<blockquote>
+<p>La personne ayant effectué le calcul de la crue décennale vous informe qu’elle n’a pas utilisé vos données pour faire ce calcul. De plus, elle a effectué une analyse d’incertitude et d’après cette analyse, l’incertitude sur la probabilité de dépassement peut-être représentée par une loi log-normale <span class="math inline">\(Log\mathcal{N}(\mu=log(0.1),\sigma=0.75)\)</span>. Tirez parti de cette information.</p>
+</blockquote>
+<blockquote>
+<p><a href="TP_bayesian.fr.zip"><strong>TP 7. Estimation bayésienne, cas continu</strong></a>. Reprenez les calculs effectués dans le TP 4 et complétez-les pour effectuer une analyse bayésienne complète.
+De plus, un collègue hydrologue-hydraulicien vous informe que d’après son estimation, la période de retour
+avec laquelle ce coin de rue est inondé est comprise dans l’intervalle [10 ans; 100 ans] à un niveau de
+confiance 95%. Tirez parti de cette information.</p>
+</blockquote>
+<blockquote>
+<p><a href="TP_bayesian.fr.zip"><strong>TP 8. Estimation bayésienne d’une régression linéaire</strong></a>. Reprenez les calculs effectués dans le TP 5 et complétez-les pour effectuer une estimation bayésienne du paramètre <span class="math inline">\(\theta\)</span> (on supposera <span class="math inline">\(\sigma=50\)</span> connu). Tracez la vraisemblance, la densité a priori et la densité a posteriori. Relancez les calculs en choisissant d’autres valeurs pour <span class="math inline">\(\sigma\)</span>, et commentez les résultats.</p>
+</blockquote>
+</div>
+</div>
 
 
                         </div>                        
@@ -366,7 +527,7 @@
 		
     
 		
-		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Les bases de l’inférence Bayesienne</a> </strong> 
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Le B.A.-BA de l’inférence Bayesienne</a> </strong> 
 
 		
 
@@ -375,7 +536,7 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Méthodes MCMC</a> 
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Algorithmes MCMC</a> 
 		
 
 		
@@ -435,13 +596,13 @@
     
 		
 		<div style="background-color:beige;">
-		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Les bases de l’inférence Bayesienne</a> </strong></br>
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Le B.A.-BA de l’inférence Bayesienne</a> </strong></br>
 		</div>
 		</br>
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Méthodes MCMC</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Algorithmes MCMC</a> </br> </br>
 		
     
          

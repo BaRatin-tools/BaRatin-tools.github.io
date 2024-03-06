@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709572208" rel="stylesheet">
+<link href="/css/custom.css?1709721801" rel="stylesheet">
 
 
 
@@ -340,7 +340,7 @@
 <h1><span class="header-section-number">3</span> Uncertainties of gauged stages</h1>
 <p>In addition to uncertainty in gauged discharges, BaRatinAGE also allows taking into account the uncertainty of gauged stages. However, as a first approach and routinely, it is recommended to ignore it, by specifying it as zero for all the gaugings. Indeed, considering this uncertainty significantly increases the complexity and duration of the computations since the stage error of each gauging becomes an additional parameter to estimate, in addition to those of the rating curve and of the remnant uncertainty. Moreover, the results are generally very similar, unless the stage uncertainty of gaugings important for the rating calibration is high.</p>
 <p>Unlike discharge uncertainty, stage uncertainty is never expressed in relative terms (in %) but always in metres. The main sources of error in the gauged stage include the reading of the staff gauge, the resolution, the waves, the deformation of the free surface near the gauge, the datum of the gauging when it was measured at another staff gauge, the time lag if the staff gauge reading is not made during the gauging operations, and importantly the variation in water level during the gauging operations, particularly in situations of flood rise or flood recession. The latter uncertainty component can be estimated simply as (95% expanded uncertainty):</p>
-<p><span class="math display">\[U=\frac{h_{max}-h_{min}}{sqrt(3)}\]</span></p>
+<p><span class="math display">\[U=\frac{h_{max}-h_{min}}{\sqrt{3}}\]</span></p>
 <p>where <span class="math inline">\(h_{max}\)</span> and <span class="math inline">\(h_{min}\)</span> are the maximum and minimum stages attained during the measurement. As these various sources of errors are assumed to be independent, the combined uncertainty is obtained by quadratic sum of elementary uncertainties.</p>
 </div>
 
@@ -406,6 +406,22 @@
 		
 
 		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/bayesian/">Bayesian basics</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/mcmc/">MCMC Sampling</a> 
+		
+
+		
     
          
   
@@ -461,6 +477,14 @@
     
 		
 		    <a href="https://baratin-tools.github.io/en/doc/topics/discharge-series/">Uncertainties in discharge time series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/bayesian/">Bayesian basics</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/topics/mcmc/">MCMC Sampling</a> </br> </br>
 		
     
          

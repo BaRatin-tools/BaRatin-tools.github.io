@@ -137,8 +137,28 @@
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/hydrogramme/</loc>
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/bayesien/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/bayesian/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/bayesien/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/topics/mcmc/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/mcmc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/mcmc/"
+                />
   </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</loc>
   </url><url>

@@ -56,5 +56,19 @@
       <guid>https://baratin-tools.github.io/en/doc/topics/discharge-series/</guid>
       <description>This document describes how errors from the rating curve (parametric errors and structural errors) and those from the stage time series (non-systematic and systematic stage measurement errors) are propagated to the discharge time series in BaRatinAGE.</description>
     </item>
+    <item>
+      <title>Bayesian basics</title>
+      <link>https://baratin-tools.github.io/en/doc/topics/bayesian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/topics/bayesian/</guid>
+      <description>1 Introduction : statistical inference 2 Likelihood 2.1 Definition 2.1.1 Discrete random variable 2.1.2 Continuous random variable 2.2 Maximum likelihood estimation 3 Bayesian inference 3.</description>
+    </item>
+    <item>
+      <title>MCMC Sampling</title>
+      <link>https://baratin-tools.github.io/en/doc/topics/mcmc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/topics/mcmc/</guid>
+      <description>1 Introduction 2 General principle of MCMC samplers 3 The Metropolis algorithm 4 Convergence and representativeness of MCMC simulations 5 Building efficient MCMC samplers 6 MCMC algorithm implemented in BaRatinAGE 1 Introduction The tutorials proposed in the Bayesian Basics page have one peculiarity: there is only one unknown parameter \(\theta\).</description>
+    </item>
   </channel>
 </rss>

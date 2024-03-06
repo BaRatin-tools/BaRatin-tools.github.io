@@ -22,7 +22,7 @@
 <meta name="googlebot" content="index,follow,snippet,archive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Méthodes MCMC</title>
+<title>Algorithmes MCMC</title>
 <meta name="author" content="" />
 
 
@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709572208" rel="stylesheet">
+<link href="/css/custom.css?1709721801" rel="stylesheet">
 
 
 
@@ -75,7 +75,7 @@
 
 <meta property="og:locale" content="fr">
 <meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
-<meta property="og:title" content="Méthodes MCMC">
+<meta property="og:title" content="Algorithmes MCMC">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://baratin-tools.github.io/fr/doc/topics/mcmc/" />
 <meta property="og:description" content="">
@@ -94,7 +94,7 @@
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:title" content="Méthodes MCMC">
+<meta name="twitter:title" content="Algorithmes MCMC">
 
 <meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
 
@@ -116,10 +116,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand home" href="/fr/">
                     
-                      <img src="/img/logoWithText.png" alt="Méthodes MCMC logo" class="hidden-xs hidden-sm" />
-                      <img src="/img/logo.png" alt="Méthodes MCMC logo" class="visible-xs visible-sm" />
+                      <img src="/img/logoWithText.png" alt="Algorithmes MCMC logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Algorithmes MCMC logo" class="visible-xs visible-sm" />
                     
-                    <span class="sr-only">Méthodes MCMC - aller à l&#39;accueil</span>
+                    <span class="sr-only">Algorithmes MCMC - aller à l&#39;accueil</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -279,7 +279,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Méthodes MCMC</h1>
+                <h1>Algorithmes MCMC</h1>
             </div>
         </div>
     </div>
@@ -298,8 +298,173 @@
                         <div id="post-content">
                           
 
+<div id="TOC">
+<ul>
+<li><a href="#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="#principe-général-des-méthodes-mcmc" id="toc-principe-général-des-méthodes-mcmc"><span class="toc-section-number">2</span> Principe général des méthodes MCMC</a></li>
+<li><a href="#lalgorithme-de-metropolis" id="toc-lalgorithme-de-metropolis"><span class="toc-section-number">3</span> L’algorithme de Metropolis</a></li>
+<li><a href="#convergence-et-représentativité-des-simulations-mcmc" id="toc-convergence-et-représentativité-des-simulations-mcmc"><span class="toc-section-number">4</span> Convergence et représentativité des simulations MCMC</a></li>
+<li><a href="#construire-des-simulateurs-mcmc-efficaces" id="toc-construire-des-simulateurs-mcmc-efficaces"><span class="toc-section-number">5</span> Construire des simulateurs MCMC efficaces</a></li>
+<li><a href="#lalgorithme-mcmc-implémenté-dans-baratin" id="toc-lalgorithme-mcmc-implémenté-dans-baratin"><span class="toc-section-number">6</span> L’algorithme MCMC implémenté dans BaRatin</a></li>
+</ul>
+</div>
 
-<p>XXX</p>
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>Les TPs proposés dans la page <a href="/fr/doc/topics/bayesien">B.A.-BA de l’inférence Bayesienne</a> avaient la particularité de ne considérer qu’un unique paramètre inconnu <span class="math inline">\(\theta\)</span>. On peut assez facilement se convaincre que l’implémentation d’une analyse bayésienne se complique lorsque le nombre de paramètres inconnus augmente. Par exemple, si le vecteur <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\theta_2,\theta_3)\)</span> contient 3 paramètres inconnus, alors la distribution a posteriori <span class="math inline">\(p(\theta_1,\theta_2,\theta_3|\boldsymbol{y})\)</span> est une distribution tridimensionnelle : on ne peut même plus la représenter graphiquement dans un simple graphique en 2 dimensions.</p>
+<p>Pour remédier à cette difficulté, on utilise une approche de type Monte Carlo : plutôt que de chercher à représenter graphiquement la distribution a posteriori, on va essayer de simuler un grand nombre de paramètres depuis cette distribution, puis on utilisera ces simulations pour décrire indirectement la distribution a posteriori. Pour y parvenir, on utilise un type de simulateur Monte Carlo particulier, qui fait l’objet de cette fiche : les simulateurs de Monte Carlo par Chaînes de Markov (MCMC).</p>
+</div>
+<div id="principe-général-des-méthodes-mcmc" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Principe général des méthodes MCMC</h1>
+<p>Considérons la densité a posteriori illustrée dans la Figure ci-dessous. Il y a ici 2 paramètres inconnus <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\theta_2)\)</span> , et la densité <span class="math inline">\(p(\theta_1,\theta_2|\boldsymbol{y})\)</span> est représentée vue de dessus. Générer des réalisations à partir de cette distribution peut sembler difficile pour les raisons suivantes :</p>
+<ol style="list-style-type: decimal">
+<li>La distribution est multidimensionnelle.</li>
+<li>La distribution est assez biscornue, et en tout cas ne ressemble à aucune distribution « classique ». Il y a donc peu d’espoir de trouver un algorithme prêt à l’emploi sous Excel, R, Python, Matlab, etc.</li>
+<li>Pour couronner le tout, rappelons qu’en pratique, on se contente souvent de calculer la densité a posteriori à une constante de proportionnalité près – la Figure ci-dessous n’est donc que proportionnelle à la densité a posteriori.</li>
+</ol>
+<img src="mcmcPrinciple.fr.jpg" width="80%">
+<p style="text-align: center;color: gray;">
+Figure 1. Illustration du principe général d’un simulateur MCMC. Un paramètre candidat est généré en sautant depuis le paramètre actuel, le saut étant généré à partir d’une distribution de laquelle on sait simuler facilement (typiquement, une loi normale). Ce candidat sera accepté ou rejeté en fonction du « dénivelé » parcouru, i.e. du ratio entre la nouvelle et l’ancienne valeur de la densité a posteriori.
+</p>
+<p>La mauvaise nouvelle est que sauf cas très particulier, l’immense majorité des distributions a posteriori est affectée par les trois difficultés décrites ci-dessus. La bonne nouvelle est qu’aucune de ces trois difficultés n’est rédhibitoire pour un simulateur MCMC ! Ceci explique pourquoi les algorithmes MCMC sont devenus les inséparables compagnons de route des Bayésiens.</p>
+<p>Le principe général d’un simulateur MCMC est le suivant : puisqu’il semble impossible de générer directement des réalisations depuis une distribution compliquée comme celle représentée en Figure 1, la génération se fera de manière indirecte. Pour cela, un simulateur MCMC va visiter l’espace des paramètres par sauts successifs. Ces sauts seront générés à partir d’une distribution pour laquelle la simulation est aisée (typiquement, une distribution gaussienne). Le « nouveau » vecteur de paramètres ainsi généré, <span class="math inline">\(\boldsymbol{\theta}^{(*)}\)</span>, sera alors accepté ou rejeté en fonction du « dénivelé » parcouru, ou pour être plus précis, en fonction du ratio entre la nouvelle et l’ancienne valeur de la densité a posteriori. La section suivante détaille ce principe général pour un simulateur MCMC classique connu sous le nom d’algorithme de Metropolis.</p>
+</div>
+<div id="lalgorithme-de-metropolis" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> L’algorithme de Metropolis</h1>
+<p>L’Algorithme ci-dessous décrit l’algorithme de Metropolis. Etant donné le vecteur de paramètres actuel <span class="math inline">\(\boldsymbol{\theta}^{(i-1)}\)</span>, on génère un paramètre candidat <span class="math inline">\(\boldsymbol{\theta}^{(*)}\)</span> en sautant aléatoirement depuis le paramètre actuel <span class="math inline">\(\boldsymbol{\theta}^{(i-1)}\)</span> (étape 1.a.). La taille et l’orientation du saut sont gérées par la matrice de covariance <span class="math inline">\(\boldsymbol{\Sigma}\)</span>. Il s’agit à présent d’accepter ou de rejeter ce candidat. La règle d’acceptation est énoncée en 1.c: on accepte tous les sauts vers le haut (<span class="math inline">\(\tau \ge 1\)</span>); les saut vers le bas (<span class="math inline">\(\tau \lt 1\)</span>) seront acceptés de manière aléatoire, avec une probabilité égale à <span class="math inline">\(\tau\)</span>. Si le candidat est rejeté, on reste sur la position actuelle <span class="math inline">\((\boldsymbol{\theta}^{(i)}=\boldsymbol{\theta}^{(i-1)})\)</span>. Il est possible de démontrer qu’avec cette règle d’acceptation, la marche aléatoire ainsi générée est une réalisation de la loi a posteriori, pourvu que le nombre de simulations effectuées soit assez grand.</p>
+<p style="text-align: center;color: gray;">
+Algorithme 1: Metropolis. Pour être tout à fait exact, l’algorithme de Metropolis est en fait plus général que ce qui est décrit ci-dessous : on peut remplacer la distribution de saut gaussienne par n’importe quelle distribution symétrique.
+</p>
+<div style="border-style: solid;border-width: thin;">
+<ol start="0" style="list-style-type: decimal">
+<li>Choisir un point de départ <span class="math inline">\(\boldsymbol{\theta}^{(0)}\)</span> et une matrice de covariance <span class="math inline">\(\boldsymbol{\Sigma}\)</span>.</li>
+<li>Répéter pour <span class="math inline">\(i=1:N_{sim}\)</span> :
+<ol style="list-style-type: lower-alpha">
+<li>Générer un candidat <span class="math inline">\(\boldsymbol{\theta}^{(*)}\)</span> à partir d’une distribution gaussienne centrée sur le paramètre actuel <span class="math inline">\(\boldsymbol{\theta}^{(i-1)}\)</span> et de matrice de covariance <span class="math inline">\(\boldsymbol{\Sigma}\)</span> : <span class="math inline">\(\boldsymbol{\theta}^{(*)} \leftarrow \mathcal{N}(\boldsymbol{\theta}^{(i-1)},\boldsymbol{\Sigma})\)</span></li>
+<li>Calculer le ratio entre la nouvelle et l’ancienne valeur de la densité a posteriori : <span class="math inline">\(\tau=\frac{p(\boldsymbol{\theta}^{(*)}|\boldsymbol{y})}{p(\boldsymbol{\theta}^{(i-1)}|\boldsymbol{y})}\)</span></li>
+<li>Accepter le candidat <span class="math inline">\((\boldsymbol{\theta}^{(i)}=\boldsymbol{\theta}^{(*)})\)</span> avec une probabilité égale à <span class="math inline">\(min(\tau;1)\)</span> ; sinon, rejeter le candidat <span class="math inline">\((\boldsymbol{\theta}^{(i)}=\boldsymbol{\theta}^{(i-1)})\)</span></li>
+</ol></li>
+</ol>
+</div>
+<p><br></p>
+<p>Remarquons que dans l’Algorithme 1, la densité a posteriori n’intervient que dans le calcul du ratio <span class="math inline">\(\tau\)</span>. Ceci explique pourquoi il n’est pas nécessaire de calculer la constante de normalisation : toute constante se simplifiera dans ce ratio, si bien que ne connaitre la densité a posteriori qu’à une constante multiplicative près ne pose absolument aucun problème !</p>
+<p>Précisons que le terme « chaîne de Markov » est utilisé dans la nomenclature « MCMC » en référence à la propriété d’absence de mémoire des simulations MCMC : en effet, la simulation à l’étape <span class="math inline">\(i+1\)</span> (« futur ») ne dépend que des résultats de l’étape <span class="math inline">\(i\)</span> (« présent ») et aucunement des simulations antérieures (« passé »). Ce type de processus s’appelle une chaîne de Markov, en hommage au mathématicien russe Andreï Andreïevitch Markov (Image 1) qui en a développé la théorie.</p>
+<p>Pour finir, et avant de passer à la pratique, signalons que les méthodes MCMC ne sont pas intrinsèquement liées à l’approche bayésienne : on peut appliquer un simulateur MCMC à n’importe quelle distribution cible.</p>
+<p><br></p>
+<img src="AAMarkov.jpg" width="40%">
+<p style="text-align: center;color: gray;">
+Image 1. Andreï Andreïevitch Markov (1856 – 1922). Source: <a href="https://fr.wikipedia.org/wiki/Andre%C3%AF_Markov_(math%C3%A9maticien)">Wikipedia</a>
+</p>
+<p><br></p>
+<blockquote>
+<p><a href="TP_MCMC.fr.zip"><strong>TP 1. Approche bayésienne-MCMC, cas discret</strong></a>. Le fichier Excel propose une implémentation de l’algorithme de Metropolis pour les données de dépassement de la crue estimée comme décennale (voir TP1 de la page <a href="/fr/doc/topics/bayesien">inférence Bayesienne</a>).</p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Etudiez les lignes des itérations 0 et 1 cellule par cellule pour comprendre comment l’algorithme est implémenté, et vérifier que cela correspond bien à l’Algorithme 1.</li>
+<li>Tracez les valeurs simulées dans un graphique, puis jouez avec la taille du saut (cellule C3) et observez l’impact sur les valeurs simulées.</li>
+<li>Réalisez un histogramme des valeurs simulées (utilisez l’utilitaire d’analyse dans l’onglet « Données »). Calculez un intervalle de crédibilité à 90%.</li>
+<li>Plutôt que de parler en termes de probabilité de dépassement, on préfère parler en termes de période de retour. Représentez la distribution a posteriori de cette période de retour (remplissez la colonne vide dans la partie « Extras… »), puis calculez un intervalle de crédibilité à 90%. Le collègue ayant estimé la crue décennale doit-il être renvoyé ?</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>Note: à part pour l’aspect didactique, implémenter un simulateur MCMC sous Excel est globalement une très mauvaise idée, qui a toutes les chances de ne pas fonctionner dès que les cas d’étude seront un peu plus complexes que ceux traités en TP (temps de calcul, plantages intempestifs dès qu’il y a trop de lignes/colonnes, fiabilité des générateurs de nombres aléatoires incertaine, capacités graphiques très limitées, etc.). Des langages comme R, Python ou Matlab proposent des implémentations de simulateurs MCMC.</p>
+</blockquote>
+<blockquote>
+<p><a href="TP_MCMC.fr.zip"><strong>TP 2. Approche bayésienne-MCMC, cas continu</strong></a>. Le fichier Excel est similaire au précédent, et est simplement adapté aux durées inter-événements à Sommières (voir TP2 de la page <a href="/fr/doc/topics/bayesien">inférence Bayesienne</a>).</p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Réalisez un histogramme des valeurs simulées et calculez un intervalle de crédibilité à 90%.</li>
+<li>Pour chaque valeur simulée du paramètre, calculez la fonction de répartition associée (remplissez les colonnes vides dans la partie « Extras… »). Représentez graphiquement l’ensemble de ces fonctions de répartition (limitez-vous en fait aux ~100 premières, sinon Excel risque de planter).</li>
+<li>Sur la base de ces « spaghettis », quelle est la probabilité d’attendre moins de 10 ans entre deux inondations ? moins de 100 ans ? moins de 1000 ans ?</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><a href="TP_MCMC.fr.zip"><strong>TP 3. Approche bayésienne-MCMC, régression linéaire</strong></a>. Le fichier Excel est encore similaire aux deux précédents, et est simplement adapté aux données de la régression pluie-débit (voir TP5 de la page <a href="/fr/doc/topics/bayesien">inférence Bayesienne</a>). Néanmoins, il y a une différence notable : les paramètres inconnus sont maintenant au nombre de deux (<span class="math inline">\(\theta\)</span>, la pente de la régression, et <span class="math inline">\(\sigma\)</span>, l’écart-type des résidus).</p>
+</blockquote>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Etudiez la ligne de l’itération 1 pour comprendre comment l’implémentation a été adaptée au cas de plusieurs paramètres inconnus.</li>
+<li>Tracez les valeurs simulées de <span class="math inline">\(\theta\)</span> et <span class="math inline">\(\sigma\)</span> dans deux graphiques séparés, puis tracez le nuage des points <span class="math inline">\((\theta,\sigma)\)</span> simulés. Quelle information peut-on tirer de ce dernier graphique ?</li>
+<li>Pour chaque valeur simulée de <span class="math inline">\(\theta\)</span>, calculez la droite de régression associée (remplissez les colonnes vides dans la partie « Extras…Incertitude paramétrique »). Représentez graphiquement l’ensemble de ces droites (limitez-vous encore aux ~100 premières), et superposez-y les couples (pluie ; débit) observés.</li>
+<li>La représentation précédente ignore le fait que le modèle de régression est entaché d’une
+erreur <span class="math inline">\(\varepsilon\)</span>, supposée être une réalisation d’un loi normale <span class="math inline">\(\mathcal{N}(0,\sigma)\)</span>. Modifiez les droites de régressions précédentes en y ajoutant, en chaque point, une erreur simulée dans une <span class="math inline">\(\mathcal{N}(0,\sigma)\)</span> (remplissez les colonnes vides dans la partie « Extras…Incertitude totale »). Représentez graphiquement l’ensemble des courbes ainsi obtenues (~100 premières).</li>
+<li>Superposez les deux graphiques précédents (copiez le graphique de la question 3, et collez-le dans le graphique de la question 4). Commentez.</li>
+</ol>
+</blockquote>
+</div>
+<div id="convergence-et-représentativité-des-simulations-mcmc" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Convergence et représentativité des simulations MCMC</h1>
+<p>Il convient de prendre quelques précautions avant d’utiliser les valeurs simulées par MCMC. En particulier, il faut évaluer la convergence et la représentativité des simulations.</p>
+<p>Considérons la Figure 2, qui correspond aux simulations MCMC effectuées dans le TP 2 (durées inter-événements). Le point de départ choisi est <span class="math inline">\(\theta=300\)</span>, ce qui est beaucoup trop grand et correspond à une densité a posteriori proche de zéro. En conséquence, la marche aléatoire a besoin d’un certain nombre d’itérations avant de rejoindre une gamme de valeurs plus faibles (disons 10-100), qui correspond à la zone où la densité a posteriori est grande.</p>
+<p>Dans ce cas de figure, la première partie des itérations ne peut pas être considérée comme issue de la distribution a posteriori : on dit que le simulateur n’a pas encore convergé. La solution pour y remédier est simple : on ignore toute la première partie des simulations, et on utilisera seulement les valeurs simulées au-delà de la 1000e itération par exemple. On parle de « temps de chauffe », ou de manière équivalente, on dit qu’on « brûle » les 1000 premières itérations.</p>
+<img src="mcmcConvergence.fr.png" width="50%">
+<p style="text-align: center;color: gray;">
+Figure 2. Simulations MCMC correspondant au TP 2 avec un point de départ mal choisi <span class="math inline">\(\theta=300\)</span>.
+</p>
+<p>Considérons à présent la Figure 3, qui correspond toujours au TP 2. Les trois chaînes ont été simulées avec des tailles de saut différentes. Dans le premier cas (Figure 3a), la taille des sauts est très petite, si bien que le paramètre candidat est très proche du paramètre courant, conduisant à un ratio de Metropolis <span class="math inline">\(\tau\)</span> très proche de 1. On aura donc tendance à systématiquement accepter le paramètre candidat. Il est d’ailleurs possible de calculer le taux d’acceptation sur l’ensemble des simulations, et on trouve ici environ 97%.</p>
+<p>La Figure 3b correspond au cas de figure opposé : la taille des sauts est très grande, si bien que la plupart des paramètres candidats sont générés dans des zones où la densité a posteriori est quasi nulle. Le ratio de Metropolis <span class="math inline">\(\tau\)</span> est ainsi très proche de 0, et on aura donc tendance à systématiquement rejeter le paramètre candidat : le taux d’acceptation est ici égal à environ 3%.</p>
+<p>Ces deux cas de figure, biens qu’opposés, conduisent à la même conséquence : le temps nécessaire pour visiter convenablement tout l’espace des paramètres sera très long, nécessitant des centaines de milliers d’itérations. Il en découle que les estimations faites à partir d’un trop petit nombre d’itérations risquent d’être peu représentatives. La Figure 3c illustre un cas où la taille des sauts a été bien choisie, conduisant à un taux d’acceptation d’environ 50%.</p>
+<img src="mcmcJump.fr.png" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 3. Simulations MCMC correspondant au TP 2 avec différentes valeurs pour la taille du saut (i.e. l’écart-type de la distribution de saut gaussienne) : (a) taille du saut trop petite égale à 1 ; (b) taille du saut trop grande égale à 500 ; (c) taille du saut bien choisie égale à 20.
+</p>
+<p>Il existe plusieurs bonnes pratiques simples à appliquer pour éviter les désagréments décrits précédemment. La première est de systématiquement visualiser les simulations : les problèmes flagrants comme un point de départ très mal choisi ou une taille de saut totalement inappropriée sont facilement détectables à l’oeil. On peut également calculer le taux d’acceptation : des valeurs proches de 0% ou 100% doivent alerter sur un possible problème. Dans BaRatinAGE, on peut visualiser les simulations MCMC dans un onglet dédié du composant « Courbe de Tarage ».</p>
+<p>Une seconde stratégie est de simuler plusieurs chaînes, avec des points de départ différents, et de vérifier que les estimations qui en découlent (après brûlage des premières itérations) sont similaires. Si ce n’est pas le cas, il est vraisemblable que le nombre d’itérations est insuffisant et/ou que la taille des sauts n’est pas appropriée. Plus généralement, il existe de nombreuses techniques plus avancées pour évaluer la convergence et a représentativité des simulations MCMC. A l’heure actuelle, ces techniques ne sont pas implémentées dans BaRatinAGE. Le lecteur intéressé pourra consulter les sources suivantes: le livre de <a href="http://www.stat.columbia.edu/~gelman/book/">Gelman et al., 2013</a> propose une description générale de ces techniques ; l’article de <a href="https://doi.org/10.1016/j.csda.2005.04.018">El Adlouni et al., 2006</a> en propose une revue ; le package R <a href="https://cran.r-project.org/package=coda">coda</a> implémente plusieurs techniques.</p>
+</div>
+<div id="construire-des-simulateurs-mcmc-efficaces" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Construire des simulateurs MCMC efficaces</h1>
+<p>L’algorithme de Metropolis est le simulateur MCMC le plus simple, et ses performances sont suffisantes pour des cas de complexité faible à modérée. Néanmoins, de nombreux autres simulateurs ont été développés pour faire face à des cas plus complexes. L’objectif de cette section n’est pas d’en dresser la liste exhaustive (il en existe une myriade !), mais simplement de donner quelques stratégies générales pour améliorer l’efficacité des simulateurs MCMC.</p>
+<p>Les TPs ainsi que la section précédente ont montré que l’efficacité de l’algorithme de Metropolis est en grande partie gouvernée par la taille des sauts (elle-même gouvernée par les éléments diagonaux
+de la matrice <span class="math inline">\(\boldsymbol{\Sigma}\)</span> dans l’Algorithme 1). Dans les cas où certains paramètres sont fortement corrélés, l’orientation des sauts est également importante (éléments hors diagonale de la matrice <span class="math inline">\(\boldsymbol{\Sigma}\)</span>) : il faut autant que possible essayer de sauter dans la direction suggérée par la corrélation. Au final, on peut dire qu’un bon réglage de la distribution de saut doit conduire cette dernière à ressembler à la distribution a posteriori, au moins en termes de taille et d’orientation.</p>
+<p>Cette dernière phrase peut sembler paradoxale : l’objectif d’un simulateur MCMC est justement d’explorer les propriétés de la distribution a posteriori. Comment peut-on utiliser ces propriétés inconnues pour régler le simulateur MCMC ? La réponse est de développer des simulateurs adaptatifs : on modifie les propriétés de la distribution de saut au fur et à mesure des itérations, en s’aidant des valeurs générées jusque-là. Par exemple, on peut modifier la taille des sauts en fonction du taux d’acceptation calculé sur les itérations précédentes. Un taux d’acceptation trop faible suggère que la taille des sauts est trop grande (cf. section précédente) et devrait donc être diminuée, et inversement si le taux d’acceptation est trop grand.</p>
+<p>Une autre stratégie peut s’avérer très efficace dans le cas où le paramètre <span class="math inline">\(\boldsymbol{\theta}=(\theta_1,\ldots,\theta_p)\)</span> a une grande dimension (i.e. <span class="math inline">\(p\)</span> est grand). Elle consiste à effectuer un saut pour une unique composante de <span class="math inline">\(\boldsymbol{\theta}\)</span> à la fois. Par exemple, à l’itération <span class="math inline">\((i-1)\)</span>, on sautera du paramètre courant <span class="math inline">\(\left(\theta_1^{(i-1)},\theta_2^{(i-1)},\ldots, \theta_p^{(i-1)}\right)\)</span> vers le paramètre <span class="math inline">\(\left(\theta_1^{(*)},\theta_2^{(i-1)},\ldots, \theta_p^{(i-1)}\right)\)</span> (seule la première composante saute). Après acceptation ou rejet, on aura mis à jour la première composante du paramètre, et obtenu <span class="math inline">\(\left(\theta_1^{(i)},\theta_2^{(i-1)},\ldots, \theta_p^{(i-1)}\right)\)</span>. On passera alors à la seconde composante, en sautant vers <span class="math inline">\(\left(\theta_1^{(i)},\theta_2^{(*)},\ldots, \theta_p^{(i-1)}\right)\)</span>, et en acceptant/rejetant pour obtenir <span class="math inline">\(\left(\theta_1^{(i)},\theta_2^{(i)},\theta_3^{(i-1)},\ldots, \theta_p^{(i-1)}\right)\)</span>, et ainsi de suite jusqu’à ce que toutes les composantes soient mises à jour. L’intérêt de cette approche est qu’elle remplace un saut dans un espace de dimension <span class="math inline">\(p\)</span> par <span class="math inline">\(p\)</span> sauts dans un espace de dimension 1. Ces derniers sont plus faciles à régler, surtout si l’on utilise une approche adaptative comme décrite précédemment.</p>
+</div>
+<div id="lalgorithme-mcmc-implémenté-dans-baratin" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> L’algorithme MCMC implémenté dans BaRatin</h1>
+<p>Le simulateur MCMC implémenté dans BaRatin utilise les deux stratégies décrites ci-dessus (pour une description complète, voir <a href="https://doi.org/10.1029/2005WR004591">Renard et al., 2006</a>). L’algorithme est résumé ci-dessous.</p>
+<p style="text-align: center;color: gray;">
+Algorithme 2. Algorithme MCMC implémenté dans BaRatin.
+</p>
+<div style="border-style: solid;border-width: thin;">
+<ol start="0" style="list-style-type: decimal">
+<li>Choisir un point de départ <span class="math inline">\(\boldsymbol{\theta}^{(0)}=\left(\theta_1^{(0)},\ldots, \theta_p^{(0)}\right)\)</span> et des variances de saut <span class="math inline">\(\boldsymbol{\nu}^{(0)}=\left(\nu_1,\ldots, \nu_p\right)\)</span>.</li>
+<li><span class="math inline">\(k=0\)</span> <span style="color: DarkSeaGreen"> # initialisation du compteur </span></li>
+<li>Répéter pour <span class="math inline">\(i=1:N_{cycles}\)</span> : <span style="color: DarkSeaGreen"> # A l’issue de chaque cycle on adaptera la variance de saut </span>
+<ol style="list-style-type: lower-alpha">
+<li>Répéter pour <span class="math inline">\(j=1:N_{adapt}\)</span> : <span style="color: DarkSeaGreen"> # Boucle sans adaptation des variances de saut </span>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(k=k+1\)</span> <span style="color: DarkSeaGreen"> # Incrément du compteur </span></li>
+<li>Répéter pour <span class="math inline">\(d=1:p\)</span> : <span style="color: DarkSeaGreen"> # Boucle sur chaque composante du vecteur <span class="math inline">\(\boldsymbol{\theta}\)</span> </span>
+<ul>
+<li>Générer un candidat <span class="math inline">\(\theta_d^{(*)}\)</span> à partir d’une distribution gaussienne de moyenne <span class="math inline">\(\theta_d^{(k-1)}\)</span> et de variance <span class="math inline">\(\nu_d\)</span> ;</li>
+<li>Calculer le ratio entre la nouvelle et l’ancienne valeur de la densité a posteriori : <span class="math inline">\(\tau=\frac{p \left( \theta_1^{(k)},\ldots,\theta_{d-1}^{(k)},\theta_d^{(*)},\theta_{d+1}^{(k-1)},\ldots,\theta_{p}^{(k-1)} |\boldsymbol{y} \right)}{p \left( \theta_1^{(k)},\ldots,\theta_{d-1}^{(k)},\theta_d^{(k-1)},\theta_{d+1}^{(k-1)},\ldots,\theta_{p}^{(k-1)} |\boldsymbol{y} \right)}\)</span> ;</li>
+<li>Accepter le candidat <span class="math inline">\(\left( \theta_d^{(k)}=\theta_d^{(*)} \right)\)</span> avec une probabilité égale à <span class="math inline">\(min(\tau;1)\)</span> ; sinon, rejeter le candidat <span class="math inline">\(\left( \theta_d^{(k)}=\theta_d^{(k-1)} \right)\)</span></li>
+</ul></li>
+</ol></li>
+<li>Mise à jour des variances de saut
+<ol style="list-style-type: lower-roman">
+<li>Répéter pour <span class="math inline">\(d=1:p\)</span> : <span style="color: DarkSeaGreen"> # Boucle sur chaque composante du vecteur <span class="math inline">\(\boldsymbol{\theta}\)</span> </span>
+<ul>
+<li>Calculer le taux d’acceptation <span class="math inline">\(\alpha_d\)</span> pour la composante <span class="math inline">\(d\)</span> ;</li>
+<li>Si <span class="math inline">\(\alpha_d \le \alpha_{min}\)</span> , <span class="math inline">\(\nu_d=\phi^{-}\times\nu_d\)</span> <span style="color: DarkSeaGreen"> # Le taux d’acceptation est trop faible, donc on diminue la variance de saut </span></li>
+<li>Si <span class="math inline">\(\alpha_d \ge \alpha_{max}\)</span> , <span class="math inline">\(\nu_d=\phi^{+}\times\nu_d\)</span> <span style="color: DarkSeaGreen"> # Le taux d’acceptation est trop grand, donc on augmente la variance de saut </span></li>
+<li>Sinon conserver <span class="math inline">\(\nu_d\)</span> <span style="color: DarkSeaGreen"> # Le taux d’acceptation est entre les bornes souhaitées <span class="math inline">\([\alpha_{min};\alpha_{max}]\)</span>, on conserve donc la variance de saut </span></li>
+</ul></li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+<p><br></p>
+<p>Dans l’algorithme ci-dessus, les valeurs de <span class="math inline">\(N_{cycles}\)</span>, <span class="math inline">\(N_{adapt}\)</span>, <span class="math inline">\(\alpha_{min}\)</span>, <span class="math inline">\(\alpha_{max}\)</span>, <span class="math inline">\(\phi^{-}\)</span> et <span class="math inline">\(\phi^{+}\)</span> peuvent être modifiées pour régler les propriétés de l’échantillonneur MCMC. Les valeurs par défaut définies dans BaRatinAGE (<span class="math inline">\(N_{cycles}=100\)</span>, <span class="math inline">\(N_{adapt}=100\)</span>, <span class="math inline">\(\alpha_{min}=0.1\)</span>, <span class="math inline">\(\alpha_{max}=0.5\)</span>, <span class="math inline">\(\phi^{-}=0.9\)</span> et <span class="math inline">\(\phi^{+}=1.1\)</span>) devraient néanmoins convenir dans la grande majorité des cas.</p>
+<p>Pour finir, les simulations brutes issues de l’algorithme ci-dessus sont post-traitées de la manière suivante :</p>
+<ul>
+<li>Brûlage : on efface une partie des simulations, comme expliqué précédemment. Dans BaRatinAGE, le facteur de brûlage utilisé par défaut est égal à 0.5 (c’est-à-dire qu’on efface la première moitié des simulations) ;</li>
+<li>Affinage : sur les simulations restantes, on ne conserve qu’une valeur toutes les <span class="math inline">\(N_{affinage}\)</span>. Dans BaRatinAGE, la valeur par défaut est <span class="math inline">\(N_{affinage}=10\)</span>. La perte d’information qui en résulte est limitée car les simulations MCMC brutes sont très autocorrélées.</li>
+</ul>
+<p>Ainsi, avec les valeurs par défaut définies dans BaRatinAGE, l’algorithme MCMC générera 10 000 simulations, mais après post-traitement, seules 500 simulations seront conservées, ce qui est largement suffisant dans la plupart des cas et permet de diminuer à la fois le temps de calcul (pour le calcul des hydrogrammes en particulier) et les volumes de stockage.</p>
+</div>
 
 
                         </div>                        
@@ -366,7 +531,7 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Les bases de l’inférence Bayesienne</a> 
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Le B.A.-BA de l’inférence Bayesienne</a> 
 		
 
 		
@@ -374,7 +539,7 @@
 		
     
 		
-		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Méthodes MCMC</a> </strong> 
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Algorithmes MCMC</a> </strong> 
 
 		
 
@@ -434,12 +599,12 @@
 		
     
 		
-		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Les bases de l’inférence Bayesienne</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Le B.A.-BA de l’inférence Bayesienne</a> </br> </br>
 		
     
 		
 		<div style="background-color:beige;">
-		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Méthodes MCMC</a> </strong></br>
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Algorithmes MCMC</a> </strong></br>
 		</div>
 		</br>
 		
