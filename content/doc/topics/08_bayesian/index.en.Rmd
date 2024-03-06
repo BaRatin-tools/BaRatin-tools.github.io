@@ -12,7 +12,7 @@ output:
 
 The objective of this document is to describe the basics of Bayesian inference. The text is supplemented by a set of tutorials that can be dowloaded [here](TP_bayesian.en.zip). 
 
-# Introduction : statistical inférence
+# Introduction : statistical inference
 
 Statistical inference refers to the use of observed data to estimate some properties of a probabilistic model – typically, unknown parameters. This is a very well-developed field in Statistics, and we will only discuss two particular estimation methods in this document: maximum likelihood and Bayesian estimation, the latter being the estimation method used in BaRatinAGE.
 
@@ -132,7 +132,7 @@ $$ p(\boldsymbol{\theta}|\boldsymbol{y}) = \frac{
 
 
 <img src="Thomas_Bayes.gif" width="40%">
-<p style="text-align: center;color: gray;"> Thomas Bayes. Source : [Wikipedia](https://fr.wikipedia.org/wiki/Thomas_Bayes)</p>
+<p style="text-align: center;color: gray;"> Thomas Bayes. Source : [Wikipedia](https://en.wikipedia.org/wiki/Thomas_Bayes)</p>
 
 The numerator is simply the product of the likelihood and the prior pdf. The denominator looks more
 complex, since it requires integrating this product with respect to unknown parameters. However, this denominator is in fact just a constant: the data $\boldsymbol{y}$ are given and fixed, and parameters $\boldsymbol{\nu}$ disappear from the denominator since they correspond to the integration variables. Consequently, the denominator only serves as a normalizing constant: it ensures that the area below the posterior pdf is equal to 1 (which is required for any pdf). In practice, it is actually not even necessary to compute this constant in general (the reason will be explained in page on [MCMC methods MCMC](/en/doc/topics/mcmc)). This allows simplifying Bayes theorem as follows:
