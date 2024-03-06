@@ -1,9 +1,0 @@
----
-title: "Premier cas d'étude"
-slug: "cs1"
-weight: 1
-layout: "doc_caseStudiesPage"
-inTOC: "caseStudies"
----
-
-XXX
