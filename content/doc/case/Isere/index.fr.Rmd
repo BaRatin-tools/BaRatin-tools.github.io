@@ -1,6 +1,6 @@
 ---
 title: "L'Isère à Grenoble-Campus"
-subtitle: "une configuration hydraulique simple"
+subtitle: "un unique contôle chenal"
 slug: "isere-grenoble"
 weight: 2
 layout: "doc_caseStudiesPage"
