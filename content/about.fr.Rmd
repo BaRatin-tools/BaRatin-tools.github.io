@@ -5,12 +5,91 @@ toc: yes
 autoCollapseToc: yes
 ---
 
-# XXX
+# Contactez-nous
 
-$\alpha$
+Pour toute question sur la méthode BaRatin, les logiciels associés comme [BaRatinAGE](https://github.com/BaRatin-tools/BaRatinAGE) ou [RBaM](https://github.com/BaM-tools/RBaM), ou plus generalement sur l'estimation de courbes de tarage, vous pouvez nous contacter à cette adresse:
 
-XXX
+#### baratin.dev %at% inrae.fr
 
-# XXX
+# Support
 
-XXX
+SCHAPI
+
+Projets
+
+
+# Derrière BaRatin
+
+De nombreuses personnes contribuent ou ont contribué au développement de la méthode BaRatin.
+
+### Laurent Bonnifait
+
+Formalisation initiale de la méthode BaRatin
+
+Développeur principal de `BaRatinAGE v1`. 
+
+### Flora Branger
+
+Formalisation initiale de la méthode BaRatin
+
+### Matteo Darienzo
+
+Détection de détarages
+
+Estimation de courbes qui détarent
+
+Estimation en temps réel des courbes de tarage
+
+Développeur de `BayDERS`
+
+<a href="https://github.com/MatteoDarienzo/BayDERS">
+<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/MatteoDarienzo/BayDERS </a>
+
+
+### Ivan Horner
+
+Propagation de l'incertitude sur les hauteurs
+
+Développeur principal du logiciel `BaRatinAGE v3`. 
+
+### Michel Lang
+
+### Raphaël Le Boursicaud
+
+Formalisation initiale de la méthode BaRatin
+
+
+### Jérôme Le Coz
+
+Formalisation initiale de la méthode BaRatin
+
+
+### Valentin Mansanarez
+
+### Felipe Alberto Mendez Rios
+
+### Emeline Perret
+
+
+### Benjamin Renard
+
+Formalisation initiale de la méthode BaRatin
+
+Développeur principal des codes de calcul `BaRatin` et `BaM`.
+
+Co-développeur des logiciels `BaRatinAGE v2` et `BaRatinAGE v3`. 
+
+Développeur principal du package R `RBaM`.
+
+<a href="https://orcid.org/0000-0001-8447-5430">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0001-8447-5430 </a>
+
+<a href="https://github.com/benRenard">
+<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/benRenard </a>
+
+<a href="https://globxblog.github.io/">
+<img alt="globXblog logo" src="/img/globXblog_logo.svg" width="32" height="32" />  ♫ Blog ♫ : https://globxblog.github.io/ </a>
+
+### Sylvain Vigneau
+
+Développeur principal du logiciel `BaRatinAGE v2`. 
