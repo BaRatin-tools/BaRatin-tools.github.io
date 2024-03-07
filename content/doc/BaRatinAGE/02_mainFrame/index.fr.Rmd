@@ -71,7 +71,7 @@ Les onglets thématiques de certains composants proposent également des tableau
 
 Ce menu permet de modifier les options suivantes :
 
--   *changer de langue* : langue de BaRatinAGE (27 langues disponibles à ce jour, n'hésitez pas à en ajouter !).
+-   *changer de langue* : langue de BaRatinAGE (27 langues disponibles à ce jour, n'hésitez pas à en ajouter ! Voir les explications dans la page [*Pour aller plus loin*](/fr/doc/baratinage/aller-plus-loin)).
 
 
 
