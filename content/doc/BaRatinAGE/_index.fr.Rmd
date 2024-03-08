@@ -6,7 +6,7 @@ toc: yes
 autoCollapseToc: yes
 ---
 
-XXXX Bienvenue dans l'aide en ligne de BaRatinAGE v3! 
+Bienvenue dans l'aide en ligne de [BaRatinAGE v3](https://github.com/BaRatin-tools/BaRatinAGE/releases) ! 
 
-Voici le plan:
+Voici le plan :
 

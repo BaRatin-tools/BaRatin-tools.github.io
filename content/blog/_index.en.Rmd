@@ -1,0 +1,13 @@
+---
+title: "Blog"
+slug: "blog"
+toc: yes
+autoCollapseToc: yes
+---
+
+Do you wish to share an information, an event, a finding or just a thought with BaRatin's community? Why not writing a blog post?  Get in touch with us at **baratin.dev %at% inrae.fr** and we'll publish your post on the site.
+
+Blog posts are left untranslated and this section of the website is hence multilingual.
+
+<br>
+

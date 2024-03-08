@@ -76,19 +76,19 @@ $$\hat{\boldsymbol{\theta}} = \mathop{\mathrm{argmax}}_{\boldsymbol{\theta}} V(\
 
 > [**Tutorial 5. Maximum likelihood estimation for a linear regression**](TP_bayesian.en.zip). Consider the data in the figure below, representing annual precipitation($X$) and annual streamflow ($Y$) for some
 catchment. A roughly linear link being apparent in this figure, a linear relation is assumed as follows:
-
+>
 $$y_i=\theta  x_i + \varepsilon_i \text{ with }  \varepsilon_i \sim \mathcal{N}(0,\sigma)$$
-
+>
 <img src="linear.en.jpg" width="50%">
 <p style="text-align: center;color: gray;"> Relation between annual precipitation $X$ and annual streamflow $Y$</p>
-
+>
 > This relation assumes that the annual streamflow is equal to a fraction $\theta$ of the annual precipitation, plus a residual value varying from year to year. The residuals are further assumed to be *iid* realisations from a Gaussian distribution with mean zero and unknown standard deviation $\sigma$. Under these hypotheses, the $i$th annual streamflow is a realisation from a Gaussian distribution $\mathcal{N}(\theta x_i,\sigma)$: in other words, the linear regression model gives the mean of the annual streamflow, while the residual standard deviation gives the uncertainty on the predicted annual streamflow. Note that the annual streamflow data $\boldsymbol{y}$ are not identically distributed here (because the mean is different every year).
-
+>
 > 1. Plot the data along with the regression line for $\theta=0.1$.
 2. Compute the likelihood of data $\boldsymbol{y}$ for $\theta=0.1$ and $\sigma=50$.
 3. By trial-and-error, compute the maximum likelihood estimate of $\theta$ (keeping $\sigma=50$ fixed).
 4. Compare the maximum likelihood regression line with the one computed by Excel (right click…Add Trendline).
-
+>
 > Remark: although very simple, this example provides an excellent illustration of the way parameters from a deterministic model can be estimated. Here the deterministic model is the simple linear relation $y_{sim}=\theta x$. Streamflow $y_{sim}$ is the output variable (also called predictand), precipitation $x$ is the input variable (also called predictor), and $\theta$ is the unknown parameter to be estimated. The example can be generalized to much more complex models, including rating curves or hydrologic models.
 
 # Bayesian inference
@@ -150,7 +150,7 @@ It is worth noting that the raw result of Bayesian estimation is a distribution,
 The comments above show that all estimation methods can provide both a point-estimate (i.e. a value) and a quantification of uncertainty. Bred-in-the-bone Bayesians may argue that uncertainty quantification is somewhat more natural in a Bayesian framework, because uncertainty is the raw result and point-estimate is the by-product (while it’s the contrary with other estimation methods).
 
 > [**Tutorial 6. Bayesian estimation, discrete case**](TP_bayesian.en.zip). Complete Tutorial 3 to perform a full Bayesian analysis, which requires: (1) specifying a prior pdf; (2) computing the posterior pdf (up to a constant of proportionality). Plot the likelihood, the prior pdf and the posterior pdf and compare them.
-
+>
 > The person who estimated the 10-year flood let you know that she/he did not used your data to make her/his estimation;moreover, she/he performed an analysis suggesting that the uncertainty on the exceedance probability of the estimated 10-year flood could be represented by a lognormal distribution$Log\mathcal{N}(\mu=log(0.1),\sigma=0.75)$. Use this information.
 
 > [**Tutorial 7. Bayesian estimation, continuous case**](TP_bayesian.en.zip). Complete Tutorial 4 to perform a full Bayesian analysis. Moreover, a colleague who made some hydrology/hydraulics study for this area let you know that the return period associated with a flooding of this building is comprised between 10 and 100 years, at a confidence level of 95%. Use this information.

@@ -1,5 +1,5 @@
 ---
-title: "A propos de ce site"
+title: "L'équipe BaRatin"
 slug: "a-propos"
 toc: yes
 autoCollapseToc: yes
@@ -13,24 +13,32 @@ Pour toute question sur la méthode BaRatin, les logiciels associés comme [BaRa
 
 # Support
 
+Le développement de la méthode BaRatin a bénéficié du soutien financier, technique et scientifique de plusieurs institutions et projets:
+
 SCHAPI
 
 Projets
 
+XXX Liste à faire
 
-# Derrière BaRatin
+# Les gens derrière BaRatin...
 
-De nombreuses personnes contribuent ou ont contribué au développement de la méthode BaRatin.
+De nombreuses personnes contribuent ou ont contribué au développement de la méthode BaRatin. Par ordre alphabétique : 
 
 ### Laurent Bonnifait
 
 Formalisation initiale de la méthode BaRatin
 
-Développeur principal de `BaRatinAGE v1`. 
+Développeur de `BaRatinAGE v1`
+
+Diffusion et transfert operationnel
 
 ### Flora Branger
 
 Formalisation initiale de la méthode BaRatin
+
+<a href="https://orcid.org/0000-0003-4273-8938">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0003-4273-8938 </a>
 
 ### Matteo Darienzo
 
@@ -42,44 +50,103 @@ Estimation en temps réel des courbes de tarage
 
 Développeur de `BayDERS`
 
-<a href="https://github.com/MatteoDarienzo/BayDERS">
-<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/MatteoDarienzo/BayDERS </a>
+<a href="https://orcid.org/0000-0002-9184-4131">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0002-9184-4131 </a>
 
+<a href="https://github.com/MatteoDarienzo/">
+<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/MatteoDarienzo/ </a>
 
 ### Ivan Horner
 
 Propagation de l'incertitude sur les hauteurs
 
-Développeur principal du logiciel `BaRatinAGE v3`. 
+Développeur du logiciel `BaRatinAGE v3`
+
+<a href="https://www.ihdev.fr/">
+<img alt="ihdev logo" src="/img/ihdev_logo.svg" width="32" height="32" /> https://www.ihdev.fr/ </a>
 
 ### Michel Lang
+
+Direction de thèses
+
+Intégration des incertitudes hydrométriques dans les longues séries historiques
+
+Sagesse accumulée et humour douteux
+
+<a href="https://orcid.org/0000-0003-1417-1495">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0003-1417-1495 </a>
 
 ### Raphaël Le Boursicaud
 
 Formalisation initiale de la méthode BaRatin
 
-
 ### Jérôme Le Coz
 
 Formalisation initiale de la méthode BaRatin
 
+Supervision du developpement de la méthode
+
+Co-développeur des logiciels `BaRatinAGE v2` et `BaRatinAGE v3`
+
+Diffusion et transfert operationnel
+
+<a href="https://orcid.org/0000-0003-1243-6955">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0003-1243-6955 </a>
+
+<a href="https://riverhydraulics.lyon-grenoble.hub.inrae.fr/personnel/personnel-actuel/jerome-le-coz">
+<img alt="INRAE logo" src="/img/Logo-INRAE_Transparent.png" width="32" /> Page personnelle </a>
 
 ### Valentin Mansanarez
 
+Modélisation de l'hysteresis hydraulique
+
+Modélisation de l'influence aval
+
+Estimation de courbes qui détarent
+
+Contrepèteries
+
+<a href="https://orcid.org/0000-0002-0130-815X">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0002-0130-815X </a>
+
 ### Felipe Alberto Mendez Rios
+
+Modélisation des courbes influencées par la marée
+
+Utilisation de modèles hydrauliques 1D
+
+Détection de détarages
+
+Développeur principal du package R `RatingShiftHappens`.
+
+<a href="https://orcid.org/0009-0004-0371-8699">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0009-0004-0371-8699 </a>
+
+<a href="https://github.com/Felipemendezrios/">
+<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/Felipemendezrios/ </a>
 
 ### Emeline Perret
 
+Détection de l'hystérésis hydraulique
+
+Modélisation de la végétation aquatique
+
+Modélisation des courbes influencées par la marée
+
+Modélisation du transport sédimentaire
+
+<a href="https://orcid.org/0000-0002-4444-6640">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0002-4444-6640 </a>
 
 ### Benjamin Renard
 
 Formalisation initiale de la méthode BaRatin
 
-Développeur principal des codes de calcul `BaRatin` et `BaM`.
+Développeur des codes de calcul `BaRatin` et `BaM`.
 
 Co-développeur des logiciels `BaRatinAGE v2` et `BaRatinAGE v3`. 
 
-Développeur principal du package R `RBaM`.
+Développeur du package R `RBaM`.
 
 <a href="https://orcid.org/0000-0001-8447-5430">
 <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0001-8447-5430 </a>
@@ -92,4 +159,4 @@ Développeur principal du package R `RBaM`.
 
 ### Sylvain Vigneau
 
-Développeur principal du logiciel `BaRatinAGE v2`. 
+Développeur du logiciel `BaRatinAGE v2`. 

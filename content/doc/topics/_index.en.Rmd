@@ -5,4 +5,4 @@ toc: yes
 autoCollapseToc: yes
 ---
 
-This page contains a bunch of topic sheets:
+This section contains a bunch of topic sheets describing important hydraulic or statistical aspects that constitute the foundation onto which BaRatin is built. Available topics are as follows: 

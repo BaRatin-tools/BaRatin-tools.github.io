@@ -5,8 +5,50 @@ toc: yes
 autoCollapseToc: yes
 ---
 
-La dernière version de BaRatinAGE est téléchargeable [ici](https://github.com/BaRatin-tools/BaRatinAGE/releases).
+# Logiciels et codes
 
-Un [webinaire](https://youtu.be/dUutJkCaAro?feature=shared) sur la méthode BaRatin (également disponible en [anglais](https://youtu.be/TdRH1jmFhZQ?feature=shared)). 
+<br>
 
-Des [diapositives](/doc/BaRatin_principes_FRANCAIS_2021.pdf) décrivant les principes de la méthode BaRatin (également disponibles en [anglais](/doc/BaRatin_principles_ENGLISH_2022.pdf) et en [espagnol](/doc/BaRatin_principios_ESPANOL_2022.pdf)).
+<table style="width:100%">
+  <tr>
+    <td style="width:90px"><a href="https://github.com/BaRatin-tools/BaRatinAGE"> <img alt="BaRatin logo" src="/img/logo.png" height="64" /> </a> </td>
+    <td>La dernière version de BaRatinAGE est téléchargeable [ici](https://github.com/BaRatin-tools/BaRatinAGE/releases). Ce logiciel propose une interface graphique simple et intuitive pour utiliser la méthode BaRatin et constitue donc le point d'entrée que nous recommendons. Il est aussi suffisamment complet et stable pour une utilisation opérationelle en routine.</td>
+</table>
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td style="width:90px"> <a href="https://github.com/BaM-tools/RBaM"> <img alt="RBaM logo" src="/img/RBaM_logo.svg" height="64" />  </a>  </td>
+    <td> Le package R [RBaM](https://github.com/BaM-tools/RBaM) permet d'utiliser BaRatin directement depuis [R](https://www.r-project.org/), sans passer par l'interface graphique BaRatinAGE. Ceci est utile pour les personnes préférant une approche par script plutôt que par interface graphique, ou qui ont besoin d'intégrer BaRatin dans une chaine de traitement plus complexe.</td>
+</table>
+
+
+
+<br>
+
+Pour la détection de détarages, deux outils ont été développés. Le code [BayDERS](https://github.com/MatteoDarienzo/BayDERS) implémente un ensemble de techniques issues des travaux de thèse de [Matteo Darienzo (2021)](https://theses.hal.science/tel-03211343) pour détecter des détarages en utilisant diverses sources d'information (jaugeages et limnigramme). Le package R [RatingShiftHappens](https://github.com/Felipemendezrios/RatingShiftHappens), en cours de développement, est dérivé de BayDERS et implémente un ensemble plus restreint mais plus simple d'utilisation de techniques.
+
+<br>
+
+<table style="width:100%">
+  <tr>
+    <td style="width:90px"> <a href="https://github.com/BaM-tools/BaM"> <img alt="BaM logo" src="/img/BaM_logo.svg" height="64" />  </a> </td>
+    <td>  Tous les codes et logiciels ci-dessus partagent un même coeur de calcul: BaM! (Bayesian Modeling). Le code BaM est open-source et peut être récupéré [ici](https://github.com/BaM-tools/BaM).</td>
+</table>
+
+# Documentation
+
+[L'aide en ligne](/fr/doc/baratinage/) du logiciel BaRatinAGE constitue un bon point de départ pour faire ses premiers pas avec BaRatin. Vous pouvez egalement regarder ce [webinaire](https://youtu.be/dUutJkCaAro?feature=shared) qui decrit les grandes lignes de la méthode et effectue une démonstration d'utilisation (également disponible en [anglais](https://youtu.be/TdRH1jmFhZQ?feature=shared)). 
+
+Des [supports de présentation](/doc/BaRatin_principes_FRANCAIS_2021.pdf) décrivant les principes de la méthode BaRatin sont également disponibles (aussi en [anglais](/doc/BaRatin_principles_ENGLISH_2022.pdf) et en [espagnol](/doc/BaRatin_principios_ESPANOL_2022.pdf)).
+
+Si vous souhaitez allez plus loin dans la compréhension des outils mathématiques sous-jacents, vous pouvez consulter  [ce document](https://hal.inrae.fr/hal-02602443) qui accompagne la formation *Statistiques avancées pour le calcul d’incertitudes en hydrologie : applications à la prédétermination et à l’hydrométrie*.
+
+Enfin, pour avoir sous les yeux une vue d'ensemble de BaRatin, ou simplement pour mettre un peu de couleur dans votre bureau, vous pouvez imprimer le [poster BaRatin](https://hal.inrae.fr/hal-02600782) ci-dessous (cliquez pour une version haute définition).
+
+<a href="https://hal.inrae.fr/hal-02600782"> <img alt="BaRatin Poster" src="/img/BaRatinPoster.jpg" width="50%" />  </a>
+
+# References
+
+XXX Liste des references a mettre plutot ici, ou au moins a dupliquer ici?

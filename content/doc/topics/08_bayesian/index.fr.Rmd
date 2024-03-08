@@ -74,19 +74,19 @@ $$\hat{\boldsymbol{\theta}} = \mathop{\mathrm{argmax}}_{\boldsymbol{\theta}} V(\
 > [**TP 4. Estimation par maximum de vraisemblance, cas continu**](TP_bayesian.fr.zip). Reprenez les données de durée inter-événements du TP 2, et calculez la vraisemblance pour une grille de valeurs du paramètre $\lambda$. Tracez la vraisemblance comme une fonction de $\lambda$, et déduisez-en l’estimateur du maximum de vraisemblance. Quelle autre information utile peut-on tirer de cette fonction de vraisemblance ?
 
 > [**TP 5. Estimation d’une régression linéaire**](TP_bayesian.fr.zip). Considérons les données représentées dans la figure ci-dessous, qui correspondent à des précipitations ($X$) et des débits moyens annuels ($Y$) pour un certain bassin versant. Un lien entre ces deux variables étant apparent dans cette figure, on cherche à établir une relation linéaire du type :
-
+>
 $$y_i=\theta  x_i + \varepsilon_i \text{ avec }  \varepsilon_i \sim \mathcal{N}(0,\sigma)$$
-
+>
 <img src="linear.fr.jpg" width="50%">
 <p style="text-align: center;color: gray;"> Relation entre la précipitation annuelle $X$ et le débit annuel $Y$</p>
-
+>
 > Cette relation suppose que le débit annuel est égal à une fraction $\theta$ de la précipitation annuelle, plus un résidu variant d’année en année. Ces résidus sont supposées être des réalisations d’une loi normale de moyenne nulle et d’écart-type inconnu $\sigma$. Sous ces hypothèses, il est possible de montrer que le $i$e débit annuel est une réalisation d’une loi normale $\mathcal{N}(\theta x_i,\sigma)$ : en d’autres termes, le modèle de régression linéaire donne l’espérance du débit annuel, tandis que l’écart-type des résidus donne l’incertitude sur le débit annuel qui sera effectivement observé. Notez en particulier que les données $\boldsymbol{y}$ ne sont pas identiquement distribuées ici (puisque la moyenne change chaque année).
-
+>
 > 1. Tracez les données ainsi que la droite de régression pour $\theta=0.1$.
 2. Calculez la vraisemblance des données $\boldsymbol{y}$ pour $\theta=0.1$ et $\sigma=50$.
 3. Recherchez en tâtonnant l’estimateur du maximum de vraisemblance de $\theta$ (on gardera $\sigma=50$).
 4. Comparez la droite de régression ainsi obtenue avec celle proposée par Excel (clic droit…Ajouter une courbe de tendance).
-
+>
 > Remarque : cet exemple, bien qu’extrêmement simple, fournit une excellente illustration de l’estimation des paramètres d’un modèle déterministe. Ici, le modèle est la simple relation linéaire $y_{sim}=\theta x$. Le débit $y_{sim}$ est la variable de sortie du modèle (aussi appelé prédictande), la précipitation $x$ est la variable d’entrée (aussi appelé prédicteur), et $\theta$ le paramètre à estimer. L’exemple se généralise à des modèles bien plus complexes, et en particulier à des courbes de tarage !
 
 # L’approche bayésienne
@@ -148,7 +148,7 @@ Il est intéressant de noter que le résultat brut d’une estimation bayésienn
 Les remarques ci-dessus montrent que toutes les méthodes d’estimation peuvent fournir une estimation ponctuelle (i.e. une valeur) ainsi qu’une incertitude. Les bayésiens convaincus prétendront néanmoins que la quantification de l’incertitude est plus naturelle dans le cadre bayésien, car l’incertitude est le résultat brut, et l’estimation ponctuelle le produit dérivé (alors que c’est l’inverse avec les autres méthodes d’estimation).
 
 > [**TP 6. Estimation bayésienne, cas discret**](TP_bayesian.fr.zip). Reprenez les calculs effectués dans le TP 3 et complétez-les pour effectuer une analyse bayésienne complète. Ceci implique de : (1) spécifier une densité a priori ; (2) calculer la densité a posteriori. Tracez la vraisemblance, la densité a priori et la densité a posteriori et comparez-les.
-
+>
 > La personne ayant effectué le calcul de la crue décennale vous informe qu'elle n’a pas utilisé vos données pour faire ce calcul. De plus, elle a effectué une analyse d’incertitude et d’après cette analyse, l’incertitude sur la probabilité de dépassement peut-être représentée par une loi log-normale $Log\mathcal{N}(\mu=log(0.1),\sigma=0.75)$. Tirez parti de cette information.
 
 > [**TP 7. Estimation bayésienne, cas continu**](TP_bayesian.fr.zip). Reprenez les calculs effectués dans le TP 4 et complétez-les pour effectuer une analyse bayésienne complète. 

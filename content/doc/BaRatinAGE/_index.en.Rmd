@@ -5,11 +5,7 @@ toc: yes
 autoCollapseToc: yes
 ---
 
-# XXX
+Welcome to [BaRatinAGE v3](https://github.com/BaRatin-tools/BaRatinAGE/releases)'s online help! 
 
-XXX
-
-# XXX
-
-XXX
+Here is an outline:
 

@@ -5,5 +5,5 @@ toc: yes
 autoCollapseToc: yes
 ---
 
-Cette page propose un ensemble de fiches qui détaillent certaines thématiques. Voici les fiches disponibles:
+Cette partie propose un ensemble de fiches techniques détaillant des thématiques hydrauliques ou statististiques qui constituent le fondement de BaRatin. Voici les fiches disponibles :
 

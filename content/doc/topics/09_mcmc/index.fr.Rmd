@@ -60,22 +60,22 @@ Pour finir, et avant de passer à la pratique, signalons que les méthodes MCMC 
 <br>
 
 > [**TP 1. Approche bayésienne-MCMC, cas discret**](TP_MCMC.fr.zip). Le fichier Excel propose une implémentation de l’algorithme de Metropolis pour les données de dépassement de la crue estimée comme décennale (voir TP1 de la page [inférence Bayesienne](/fr/doc/topics/bayesien)).
-
+>
 > 1. Etudiez les lignes des itérations 0 et 1 cellule par cellule pour comprendre comment l’algorithme est implémenté, et vérifier que cela correspond bien à l’Algorithme 1.
 2. Tracez les valeurs simulées dans un graphique, puis jouez avec la taille du saut (cellule C3) et observez l’impact sur les valeurs simulées.
 3. Réalisez un histogramme des valeurs simulées (utilisez l’utilitaire d’analyse dans l’onglet « Données »). Calculez un intervalle de crédibilité à 90%.
 4. Plutôt que de parler en termes de probabilité de dépassement, on préfère parler en termes de période de retour. Représentez la distribution a posteriori de cette période de retour (remplissez la colonne vide dans la partie « Extras… »), puis calculez un intervalle de crédibilité à 90%. Le collègue ayant estimé la crue décennale doit-il être renvoyé ?
-
+>
 > Note: à part pour l'aspect didactique, implémenter un simulateur MCMC sous Excel est globalement une très mauvaise idée, qui a toutes les chances de ne pas fonctionner dès que les cas d’étude seront un peu plus complexes que ceux traités en TP (temps de calcul, plantages intempestifs dès qu’il y a trop de lignes/colonnes, fiabilité des générateurs de nombres aléatoires incertaine, capacités graphiques très limitées, etc.). Des langages comme R, Python ou Matlab proposent des implémentations de simulateurs MCMC.
 
 > [**TP 2. Approche bayésienne-MCMC, cas continu**](TP_MCMC.fr.zip). Le fichier Excel est similaire au précédent, et est simplement adapté aux durées inter-événements à Sommières (voir TP2 de la page [inférence Bayesienne](/fr/doc/topics/bayesien)).
-
+>
 > 1. Réalisez un histogramme des valeurs simulées et calculez un intervalle de crédibilité à 90%.
 2. Pour chaque valeur simulée du paramètre, calculez la fonction de répartition associée (remplissez les colonnes vides dans la partie « Extras… »). Représentez graphiquement l’ensemble de ces fonctions de répartition (limitez-vous en fait aux ~100 premières, sinon Excel risque de planter).
 3. Sur la base de ces « spaghettis », quelle est la probabilité d’attendre moins de 10 ans entre deux inondations ? moins de 100 ans ? moins de 1000 ans ?
 
 > [**TP 3. Approche bayésienne-MCMC, régression linéaire**](TP_MCMC.fr.zip). Le fichier Excel est encore similaire aux deux précédents, et est simplement adapté aux données de la régression pluie-débit (voir TP5 de la page [inférence Bayesienne](/fr/doc/topics/bayesien)). Néanmoins, il y a une différence notable : les paramètres inconnus sont maintenant au nombre de deux ($\theta$, la pente de la régression, et $\sigma$, l’écart-type des résidus).
-
+>
 > 1. Etudiez la ligne de l’itération 1 pour comprendre comment l’implémentation a été adaptée au cas de plusieurs paramètres inconnus.
 2. Tracez les valeurs simulées de $\theta$ et $\sigma$ dans deux graphiques séparés, puis tracez le nuage des points $(\theta,\sigma)$ simulés. Quelle information peut-on tirer de ce dernier graphique ?
 3. Pour chaque valeur simulée de $\theta$, calculez la droite de régression associée (remplissez les colonnes vides dans la partie « Extras…Incertitude paramétrique »). Représentez graphiquement l’ensemble de ces droites (limitez-vous encore aux ~100 premières), et superposez-y les couples (pluie ; débit) observés.

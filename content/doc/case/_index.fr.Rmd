@@ -1,10 +1,13 @@
 ---
 title: "Cas d'études BaRatin"
+slug: "case"
+toc: yes
+autoCollapseToc: yes
 ---
 
-Cette section propose une collection de cas d'études. 
+Cette section propose un catalogue de cas d'études qui ont été sélectionnés car ils permettent d'illustrer certaines thématiques générales telles que: configurations hydrauliques fréquemment rencontrées, stations simples à interpreter et didactiques, résolution d'une difficulté dans l'interprétation du fonctionnement hydraulique d'un site, utilisation d'un code ou logiciel dans un but particulier, stratégie ou workflow d'analyse, etc.
 
-N'hésitez pas à nous contacter si vous souhaitez en proposer un!
+N'hésitez pas à [nous contacter](/fr/a-propos#Contactez-nous) si vous souhaitez proposer un cas d'étude qui pourrait à votre avis intéresser la communauté BaRatin !
 
-Voici le catalogue:
+Voici le catalogue actuellement disponible. Si certains cas d'études sont dans une langue autre que le français, c'est qu'ils sont en cours de traduction.
 
