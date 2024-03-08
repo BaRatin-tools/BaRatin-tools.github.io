@@ -6,72 +6,71 @@ layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---
 
-# Organisation générale
+# General organisation
 
-La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE v3 :
+The window shown below appears when BaRatinAGE v3 starts up:
 
-![](MainFrame.en.pdf)
+![](MainFrame.en.png)
+In addition to the classic menu and tool bars (the operation of which will be described in more detail later), this window has several main areas:
 
-Outre les classiques barres de menus et d'outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :
+- On the left, the *component explorer* which allows you to navigate through the various components created in BaRatinAGE: hydraulic configurations, sets of gaugings, structural error models, rating curves, stage series and discharge series.
+- On the right, from top to bottom:
+    - the *descriptive panel of the component* selected in the explorer;
+    - the *thematic tabs of the component*;
+    - the *input, computation and chart area* corresponding to the selected thematic tab.
 
--   A gauche, l'*explorateur des composants* qui permettra de naviguer parmi les différents composants créés dans BaRatinAGE : configurations hydrauliques, jeux de jaugeages, modèles d'erreur structurelle, courbe de tarage, limnigramme et hydrogramme.
--   A droite, de haut en bas :
-    -   le *panneau descriptif du composant* sélectionné dans l'explorateur ;
-    -   les *onglets thématiques du composant* ;
-    -   la *zone de saisie, de calculs et de graphiques* correspondant à l'onglet thématique sélectionné.
+When BaRatinAGE starts up, a component of each type pre-exists, with fields that are either blank or filled in by default.
 
-Dans BaRatinAGE au démarrage, un composant de chaque type pré-existe, avec des champs vierges ou renseignés par défaut.
-
-Pour illustrer plus efficacement le fonctionnement de BaRatinAGE, nous allons ouvrir une étude pré-enregistrée. Pour ce faire, cliquez sur l'outil <img src="folder.svg" style="display:inline-block"> *Ouvrir un projet...* ou dans le menu *Fichier...Ouvrir un projet...* (Ctrl+O), et ouvrez le fichier nommé *Aisne_Verrieres_Example.bam* dans le répertoire *example* (ce répertoire est situé dans le dossier où vous avez installé BaRatinAGE).
-
-
-# Navigation dans l'interface graphique
-
-La fenêtre principale devrait à présent comporter plusieurs composants comme illustré dans la figure ci-dessous. La logique de l'interface graphique est d'utiliser l'*explorateur des composants* pour naviguer dans BaRatinAGE. Un clic gauche permet de sélectionner un composant, ce qui met automatiquement à jour les panneaux situés à droite. Un clic droit donne accès à un certain nombre d'outils (détaillés ultérieurement).
-
-Notez également que les info-bulles sont omniprésentes dans l'application. N'hésitez pas à les consulter car elles fournissent souvent des indications plus détaillées que le nom des champs, boutons, etc.
-
-![](MainFrame_full.fr.png)
+To illustrate how BaRatinAGE works more effectively, we are going to open a pre-registered study. To do this, click on the <img src="folder.svg" style="display:inline-block"> *Open project...* tool or in the *File...Open project...* menu (Ctrl+O), and open the file named *Aisne_Verrieres_Example.bam* in the *example* directory (this directory is located in the folder where you installed BaRatinAGE).
 
 
-Le *panneau descriptif du composant* rappelle le type de composant sélectionné (icône et nom), son nom et sa description (texte libre). Il comporte en outre les boutons *Dupliquer* et *Supprimer* le composant.
+# Navigating the graphical interface
 
-Les *onglets thématiques du composant* sont spécifiques au composant considéré : ils seront décrits dans les pages suivantes de cette documentation, qui détaillent ces composants un par un.
+The main window should now contain several components as shown in the figure below. The rationale of the GUI is to use the *component explorer* to navigate through BaRatinAGE. Left-click to select a component, which automatically updates the panels to the right. Right-clicking gives access to a number of tools (described in more detail later).
 
-Il en va de même des *zones de saisie, de calculs et de graphiques* associées. Signalons les fonctionnalités suivantes de la zone graphique elle-même :
+Note also that tooltips are omnipresent in the application. Don't hesitate to consult them, as they often provide more detailed information than the names of fields, buttons, etc.
 
--   On peut effectuer un zoom avec la souris en maintenant le clic gauche appuyé et en dessinant un rectangle depuis le coin supérieur gauche vers le coin inférieur droit. Pour revenir aux axes initiaux, on procède de manière similaire mais en dessinant le rectangle depuis le coin inférieur droit vers le coin supérieur gauche ;
--   Le clic droit sur le graphique donne accès à un menu permettant les actions suivantes (également disponibles via des boutons situés au-dessus de la figure) :
-    -   Tracer la figure dans une fenêtre extérieure ; 
-    -   Exporter l'image au format vectoriel SVG ;
-    -   Exporter l'image au format PNG ;
-    -   copier dans le presse-papier.
+
+
+![](MainFrame_full.en.png)
+
+The *descriptive panel of the component* shows the type of component selected (icon and name), its name and its description (free text). It also includes the buttons *Duplicate* and *Delete* the component.
+
+The *thematic tabs of the component* are specific to the component in question: they will be described in the following pages of this documentation, which detail these components one by one.
+
+The same applies to the associated *input, computation and chart area*. The following functions can be found in the chart area itself:
+
+- You can zoom in with the mouse by holding down the left click and drawing a rectangle from the top left-hand corner to the bottom right-hand corner. To return to the original axes, follow a similar procedure, but draw the rectangle from the bottom right-hand corner to the top left-hand corner;
+- Right-click on the graph to access a menu with the following actions (also available via buttons above the figure):
+    - Draw the figure in an external window; 
+    - Export the image in SVG vector format;
+    - Export the image in PNG format;
+    - Copy to clipboard.
     
 
-# Menus et actions sur les composants
+# Menus and actions on the components
 
-## Menu "Fichier"
+## "File" menu
 
-Ce menu comporte les outils habituels pour ouvrir et sauvegarder une étude, créer une nouvelle étude et fermer l'application. Il n'est possible d'ouvrir qu'une seule étude à la fois, et la logique de BaRatinAGE est qu'une étude corresponde à une station hydrométrique. Pour une étude donnée, il est possible de définir plusieurs configurations hydrauliques, plusieurs jeux de jaugeages, plusieurs courbes de tarage, etc.
+This menu contains the usual tools for opening and saving a study, creating a new study and closing the application. It is only possible to open one study at a time, and the rationale of BaRatinAGE is that a study corresponds to a hydrometric station. For a given study, it is possible to define several hydraulic configurations, several sets of gaugings, several rating curves, etc.
 
-## Manipulations de base des composants
+## Basic handling of components
 
-Tous les composants de BaRatinAGE peuvent être manipulés avec quelques actions de base, qui sont accessibles via les menus ou par un clic droit dans l'arborescence : 
+All BaRatinAGE components can be manipulated with a few basic actions, which can be accessed via the menus or by right-clicking in the tree structure: 
 
--   *Créer un nouveau* (également accessible via les boutons de la barre d'outils) : permet de créer un nouvel composant après l'avoir nommé. Les composants étant identifiés par nom dans BaRatinAGE, il n'est pas possible de donner le même nom à deux composants du même type (par exemple deux courbes de tarage, deux configurations hydrauliques, etc.) ;
--   *Dupliquer* : permet de copier les propriétés d'un composant existant dans un nouvel composant (qui sera renommé) ;
--   *Supprimer* : permet d'effacer un composant existant. 
+- *Create new* (also accessible via the toolbar buttons): allows you to create a new component after naming it. As components are identified by name in BaRatinAGE, it is not possible to give the same name to two components of the same type (for example, two rating curves, two hydraulic configurations, etc.);
+- *Duplicate*: copies the properties of an existing component to a new component (which will be renamed);
+- *Delete*: used to delete an existing component. 
 
-Note : en cas de modification ou de suppression d'un composant ayant été utilisé pour calculer des résultats, un message d'avertissement propose à l'utilisateur de conserver ou de mettre à jour ces résultats. Par exemple, lorsqu'on modifie ou supprime un jeu de jaugeages, ce message sera émis pour toutes les courbes de tarage qui ont utilisé ces jaugeages, et donc également pour tous les hydrogrammes qui ont utilisé ces courbes de tarage.
+Note: if a component that has been used to calculate results is modified or deleted, a warning message suggests that the user should keep or update these results. For example, when a set of gaugings is modified or deleted, this message will be issued for all the rating curves that used these gaugings, and therefore also for all the discharge series that used these rating curves.
 
-Les onglets thématiques de certains composants proposent également des tableaux de résultats sous divers formats, qui peuvent être copiés ou exportés.
-.
+The thematic tabs of certain components also offer results tables in various formats, which can be copied or exported.
 
-## Menu "Options"
+## "Options" menu
 
-Ce menu permet de modifier les options suivantes :
+This menu allows you to change the following options:
 
--   *changer de langue* : langue de BaRatinAGE (27 langues disponibles à ce jour, n'hésitez pas à en ajouter !).
+- *change language*: select BaRatinAGE language (27 languages available to date, feel free to add another language! See explanations in the [*Going further*](/en/doc/baratinage/going-further) page).
 
 
 
