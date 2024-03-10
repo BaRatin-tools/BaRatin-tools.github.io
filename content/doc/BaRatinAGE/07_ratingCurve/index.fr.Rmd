@@ -69,7 +69,7 @@ La même information est également disponible sous forme de tableau, avec pour 
 
 ![](RC_Verrieres_MCMC.fr.png)
 
-Le graphique des traces MCMC représente les valeurs de paramètres simulées depuis la distribution a posteriori grâce au simulateur MCMC (tous les détails techniques sont expliqués dans [ce document](/fr/doc/topics/mcmc). Notez que le graphique ne montre que 500 valeurs simulées, mais en fait 10 000 valeurs ont été initialement générées, les 5 000 premières étant éliminées. Ces 5 000 valeurs initiales ont simplement été décimées et réduites à 500 valeurs pour éviter de conserver un nombre de simulations trop important. 
+Le graphique des traces MCMC représente les valeurs de paramètres simulées depuis la distribution a posteriori grâce au simulateur MCMC (tous les détails techniques sont expliqués dans [ce document](/fr/doc/topics/mcmc)). Notez que le graphique ne montre que 500 valeurs simulées, mais en fait 10 000 valeurs ont été initialement générées, les 5 000 premières étant éliminées. Ces 5 000 valeurs initiales ont simplement été décimées et réduites à 500 valeurs pour éviter de conserver un nombre de simulations trop important. 
 
 Outre les paramètres $\kappa$, $a$, $b$, et $c$ de chaque contrôle, les échantillons des paramètres $\gamma_1$ et $\gamma_2$ de l'écart-type de l'erreur structurelle ainsi que le logarithme de la densité a posteriori ("LogPost") sont également tracés. La position du jeu de paramètres maxpost (maximisant la distribution a posteriori) est indiquée par une ligne verticale rouge pour chaque paramètre. Ces résultats peuvent être exportés au format CSV.
 

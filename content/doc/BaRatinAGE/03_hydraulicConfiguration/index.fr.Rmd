@@ -60,7 +60,7 @@ Dans BaRatinAGE, chaque contrôle est associé à une relation hauteur ($H$) - d
 
 $Q = a(H-b)^c$ pour $H > \kappa$ (et $Q = 0$ si $H \leq b$)
 
--    $\kappa$ est la *hauteur d'activation* ; quand la hauteur d'eau descend sous la valeur $k$, le contrôle devient inactif ;
+-    $\kappa$ est la *hauteur d'activation* ; quand la hauteur d'eau descend sous la valeur $\kappa$, le contrôle devient inactif ;
 -    $a$ est le *coefficient*, qui dépend des propriétés physiques du contrôle ;
 -    $c$ est l'*exposant*, qui dépend uniquement du type de contrôle ;
 -    $b$ est l'*offset* ; quand la hauteur d'eau descend sous la valeur $b$, le débit est nul. Notez que ce paramètre est en général différent de la hauteur d'activation $\kappa$. A titre d'exemple, pour un contrôle par chenal qui succède à un contrôle par déversoir, le paramètre $b$ représente la cote moyenne du fond du lit, mais le contrôle ne s'active qu'au-delà de la hauteur $\kappa$ d'ennoiement du déversoir, qui est différente de $b$.
@@ -104,7 +104,7 @@ Les deux derniers paramètres sont calculés automatiquement si les trois autres
 
 ![](PriorRC_Verrieres.fr.png)
 
-L'incertitude paramétrique (au niveau de probabilité de 95%) autour de la courbe de tarage *a priori* est affichée sous la forme d'une enveloppe transparente bleue. Evidemment, cette courbe a priori sera généralement très incertaine, mais nous utiliserons les jaugeages à l'étape suivante pour diminuer cette incertitude. Le graphique représente également les hauteurs d'activation $k$ des différents contrôles comme des traits verticaux violets (avec incertitude). Il est possible de transformer l'axe des débits en échelle logarithmique et d'échanger les axes X/Y. Il est possible d'ouvrir le graphique dans une nouvelle fenêtre, d'exporter l'image au format SVG ou PNG, ou encore de la copier dans le presse-papier. Cette visualisation de la courbe a priori vous permet de vérifier la pertinence et la cohérence de vos hypothèses a priori sur les contrôles.
+L'incertitude paramétrique (au niveau de probabilité de 95%) autour de la courbe de tarage *a priori* est affichée sous la forme d'une enveloppe transparente bleue. Evidemment, cette courbe a priori sera généralement très incertaine, mais nous utiliserons les jaugeages à l'étape suivante pour diminuer cette incertitude. Le graphique représente également les hauteurs d'activation $\kappa$ des différents contrôles comme des traits verticaux violets (avec incertitude). Il est possible de transformer l'axe des débits en échelle logarithmique et d'échanger les axes X/Y. Il est possible d'ouvrir le graphique dans une nouvelle fenêtre, d'exporter l'image au format SVG ou PNG, ou encore de la copier dans le presse-papier. Cette visualisation de la courbe a priori vous permet de vérifier la pertinence et la cohérence de vos hypothèses a priori sur les contrôles.
 
 
 

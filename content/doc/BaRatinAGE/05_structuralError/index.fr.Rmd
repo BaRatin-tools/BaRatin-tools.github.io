@@ -33,7 +33,7 @@ L'*erreur structurelle* est supposée indépendante d'un jaugeage à l'autre, ga
 -    Pour tenir compte de cette observation, la seconde option est de supposer que l'écart-type $\sigma$ est une fonction affine du débit calculé par la courbe de tarage : $\sigma = \gamma_1 + \gamma_2 \ Q$. Dans ce cas, il y a deux paramètres à estimer, $\gamma_1$ et $\gamma_2$. 
 -    La troisième option est une version purement proportionnelle de l'option précédente : $\sigma = \gamma_2 \ Q$.
 
-En pratique, nous recommandons d'utiliser la deuxième option ($\sigma = \gamma_1 + \gamma_2 \ Q$), car elle permet généralement de distribuer l’*erreur structurelle* sur toute la gamme de débit de façon réaliste. Pour l'instant, seul ce modèle d'*erreur structurelle* est implémentée dans BaRatinAGE (les deux autres le seront sans doute dans de futures versions du logiciel). Par défaut, des distributions uniformes sont choisies pour les paramètres $\gamma_1$ et $\gamma_2$ :  
+En pratique, nous recommandons d'utiliser la deuxième option ($\sigma = \gamma_1 + \gamma_2 \ Q$), car elle permet généralement de distribuer l’*erreur structurelle* sur toute la gamme de débit de façon réaliste. Pour l'instant, seul ce modèle d'*erreur structurelle* est implémentée dans BaRatinAGE v3 (les deux autres le seront sans doute dans de futures versions du logiciel). Par défaut, des distributions uniformes sont choisies pour les paramètres $\gamma_1$ et $\gamma_2$ :  
 
 ![](StructError.png)
 

@@ -1,0 +1,52 @@
+---
+title: "Frequently asked questions "
+slug: "faq"
+weight: 10
+layout: "doc_BaRatinAGEPage"
+inTOC: "BaRatinAGE"
+---
+
+*Note: this section will be updated as we receive more questions.*
+
+# Installation
+
+Question: I work on Linux, can I use BaRatinAGE?
+
+Answer: Yes, BaRatinAGE 3 can be used on Windows and Linux!
+
+***
+
+Question: I work on a Mac, can I use BaRatinAGE?
+
+Answer: Not at the moment. However, if you wish, we can help you compile a Mac version of the software. If so, please contact us!
+
+***
+
+# Training
+
+Question: Is there any training available for BaRatinAGE?
+
+Answer: Yes, there are several options available:
+
+- Use the training materials in [French](/doc/BaRatin_principes_FRANCAIS_2021.pdf), [English](/doc/BaRatin_principles_ENGLISH_2022.pdf) and [Spanish](/doc/BaRatin_principios_ESPANOL_2022.pdf) as well as the webinars available online in [French](https://youtu.be/dUutJkCaAro?si=y6XToumLqfu9lxs5) and [English](https://youtu.be/TdRH1jmFhZQ?si=E2fwIphVebe86nDT);
+- On request, we can organise training sessions dedicated to BaRatinAGE, typically over 2 days. For more information about these "baratinades", please contact us!
+
+***
+
+
+# Licence, source codes, etc.
+
+Question: Can I distribute BaRatinAGE 3 to all my colleagues, or on my website?
+
+Answer: Yes. However, we recommend that each user sends us an email to ask to be added to the BaRatinAGE user mailing list. This will enable you to receive information about new versions of the software.
+
+
+***
+
+Question: Can I have access to the BaRatinAGE source code?
+
+Answer: BaRatinAGE and BaM! are open source (GPL3 licence) and available on [GitHub](https://github.com/BaRatin-tools/BaRatinAGE).
+
+***
+
+
