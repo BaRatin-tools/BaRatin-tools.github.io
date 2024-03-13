@@ -4,12 +4,14 @@ toc: yes
 autoCollapseToc: yes
 ---
 
-# Welcome on BaRatin web page!
+# Welcome to BaRatin web page!
 
-XXX
+To provide operational solutions to the difficult problems of developing, calibrating, reviewing simple and complex rating curves and estimating their uncertainties, the Bayesian BaRatin method (Bayesian Rating curve, [Le Coz et al., 2014](http://dx.doi.org/10.1016/j.jhydrol.2013.11.016) ; [Horner et al., 2018](https://doi.org/10.1002/2017WR022039)) has been developed by INRAE since 2010. The method combines the strength of a probabilistic approach (parameter estimation and uncertainty quantification) and a physically-based approach (physical interpretation of parameters and of their change when a rating shift occurs, more reliable extrapolation). Its use does not require being an expert in applied mathematics or river hydraulics. Instead, BaRatin provides a way for field hydrologists to simply formalize and make use of the expertise they do have on flows at their gauging station, along with gaugings and their uncertainties. 
 
-YYY
-
-
+This webpage gathers useful information for BaRatin users: documentation, codes and software, case study, contact information, blog posts... Happy BaRatining!
 
 
+<br>
+<div style="text-align: center; margin: 0 auto;">
+<a href=""> <img alt="BaRatin" src="/img/frontPage.en.png" width="100%" />  </a> 
+</div>

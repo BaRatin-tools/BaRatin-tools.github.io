@@ -6,14 +6,14 @@ autoCollapseToc: yes
 
 # Bienvenue sur la page web de BaRatin !
 
-Pour apporter des solutions opérationnelles aux problèmes délicats que posent la construction, le calage, la critique et l’estimation des incertitudes des courbes de tarage simples et complexes, la méthode bayésienne BaRatin (Bayesian Rating curve, [Le Coz et al., 2014](http://dx.doi.org/10.1016/j.jhydrol.2013.11.016) ; [Horner et al., 2018](https://doi.org/10.1002/2017WR022039)) a été développée par INRAE depuis 2010.
+Pour apporter des solutions opérationnelles aux problèmes délicats que posent la construction, le calage, la critique et l’estimation des incertitudes des courbes de tarage simples et complexes, la méthode bayésienne BaRatin (Bayesian Rating curve, [Le Coz et al., 2014](http://dx.doi.org/10.1016/j.jhydrol.2013.11.016) ; [Horner et al., 2018](https://doi.org/10.1002/2017WR022039)) a été développée par INRAE depuis 2010. Cette approche cherche à combiner les avantages d'une approche probabiliste (optimisation/calage, incertitudes) et les avantages d'une approche à base physique (fiabilité de l'extrapolation, interprétation physique des paramètres et de leurs variations éventuelles en cas de détarage), tout en restant abordable par des utilisateurs qui ne sont experts ni en mathématiques appliquées ni en hydraulique fluviale. L'approche BaRatin permet aux hydrologues de terrain de simplement formaliser et valoriser l'expertise qu'ils ont naturellement sur les écoulements à leur station et sur leurs jaugeages et les incertitudes associées.
+
+Vous trouverez sur ce site des informations utiles pour vous accompagner dans l'utilisation de BaRatin : documentation, codes et logiciels, cas d'étude, contacts utiles, posts de blog... Bon BaRatinAGE !
+
 
 <br>
 <div style="text-align: center; margin: 0 auto;">
 <a href=""> <img alt="BaRatin" src="/img/frontPage.fr.png" width="100%" />  </a> 
 </div>
 
-La méthode BaRatin permet la construction des courbes de tarage hauteur-débit avec estimation de l’incertitude, en combinant la connaissance a priori sur les contrôles hydrauliques et le contenu d’information des jaugeages incertains ([Le Coz et al., 2014](http://dx.doi.org/10.1016/j.jhydrol.2013.11.016)). L’équation de la courbe de tarage est dérivée de la combinaison de fonctions puissance pour chacun des contrôles supposés sur le site. L’utilisateur définit également les distributions de probabilité a priori des paramètres physiques de cette équation hauteur-débit, « a priori » signifiant sans regarder les jaugeages utilisés dans l’estimation bayésienne. Une telle estimation bayésienne est basée sur l’échantillonnage par méthode Monte Carlo par Chaîne de Markov (MCMC) de la distribution a posteriori des paramètres de la courbe de tarage, inférée à partir du théorème de Bayes.
-
-Bon BaRatinAGE !
 
