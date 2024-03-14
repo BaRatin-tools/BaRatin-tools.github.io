@@ -7,8 +7,8 @@ autoCollapseToc: yes
 
 This section contains a catalog of selected case studies that allow illustrating various topics of general interest, such as: frequently encountered hydraulic configurations, stations with a simple and hence didactic hydraulic interpretation, challenging hydraulic interpretations and ways to address them, use of a code or software for a specific purpose, analysis strategy or workflow, etc.
 
-If you think that one of your cases could be of general interest to the BaRatin community, please feel free to [get in touch](/en/about#Contact-us) with us and we'll add it to the catalog.
+If you think that one of your cases could be of general interest to the BaRatin community, please feel free to [get in touch](/en/about#Contact us) with us and we'll add it to the catalog.
 
 
-Case studies currently available are listed below. Case studies appearing in a language other than english are in the process of being translated.
+Case studies currently available are listed below. Case studies appearing in a language other than English are in the process of being translated.
 

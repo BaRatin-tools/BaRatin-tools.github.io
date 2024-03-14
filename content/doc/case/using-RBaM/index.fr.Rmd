@@ -1,0 +1,18 @@
+---
+title: "Utilisation de RBaM"
+subtitle: "BaRatin sous R !"
+slug: "rbam"
+weight: 5
+layout: "doc_caseStudiesPage"
+inTOC: "caseStudies"    
+output:
+  blogdown::html_page:
+    number_sections: true
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE,results='hide',
+                      fig.path = "man/readme/README-")
+```
+
