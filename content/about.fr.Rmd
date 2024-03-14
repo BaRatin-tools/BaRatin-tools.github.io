@@ -13,13 +13,14 @@ Pour toute question sur la méthode BaRatin, les logiciels associés comme [BaRa
 
 # Support
 
-Le développement de la méthode BaRatin a bénéficié du soutien financier, technique et scientifique de plusieurs institutions et projets:
+Le développement de la méthode BaRatin a bénéficié du soutien financier, technique et scientifique de plusieurs institutions et projets: 
 
-SCHAPI
-
-Projets
-
-XXX Liste à faire
+* [INRAE](https://www.inrae.fr/), l'employeur des développeurs de BaRatin
+* Le [SCHAPI](https://api.gouv.fr/producteurs/schapi) (Service Central d’Hydrométéorologie et d’Appui à la Prévision des Inondations) soutient financièrement le développement de BaRatin depuis sa création et facilite les précieux échanges avec les utilisateurs du réseau hydrométrique de l'état 
+* La [CNR](https://www.cnr.tm.fr/) (Compagnie Nationale du Rhône) a financé plusieurs développements de BaRatin, notamment via des co-financements de thèses
+* BaRatin a bénéficié du soutien de l'[ANR](https://anr.fr) (Agence Nationale de la Recherche) via le projet de recherche [FloodScale](https://anr.fr/Projet-ANR-11-BS56-0027)
+* L'[OMM](https://wmo.int/fr) (Organisation Météorologique Mondiale) s'est associée aux [webinaires BaRatin](https://www.youtube.com/watch?v=dUutJkCaAro), notamment via le [Projet X](https://community.wmo.int/en/activity-areas/hydrology-and-water-resources/project-x)
+* BaRatin a bénéficié des retours précieux de nombreux utilisateurs, en particulier ceux de [NEON](https://www.neonscience.org/) et  de l'[USGS](https://www.usgs.gov/) (USA), et de l'[ACUMAR](https://www.acumar.gob.ar/) (Argentine)
 
 # Les gens derrière BaRatin...
 

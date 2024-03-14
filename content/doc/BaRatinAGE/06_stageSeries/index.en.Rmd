@@ -1,5 +1,5 @@
 ---
-title: "stage series"
+title: "Stage series"
 slug: "stage-series"
 weight: 7
 layout: "doc_BaRatinAGEPage"

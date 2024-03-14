@@ -1,15 +1,163 @@
 ---
-title: "About this website"
+title: "The BaRatin Team"
 slug: "about"
 toc: yes
 autoCollapseToc: yes
 ---
 
-# XXX
+# Contact us
 
-XXX
+For any question on BaRatin, on associated software [BaRatinAGE](https://github.com/BaRatin-tools/BaRatinAGE) or [RBaM](https://github.com/BaM-tools/RBaM), or more generally on rating curve estimation, feel free to get in touch with us at the following address: 
 
-# XXX
+#### baratin.dev %at% inrae.fr
 
-XXX
+# Support 
 
+The development of BaRatin was supported financially, technically and scientifically by several institutions or projects: 
+
+* [INRAE](https://www.inrae.fr/en), the employer of BaRatin's developers
+* [SCHAPI](https://api.gouv.fr/producteurs/schapi) (Hydro-meteorology and flood forecasting service) has been funding the development of BaRatin from early on and facilitates fruitful exchanges with users from the French national hydrometric network
+* [CNR](https://www.cnr.tm.fr/en) (concessionary of the Rhone River) funded several developments, in particular through PhDs co-funding
+* BaRatin was supported by the [ANR](https://anr.fr/en/) (French National Research Agency) through the [FloodScale](https://anr.fr/en/funded-projects-and-impact/funded-projects/project/funded/project/b2d9d3668f92a3b9fbbf7866072501ef-905f3e2aef/?tx_anrprojects_funded%5Bcontroller%5D=Funded&cHash=0b8e7585d4a94310a1788901595f6ccb) research project
+* [WMO](https://wmo.int) (World Meteorological Organization) is associated to [BaRatin webinars](https://www.youtube.com/watch?v=dUutJkCaAro), through its [Project X](https://community.wmo.int/en/activity-areas/hydrology-and-water-resources/project-x) 
+* BaRatin greatly benefited from the feedback of many users, in particular users from [NEON](https://www.neonscience.org/) and [USGS](https://www.usgs.gov/) (US), and from [ACUMAR](https://www.acumar.gob.ar/) (Argentina)
+
+# The people behind BaRatin...
+
+Many people have contributed or still contribute to the development of BaRatin. By alphabetical order: 
+
+### Laurent Bonnifait
+
+Initial formulation of BaRatin
+
+Developer de `BaRatinAGE v1`
+
+Distribution and operational handover
+
+### Flora Branger
+
+Initial formulation of BaRatin
+
+<a href="https://orcid.org/0000-0003-4273-8938">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0003-4273-8938 </a>
+
+### Matteo Darienzo
+
+Rating shift detection
+
+Estimation of shifting rating curves
+
+Real-time estimation of rating curves
+
+Developer of `BayDERS`
+
+<a href="https://orcid.org/0000-0002-9184-4131">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0002-9184-4131 </a>
+
+<a href="https://github.com/MatteoDarienzo/">
+<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/MatteoDarienzo/ </a>
+
+### Ivan Horner
+
+Propagation of stage uncertainty
+
+Developer of `BaRatinAGE v3`
+
+<a href="https://www.ihdev.fr/en">
+<img alt="ihdev logo" src="/img/ihdev_logo.svg" width="32" height="32" /> https://www.ihdev.fr/ </a>
+
+### Michel Lang
+
+PhDs direction
+
+Integration of hydrometric uncertainties into long historical series
+
+Accumulated wisdom and dbious jokes
+
+<a href="https://orcid.org/0000-0003-1417-1495">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0003-1417-1495 </a>
+
+### Raphaël Le Boursicaud
+
+Initial formulation of BaRatin
+
+### Jérôme Le Coz
+
+Initial formulation of BaRatin
+
+Supervision of the method's development
+
+Co-developer of `BaRatinAGE v2` and `BaRatinAGE v3`
+
+Distribution and operational handover
+
+<a href="https://orcid.org/0000-0003-1243-6955">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0003-1243-6955 </a>
+
+<a href="https://eng-riverhydraulics.lyon-grenoble.hub.inrae.fr/people/present-staff/jerome-le-coz">
+<img alt="INRAE logo" src="/img/Logo-INRAE_Transparent.png" width="32" /> Page personnelle </a>
+
+### Valentin Mansanarez
+
+Models for hydraulic hysteresis
+
+Models for variable backwater
+
+Estimation of shifting rating curves
+
+Spoonerisms
+
+<a href="https://orcid.org/0000-0002-0130-815X">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0002-0130-815X </a>
+
+### Felipe Alberto Mendez Rios
+
+Models for tide-influenced rating curves
+
+Use of 1D hydraulic models
+
+Rating shift detection
+
+Developer of R package `RatingShiftHappens`.
+
+<a href="https://orcid.org/0009-0004-0371-8699">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0009-0004-0371-8699 </a>
+
+<a href="https://github.com/Felipemendezrios/">
+<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/Felipemendezrios/ </a>
+
+### Emeline Perret
+
+Detection of hydraulic hysteresis
+
+Models for rating curves affected by aquatic vegetation
+
+Models for tide-influenced rating curves
+
+Models for sedimentary transport
+
+<a href="https://orcid.org/0000-0002-4444-6640">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0002-4444-6640 </a>
+
+### Benjamin Renard
+
+Initial formulation of BaRatin
+
+Developer of `BaRatin` and `BaM` computing codes
+
+Co-developer of `BaRatinAGE v2` and `BaRatinAGE v3`. 
+
+Developer of R package `RBaM`.
+
+<a href="https://orcid.org/0000-0001-8447-5430">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0001-8447-5430 </a>
+
+<a href="https://github.com/benRenard">
+<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/benRenard </a>
+
+<a href="https://globxblog.github.io/">
+<img alt="globXblog logo" src="/img/globXblog_logo.svg" width="32" height="32" />  ♫ Blog ♫ : https://globxblog.github.io/ </a>
+
+### Sylvain Vigneau
+
+Developer of `BaRatinAGE v2`. 
