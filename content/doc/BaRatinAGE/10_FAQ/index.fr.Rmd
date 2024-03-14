@@ -33,7 +33,7 @@ Réponse : oui, plusieurs options sont à votre disposition :
 -    Utiliser les supports de formation en [français](/doc/BaRatin_principes_FRANCAIS_2021.pdf), [anglais](/doc/BaRatin_principles_ENGLISH_2022.pdf) et [espagnol](/doc/BaRatin_principios_ESPANOL_2022.pdf) ainsi que les webinaires disponibles en ligne en [français](https://youtu.be/dUutJkCaAro?si=y6XToumLqfu9lxs5) et en [anglais](https://youtu.be/TdRH1jmFhZQ?si=E2fwIphVebe86nDT) ;
 -    Suivre la formation courbe de tarage de l'IFORE ;
 -    Suivre la formation Statistiques avancées pour le calcul d'incertitude de l'IFORE ;
--    Nous pouvons organiser à la demande des sessions dédiées à BaRatinAGE, typiquement sur 2 jours. Pour plus d'informations sur ces "baratinades", contactez-nous !
+-    Nous pouvons organiser à la demande des sessions dédiées à BaRatinAGE, typiquement sur 2 jours. Pour plus d'informations sur ces "baratinades", contactez-nous!
 
 ***
 
