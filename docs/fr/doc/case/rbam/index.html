@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Utilisation de RBaM</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1710525651" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="fr">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="Utilisation de RBaM">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/fr/doc/case/rbam/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Utilisation de RBaM">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/fr/">
+                    
+                      <img src="/img/logoWithText.png" alt="Utilisation de RBaM logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Utilisation de RBaM logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Utilisation de RBaM - aller à l&#39;accueil</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Basculer la Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">Accueil</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/fr/doc/baratinage">BaRatinAGE v3</a></li>
+                            
+                            <li><a href="/fr/doc/topics">Fiches Thématiques</a></li>
+                            
+                            <li><a href="/fr/doc/case">Cas d&#39;étude</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/ressources">Ressources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/blog/">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/a-propos">A propos</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">🇬🇧 en</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Utilisation de RBaM</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="#estimation-dune-courbe-de-tarage-baratin" id="toc-estimation-dune-courbe-de-tarage-baratin"><span class="toc-section-number">2</span> Estimation d’une courbe de tarage BaRatin</a>
+<ul>
+<li><a href="#définition-des-données-de-jaugeage" id="toc-définition-des-données-de-jaugeage"><span class="toc-section-number">2.1</span> Définition des données de jaugeage</a></li>
+<li><a href="#définition-du-modèle-de-courbe-de-tarage" id="toc-définition-du-modèle-de-courbe-de-tarage"><span class="toc-section-number">2.2</span> Définition du modèle de courbe de tarage</a></li>
+<li><a href="#lancer-bam-et-explorer-les-simulations-mcmc" id="toc-lancer-bam-et-explorer-les-simulations-mcmc"><span class="toc-section-number">2.3</span> Lancer BaM et explorer les simulations MCMC</a></li>
+<li><a href="#estimer-la-courbe-de-tarage-et-ses-incertitudes" id="toc-estimer-la-courbe-de-tarage-et-ses-incertitudes"><span class="toc-section-number">2.4</span> Estimer la courbe de tarage et ses incertitudes</a></li>
+<li><a href="#production-dun-hydrogramme-incertain" id="toc-production-dun-hydrogramme-incertain"><span class="toc-section-number">2.5</span> Production d’un hydrogramme incertain</a></li>
+</ul></li>
+<li><a href="#conclusion" id="toc-conclusion"><span class="toc-section-number">3</span> Conclusion</a></li>
+</ul>
+</div>
+
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>BaM (Bayesian Modeling) est un outil permettant d’estimer un modèle par inférence Bayésienne - n’importe quel modèle en principe, mais ici nous nous intéresserons au <a href="/fr/doc/topics/courbe-de-tarage">modèle de courbe de tarage</a> de BaRatin. Le package <a href="https://github.com/BaM-tools/RBaM">RBaM</a> est une interface <code>R</code> au <a href="https://github.com/BaM-tools/BaM">code de calcul de BaM</a>. Il permet de définir les objets qui constituent les briques de base d’un cas d’étude opéré avec BaM, et fournit les outils d’analyse associés. Son utilisation typique peut être résumée comme suit:</p>
+<ol style="list-style-type: decimal">
+<li>Rassembler les données qui serviront à caler le modèle.</li>
+<li>Définir le modèle et spécifier des distributions a priori pour ses paramètres.</li>
+<li>Effectuer un inférence Bayésienne par simulation MCMC.</li>
+<li>Effectuer les prédictions désirées.</li>
+</ol>
+<p><code>RBaM</code> doit être installé une fois lors de la première utilisation, puis chargé avant chaque utilisation.</p>
+<pre class="r"><code># devtools::install_github(&#39;BaM-tools/RBaM&#39;) # Première utilisation : installer le package depuis GitHub
+library(RBaM) # Charger le package</code></pre>
+<p>Le catalogue des distributions a priori disponibles peut être affiché comme indiqué ci-dessous. La commande montre aussi le catalogue des modèles disponibles, mais ici nous aborderons uniquement le modèle BaRatin.</p>
+<pre class="r"><code>getCatalogue()</code></pre>
+<pre><code>## $distributions
+##  [1] &quot;Gaussian&quot;     &quot;Uniform&quot;      &quot;Triangle&quot;     &quot;LogNormal&quot;    &quot;LogNormal3&quot;  
+##  [6] &quot;Exponential&quot;  &quot;GPD&quot;          &quot;Gumbel&quot;       &quot;GEV&quot;          &quot;GEV_min&quot;     
+## [11] &quot;Inverse_Chi2&quot; &quot;PearsonIII&quot;   &quot;Geometric&quot;    &quot;Poisson&quot;      &quot;Bernoulli&quot;   
+## [16] &quot;Binomial&quot;     &quot;NegBinomial&quot;  &quot;FlatPrior&quot;    &quot;FlatPrior+&quot;   &quot;FlatPrior-&quot;  
+## [21] &quot;FIX&quot;          &quot;VAR&quot;         
+## 
+## $models
+##  [1] &quot;TextFile&quot;                 &quot;BaRatin&quot;                 
+##  [3] &quot;BaRatinBAC&quot;               &quot;SFD&quot;                     
+##  [5] &quot;SGD&quot;                      &quot;SWOT&quot;                    
+##  [7] &quot;Vegetation&quot;               &quot;AlgaeBiomass&quot;            
+##  [9] &quot;DynamicVegetation&quot;        &quot;Recession_h&quot;             
+## [11] &quot;Segmentation&quot;             &quot;Sediment&quot;                
+## [13] &quot;SuspendedLoad&quot;            &quot;Linear&quot;                  
+## [15] &quot;Mixture&quot;                  &quot;Orthorectification&quot;      
+## [17] &quot;GR4J&quot;                     &quot;Tidal&quot;                   
+## [19] &quot;SFDTidal&quot;                 &quot;SFDTidal2&quot;               
+## [21] &quot;SFDTidalJones&quot;            &quot;SFDTidal4&quot;               
+## [23] &quot;SFDTidal_Qmec&quot;            &quot;TidalODE&quot;                
+## [25] &quot;TidalRemenieras&quot;          &quot;SFDTidal_Sw_correction&quot;  
+## [27] &quot;MAGE&quot;                     &quot;HydraulicControl_section&quot;</code></pre>
+</div>
+<div id="estimation-dune-courbe-de-tarage-baratin" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Estimation d’une courbe de tarage BaRatin</h1>
+<p>La première chose à faire est de définir un dossier faisant office d’espace de travail (workspace), dans lequel seront sauvegardés tous les resultats.</p>
+<pre class="r"><code>workspace=file.path(getwd(),&#39;BaM_workspace&#39;)</code></pre>
+<p>L’exemple utilisé ci-dessous est la courbe de tarage de l’<a href="https://fr.wikipedia.org/wiki/Ard%C3%A8che_(rivi%C3%A8re)">Ardèche</a> à la station de <a href="https://www.hydro.eaufrance.fr/stationhydro/V506401001/fiche">Sauze-Saint-Martin</a>.</p>
+<div id="définition-des-données-de-jaugeage" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Définition des données de jaugeage</h2>
+<p>Les données de jaugeage utilisées pour estimer cette courbe de tarage sont incluses dans le package <code>RBaM</code> sous la forme d’un dataframe nommé <code>SauzeGaugings</code> qui contient trois colonnes : la hauteur <code>H</code>, le débit <code>Q</code> et l’incertitude-type du débit <code>uQ</code>. <strong>ATTENTION</strong>: l’incertitude est exprimée comme un <em>écart-type</em> et non sous la forme d’une <em>incertitude étendue</em> comme dans <code>BaRatinAGE</code>. Cette dernière est égale à 1.96 fois l’écart-type, et correspond à la demie-longueur d’un intervalle d’incertitude à 95% sous hypothèse Gaussienne.</p>
+<pre class="r"><code># Tracé des données du data frame SauzeGaugings
+# Notez le facteur 1.96 pour passer de l&#39;incertitude-type à un intervalle à 95%
+plot(x=SauzeGaugings$H,y=SauzeGaugings$Q)
+segments(x0=SauzeGaugings$H,y0=SauzeGaugings$Q-1.96*SauzeGaugings$uQ,y1=SauzeGaugings$Q+1.96*SauzeGaugings$uQ)</code></pre>
+<p><img src="en/fig-unnamed-chunk-4-1.png" width="672" /></p>
+<p>Le code ci-dessous est utilisé pour définir les variables d’entrée/sortie du modèle. Le modèle utilisé ici étant une courbe de tarage, la hauteur est la variable d’entrée et le débit la variable de sortie. L’incertitude-type sur le débit jaugé est également indiquée, et en cas d’omission elle sera considérée comme nulle. Notez qu’encore une fois c’est l’incertitude-type qui est attendue par <code>RBaM</code>, et non l’incertitude étendue comme dans <code>BaRatinAGE</code>.</p>
+<pre class="r"><code># Définition du jeu de données de calage:  
+# variable d’entrée (X), de sortie (Y) et incertitude-type sur la variable de sortie (Yu).
+# Une copie de ce jeu de données sera écrite dans le dossier défini dans data.dir.
+D=dataset(X=SauzeGaugings[&#39;H&#39;],Y=SauzeGaugings[&#39;Q&#39;],Yu=SauzeGaugings[&#39;uQ&#39;],data.dir=workspace)</code></pre>
+</div>
+<div id="définition-du-modèle-de-courbe-de-tarage" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Définition du modèle de courbe de tarage</h2>
+<p>La station de Sauze-Saint-Martin est caractérisée par une configuration hydraulique assez simple à 2 contrôles: un radier naturel fait office de contrôle section pour les basses eaux, puis un chenal rectangulaire large contrôle les hautes eaux, comme illustré ci-dessous.</p>
+<br>
+<img src="Sauze.jpg" width="70%">
+<p style="text-align: center;color: gray;">
+Configuration hydraulique pour l’Ardèche à Sauze-Saint-Martin (l’eau s’écoule du haut vers le bas de l’image, l’échelle est indiquée en jaune). (a) Propriétés du chenal contrôlant les hautes eaux ; (b) zoom sur la section de contrôle des basses eaux.
+</p>
+<p>Le code ci-dessous spécifie les distributions a priori des 6 paramètres de la courbe de tarage: hauteur d’activation, coefficient et exposant de chacun des deux contrôles. Pour plus de détails sur la spécification des a priori à cette station, vous pouvez consulter l’article de <a href="https://hal.science/hal-00934237">Le Coz et al., 2014</a>.</p>
+<pre class="r"><code># Paramètres du contrôle section en basses eaux: hauteur d&#39;activation k, coefficient a et exposant c
+k1=parameter(name=&#39;k1&#39;,init=-0.5,prior.dist=&#39;Uniform&#39;,prior.par=c(-1.5,0))
+a1=parameter(name=&#39;a1&#39;,init=50,prior.dist=&#39;LogNormal&#39;,prior.par=c(log(50),1))
+c1=parameter(name=&#39;c1&#39;,init=1.5,prior.dist=&#39;Gaussian&#39;,prior.par=c(1.5,0.05))
+# Paramètres du contrôle chenal en hautes eaux: hauteur d&#39;activation k, coefficient a et exposant c
+k2=parameter(name=&#39;k2&#39;,init=1,prior.dist=&#39;Gaussian&#39;,prior.par=c(1,1))
+a2=parameter(name=&#39;a2&#39;,init=100,prior.dist=&#39;LogNormal&#39;,prior.par=c(log(100),1))
+c2=parameter(name=&#39;c2&#39;,init=1.67,prior.dist=&#39;Gaussian&#39;,prior.par=c(1.67,0.05))</code></pre>
+<p>La matrice des contrôles est ensuite définie comme suit :</p>
+<pre class="r"><code># Matrice des contrôles : les colonnes représentent les contrôles, les lignes les segments de hauteur.
+# Ici la matrice signifie que le contrôle section est l&#39;unique contrôle actif en basses eaux,
+# puis le contrôle chenal est l&#39;unique contrôle actif en hautes eaux.
+controlMatrix=rbind(c(1,0),
+                    c(0,1))</code></pre>
+<p>Pour finir, toutes ces informations sont transmises à <code>RBaM</code> en créant un objet de type <code>model</code> comme indiqué ci-dessous :</p>
+<pre class="r"><code># Tout réunir dans un objet de type &quot;model&quot;
+M=model(ID=&#39;BaRatin&#39;, # ID du modèle considéré - ici, BaRatin
+        nX=1,nY=1, # nombre de variables d’entrée/sortie : ici, 1 entrée (H) et 1 sortie (Q)
+        par=list(k1,a1,c1,k2,a2,c2), # liste des paramètres du modèle - bien respecter l&#39;ordre (k,a,c) pour chaque contrôle successif
+        xtra=xtraModelInfo(object=controlMatrix)) # faire passer la matrice des contrôles via xtraModelInfo() comme indiqué ici</code></pre>
+<p>Nous avons donc à présent défini le modèle à estimer <code>M</code> ainsi que les données de calage <code>D</code>: tout est paré pour le calage !</p>
+</div>
+<div id="lancer-bam-et-explorer-les-simulations-mcmc" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Lancer BaM et explorer les simulations MCMC</h2>
+<p>La fonction <code>BaM</code> est utilisée pour effectuer l’estimation des paramètres. Ceci lancera un <a href="/fr/doc/topics/mcmc">simulateur MCMC</a> et sauvegardera les résultats dans le workspace.</p>
+<pre class="r"><code>BaM(mod=M,data=D) # Estimer les paramètres du modèle M en utilisant les données de calage D</code></pre>
+<p>Les échantillons MCMC peuvent à présent être lus. Il y a 2 fichiers MCMC: ‘Results_MCMC.txt’ contient les simulations brutes et est donc assez volumineux. ‘Results_Cooking.txt’ contient les simulations post-traitées avec un ‘brûlage’ de la première partie des itérations et un ‘affinage’ des simulations restantes (voir <a href="/fr/doc/topics/mcmc">cette page</a> pour des explications plus détaillées). Ce dernier fichier devrait être favorisé dans la plupart des cas. Les propriétés des simulations MCMC peuvent évidemment être modifiées si nécessaire : pour cela voir les pages d’aide <code>?BaM</code>, <code>?mcmcOptions</code> et <code>?mcmcCooking</code>.</p>
+<pre class="r"><code># Lecture des simulations MCMC post-traitées
+MCMC=readMCMC(file.path(workspace,&#39;Results_Cooking.txt&#39;))
+head(MCMC)</code></pre>
+<pre><code>##          k1      a1      c1       k2       a2      c2    Y1_g1     Y1_g2
+## 1 -0.246780 60.4238 1.48103 0.922899 102.8730 1.70117 2.582080 0.0224468
+## 2 -0.269413 60.5724 1.46413 0.930665  99.0574 1.70117 2.232150 0.0131388
+## 3 -0.291071 58.2851 1.51878 1.000870 105.3410 1.71316 1.904870 0.0157354
+## 4 -0.327582 55.5986 1.50333 1.053400 108.8020 1.67034 2.385710 0.0118051
+## 5 -0.346240 53.3239 1.50333 1.087950 120.9590 1.66413 0.756269 0.0414687
+## 6 -0.353747 51.7361 1.49109 1.045050 110.3710 1.69349 0.590987 0.0467566
+##    LogPost        b1        b2
+## 1 -153.555 -0.246780 0.0845701
+## 2 -152.904 -0.269413 0.0544618
+## 3 -151.209 -0.291071 0.1125240
+## 4 -150.324 -0.327582 0.1588370
+## 5 -146.927 -0.346240 0.2412690
+## 6 -145.997 -0.353747 0.1859880</code></pre>
+<p>Quelques fonctions sont fournies avec <code>RBaM</code> pour explorer les simulations MCMC. La première fonction trace les valeurs simulées pour chaque paramètre (“trace plot”) et est utile pour juger visuellement de la convergence des simulations MCMC.</p>
+<pre class="r"><code># Trace plot pour chaque paramètre, utile pour évaluer la convergence
+plots=tracePlot(MCMC)
+patchwork::wrap_plots(plots,ncol=3)</code></pre>
+<p><img src="en/fig-unnamed-chunk-11-1.png" width="864" /></p>
+<p>La seconde fonction trace la densité a posteriori de chaque paramètre.</p>
+<pre class="r"><code># Densité  pour chaque paramètre
+plots=densityPlot(MCMC)
+patchwork::wrap_plots(plots,ncol=3)</code></pre>
+<p><img src="en/fig-unnamed-chunk-12-1.png" width="864" /></p>
+<p>La troisième fonction crée un “<a href="https://en.wikipedia.org/wiki/Violin_plot">violin plot</a>” qui est utile pour comparer les distributions a posteriori de plusieurs paramètres dans un unique graphique (ici par exemple l’exposant de chaque contrôle).</p>
+<pre class="r"><code># Violin plot, utile pour des paramètres &#39;comparables&#39;
+violinPlot(MCMC[c(&#39;c1&#39;,&#39;c2&#39;)])</code></pre>
+<p><img src="en/fig-unnamed-chunk-13-1.png" width="576" /></p>
+</div>
+<div id="estimer-la-courbe-de-tarage-et-ses-incertitudes" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Estimer la courbe de tarage et ses incertitudes</h2>
+<p>La courbe de tarage et ses incertitudes peuvent être estimées à partir des simulations MCMC. Pour y parvenir, il faut d’abord définir la grille de valeurs de hauteur sur laquelle la courbe de tarage est calculée. Il faut ensuite définir un objet de type <code>prediction</code> qui spécifie quels types d’incertitude doivent être propagés. Par exemple, l’incertitude totale réclame de propager à la fois l’incertitude paramétrique (induite par la connaissance imparfaite des paramètres de la courbe) et l’<a href="/fr/doc/baratinage/erreurs-structurelles/">incertitude structurelle</a> (induite par le caractère approximatif de toute courbe de tarage).</p>
+<pre class="r"><code># Définition de la grille de hauteurs sur laquelle la courbe de tarage est calculée
+hgrid=data.frame(H=seq(-1,7,0.1))
+# Définition d&#39;un objet &#39;prediction&#39; pour l&#39;incertitude totale
+totalU=prediction(X=hgrid, # hauteurs
+                  spagFiles=&#39;totalU.spag&#39;, # fichier dans lequel les prédictions sont sauvegardées
+                  data.dir=workspace, # Une copie des jeux de données sera écrite dans ce dossier
+                  doParametric=TRUE, # propager l&#39;incertitude paramétrique ?
+                  doStructural=TRUE) # propager l&#39;incertitude structurelle ?</code></pre>
+<p>La propagation d’incertitude est ensuite effectuée en utilisant la même fonction <code>BaM</code> que précédemment, mais en mode “prédiction”. Pour cela les options <code>doCalib=FALSE</code> et <code>doPred=TRUE</code> indiquent que le calage a déjà été effectué, et que la tâche à accomplir est d’utiliser les simulations MCMC existantes pour effectuer une prédiction incertaine (en l’occurrence, estimer la courbe de tarage et ses incertitudes). Notez que le mot “prédiction” est utilisé ici dans un sens très générique qui signifie “estimer les sorties incertaines du modèle”.</p>
+<pre class="r"><code># Re-lancer BaM, mais en mode &quot;prédiction&quot;
+BaM(mod=M,data=D, # modèle et données
+    pred=totalU, # prédiction à effectuer
+    doCalib=FALSE,doPred=TRUE) # Ne pas re-caler mais faire les prédictions</code></pre>
+<p>Le fichier ‘spaghetti’ résultant de l’appel de cette fonction peut être lu dans le workspace et visualisé comme indiqué ci-dessous. Bien que les spaghetti constituent les sorties brutes des prédictions, il est souvent plus pratique de tracer des intervalles d’incertitude. Ceux-ci ont été calculés automatiquement par <code>BaM</code> et sauvegardés dans les fichiers portant l’extension ‘.env’ (comme ‘enveloppe’).</p>
+<pre class="r"><code>par(mfrow=c(1,2)) # 2 figures sur la même ligne
+# spaghetti représentant l&#39;incertitude totale
+Q=read.table(file.path(workspace,&#39;totalU.spag&#39;))
+matplot(hgrid$H,Q,col=&#39;red&#39;,type=&#39;l&#39;,lty=1,main=&#39;spaghetti&#39;)
+# Intervalles à 95% pour l&#39;incertitude totale
+Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+matplot(hgrid$H,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1,main=&#39;uncertainty envelop&#39;)</code></pre>
+<p><img src="en/fig-unnamed-chunk-16-1.png" width="864" /></p>
+<p>La même logique peut être utilisée pour estimer l’incertitude paramétrique seule (ce qui revient à “désactiver” l’incertitude structurelle) et la courbe de tarage maxpost (ce qui revient à “désactiver” les incertitudes paramétriques et structurelle).</p>
+<pre class="r"><code># Définir un objet &#39;prediction&#39; pour l&#39;incertitude paramétrique seule - notez le doStructural=FALSE
+paramU=prediction(X=hgrid,spagFiles=&#39;paramU.spag&#39;,data.dir=workspace,
+                  doParametric=TRUE,doStructural=FALSE)
+# Définir un objet &#39;prediction&#39; sans incertitude, ce qui conduit à la courbe de tarage maxpost
+maxpost=prediction(X=hgrid,spagFiles=&#39;maxpost.spag&#39;,data.dir=workspace,
+                  doParametric=FALSE,doStructural=FALSE)
+# Lancer BaM en mode prédiction
+BaM(mod=M,data=D, # model and data
+    pred=list(paramU,maxpost), # prédictions à effectuer - quand il y en a plusieurs, il faut les rassembler dans une liste
+    doCalib=FALSE,doPred=TRUE) # Ne pas re-caler mais faire les prédictions</code></pre>
+<p>Il est maintenant possible de recréer la figure proposée par <code>BaRatinAGE</code>, qui superpose l’incertitude totale, l’incertitude paramétrique, la courbe de tarage maxpost et les jaugeages.</p>
+<pre class="r"><code># Lire et tracer en rouge l&#39;enveloppe représentant l&#39;incertitude totale
+Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+matplot(hgrid$H,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1)
+# Lire et tracer en rose l&#39;enveloppe représentant l&#39;incertitude paramétrique
+Q=read.table(file.path(workspace,&#39;paramU.env&#39;),header=T)
+matplot(hgrid$H,Q[,2:3],col=&#39;pink&#39;,type=&#39;l&#39;,lty=1,add=TRUE)
+# Lire et tracer en noir la courbe de tarage maxpost
+Q=read.table(file.path(workspace,&#39;maxpost.spag&#39;))
+matplot(hgrid$H,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)
+# Ajouter les jaugeages
+points(x=SauzeGaugings$H,y=SauzeGaugings$Q,pch=19)
+segments(x0=SauzeGaugings$H,y0=SauzeGaugings$Q-1.96*SauzeGaugings$uQ,y1=SauzeGaugings$Q+1.96*SauzeGaugings$uQ)</code></pre>
+<p><img src="en/fig-unnamed-chunk-18-1.png" width="864" /></p>
+</div>
+<div id="production-dun-hydrogramme-incertain" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Production d’un hydrogramme incertain</h2>
+<p>La production d’un hydrogramme incertain est quasiment identique à celle d’une courbe de tarage incertaine : la seule chose à changer est de remplacer la grille de hauteurs par un limnigramme, comme celui représenté ci-dessous par exemple (le fichier de données peut être téléchargé <a href="SauzeHt.csv">ici</a>)</p>
+<pre class="r"><code># Lecture et tracé du limnigramme
+ht=read.table(&#39;SauzeHt.csv&#39;,header=T,sep=&#39;;&#39;,colClasses=c(&#39;POSIXct&#39;,&#39;numeric&#39;))
+plot(ht,type=&#39;l&#39;)</code></pre>
+<p><img src="en/fig-unnamed-chunk-19-1.png" width="864" /></p>
+<p>Le code est le même que précédemment, à l’exception du fait que les valeurs de hauteur utilisées dans les prédictions proviennent du limnigramme (<code>ht['stage']</code>) plutôt que de la grille de hauteur (<code>hgrid</code>).</p>
+<pre class="r"><code># Objet &#39;prediction&#39; pour l&#39;incertitude totale
+totalU=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;totalU.spag&#39;,data.dir=workspace, 
+                  doParametric=TRUE,doStructural=TRUE) 
+# Objet &#39;prediction&#39; pour l&#39;incertitude paramétrique
+paramU=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;paramU.spag&#39;,data.dir=workspace,
+                  doParametric=TRUE,doStructural=FALSE)
+# Objet &#39;prediction&#39; pour l&#39;hydrogramme maxpost
+maxpost=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;maxpost.spag&#39;,data.dir=workspace,
+                  doParametric=FALSE,doStructural=FALSE)
+# lancer BaM en mode prédiction
+BaM(mod=M,data=D,pred=list(totalU,paramU,maxpost),doCalib=FALSE,doPred=TRUE)</code></pre>
+<p>L’hydrogramme résultant de ce calcul peut être tracé avec ses incertitudes.</p>
+<pre class="r"><code># Incertitude totale en rouge
+Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+matplot(ht$time,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1)
+# Incertitude paramétrique en rose
+Q=read.table(file.path(workspace,&#39;paramU.env&#39;),header=T)
+matplot(ht$time,Q[,2:3],col=&#39;pink&#39;,type=&#39;l&#39;,lty=1,lwd=2,add=TRUE)
+# Hydrogramme maxpost en noir
+Q=read.table(file.path(workspace,&#39;maxpost.spag&#39;))
+matplot(ht$time,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)</code></pre>
+<p><img src="en/fig-unnamed-chunk-21-1.png" width="864" /></p>
+<p>Notez qu’aucune incertitude n’a été considérée sur le limnigramme. Il est possible de rajouter cette composante en utilisant, plutôt qu’un unique limnigramme, des “spaghetti de limnigramme”, c’est à dire de nombreux limnigrammes répliqués qui quantifient l’incertitude. L’exemple ci-dessous montre comment générer ces spaghetti dans le cas d’erreurs Gaussiennes indépendantes d’écart-type constant <span class="math inline">\(\sigma_h=5 \mathrm{cm}\)</span>. Des modèles d’erreurs plus avancés pourraient être utilisés (comme décrit dans <a href="/fr/doc/topics/limni/">cette page</a>) mais pour le moment <code>RBaM</code> ne propose pas de fonctionnalité dédiée - la génération des spaghetti de limnigramme reste donc de votre responsabilité.</p>
+<pre class="r"><code>set.seed(82487)
+# Créer 100 réplications pour ht, avec un écart-type de 5cm
+htrep=matrix(rnorm(n=NROW(ht)*100,mean=ht$stage,sd=0.05),nrow=NROW(ht),ncol=100)
+# Tracer les spaghetti de limnigramme 
+matplot(ht$time,htrep,col=&#39;gray&#39;,type=&#39;l&#39;,lty=1)</code></pre>
+<p><img src="en/fig-unnamed-chunk-22-1.png" width="864" /></p>
+<p>Le reste de l’analyse se déroule comme précédemment, en remplaçant le limnigramme unique par les spaghetti de limnigramme.</p>
+<pre class="r"><code># Incertitude totale
+totalU=prediction(X=list(htrep), # spaghetti, doivent obligatoirement être placés dans une liste
+                  spagFiles=&#39;totalU.spag&#39;, data.dir=workspace,
+                  doParametric=TRUE, doStructural=TRUE)
+# Incertitudes param+hauteur (incertitude structurelle désactivée)
+param_hU=prediction(X=list(htrep),spagFiles=&#39;param_hU.spag&#39;,data.dir=workspace,
+                  doParametric=TRUE,doStructural=FALSE)
+# Incertitude de hauteur seulement  (incertitudes structurelle et paramétrique désactivées)
+hU=prediction(X=list(htrep),spagFiles=&#39;hU.spag&#39;,data.dir=workspace,
+                  doParametric=FALSE,doStructural=FALSE)
+# lancer BaM en mode prédiction
+BaM(mod=M,data=D,pred=list(totalU,param_hU,hU),doCalib=FALSE,doPred=TRUE)</code></pre>
+<p>Ceci conduit à la figure ci-dessous. Notez qu’un axe des ordonnées logarithmique a été utilise pour mettre en avant les moyennes et basses eaux pour lesquelles l’incertitude due aux hauteurs est notable.</p>
+<pre class="r"><code># Incertitude totale en rouge
+Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+matplot(ht$time,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1,log=&#39;y&#39;)
+# Incertitude paramétrique+hauteur en rose
+Q=read.table(file.path(workspace,&#39;param_hU.env&#39;),header=T)
+matplot(ht$time,Q[,2:3],col=&#39;pink&#39;,type=&#39;l&#39;,lty=1,lwd=2,add=TRUE)
+# Incertitude hauteur en jaune
+Q=read.table(file.path(workspace,&#39;hU.env&#39;),header=T)
+matplot(ht$time,Q[,2:3],col=&#39;goldenrod1&#39;,type=&#39;l&#39;,lty=1,lwd=2,add=TRUE)
+# Hydrogramme maxpost en noir
+Q=read.table(file.path(workspace,&#39;maxpost.spag&#39;))
+matplot(ht$time,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)</code></pre>
+<p><img src="en/fig-unnamed-chunk-24-1.png" width="864" /></p>
+</div>
+</div>
+<div id="conclusion" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Conclusion</h1>
+<p>Le package <code>RBaM</code> permet de piloter BaRatin directement depuis <code>R</code> sans passer par l’interface graphique <code>BaRatinAGE</code>. Bien que cela demande un apprentissage plus long, le jeu peut en valoir la chandelle, surtout pour les utilisateurs qui sont déjà familiers avec le language <code>R</code>:</p>
+<ul>
+<li><code>RBaM</code> offre plus de flexibilité dans l’application de BaRatin</li>
+<li><code>RBaM</code> facilite l’intégration d’analyses BaRatin dans d’autres processus d’analyse existants</li>
+<li><code>RBaM</code> permet d’accéder à tous les outils de l’écosystème <code>R</code>, en particulier pour préparer les données, visualiser les résultats, effectuer des analyses statistiques, etc.</li>
+<li>Enfin, et c’est important, <code>RBaM</code> ne se restreint pas au modèle de courbe de tarage de BaRatin. En particulier, des modèles de courbes de tarage non-univoques (par exemple dans le cas de remous variable, d’influence de la végétation, de détarages multiples etc.) sont disponibles dans <code>RBaM</code> mais pas encore dans <code>BaRatinAGE</code>. De manière générale, tout nouveau modèle sera disponible dans <code>RBaM</code> bien avant qu’il le soit dans <code>BaRatinAGE</code>.</li>
+</ul>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/">L&#39;Ardèche à Meyras</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/case/rbam/">Utilisation de RBaM</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                        
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/">L&#39;Ardèche à Meyras : <br> une configuration classique à 3 contrôles</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus : <br> un unique contôle chenal</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/case/rbam/">Utilisation de RBaM : <br> contrôler BaRatin depuis R !</a> </strong></br>
+		</div>
+		</br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+      </p>   
+    </div>
+      
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

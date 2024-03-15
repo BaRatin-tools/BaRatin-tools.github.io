@@ -16,11 +16,11 @@
       <description>1 La relation hauteur-débit : les contrôles hydrauliques 1.1 Deux grandes familles de contrôles hydrauliques 1.1.1 Contrôle par une section 1.1.2 Contrôle par un chenal 1.</description>
     </item>
     <item>
-      <title>Premier cas d&#39;étude</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/cs1/</link>
+      <title>L&#39;Ardèche à Meyras</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/cs1/</guid>
-      <description>XXX</description>
+      <guid>https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/</guid>
+      <description>1 Introduction 2 Analyse hydraulique 3 Spécification des a priori 4 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Ardeche-Meyras.</description>
     </item>
     <item>
       <title>Tour d&#39;horizon</title>
@@ -44,11 +44,11 @@
       <description>Organisation générale La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE v3 :&#xA;Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
     </item>
     <item>
-      <title>Second cas d&#39;étude</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/cs2/</link>
+      <title>L&#39;Isère à Grenoble-Campus</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/isere-grenoble/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/cs2/</guid>
-      <description>XXX</description>
+      <guid>https://baratin-tools.github.io/fr/doc/case/isere-grenoble/</guid>
+      <description>1 Analyse hydraulique 2 Spécification des a priori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Isere-Grenoble.bam&#xA;1 Analyse hydraulique Cette station peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous).</description>
     </item>
     <item>
       <title>Configuration hydraulique</title>
@@ -91,6 +91,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</guid>
       <description>Généralités Imaginons la situation suivante, qui est idéalisée et donc forcément irréaliste : sur une station hydrométrique, nous disposons de jaugeages parfaits (sans aucune incertitude), et en très grand nombre.</description>
+    </item>
+    <item>
+      <title>Utilisation de RBaM</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/rbam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/case/rbam/</guid>
+      <description>1 Introduction 2 Estimation d’une courbe de tarage BaRatin 2.1 Définition des données de jaugeage 2.2 Définition du modèle de courbe de tarage 2.3 Lancer BaM et explorer les simulations MCMC 2.</description>
     </item>
     <item>
       <title>Courbe de tarage</title>
@@ -170,18 +177,18 @@
       <description>blabla</description>
     </item>
     <item>
-      <title>A propos de ce site</title>
+      <title>L&#39;équipe BaRatin</title>
       <link>https://baratin-tools.github.io/fr/a-propos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/a-propos/</guid>
-      <description>XXX \(\alpha\)&#xA;XXX&#xA;XXX XXX</description>
+      <description>Contactez-nous Pour toute question sur la méthode BaRatin, les logiciels associés comme BaRatinAGE ou RBaM, ou plus generalement sur l’estimation de courbes de tarage, vous pouvez nous contacter à cette adresse:</description>
     </item>
     <item>
       <title>Ressources</title>
       <link>https://baratin-tools.github.io/fr/ressources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/ressources/</guid>
-      <description>La dernière version de BaRatinAGE est téléchargeable ici.&#xA;Un webinaire sur la méthode BaRatin (également disponible en anglais).&#xA;Des diapositives décrivant les principes de la méthode BaRatin (également disponibles en anglais et en espagnol).</description>
+      <description>Logiciels et codes La dernière version de BaRatinAGE est téléchargeable ici. Ce logiciel propose une interface graphique simple et intuitive pour utiliser la méthode BaRatin et constitue donc le point d’entrée que nous recommendons.</description>
     </item>
   </channel>
 </rss>

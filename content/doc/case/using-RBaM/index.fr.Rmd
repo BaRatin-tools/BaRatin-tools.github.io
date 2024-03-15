@@ -263,6 +263,7 @@ matplot(ht$time,Q,col='black',type='l',lty=1,add=TRUE)
 Notez qu'aucune incertitude n'a été considérée sur le limnigramme. Il est possible de rajouter cette composante en utilisant, plutôt qu'un unique limnigramme, des "spaghetti de limnigramme", c'est à dire de nombreux limnigrammes répliqués qui quantifient l'incertitude. L'exemple ci-dessous montre comment générer ces spaghetti dans le cas d'erreurs Gaussiennes indépendantes d’écart-type constant $\sigma_h=5 \mathrm{cm}$. Des modèles d’erreurs plus avancés pourraient être  utilisés (comme décrit dans [cette page](/fr/doc/topics/limni/)) mais pour le moment `RBaM` ne propose pas de fonctionnalité dédiée - la génération des spaghetti de limnigramme reste donc de votre responsabilité.
 
 ```{r fig.height=4, fig.width=9}
+set.seed(82487)
 # Créer 100 réplications pour ht, avec un écart-type de 5cm
 htrep=matrix(rnorm(n=NROW(ht)*100,mean=ht$stage,sd=0.05),nrow=NROW(ht),ncol=100)
 # Tracer les spaghetti de limnigramme 
@@ -312,4 +313,7 @@ Le package `RBaM` permet de piloter BaRatin directement depuis `R` sans passer p
 * `RBaM` permet d’accéder à tous les outils de l'écosystème `R`, en particulier pour préparer les données, visualiser les résultats, effectuer des analyses statistiques, etc.
 * Enfin, et c'est important, `RBaM` ne se restreint pas au modèle de courbe de tarage de BaRatin. En particulier, des modèles de courbes de tarage non-univoques (par exemple dans le cas de remous variable, d'influence de la végétation, de détarages multiples etc.) sont disponibles dans `RBaM` mais pas encore dans `BaRatinAGE`. De manière générale, tout nouveau modèle sera disponible dans `RBaM` bien avant qu'il le soit dans `BaRatinAGE`.
 
-
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# Cleanup
+unlink(workspace, recursive=TRUE)
+```

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BaRatin Case Studies on BaRatin - Bayesian Rating Curves</title>
+    <link>https://baratin-tools.github.io/en/doc/case/</link>
+    <description>Recent content in BaRatin Case Studies on BaRatin - Bayesian Rating Curves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="https://baratin-tools.github.io/en/doc/case/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>L&#39;Ardèche à Meyras</title>
+      <link>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</guid>
+      <description>1 Introduction 2 Analyse hydraulique 3 Spécification des a priori 4 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Ardeche-Meyras.</description>
+    </item>
+    <item>
+      <title>L&#39;Isère à Grenoble-Campus</title>
+      <link>https://baratin-tools.github.io/en/doc/case/isere-grenoble/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/isere-grenoble/</guid>
+      <description>1 Analyse hydraulique 2 Spécification des a priori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Isere-Grenoble.bam&#xA;1 Analyse hydraulique Cette station peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous).</description>
+    </item>
+    <item>
+      <title>Using RBaM</title>
+      <link>https://baratin-tools.github.io/en/doc/case/rbam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/rbam/</guid>
+      <description>1 Introduction 2 Estimation of a BaRatin rating curve 2.1 Defining streamgauging data 2.2 Defining the rating curve model 2.3 Running BaM and exploring MCMC samples 2.</description>
+    </item>
+  </channel>
+</rss>

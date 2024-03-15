@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on BaRatin - Bayesian Rating Curves</title>
+    <title>Blog on BaRatin - Bayesian Rating Curves</title>
     <link>https://baratin-tools.github.io/en/blog/</link>
-    <description>Recent content in Blogs on BaRatin - Bayesian Rating Curves</description>
+    <description>Recent content in Blog on BaRatin - Bayesian Rating Curves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>

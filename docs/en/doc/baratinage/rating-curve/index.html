@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Rating curve</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1710525651" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="Rating curve">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/en/doc/baratinage/rating-curve/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Rating curve">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/en/">
+                    
+                      <img src="/img/logoWithText.png" alt="Rating curve logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Rating curve logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Rating curve - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">Home</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/en/doc/baratinage">BaRatinAGE v3</a></li>
+                            
+                            <li><a href="/en/doc/topics">Topic sheets</a></li>
+                            
+                            <li><a href="/en/doc/case">Case Studies</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/resources">Resources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/blog">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/about">About</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">🇫🇷 fr</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Rating curve</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+
+<div id="creating-a-rating-curve" class="section level1">
+<h1>Creating a rating curve</h1>
+<p>A rating curve is a function giving discharge as a function of stage.</p>
+<p>By default, a blank rating curve called <em>RC (1)</em> pre-exists and can be used. There are several ways of creating a new rating curve:</p>
+<ul>
+<li>via the menu <em>Components…Create new rating curve</em>;</li>
+<li>by right-clicking on the <img src="rating_curve.svg" style="display:inline-block"> <em>Rating curve</em> node in the Component Explorer tree;</li>
+<li>by clicking on the <img src="rating_curve_add.svg" style="display:inline-block"> button in the toolbar.</li>
+</ul>
+<p>You will be able to rename this new rating curve and enter a description. An existing rating curve can be duplicated or deleted.</p>
+<p>The properties of the rating curve are then specified by selecting :</p>
+<ul>
+<li>A hydraulic configuration (which determines the equation of the rating curve and the priors);</li>
+<li>A set of gaugings (used to estimate the rating curve);</li>
+<li>A structural error model (we advise you to keep the default model).</li>
+</ul>
+<p>You are now ready to start calculating the rating curve (full details of the underlying statistical models can be found in <a href="/en/doc/topics/statistical-model">this document</a>. In the graphics panel, define a grid of stages as you did for the prior rating curve, then click on the <em>Compute posterior rating curve</em> button. After a calculation that should not take more than a few tens of seconds, the panel is updated as follows:</p>
+<p><img src="RC_Verrieres.en.png" /></p>
+<p>The results are presented in a number of graphs and tables, which are described in the following section.</p>
+</div>
+<div id="graphs-and-tables-of-results" class="section level1">
+<h1>Graphs and tables of results</h1>
+<div id="posterior-rating-curve" class="section level2">
+<h2>Posterior rating curve</h2>
+<p><img src="RC_Verrieres_Post.en.png" /></p>
+<p>The graph above shows the <em>posterior rating curve</em>. The term “posterior” indicates that this curve was estimated using the gaugings (“after observing them”), as opposed to the <em>prior rating curve</em> which did not use any gaugings. On this graph, the green vertical lines represent the activation stages of each control (with their uncertainty envelopes). The rating curve shown in black is the posterior rating curve, or “maxpost rating curve”, because it is calculated with the set of parameters that maximises the posterior distribution. Around this posterior rating curve, the interval in light red represents the parametric uncertainty, i.e. the uncertainty linked solely to the estimation of the curve parameters. The dark red area represents the total uncertainty, i.e. the combination of the parametric uncertainty and the uncertainty induced by the structural error. It is recommended that the graph should also be viewed using a logarithmic scale for the discharges, as this often makes it easier to see how the controls fit together over the whole range of stages. In addition, the relative discharge deviations (in %) then appear with the same size whatever the discharge.</p>
+<p>You can open the graph of the <em>posterior rating curve</em> in a new window, export the image in SVG or PNG format, or copy it to the clipboard.</p>
+<p>The table of values for the posterior rating curve and its four uncertainty envelope curves is available in the form of a table:</p>
+<p><img src="RC_Verrieres_Table.en.png" /></p>
+<p>These curves can be exported in CSV format or copied to the clipboard. By clicking on the button <em>Export rating curve using the Bareme format</em>, three rating curves are exported: the <em>posterior rating curve</em> (maxpost), and the curves corresponding to the lower and upper bounds of the 95% total uncertainty interval. The exported file can be re-imported and thus manipulated in the Barème hydrometric software.</p>
+<p>Finally, the equation for the <em>posterior rating curve</em> with the values of the maxpost parameter set can be displayed and copied to the clipboard:</p>
+<p><img src="RC_Verrieres_Equation.en.png" /></p>
+</div>
+<div id="comparison-of-prior-and-posterior-parameters" class="section level2">
+<h2>Comparison of prior and posterior parameters</h2>
+<p>It is particularly important to check that the parameters estimated a posteriori are consistent with the assumptions made a priori about the hydraulic controls. A conflict between the prior and posterior parameters should be interpreted as a warning about the validity of the rating curve, i.e. the specified hydraulic configuration. Typically, an important control may have been overlooked, forcing the parameters to contort beyond what is physically reasonable to fit the gaugings. The problem may also arise from errors or incorrect assumptions about prior parameter values and/or about the gaugings and their uncertainties.</p>
+<p><img src="RC_Verrieres_Param.en.png" /></p>
+<p>The graph above shows how prior knowledge of the parameters (distributions in blue) has been transformed into a posterior knowledge (histograms in red) by the information provided by the gaugings.</p>
+<p>The same information is also available in table form, with a comparison between the prior and posterior estimates for each parameter of the rating curve, in the form of the lower and upper bounds of their 95% intervals. A consistency test between prior and posterior estimates is displayed for each parameter: an inconsistency is detected for a given parameter if at least 99% of the MCMC samples are greater (or less) than the samples taken from the prior distribution for that parameter. These results can be exported in CSV format or copied to the clipboard.</p>
+<p><img src="RC_Verrieres_Param_Summary.en.png" /></p>
+</div>
+<div id="mcmc-simulations" class="section level2">
+<h2>MCMC simulations</h2>
+<p><img src="RC_Verrieres_MCMC.en.png" /></p>
+<p>The MCMC trace graph represents the parameter values simulated from the posterior distribution using the MCMC simulator (full technical details are explained in <a href="/en/doc/topics/mcmc">this document</a>). Note that the graph only shows 500 simulated values, but in fact 10,000 values were initially generated, the first 5,000 being discarded. These 5,000 initial values were simply decimated and reduced to 500 values to avoid keeping too many simulations.</p>
+<p>In addition to the <span class="math inline">\(\kappa\)</span>, <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> parameters for each control, samples of the <span class="math inline">\(\gamma_1\)</span> and <span class="math inline">\(\gamma_2\)</span> parameters for the standard deviation of the structural error and the logarithm of the posterior density (“LogPost”) are also plotted. The position of the maxpost parameter set (maximising the posterior distribution) is indicated by a vertical red line for each parameter. These results can be exported in CSV format.</p>
+</div>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/overview/">Overview</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/main-frame/">Main frame</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/hydraulic-configuration/">Hydraulic configuration</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/gaugings/">Gaugings</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/structural-errors/">Structural error model</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/baratinage/rating-curve/">Rating curve</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/stage-series/">Stage series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/discharge-series/">Discharge series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/going-further/">Going further</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/faq/">Frequently asked questions </a> 
+		
+
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                        
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/overview/">Overview</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/main-frame/">Main frame</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/hydraulic-configuration/">Hydraulic configuration</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/gaugings/">Gaugings</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/structural-errors/">Structural error model</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/baratinage/rating-curve/">Rating curve</a> </strong></br>
+		</div>
+		</br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/stage-series/">Stage series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/discharge-series/">Discharge series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/going-further/">Going further</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/faq/">Frequently asked questions </a> </br> </br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+      </p>   
+    </div>
+      
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Using RBaM</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1710525651" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="Using RBaM">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/en/doc/case/rbam/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Using RBaM">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/en/">
+                    
+                      <img src="/img/logoWithText.png" alt="Using RBaM logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Using RBaM logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Using RBaM - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">Home</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/en/doc/baratinage">BaRatinAGE v3</a></li>
+                            
+                            <li><a href="/en/doc/topics">Topic sheets</a></li>
+                            
+                            <li><a href="/en/doc/case">Case Studies</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/resources">Resources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/blog">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/about">About</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">🇫🇷 fr</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Using RBaM</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="#estimation-of-a-baratin-rating-curve" id="toc-estimation-of-a-baratin-rating-curve"><span class="toc-section-number">2</span> Estimation of a BaRatin rating curve</a>
+<ul>
+<li><a href="#defining-streamgauging-data" id="toc-defining-streamgauging-data"><span class="toc-section-number">2.1</span> Defining streamgauging data</a></li>
+<li><a href="#defining-the-rating-curve-model" id="toc-defining-the-rating-curve-model"><span class="toc-section-number">2.2</span> Defining the rating curve model</a></li>
+<li><a href="#running-bam-and-exploring-mcmc-samples" id="toc-running-bam-and-exploring-mcmc-samples"><span class="toc-section-number">2.3</span> Running BaM and exploring MCMC samples</a></li>
+<li><a href="#estimating-the-rating-curve-and-its-uncertainty" id="toc-estimating-the-rating-curve-and-its-uncertainty"><span class="toc-section-number">2.4</span> Estimating the rating curve and its uncertainty</a></li>
+<li><a href="#producing-an-uncertain-discharge-series" id="toc-producing-an-uncertain-discharge-series"><span class="toc-section-number">2.5</span> Producing an uncertain discharge series</a></li>
+</ul></li>
+<li><a href="#conclusion" id="toc-conclusion"><span class="toc-section-number">3</span> Conclusion</a></li>
+</ul>
+</div>
+
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>BaM (Bayesian Modeling) is a framework to estimate a model using Bayesian inference - any model in general, but BaRatin’s <a href="/en/doc/topics/rating-curve">rating curve</a> in particular. The <code>R</code> package <a href="https://github.com/BaM-tools/RBaM">RBaM</a> is built as an <code>R</code> User Interface to <a href="https://github.com/BaM-tools/BaM">BaM’s computational engine</a>. It defines classes (objects’ properties and methods) for the various building blocks of a BaM case study. Its typical usage is as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Assemble the dataset of input/ouput variables.</li>
+<li>Define the model and set prior distributions for its parameters.</li>
+<li>Perform Bayesian-MCMC inference.</li>
+<li>Perform predictions.</li>
+</ol>
+<p><code>RBaM</code> needs to be installed once then loaded every time it is used.</p>
+<pre class="r"><code># devtools::install_github(&#39;BaM-tools/RBaM&#39;) # First use: install the package from GitHub
+library(RBaM) # Load package</code></pre>
+<p>The catalog of distributions that can be used for prior specification can be accessed as shown below. The command also gives the list of available models, but here we’ll solely focus on BaRatin.</p>
+<pre class="r"><code>getCatalogue()</code></pre>
+<pre><code>## $distributions
+##  [1] &quot;Gaussian&quot;     &quot;Uniform&quot;      &quot;Triangle&quot;     &quot;LogNormal&quot;    &quot;LogNormal3&quot;  
+##  [6] &quot;Exponential&quot;  &quot;GPD&quot;          &quot;Gumbel&quot;       &quot;GEV&quot;          &quot;GEV_min&quot;     
+## [11] &quot;Inverse_Chi2&quot; &quot;PearsonIII&quot;   &quot;Geometric&quot;    &quot;Poisson&quot;      &quot;Bernoulli&quot;   
+## [16] &quot;Binomial&quot;     &quot;NegBinomial&quot;  &quot;FlatPrior&quot;    &quot;FlatPrior+&quot;   &quot;FlatPrior-&quot;  
+## [21] &quot;FIX&quot;          &quot;VAR&quot;         
+## 
+## $models
+##  [1] &quot;TextFile&quot;                 &quot;BaRatin&quot;                 
+##  [3] &quot;BaRatinBAC&quot;               &quot;SFD&quot;                     
+##  [5] &quot;SGD&quot;                      &quot;SWOT&quot;                    
+##  [7] &quot;Vegetation&quot;               &quot;AlgaeBiomass&quot;            
+##  [9] &quot;DynamicVegetation&quot;        &quot;Recession_h&quot;             
+## [11] &quot;Segmentation&quot;             &quot;Sediment&quot;                
+## [13] &quot;SuspendedLoad&quot;            &quot;Linear&quot;                  
+## [15] &quot;Mixture&quot;                  &quot;Orthorectification&quot;      
+## [17] &quot;GR4J&quot;                     &quot;Tidal&quot;                   
+## [19] &quot;SFDTidal&quot;                 &quot;SFDTidal2&quot;               
+## [21] &quot;SFDTidalJones&quot;            &quot;SFDTidal4&quot;               
+## [23] &quot;SFDTidal_Qmec&quot;            &quot;TidalODE&quot;                
+## [25] &quot;TidalRemenieras&quot;          &quot;SFDTidal_Sw_correction&quot;  
+## [27] &quot;MAGE&quot;                     &quot;HydraulicControl_section&quot;</code></pre>
+</div>
+<div id="estimation-of-a-baratin-rating-curve" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Estimation of a BaRatin rating curve</h1>
+<p>The first thing to do is to define the workspace, i.e. the folder where all result files will be written.</p>
+<pre class="r"><code>workspace=file.path(getwd(),&#39;BaM_workspace&#39;)</code></pre>
+<p>The example used below is based on the rating curve for the <a href="https://en.wikipedia.org/wiki/Ardèche_(river)">Ardèche river</a> at the <a href="https://www.hydro.eaufrance.fr/stationhydro/V506401001/fiche">Sauze-Saint-Martin</a> hydrometric station.</p>
+<div id="defining-streamgauging-data" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Defining streamgauging data</h2>
+<p>The streamgauging dataset used to calibrate the rating curve is provided with the <code>RBaM</code> package. This data frame is named <code>SauzeGaugings</code> and contains three columns: stage <code>H</code>, discharge <code>Q</code> and discharge standard uncertainty <code>uQ</code>. <strong>WARNING</strong>: note that uncertainty is expressed here as a <em>standard deviation</em>, not as an <em>expanded uncertainty</em> as in <code>BaRatinAGE</code>. The latter is equal to 1.96 times the former, and corresponds to the half-length of a 95% interval under a Gaussian assumption.</p>
+<pre class="r"><code># Plot data in the SauzeGaugings dataset
+# Note the 1.96 factor to move from the standard uncertainty to 95% uncertainty intervals
+plot(x=SauzeGaugings$H,y=SauzeGaugings$Q)
+segments(x0=SauzeGaugings$H,y0=SauzeGaugings$Q-1.96*SauzeGaugings$uQ,y1=SauzeGaugings$Q+1.96*SauzeGaugings$uQ)</code></pre>
+<p><img src="en/fig-unnamed-chunk-4-1.png" width="672" /></p>
+<p>The code below is used to let <code>RBaM</code> know what variable to use as inputs/outputs of the model. Since the model considered here is a rating curve, stage is the input and discharge the output. Note that the standard uncertainty on the gauged discharge is also passed here - if omitted, it will be considered to be zero. Again, beware of the difference with <code>BaRatinAGE</code>: <code>RBaM</code> expects a standard uncertainty, not an expanded uncertainty.</p>
+<pre class="r"><code># Define the calibration dataset by specifying 
+# inputs (X), outputs (Y) and standard uncertainty on the outputs (Yu).
+# A copy of this dataset will be written in data.dir.
+D=dataset(X=SauzeGaugings[&#39;H&#39;],Y=SauzeGaugings[&#39;Q&#39;],Yu=SauzeGaugings[&#39;uQ&#39;],data.dir=workspace)</code></pre>
+</div>
+<div id="defining-the-rating-curve-model" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Defining the rating curve model</h2>
+<p>The Sauze-Saint-Martin station is characterized by a simple 2-control hydraulic configuration, with a natural riffle acting as the low-flow section control, and a wide rectangular channel acting as the high-flow control, as illustrated below.</p>
+<br>
+<img src="Sauze.jpg" width="70%">
+<p style="text-align: center;color: gray;">
+Hydraulic configuration for the Ardèche River at Sauze-Saint-Martin station (water flows from the picture top to bottom, staff gauge is shown in yellow). (a) properties of the high-flow controlling chanel; (b) zoom on the low-flow controlling section.
+</p>
+<p>The code below specifies the priors on the 6 rating curve parameters: activation stage, coefficient and exponent for each of the two controls. For more details on the prior specification process at this station, please refer to <a href="https://hal.science/hal-00934237">Le Coz et al., 2014</a>.</p>
+<pre class="r"><code># Parameters of the low flow section control: activation stage k, coefficient a and exponent c
+k1=parameter(name=&#39;k1&#39;,init=-0.5,prior.dist=&#39;Uniform&#39;,prior.par=c(-1.5,0))
+a1=parameter(name=&#39;a1&#39;,init=50,prior.dist=&#39;LogNormal&#39;,prior.par=c(log(50),1))
+c1=parameter(name=&#39;c1&#39;,init=1.5,prior.dist=&#39;Gaussian&#39;,prior.par=c(1.5,0.05))
+# Parameters of the high flow channel control: activation stage k, coefficient a and exponent c
+k2=parameter(name=&#39;k2&#39;,init=1,prior.dist=&#39;Gaussian&#39;,prior.par=c(1,1))
+a2=parameter(name=&#39;a2&#39;,init=100,prior.dist=&#39;LogNormal&#39;,prior.par=c(log(100),1))
+c2=parameter(name=&#39;c2&#39;,init=1.67,prior.dist=&#39;Gaussian&#39;,prior.par=c(1.67,0.05))</code></pre>
+<p>The control matrix is then defined as follows:</p>
+<pre class="r"><code># Define control matrix: columns are controls, rows are stage ranges.
+# Here the matrix means that the first control only is active for the first stage range,
+# and the second control only is active for the second stage range.
+controlMatrix=rbind(c(1,0),
+                    c(0,1))</code></pre>
+<p>Finally, this information is passed to <code>RBaM</code> by creating a model object as follows:</p>
+<pre class="r"><code># Stitch it all together into a model object
+M=model(ID=&#39;BaRatin&#39;, # ID of the considered model - here, BaRatin
+        nX=1,nY=1, # number of input/output variables: here 1 input (H) and 1 output (Q)
+        par=list(k1,a1,c1,k2,a2,c2), # list of model parameters - respect the order (k,a,c) for each control
+        xtra=xtraModelInfo(object=controlMatrix)) # use xtraModelInfo() to pass the control matrix</code></pre>
+<p>We have now defined the model <code>M</code> to be calibrated and the calibration dataset <code>D</code>: we can hence proceed to calibration.</p>
+</div>
+<div id="running-bam-and-exploring-mcmc-samples" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Running BaM and exploring MCMC samples</h2>
+<p>The function <code>BaM</code> is used to perform parameter estimation. This will run a <a href="/en/doc/topics/mcmc">MCMC sampler</a> and save the result into the workspace.</p>
+<pre class="r"><code>BaM(mod=M,data=D) # Estimate the parameters of model M using calibration data D</code></pre>
+<p>MCMC samples can now be read. There are 2 MCMC files: ‘Results_MCMC.txt’ contains raw MCMC simulations and is hence quite big. ‘Results_Cooking.txt’ contains ‘cooked’ simulations, i.e. after ‘burning’ the first part of iterations and ‘slicing’ what remains (see <a href="/en/doc/topics/mcmc">here</a> for more detailed explanations), and may be favored in most cases. Note that MCMC properties can be modified if needed (see help files <code>?BaM</code>, <code>?mcmcOptions</code> and <code>?mcmcCooking</code>).</p>
+<pre class="r"><code># Read &#39;cooked&#39; MCMC file in the workspace
+MCMC=readMCMC(file.path(workspace,&#39;Results_Cooking.txt&#39;))
+head(MCMC)</code></pre>
+<pre><code>##          k1      a1      c1       k2       a2      c2    Y1_g1     Y1_g2
+## 1 -0.246780 60.4238 1.48103 0.922899 102.8730 1.70117 2.582080 0.0224468
+## 2 -0.269413 60.5724 1.46413 0.930665  99.0574 1.70117 2.232150 0.0131388
+## 3 -0.291071 58.2851 1.51878 1.000870 105.3410 1.71316 1.904870 0.0157354
+## 4 -0.327582 55.5986 1.50333 1.053400 108.8020 1.67034 2.385710 0.0118051
+## 5 -0.346240 53.3239 1.50333 1.087950 120.9590 1.66413 0.756269 0.0414687
+## 6 -0.353747 51.7361 1.49109 1.045050 110.3710 1.69349 0.590987 0.0467566
+##    LogPost        b1        b2
+## 1 -153.555 -0.246780 0.0845701
+## 2 -152.904 -0.269413 0.0544618
+## 3 -151.209 -0.291071 0.1125240
+## 4 -150.324 -0.327582 0.1588370
+## 5 -146.927 -0.346240 0.2412690
+## 6 -145.997 -0.353747 0.1859880</code></pre>
+<p>A few functions are provided with the package to explore MCMC samples. The first one shows the MCMC-simulated values for each parameter (a.k.a. a “trace plot”) and is useful to visually assess convergence.</p>
+<pre class="r"><code># Trace plot for each parameter, useful to assess convergence.
+plots=tracePlot(MCMC)
+patchwork::wrap_plots(plots,ncol=3)</code></pre>
+<p><img src="en/fig-unnamed-chunk-11-1.png" width="864" /></p>
+<p>The second plotting function creates a density plot for each parameter, which represent the marginal posterior density.</p>
+<pre class="r"><code># Density plot for each parameter
+plots=densityPlot(MCMC)
+patchwork::wrap_plots(plots,ncol=3)</code></pre>
+<p><img src="en/fig-unnamed-chunk-12-1.png" width="864" /></p>
+<p>The third plotting function creates a <a href="https://en.wikipedia.org/wiki/Violin_plot">violin plot</a> which can be useful to compare the posterior distributions of comparable parameters (here for instance the exponent of each control).</p>
+<pre class="r"><code># Violin plot, useful to compare &#39;comparable&#39; parameters.
+violinPlot(MCMC[c(&#39;c1&#39;,&#39;c2&#39;)])</code></pre>
+<p><img src="en/fig-unnamed-chunk-13-1.png" width="576" /></p>
+</div>
+<div id="estimating-the-rating-curve-and-its-uncertainty" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Estimating the rating curve and its uncertainty</h2>
+<p>The rating curve and its uncertainty can be deduced from the MCMC samples. To achieve this, one first needs to define the stage grid on which the rating curve is computed, and to define a <code>prediction</code> object that specifies which types of uncertainty are to be considered. For instance, the total rating curve uncertainty encompasses parametric uncertainty (i.e. due to the imperfect knowledge of the rating curve parameters) and <a href="/en/doc/baratinage/structural-errors/">structural uncertainty</a> (i.e. due to the approximate nature of any rating curve).</p>
+<pre class="r"><code># Define the grid of stage values on which the rating curve will be computed
+hgrid=data.frame(H=seq(-1,7,0.1))
+# Define a &#39;prediction&#39; object for total rating curve uncertainty
+totalU=prediction(X=hgrid, # stage values
+                  spagFiles=&#39;totalU.spag&#39;, # file where predictions are saved
+                  data.dir=workspace, # a copy of data files will be saved here
+                  doParametric=TRUE, # propagate parametric uncertainty, i.e. MCMC samples?
+                  doStructural=TRUE) # propagate structural uncertainty ?</code></pre>
+<p>Uncertainty propagation is then performed by the same function <code>BaM</code> as before, but ran in “prediction mode”. In particular the <code>doCalib=FALSE</code> and <code>doPred=TRUE</code> options specify that calibration has already been performed, and the task is now to use the existing MCMC samples to perform an uncertain prediction (namely, estimate the uncertain rating curve). Note that the word “prediction” is used here in the fairly loose and general sense of “estimating the uncertain output of the model”.</p>
+<pre class="r"><code># Re-run BaM, but in prediction mode
+BaM(mod=M,data=D, # model and data
+    pred=totalU, # prediction to be performed
+    doCalib=FALSE,doPred=TRUE) # Do not re-calibrate but do predictions</code></pre>
+<p>The resulting ‘spaghetti files’ can be read from the workspace and plotted. Note that while spaghetti are the raw outputs of the predictions, it is often more convenient to plot probability intervals only. These have been computed automatically by <code>BaM</code>, and are saved in files with an ‘.env’ (like ‘envelop’) extension.</p>
+<pre class="r"><code>par(mfrow=c(1,2)) # plot figures in two panels on the same row
+# Plot spaghetti representing total uncertainty
+Q=read.table(file.path(workspace,&#39;totalU.spag&#39;))
+matplot(hgrid$H,Q,col=&#39;red&#39;,type=&#39;l&#39;,lty=1,main=&#39;spaghetti&#39;)
+# Plot 95% probability intervals for total rating curve uncertainty
+Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+matplot(hgrid$H,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1,main=&#39;uncertainty envelop&#39;)</code></pre>
+<p><img src="en/fig-unnamed-chunk-16-1.png" width="864" /></p>
+<p>The same workflow can be used to estimate parametric rating curve uncertainty (corresponding to “turning off” structural uncertainty) and the maxpost rating curve (corresponding to “turning off” both parametric and structural uncertainties).</p>
+<pre class="r"><code># Define a &#39;prediction&#39; object for parametric uncertainty only - note the doStructural=FALSE
+paramU=prediction(X=hgrid,spagFiles=&#39;paramU.spag&#39;,data.dir=workspace,
+                  doParametric=TRUE,doStructural=FALSE)
+# Define a &#39;prediction&#39; object with no uncertainty - this corresponds to the &#39;maxpost&#39; rating curve
+maxpost=prediction(X=hgrid,spagFiles=&#39;maxpost.spag&#39;,data.dir=workspace,
+                  doParametric=FALSE,doStructural=FALSE)
+# Run BaM in prediction mode
+BaM(mod=M,data=D, # model and data
+    pred=list(paramU,maxpost), # predictions to be performed - when multiple, they have to be put in a list
+    doCalib=FALSE,doPred=TRUE) # Do not re-calibrate but do predictions</code></pre>
+<p>This allows recreating the rating curve plot made in <code>BaRatinAGE</code> which superimposes total uncertainty, parametric uncertainty, the maxpost rating curve and the gaugings.</p>
+<pre class="r"><code># Read and plot the envelop representing total uncertainty in red
+Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+matplot(hgrid$H,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1)
+# Read and plot the envelop representing parametric uncertainty in pink
+Q=read.table(file.path(workspace,&#39;paramU.env&#39;),header=T)
+matplot(hgrid$H,Q[,2:3],col=&#39;pink&#39;,type=&#39;l&#39;,lty=1,add=TRUE)
+# Read and plot the maxpost rating curve in black
+Q=read.table(file.path(workspace,&#39;maxpost.spag&#39;))
+matplot(hgrid$H,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)
+# Add gaugings
+points(x=SauzeGaugings$H,y=SauzeGaugings$Q,pch=19)
+segments(x0=SauzeGaugings$H,y0=SauzeGaugings$Q-1.96*SauzeGaugings$uQ,y1=SauzeGaugings$Q+1.96*SauzeGaugings$uQ)</code></pre>
+<p><img src="en/fig-unnamed-chunk-18-1.png" width="864" /></p>
+</div>
+<div id="producing-an-uncertain-discharge-series" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Producing an uncertain discharge series</h2>
+<p>The production of an uncertain discharge series is nearly identical to the production of the uncertain rating curve: the only thing to do is to replace the stage grid by a stage time series, for instance the stage time series shown below (the data file can be downloaded <a href="SauzeHt.csv">here</a>)</p>
+<pre class="r"><code># Read and plot the stage time series
+ht=read.table(&#39;SauzeHt.csv&#39;,header=T,sep=&#39;;&#39;,colClasses=c(&#39;POSIXct&#39;,&#39;numeric&#39;))
+plot(ht,type=&#39;l&#39;)</code></pre>
+<p><img src="en/fig-unnamed-chunk-19-1.png" width="864" /></p>
+<p>The code is the same as the one used previously for the rating curve, except that the stage series (<code>ht['stage']</code>) is used instead of the stage grid (<code>hgrid</code>).</p>
+<pre class="r"><code># Define a &#39;prediction&#39; object for total uncertainty
+totalU=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;totalU.spag&#39;,data.dir=workspace, 
+                  doParametric=TRUE,doStructural=TRUE) 
+# Define a &#39;prediction&#39; object for parametric uncertainty only
+paramU=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;paramU.spag&#39;,data.dir=workspace,
+                  doParametric=TRUE,doStructural=FALSE)
+# Define a &#39;prediction&#39; object with no uncertainty - this corresponds to the &#39;maxpost&#39; discharge series
+maxpost=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;maxpost.spag&#39;,data.dir=workspace,
+                  doParametric=FALSE,doStructural=FALSE)
+# Run BaM in prediction mode
+BaM(mod=M,data=D,pred=list(totalU,paramU,maxpost),doCalib=FALSE,doPred=TRUE)</code></pre>
+<p>The resulting discharge series can be plotted with its uncertainties.</p>
+<pre class="r"><code>#Total uncertainty in red
+Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+matplot(ht$time,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1)
+# Parametric uncertainty in pink
+Q=read.table(file.path(workspace,&#39;paramU.env&#39;),header=T)
+matplot(ht$time,Q[,2:3],col=&#39;pink&#39;,type=&#39;l&#39;,lty=1,lwd=2,add=TRUE)
+# Maxpost discharge time series in black
+Q=read.table(file.path(workspace,&#39;maxpost.spag&#39;))
+matplot(ht$time,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)</code></pre>
+<p><img src="en/fig-unnamed-chunk-21-1.png" width="864" /></p>
+<p>Note that no uncertainty in the stage time series has been considered so far. It is possible to do so by using “stage spaghetti”, i.e. many replicated stage time series representing stage uncertainty, instead of a single stage series. The example below shows how to generate these spaghetti considering independent Gaussian stage errors with a fixed standard deviation <span class="math inline">\(\sigma_h=5 \mathrm{cm}\)</span>. More advanced models could be considered (see <a href="/en/doc/topics/stage-series/">this page</a>) but for the time being <code>RBaM</code> does not provide any functionality for this - it is hence the user’s responsibility to generate the stage spaghetti.</p>
+<pre class="r"><code>set.seed(82487)
+# Create 100 noisy replicates for ht, with a 5cm standard deviation, representing uncertainty
+htrep=matrix(rnorm(n=NROW(ht)*100,mean=ht$stage,sd=0.05),nrow=NROW(ht),ncol=100)
+# Plot stage spaghetti
+matplot(ht$time,htrep,col=&#39;gray&#39;,type=&#39;l&#39;,lty=1)</code></pre>
+<p><img src="en/fig-unnamed-chunk-22-1.png" width="864" /></p>
+<p>The rest of the analysis proceeds as previously, simply replacing the unique stage series by stage spaghetti.</p>
+<pre class="r"><code># Total uncertainty
+totalU=prediction(X=list(htrep), # stage spaghetti, has to be encapsulated in a list
+                  spagFiles=&#39;totalU.spag&#39;, data.dir=workspace,
+                  doParametric=TRUE, doStructural=TRUE)
+# param+stage uncertainties (structural uncertainty is turned off)
+param_hU=prediction(X=list(htrep),spagFiles=&#39;param_hU.spag&#39;,data.dir=workspace,
+                  doParametric=TRUE,doStructural=FALSE)
+# stage uncertainty only (structural and parametric uncertainties are turned off)
+hU=prediction(X=list(htrep),spagFiles=&#39;hU.spag&#39;,data.dir=workspace,
+                  doParametric=FALSE,doStructural=FALSE)
+# Run BaM in prediction mode
+BaM(mod=M,data=D,pred=list(totalU,param_hU,hU),doCalib=FALSE,doPred=TRUE)</code></pre>
+<p>This leads to the following plot. Note that a logarithmic y-axis is used to emphasize low and medium flows where the stage-induced uncertainty is noticeable.</p>
+<pre class="r"><code># Total uncertainty in red
+Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+matplot(ht$time,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1,log=&#39;y&#39;)
+# Parametric + stage uncertainties in pink
+Q=read.table(file.path(workspace,&#39;param_hU.env&#39;),header=T)
+matplot(ht$time,Q[,2:3],col=&#39;pink&#39;,type=&#39;l&#39;,lty=1,lwd=2,add=TRUE)
+# Stage uncertainty only in yellow
+Q=read.table(file.path(workspace,&#39;hU.env&#39;),header=T)
+matplot(ht$time,Q[,2:3],col=&#39;goldenrod1&#39;,type=&#39;l&#39;,lty=1,lwd=2,add=TRUE)
+# Maxpost discharge time series in black
+Q=read.table(file.path(workspace,&#39;maxpost.spag&#39;))
+matplot(ht$time,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)</code></pre>
+<p><img src="en/fig-unnamed-chunk-24-1.png" width="864" /></p>
+</div>
+</div>
+<div id="conclusion" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Conclusion</h1>
+<p>The <code>RBaM</code> package allows piloting BaRatin directly from <code>R</code>, without going through the clickable interface <code>BaRatinAGE</code>. While this may require a steeper learning curve, it also comes with significant advantages, especially for users that are already familiar with the <code>R</code> language:</p>
+<ul>
+<li>It offers more flexibility</li>
+<li>It facilitates the integration of BaRatin analyses into existing workflows</li>
+<li>It provides access to all the tools of the <code>R</code> ecosystem for data preparation, plotting, statistical analyses etc.</li>
+<li>Importantly, <code>RBaM</code> is not restricted to the BaRatin rating curve model. In particular models for complex rating curves (e.g. stage-fall-discharge curves, vegetation-affected curves, multi-period curves and more) are available through <code>RBaM</code> but not through <code>BaRatinAGE</code>. In general, any new model will be available in <code>RBaM</code> well before it becomes available in <code>BaRatinAGE</code>.</li>
+</ul>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/">L&#39;Ardèche à Meyras</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/case/rbam/">Using RBaM</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                        
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/">L&#39;Ardèche à Meyras : <br> une configuration classique à 3 contrôles</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus : <br> un unique contôle chenal</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/case/rbam/">Using RBaM : <br> BaRatin in R!</a> </strong></br>
+		</div>
+		</br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+      </p>   
+    </div>
+      
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

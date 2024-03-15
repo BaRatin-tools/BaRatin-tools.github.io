@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709721801" rel="stylesheet">
+<link href="/css/custom.css?1710525651" rel="stylesheet">
 
 
 
@@ -167,7 +167,7 @@
                         
                         <ul class="dropdown-menu">
                             
-                            <li><a href="/fr/doc/baratinage">BaRatinAGE</a></li>
+                            <li><a href="/fr/doc/baratinage">BaRatinAGE v3</a></li>
                             
                             <li><a href="/fr/doc/topics">Fiches Thématiques</a></li>
                             
@@ -335,7 +335,7 @@
 <p>Dans BaRatinAGE, chaque contrôle est associé à une relation hauteur (<span class="math inline">\(H\)</span>) - débit (<span class="math inline">\(Q\)</span>) sous la forme de l’équation de base :</p>
 <p><span class="math inline">\(Q = a(H-b)^c\)</span> pour <span class="math inline">\(H &gt; \kappa\)</span> (et <span class="math inline">\(Q = 0\)</span> si <span class="math inline">\(H \leq b\)</span>)</p>
 <ul>
-<li><span class="math inline">\(\kappa\)</span> est la <em>hauteur d’activation</em> ; quand la hauteur d’eau descend sous la valeur <span class="math inline">\(k\)</span>, le contrôle devient inactif ;</li>
+<li><span class="math inline">\(\kappa\)</span> est la <em>hauteur d’activation</em> ; quand la hauteur d’eau descend sous la valeur <span class="math inline">\(\kappa\)</span>, le contrôle devient inactif ;</li>
 <li><span class="math inline">\(a\)</span> est le <em>coefficient</em>, qui dépend des propriétés physiques du contrôle ;</li>
 <li><span class="math inline">\(c\)</span> est l’<em>exposant</em>, qui dépend uniquement du type de contrôle ;</li>
 <li><span class="math inline">\(b\)</span> est l’<em>offset</em> ; quand la hauteur d’eau descend sous la valeur <span class="math inline">\(b\)</span>, le débit est nul. Notez que ce paramètre est en général différent de la hauteur d’activation <span class="math inline">\(\kappa\)</span>. A titre d’exemple, pour un contrôle par chenal qui succède à un contrôle par déversoir, le paramètre <span class="math inline">\(b\)</span> représente la cote moyenne du fond du lit, mais le contrôle ne s’active qu’au-delà de la hauteur <span class="math inline">\(\kappa\)</span> d’ennoiement du déversoir, qui est différente de <span class="math inline">\(b\)</span>.</li>
@@ -364,7 +364,7 @@ Et pour le lit moyen :</p>
 - Le pas de la grille (en mètres).</p>
 <p>Les deux derniers paramètres sont calculés automatiquement si les trois autres paramètres sont renseignés. Le temps de calcul est proportionnel à la taille de la grille, mais il est généralement très bref. Une fois toutes ces informations renseignées, vous pouvez lancer le calcul en cliquant sur le bouton <em>Calculer la courbe de tarage a priori</em>, la courbe de tarage a priori devant rapidement apparaître dans le panneau graphique, comme illustré ci-dessous:</p>
 <p><img src="PriorRC_Verrieres.fr.png" /></p>
-<p>L’incertitude paramétrique (au niveau de probabilité de 95%) autour de la courbe de tarage <em>a priori</em> est affichée sous la forme d’une enveloppe transparente bleue. Evidemment, cette courbe a priori sera généralement très incertaine, mais nous utiliserons les jaugeages à l’étape suivante pour diminuer cette incertitude. Le graphique représente également les hauteurs d’activation <span class="math inline">\(k\)</span> des différents contrôles comme des traits verticaux violets (avec incertitude). Il est possible de transformer l’axe des débits en échelle logarithmique et d’échanger les axes X/Y. Il est possible d’ouvrir le graphique dans une nouvelle fenêtre, d’exporter l’image au format SVG ou PNG, ou encore de la copier dans le presse-papier. Cette visualisation de la courbe a priori vous permet de vérifier la pertinence et la cohérence de vos hypothèses a priori sur les contrôles.</p>
+<p>L’incertitude paramétrique (au niveau de probabilité de 95%) autour de la courbe de tarage <em>a priori</em> est affichée sous la forme d’une enveloppe transparente bleue. Evidemment, cette courbe a priori sera généralement très incertaine, mais nous utiliserons les jaugeages à l’étape suivante pour diminuer cette incertitude. Le graphique représente également les hauteurs d’activation <span class="math inline">\(\kappa\)</span> des différents contrôles comme des traits verticaux violets (avec incertitude). Il est possible de transformer l’axe des débits en échelle logarithmique et d’échanger les axes X/Y. Il est possible d’ouvrir le graphique dans une nouvelle fenêtre, d’exporter l’image au format SVG ou PNG, ou encore de la copier dans le presse-papier. Cette visualisation de la courbe a priori vous permet de vérifier la pertinence et la cohérence de vos hypothèses a priori sur les contrôles.</p>
 </div>
 <div id="quelques-conseils-pour-la-spécification-des-a-priori" class="section level1">
 <h1>Quelques conseils pour la spécification des a priori :</h1>
@@ -563,6 +563,28 @@ Et pour le lit moyen :</p>
   <div class="container">
     
   
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+      </p>   
+    </div>
+      
   </div>
     
 </footer>

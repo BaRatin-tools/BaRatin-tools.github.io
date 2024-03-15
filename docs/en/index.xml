@@ -16,6 +16,13 @@
       <description>1 The stage-discharge relation: hydraulic controls 1.1 Two main types of controls 1.1.1 Section control 1.1.2 Channel control 1.2 Standard controls 1.3 Approximation of real controls by standard controls 2 Hydraulic analysis 2.</description>
     </item>
     <item>
+      <title>L&#39;Ardèche à Meyras</title>
+      <link>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</guid>
+      <description>1 Introduction 2 Analyse hydraulique 3 Spécification des a priori 4 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Ardeche-Meyras.</description>
+    </item>
+    <item>
       <title>Overview</title>
       <link>https://baratin-tools.github.io/en/doc/baratinage/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -30,11 +37,25 @@
       <description>1 Controls 1.1 The basic equation 1.2 Section controls and channel controls 2 Equations of the standard controls 2.1 Rectangular weir 2.2 Parabolic weir 2.</description>
     </item>
     <item>
+      <title>L&#39;Isère à Grenoble-Campus</title>
+      <link>https://baratin-tools.github.io/en/doc/case/isere-grenoble/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/isere-grenoble/</guid>
+      <description>1 Analyse hydraulique 2 Spécification des a priori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Isere-Grenoble.bam&#xA;1 Analyse hydraulique Cette station peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous).</description>
+    </item>
+    <item>
       <title>Main frame</title>
       <link>https://baratin-tools.github.io/en/doc/baratinage/main-frame/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/main-frame/</guid>
-      <description>Organisation générale La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE v3 :&#xA;Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
+      <description>General organisation The window shown below appears when BaRatinAGE v3 starts up:&#xA;In addition to the classic menu and tool bars (the operation of which will be described in more detail later), this window has several main areas:</description>
+    </item>
+    <item>
+      <title>Hydraulic configuration</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/hydraulic-configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/hydraulic-configuration/</guid>
+      <description>Overview The hydraulic configuration is the definition of all the controls that govern the physical stage-discharge relation, and their succession/combination as the water level increases.</description>
     </item>
     <item>
       <title>The uncertainties of gaugings</title>
@@ -58,6 +79,13 @@
       <description>The equation of the rating curve used in BaRatinAGE is entirely determined by the matrix of controls, an example of which is recalled in the Figure below.</description>
     </item>
     <item>
+      <title>Structural error model</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/structural-errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/structural-errors/</guid>
+      <description>Overview Consider the following situation, which is obviously idealised and unrealistic: at a hydrometric station, we have perfect gaugings (i.e. zero uncertainty), and many of them.</description>
+    </item>
+    <item>
       <title>Uncertainties in stage time series</title>
       <link>https://baratin-tools.github.io/en/doc/topics/stage-series/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -65,11 +93,32 @@
       <description>1 Error sources 1.1 Instrumental errors or « measurement noise » 1.2 Errors due to free-surface fluctuations 1.3 Errors due to sensor calibration 1.4 Stage representativeness errors 2 Error model used in BaRatinAGE 3 How to estimate stage series uncertainties 3.</description>
     </item>
     <item>
+      <title>Using RBaM</title>
+      <link>https://baratin-tools.github.io/en/doc/case/rbam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/rbam/</guid>
+      <description>1 Introduction 2 Estimation of a BaRatin rating curve 2.1 Defining streamgauging data 2.2 Defining the rating curve model 2.3 Running BaM and exploring MCMC samples 2.</description>
+    </item>
+    <item>
+      <title>Rating curve</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/rating-curve/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/rating-curve/</guid>
+      <description>Creating a rating curve A rating curve is a function giving discharge as a function of stage.&#xA;By default, a blank rating curve called RC (1) pre-exists and can be used.</description>
+    </item>
+    <item>
       <title>Statistical model</title>
       <link>https://baratin-tools.github.io/en/doc/topics/statistical-model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/statistical-model/</guid>
       <description>1 Model and hypotheses 1.1 Gauging errors 1.2 Structural error 1.3 Total error 2 Bayesian estimation 2.1 Information brought by the gaugings: likelihood 2.2 Information brought by hydraulics: prior distribution 2.</description>
+    </item>
+    <item>
+      <title>Stage series</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/stage-series/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/stage-series/</guid>
+      <description>Creating a stage series A stage series (or limnigraph) is a time series of water levels.&#xA;By default, a stage series named Ht (1) pre-exists and can be used.</description>
     </item>
     <item>
       <title>Uncertainties in discharge time series</title>
@@ -86,11 +135,32 @@
       <description>1 Introduction : statistical inference 2 Likelihood 2.1 Definition 2.1.1 Discrete random variable 2.1.2 Continuous random variable 2.2 Maximum likelihood estimation 3 Bayesian inference 3.</description>
     </item>
     <item>
+      <title>Discharge series</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/discharge-series/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/discharge-series/</guid>
+      <description>Creating a discharge series A discharge series is a time series of discharge (or streamflow) values.&#xA;By default, a discharge series named Qt (1) pre-exists and can be used.</description>
+    </item>
+    <item>
+      <title>Going further</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/going-further/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/going-further/</guid>
+      <description>Adding a new language To add a language to the interface, all you have to do is to add a column to the glossary file /resources/i18n/translations.</description>
+    </item>
+    <item>
       <title>MCMC Sampling</title>
       <link>https://baratin-tools.github.io/en/doc/topics/mcmc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/mcmc/</guid>
       <description>1 Introduction 2 General principle of MCMC samplers 3 The Metropolis algorithm 4 Convergence and representativeness of MCMC simulations 5 Building efficient MCMC samplers 6 MCMC algorithm implemented in BaRatinAGE 1 Introduction The tutorials proposed in the Bayesian Basics page have one peculiarity: there is only one unknown parameter \(\theta\).</description>
+    </item>
+    <item>
+      <title>Frequently asked questions </title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/faq/</guid>
+      <description>Note: this section will be updated as we receive more questions.&#xA;Installation Question: I work on Linux, can I use BaRatinAGE?&#xA;Answer: Yes, BaRatinAGE 3 can be used on Windows and Linux!</description>
     </item>
     <item>
       <title>XXX</title>
@@ -107,18 +177,18 @@
       <description>blabla</description>
     </item>
     <item>
-      <title>About this website</title>
-      <link>https://baratin-tools.github.io/en/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/about/</guid>
-      <description>XXX XXX&#xA;XXX XXX</description>
-    </item>
-    <item>
       <title>Resources</title>
       <link>https://baratin-tools.github.io/en/resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/resources/</guid>
       <description>The latest version of BaRatinAGE is available here.&#xA;A webinar on BaRatin (also available in french).&#xA;Slides describing the principles behind BaRatin (also available in french and spanish).</description>
+    </item>
+    <item>
+      <title>The BaRatin Team</title>
+      <link>https://baratin-tools.github.io/en/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/about/</guid>
+      <description>Contact us For any question on BaRatin, on associated software BaRatinAGE or RBaM, or more generally on rating curve estimation, feel free to get in touch with us at the following address:</description>
     </item>
   </channel>
 </rss>

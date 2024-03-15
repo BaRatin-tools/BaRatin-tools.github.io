@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709721801" rel="stylesheet">
+<link href="/css/custom.css?1710525651" rel="stylesheet">
 
 
 
@@ -167,7 +167,7 @@
                         
                         <ul class="dropdown-menu">
                             
-                            <li><a href="/en/doc/baratinage">BaRatinAGE</a></li>
+                            <li><a href="/en/doc/baratinage">BaRatinAGE v3</a></li>
                             
                             <li><a href="/en/doc/topics">Topic sheets</a></li>
                             
@@ -299,65 +299,64 @@
                           
 
 
-<div id="organisation-générale" class="section level1">
-<h1>Organisation générale</h1>
-<p>La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE v3 :</p>
-<p><embed src="MainFrame.en.pdf" /></p>
-<p>Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</p>
+<div id="general-organisation" class="section level1">
+<h1>General organisation</h1>
+<p>The window shown below appears when BaRatinAGE v3 starts up:</p>
+<p><img src="MainFrame.en.png" />
+In addition to the classic menu and tool bars (the operation of which will be described in more detail later), this window has several main areas:</p>
 <ul>
-<li>A gauche, l’<em>explorateur des composants</em> qui permettra de naviguer parmi les différents composants créés dans BaRatinAGE : configurations hydrauliques, jeux de jaugeages, modèles d’erreur structurelle, courbe de tarage, limnigramme et hydrogramme.</li>
-<li>A droite, de haut en bas :
+<li>On the left, the <em>component explorer</em> which allows you to navigate through the various components created in BaRatinAGE: hydraulic configurations, sets of gaugings, structural error models, rating curves, stage series and discharge series.</li>
+<li>On the right, from top to bottom:
 <ul>
-<li>le <em>panneau descriptif du composant</em> sélectionné dans l’explorateur ;</li>
-<li>les <em>onglets thématiques du composant</em> ;</li>
-<li>la <em>zone de saisie, de calculs et de graphiques</em> correspondant à l’onglet thématique sélectionné.</li>
+<li>the <em>descriptive panel of the component</em> selected in the explorer;</li>
+<li>the <em>thematic tabs of the component</em>;</li>
+<li>the <em>input, computation and chart area</em> corresponding to the selected thematic tab.</li>
 </ul></li>
 </ul>
-<p>Dans BaRatinAGE au démarrage, un composant de chaque type pré-existe, avec des champs vierges ou renseignés par défaut.</p>
-<p>Pour illustrer plus efficacement le fonctionnement de BaRatinAGE, nous allons ouvrir une étude pré-enregistrée. Pour ce faire, cliquez sur l’outil <img src="folder.svg" style="display:inline-block"> <em>Ouvrir un projet…</em> ou dans le menu <em>Fichier…Ouvrir un projet…</em> (Ctrl+O), et ouvrez le fichier nommé <em>Aisne_Verrieres_Example.bam</em> dans le répertoire <em>example</em> (ce répertoire est situé dans le dossier où vous avez installé BaRatinAGE).</p>
+<p>When BaRatinAGE starts up, a component of each type pre-exists, with fields that are either blank or filled in by default.</p>
+<p>To illustrate how BaRatinAGE works more effectively, we are going to open a pre-registered study. To do this, click on the <img src="folder.svg" style="display:inline-block"> <em>Open project…</em> tool or in the <em>File…Open project…</em> menu (Ctrl+O), and open the file named <em>Aisne_Verrieres_Example.bam</em> in the <em>example</em> directory (this directory is located in the folder where you installed BaRatinAGE).</p>
 </div>
-<div id="navigation-dans-linterface-graphique" class="section level1">
-<h1>Navigation dans l’interface graphique</h1>
-<p>La fenêtre principale devrait à présent comporter plusieurs composants comme illustré dans la figure ci-dessous. La logique de l’interface graphique est d’utiliser l’<em>explorateur des composants</em> pour naviguer dans BaRatinAGE. Un clic gauche permet de sélectionner un composant, ce qui met automatiquement à jour les panneaux situés à droite. Un clic droit donne accès à un certain nombre d’outils (détaillés ultérieurement).</p>
-<p>Notez également que les info-bulles sont omniprésentes dans l’application. N’hésitez pas à les consulter car elles fournissent souvent des indications plus détaillées que le nom des champs, boutons, etc.</p>
-<p><img src="MainFrame_full.fr.png" /></p>
-<p>Le <em>panneau descriptif du composant</em> rappelle le type de composant sélectionné (icône et nom), son nom et sa description (texte libre). Il comporte en outre les boutons <em>Dupliquer</em> et <em>Supprimer</em> le composant.</p>
-<p>Les <em>onglets thématiques du composant</em> sont spécifiques au composant considéré : ils seront décrits dans les pages suivantes de cette documentation, qui détaillent ces composants un par un.</p>
-<p>Il en va de même des <em>zones de saisie, de calculs et de graphiques</em> associées. Signalons les fonctionnalités suivantes de la zone graphique elle-même :</p>
+<div id="navigating-the-graphical-interface" class="section level1">
+<h1>Navigating the graphical interface</h1>
+<p>The main window should now contain several components as shown in the figure below. The rationale of the GUI is to use the <em>component explorer</em> to navigate through BaRatinAGE. Left-click to select a component, which automatically updates the panels to the right. Right-clicking gives access to a number of tools (described in more detail later).</p>
+<p>Note also that tooltips are omnipresent in the application. Don’t hesitate to consult them, as they often provide more detailed information than the names of fields, buttons, etc.</p>
+<p><img src="MainFrame_full.en.png" /></p>
+<p>The <em>descriptive panel of the component</em> shows the type of component selected (icon and name), its name and its description (free text). It also includes the buttons <em>Duplicate</em> and <em>Delete</em> the component.</p>
+<p>The <em>thematic tabs of the component</em> are specific to the component in question: they will be described in the following pages of this documentation, which detail these components one by one.</p>
+<p>The same applies to the associated <em>input, computation and chart area</em>. The following functions can be found in the chart area itself:</p>
 <ul>
-<li>On peut effectuer un zoom avec la souris en maintenant le clic gauche appuyé et en dessinant un rectangle depuis le coin supérieur gauche vers le coin inférieur droit. Pour revenir aux axes initiaux, on procède de manière similaire mais en dessinant le rectangle depuis le coin inférieur droit vers le coin supérieur gauche ;</li>
-<li>Le clic droit sur le graphique donne accès à un menu permettant les actions suivantes (également disponibles via des boutons situés au-dessus de la figure) :
+<li>You can zoom in with the mouse by holding down the left click and drawing a rectangle from the top left-hand corner to the bottom right-hand corner. To return to the original axes, follow a similar procedure, but draw the rectangle from the bottom right-hand corner to the top left-hand corner;</li>
+<li>Right-click on the graph to access a menu with the following actions (also available via buttons above the figure):
 <ul>
-<li>Tracer la figure dans une fenêtre extérieure ;</li>
-<li>Exporter l’image au format vectoriel SVG ;</li>
-<li>Exporter l’image au format PNG ;</li>
-<li>copier dans le presse-papier.</li>
+<li>Draw the figure in an external window;</li>
+<li>Export the image in SVG vector format;</li>
+<li>Export the image in PNG format;</li>
+<li>Copy to clipboard.</li>
 </ul></li>
 </ul>
 </div>
-<div id="menus-et-actions-sur-les-composants" class="section level1">
-<h1>Menus et actions sur les composants</h1>
-<div id="menu-fichier" class="section level2">
-<h2>Menu “Fichier”</h2>
-<p>Ce menu comporte les outils habituels pour ouvrir et sauvegarder une étude, créer une nouvelle étude et fermer l’application. Il n’est possible d’ouvrir qu’une seule étude à la fois, et la logique de BaRatinAGE est qu’une étude corresponde à une station hydrométrique. Pour une étude donnée, il est possible de définir plusieurs configurations hydrauliques, plusieurs jeux de jaugeages, plusieurs courbes de tarage, etc.</p>
+<div id="menus-and-actions-on-the-components" class="section level1">
+<h1>Menus and actions on the components</h1>
+<div id="file-menu" class="section level2">
+<h2>“File” menu</h2>
+<p>This menu contains the usual tools for opening and saving a study, creating a new study and closing the application. It is only possible to open one study at a time, and the rationale of BaRatinAGE is that a study corresponds to a hydrometric station. For a given study, it is possible to define several hydraulic configurations, several sets of gaugings, several rating curves, etc.</p>
 </div>
-<div id="manipulations-de-base-des-composants" class="section level2">
-<h2>Manipulations de base des composants</h2>
-<p>Tous les composants de BaRatinAGE peuvent être manipulés avec quelques actions de base, qui sont accessibles via les menus ou par un clic droit dans l’arborescence :</p>
+<div id="basic-handling-of-components" class="section level2">
+<h2>Basic handling of components</h2>
+<p>All BaRatinAGE components can be manipulated with a few basic actions, which can be accessed via the menus or by right-clicking in the tree structure:</p>
 <ul>
-<li><em>Créer un nouveau</em> (également accessible via les boutons de la barre d’outils) : permet de créer un nouvel composant après l’avoir nommé. Les composants étant identifiés par nom dans BaRatinAGE, il n’est pas possible de donner le même nom à deux composants du même type (par exemple deux courbes de tarage, deux configurations hydrauliques, etc.) ;</li>
-<li><em>Dupliquer</em> : permet de copier les propriétés d’un composant existant dans un nouvel composant (qui sera renommé) ;</li>
-<li><em>Supprimer</em> : permet d’effacer un composant existant.</li>
+<li><em>Create new</em> (also accessible via the toolbar buttons): allows you to create a new component after naming it. As components are identified by name in BaRatinAGE, it is not possible to give the same name to two components of the same type (for example, two rating curves, two hydraulic configurations, etc.);</li>
+<li><em>Duplicate</em>: copies the properties of an existing component to a new component (which will be renamed);</li>
+<li><em>Delete</em>: used to delete an existing component.</li>
 </ul>
-<p>Note : en cas de modification ou de suppression d’un composant ayant été utilisé pour calculer des résultats, un message d’avertissement propose à l’utilisateur de conserver ou de mettre à jour ces résultats. Par exemple, lorsqu’on modifie ou supprime un jeu de jaugeages, ce message sera émis pour toutes les courbes de tarage qui ont utilisé ces jaugeages, et donc également pour tous les hydrogrammes qui ont utilisé ces courbes de tarage.</p>
-<p>Les onglets thématiques de certains composants proposent également des tableaux de résultats sous divers formats, qui peuvent être copiés ou exportés.
-.</p>
+<p>Note: if a component that has been used to calculate results is modified or deleted, a warning message suggests that the user should keep or update these results. For example, when a set of gaugings is modified or deleted, this message will be issued for all the rating curves that used these gaugings, and therefore also for all the discharge series that used these rating curves.</p>
+<p>The thematic tabs of certain components also offer results tables in various formats, which can be copied or exported.</p>
 </div>
-<div id="menu-options" class="section level2">
-<h2>Menu “Options”</h2>
-<p>Ce menu permet de modifier les options suivantes :</p>
+<div id="options-menu" class="section level2">
+<h2>“Options” menu</h2>
+<p>This menu allows you to change the following options:</p>
 <ul>
-<li><em>changer de langue</em> : langue de BaRatinAGE (27 langues disponibles à ce jour, n’hésitez pas à en ajouter !).</li>
+<li><em>change language</em>: select BaRatinAGE language (27 languages available to date, feel free to add another language! See explanations in the <a href="/en/doc/baratinage/going-further"><em>Going further</em></a> page).</li>
 </ul>
 <!--- Options à venir, développements en cours :
 
@@ -395,11 +394,65 @@
 		
     
 		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/hydraulic-configuration/">Hydraulic configuration</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/en/doc/baratinage/gaugings/">Gaugings</a> 
 		
 
 		
 		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/structural-errors/">Structural error model</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/rating-curve/">Rating curve</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/stage-series/">Stage series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/discharge-series/">Discharge series</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/going-further/">Going further</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/faq/">Frequently asked questions </a> 
+		
+
 		
     
          
@@ -439,7 +492,35 @@
 		
     
 		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/hydraulic-configuration/">Hydraulic configuration</a> </br> </br>
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/en/doc/baratinage/gaugings/">Gaugings</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/structural-errors/">Structural error model</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/rating-curve/">Rating curve</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/stage-series/">Stage series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/discharge-series/">Discharge series</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/going-further/">Going further</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/baratinage/faq/">Frequently asked questions </a> </br> </br>
 		
     
          
@@ -472,6 +553,28 @@
   <div class="container">
     
   
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+      </p>   
+    </div>
+      
   </div>
     
 </footer>

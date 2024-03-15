@@ -8,18 +8,25 @@
     <language>fr</language>
     <atom:link href="https://baratin-tools.github.io/fr/doc/case/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Premier cas d&#39;étude</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/cs1/</link>
+      <title>L&#39;Ardèche à Meyras</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/cs1/</guid>
-      <description>XXX</description>
+      <guid>https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/</guid>
+      <description>1 Introduction 2 Analyse hydraulique 3 Spécification des a priori 4 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Ardeche-Meyras.</description>
     </item>
     <item>
-      <title>Second cas d&#39;étude</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/cs2/</link>
+      <title>L&#39;Isère à Grenoble-Campus</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/isere-grenoble/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/cs2/</guid>
-      <description>XXX</description>
+      <guid>https://baratin-tools.github.io/fr/doc/case/isere-grenoble/</guid>
+      <description>1 Analyse hydraulique 2 Spécification des a priori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Isere-Grenoble.bam&#xA;1 Analyse hydraulique Cette station peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous).</description>
+    </item>
+    <item>
+      <title>Utilisation de RBaM</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/rbam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/case/rbam/</guid>
+      <description>1 Introduction 2 Estimation d’une courbe de tarage BaRatin 2.1 Définition des données de jaugeage 2.2 Définition du modèle de courbe de tarage 2.3 Lancer BaM et explorer les simulations MCMC 2.</description>
     </item>
   </channel>
 </rss>

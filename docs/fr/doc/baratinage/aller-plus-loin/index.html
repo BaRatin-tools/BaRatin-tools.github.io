@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709721801" rel="stylesheet">
+<link href="/css/custom.css?1710525651" rel="stylesheet">
 
 
 
@@ -167,7 +167,7 @@
                         
                         <ul class="dropdown-menu">
                             
-                            <li><a href="/fr/doc/baratinage">BaRatinAGE</a></li>
+                            <li><a href="/fr/doc/baratinage">BaRatinAGE v3</a></li>
                             
                             <li><a href="/fr/doc/topics">Fiches Thématiques</a></li>
                             
@@ -301,7 +301,7 @@
 
 <div id="ajout-dune-nouvelle-langue" class="section level1">
 <h1>Ajout d’une nouvelle langue</h1>
-<p>Pour ajouter une langue à l’interface, il “suffit” d’ajouter une colonne dans le fichier glossaire <em>/resources/i18n/translations.csv</em> (dans le répertoire d’installation de BaRatinAGE v3), et de traduire chaque item apparaissant dans l’interface graphique. Ce fichier texte (que vous pouvez ouvrir avec Notepad++ par exemple) comporte en effet une colonne par langue, après une première colonne correspondant à la clé de chaque item à traduire, et une deuxième colonne pouvant contenir un commentaire. Les colonnes sont séparées par des tabulations La clé utilisée pour désigner la langue, dans la première ligne du fichier, <strong>doit</strong> être le code en deux lettres de la <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">norme ISO 639</a>. Une fois ceci fait, BaRatinAGE v3 devrait, après redémarrage, vous proposer la nouvelle langue créée via le menu <em>Options…Changer de langue</em>. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.</p>
+<p>Pour ajouter une langue à l’interface, il “suffit” d’ajouter une colonne dans le fichier glossaire <em>/resources/i18n/translations.csv</em> (dans le répertoire d’installation de BaRatinAGE v3), et de traduire chaque item apparaissant dans l’interface graphique. Ce fichier texte (que vous pouvez ouvrir avec LibreOffice Calc par exemple) comporte en effet une colonne par langue, après une première colonne correspondant à la clé de chaque item à traduire, et une deuxième colonne pouvant contenir un commentaire. Les colonnes sont séparées par des tabulations La clé utilisée pour désigner la langue, dans la première ligne du fichier, <strong>doit</strong> être le code en deux lettres de la <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">norme ISO 639</a>. Une fois ceci fait, BaRatinAGE v3 devrait, après redémarrage, vous proposer la nouvelle langue créée via le menu <em>Options…Changer de langue</em>. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.</p>
 </div>
 <div id="contenu-du-fichier-de-sauvegarde-.bam" class="section level1">
 <h1>Contenu du fichier de sauvegarde .bam</h1>
@@ -341,52 +341,6 @@
 <p>Ceci implique que vous pouvez si vous le souhaitez piloter directement l’exécutable BaM, sans passer par l’interface BaRatinAGE. Ceci peut être utile par exemple si vous utilisez un langage de programmation et souhaitez effectuer des calculs directement dans un de vos programmes. Notamment, il existe un contôleur R nommé RBaM, disponible <a href="https://github.com/BaM-tools/RBaM">ici</a>. L’exemple fourni avec RBaM est justement le modèle BaRatin.</p>
 <p><em>BaM!</em> (Bayesian Modeling) est une plateforme visant à estimer un modèle à l’aide d’une approche bayésienne et à l’utiliser pour la prédiction, avec un accent particulier sur la quantification de l’incertitude. Différents modèles variés sont et peuvent être implémentés dans <em>BaM!</em>, dont le modèle BaRatin utilisé dans BaRatinAGE v3. Si vous voulez aller plus loin en ayant accès à l’exécutable et aux fichiers de configuration, vous pouvez explorer l’écosystème de <em>BaM!</em> <a href="https://github.com/BaM-tools/BaMdocs">ici</a>.</p>
 <p>Vous pouvez également envoyer un mail à l’équipe de développement de BaRatinAGE si vous souhaitez en savoir plus.</p>
-</div>
-<div id="références-bibliographiques" class="section level1">
-<h1>Références bibliographiques</h1>
-<div id="références-sur-baratin-et-les-modèles-de-courbe-de-tarage-associés" class="section level2">
-<h2>Références sur BaRatin et les modèles de courbe de tarage associés</h2>
-<p><a href="https://theses.hal.science/tel-03211343">Darienzo, M., Detection and estimation of stage-discharge rating shifts for retrospective and real-time streamflow quantification, PhD thesis, 2021.</a></p>
-<p><a href="https://doi.org/10.1029/2020WR028607">Darienzo, M., Le Coz, J., Renard, B., Lang, M., Detection of stage-discharge rating shifts using gaugings: a recursive segmentation procedure accounting for observational and model uncertainties, Water Resources Research, 57, e2020WR028607, 2021.</a></p>
-<p><a href="https://doi.org/10.1002/2017WR022039">Horner I., Renard B., Le Coz J., Branger F., McMillan H.K., Pierrefeu G., Impact of stage measurement errors on streamflow uncertainty, Water Resources Research, 54, 1952-1976, 2018.</a></p>
-<p><a href="http://dx.doi.org/10.1016/j.jhydrol.2013.11.016">Le Coz, J., Renard, B., Bonnifait, L., Branger, F., Le Boursicaud, R. Combining hydraulic knowledge and uncertain gaugings in the estimation of hydrometric rating curves: a Bayesian approach, Journal of Hydrology, 509, 573-587, 2014.</a></p>
-<p>Le Coz, J., Renard, B., Bonnifait, L., Branger, F., Le Boursicaud, R. Uncertainty Analysis of Stage-Discharge Relations using the BaRatin Bayesian Framework. 35th IAHR World Congress 08/09/2013-13/09/2013, Chengdu, China, 9 p, 2013.</p>
-<p><a href="https://doi.org/10.5194/piahs-384-25-2021">Le Coz, J., Moukandi N’kaya, G. D., Bricquet, J.-P., Laraque, A., Renard, B., Estimation bayésienne des courbes de tarage et des incertitudes associées : application de la méthode BaRatin au Congo à Brazzaville, Proc. IAHS, 384, 25-29, 2021.</a></p>
-<p><a href="https://theses.hal.science/tel-01495985/">Mansanarez, V. Non unique stage-discharge relations: Bayesian analysis of complex rating curves and their uncertainties, PhD thesis, 2016.</a></p>
-<p><a href="https://doi.org/10.1002/2016WR018916">Mansanarez, V., Le Coz, J., Renard, B., Vauchel, P., Pierrefeu, G., Lang, M. Bayesian analysis of stage-fall-discharge rating curves and their uncertainties, Water Resources Research, 52, 7424-7443, 2016.</a></p>
-<p><a href="https://doi.org/10.1029/2018WR023389">Mansanarez, V., Renard, B., Le Coz, J. Lang, M., Darienzo, M., Shift happens! Adjusting stage-discharge rating curves to riverbed morphological changes at known times, Water Resources Research, 55, 2876-2899, 2019.</a></p>
-<p><a href="https://doi.org/10.1029/2020WR027745">Perret, E., Le Coz, J., Renard, B., A rating curve model accounting for cyclic stage-discharge shifts due to seasonal aquatic vegetation, Water Resources Research, 57, e2020WR027745, 2021.</a></p>
-</div>
-<div id="références-utilisant-baratin-et-les-outils-associés" class="section level2">
-<h2>Références utilisant BaRatin et les outils associés</h2>
-<p><a href="https://doi.org/10.1029/2021WR031890">Ahrendt, S., Horner-Devine, A. R., Collins, B. D., Morgan, J. A., Istanbulluoglu, E., Channel conveyance variability can influence flood risk as much as streamflow variability in western Washington State. Water Resources Research, 58, e2021WR031890, 2022.</a></p>
-<p><a href="https://doi.org/10.5194/essd-10-1063-2018">Francke, T., Foerster, S., Brosinsky, A., Sommerer, E., Lopez-Tarazon, J.A., Güntner, A., Batalla, R.J., Bronstert, A., Water and sediment fluxes in Mediterranean mountainous regions: Comprehensive dataset for hydro-sedimentological analyses and modelling in a mesoscale catchment (River Isábena, NE Spain), Earth System Science Data, 10(2), 1063-1075, 2018.</a></p>
-<p><a href="https://doi.org/10.1061/(ASCE)HE.1943-5584.0001903">Garcia, R., Costa, V., Silva, F., Bayesian rating curve modeling: alternative error model to improve low-flow uncertainty estimation, Journal of Hydrological Engineering, 25(5): 04020012, 2020.</a></p>
-<p><a href="https://doi.org/10.1002/hyp.14384">Gouy, V., Liger, L., Ahrouch, S., Bonnineau, C., Carluer, N., Chaumot, A., Coquery, M., Dabrin, A., Margoum, C., Pesce, S., Ardières-Morcille in the Beaujolais, France: A research catchment dedicated to study of the transport and impacts of diffuse agricultural pollution in rivers, Hydrological Processes, 35(10), e14384, 2021.</a></p>
-<p><a href="https://doi.org/10.1002/2017WR020473">Henn, B., Painter, T.H., Bormann, K.J., McGurk, B., Flint, A.L., Flint, L.E., White, V., Lundquist, J.D., High-Elevation Evapotranspiration Estimates During Drought: Using Streamflow and NASA Airborne Snow Observatory SWE Observations to Close the Upper Tuolumne River Basin Water Balance, Water Resources Research, 54(2), 746-766, 2018.</a></p>
-<p><a href="https://doi.org/10.1002/hyp.14497">Horner, I., Le Coz, J., Renard, B., Branger, F., Lagouy, M., Streamflow uncertainty due to the limited sensitivity of controls at hydrometric stations, Hydrological Processes, 36(2), e14497, 2022.</a></p>
-<p><a href="https://doi.org/10.1061/(ASCE)HE.1943-5584.00020">Kastali, A., Zeroual, A., Remaoun, M., Serrano-Notivoli, R., Moramarco, T. Design Flood and Flood-Prone Areas under Rating Curve Uncertainty: Area of Vieux-Ténès, Algeria, Journal of Hydrologic Engineering, 26(3), 05020054, 2020.</a></p>
-<p><a href="https://doi.org/10.1007/s12205-021-1051-4">Kastali, A., Zeroual, A., Zeroual, S., Hamitouche, Y., Auto-calibration of HEC-HMS Model for Historic Flood Event under Rating Curve Uncertainty. Case Study: Allala Watershed, Algeria, KSCE Journal of Civil Engineering, 26(1), 482-493, 2022.</a></p>
-<p>Kazimierski, L.D., García, P.E., Ortiz, N., Morale, M., Re, M., Aforos de ríos y arroyos en la Cuenca Matanza-Riachuelo. Elaboración de relaciones altura - caudal (curvas HQ). Informe LHA 05-397-21, Instituto Nacional del Agua (INA) – ACUMAR, Ezeiza, Argentina, 2021.</p>
-<p><a href="https://doi.org/10.1029/2018WR022708">Kiang, J.E., Gazoorian, C., McMillan, H., Coxon, G., Le Coz, J., Westerberg, I., Belleville, A., Sevrez, D., Sikorska, A.E., Petersen-Øverleir, A., Reitan, T., Freer, J., Renard, B., Mansanarez, V., Mason, R. A comparison of methods for streamflow uncertainty estimation, Water Resources Research, 54(10), 7149-7176, 2018.</a></p>
-<p><a href="https://doi.org/10.1080/27678490.2022.2053313">Lang, M., Darienzo, M., Le Coz, J., Renard, B., Evaluation des incertitudes et de l’homogénéité de longues séries de débits de crue sur le Rhin à Bâle (1225-2017) et Maxau (1815-2018), LHB-Hydroscience, 108:1, 2053313, 2022.</a></p>
-<p><a href="https://doi.org/10.1080/27678490.2022.2082338">Laraque, A., Le Coz, J., Moukandi N’kaya, G.D., Bissemo, G., Ayissou, L., Rouché, N., Bricquet, J.-P., Gulemvuga, G., Courbes de tarage du fleuve Congo à Brazzaville-Kinshasa, LHB-Hydroscience, 108:1, 2022.</a></p>
-<p><a href="https://doi.org/10.1016/j.jhydrol.2023.129840">Lucas, M., Renard, B., Le Coz, J., Lang, M., Bard, A., Pierrefeu, G., Are historical stage records useful to decrease the uncertainty of flood frequency analysis? A 200-year long case study, Journal of Hydrology, 624, 129840, 2023.</a></p>
-<p><a href="https://doi.org/10.1002/2016WR019261">Lundquist, J.D., Roche, J.W., Forrester, H., Moore, C., Keenan, E., Perry, G., Cristea, N., Henn, B., Lapo, K., McGurk, B., Cayan, D.R., Dettinger, M.D. Yosemite hydroclimate network: distributed stream and atmospheric data for the Tuolumne River watershed and surroundings, Water Resources Research, 52, 7478-7489, 2016.</a></p>
-<p><a href="https://doi.org/10.1051/e3sconf/20184006029">Maldonado, L.H., Firmo Kazay, D., Romero Lopez, E.E., The estimation of the uncertainty associated with rating curves of the river Ivinhema in the state of Paraná/Brazil, IAHR RiverFlow 2018 conference, E3S Web of Conferences, 40, 06029, 2018.</a></p>
-<p><a href="https://doi.org/10.1029/2023WR034545">Masafu, C., Williams, R., Satellite video remote sensing for flood model validation. Water Resources Research, 60, e2023WR034545, 2024.</a></p>
-<p>Mason, R.R. Jr., Kiang, J.E., Cohn, T.A. Rating curve uncertainty: An illustration of two estimation methods, IAHR River Flow conference, St. Louis, Missouri, USA, 12-15 July, 729-734, 2016.</p>
-<p><a href="https://doi.org/10.1002/2016WR020225">Ocio, D., Le Vine, N., Westerberg, I., Pappenberger, F., Buytaert, W. The role of rating curve uncertainty in real-time flood forecasting, Water Resources Research, 53, 4197-4213, 2017.</a></p>
-<p><a href="https://doi.org/10.1061/9780784479858.0">Osorio, A.L.N.A., Reis, D.S. A Bayesian approach for the evaluation of rating curve uncertainties in flood frequency analyses, World Environmental and Water Resources Congress, West Palm Beach, Florida, USA, May 22-26, 482-491, 2016.</a></p>
-<p>Osorio, A.L.N.A. Modelo bayesiano completo para análise de frequência de cheias com incorporação do conhecimento hidráulico na modelagem das incertezas na curva-chave [Full Bayesian model for flood frequency analysis with incorporation of hydraulic knowledge in the modeling of uncertainties in the rating curve], Master thesis, Universidade de Brasília, Brazil, 161 p, 2017.</p>
-<p><a href="https://doi.org/10.1080/27678490.2022.2082339">Perret, E., Le Coz, J., Renard, B., Courbes de tarage dynamiques pour la végétation aquatique saisonnière, LHB-Hydroscience, 108:1, 2082339, 2022.</a></p>
-<p>Qiu, J., Liu, B., Yang, Z., Peng, W., Uncertainty analysis of estimated discharge based on stage-discharge rating curves [in Chinese], Shuikexue Jinzhan/Advances in Water Science, 31(2), 214-223, 2020.</p>
-<p><a href="https://doi.org/10.1016/j.jhydrol.2021.126168">Qiu, J., Liu, B., Yu, X., Yang, Z., Combining a segmentation procedure and the BaRatin stationary model to estimate nonstationary rating curves and the associated uncertainties, Journal of Hydrology, 597, 126168, 2021.</a></p>
-<p><a href="http://dx.doi.org/10.1016/j.advwatres.2017.04.011">Sikorska, A.E., Renard, R. Calibrating a hydrological model in stage space to account for rating curve uncertainties: general framework and key challenges, Advances in Water Resources, 105, 51-66, 2017.</a></p>
-<p>Storz, S.M. Stage-discharge relationships for two nested research catchments of the high-mountain observatory in the Simen Mountains National Park in Ethiopia, Master thesis, Bern University, Switzerland, 87 p, 2016.</p>
-<p><a href="https://doi.org/10.1590/2318-0331.272220220012">Vieira, L.M.D.S., Sampaio, J.C.L., Costa, V.A.F., Eleutério, J.C., Assessing the effects of rating curve uncertainty in flood frequency analysis, Revista Brasileira de Recursos Hidricos, 27, e11, 2022.</a></p>
-<p><a href="https://doi.org/10.1007/s11269-016-1340-8">Zeroual, A., Meddi, M., Assani, A.A. Artificial neural network rainfall-discharge model assessment under rating curve uncertainty and monthly discharge volume predictions, Water Resources Management, 30, 3191-3205, 2016.</a></p>
-</div>
 </div>
 
 
@@ -574,6 +528,28 @@
   <div class="container">
     
   
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+      </p>   
+    </div>
+      
   </div>
     
 </footer>

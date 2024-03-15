@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709721801" rel="stylesheet">
+<link href="/css/custom.css?1710525651" rel="stylesheet">
 
 
 
@@ -167,7 +167,7 @@
                         
                         <ul class="dropdown-menu">
                             
-                            <li><a href="/en/doc/baratinage">BaRatinAGE</a></li>
+                            <li><a href="/en/doc/baratinage">BaRatinAGE v3</a></li>
                             
                             <li><a href="/en/doc/topics">Topic sheets</a></li>
                             
@@ -361,22 +361,16 @@ Image 1. Andrey Andreyevich Markov (1856 – 1922). Source: <a href="https://en.
 <p><br></p>
 <blockquote>
 <p><a href="TP_MCMC.en.zip"><strong>Tutorial 1. Bayesian-MCMC approach, discrete case</strong></a>. The Excel file implements the Metropolis algorithm for the occurrences of a flood larger than the estimated 10-year flood (see Tutorial 1 in <a href="/en/doc/topics/bayesian">Bayesian Basics</a> page).</p>
-</blockquote>
-<blockquote>
 <ol style="list-style-type: decimal">
 <li>Observe the rows of iterations 0 and 1 cell by cell in order to understand the way the algorithm is implemented, and verify that it is consistent with Algorithm 1.</li>
 <li>Plot simulated values, then modify the jump size (C3) and observe how it impacts simulated values.</li>
 <li>Create a histogram of simulated values (you can use the “analysis tools” in the tab “Data”). Compute a 90% credibility interval.</li>
 <li>Some people prefer using return periods rather than occurrence probabilities. Compute and represent the posterior distribution of this return period (you have to fill in empty cells in the “Extras…” columns), then compute a 90% credibility interval. In your opinion, should the colleague who estimated the 10-year flood be fired?</li>
 </ol>
-</blockquote>
-<blockquote>
 <p>Note: appart from its didactic aspect, implementing a MCMC sampler with Excel is a dubious idea, which is likely to fail for analyses more complicated than those presented in these introductory tutorials (computing time, crashes with too many rows/columns, reliability of the random number generator implemented in Excel, limited graphical capabilities, etc.). R, Python or Matlab languages provide implementations of MCMC samplers.</p>
 </blockquote>
 <blockquote>
 <p><a href="TP_MCMC.en.zip"><strong>Tutorial 2. Bayesian-MCMC approach, continuous case</strong></a>. The Excel file is similar to the previous one, but is adapted for the inter-event duration data at Sommières (see Tutorial 2 in <a href="/en/doc/topics/bayesian">Bayesian Basics</a> page).</p>
-</blockquote>
-<blockquote>
 <ol style="list-style-type: decimal">
 <li>Create an histogram of simulated values and compute a 90% credibility interval.</li>
 <li>For every simulated value, compute the associated cumulated distribution function (cdf; you have to fill in empty cells in the “Extras…” columns). Represent all these cdfs graphically (or at least the first ~100 cdfs, Excel may crash if you plot them all…).</li>
@@ -385,8 +379,6 @@ Image 1. Andrey Andreyevich Markov (1856 – 1922). Source: <a href="https://en.
 </blockquote>
 <blockquote>
 <p><a href="TP_MCMC.en.zip"><strong>Tutorial 3. Bayesian-MCMC approach, linear regression</strong></a>. The Excel file is again similar to the previous ones, but is adapted for the rainfall-runoff regression data (see Tutorial 5 in <a href="/en/doc/topics/bayesian">Bayesian Basics</a> page). However, there is a noticeable difference: there are two unknown parameters(<span class="math inline">\(\theta\)</span>, the regression slope, and <span class="math inline">\(\sigma\)</span>, the residual standard deviation).</p>
-</blockquote>
-<blockquote>
 <ol style="list-style-type: decimal">
 <li>Observe the row of iteration 1 to understand the way the algorithm was adapted to the case of several unknown parameters.</li>
 <li>Plot simulated values of <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\sigma\)</span> in two separate panels, then the scatterplot of simulated <span class="math inline">\((\theta,\sigma)\)</span> pairs. What information can be gained from the latter figure?</li>
@@ -642,6 +634,28 @@ Algorithm 2. MCMC algorithm implemented in BaRatinAGE.
   <div class="container">
     
   
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+      </p>   
+    </div>
+      
   </div>
     
 </footer>

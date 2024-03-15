@@ -19,7 +19,14 @@
       <link>https://baratin-tools.github.io/en/doc/baratinage/main-frame/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/main-frame/</guid>
-      <description>Organisation générale La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE v3 :&#xA;Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
+      <description>General organisation The window shown below appears when BaRatinAGE v3 starts up:&#xA;In addition to the classic menu and tool bars (the operation of which will be described in more detail later), this window has several main areas:</description>
+    </item>
+    <item>
+      <title>Hydraulic configuration</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/hydraulic-configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/hydraulic-configuration/</guid>
+      <description>Overview The hydraulic configuration is the definition of all the controls that govern the physical stage-discharge relation, and their succession/combination as the water level increases.</description>
     </item>
     <item>
       <title>Gaugings</title>
@@ -27,6 +34,48 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/gaugings/</guid>
       <description>The gaugings are nice…</description>
+    </item>
+    <item>
+      <title>Structural error model</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/structural-errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/structural-errors/</guid>
+      <description>Overview Consider the following situation, which is obviously idealised and unrealistic: at a hydrometric station, we have perfect gaugings (i.e. zero uncertainty), and many of them.</description>
+    </item>
+    <item>
+      <title>Rating curve</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/rating-curve/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/rating-curve/</guid>
+      <description>Creating a rating curve A rating curve is a function giving discharge as a function of stage.&#xA;By default, a blank rating curve called RC (1) pre-exists and can be used.</description>
+    </item>
+    <item>
+      <title>Stage series</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/stage-series/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/stage-series/</guid>
+      <description>Creating a stage series A stage series (or limnigraph) is a time series of water levels.&#xA;By default, a stage series named Ht (1) pre-exists and can be used.</description>
+    </item>
+    <item>
+      <title>Discharge series</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/discharge-series/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/discharge-series/</guid>
+      <description>Creating a discharge series A discharge series is a time series of discharge (or streamflow) values.&#xA;By default, a discharge series named Qt (1) pre-exists and can be used.</description>
+    </item>
+    <item>
+      <title>Going further</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/going-further/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/going-further/</guid>
+      <description>Adding a new language To add a language to the interface, all you have to do is to add a column to the glossary file /resources/i18n/translations.</description>
+    </item>
+    <item>
+      <title>Frequently asked questions </title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/faq/</guid>
+      <description>Note: this section will be updated as we receive more questions.&#xA;Installation Question: I work on Linux, can I use BaRatinAGE?&#xA;Answer: Yes, BaRatinAGE 3 can be used on Windows and Linux!</description>
     </item>
   </channel>
 </rss>

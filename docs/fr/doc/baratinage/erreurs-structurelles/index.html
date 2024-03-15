@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709721801" rel="stylesheet">
+<link href="/css/custom.css?1710525651" rel="stylesheet">
 
 
 
@@ -167,7 +167,7 @@
                         
                         <ul class="dropdown-menu">
                             
-                            <li><a href="/fr/doc/baratinage">BaRatinAGE</a></li>
+                            <li><a href="/fr/doc/baratinage">BaRatinAGE v3</a></li>
                             
                             <li><a href="/fr/doc/topics">Fiches Thématiques</a></li>
                             
@@ -323,7 +323,7 @@
 <li>Pour tenir compte de cette observation, la seconde option est de supposer que l’écart-type <span class="math inline">\(\sigma\)</span> est une fonction affine du débit calculé par la courbe de tarage : <span class="math inline">\(\sigma = \gamma_1 + \gamma_2 \ Q\)</span>. Dans ce cas, il y a deux paramètres à estimer, <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span>.</li>
 <li>La troisième option est une version purement proportionnelle de l’option précédente : <span class="math inline">\(\sigma = \gamma_2 \ Q\)</span>.</li>
 </ul>
-<p>En pratique, nous recommandons d’utiliser la deuxième option (<span class="math inline">\(\sigma = \gamma_1 + \gamma_2 \ Q\)</span>), car elle permet généralement de distribuer l’<em>erreur structurelle</em> sur toute la gamme de débit de façon réaliste. Pour l’instant, seul ce modèle d’<em>erreur structurelle</em> est implémentée dans BaRatinAGE (les deux autres le seront sans doute dans de futures versions du logiciel). Par défaut, des distributions uniformes sont choisies pour les paramètres <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span> :</p>
+<p>En pratique, nous recommandons d’utiliser la deuxième option (<span class="math inline">\(\sigma = \gamma_1 + \gamma_2 \ Q\)</span>), car elle permet généralement de distribuer l’<em>erreur structurelle</em> sur toute la gamme de débit de façon réaliste. Pour l’instant, seul ce modèle d’<em>erreur structurelle</em> est implémentée dans BaRatinAGE v3 (les deux autres le seront sans doute dans de futures versions du logiciel). Par défaut, des distributions uniformes sont choisies pour les paramètres <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span> :</p>
 <p><img src="StructError.png" /></p>
 <p>Si on déverrouille les champs, il est possible de spécifier soi-même les distributions des paramètres <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span>. Par exemple, la borne supérieure par défaut (10000 m<span class="math inline">\(^3\)</span>/s) de la distribution uniforme de <span class="math inline">\(\gamma_1\)</span> peut ne pas être forcément bien adaptée à l’ordre de grandeur des débits les plus forts enregistrés à la station hydrométrique. Il peut alors être utile de l’augmenter ou de la diminuer. On peut également sélectionner “Valeur fixe” : dans ce cas, le paramètre ne sera pas estimé mais fixé à la valeur spécifiée.</p>
 <p>Une description plus formelle et plus complète des <em>modèles d’erreur structurelle</em>, et plus généralement des modèles statistiques utilisés dans BaRatinAGE, est disponible dans <a href="/fr/doc/topics/modele-stat">ce document</a>.</p>
@@ -514,6 +514,28 @@
   <div class="container">
     
   
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+      </p>   
+    </div>
+      
   </div>
     
 </footer>

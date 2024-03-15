@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709721801" rel="stylesheet">
+<link href="/css/custom.css?1710525651" rel="stylesheet">
 
 
 
@@ -167,7 +167,7 @@
                         
                         <ul class="dropdown-menu">
                             
-                            <li><a href="/fr/doc/baratinage">BaRatinAGE</a></li>
+                            <li><a href="/fr/doc/baratinage">BaRatinAGE v3</a></li>
                             
                             <li><a href="/fr/doc/topics">Fiches Thématiques</a></li>
                             
@@ -358,22 +358,16 @@ Image 1. Andreï Andreïevitch Markov (1856 – 1922). Source: <a href="https://
 <p><br></p>
 <blockquote>
 <p><a href="TP_MCMC.fr.zip"><strong>TP 1. Approche bayésienne-MCMC, cas discret</strong></a>. Le fichier Excel propose une implémentation de l’algorithme de Metropolis pour les données de dépassement de la crue estimée comme décennale (voir TP1 de la page <a href="/fr/doc/topics/bayesien">inférence Bayesienne</a>).</p>
-</blockquote>
-<blockquote>
 <ol style="list-style-type: decimal">
 <li>Etudiez les lignes des itérations 0 et 1 cellule par cellule pour comprendre comment l’algorithme est implémenté, et vérifier que cela correspond bien à l’Algorithme 1.</li>
 <li>Tracez les valeurs simulées dans un graphique, puis jouez avec la taille du saut (cellule C3) et observez l’impact sur les valeurs simulées.</li>
 <li>Réalisez un histogramme des valeurs simulées (utilisez l’utilitaire d’analyse dans l’onglet « Données »). Calculez un intervalle de crédibilité à 90%.</li>
 <li>Plutôt que de parler en termes de probabilité de dépassement, on préfère parler en termes de période de retour. Représentez la distribution a posteriori de cette période de retour (remplissez la colonne vide dans la partie « Extras… »), puis calculez un intervalle de crédibilité à 90%. Le collègue ayant estimé la crue décennale doit-il être renvoyé ?</li>
 </ol>
-</blockquote>
-<blockquote>
 <p>Note: à part pour l’aspect didactique, implémenter un simulateur MCMC sous Excel est globalement une très mauvaise idée, qui a toutes les chances de ne pas fonctionner dès que les cas d’étude seront un peu plus complexes que ceux traités en TP (temps de calcul, plantages intempestifs dès qu’il y a trop de lignes/colonnes, fiabilité des générateurs de nombres aléatoires incertaine, capacités graphiques très limitées, etc.). Des langages comme R, Python ou Matlab proposent des implémentations de simulateurs MCMC.</p>
 </blockquote>
 <blockquote>
 <p><a href="TP_MCMC.fr.zip"><strong>TP 2. Approche bayésienne-MCMC, cas continu</strong></a>. Le fichier Excel est similaire au précédent, et est simplement adapté aux durées inter-événements à Sommières (voir TP2 de la page <a href="/fr/doc/topics/bayesien">inférence Bayesienne</a>).</p>
-</blockquote>
-<blockquote>
 <ol style="list-style-type: decimal">
 <li>Réalisez un histogramme des valeurs simulées et calculez un intervalle de crédibilité à 90%.</li>
 <li>Pour chaque valeur simulée du paramètre, calculez la fonction de répartition associée (remplissez les colonnes vides dans la partie « Extras… »). Représentez graphiquement l’ensemble de ces fonctions de répartition (limitez-vous en fait aux ~100 premières, sinon Excel risque de planter).</li>
@@ -382,8 +376,6 @@ Image 1. Andreï Andreïevitch Markov (1856 – 1922). Source: <a href="https://
 </blockquote>
 <blockquote>
 <p><a href="TP_MCMC.fr.zip"><strong>TP 3. Approche bayésienne-MCMC, régression linéaire</strong></a>. Le fichier Excel est encore similaire aux deux précédents, et est simplement adapté aux données de la régression pluie-débit (voir TP5 de la page <a href="/fr/doc/topics/bayesien">inférence Bayesienne</a>). Néanmoins, il y a une différence notable : les paramètres inconnus sont maintenant au nombre de deux (<span class="math inline">\(\theta\)</span>, la pente de la régression, et <span class="math inline">\(\sigma\)</span>, l’écart-type des résidus).</p>
-</blockquote>
-<blockquote>
 <ol style="list-style-type: decimal">
 <li>Etudiez la ligne de l’itération 1 pour comprendre comment l’implémentation a été adaptée au cas de plusieurs paramètres inconnus.</li>
 <li>Tracez les valeurs simulées de <span class="math inline">\(\theta\)</span> et <span class="math inline">\(\sigma\)</span> dans deux graphiques séparés, puis tracez le nuage des points <span class="math inline">\((\theta,\sigma)\)</span> simulés. Quelle information peut-on tirer de ce dernier graphique ?</li>
@@ -639,6 +631,28 @@ Algorithme 2. Algorithme MCMC implémenté dans BaRatin.
   <div class="container">
     
   
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+      </p>   
+    </div>
+      
   </div>
     
 </footer>

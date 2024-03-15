@@ -263,6 +263,7 @@ matplot(ht$time,Q,col='black',type='l',lty=1,add=TRUE)
 Note that no uncertainty in the stage time series has been considered so far. It is possible to do so by using "stage spaghetti", i.e. many replicated stage time series representing stage uncertainty, instead of a single stage series. The example below shows how to generate these spaghetti considering independent Gaussian stage errors with a fixed standard deviation $\sigma_h=5 \mathrm{cm}$. More advanced models could be considered (see [this page](/en/doc/topics/stage-series/)) but for the time being `RBaM` does not provide any functionality for this - it is hence the user's responsibility to generate the stage spaghetti. 
 
 ```{r fig.height=4, fig.width=9}
+set.seed(82487)
 # Create 100 noisy replicates for ht, with a 5cm standard deviation, representing uncertainty
 htrep=matrix(rnorm(n=NROW(ht)*100,mean=ht$stage,sd=0.05),nrow=NROW(ht),ncol=100)
 # Plot stage spaghetti
@@ -312,4 +313,7 @@ The `RBaM` package allows piloting BaRatin directly from `R`, without going thro
 * It provides access to all the tools of the `R` ecosystem for data preparation, plotting, statistical analyses etc.
 * Importantly, `RBaM` is not restricted to the BaRatin rating curve model. In particular models for complex rating curves (e.g. stage-fall-discharge curves, vegetation-affected curves, multi-period curves and more) are available through `RBaM` but not through `BaRatinAGE`. In general, any new model will be available in `RBaM` well before it becomes available in `BaRatinAGE`.
 
-
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# Cleanup
+unlink(workspace, recursive=TRUE)
+``` 

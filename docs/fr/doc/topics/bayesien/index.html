@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1709721801" rel="stylesheet">
+<link href="/css/custom.css?1710525651" rel="stylesheet">
 
 
 
@@ -167,7 +167,7 @@
                         
                         <ul class="dropdown-menu">
                             
-                            <li><a href="/fr/doc/baratinage">BaRatinAGE</a></li>
+                            <li><a href="/fr/doc/baratinage">BaRatinAGE v3</a></li>
                             
                             <li><a href="/fr/doc/topics">Fiches Thématiques</a></li>
                             
@@ -377,24 +377,18 @@ introduites dans les sections précédentes : les données sont notées <span cl
 </blockquote>
 <blockquote>
 <p><a href="TP_bayesian.fr.zip"><strong>TP 5. Estimation d’une régression linéaire</strong></a>. Considérons les données représentées dans la figure ci-dessous, qui correspondent à des précipitations (<span class="math inline">\(X\)</span>) et des débits moyens annuels (<span class="math inline">\(Y\)</span>) pour un certain bassin versant. Un lien entre ces deux variables étant apparent dans cette figure, on cherche à établir une relation linéaire du type :</p>
-</blockquote>
 <p><span class="math display">\[y_i=\theta  x_i + \varepsilon_i \text{ avec }  \varepsilon_i \sim \mathcal{N}(0,\sigma)\]</span></p>
 <img src="linear.fr.jpg" width="50%">
 <p style="text-align: center;color: gray;">
 Relation entre la précipitation annuelle <span class="math inline">\(X\)</span> et le débit annuel <span class="math inline">\(Y\)</span>
 </p>
-<blockquote>
 <p>Cette relation suppose que le débit annuel est égal à une fraction <span class="math inline">\(\theta\)</span> de la précipitation annuelle, plus un résidu variant d’année en année. Ces résidus sont supposées être des réalisations d’une loi normale de moyenne nulle et d’écart-type inconnu <span class="math inline">\(\sigma\)</span>. Sous ces hypothèses, il est possible de montrer que le <span class="math inline">\(i\)</span>e débit annuel est une réalisation d’une loi normale <span class="math inline">\(\mathcal{N}(\theta x_i,\sigma)\)</span> : en d’autres termes, le modèle de régression linéaire donne l’espérance du débit annuel, tandis que l’écart-type des résidus donne l’incertitude sur le débit annuel qui sera effectivement observé. Notez en particulier que les données <span class="math inline">\(\boldsymbol{y}\)</span> ne sont pas identiquement distribuées ici (puisque la moyenne change chaque année).</p>
-</blockquote>
-<blockquote>
 <ol style="list-style-type: decimal">
 <li>Tracez les données ainsi que la droite de régression pour <span class="math inline">\(\theta=0.1\)</span>.</li>
 <li>Calculez la vraisemblance des données <span class="math inline">\(\boldsymbol{y}\)</span> pour <span class="math inline">\(\theta=0.1\)</span> et <span class="math inline">\(\sigma=50\)</span>.</li>
 <li>Recherchez en tâtonnant l’estimateur du maximum de vraisemblance de <span class="math inline">\(\theta\)</span> (on gardera <span class="math inline">\(\sigma=50\)</span>).</li>
 <li>Comparez la droite de régression ainsi obtenue avec celle proposée par Excel (clic droit…Ajouter une courbe de tendance).</li>
 </ol>
-</blockquote>
-<blockquote>
 <p>Remarque : cet exemple, bien qu’extrêmement simple, fournit une excellente illustration de l’estimation des paramètres d’un modèle déterministe. Ici, le modèle est la simple relation linéaire <span class="math inline">\(y_{sim}=\theta x\)</span>. Le débit <span class="math inline">\(y_{sim}\)</span> est la variable de sortie du modèle (aussi appelé prédictande), la précipitation <span class="math inline">\(x\)</span> est la variable d’entrée (aussi appelé prédicteur), et <span class="math inline">\(\theta\)</span> le paramètre à estimer. L’exemple se généralise à des modèles bien plus complexes, et en particulier à des courbes de tarage !</p>
 </blockquote>
 </div>
@@ -446,8 +440,6 @@ Thomas Bayes. Source : <a href="https://fr.wikipedia.org/wiki/Thomas_Bayes">Wiki
 <p>Les remarques ci-dessus montrent que toutes les méthodes d’estimation peuvent fournir une estimation ponctuelle (i.e. une valeur) ainsi qu’une incertitude. Les bayésiens convaincus prétendront néanmoins que la quantification de l’incertitude est plus naturelle dans le cadre bayésien, car l’incertitude est le résultat brut, et l’estimation ponctuelle le produit dérivé (alors que c’est l’inverse avec les autres méthodes d’estimation).</p>
 <blockquote>
 <p><a href="TP_bayesian.fr.zip"><strong>TP 6. Estimation bayésienne, cas discret</strong></a>. Reprenez les calculs effectués dans le TP 3 et complétez-les pour effectuer une analyse bayésienne complète. Ceci implique de : (1) spécifier une densité a priori ; (2) calculer la densité a posteriori. Tracez la vraisemblance, la densité a priori et la densité a posteriori et comparez-les.</p>
-</blockquote>
-<blockquote>
 <p>La personne ayant effectué le calcul de la crue décennale vous informe qu’elle n’a pas utilisé vos données pour faire ce calcul. De plus, elle a effectué une analyse d’incertitude et d’après cette analyse, l’incertitude sur la probabilité de dépassement peut-être représentée par une loi log-normale <span class="math inline">\(Log\mathcal{N}(\mu=log(0.1),\sigma=0.75)\)</span>. Tirez parti de cette information.</p>
 </blockquote>
 <blockquote>
@@ -635,6 +627,28 @@ confiance 95%. Tirez parti de cette information.</p>
   <div class="container">
     
   
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+      </p>   
+    </div>
+      
   </div>
     
 </footer>
