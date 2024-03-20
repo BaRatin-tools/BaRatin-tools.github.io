@@ -8,15 +8,15 @@ inTOC: "BaRatinAGE"
 
 # Creating a discharge series
 
-A discharge series is a time series of discharge (or streamflow) values.
+A discharge series (or discharge hydrograph) is a time series of discharge (or streamflow) values.
 
 By default, a discharge series named *Qt (1)* pre-exists and can be used. There are several ways of creating a new discharge series:
 
-- via the menu *Components...Create new hydrograph*;
-- by right-clicking on the <img src="hydrograph.svg" style="display:inline-block"> *Hydrograph* node in the Component Explorer tree;
+- via the menu *Components...Create new discharge series*;
+- by right-clicking on the <img src="hydrograph.svg" style="display:inline-block"> *Discharge series* node in the Component Explorer tree;
 - by clicking on the <img src="hydrograph_add.svg" style="display:inline-block"> button in the toolbar.
 
-You will be able to rename this new discharge series and enter a description.  An existing discharge series can be duplicated or deleted.
+You will be able to rename this new discharge series and enter a description. An existing discharge series can be duplicated or deleted.
 
 The properties of the discharge series are then specified by selecting :
 
@@ -24,7 +24,7 @@ The properties of the discharge series are then specified by selecting :
 - A stage series.
 
 
-You are now ready to start calculating the discharge series, by clicking on the *Compute hydrograph* button. At the end of the calculation, the panel is updated as follows:
+You are now ready to start calculating the discharge series, by clicking on the *Compute discharge series* button. At the end of the calculation, the panel is updated as follows:
 
 
 ![](Hydrograph.en.png)
@@ -38,7 +38,7 @@ The discharge series and its 95% uncertainty intervals are available in table fo
 The table contains the following columns:
 
 - The date, in the format YYYY-MM-DD hh:mm:ss;
-- The *a posteriori discharge* (maxpost) in m$^3$/s;
+- The *posterior discharge* (maxpost) in m$^3$/s;
 - The lower bound of the 95% *parametric* uncertainty interval, in m$^3$/s;
 - The upper bound of the 95% *parametric* uncertainty interval, in m$^3$/s;
 - The lower bound of the 95% *total* uncertainty interval, in m$^3$/s;
@@ -49,7 +49,7 @@ You can export these results in CSV format or copy them to the clipboard.
 
 # Graphical representations
 
-Zooming in on the graph panel reveals several uncertainty intervals around the calculated hydrograph, as shown below:
+Zooming in on the graph panel reveals several uncertainty intervals around the calculated discharge series, as shown below:
 
 ![](Hydrograph_Zoom.en.png)
 

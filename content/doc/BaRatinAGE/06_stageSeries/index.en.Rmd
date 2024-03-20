@@ -8,17 +8,17 @@ inTOC: "BaRatinAGE"
 
 # Creating a stage series
 
-A stage series (or *limnigraph*) is a time series of water levels.
+A *stage series* (or stage hydrograph) is a time series of water levels (or stages).
 
 By default, a stage series named *Ht (1)* pre-exists and can be used. There are several ways of creating a new stage series:
 
-- via the menu *Components...Create new limnigraph*;
-- by right-clicking on the <img src="limnigraph.svg" style="display:inline-block"> *Limnigraph* node in the Component Explorer tree;
+- via the menu *Components...Create new stage series*;
+- by right-clicking on the <img src="limnigraph.svg" style="display:inline-block"> *Stage series* node in the Component Explorer tree;
 - by clicking on the <img src="limnigraph_add.svg" style="display:inline-block"> button in the toolbar.
 
 You will be able to rename this new stage series and enter a description.  An existing stage series can be duplicated or deleted.
 
-All that remains is to import the stage series file by clicking on the *Import a limnigraph* button, selecting the text file of your choice and specifying its format. The stage series file is a free-format text file, but it must contain at least five columns with the following data:
+All that remains is to import the stage series file by clicking on the *Import a stage series* button, selecting the text file of your choice and specifying its format. The stage series file is a free-format text file, but it must contain at least five columns with the following data:
 
 - The date/time, in a format to be specified (*YYYY/MM/DD hh:mm:ss* or a variant);
 - The water elevation (or *stage*) recorded, in metres;
