@@ -66,6 +66,9 @@ Developer of `BaRatinAGE v3`
 <a href="https://www.ihdev.fr/en">
 <img alt="ihdev logo" src="/img/ihdev_logo.svg" width="32" height="32" /> https://www.ihdev.fr/ </a>
 
+<a href="https://github.com/IvanHeriver">
+<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/IvanHeriver </a>
+
 ### Michel Lang
 
 PhDs direction
