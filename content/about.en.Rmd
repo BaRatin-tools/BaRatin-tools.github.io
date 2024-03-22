@@ -19,6 +19,7 @@ The development of BaRatin was supported financially, technically and scientific
 * [SCHAPI](https://api.gouv.fr/producteurs/schapi) (Hydro-meteorology and flood forecasting service) has been funding the development of BaRatin from early on and facilitates fruitful exchanges with users from the French national hydrometric network
 * [CNR](https://www.cnr.tm.fr/en) (concessionary of the Rhone River) funded several developments, in particular through PhDs co-funding
 * BaRatin was supported by the [ANR](https://anr.fr/en/) (French National Research Agency) through the [FloodScale](https://anr.fr/en/funded-projects-and-impact/funded-projects/project/funded/project/b2d9d3668f92a3b9fbbf7866072501ef-905f3e2aef/?tx_anrprojects_funded%5Bcontroller%5D=Funded&cHash=0b8e7585d4a94310a1788901595f6ccb) research project
+* BaRatin was supported by the french ministries for Europe and Foreign Affairs (MEAE) and for Higher Education and Research (MESR) through the [Dumont d’Urville program](https://www.campusfrance.org/en/node/2377)
 * [WMO](https://wmo.int) (World Meteorological Organization) is associated to [BaRatin webinars](https://www.youtube.com/watch?v=dUutJkCaAro), through its [Project X](https://community.wmo.int/en/activity-areas/hydrology-and-water-resources/project-x) 
 * BaRatin greatly benefited from the feedback of many users, in particular users from [NEON](https://www.neonscience.org/) and [USGS](https://www.usgs.gov/) (US), and from [ACUMAR](https://www.acumar.gob.ar/) (Argentina)
 
