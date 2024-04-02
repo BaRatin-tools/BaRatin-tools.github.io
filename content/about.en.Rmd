@@ -3,6 +3,11 @@ title: "The BaRatin Team"
 slug: "about"
 toc: yes
 autoCollapseToc: yes
+output:
+  blogdown::html_page:
+    number_sections: false
+    toc: true
+    toc_depth: 1
 ---
 
 # Contact us

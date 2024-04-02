@@ -3,6 +3,11 @@ title: "Resources"
 slug: "resources"
 toc: yes
 autoCollapseToc: yes
+output:
+  blogdown::html_page:
+    number_sections: false
+    toc: true
+    toc_depth: 1
 ---
 
 # Software and codes

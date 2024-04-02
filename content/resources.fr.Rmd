@@ -3,6 +3,11 @@ title: "Ressources"
 slug: "ressources"
 toc: yes
 autoCollapseToc: yes
+output:
+  blogdown::html_page:
+    number_sections: false
+    toc: true
+    toc_depth: 1
 ---
 
 # Logiciels et codes
@@ -49,7 +54,7 @@ Enfin, pour avoir sous les yeux une vue d'ensemble de BaRatin, ou simplement pou
 
 <a href="https://hal.inrae.fr/hal-02600782"> <img alt="BaRatin Poster" src="/img/BaRatinPoster.jpg" width="50%" />  </a>
 
-# References bibliographiques
+# Références bibliographiques
 
 ## Références sur BaRatin et les modèles de courbe de tarage associés
 
