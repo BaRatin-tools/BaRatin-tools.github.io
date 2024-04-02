@@ -99,7 +99,7 @@ Distribution and operational handover
 <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0003-1243-6955 </a>
 
 <a href="https://eng-riverhydraulics.lyon-grenoble.hub.inrae.fr/people/present-staff/jerome-le-coz">
-<img alt="INRAE logo" src="/img/Logo-INRAE_Transparent.png" width="32" /> Page personnelle </a>
+<img alt="INRAE logo" src="/img/Logo-INRAE_Transparent.png" width="32" /> Personal page </a>
 
 ### Valentin Mansanarez
 
@@ -113,6 +113,8 @@ Spoonerisms
 
 <a href="https://orcid.org/0000-0002-0130-815X">
 <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0002-0130-815X </a>
+
+<a href="https://www.ivl.se/english/ivl/about-ivl/contact-us/staff/valentin-mansanarez.html"> Personal page </a>
 
 ### Felipe Alberto Mendez Rios
 
