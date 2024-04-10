@@ -6,9 +6,18 @@ layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---
 
-# Ajout d'une nouvelle langue
+# Ajout ou correction d'une langue
 
-Pour ajouter une langue à l'interface, il "suffit" d'ajouter une colonne dans le fichier glossaire */resources/i18n/translations.csv* (dans le répertoire d'installation de BaRatinAGE v3), et de traduire chaque item apparaissant dans l'interface graphique. Ce fichier texte (que vous pouvez ouvrir avec LibreOffice Calc par exemple) comporte en effet une colonne par langue, après une première colonne correspondant à la clé de chaque item à traduire, et une deuxième colonne pouvant contenir un commentaire. Les colonnes sont séparées par des tabulations \t. La clé utilisée pour désigner la langue, dans la première ligne du fichier, **doit** être le code en deux lettres de la [norme ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes). Une fois ceci fait, BaRatinAGE v3 devrait, après redémarrage, vous proposer la nouvelle langue créée via le menu *Options...Changer de langue*. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.
+Pour traduire BaRatinAGE dans une nouvelle langue, ou pour corriger une langue existante, suivez les étapes suivantes. 
+
+Premièrement, ouvrez un fichier de traduction existant ou créez-en un nouveau dans le répertoire *resources\i18n* nommé selon le format *translations_xx.properties*, où *xx* correspond à la clé à deux caractères de la langue selon la [norme ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes). Le moyen le plus simple est de copier et coller l'un des fichiers existants  contenant déjà la langue à partir de laquelle vous souhaitez traduire, puis de le renommer selon le format mentionné.
+
+Vous pouvez modifier ce fichier avec l'éditeur de texte de votre choix (Notepad++, par exemple).
+Les fichiers de traduction sont simplement constitués de paires clé-valeur séparées par un signe égale. Par exemple, `hello_message = Bonjour` dans le fichier français et `hello_message = Hi` dans le fichier anglais. Pour ajouter vos traductions, il vous suffit de traduire le texte situé à droite du signe égale (sans changer la clé située à gauche du signe égale).
+
+Certaines traductions peuvent inclure du HTML basique pour mettre en forme le texte, comme le gras ou l'italique. Par exemple, `bold_text_example = Voici un texte avec du <b>gras</b>`. Certaines traductions contiennent des espaces réservés indiqués par des accolades avec un chiffre au milieu, par exemple `{0}`. Ces espaces réservés sont utilisés dans BaRatinAGE pour adapter le contenu de la phrase selon le contexte d'utilisation, par exemple, `hi_user = Bonjour {0}, bienvenue`. Des commentaires peuvent être ajoutés en commençant une ligne avec le caractère `#`.
+
+Une fois ce nouveau fichier créé, BaRatinAGE v3 devrait vous proposer la nouvelle langue créée via le menu *Options...Changer de langue*. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.
 
 
 # Contenu du fichier de sauvegarde .bam

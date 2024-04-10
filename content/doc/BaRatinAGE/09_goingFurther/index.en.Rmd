@@ -6,9 +6,19 @@ layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---
 
-# Adding a new language
+# Adding or correcting a language
 
-To add a language to the interface, all you have to do is to add a column to the glossary file */resources/i18n/translations.csv* (in the BaRatinAGE v3 installation directory), and translate each item that appears in the graphical interface. This text file (which you can open with LibreOffice Calc, for example) contains one column per language, after a first column corresponding to the key for each item to be translated, and a second column that can contain a comment. The columns are separated by tabs \t. The key used to designate the language, in the first line of the file, **must** be the two-letter code of the [ISO 639 standard](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes). Once this has been done, BaRatinAGE v3 should, after restarting, offer you the new language created via the *Options...Change language* menu. Please send us your glossary file so that we can share it with all users.
+To translate BaRatinAGE into a new language, or to correct an existing language, follow these steps. 
+
+First, open an existing translation file or create a new one in the *resources\i18n* directory named according to the format *translations_xx.properties*, where *xx* is the two-character key for the language according to [ISO standard 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes). The easiest way to do this is to copy and paste one of the existing files already containing the language you want to translate from, and then rename it using the format mentioned.
+
+You can edit this file using the text editor of your choice (Notepad++, for example).
+Translation files are simply key-value pairs separated by an equals sign. For example, `hello_message = Bonjour` in the French file and `hello_message = Hi` in the English file. To add your translations, simply translate the text to the right of the equals sign (without changing the key to the left of the equals sign).
+
+Some translations may include basic HTML to format the text, such as bold or italics. For example, `bold_text_example = Here is a text with <b>bold</b>`. Some translations contain placeholders indicated by braces with a number in the middle, for example `{0}`. These placeholders are used in BaRatinAGE to adapt the content of the sentence to the context of use, for example, `hi_user = Hello {0}, welcome`. Comments can be added by starting a line with the `#` character.
+
+Once this new file has been created, BaRatinAGE v3 should suggest the new language via the *Options...Change language* menu. Please send us your glossary file so that we can share it with all the users.
+
 
 
 # Contents of the .bam backup file
