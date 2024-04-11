@@ -11,9 +11,11 @@ output:
     toc: true
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=TRUE,results='hide',
                       fig.path = "en/fig-")
+reRun=FALSE # When TRUE, BaM is re-run, potentially changing runs and hence figures
 ```
 
 # Introduction
@@ -117,7 +119,7 @@ We have now defined the model `M` to be calibrated and the calibration dataset `
 
 The function `BaM` is used to perform parameter estimation. This will run a [MCMC sampler](/en/doc/topics/mcmc) and save the result into the workspace.
 
-```{r results='markup'}
+```{r results='markup', eval=reRun}
 BaM(mod=M,data=D) # Estimate the parameters of model M using calibration data D
 ```
 
@@ -161,7 +163,7 @@ The rating curve and its uncertainty can be deduced from the MCMC samples. To ac
 hgrid=data.frame(H=seq(-1,7,0.1))
 # Define a 'prediction' object for total rating curve uncertainty
 totalU=prediction(X=hgrid, # stage values
-                  spagFiles='totalU.spag', # file where predictions are saved
+                  spagFiles='hQ_totalU.spag', # file where predictions are saved
                   data.dir=workspace, # a copy of data files will be saved here
                   doParametric=TRUE, # propagate parametric uncertainty, i.e. MCMC samples?
                   doStructural=TRUE) # propagate structural uncertainty ?
@@ -169,7 +171,7 @@ totalU=prediction(X=hgrid, # stage values
 
 Uncertainty propagation is then performed by the same function `BaM` as before, but ran in "prediction mode". In particular the `doCalib=FALSE` and `doPred=TRUE` options specify that calibration has already been performed, and the task is now to use the existing MCMC samples to perform an uncertain prediction (namely, estimate the uncertain rating curve). Note that the word "prediction" is used here in the fairly loose and general sense of "estimating the uncertain output of the model".
 
-```{r}
+```{r, eval=reRun}
 # Re-run BaM, but in prediction mode
 BaM(mod=M,data=D, # model and data
     pred=totalU, # prediction to be performed
@@ -181,21 +183,21 @@ The resulting 'spaghetti files' can be read from the workspace and plotted. Note
 ```{r fig.height=4, fig.width=9}
 par(mfrow=c(1,2)) # plot figures in two panels on the same row
 # Plot spaghetti representing total uncertainty
-Q=read.table(file.path(workspace,'totalU.spag'))
+Q=read.table(file.path(workspace,'hQ_totalU.spag'))
 matplot(hgrid$H,Q,col='red',type='l',lty=1,main='spaghetti')
 # Plot 95% probability intervals for total rating curve uncertainty
-Q=read.table(file.path(workspace,'totalU.env'),header=T)
+Q=read.table(file.path(workspace,'hQ_totalU.env'),header=T)
 matplot(hgrid$H,Q[,2:3],col='red',type='l',lty=1,main='uncertainty envelop')
 ```
 
 The same workflow can be used to estimate parametric rating curve uncertainty (corresponding to "turning off" structural uncertainty) and the maxpost rating curve (corresponding to "turning off" both parametric and structural uncertainties).
 
-```{r}
+```{r, eval=reRun}
 # Define a 'prediction' object for parametric uncertainty only - note the doStructural=FALSE
-paramU=prediction(X=hgrid,spagFiles='paramU.spag',data.dir=workspace,
+paramU=prediction(X=hgrid,spagFiles='hQ_paramU.spag',data.dir=workspace,
                   doParametric=TRUE,doStructural=FALSE)
 # Define a 'prediction' object with no uncertainty - this corresponds to the 'maxpost' rating curve
-maxpost=prediction(X=hgrid,spagFiles='maxpost.spag',data.dir=workspace,
+maxpost=prediction(X=hgrid,spagFiles='hQ_maxpost.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # Run BaM in prediction mode
 BaM(mod=M,data=D, # model and data
@@ -207,13 +209,13 @@ This allows recreating the rating curve plot made in `BaRatinAGE` which superimp
 
 ```{r fig.height=6, fig.width=9}
 # Read and plot the envelop representing total uncertainty in red
-Q=read.table(file.path(workspace,'totalU.env'),header=T)
+Q=read.table(file.path(workspace,'hQ_totalU.env'),header=T)
 matplot(hgrid$H,Q[,2:3],col='red',type='l',lty=1)
 # Read and plot the envelop representing parametric uncertainty in pink
-Q=read.table(file.path(workspace,'paramU.env'),header=T)
+Q=read.table(file.path(workspace,'hQ_paramU.env'),header=T)
 matplot(hgrid$H,Q[,2:3],col='pink',type='l',lty=1,add=TRUE)
 # Read and plot the maxpost rating curve in black
-Q=read.table(file.path(workspace,'maxpost.spag'))
+Q=read.table(file.path(workspace,'hQ_maxpost.spag'))
 matplot(hgrid$H,Q,col='black',type='l',lty=1,add=TRUE)
 # Add gaugings
 points(x=SauzeGaugings$H,y=SauzeGaugings$Q,pch=19)
@@ -232,15 +234,15 @@ plot(ht,type='l')
 
 The code is the same as the one used previously for the rating curve, except that the stage series (`ht['stage']`) is used instead of the stage grid (`hgrid`).
 
-```{r}
+```{r, eval=reRun}
 # Define a 'prediction' object for total uncertainty
-totalU=prediction(X=ht['stage'],spagFiles='totalU.spag',data.dir=workspace, 
+totalU=prediction(X=ht['stage'],spagFiles='Qt_totalU.spag',data.dir=workspace, 
                   doParametric=TRUE,doStructural=TRUE) 
 # Define a 'prediction' object for parametric uncertainty only
-paramU=prediction(X=ht['stage'],spagFiles='paramU.spag',data.dir=workspace,
+paramU=prediction(X=ht['stage'],spagFiles='Qt_paramU.spag',data.dir=workspace,
                   doParametric=TRUE,doStructural=FALSE)
 # Define a 'prediction' object with no uncertainty - this corresponds to the 'maxpost' discharge series
-maxpost=prediction(X=ht['stage'],spagFiles='maxpost.spag',data.dir=workspace,
+maxpost=prediction(X=ht['stage'],spagFiles='Qt_maxpost.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # Run BaM in prediction mode
 BaM(mod=M,data=D,pred=list(totalU,paramU,maxpost),doCalib=FALSE,doPred=TRUE)
@@ -250,13 +252,13 @@ The resulting discharge series can be plotted with its uncertainties.
 
 ```{r fig.height=6, fig.width=9}
 #Total uncertainty in red
-Q=read.table(file.path(workspace,'totalU.env'),header=T)
+Q=read.table(file.path(workspace,'Qt_totalU.env'),header=T)
 matplot(ht$time,Q[,2:3],col='red',type='l',lty=1)
 # Parametric uncertainty in pink
-Q=read.table(file.path(workspace,'paramU.env'),header=T)
+Q=read.table(file.path(workspace,'Qt_paramU.env'),header=T)
 matplot(ht$time,Q[,2:3],col='pink',type='l',lty=1,lwd=2,add=TRUE)
 # Maxpost discharge time series in black
-Q=read.table(file.path(workspace,'maxpost.spag'))
+Q=read.table(file.path(workspace,'Qt_maxpost.spag'))
 matplot(ht$time,Q,col='black',type='l',lty=1,add=TRUE)
 ```
 
@@ -272,16 +274,16 @@ matplot(ht$time,htrep,col='gray',type='l',lty=1)
 
 The rest of the analysis proceeds as previously, simply replacing the unique stage series by stage spaghetti.
 
-```{r}
+```{r, eval=reRun}
 # Total uncertainty
 totalU=prediction(X=list(htrep), # stage spaghetti, has to be encapsulated in a list
-                  spagFiles='totalU.spag', data.dir=workspace,
+                  spagFiles='Qt_param_struct_hU.spag', data.dir=workspace,
                   doParametric=TRUE, doStructural=TRUE)
 # param+stage uncertainties (structural uncertainty is turned off)
-param_hU=prediction(X=list(htrep),spagFiles='param_hU.spag',data.dir=workspace,
+param_hU=prediction(X=list(htrep),spagFiles='Qt_param_hU.spag',data.dir=workspace,
                   doParametric=TRUE,doStructural=FALSE)
 # stage uncertainty only (structural and parametric uncertainties are turned off)
-hU=prediction(X=list(htrep),spagFiles='hU.spag',data.dir=workspace,
+hU=prediction(X=list(htrep),spagFiles='Qt_hU.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # Run BaM in prediction mode
 BaM(mod=M,data=D,pred=list(totalU,param_hU,hU),doCalib=FALSE,doPred=TRUE)
@@ -291,16 +293,16 @@ This leads to the following plot. Note that a logarithmic y-axis is used to emph
 
 ```{r fig.height=6, fig.width=9}
 # Total uncertainty in red
-Q=read.table(file.path(workspace,'totalU.env'),header=T)
+Q=read.table(file.path(workspace,'Qt_param_struct_hU.env'),header=T)
 matplot(ht$time,Q[,2:3],col='red',type='l',lty=1,log='y')
 # Parametric + stage uncertainties in pink
-Q=read.table(file.path(workspace,'param_hU.env'),header=T)
+Q=read.table(file.path(workspace,'Qt_param_hU.env'),header=T)
 matplot(ht$time,Q[,2:3],col='pink',type='l',lty=1,lwd=2,add=TRUE)
 # Stage uncertainty only in yellow
-Q=read.table(file.path(workspace,'hU.env'),header=T)
+Q=read.table(file.path(workspace,'Qt_hU.env'),header=T)
 matplot(ht$time,Q[,2:3],col='goldenrod1',type='l',lty=1,lwd=2,add=TRUE)
 # Maxpost discharge time series in black
-Q=read.table(file.path(workspace,'maxpost.spag'))
+Q=read.table(file.path(workspace,'Qt_maxpost.spag'))
 matplot(ht$time,Q,col='black',type='l',lty=1,add=TRUE)
 ```
 
@@ -315,5 +317,5 @@ The `RBaM` package allows piloting BaRatin directly from `R`, without going thro
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 # Cleanup
-unlink(workspace, recursive=TRUE)
+#unlink(workspace, recursive=TRUE)
 ``` 

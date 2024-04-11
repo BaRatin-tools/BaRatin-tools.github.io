@@ -15,6 +15,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=TRUE,results='hide',
                       fig.path = "en/fig-")
+reRun=FALSE # When TRUE, BaM is re-run, potentially changing runs and hence figures
 ```
 
 # Introduction
@@ -117,7 +118,7 @@ Nous avons donc à présent défini le modèle à estimer `M` ainsi que les donn
 
 La fonction `BaM` est utilisée pour effectuer l'estimation des paramètres. Ceci lancera un [simulateur MCMC](/fr/doc/topics/mcmc) et sauvegardera les résultats dans le workspace.
 
-```{r results='markup'}
+```{r results='markup', eval=reRun}
 BaM(mod=M,data=D) # Estimer les paramètres du modèle M en utilisant les données de calage D
 ```
 
@@ -161,7 +162,7 @@ La courbe de tarage et ses incertitudes peuvent être estimées à partir des si
 hgrid=data.frame(H=seq(-1,7,0.1))
 # Définition d'un objet 'prediction' pour l'incertitude totale
 totalU=prediction(X=hgrid, # hauteurs
-                  spagFiles='totalU.spag', # fichier dans lequel les prédictions sont sauvegardées
+                  spagFiles='hQ_totalU.spag', # fichier dans lequel les prédictions sont sauvegardées
                   data.dir=workspace, # Une copie des jeux de données sera écrite dans ce dossier
                   doParametric=TRUE, # propager l'incertitude paramétrique ?
                   doStructural=TRUE) # propager l'incertitude structurelle ?
@@ -169,7 +170,7 @@ totalU=prediction(X=hgrid, # hauteurs
 
 La propagation d'incertitude est ensuite effectuée en utilisant la même fonction `BaM` que précédemment, mais en mode "prédiction". Pour cela les options `doCalib=FALSE` et `doPred=TRUE` indiquent que le calage a déjà été effectué, et que la tâche à accomplir est d'utiliser les simulations MCMC existantes pour effectuer une prédiction incertaine (en l'occurrence, estimer la courbe de tarage et ses incertitudes). Notez que le mot "prédiction" est utilisé ici dans un sens très générique qui signifie "estimer les sorties incertaines du modèle".
 
-```{r}
+```{r, eval=reRun}
 # Re-lancer BaM, mais en mode "prédiction"
 BaM(mod=M,data=D, # modèle et données
     pred=totalU, # prédiction à effectuer
@@ -181,21 +182,21 @@ Le fichier 'spaghetti' résultant de l'appel de cette fonction peut être lu dan
 ```{r fig.height=4, fig.width=9}
 par(mfrow=c(1,2)) # 2 figures sur la même ligne
 # spaghetti représentant l'incertitude totale
-Q=read.table(file.path(workspace,'totalU.spag'))
+Q=read.table(file.path(workspace,'hQ_totalU.spag'))
 matplot(hgrid$H,Q,col='red',type='l',lty=1,main='spaghetti')
 # Intervalles à 95% pour l'incertitude totale
-Q=read.table(file.path(workspace,'totalU.env'),header=T)
+Q=read.table(file.path(workspace,'hQ_totalU.env'),header=T)
 matplot(hgrid$H,Q[,2:3],col='red',type='l',lty=1,main='uncertainty envelop')
 ```
 
 La même logique peut être utilisée pour estimer l'incertitude paramétrique seule (ce qui revient à "désactiver" l'incertitude structurelle) et la courbe de tarage maxpost (ce qui revient à "désactiver" les incertitudes paramétriques et structurelle).
 
-```{r}
+```{r, eval=reRun}
 # Définir un objet 'prediction' pour l'incertitude paramétrique seule - notez le doStructural=FALSE
-paramU=prediction(X=hgrid,spagFiles='paramU.spag',data.dir=workspace,
+paramU=prediction(X=hgrid,spagFiles='hQ_paramU.spag',data.dir=workspace,
                   doParametric=TRUE,doStructural=FALSE)
 # Définir un objet 'prediction' sans incertitude, ce qui conduit à la courbe de tarage maxpost
-maxpost=prediction(X=hgrid,spagFiles='maxpost.spag',data.dir=workspace,
+maxpost=prediction(X=hgrid,spagFiles='hQ_maxpost.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # Lancer BaM en mode prédiction
 BaM(mod=M,data=D, # model and data
@@ -207,13 +208,13 @@ Il est maintenant possible de recréer la figure proposée par `BaRatinAGE`, qui
 
 ```{r fig.height=6, fig.width=9}
 # Lire et tracer en rouge l'enveloppe représentant l'incertitude totale
-Q=read.table(file.path(workspace,'totalU.env'),header=T)
+Q=read.table(file.path(workspace,'hQ_totalU.env'),header=T)
 matplot(hgrid$H,Q[,2:3],col='red',type='l',lty=1)
 # Lire et tracer en rose l'enveloppe représentant l'incertitude paramétrique
-Q=read.table(file.path(workspace,'paramU.env'),header=T)
+Q=read.table(file.path(workspace,'hQ_paramU.env'),header=T)
 matplot(hgrid$H,Q[,2:3],col='pink',type='l',lty=1,add=TRUE)
 # Lire et tracer en noir la courbe de tarage maxpost
-Q=read.table(file.path(workspace,'maxpost.spag'))
+Q=read.table(file.path(workspace,'hQ_maxpost.spag'))
 matplot(hgrid$H,Q,col='black',type='l',lty=1,add=TRUE)
 # Ajouter les jaugeages
 points(x=SauzeGaugings$H,y=SauzeGaugings$Q,pch=19)
@@ -232,15 +233,15 @@ plot(ht,type='l')
 
 Le code est le même que précédemment, à l'exception du fait que les valeurs de hauteur utilisées dans les prédictions proviennent du limnigramme (`ht['stage']`) plutôt que de la grille de hauteur (`hgrid`).
 
-```{r}
+```{r, eval=reRun}
 # Objet 'prediction' pour l'incertitude totale
-totalU=prediction(X=ht['stage'],spagFiles='totalU.spag',data.dir=workspace, 
+totalU=prediction(X=ht['stage'],spagFiles='Qt_totalU.spag',data.dir=workspace, 
                   doParametric=TRUE,doStructural=TRUE) 
 # Objet 'prediction' pour l'incertitude paramétrique
-paramU=prediction(X=ht['stage'],spagFiles='paramU.spag',data.dir=workspace,
+paramU=prediction(X=ht['stage'],spagFiles='Qt_paramU.spag',data.dir=workspace,
                   doParametric=TRUE,doStructural=FALSE)
 # Objet 'prediction' pour l'hydrogramme maxpost
-maxpost=prediction(X=ht['stage'],spagFiles='maxpost.spag',data.dir=workspace,
+maxpost=prediction(X=ht['stage'],spagFiles='Qt_maxpost.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # lancer BaM en mode prédiction
 BaM(mod=M,data=D,pred=list(totalU,paramU,maxpost),doCalib=FALSE,doPred=TRUE)
@@ -250,13 +251,13 @@ L'hydrogramme résultant de ce calcul peut être tracé avec ses incertitudes.
 
 ```{r fig.height=6, fig.width=9}
 # Incertitude totale en rouge
-Q=read.table(file.path(workspace,'totalU.env'),header=T)
+Q=read.table(file.path(workspace,'Qt_totalU.env'),header=T)
 matplot(ht$time,Q[,2:3],col='red',type='l',lty=1)
 # Incertitude paramétrique en rose
-Q=read.table(file.path(workspace,'paramU.env'),header=T)
+Q=read.table(file.path(workspace,'Qt_paramU.env'),header=T)
 matplot(ht$time,Q[,2:3],col='pink',type='l',lty=1,lwd=2,add=TRUE)
 # Hydrogramme maxpost en noir
-Q=read.table(file.path(workspace,'maxpost.spag'))
+Q=read.table(file.path(workspace,'Qt_maxpost.spag'))
 matplot(ht$time,Q,col='black',type='l',lty=1,add=TRUE)
 ```
 
@@ -272,16 +273,16 @@ matplot(ht$time,htrep,col='gray',type='l',lty=1)
 
 Le reste de l'analyse se déroule comme précédemment, en remplaçant le limnigramme unique par les spaghetti de limnigramme.
 
-```{r}
+```{r, eval=reRun}
 # Incertitude totale
 totalU=prediction(X=list(htrep), # spaghetti, doivent obligatoirement être placés dans une liste
-                  spagFiles='totalU.spag', data.dir=workspace,
+                  spagFiles='Qt_param_struct_hU.spag', data.dir=workspace,
                   doParametric=TRUE, doStructural=TRUE)
 # Incertitudes param+hauteur (incertitude structurelle désactivée)
-param_hU=prediction(X=list(htrep),spagFiles='param_hU.spag',data.dir=workspace,
+param_hU=prediction(X=list(htrep),spagFiles='Qt_param_hU.spag',data.dir=workspace,
                   doParametric=TRUE,doStructural=FALSE)
 # Incertitude de hauteur seulement  (incertitudes structurelle et paramétrique désactivées)
-hU=prediction(X=list(htrep),spagFiles='hU.spag',data.dir=workspace,
+hU=prediction(X=list(htrep),spagFiles='Qt_hU.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # lancer BaM en mode prédiction
 BaM(mod=M,data=D,pred=list(totalU,param_hU,hU),doCalib=FALSE,doPred=TRUE)
@@ -291,16 +292,16 @@ Ceci conduit à la figure ci-dessous. Notez qu'un axe des ordonnées logarithmiq
 
 ```{r fig.height=6, fig.width=9}
 # Incertitude totale en rouge
-Q=read.table(file.path(workspace,'totalU.env'),header=T)
+Q=read.table(file.path(workspace,'Qt_param_struct_hU.env'),header=T)
 matplot(ht$time,Q[,2:3],col='red',type='l',lty=1,log='y')
 # Incertitude paramétrique+hauteur en rose
-Q=read.table(file.path(workspace,'param_hU.env'),header=T)
+Q=read.table(file.path(workspace,'Qt_param_hU.env'),header=T)
 matplot(ht$time,Q[,2:3],col='pink',type='l',lty=1,lwd=2,add=TRUE)
 # Incertitude hauteur en jaune
-Q=read.table(file.path(workspace,'hU.env'),header=T)
+Q=read.table(file.path(workspace,'Qt_hU.env'),header=T)
 matplot(ht$time,Q[,2:3],col='goldenrod1',type='l',lty=1,lwd=2,add=TRUE)
 # Hydrogramme maxpost en noir
-Q=read.table(file.path(workspace,'maxpost.spag'))
+Q=read.table(file.path(workspace,'Qt_maxpost.spag'))
 matplot(ht$time,Q,col='black',type='l',lty=1,add=TRUE)
 ```
 
@@ -315,5 +316,5 @@ Le package `RBaM` permet de piloter BaRatin directement depuis `R` sans passer p
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 # Cleanup
-unlink(workspace, recursive=TRUE)
+# unlink(workspace, recursive=TRUE)
 ```
