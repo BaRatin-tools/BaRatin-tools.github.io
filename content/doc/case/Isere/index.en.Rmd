@@ -15,7 +15,7 @@ output:
 
 # Analyse hydraulique
 
-Cette station peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous). En effet, même les débits les plus faibles ne font pas apparaître de contrôle par section, et les débordements sont fortement limités par des digues très serrées. L'impact du débordement sur les pieds de digues boisés est très faible en raison de la forte rugosité et de la très faible largeur de ce lit moyen additionnel. Le chenal de contrôle présente un gabarit rectangulaire relativement uniforme en amont en aval de la station, dont la section de jaugeage est jugée représentative.
+Cette [station](https://ense3.grenoble-inp.fr/fr/plateformes/station-hydrometrique-isere-campus) peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous). En effet, même les débits les plus faibles ne font pas apparaître de contrôle par section, et les débordements sont fortement limités par des digues très serrées. L'impact du débordement sur les pieds de digues boisés est très faible en raison de la forte rugosité et de la très faible largeur de ce lit moyen additionnel. Le chenal de contrôle présente un gabarit rectangulaire relativement uniforme en amont en aval de la station, dont la section de jaugeage est jugée représentative.
 
 $$
 \begin{array}{|c|c|c|}
@@ -58,3 +58,13 @@ Avec ces spécifications, on obtient la courbe de tarage a priori représentée 
 <br>
 <img src="IserePrior.en.svg" width="75%">
 <p style="text-align: center;color: gray;"> Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.</p>
+
+# Jaugeages et courbe de tarage a posteriori
+
+Un très grand nombre de jaugeages peut être utilisé pour raffiner la courbe de tarage a priori, puisque 147 jaugeages sont disponibles sur la période 2018-2024, au cours de laquelle aucun détarage n’a été observé. Ces jaugeages sont bien répartis sur toute la gamme de débits puisque les jaugeages les plus hauts correspondent à des débits de crue environ décennale.
+
+La combinaison d'une courbe de tarage relativement simple et du grand nombre de jaugeages disponibles conduit à une courbe de tarage a posteriori aux incertitudes très faibles. L'ajustement de la courbe aux jaugeages est globalement très satisfaisant pour les débits faibles à moyen. Néanmoins, les 7 jaugeages les plus forts sont tous sous la courbe. Bien que les incertitudes affectant les jaugeages et la courbe expliquent une partie de cette dispersion, le caractère systématique de cette observation peut conduire à se questionner sur l'adéquation de la configuration hydraulique pour les plus forts débits. 
+
+<br>
+<img src="IserePosterior.en.svg" width="100%">
+<p style="text-align: center;color: gray;"> Figure 3. Courbe de tarage a posteriori pour l’Isère à Grenoble-Campus.</p>
