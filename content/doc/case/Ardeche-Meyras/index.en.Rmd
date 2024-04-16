@@ -43,7 +43,7 @@ The control matrix is the following:
 $$
 \begin{array}{|c|}
 \hline
-  &\text{contrôle 1} & \text{contrôle 2} & \text{contrôle 3}\\
+  &\text{control 1} & \text{control 2} & \text{control 3}\\
 \hline
   \text{segment 1} &\color{lime}{1} & &\\
 \hline
