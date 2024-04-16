@@ -30,7 +30,7 @@ $$
 <img src="IsereAnalysis.jpg" width="80%">
 <p style="text-align: center;color: gray;"> Figure 1. Analyse des contrôles hydrauliques pour l’Isère à Grenoble-Campus. (a) vue du chenal vers l'amont ; (b) levé topographique de la section de jaugeage, représentative du chenal moyen.</p>
 
-Etant donné qu'il n'y a qu'un seul contrôle, la matrice des contrôles est triviale:
+Etant donné qu'il n'y a qu'un seul contrôle, la matrice des contrôles est triviale :
 
 $$
 \begin{array}{|c|}
@@ -46,7 +46,7 @@ La hauteur minimale $h_{min}$ d’application de la courbe de tarage est inféri
 
 # Spécification des a priori
 
-La spécification des a priori de l’unique contrôle est basée sur les raisonnements suivants:
+La spécification des a priori de l’unique contrôle est basée sur les raisonnements suivants :
 
 * D'après les observations et le profil en travers, il est possible de dire que le contrôle chenal s'active pour une hauteur échelle de $\kappa = -0.5 \mathrm{m} \pm 0.5 \mathrm{m}$
 * D'après le profil en travers disponible, la largeur du chenal représentatif est estimée à $B_w = 65 \mathrm{m} \pm 10 \mathrm{m}$

@@ -1,6 +1,6 @@
 ---
-title: "L'Isère à Grenoble-Campus"
-subtitle: "un unique contôle chenal"
+title: "Isère River at Grenoble-Campus"
+subtitle: "single channel control"
 slug: "isere-grenoble"
 weight: 2
 layout: "doc_caseStudiesPage"
@@ -11,26 +11,27 @@ output:
     toc: true
 ---
 
-> Téléchargez le fichier BaRatinAGE de ce cas d'étude: [Isere-Grenoble.bam](/bam/Isere-Grenoble.bam)
+> Download the BaRatinAGE file for this case study: [Isere-Grenoble.bam](/bam/Isere-Grenoble.bam)
 
-# Analyse hydraulique
+# Hydraulic analysis
 
-Cette [station](https://ense3.grenoble-inp.fr/fr/plateformes/station-hydrometrique-isere-campus) peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous). En effet, même les débits les plus faibles ne font pas apparaître de contrôle par section, et les débordements sont fortement limités par des digues très serrées. L'impact du débordement sur les pieds de digues boisés est très faible en raison de la forte rugosité et de la très faible largeur de ce lit moyen additionnel. Le chenal de contrôle présente un gabarit rectangulaire relativement uniforme en amont en aval de la station, dont la section de jaugeage est jugée représentative.
+This [station](https://ense3.grenoble-inp.fr/fr/plateformes/station-hydrometrique-isere-campus) can be modeled with a single control as a wide rectangular channel (see Figure below). Even the lowest flows do not show a section control, and overbank flows are strictly limited by close dikes. The impact of the overflow on the toe of the wooded embankments is negligible due to the very rough and very narrow way of this additional channel. The controlling channel has a relatively uniform rectangular cross-section upstream and downstream of the station. The cross-section of the gaugings is considered to be representative of the channel average cross-section.
+
 
 $$
 \begin{array}{|c|c|c|}
 \hline
-  \text{Contrôle} & \text{Nature} & \text{Type} \\ 
+  \text{Control} & \text{Nature} & \text{Type} \\ 
 \hline
-     1 & \text{Lit endigué} & \text{chenal} \\ 
+     1 & \text{Channelised between dikes} & \text{channel} \\ 
 \hline
 \end{array}
 $$
 
 <img src="IsereAnalysis.jpg" width="80%">
-<p style="text-align: center;color: gray;"> Figure 1. Analyse des contrôles hydrauliques pour l’Isère à Grenoble-Campus. (a) vue du chenal vers l'amont ; (b) levé topographique de la section de jaugeage, représentative du chenal moyen.</p>
+<p style="text-align: center;color: gray;"> Figure 1. Analysis of hydraulic controls for the Isère River at Grenoble-Campus. (a) upstream view of the channel; (b) topographical survey of the gauging cross-section, representative of the average channel.</p>
 
-Etant donné qu'il n'y a qu'un seul contrôle, la matrice des contrôles est triviale:
+Since a single control is needed, the control matrix is straightforward:
 
 $$
 \begin{array}{|c|}
@@ -42,29 +43,29 @@ $$
 \end{array}
 $$
 
-La hauteur minimale $h_{min}$ d’application de la courbe de tarage est inférieure aux plus faibles hauteurs mesurées, puisqu’elles restent suffisamment au-dessus du niveau du fond et que le contrôle chenal unique reste valable. La hauteur maximale $h_{max}$ d’application de la courbe de tarage peut être prise égale à la hauteur de submersion des digues, au-delà de laquelle de nouveaux contrôles, voire un contournement de la station vont se manifester.
+The minimum stage $h_{min}$ of the rating curve is lower than the lowest measured stages, since the latter are are high enough above the bottom for the single control channel to remain valid. The maximum stage $h_{max}$ can be taken as the crest level of the dikes, beyond which new controls or circumvention of the station will appear.
 
-# Spécification des a priori
+# Prior specification
 
-La spécification des a priori de l’unique contrôle est basée sur les raisonnements suivants:
+Prior specification for the unique channel control is performed as follows:
 
-* D'après les observations et le profil en travers, il est possible de dire que le contrôle chenal s'active pour une hauteur échelle de $\kappa = -0.5 \mathrm{m} \pm 0.5 \mathrm{m}$
-* D'après le profil en travers disponible, la largeur du chenal représentatif est estimée à $B_w = 65 \mathrm{m} \pm 10 \mathrm{m}$
-* La propreté du lit, sa nature endiguée et entretenue induit une rugosité assez faible, que l'on estime à $K_S = 25 \pm 5$
-* La pente du chenal a été estimée à $S = 0.0005 \pm 0.00025$.
+* Based on observations and on the cross-section, it is possible to say that the control channel is activated at a water level of $\kappa = -0.5 \mathrm{m} \pm 0.5 \mathrm{m}$
+* According to the available cross-section, the width of the representative channel is estimated at $B_w = 65 \mathrm{m} \pm 10 \mathrm{m}$
+* Since the bed is clear, channelised and well-maintained a relatively low roughness is estimated, $K_S = 25 \pm 5$
+* Channel slope was estimated from maps at $S = 0.0005 \pm 0.00025$.
 
-Avec ces spécifications, on obtient la courbe de tarage a priori représentée ci-dessous.
+The resulting prior rating curve is shown below.
 
 <br>
 <img src="IserePrior.en.svg" width="75%">
-<p style="text-align: center;color: gray;"> Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.</p>
+<p style="text-align: center;color: gray;"> Figure 2. Prior rating curve for the Isère River at Grenoble-Campus.</p>
 
-# Jaugeages et courbe de tarage a posteriori
+# Gaugings and posterior rating curve
 
-Un très grand nombre de jaugeages peut être utilisé pour raffiner la courbe de tarage a priori, puisque 147 jaugeages sont disponibles sur la période 2018-2024, au cours de laquelle aucun détarage n’a été observé. Ces jaugeages sont bien répartis sur toute la gamme de débits puisque les jaugeages les plus hauts correspondent à des débits de crue environ décennale.
+A very high number of gaugings can be used for rating curve estimation, since 147 gaugings are available on the period 2018-2024, 4during which no noticeable rating shift occurred. These gaugings span a large discharge range since the highest ones correspond to discharge values reached by a 10-year flood or so.
 
-La combinaison d'une courbe de tarage relativement simple et du grand nombre de jaugeages disponibles conduit à une courbe de tarage a posteriori aux incertitudes très faibles. L'ajustement de la courbe aux jaugeages est globalement très satisfaisant pour les débits faibles à moyen. Néanmoins, les 7 jaugeages les plus forts sont tous sous la courbe. Bien que les incertitudes affectant les jaugeages et la courbe expliquent une partie de cette dispersion, le caractère systématique de cette observation peut conduire à se questionner sur l'adéquation de la configuration hydraulique pour les plus forts débits. 
+The combination of a fairly simple rating curve with a large number of gaugings leads to a posterior rating curve affected by small uncertainties. The agreement between the curve and the gaugings is excellent for low to medium flows.  However, the highest 7 gaugings happen to all lie below the curve. Although gaugings and rating curve uncertainties can partly explain this discrepancy, its systematic nature may lead to legitimately question the validity of the hydraulic configuration at high flows. 
 
 <br>
 <img src="IserePosterior.en.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 3. Courbe de tarage a posteriori pour l’Isère à Grenoble-Campus.</p>
+<p style="text-align: center;color: gray;"> Figure 3. Posterior rating curve for the Isère River at Grenoble-Campus.</p>

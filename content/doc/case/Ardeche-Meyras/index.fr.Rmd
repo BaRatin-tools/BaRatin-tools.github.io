@@ -11,7 +11,7 @@ output:
     toc: true
 ---
 
-> Téléchargez le fichier BaRatinAGE de ce cas d'étude: [Ardeche-Meyras.bam](/bam/Ardeche-Meyras.bam)
+> Téléchargez le fichier BaRatinAGE de ce cas d'étude : [Ardeche-Meyras.bam](/bam/Ardeche-Meyras.bam)
 
 # Introduction 
 
@@ -56,9 +56,9 @@ $$
 
 # Spécification des a priori
 
-La spécification des a priori est basée sur les raisonnements suivants:
+La spécification des a priori est basée sur les raisonnements suivants :
 
-* Pour le radier naturel, on utilise un contrôle section rectangulaire dont les propriétés sont connues de manière assez imprécise: activation pour une hauteur échelle de $\kappa = -0.6 \mathrm{m} \pm 1 \mathrm{m}$, largeur estimée à $B_w = 8 \mathrm{m} \pm 4 \mathrm{m}$.
+* Pour le radier naturel, on utilise un contrôle section rectangulaire dont les propriétés sont connues de manière assez imprécise : activation pour une hauteur échelle de $\kappa = -0.6 \mathrm{m} \pm 1 \mathrm{m}$, largeur estimée à $B_w = 8 \mathrm{m} \pm 4 \mathrm{m}$.
 * Le lit actif est assimilé à un contôle par chenal rectangulaire large de rugosité assez faible, que l'on estime à $K_S = 25 \pm 5$, de largeur $B_w = 15 \mathrm{m} \pm 5 \mathrm{m}$ et de pente $S = 0.0005 \pm 0.00025$. La hauteur d'activation de ce contôle correspond à la hauteur l'ennoiement du radier et est donc assez mal connue: $\kappa = 0 \mathrm{m} \pm 1 \mathrm{m}$.
 * Le lit moyen est assimilé à un contôle par chenal rectangulaire large de rugosité plus élevée que le lit actif, $K_S = 15 \pm 5$, de largeur $B_w = 30 \mathrm{m} \pm 10 \mathrm{m}$ et de même pente que le lit actif $S = 0.0005 \pm 0.00025$. La hauteur d'activation de ce contôle est cette fois mieux connue puisqu'elle correspond à la hauteur à l'échelle du fond du lit moyen, que l'on estime à $\kappa = 1.2 \mathrm{m} \pm 0.4 \mathrm{m}$.
 
