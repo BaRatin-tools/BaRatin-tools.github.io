@@ -1,0 +1,98 @@
+---
+title: "The Charbonnières stream"
+subtitle: '"truncated triangle" weir'
+slug: "charbonnieres"
+weight: 4
+layout: "doc_caseStudiesPage"
+inTOC: "caseStudies"
+output:
+  blogdown::html_page:
+    number_sections: true
+    toc: true
+---
+
+> Download the BaRatinAGE file for this case study: [Charbonnieres-CharbonnieresLesBains.bam](/bam/Charbonnieres-CharbonnieresLesBains.bam)
+
+# Hydraulic analysis
+
+This [station](https://bdoh.irstea.fr/YZERON/station/V301502301) is part of the [Yzeron observatory](https://bdoh.irstea.fr/YZERON/) monitoring several peri-urban catchments around the city of Lyon since 1997. A "truncated triangle" weir is used at this station. This geometry is used quite frequently in practice, but its modelling within BaRatin is not straightforward because its $Q(H)$ equation is not compatible with some BaRatin hypotheses. This case study therefore aims at illustrating a possible way to make BaRatin-compliant approximations for this particular geometry.
+
+<img src="CharboAnalysis.jpg" width="90%">
+<p style="text-align: center;color: gray;"> Figure 1. Analysis of hydraulic controls for the Charbonnières stream at Charbonnières-Les-Bains. Left: photo taken from downstream, showing the "truncated triangle" inserted in a larger rectangular weir; right: schematics of a "truncated triangle" weir.</p>
+
+The problematic part of this hydraulic configuration is the "truncated triangle" weir, schematized in Figure 1: a regular triangular weir laterally expands up to a given stage $b'$, then is framed with vertical walls. The equation of this control above stage $b'$ is given below. It can be interpreted as the addition of a « negative » triangular weir equation to remove the excess wetted area of the regular triangle when it reaches the vertical walls.
+
+$$
+Q(H)=\underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_1}(H-b)^c - \underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_2}(H-b')^c
+$$
+
+This equation is not BaRatin-compliant for the following reasons:
+
+1. It cannot be factorized as a single power equation $Q(H)=a(H-b)^c$
+2. Using a subtraction of two controls as suggested by the equation does not work because:
+    a. BaRatin does not allow subtracting power equations, only adding them up; it would then be tempting attempt adding a control with a negative coefficient $a'_2=-a_2$, but BaRatin does not allow negative coefficients either.
+    b. The parameters of th two controls that should b subtracted are linked: in particular, they have the same coefficients $(a_1=a_2)$ and the same exponent $c$. BaRatin has no functionality to enforce such links.
+    
+Ces contraintes imposées par BaRatin sont liées à la [formulation générale de la courbe de tarage](/en/doc/topics/rating-curve/), et en particulier à la nécessité de résoudre une équation de continuité. Nous décrivons à la fin de cette page des pistes en cours d'investigation pour contourner ces contraintes, mais en attendant une approche par approximation est nécessaire pour "faire rentrer" cette équation dans le cadre de BaRatin. Un moyen commode de modéliser ce type de situation est d'utiliser un déversoir triangulaire pour les hauteurs inférieures à $b'$, puis de le remplacer par un déversoir rectangulaire pour les hauteurs supérieures à $b'$. La cote du fond de ce rectangle (offset) devrait être estimée au-dessus de la côte du fond du triangle, et l'avantage est que l'exposant $c=1.5$ correspond plus à la géométrie contrainte latéralement par les parois verticales (à comparer avec l'exposant $c=2.5$ du triangle). Eventuellement, une transition acceptable entre les approximations triangles et rectangles peut être obtenue avec un déversoir parabolique équivalent, d'offset intermédiaire et de dimensions appropriées.
+
+Dans le cas particulier du ruisseau de Charbonnières, nous adoptons la configuration approximative suivante (conduisant à la matrice des contrôles ci-après) :
+
+1. Déversoir triangulaire pour $H<b'$
+2. Remplacement par un déversoir rectangulaire équivalent pour $H \geq b'$
+3. Ajout d'un déversoir rectangulaire plus large représentant le rectangle dans lequel le triangle tronqué est encastré pour $H \geq b'$
+
+$$
+\begin{array}{|c|c|c|}
+\hline
+  \text{Contrôle} & \text{Nature} & \text{Type} \\ 
+\hline
+     1 & \text{Déversoir triangulaire} & \text{section} \\ 
+\hline
+     2 & \text{Déversoir rectangulaire approximant le triangle tronqué} & \text{section} \\ 
+\hline
+     3 & \text{Déversoir rectangulaire large} & \text{section} \\ 
+\hline
+\end{array}
+$$
+
+$$
+\begin{array}{|c|}
+\hline
+  &\text{contrôle 1} & \text{contrôle 2} & \text{contrôle 3}\\
+\hline
+  \text{segment 1} &\color{lime}{1} & &\\
+\hline
+  \text{segment 2} & \color{darkslategray}{0} & \color{lime}{1} &\\
+\hline
+  \text{segment 3} & \color{darkslategray}{0} & \color{lime}{1} & \color{lime}{1} \\
+\hline
+\end{array}
+$$
+
+# Spécification des a priori
+
+Une fois la configuration hydraulique choisie, la spécification des a priori peut être effectuée comme suit :
+
+* Le contrôle 1 (triangle) s'active à $\kappa = 7.2 \mathrm{cm} \pm 1 \mathrm{cm}$ et l'angle d'ouverture est égal à  $\nu = 90° \pm 2°$
+* Le contrôle 2 (rectangle approximant le triangle tronqué) s'active à $\kappa = 40.3 \mathrm{cm} \pm 0.5 \mathrm{cm}$ et a pour largeur $B_w = 70 \mathrm{cm} \pm 3 \mathrm{cm}$
+* Le contrôle 3 (rectangle large ajouté au rectangle ci-dessus) s'active à $\kappa = 40.4 \mathrm{cm} \pm 3 \mathrm{cm}$. En théorie on souhaiterait spécifier une hauteur d'activation égale à la précédente, mais en pratique on la spécifie $1 \mathrm{mm}$ au-dessus pour éviter un message d'erreur du au fait que BaRatin impose des hauteurs d'activation strictement croissantes dans l'ordre des contrôles. Ce rectangle large a pour largeur $B_w = 467 \mathrm{cm} \pm 2 \mathrm{cm}$
+
+La courbe de tarage a priori qui résulte de ces spécifications est montrée ci-dessous, et elle est déjà relativement précise.
+
+<br>
+<img src="CharboPrior.en.svg" width="75%">
+<p style="text-align: center;color: gray;"> Figure 2. Courbe de tarage a priori pour le ruisseau de Charbonnières à Charbonnières-Les-Bains (l'axe des débits est en échelle log).</p>
+
+# Jaugeages et courbe de tarage a posteriori
+
+88 jaugeages peuvent être utilisés pour estimer la courbe de tarage a posteriori. Les jaugeages les plus hauts (autour de $2 \mathrm{m}^3.\mathrm{s}^{−1}$) correspondent à des crues relativement fréquentes sur ce bassin, et restent bien en deçà des plus forts débits observés à cette station, puisqu'un débit environ 10 fois plus important a été estimé lors de la crue de novembre 2016. La courbe de tarage a posteriori ci-dessous suggère que les jaugeages ont permis de réduire l'incertitude de la courbe de tarage a priori pour les faibles débits, mais que l'extrapolation vers les forts débits reste très incertaine. 
+
+<br>
+<img src="CharboPosterior.en.svg" width="100%">
+<p style="text-align: center;color: gray;"> Figure 3. Courbe de tarage a posteriori pour le ruisseau de Charbonnières à Charbonnières-Les-Bains (l'axe des débits est en échelle log).</p>
+
+Une analyse plus poussée des paramètres estimés a posteriori révèle que la cote du fond du rectangle approximant le triangle tronqué est d'environ $b_2=22 \mathrm{cm}$, ce qui est bien au-dessus de la cote du fond du triangle tronqué $(b_1=7 \mathrm{cm})$ mais en-dessous de la cote du fond du rectangle large $(b_3=41 \mathrm{cm})$. La Figure ci-dessous illustre la géométrie obtenue à partir de ces paramètres estimés.
+
+<br>
+<img src="geometry.svg" width="75%">
+<p style="text-align: center;color: gray;"> Figure 4. Géométries estimées du triangle tronqué et du rectangle équivalent qui est activé pour $H \geq 41 \mathrm{cm}$.</p>
