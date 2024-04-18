@@ -33,7 +33,7 @@ Cette équation ne rentre pas dans le cadre de BaRatin pour les raisons suivante
     a. BaRatin ne permet pas de soustraire des équations puissance, seulement de les ajouter; on serait tenté de dire qu'il suffit alors d'ajouter un contrôle avec un coefficient $a'_2=-a_2$ négatif, mais BaRatin n'autorise pas les coefficients négatifs.
     b. Les paramètres des 2 contrôles qu'il faudrait soustraire sont liés : en particulier ils ont les mêmes coefficients $(a_1=a_2)$ et le même exposant $c$. BaRatin ne permet pas d'imposer de tels liens.
     
-Ces contraintes imposées par BaRatin sont liées à la [formulation générale de la courbe de tarage](/fr/doc/topics/courbe-de-tarage/), et en particulier à la nécessité de résoudre une équation de continuité. Nous décrivons à la fin de cette page des pistes en cours d'investigation pour contourner ces contraintes, mais en attendant une approche par approximation est nécessaire pour "faire rentrer" cette équation dans le cadre de BaRatin. Un moyen commode de modéliser ce type de situation est d'utiliser un déversoir triangulaire pour les hauteurs inférieures à $b'$, puis de le remplacer par un déversoir rectangulaire pour les hauteurs supérieures à $b'$. La cote du fond de ce rectangle (offset) devrait être estimée au-dessus de la côte du fond du triangle, et l'avantage est que l'exposant $c=1.5$ correspond plus à la géométrie contrainte latéralement par les parois verticales (à comparer avec l'exposant $c=2.5$ du triangle). Eventuellement, une transition acceptable entre les approximations triangles et rectangles peut être obtenue avec un déversoir parabolique équivalent, d'offset intermédiaire et de dimensions appropriées.
+Ces contraintes imposées par BaRatin sont liées à la [formulation générale de la courbe de tarage](/fr/doc/topics/courbe-de-tarage/), et en particulier à la nécessité de résoudre une équation de continuité. Nous décrivons à la fin de cette page des pistes en cours d'investigation pour contourner ces contraintes, mais en attendant une approche par approximation est nécessaire pour "faire rentrer" ce type de contrôle dans le cadre de BaRatin. Un moyen commode de modéliser ce type de situation est d'utiliser un déversoir triangulaire pour les hauteurs inférieures à $b'$, puis de le remplacer par un déversoir rectangulaire pour les hauteurs supérieures à $b'$. La cote du fond de ce rectangle (offset) devrait être estimée au-dessus de la côte du fond du triangle, et l'avantage est que l'exposant $c=1.5$ correspond plus à la géométrie contrainte latéralement par les parois verticales (à comparer avec l'exposant $c=2.5$ du triangle). Eventuellement, une transition acceptable entre les approximations triangles et rectangles peut être obtenue avec un déversoir parabolique équivalent, d'offset intermédiaire et de dimensions appropriées.
 
 Dans le cas particulier du ruisseau de Charbonnières, nous adoptons la configuration approximative suivante (conduisant à la matrice des contrôles ci-après) :
 
@@ -77,7 +77,7 @@ Une fois la configuration hydraulique choisie, la spécification des a priori pe
 * Le contrôle 2 (rectangle approximant le triangle tronqué) s'active à $\kappa = 40.3 \mathrm{cm} \pm 0.5 \mathrm{cm}$ et a pour largeur $B_w = 70 \mathrm{cm} \pm 3 \mathrm{cm}$
 * Le contrôle 3 (rectangle large ajouté au rectangle ci-dessus) s'active à $\kappa = 40.4 \mathrm{cm} \pm 3 \mathrm{cm}$. En théorie on souhaiterait spécifier une hauteur d'activation égale à la précédente, mais en pratique on la spécifie $1 \mathrm{mm}$ au-dessus pour éviter un message d'erreur du au fait que BaRatin impose des hauteurs d'activation strictement croissantes dans l'ordre des contrôles. Ce rectangle large a pour largeur $B_w = 467 \mathrm{cm} \pm 2 \mathrm{cm}$
 
-La courbe de tarage a priori qui résulte de ces spécifications est montrée ci-dessous, et elle est déjà relativement précise.
+La courbe de tarage a priori qui résulte de ces spécifications est montrée ci-dessous, et elle est déjà relativement précise, comme c'est souvent le cas lorsque des déversoirs artificiels sont utilisés.
 
 <br>
 <img src="CharboPrior.fr.svg" width="75%">
@@ -95,4 +95,17 @@ Une analyse plus poussée des paramètres estimés a posteriori révèle que la 
 
 <br>
 <img src="geometry.svg" width="75%">
-<p style="text-align: center;color: gray;"> Figure 4. Géométries estimées du triangle tronqué et du rectangle équivalent qui est activé pour $H \geq 41 \mathrm{cm}$.</p>
+<p style="text-align: center;color: gray;"> Figure 4. Géométries estimées du triangle actif pour $H < 41 \mathrm{cm}$ et du rectangle équivalent qui le remplace lorsque $H \geq 41 \mathrm{cm}$.</p>
+
+# Approches alternatives
+
+Deux approches sont en cours d'investigation pour utiliser des contrôle comme celui de Charbonnières qui n'entrent dans le cadre classique de BaRatin. Ces deux approches ne sont pas encore disponibles dans BaRatinAGE, mais elles sont d'ores et déjà implémentées dans [RBaM](/fr/doc/case/rbam). Nous travaillons à leur documentation et proposerons prochainement des cas d'étude pour illustrer leur utilisation. Ces deux approches sont les suivantes :
+
+1. Ecrire "à la main" l'équation du contrôle: ceci peut etre fait dans RBaM via un modèle particulier nommé [`TextFileModel`](https://github.com/BaM-tools/RBaM/blob/main/vignettes/TextFileModel.Rmd) qui permet de définir un nouveau modèle "à la volée" à partir de son équation.
+2. Déduire l'équation du contrôle à partir de sa bathymétrie. Ceci est possible pour un contrôle de type section via le modèle `HydraulicControl_section` implementé dans RBaM et en cours de documentation.
+
+Si les deux approches ci-dessus devraient permettrent d'estimer les paramètres d'un contrôle quelconque pris en isolation, elles ne permettront pas forcément d'estimer une combinaison de plusieurs de ces contrôles dans une courbe de tarage multi-segments. Comme mentionné précédemment, la résolution de l'équation de continuité est en effet plus compliquée hors du cadre des équations puissance simples imposé par BaRatin. En particulier, cette équation n'a en général pas de solution explicite, et existence et unicité de cette solution ne sont pas toujours assurées. 
+
+
+
+

@@ -17,7 +17,7 @@ output:
 <table style="width:100%">
   <tr>
     <td style="width:90px"><a href="https://github.com/BaRatin-tools/BaRatinAGE"> <img alt="BaRatin logo" src="/img/logo.png" height="64" /> </a> </td>
-    <td>La dernière version de BaRatinAGE est téléchargeable [ici](https://github.com/BaRatin-tools/BaRatinAGE/releases). Ce logiciel propose une interface graphique simple et intuitive pour utiliser la méthode BaRatin et constitue donc le point d'entrée que nous recommendons. Il est aussi suffisamment complet et stable pour une utilisation opérationelle en routine.</td>
+    <td>La dernière version de BaRatinAGE est téléchargeable [ici](https://github.com/BaRatin-tools/BaRatinAGE/releases). Ce logiciel propose une interface graphique simple et intuitive pour utiliser la méthode BaRatin et constitue donc le point d'entrée que nous recommandons. Il est aussi suffisamment complet et stable pour une utilisation opérationelle en routine.</td>
 </table>
 
 <br>

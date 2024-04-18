@@ -15,7 +15,7 @@ output:
 
 # Analyse hydraulique
 
-Cette [station](https://bdoh.irstea.fr/YZERON/station/V3015810) fait partie de [l'observatoire du bassin versant de l’Yzeron](https://bdoh.irstea.fr/YZERON/) qui suit plusieurs bassins peri-urbains autour de la ville de Lyon depuis 1997. Ce cas est intéressant car la relation hauteur-débit est contrôlée par une combinaison de déversoirs articiels dont les dimensions sont bien connues (voir Figure ci-dessous). Les a priori peuvent donc être spécifiés facilement et conduire à une courbe de tarage a priori qui est déjà relativement précise.
+Cette [station](https://bdoh.irstea.fr/YZERON/station/V3015810) fait partie de [l'observatoire du bassin versant de l’Yzeron](https://bdoh.irstea.fr/YZERON/) qui suit plusieurs bassins peri-urbains autour de la ville de Lyon depuis 1997. Ce cas est intéressant car la relation hauteur-débit est contrôlée par une combinaison de déversoirs artificiels dont les dimensions sont bien connues (voir Figure ci-dessous). Les a priori peuvent donc être spécifiés facilement et conduire à une courbe de tarage a priori qui est déjà relativement précise.
 
 <img src="MercierAnalysis.jpg" width="90%">
 <p style="text-align: center;color: gray;"> Figure 1. Analyse des contrôles hydrauliques pour le Mercier au pont de la D610. Gauche: photo prise depuis l'aval, droite: dimensions des déversoirs.</p>
