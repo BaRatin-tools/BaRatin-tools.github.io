@@ -81,7 +81,7 @@ PhDs direction
 
 Integration of hydrometric uncertainties into long historical series
 
-Accumulated wisdom and dbious jokes
+Accumulated wisdom and dubious jokes
 
 <a href="https://orcid.org/0000-0003-1417-1495">
 <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0003-1417-1495 </a>
