@@ -6,21 +6,21 @@
     <description>Recent content in Welcome on BaRatin - Bayesian Rating Curves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://baratin-tools.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ardèche River at Meyras</title>
+      <link>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</guid>
+      <description>1 Introduction 2 Hydraulic analysis 3 Prior specification 4 Gaugings and posterior rating curve Download the BaRatinAGE file for this case study: Ardeche-Meyras.bam&#xA;1 Introduction The Ardèche River at Meyras station is of interest because it illustrates a frequently-encountered 3-control configuration (riffle, main channel, floodway).</description>
+    </item>
     <item>
       <title>Hydraulic analysis</title>
       <link>https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/</guid>
       <description>1 The stage-discharge relation: hydraulic controls 1.1 Two main types of controls 1.1.1 Section control 1.1.2 Channel control 1.2 Standard controls 1.3 Approximation of real controls by standard controls 2 Hydraulic analysis 2.</description>
-    </item>
-    <item>
-      <title>L&#39;Ardèche à Meyras</title>
-      <link>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</guid>
-      <description>1 Introduction 2 Analyse hydraulique 3 Spécification des a priori 4 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Ardeche-Meyras.</description>
     </item>
     <item>
       <title>Overview</title>
@@ -37,11 +37,11 @@
       <description>1 Controls 1.1 The basic equation 1.2 Section controls and channel controls 2 Equations of the standard controls 2.1 Rectangular weir 2.2 Parabolic weir 2.</description>
     </item>
     <item>
-      <title>L&#39;Isère à Grenoble-Campus</title>
+      <title>Isère River at Grenoble-Campus</title>
       <link>https://baratin-tools.github.io/en/doc/case/isere-grenoble/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/case/isere-grenoble/</guid>
-      <description>1 Analyse hydraulique 2 Spécification des a priori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Isere-Grenoble.bam&#xA;1 Analyse hydraulique Cette station peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous).</description>
+      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve Download the BaRatinAGE file for this case study: Isere-Grenoble.bam&#xA;1 Hydraulic analysis This station can be modeled with a single control as a wide rectangular channel (see Figure below).</description>
     </item>
     <item>
       <title>Main frame</title>
@@ -58,6 +58,13 @@
       <description>Overview The hydraulic configuration is the definition of all the controls that govern the physical stage-discharge relation, and their succession/combination as the water level increases.</description>
     </item>
     <item>
+      <title>Mercier River at D610 road</title>
+      <link>https://baratin-tools.github.io/en/doc/case/mercier-d610/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/mercier-d610/</guid>
+      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve Download the BaRatinAGE file for this case study: Mercier-D610.bam&#xA;1 Hydraulic analysis This station is part of the Yzeron observatory monitoring several peri-urban catchments around the city of Lyon since 1997.</description>
+    </item>
+    <item>
       <title>The uncertainties of gaugings</title>
       <link>https://baratin-tools.github.io/en/doc/topics/gaugings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -69,7 +76,7 @@
       <link>https://baratin-tools.github.io/en/doc/baratinage/gaugings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/gaugings/</guid>
-      <description>The gaugings are nice…</description>
+      <description>Creating a set of gaugings A gauging is a pair of simultaneous point measurements of stage (water level) and discharge, together with their uncertainties.</description>
     </item>
     <item>
       <title>Rating curve equation</title>
@@ -77,6 +84,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/rating-curve/</guid>
       <description>The equation of the rating curve used in BaRatinAGE is entirely determined by the matrix of controls, an example of which is recalled in the Figure below.</description>
+    </item>
+    <item>
+      <title>The Charbonnières stream</title>
+      <link>https://baratin-tools.github.io/en/doc/case/charbonnieres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/charbonnieres/</guid>
+      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve 4 Alternative approaches Download the BaRatinAGE file for this case study: Charbonnieres-CharbonnieresLesBains.bam</description>
     </item>
     <item>
       <title>Structural error model</title>
@@ -91,13 +105,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/stage-series/</guid>
       <description>1 Error sources 1.1 Instrumental errors or « measurement noise » 1.2 Errors due to free-surface fluctuations 1.3 Errors due to sensor calibration 1.4 Stage representativeness errors 2 Error model used in BaRatinAGE 3 How to estimate stage series uncertainties 3.</description>
-    </item>
-    <item>
-      <title>Using RBaM</title>
-      <link>https://baratin-tools.github.io/en/doc/case/rbam/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/doc/case/rbam/</guid>
-      <description>1 Introduction 2 Estimation of a BaRatin rating curve 2.1 Defining streamgauging data 2.2 Defining the rating curve model 2.3 Running BaM and exploring MCMC samples 2.</description>
     </item>
     <item>
       <title>Rating curve</title>
@@ -118,7 +125,7 @@
       <link>https://baratin-tools.github.io/en/doc/baratinage/stage-series/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/stage-series/</guid>
-      <description>Creating a stage series A stage series (or limnigraph) is a time series of water levels.&#xA;By default, a stage series named Ht (1) pre-exists and can be used.</description>
+      <description>Creating a stage series A stage series (or stage hydrograph) is a time series of water levels (or stages).&#xA;By default, a stage series named Ht (1) pre-exists and can be used.</description>
     </item>
     <item>
       <title>Uncertainties in discharge time series</title>
@@ -139,14 +146,14 @@
       <link>https://baratin-tools.github.io/en/doc/baratinage/discharge-series/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/discharge-series/</guid>
-      <description>Creating a discharge series A discharge series is a time series of discharge (or streamflow) values.&#xA;By default, a discharge series named Qt (1) pre-exists and can be used.</description>
+      <description>Creating a discharge series A discharge series (or discharge hydrograph) is a time series of discharge (or streamflow) values.&#xA;By default, a discharge series named Qt (1) pre-exists and can be used.</description>
     </item>
     <item>
       <title>Going further</title>
       <link>https://baratin-tools.github.io/en/doc/baratinage/going-further/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/going-further/</guid>
-      <description>Adding a new language To add a language to the interface, all you have to do is to add a column to the glossary file /resources/i18n/translations.</description>
+      <description>Adding or correcting a language To translate BaRatinAGE into a new language, or to correct an existing language, follow these steps.&#xA;First, open an existing translation file or create a new one in the resources18n directory named according to the format translations_xx.</description>
     </item>
     <item>
       <title>MCMC Sampling</title>
@@ -163,32 +170,32 @@
       <description>Note: this section will be updated as we receive more questions.&#xA;Installation Question: I work on Linux, can I use BaRatinAGE?&#xA;Answer: Yes, BaRatinAGE 3 can be used on Windows and Linux!</description>
     </item>
     <item>
-      <title>XXX</title>
-      <link>https://baratin-tools.github.io/en/blog/dummy-second-post/</link>
-      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/blog/dummy-second-post/</guid>
-      <description>I have absolutely nothing to say.</description>
+      <title>Using RBaM</title>
+      <link>https://baratin-tools.github.io/en/doc/case/rbam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/rbam/</guid>
+      <description>1 Introduction 2 Estimation of a BaRatin rating curve 2.1 Defining streamgauging data 2.2 Defining the rating curve model 2.3 Running BaM and exploring MCMC samples 2.</description>
     </item>
     <item>
-      <title>Dummy first post</title>
-      <link>https://baratin-tools.github.io/en/blog/dummy-first-post/</link>
-      <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/blog/dummy-first-post/</guid>
-      <description>blabla</description>
+      <title>En attente du premier post / First post wanted</title>
+      <link>https://baratin-tools.github.io/en/blog/first-post-wanted/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/blog/first-post-wanted/</guid>
+      <description>[english follows]&#xA;Vous souhaitez partager une information, un événement, une trouvaille ou juste une pensée avec la communauté BaRatin ? Ecrivez un post de blog !</description>
     </item>
     <item>
       <title>Resources</title>
       <link>https://baratin-tools.github.io/en/resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/resources/</guid>
-      <description>The latest version of BaRatinAGE is available here.&#xA;A webinar on BaRatin (also available in french).&#xA;Slides describing the principles behind BaRatin (also available in french and spanish).</description>
+      <description>Software and codes Documentation References Software and codes The latest version of BaRatinAGE is available here. BaRatinAGE is a simple and intuitive graphical user interface to the BaRatin method and constitutes the recommended way to get started with BaRatin.</description>
     </item>
     <item>
       <title>The BaRatin Team</title>
       <link>https://baratin-tools.github.io/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/about/</guid>
-      <description>Contact us For any question on BaRatin, on associated software BaRatinAGE or RBaM, or more generally on rating curve estimation, feel free to get in touch with us at the following address:</description>
+      <description>Contact us Support The people behind BaRatin… Contact us For any question on BaRatin, on associated software BaRatinAGE or RBaM, or more generally on rating curve estimation, feel free to get in touch with us at the following address:</description>
     </item>
   </channel>
 </rss>

@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1710525651" rel="stylesheet">
+<link href="/css/custom.css?1713520952" rel="stylesheet">
 
 
 
@@ -444,7 +444,7 @@ violinPlot(MCMC[c(&#39;c1&#39;,&#39;c2&#39;)])</code></pre>
 hgrid=data.frame(H=seq(-1,7,0.1))
 # Définition d&#39;un objet &#39;prediction&#39; pour l&#39;incertitude totale
 totalU=prediction(X=hgrid, # hauteurs
-                  spagFiles=&#39;totalU.spag&#39;, # fichier dans lequel les prédictions sont sauvegardées
+                  spagFiles=&#39;hQ_totalU.spag&#39;, # fichier dans lequel les prédictions sont sauvegardées
                   data.dir=workspace, # Une copie des jeux de données sera écrite dans ce dossier
                   doParametric=TRUE, # propager l&#39;incertitude paramétrique ?
                   doStructural=TRUE) # propager l&#39;incertitude structurelle ?</code></pre>
@@ -456,18 +456,18 @@ BaM(mod=M,data=D, # modèle et données
 <p>Le fichier ‘spaghetti’ résultant de l’appel de cette fonction peut être lu dans le workspace et visualisé comme indiqué ci-dessous. Bien que les spaghetti constituent les sorties brutes des prédictions, il est souvent plus pratique de tracer des intervalles d’incertitude. Ceux-ci ont été calculés automatiquement par <code>BaM</code> et sauvegardés dans les fichiers portant l’extension ‘.env’ (comme ‘enveloppe’).</p>
 <pre class="r"><code>par(mfrow=c(1,2)) # 2 figures sur la même ligne
 # spaghetti représentant l&#39;incertitude totale
-Q=read.table(file.path(workspace,&#39;totalU.spag&#39;))
+Q=read.table(file.path(workspace,&#39;hQ_totalU.spag&#39;))
 matplot(hgrid$H,Q,col=&#39;red&#39;,type=&#39;l&#39;,lty=1,main=&#39;spaghetti&#39;)
 # Intervalles à 95% pour l&#39;incertitude totale
-Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+Q=read.table(file.path(workspace,&#39;hQ_totalU.env&#39;),header=T)
 matplot(hgrid$H,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1,main=&#39;uncertainty envelop&#39;)</code></pre>
 <p><img src="en/fig-unnamed-chunk-16-1.png" width="864" /></p>
 <p>La même logique peut être utilisée pour estimer l’incertitude paramétrique seule (ce qui revient à “désactiver” l’incertitude structurelle) et la courbe de tarage maxpost (ce qui revient à “désactiver” les incertitudes paramétriques et structurelle).</p>
 <pre class="r"><code># Définir un objet &#39;prediction&#39; pour l&#39;incertitude paramétrique seule - notez le doStructural=FALSE
-paramU=prediction(X=hgrid,spagFiles=&#39;paramU.spag&#39;,data.dir=workspace,
+paramU=prediction(X=hgrid,spagFiles=&#39;hQ_paramU.spag&#39;,data.dir=workspace,
                   doParametric=TRUE,doStructural=FALSE)
 # Définir un objet &#39;prediction&#39; sans incertitude, ce qui conduit à la courbe de tarage maxpost
-maxpost=prediction(X=hgrid,spagFiles=&#39;maxpost.spag&#39;,data.dir=workspace,
+maxpost=prediction(X=hgrid,spagFiles=&#39;hQ_maxpost.spag&#39;,data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # Lancer BaM en mode prédiction
 BaM(mod=M,data=D, # model and data
@@ -475,13 +475,13 @@ BaM(mod=M,data=D, # model and data
     doCalib=FALSE,doPred=TRUE) # Ne pas re-caler mais faire les prédictions</code></pre>
 <p>Il est maintenant possible de recréer la figure proposée par <code>BaRatinAGE</code>, qui superpose l’incertitude totale, l’incertitude paramétrique, la courbe de tarage maxpost et les jaugeages.</p>
 <pre class="r"><code># Lire et tracer en rouge l&#39;enveloppe représentant l&#39;incertitude totale
-Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+Q=read.table(file.path(workspace,&#39;hQ_totalU.env&#39;),header=T)
 matplot(hgrid$H,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1)
 # Lire et tracer en rose l&#39;enveloppe représentant l&#39;incertitude paramétrique
-Q=read.table(file.path(workspace,&#39;paramU.env&#39;),header=T)
+Q=read.table(file.path(workspace,&#39;hQ_paramU.env&#39;),header=T)
 matplot(hgrid$H,Q[,2:3],col=&#39;pink&#39;,type=&#39;l&#39;,lty=1,add=TRUE)
 # Lire et tracer en noir la courbe de tarage maxpost
-Q=read.table(file.path(workspace,&#39;maxpost.spag&#39;))
+Q=read.table(file.path(workspace,&#39;hQ_maxpost.spag&#39;))
 matplot(hgrid$H,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)
 # Ajouter les jaugeages
 points(x=SauzeGaugings$H,y=SauzeGaugings$Q,pch=19)
@@ -497,25 +497,25 @@ plot(ht,type=&#39;l&#39;)</code></pre>
 <p><img src="en/fig-unnamed-chunk-19-1.png" width="864" /></p>
 <p>Le code est le même que précédemment, à l’exception du fait que les valeurs de hauteur utilisées dans les prédictions proviennent du limnigramme (<code>ht['stage']</code>) plutôt que de la grille de hauteur (<code>hgrid</code>).</p>
 <pre class="r"><code># Objet &#39;prediction&#39; pour l&#39;incertitude totale
-totalU=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;totalU.spag&#39;,data.dir=workspace, 
+totalU=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;Qt_totalU.spag&#39;,data.dir=workspace, 
                   doParametric=TRUE,doStructural=TRUE) 
 # Objet &#39;prediction&#39; pour l&#39;incertitude paramétrique
-paramU=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;paramU.spag&#39;,data.dir=workspace,
+paramU=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;Qt_paramU.spag&#39;,data.dir=workspace,
                   doParametric=TRUE,doStructural=FALSE)
 # Objet &#39;prediction&#39; pour l&#39;hydrogramme maxpost
-maxpost=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;maxpost.spag&#39;,data.dir=workspace,
+maxpost=prediction(X=ht[&#39;stage&#39;],spagFiles=&#39;Qt_maxpost.spag&#39;,data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # lancer BaM en mode prédiction
 BaM(mod=M,data=D,pred=list(totalU,paramU,maxpost),doCalib=FALSE,doPred=TRUE)</code></pre>
 <p>L’hydrogramme résultant de ce calcul peut être tracé avec ses incertitudes.</p>
 <pre class="r"><code># Incertitude totale en rouge
-Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+Q=read.table(file.path(workspace,&#39;Qt_totalU.env&#39;),header=T)
 matplot(ht$time,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1)
 # Incertitude paramétrique en rose
-Q=read.table(file.path(workspace,&#39;paramU.env&#39;),header=T)
+Q=read.table(file.path(workspace,&#39;Qt_paramU.env&#39;),header=T)
 matplot(ht$time,Q[,2:3],col=&#39;pink&#39;,type=&#39;l&#39;,lty=1,lwd=2,add=TRUE)
 # Hydrogramme maxpost en noir
-Q=read.table(file.path(workspace,&#39;maxpost.spag&#39;))
+Q=read.table(file.path(workspace,&#39;Qt_maxpost.spag&#39;))
 matplot(ht$time,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)</code></pre>
 <p><img src="en/fig-unnamed-chunk-21-1.png" width="864" /></p>
 <p>Notez qu’aucune incertitude n’a été considérée sur le limnigramme. Il est possible de rajouter cette composante en utilisant, plutôt qu’un unique limnigramme, des “spaghetti de limnigramme”, c’est à dire de nombreux limnigrammes répliqués qui quantifient l’incertitude. L’exemple ci-dessous montre comment générer ces spaghetti dans le cas d’erreurs Gaussiennes indépendantes d’écart-type constant <span class="math inline">\(\sigma_h=5 \mathrm{cm}\)</span>. Des modèles d’erreurs plus avancés pourraient être utilisés (comme décrit dans <a href="/fr/doc/topics/limni/">cette page</a>) mais pour le moment <code>RBaM</code> ne propose pas de fonctionnalité dédiée - la génération des spaghetti de limnigramme reste donc de votre responsabilité.</p>
@@ -528,28 +528,28 @@ matplot(ht$time,htrep,col=&#39;gray&#39;,type=&#39;l&#39;,lty=1)</code></pre>
 <p>Le reste de l’analyse se déroule comme précédemment, en remplaçant le limnigramme unique par les spaghetti de limnigramme.</p>
 <pre class="r"><code># Incertitude totale
 totalU=prediction(X=list(htrep), # spaghetti, doivent obligatoirement être placés dans une liste
-                  spagFiles=&#39;totalU.spag&#39;, data.dir=workspace,
+                  spagFiles=&#39;Qt_param_struct_hU.spag&#39;, data.dir=workspace,
                   doParametric=TRUE, doStructural=TRUE)
 # Incertitudes param+hauteur (incertitude structurelle désactivée)
-param_hU=prediction(X=list(htrep),spagFiles=&#39;param_hU.spag&#39;,data.dir=workspace,
+param_hU=prediction(X=list(htrep),spagFiles=&#39;Qt_param_hU.spag&#39;,data.dir=workspace,
                   doParametric=TRUE,doStructural=FALSE)
 # Incertitude de hauteur seulement  (incertitudes structurelle et paramétrique désactivées)
-hU=prediction(X=list(htrep),spagFiles=&#39;hU.spag&#39;,data.dir=workspace,
+hU=prediction(X=list(htrep),spagFiles=&#39;Qt_hU.spag&#39;,data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # lancer BaM en mode prédiction
 BaM(mod=M,data=D,pred=list(totalU,param_hU,hU),doCalib=FALSE,doPred=TRUE)</code></pre>
 <p>Ceci conduit à la figure ci-dessous. Notez qu’un axe des ordonnées logarithmique a été utilise pour mettre en avant les moyennes et basses eaux pour lesquelles l’incertitude due aux hauteurs est notable.</p>
 <pre class="r"><code># Incertitude totale en rouge
-Q=read.table(file.path(workspace,&#39;totalU.env&#39;),header=T)
+Q=read.table(file.path(workspace,&#39;Qt_param_struct_hU.env&#39;),header=T)
 matplot(ht$time,Q[,2:3],col=&#39;red&#39;,type=&#39;l&#39;,lty=1,log=&#39;y&#39;)
 # Incertitude paramétrique+hauteur en rose
-Q=read.table(file.path(workspace,&#39;param_hU.env&#39;),header=T)
+Q=read.table(file.path(workspace,&#39;Qt_param_hU.env&#39;),header=T)
 matplot(ht$time,Q[,2:3],col=&#39;pink&#39;,type=&#39;l&#39;,lty=1,lwd=2,add=TRUE)
 # Incertitude hauteur en jaune
-Q=read.table(file.path(workspace,&#39;hU.env&#39;),header=T)
+Q=read.table(file.path(workspace,&#39;Qt_hU.env&#39;),header=T)
 matplot(ht$time,Q[,2:3],col=&#39;goldenrod1&#39;,type=&#39;l&#39;,lty=1,lwd=2,add=TRUE)
 # Hydrogramme maxpost en noir
-Q=read.table(file.path(workspace,&#39;maxpost.spag&#39;))
+Q=read.table(file.path(workspace,&#39;Qt_maxpost.spag&#39;))
 matplot(ht$time,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)</code></pre>
 <p><img src="en/fig-unnamed-chunk-24-1.png" width="864" /></p>
 </div>
@@ -583,6 +583,22 @@ matplot(ht$time,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)</code></p
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/mercier-d610/">Le Mercier au pont de la D610</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/charbonnieres/">Le ruisseau de Charbonnières</a> 
 		
 
 		
@@ -629,6 +645,14 @@ matplot(ht$time,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)</code></p
     
 		
 		    <a href="https://baratin-tools.github.io/fr/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus : <br> un unique contôle chenal</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/mercier-d610/">Le Mercier au pont de la D610 : <br> une combinaison de déversoirs artificiels</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/charbonnieres/">Le ruisseau de Charbonnières : <br> déversoir &#34;triangle tronqué&#34;</a> </br> </br>
 		
     
 		
@@ -680,13 +704,13 @@ matplot(ht$time,Q,col=&#39;black&#39;,type=&#39;l&#39;,lty=1,add=TRUE)</code></p
   
     <div class="col-xs-3">
       <p> 
-       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+       <a href="https://www.inrae.fr"><img style="max-width:90%;max-height:40px;" src="/img/Logo-INRAE_Transparent.png" alt="INRAE"> </a>
       </p>   
     </div>
     
     <div class="col-xs-3">
       <p> 
-       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+       <a href="https://gdh-hydrometrie.org/"><img style="max-width:90%;max-height:76px;" src="/img/Logo-GDH.png" alt="GDH"> </a>
       </p>   
     </div>
       

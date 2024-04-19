@@ -68,7 +68,7 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</guid>
-      <description>Ajout d’une nouvelle langue Pour ajouter une langue à l’interface, il “suffit” d’ajouter une colonne dans le fichier glossaire /resources/i18n/translations.csv (dans le répertoire d’installation de BaRatinAGE v3), et de traduire chaque item apparaissant dans l’interface graphique.</description>
+      <description>Ajout ou correction d’une langue Pour traduire BaRatinAGE dans une nouvelle langue, ou pour corriger une langue existante, suivez les étapes suivantes.&#xA;Premièrement, ouvrez un fichier de traduction existant ou créez-en un nouveau dans le répertoire resources18n nommé selon le format translations_xx.</description>
     </item>
     <item>
       <title>Foire aux questions</title>

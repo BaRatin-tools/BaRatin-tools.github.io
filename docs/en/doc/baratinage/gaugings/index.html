@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1710525651" rel="stylesheet">
+<link href="/css/custom.css?1713520952" rel="stylesheet">
 
 
 
@@ -299,7 +299,40 @@
                           
 
 
-<p>The gaugings are nice…</p>
+<div id="creating-a-set-of-gaugings" class="section level1">
+<h1>Creating a set of gaugings</h1>
+<p>A gauging is a pair of simultaneous point measurements of stage (water level) and discharge, together with their uncertainties.</p>
+<p>By default, a blank set of gaugings called <em>GS (1)</em> pre-exists and can be used. You can create a new set of gaugings in several ways:</p>
+<ul>
+<li>via the menu <em>Components…Create new set of gaugings</em>;</li>
+<li>by right-clicking on the <img src="gaugings.svg" style="display:inline-block"> <em>Gaugings</em> node in the Component Explorer tree;</li>
+<li>by clicking on the <img src="gaugings_add.svg" style="display:inline-block"> button in the toolbar.</li>
+</ul>
+<p>You will be able to rename this new set of gaugings and enter a description. An existing set of gaugings can be duplicated or deleted.</p>
+<p>All that remains is to import the gaugings file by clicking on the <em>Import a set of gaugings</em> button, selecting the text file of your choice and specifying its format. The gaugings file is a free-format text file, but must contain at least three columns with the following data:</p>
+<ul>
+<li>Stage expressed in metres;</li>
+<li>Discharge expressed in cubic metres per second;</li>
+<li>Expanded uncertainty of the measured discharge, expressed as a percentage of this discharge.</li>
+</ul>
+<p>Details of how to specify the uncertainty of gaugings are given in <a href="/en/doc/topics/gaugings">this document</a>.</p>
+<p>As an example, you can select the <em>gauging_set.csv</em> file in the <em>example</em> directory, which contains 58 gaugings for the Aisne at Verrières, specifying the following import parameters:
+<img src="Gaugings_Verrieres_Import.en.png" />
+The panel is then updated as follows, after deactivating the penultimate gauging:</p>
+<p><img src="Gaugings_Verrieres.en.png" /></p>
+<p>The gaugings table contains the following columns:</p>
+<ul>
+<li>Stage expressed in metres;</li>
+<li>Discharge expressed in cubic metres per second;</li>
+<li>Expanded uncertainty of the measured discharge, expressed as a percentage of this discharge;</li>
+<li>Gauging status: if the box is unchecked, the gauging will be “inactive”, i.e. it will not be used to estimate the rating curve.</li>
+</ul>
+<p>The set of gaugings can be exported in CSV format or copied to the clipboard. You can also open the gaugings graphic in a new window, export the image in SVG or PNG format, or copy it to the clipboard.</p>
+</div>
+<div id="managing-gaugings-in-baratinage" class="section level1">
+<h1>Managing gaugings in BaRatinAGE</h1>
+<p>At present, the management of gaugings is rudimentary in BaRatinAGE: the only modification possible is the activation/deactivation of a gauging. If you want to change a value or add a gauging, you have to modify the source file. The reason for this is that there are already hydrometric software packages dedicated to the management of gaugings (Barème, Jacinthe in particular), and we feel it is preferable to promote compatibility with these packages rather than re-invent the wheel. Nevertheless, we will be implementing a few simple tools in future versions of BaRatinAGE (entering and modifying gaugings, including dates and gauging methods, basic filters, etc.).</p>
+</div>
 
 
                         </div>                        
@@ -498,13 +531,13 @@
   
     <div class="col-xs-3">
       <p> 
-       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+       <a href="https://www.inrae.fr"><img style="max-width:90%;max-height:40px;" src="/img/Logo-INRAE_Transparent.png" alt="INRAE"> </a>
       </p>   
     </div>
     
     <div class="col-xs-3">
       <p> 
-       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+       <a href="https://gdh-hydrometrie.org/"><img style="max-width:90%;max-height:76px;" src="/img/Logo-GDH.png" alt="GDH"> </a>
       </p>   
     </div>
       

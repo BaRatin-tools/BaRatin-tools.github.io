@@ -22,7 +22,7 @@
 <meta name="googlebot" content="index,follow,snippet,archive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>L&amp;rsquo;Ardèche à Meyras</title>
+<title>Ardèche River at Meyras</title>
 <meta name="author" content="" />
 
 
@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1710525651" rel="stylesheet">
+<link href="/css/custom.css?1713520952" rel="stylesheet">
 
 
 
@@ -75,7 +75,7 @@
 
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
-<meta property="og:title" content="L&amp;rsquo;Ardèche à Meyras">
+<meta property="og:title" content="Ardèche River at Meyras">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/" />
 <meta property="og:description" content="">
@@ -94,7 +94,7 @@
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:title" content="L&amp;rsquo;Ardèche à Meyras">
+<meta name="twitter:title" content="Ardèche River at Meyras">
 
 <meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
 
@@ -116,10 +116,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand home" href="/en/">
                     
-                      <img src="/img/logoWithText.png" alt="L&#39;Ardèche à Meyras logo" class="hidden-xs hidden-sm" />
-                      <img src="/img/logo.png" alt="L&#39;Ardèche à Meyras logo" class="visible-xs visible-sm" />
+                      <img src="/img/logoWithText.png" alt="Ardèche River at Meyras logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Ardèche River at Meyras logo" class="visible-xs visible-sm" />
                     
-                    <span class="sr-only">L&#39;Ardèche à Meyras - go to homepage</span>
+                    <span class="sr-only">Ardèche River at Meyras - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -279,7 +279,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>L&#39;Ardèche à Meyras</h1>
+                <h1>Ardèche River at Meyras</h1>
             </div>
         </div>
     </div>
@@ -301,44 +301,44 @@
 <div id="TOC">
 <ul>
 <li><a href="#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
-<li><a href="#analyse-hydraulique" id="toc-analyse-hydraulique"><span class="toc-section-number">2</span> Analyse hydraulique</a></li>
-<li><a href="#spécification-des-a-priori" id="toc-spécification-des-a-priori"><span class="toc-section-number">3</span> Spécification des a priori</a></li>
-<li><a href="#jaugeages-et-courbe-de-tarage-a-posteriori" id="toc-jaugeages-et-courbe-de-tarage-a-posteriori"><span class="toc-section-number">4</span> Jaugeages et courbe de tarage a posteriori</a></li>
+<li><a href="#hydraulic-analysis" id="toc-hydraulic-analysis"><span class="toc-section-number">2</span> Hydraulic analysis</a></li>
+<li><a href="#prior-specification" id="toc-prior-specification"><span class="toc-section-number">3</span> Prior specification</a></li>
+<li><a href="#gaugings-and-posterior-rating-curve" id="toc-gaugings-and-posterior-rating-curve"><span class="toc-section-number">4</span> Gaugings and posterior rating curve</a></li>
 </ul>
 </div>
 
 <blockquote>
-<p>Téléchargez le fichier BaRatinAGE de ce cas d’étude: <a href="/bam/Ardeche-Meyras.bam">Ardeche-Meyras.bam</a></p>
+<p>Download the BaRatinAGE file for this case study: <a href="/bam/Ardeche-Meyras.bam">Ardeche-Meyras.bam</a></p>
 </blockquote>
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
-<p>Le cas de l’Ardèche à Meyras est intéressant car il est typique d’une configuration à 3 contrôles fréquemment rencontrée dans les rivières naturelles (radier, lit actif, lit actif + lit moyen). De plus il s’agit d’une station emblématique pour BaRatin car elle a servi de support à de nombreux développements (voir notamment les travaux de <a href="https://theses.hal.science/tel-02605323v2">Mansanarez, 2017</a>, et <a href="https://theses.hal.science/tel-03211343">Darienzo, 2021</a>).</p>
+<p>The Ardèche River at Meyras station is of interest because it illustrates a frequently-encountered 3-control configuration (riffle, main channel, floodway). In addition, it is an iconic station for BaRatin because it served as the basis of several important developments (see in particular the works by <a href="https://theses.hal.science/tel-02605323v2">Mansanarez, 2017</a> and <a href="https://theses.hal.science/tel-03211343">Darienzo, 2021</a>).</p>
 </div>
-<div id="analyse-hydraulique" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Analyse hydraulique</h1>
-<p>Le fonctionnement hydraulique de cette station est résumé dans la Figure 1 : en basses eaux, la relation hauteur-débit est contrôlée par la géométrie d’une section critique au niveau d’un radier. Lorsque la hauteur d’eau augmente, le radier s’ennoie et la relation hauteur-débit est alors contrôlée par la géométrie et la rugosité moyennes du chenal du lit actif. Pour une hauteur d’eau encore plus importante, une partie de l’écoulement peut s’effectuer dans les lits moyens en rive droite et en rive gauche, qui s’activent approximativement à la même hauteur et peuvent donc être combinés dans un unique contrôle. La relation hauteur-débit est alors contrôlée par deux chenaux, celui du lit actif et celui correspondant à la combinaisons des deux lits moyens.</p>
+<div id="hydraulic-analysis" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Hydraulic analysis</h1>
+<p>The hydraulic configuration at this station is summarized in Figure 1: at low flows, the stage-discharge relation is controlled by the geometry of a critical section induced by a natural riffle. As stage increases, the riffle becomes drowned and the stage-discharge relation is controlled by the geometry and roughness of the main channel. At high flows, part of the water flows into two floodways located on the right and left banks. Since the two floodways get activated at roughly the same stage, they are combined into a single control. The stage-discharge relation if then controlled by two channel controls: (1) the main channel and (2) the combined floodway.</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|}
 \hline
-  \text{Contrôle} &amp; \text{Nature} &amp; \text{Type} \\
+  \text{Control} &amp; \text{Nature} &amp; \text{Type} \\
 \hline
-     1 &amp; \text{Radier naturel} &amp; \text{section} \\
+     1 &amp; \text{Natural riffle} &amp; \text{section} \\
 \hline
-     2 &amp; \text{Lit actif} &amp; \text{chenal} \\
+     2 &amp; \text{Main channel} &amp; \text{channel} \\
 \hline
-     3 &amp; \text{Lit moyen (rive droite + rive gauche)} &amp; \text{chenal} \\
+     3 &amp; \text{Floodways (right+left banks)} &amp; \text{channel} \\
 \hline
 \end{array}
 \]</span></p>
 <img src="MeyrasAnalysis.jpg" width="90%">
 <p style="text-align: center;color: gray;">
-Figure 1. Analyse des contrôles hydrauliques pour l’Ardèche à Meyras. (a) vue du dessus (<a href="https://www.geoportail.gouv.fr/carte?c=4.270544484920187,44.67058563887761&amp;z=17&amp;l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&amp;permalink=yes">Géoportail</a>) ; (b) vue vers l’aval (<a href="https://www.google.com/maps/@44.6700599,4.2695756,3a,75y,27.91h,67.4t/data=!3m7!1e1!3m5!1sAF1QipOfQ_5gYbqh2PsLOgtCVApr_4pdqYGWHsD01xBZ!2e10!3e11!7i12000!8i6000?entry=ttu">Google Maps</a>).
+Figure 1. Analysis of hydraulic controls fot the Ardèche River at Meyras. (a) view from above (<a href="https://www.geoportail.gouv.fr/carte?c=4.270544484920187,44.67058563887761&amp;z=17&amp;l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&amp;permalink=yes">Géoportail</a>) ; (b) downstream view (<a href="https://www.google.com/maps/@44.6700599,4.2695756,3a,75y,27.91h,67.4t/data=!3m7!1e1!3m5!1sAF1QipOfQ_5gYbqh2PsLOgtCVApr_4pdqYGWHsD01xBZ!2e10!3e11!7i12000!8i6000?entry=ttu">Google Maps</a>).
 </p>
-<p>La matrice des contrôles correspondant à cette configuration est donnée ci-dessous.</p>
+<p>The control matrix is the following:</p>
 <p><span class="math display">\[
 \begin{array}{|c|}
 \hline
-  &amp;\text{contrôle 1} &amp; \text{contrôle 2} &amp; \text{contrôle 3}\\
+  &amp;\text{control 1} &amp; \text{control 2} &amp; \text{control 3}\\
 \hline
   \text{segment 1} &amp;\color{lime}{1} &amp; &amp;\\
 \hline
@@ -349,29 +349,29 @@ Figure 1. Analyse des contrôles hydrauliques pour l’Ardèche à Meyras. (a) v
 \end{array}
 \]</span></p>
 </div>
-<div id="spécification-des-a-priori" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Spécification des a priori</h1>
-<p>La spécification des a priori est basée sur les raisonnements suivants:</p>
+<div id="prior-specification" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Prior specification</h1>
+<p>Prior specification is performed as follows:</p>
 <ul>
-<li>Pour le radier naturel, on utilise un contrôle section rectangulaire dont les propriétés sont connues de manière assez imprécise: activation pour une hauteur échelle de <span class="math inline">\(\kappa = -0.6 \mathrm{m} \pm 1 \mathrm{m}\)</span>, largeur estimée à <span class="math inline">\(B_w = 8 \mathrm{m} \pm 4 \mathrm{m}\)</span>.</li>
-<li>Le lit actif est assimilé à un contôle par chenal rectangulaire large de rugosité assez faible, que l’on estime à <span class="math inline">\(K_S = 25 \pm 5\)</span>, de largeur <span class="math inline">\(B_w = 15 \mathrm{m} \pm 5 \mathrm{m}\)</span> et de pente <span class="math inline">\(S = 0.0005 \pm 0.00025\)</span>. La hauteur d’activation de ce contôle correspond à la hauteur l’ennoiement du radier et est donc assez mal connue: <span class="math inline">\(\kappa = 0 \mathrm{m} \pm 1 \mathrm{m}\)</span>.</li>
-<li>Le lit moyen est assimilé à un contôle par chenal rectangulaire large de rugosité plus élevée que le lit actif, <span class="math inline">\(K_S = 15 \pm 5\)</span>, de largeur <span class="math inline">\(B_w = 30 \mathrm{m} \pm 10 \mathrm{m}\)</span> et de même pente que le lit actif <span class="math inline">\(S = 0.0005 \pm 0.00025\)</span>. La hauteur d’activation de ce contôle est cette fois mieux connue puisqu’elle correspond à la hauteur à l’échelle du fond du lit moyen, que l’on estime à <span class="math inline">\(\kappa = 1.2 \mathrm{m} \pm 0.4 \mathrm{m}\)</span>.</li>
+<li>A rectangular section control is used to describe the natural riffle. Its properties are known rather imprecisely: activation stage <span class="math inline">\(\kappa = -0.6 \mathrm{m} \pm 1 \mathrm{m}\)</span> and estimated width <span class="math inline">\(B_w = 8 \mathrm{m} \pm 4 \mathrm{m}\)</span>.</li>
+<li>The main channel is modeled as a wide rectangular channel with fairly low roughness <span class="math inline">\(K_S = 25 \pm 5\)</span>, width <span class="math inline">\(B_w = 15 \mathrm{m} \pm 5 \mathrm{m}\)</span> and slope <span class="math inline">\(S = 0.0005 \pm 0.00025\)</span>. The activation stage corresponds to the stage above which the riffle is drowned, which can only be roughly estimated at <span class="math inline">\(\kappa = 0 \mathrm{m} \pm 1 \mathrm{m}\)</span>.</li>
+<li>The combined floodway is modelled as a wide rectangular channel rougher than the main channel, <span class="math inline">\(K_S = 15 \pm 5\)</span>, with total width <span class="math inline">\(B_w = 30 \mathrm{m} \pm 10 \mathrm{m}\)</span> and same slope as the main channel <span class="math inline">\(S = 0.0005 \pm 0.00025\)</span>. The activation stage is easier to determine for this control as it corresponds to the elevation of the bottom of the floodway, which can be estimated at <span class="math inline">\(\kappa = 1.2 \mathrm{m} \pm 0.4 \mathrm{m}\)</span>.</li>
 </ul>
-<p>Avec ces spécifications, on obtient la courbe de tarage a priori représentée ci-dessous.</p>
+<p>This prior specification leads to prior rating curve shown below.</p>
 <br>
 <img src="MeyrasPrior.en.svg" width="90%">
 <p style="text-align: center;color: gray;">
-Figure 2. Courbe de tarage a priori pour l’Ardèche à Meyras.
+Figure 2. Prior rating curve for the Ardèche River at Meyras.
 </p>
 </div>
-<div id="jaugeages-et-courbe-de-tarage-a-posteriori" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Jaugeages et courbe de tarage a posteriori</h1>
-<p>Sur une période comprise entre le 04/11/2011 et le 18/09/2014, au cours de laquelle aucun détarage n’est à signaler, 25 jaugeages ont été effectués. Les débits jaugés varient entre <span class="math inline">\(0.14 \mathrm{m}^3.\mathrm{s}^{−1}\)</span> et <span class="math inline">\(93.5 \mathrm{m}^3.\mathrm{s}^{−1}\)</span>, sachant que le débit moyen annuel s’établit à <span class="math inline">\(3.64 \mathrm{m}^3.\mathrm{s}^{−1}\)</span> et qu’une crue biennale atteint <span class="math inline">\(150 \mathrm{m}^3.\mathrm{s}^{−1}\)</span>.</p>
-<p>La courbe de tarage a posteriori qui combine l’information portée par ces jaugeages et l’information a priori est représentée ci-dessous. On voit que les jaugeages ont permis de nettement réduire l’incertitude autour de la courbe et de préciser les hauteurs d’activation des contrôles (notamment des deux premiers). L’extrapolation vers les débits supérieurs à <span class="math inline">\(150 \mathrm{m}^3.\mathrm{s}^{−1}\)</span>, qui correspondent à des crues notables, demeure cependant très incertaine.</p>
+<div id="gaugings-and-posterior-rating-curve" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Gaugings and posterior rating curve</h1>
+<p>25 gaugings are available during the period 04/11/2011 - 18/09/2014, during which no rating shift could be detected. The gauged discharges range between <span class="math inline">\(0.14 \mathrm{m}^3.\mathrm{s}^{−1}\)</span> and <span class="math inline">\(93.5 \mathrm{m}^3.\mathrm{s}^{−1}\)</span>. For reference, the mean annual dischage is equal to <span class="math inline">\(3.64 \mathrm{m}^3.\mathrm{s}^{−1}\)</span> and a 2-year flood reach <span class="math inline">\(150 \mathrm{m}^3.\mathrm{s}^{−1}\)</span>.</p>
+<p>The posterior rating curve combining the information brought by these gaugings with prior information is shown below. Gaugings allowed strongly reducing the prior rating curve uncertainty and to better identify the activation stages (the first two in particular). However, extrapolation toward discharge values exceeding <span class="math inline">\(150 \mathrm{m}^3.\mathrm{s}^{−1}\)</span>, corresponding to noticeable floods, remains highly uncertain.</p>
 <br>
 <img src="MeyrasPosterior.en.svg" width="90%">
 <p style="text-align: center;color: gray;">
-Figure 3. Jaugeages et courbe de tarage a posteriori pour l’Ardèche à Meyras (période 2011-2014).
+Figure 3. Gaugings and posterior rating curve for the Ardèche River at Meyras (2011-2014 period).
 </p>
 </div>
 
@@ -384,7 +384,7 @@ Figure 3. Jaugeages et courbe de tarage a posteriori pour l’Ardèche à Meyras
 
     
 		
-		   <strong> <a href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/">L&#39;Ardèche à Meyras</a> </strong> 
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/">Ardèche River at Meyras</a> </strong> 
 
 		
 
@@ -393,7 +393,23 @@ Figure 3. Jaugeages et courbe de tarage a posteriori pour l’Ardèche à Meyras
 		
     
 		
-		    <a href="https://baratin-tools.github.io/en/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus</a> 
+		    <a href="https://baratin-tools.github.io/en/doc/case/isere-grenoble/">Isère River at Grenoble-Campus</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/mercier-d610/">Mercier River at D610 road</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/charbonnieres/">The Charbonnières stream</a> 
 		
 
 		
@@ -435,13 +451,21 @@ Figure 3. Jaugeages et courbe de tarage a posteriori pour l’Ardèche à Meyras
     
 		
 		<div style="background-color:beige;">
-		   <strong> <a href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/">L&#39;Ardèche à Meyras : <br> une configuration classique à 3 contrôles</a> </strong></br>
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/">Ardèche River at Meyras : <br> a standard 3-control configuration</a> </strong></br>
 		</div>
 		</br>
 		
     
 		
-		    <a href="https://baratin-tools.github.io/en/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus : <br> un unique contôle chenal</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/en/doc/case/isere-grenoble/">Isère River at Grenoble-Campus : <br> single channel control</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/mercier-d610/">Mercier River at D610 road : <br> combination of artificial weirs</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/charbonnieres/">The Charbonnières stream : <br> &#34;truncated triangle&#34; weir</a> </br> </br>
 		
     
 		
@@ -490,13 +514,13 @@ Figure 3. Jaugeages et courbe de tarage a posteriori pour l’Ardèche à Meyras
   
     <div class="col-xs-3">
       <p> 
-       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+       <a href="https://www.inrae.fr"><img style="max-width:90%;max-height:40px;" src="/img/Logo-INRAE_Transparent.png" alt="INRAE"> </a>
       </p>   
     </div>
     
     <div class="col-xs-3">
       <p> 
-       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+       <a href="https://gdh-hydrometrie.org/"><img style="max-width:90%;max-height:76px;" src="/img/Logo-GDH.png" alt="GDH"> </a>
       </p>   
     </div>
       

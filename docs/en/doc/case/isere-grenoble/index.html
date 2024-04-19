@@ -22,7 +22,7 @@
 <meta name="googlebot" content="index,follow,snippet,archive">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>L&amp;rsquo;Isère à Grenoble-Campus</title>
+<title>Isère River at Grenoble-Campus</title>
 <meta name="author" content="" />
 
 
@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1710525651" rel="stylesheet">
+<link href="/css/custom.css?1713520952" rel="stylesheet">
 
 
 
@@ -75,7 +75,7 @@
 
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
-<meta property="og:title" content="L&amp;rsquo;Isère à Grenoble-Campus">
+<meta property="og:title" content="Isère River at Grenoble-Campus">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://baratin-tools.github.io/en/doc/case/isere-grenoble/" />
 <meta property="og:description" content="">
@@ -94,7 +94,7 @@
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:title" content="L&amp;rsquo;Isère à Grenoble-Campus">
+<meta name="twitter:title" content="Isère River at Grenoble-Campus">
 
 <meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
 
@@ -116,10 +116,10 @@
             <div class="navbar-header">
                 <a class="navbar-brand home" href="/en/">
                     
-                      <img src="/img/logoWithText.png" alt="L&#39;Isère à Grenoble-Campus logo" class="hidden-xs hidden-sm" />
-                      <img src="/img/logo.png" alt="L&#39;Isère à Grenoble-Campus logo" class="visible-xs visible-sm" />
+                      <img src="/img/logoWithText.png" alt="Isère River at Grenoble-Campus logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Isère River at Grenoble-Campus logo" class="visible-xs visible-sm" />
                     
-                    <span class="sr-only">L&#39;Isère à Grenoble-Campus - go to homepage</span>
+                    <span class="sr-only">Isère River at Grenoble-Campus - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -279,7 +279,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>L&#39;Isère à Grenoble-Campus</h1>
+                <h1>Isère River at Grenoble-Campus</h1>
             </div>
         </div>
     </div>
@@ -300,31 +300,32 @@
 
 <div id="TOC">
 <ul>
-<li><a href="#analyse-hydraulique" id="toc-analyse-hydraulique"><span class="toc-section-number">1</span> Analyse hydraulique</a></li>
-<li><a href="#spécification-des-a-priori" id="toc-spécification-des-a-priori"><span class="toc-section-number">2</span> Spécification des a priori</a></li>
+<li><a href="#hydraulic-analysis" id="toc-hydraulic-analysis"><span class="toc-section-number">1</span> Hydraulic analysis</a></li>
+<li><a href="#prior-specification" id="toc-prior-specification"><span class="toc-section-number">2</span> Prior specification</a></li>
+<li><a href="#gaugings-and-posterior-rating-curve" id="toc-gaugings-and-posterior-rating-curve"><span class="toc-section-number">3</span> Gaugings and posterior rating curve</a></li>
 </ul>
 </div>
 
 <blockquote>
-<p>Téléchargez le fichier BaRatinAGE de ce cas d’étude: <a href="/bam/Isere-Grenoble.bam">Isere-Grenoble.bam</a></p>
+<p>Download the BaRatinAGE file for this case study: <a href="/bam/Isere-Grenoble.bam">Isere-Grenoble.bam</a></p>
 </blockquote>
-<div id="analyse-hydraulique" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Analyse hydraulique</h1>
-<p>Cette station peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous). En effet, même les débits les plus faibles ne font pas apparaître de contrôle par section, et les débordements sont fortement limités par des digues très serrées. L’impact du débordement sur les pieds de digues boisés est très faible en raison de la forte rugosité et de la très faible largeur de ce lit moyen additionnel. Le chenal de contrôle présente un gabarit rectangulaire relativement uniforme en amont en aval de la station, dont la section de jaugeage est jugée représentative.</p>
+<div id="hydraulic-analysis" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Hydraulic analysis</h1>
+<p>This <a href="https://ense3.grenoble-inp.fr/fr/plateformes/station-hydrometrique-isere-campus">station</a> can be modeled with a single control as a wide rectangular channel (see Figure below). Even the lowest flows do not show a section control, and overbank flows are strictly limited by close dikes. The impact of the overflow on the toe of the wooded embankments is negligible due to the very rough and very narrow way of this additional channel. The controlling channel has a relatively uniform rectangular cross-section upstream and downstream of the station. The cross-section of the gaugings is considered to be representative of the channel average cross-section.</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|}
 \hline
-  \text{Contrôle} &amp; \text{Nature} &amp; \text{Type} \\
+  \text{Control} &amp; \text{Nature} &amp; \text{Type} \\
 \hline
-     1 &amp; \text{Lit endigué} &amp; \text{chenal} \\
+     1 &amp; \text{Channelised between dikes} &amp; \text{channel} \\
 \hline
 \end{array}
 \]</span></p>
 <img src="IsereAnalysis.jpg" width="80%">
 <p style="text-align: center;color: gray;">
-Figure 1. Analyse des contrôles hydrauliques pour l’Isère à Grenoble-Campus. (a) vue du chenal vers l’amont ; (b) levé topographique de la section de jaugeage, représentative du chenal moyen.
+Figure 1. Analysis of hydraulic controls for the Isère River at Grenoble-Campus. (a) upstream view of the channel; (b) topographical survey of the gauging cross-section, representative of the average channel.
 </p>
-<p>Etant donné qu’il n’y a qu’un seul contrôle, la matrice des contrôles est triviale:</p>
+<p>Since a single control is needed, the control matrix is straightforward:</p>
 <p><span class="math display">\[
 \begin{array}{|c|}
 \hline
@@ -334,22 +335,32 @@ Figure 1. Analyse des contrôles hydrauliques pour l’Isère à Grenoble-Campus
 \hline
 \end{array}
 \]</span></p>
-<p>La hauteur minimale <span class="math inline">\(h_{min}\)</span> d’application de la courbe de tarage est inférieure aux plus faibles hauteurs mesurées, puisqu’elles restent suffisamment au-dessus du niveau du fond et que le contrôle chenal unique reste valable. La hauteur maximale <span class="math inline">\(h_{max}\)</span> d’application de la courbe de tarage peut être prise égale à la hauteur de submersion des digues, au-delà de laquelle de nouveaux contrôles, voire un contournement de la station vont se manifester.</p>
+<p>The minimum stage <span class="math inline">\(h_{min}\)</span> of the rating curve is lower than the lowest measured stages, since the latter are are high enough above the bottom for the single control channel to remain valid. The maximum stage <span class="math inline">\(h_{max}\)</span> can be taken as the crest level of the dikes, beyond which new controls or circumvention of the station will appear.</p>
 </div>
-<div id="spécification-des-a-priori" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Spécification des a priori</h1>
-<p>La spécification des a priori de l’unique contrôle est basée sur les raisonnements suivants:</p>
+<div id="prior-specification" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Prior specification</h1>
+<p>Prior specification for the unique channel control is performed as follows:</p>
 <ul>
-<li>D’après les observations et le profil en travers, il est possible de dire que le contrôle chenal s’active pour une hauteur échelle de <span class="math inline">\(\kappa = -0.5 \mathrm{m} \pm 0.5 \mathrm{m}\)</span></li>
-<li>D’après le profil en travers disponible, la largeur du chenal représentatif est estimée à <span class="math inline">\(B_w = 65 \mathrm{m} \pm 10 \mathrm{m}\)</span></li>
-<li>La propreté du lit, sa nature endiguée et entretenue induit une rugosité assez faible, que l’on estime à <span class="math inline">\(K_S = 25 \pm 5\)</span></li>
-<li>La pente du chenal a été estimée à <span class="math inline">\(S = 0.0005 \pm 0.00025\)</span>.</li>
+<li>Based on observations and on the cross-section, it is possible to say that the control channel is activated at a water level of <span class="math inline">\(\kappa = -0.5 \mathrm{m} \pm 0.5 \mathrm{m}\)</span></li>
+<li>According to the available cross-section, the width of the representative channel is estimated at <span class="math inline">\(B_w = 65 \mathrm{m} \pm 10 \mathrm{m}\)</span></li>
+<li>Since the bed is clear, channelised and well-maintained a relatively low roughness is estimated, <span class="math inline">\(K_S = 25 \pm 5\)</span></li>
+<li>Channel slope was estimated from maps at <span class="math inline">\(S = 0.0005 \pm 0.00025\)</span>.</li>
 </ul>
-<p>Avec ces spécifications, on obtient la courbe de tarage a priori représentée ci-dessous.</p>
+<p>The resulting prior rating curve is shown below.</p>
 <br>
 <img src="IserePrior.en.svg" width="75%">
 <p style="text-align: center;color: gray;">
-Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.
+Figure 2. Prior rating curve for the Isère River at Grenoble-Campus.
+</p>
+</div>
+<div id="gaugings-and-posterior-rating-curve" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Gaugings and posterior rating curve</h1>
+<p>A very high number of gaugings can be used for rating curve estimation, since 147 gaugings are available on the period 2018-2024, 4during which no noticeable rating shift occurred. These gaugings span a large discharge range since the highest ones correspond to discharge values reached by a 10-year flood or so.</p>
+<p>The combination of a fairly simple rating curve with a large number of gaugings leads to a posterior rating curve affected by small uncertainties. The agreement between the curve and the gaugings is excellent for low to medium flows. However, the highest 7 gaugings happen to all lie below the curve. Although gaugings and rating curve uncertainties can partly explain this discrepancy, its systematic nature may lead to legitimately question the validity of the hydraulic configuration at high flows.</p>
+<br>
+<img src="IserePosterior.en.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 3. Posterior rating curve for the Isère River at Grenoble-Campus.
 </p>
 </div>
 
@@ -362,7 +373,7 @@ Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.
 
     
 		
-		    <a href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/">L&#39;Ardèche à Meyras</a> 
+		    <a href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/">Ardèche River at Meyras</a> 
 		
 
 		
@@ -370,8 +381,24 @@ Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.
 		
     
 		
-		   <strong> <a href="https://baratin-tools.github.io/en/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus</a> </strong> 
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/case/isere-grenoble/">Isère River at Grenoble-Campus</a> </strong> 
 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/mercier-d610/">Mercier River at D610 road</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/charbonnieres/">The Charbonnières stream</a> 
 		
 
 		
@@ -412,14 +439,22 @@ Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.
     
     
 		
-		    <a href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/">L&#39;Ardèche à Meyras : <br> une configuration classique à 3 contrôles</a> </br> </br>
+		    <a href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/">Ardèche River at Meyras : <br> a standard 3-control configuration</a> </br> </br>
 		
     
 		
 		<div style="background-color:beige;">
-		   <strong> <a href="https://baratin-tools.github.io/en/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus : <br> un unique contôle chenal</a> </strong></br>
+		   <strong> <a href="https://baratin-tools.github.io/en/doc/case/isere-grenoble/">Isère River at Grenoble-Campus : <br> single channel control</a> </strong></br>
 		</div>
 		</br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/mercier-d610/">Mercier River at D610 road : <br> combination of artificial weirs</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/en/doc/case/charbonnieres/">The Charbonnières stream : <br> &#34;truncated triangle&#34; weir</a> </br> </br>
 		
     
 		
@@ -468,13 +503,13 @@ Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.
   
     <div class="col-xs-3">
       <p> 
-       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+       <a href="https://www.inrae.fr"><img style="max-width:90%;max-height:40px;" src="/img/Logo-INRAE_Transparent.png" alt="INRAE"> </a>
       </p>   
     </div>
     
     <div class="col-xs-3">
       <p> 
-       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+       <a href="https://gdh-hydrometrie.org/"><img style="max-width:90%;max-height:76px;" src="/img/Logo-GDH.png" alt="GDH"> </a>
       </p>   
     </div>
       

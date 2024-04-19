@@ -2,18 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/"
-                />
-  </url><url>
     <loc>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</loc>
     <xhtml:link
                 rel="alternate"
@@ -24,6 +12,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://baratin-tools.github.io/en/doc/case/ardeche-meyras/"
+                />
+  </url><url>
+    <loc>https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/"
                 />
   </url><url>
     <loc>https://baratin-tools.github.io/en/doc/baratinage/overview/</loc>
@@ -86,6 +86,18 @@
                 href="https://baratin-tools.github.io/en/doc/baratinage/hydraulic-configuration/"
                 />
   </url><url>
+    <loc>https://baratin-tools.github.io/en/doc/case/mercier-d610/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/case/mercier-d610/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/case/mercier-d610/"
+                />
+  </url><url>
     <loc>https://baratin-tools.github.io/en/doc/topics/gaugings/</loc>
     <xhtml:link
                 rel="alternate"
@@ -122,6 +134,18 @@
                 href="https://baratin-tools.github.io/en/doc/topics/rating-curve/"
                 />
   </url><url>
+    <loc>https://baratin-tools.github.io/en/doc/case/charbonnieres/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/case/charbonnieres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/case/charbonnieres/"
+                />
+  </url><url>
     <loc>https://baratin-tools.github.io/en/doc/baratinage/structural-errors/</loc>
     <xhtml:link
                 rel="alternate"
@@ -144,18 +168,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://baratin-tools.github.io/en/doc/topics/stage-series/"
-                />
-  </url><url>
-    <loc>https://baratin-tools.github.io/en/doc/case/rbam/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://baratin-tools.github.io/fr/doc/case/rbam/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://baratin-tools.github.io/en/doc/case/rbam/"
                 />
   </url><url>
     <loc>https://baratin-tools.github.io/en/doc/baratinage/rating-curve/</loc>
@@ -266,8 +278,20 @@
                 href="https://baratin-tools.github.io/en/doc/baratinage/faq/"
                 />
   </url><url>
+    <loc>https://baratin-tools.github.io/en/doc/case/rbam/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/case/rbam/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/case/rbam/"
+                />
+  </url><url>
     <loc>https://baratin-tools.github.io/en/blog/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -280,7 +304,7 @@
                 />
   </url><url>
     <loc>https://baratin-tools.github.io/en/categories/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -292,47 +316,24 @@
                 href="https://baratin-tools.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://baratin-tools.github.io/en/tags/dummy/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
+    <loc>https://baratin-tools.github.io/en/blog/first-post-wanted/</loc>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://baratin-tools.github.io/fr/tags/dummy/"
+                href="https://baratin-tools.github.io/fr/blog/first-post-wanted/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://baratin-tools.github.io/en/tags/dummy/"
+                href="https://baratin-tools.github.io/en/blog/first-post-wanted/"
                 />
   </url><url>
     <loc>https://baratin-tools.github.io/en/categories/general/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://baratin-tools.github.io/fr/categories/general/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://baratin-tools.github.io/en/categories/general/"
-                />
-  </url><url>
-    <loc>https://baratin-tools.github.io/en/tags/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://baratin-tools.github.io/fr/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://baratin-tools.github.io/en/tags/"
-                />
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://baratin-tools.github.io/en/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -342,32 +343,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://baratin-tools.github.io/en/"
-                />
-  </url><url>
-    <loc>https://baratin-tools.github.io/en/blog/dummy-second-post/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://baratin-tools.github.io/fr/blog/mon-second-post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://baratin-tools.github.io/en/blog/dummy-second-post/"
-                />
-  </url><url>
-    <loc>https://baratin-tools.github.io/en/blog/dummy-first-post/</loc>
-    <lastmod>2024-02-02T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://baratin-tools.github.io/fr/blog/mon-premier-post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://baratin-tools.github.io/en/blog/dummy-first-post/"
                 />
   </url><url>
     <loc>https://baratin-tools.github.io/en/doc/case/</loc>
@@ -416,6 +391,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://baratin-tools.github.io/en/resources/"
+                />
+  </url><url>
+    <loc>https://baratin-tools.github.io/en/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/tags/"
                 />
   </url><url>
     <loc>https://baratin-tools.github.io/en/about/</loc>

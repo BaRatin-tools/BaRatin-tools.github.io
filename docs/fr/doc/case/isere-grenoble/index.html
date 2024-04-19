@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1710525651" rel="stylesheet">
+<link href="/css/custom.css?1713520952" rel="stylesheet">
 
 
 
@@ -302,6 +302,7 @@
 <ul>
 <li><a href="#analyse-hydraulique" id="toc-analyse-hydraulique"><span class="toc-section-number">1</span> Analyse hydraulique</a></li>
 <li><a href="#spécification-des-a-priori" id="toc-spécification-des-a-priori"><span class="toc-section-number">2</span> Spécification des a priori</a></li>
+<li><a href="#jaugeages-et-courbe-de-tarage-a-posteriori" id="toc-jaugeages-et-courbe-de-tarage-a-posteriori"><span class="toc-section-number">3</span> Jaugeages et courbe de tarage a posteriori</a></li>
 </ul>
 </div>
 
@@ -310,7 +311,7 @@
 </blockquote>
 <div id="analyse-hydraulique" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Analyse hydraulique</h1>
-<p>Cette station peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous). En effet, même les débits les plus faibles ne font pas apparaître de contrôle par section, et les débordements sont fortement limités par des digues très serrées. L’impact du débordement sur les pieds de digues boisés est très faible en raison de la forte rugosité et de la très faible largeur de ce lit moyen additionnel. Le chenal de contrôle présente un gabarit rectangulaire relativement uniforme en amont en aval de la station, dont la section de jaugeage est jugée représentative.</p>
+<p>Cette <a href="https://ense3.grenoble-inp.fr/fr/plateformes/station-hydrometrique-isere-campus">station</a> peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous). En effet, même les débits les plus faibles ne font pas apparaître de contrôle par section, et les débordements sont fortement limités par des digues très serrées. L’impact du débordement sur les pieds de digues boisés est très faible en raison de la forte rugosité et de la très faible largeur de ce lit moyen additionnel. Le chenal de contrôle présente un gabarit rectangulaire relativement uniforme en amont en aval de la station, dont la section de jaugeage est jugée représentative.</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|c|}
 \hline
@@ -324,7 +325,7 @@
 <p style="text-align: center;color: gray;">
 Figure 1. Analyse des contrôles hydrauliques pour l’Isère à Grenoble-Campus. (a) vue du chenal vers l’amont ; (b) levé topographique de la section de jaugeage, représentative du chenal moyen.
 </p>
-<p>Etant donné qu’il n’y a qu’un seul contrôle, la matrice des contrôles est triviale:</p>
+<p>Etant donné qu’il n’y a qu’un seul contrôle, la matrice des contrôles est triviale :</p>
 <p><span class="math display">\[
 \begin{array}{|c|}
 \hline
@@ -338,7 +339,7 @@ Figure 1. Analyse des contrôles hydrauliques pour l’Isère à Grenoble-Campus
 </div>
 <div id="spécification-des-a-priori" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Spécification des a priori</h1>
-<p>La spécification des a priori de l’unique contrôle est basée sur les raisonnements suivants:</p>
+<p>La spécification des a priori de l’unique contrôle est basée sur les raisonnements suivants :</p>
 <ul>
 <li>D’après les observations et le profil en travers, il est possible de dire que le contrôle chenal s’active pour une hauteur échelle de <span class="math inline">\(\kappa = -0.5 \mathrm{m} \pm 0.5 \mathrm{m}\)</span></li>
 <li>D’après le profil en travers disponible, la largeur du chenal représentatif est estimée à <span class="math inline">\(B_w = 65 \mathrm{m} \pm 10 \mathrm{m}\)</span></li>
@@ -350,6 +351,16 @@ Figure 1. Analyse des contrôles hydrauliques pour l’Isère à Grenoble-Campus
 <img src="IserePrior.fr.svg" width="75%">
 <p style="text-align: center;color: gray;">
 Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.
+</p>
+</div>
+<div id="jaugeages-et-courbe-de-tarage-a-posteriori" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Jaugeages et courbe de tarage a posteriori</h1>
+<p>Un très grand nombre de jaugeages peut être utilisé pour raffiner la courbe de tarage a priori, puisque 147 jaugeages sont disponibles sur la période 2018-2024, au cours de laquelle aucun détarage n’a été observé. Ces jaugeages sont bien répartis sur toute la gamme de débits puisque les jaugeages les plus hauts correspondent à des débits de crue environ décennale.</p>
+<p>La combinaison d’une courbe de tarage relativement simple et du grand nombre de jaugeages disponibles conduit à une courbe de tarage a posteriori aux incertitudes très faibles. L’ajustement de la courbe aux jaugeages est globalement très satisfaisant pour les débits faibles à moyen. Néanmoins, les 7 jaugeages les plus forts sont tous sous la courbe. Bien que les incertitudes affectant les jaugeages et la courbe expliquent une partie de cette dispersion, le caractère systématique de cette observation peut conduire à se questionner sur l’adéquation de la configuration hydraulique pour les plus forts débits.</p>
+<br>
+<img src="IserePosterior.fr.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 3. Courbe de tarage a posteriori pour l’Isère à Grenoble-Campus.
 </p>
 </div>
 
@@ -372,6 +383,22 @@ Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.
 		
 		   <strong> <a href="https://baratin-tools.github.io/fr/doc/case/isere-grenoble/">L&#39;Isère à Grenoble-Campus</a> </strong> 
 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/mercier-d610/">Le Mercier au pont de la D610</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/charbonnieres/">Le ruisseau de Charbonnières</a> 
 		
 
 		
@@ -423,6 +450,14 @@ Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.
 		
     
 		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/mercier-d610/">Le Mercier au pont de la D610 : <br> une combinaison de déversoirs artificiels</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/case/charbonnieres/">Le ruisseau de Charbonnières : <br> déversoir &#34;triangle tronqué&#34;</a> </br> </br>
+		
+    
+		
 		    <a href="https://baratin-tools.github.io/fr/doc/case/rbam/">Utilisation de RBaM : <br> contrôler BaRatin depuis R !</a> </br> </br>
 		
     
@@ -468,13 +503,13 @@ Figure 2. Courbe de tarage a priori pour l’Isère à Grenoble-Campus.
   
     <div class="col-xs-3">
       <p> 
-       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+       <a href="https://www.inrae.fr"><img style="max-width:90%;max-height:40px;" src="/img/Logo-INRAE_Transparent.png" alt="INRAE"> </a>
       </p>   
     </div>
     
     <div class="col-xs-3">
       <p> 
-       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+       <a href="https://gdh-hydrometrie.org/"><img style="max-width:90%;max-height:76px;" src="/img/Logo-GDH.png" alt="GDH"> </a>
       </p>   
     </div>
       

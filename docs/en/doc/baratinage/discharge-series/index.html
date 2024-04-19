@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1710525651" rel="stylesheet">
+<link href="/css/custom.css?1713520952" rel="stylesheet">
 
 
 
@@ -301,11 +301,11 @@
 
 <div id="creating-a-discharge-series" class="section level1">
 <h1>Creating a discharge series</h1>
-<p>A discharge series is a time series of discharge (or streamflow) values.</p>
+<p>A discharge series (or discharge hydrograph) is a time series of discharge (or streamflow) values.</p>
 <p>By default, a discharge series named <em>Qt (1)</em> pre-exists and can be used. There are several ways of creating a new discharge series:</p>
 <ul>
-<li>via the menu <em>Components…Create new hydrograph</em>;</li>
-<li>by right-clicking on the <img src="hydrograph.svg" style="display:inline-block"> <em>Hydrograph</em> node in the Component Explorer tree;</li>
+<li>via the menu <em>Components…Create new discharge series</em>;</li>
+<li>by right-clicking on the <img src="hydrograph.svg" style="display:inline-block"> <em>Discharge series</em> node in the Component Explorer tree;</li>
 <li>by clicking on the <img src="hydrograph_add.svg" style="display:inline-block"> button in the toolbar.</li>
 </ul>
 <p>You will be able to rename this new discharge series and enter a description. An existing discharge series can be duplicated or deleted.</p>
@@ -314,7 +314,7 @@
 <li>A rating curve;</li>
 <li>A stage series.</li>
 </ul>
-<p>You are now ready to start calculating the discharge series, by clicking on the <em>Compute hydrograph</em> button. At the end of the calculation, the panel is updated as follows:</p>
+<p>You are now ready to start calculating the discharge series, by clicking on the <em>Compute discharge series</em> button. At the end of the calculation, the panel is updated as follows:</p>
 <p><img src="Hydrograph.en.png" /></p>
 <p>Note: The calculation time at this stage can be significant, and is mainly determined by the number of time steps contained in the stage series As an order of magnitude, you can expect a calculation time of around one minute for a stage series containing 10,000 time steps. This is due to the calculation method used by BaRatinAGE to estimate uncertainties. In fact, to calculate the uncertainty intervals around the discharge series, several hundred discharge series are actually calculated, by propagating both the uncertainties of the stage series and those due to the estimation of the rating curve (spaghetti approach). For more details on this calculation, please consult <a href="/en/doc/topics/discharge-series">this document</a>).</p>
 <p>The discharge series and its 95% uncertainty intervals are available in table form:</p>
@@ -322,7 +322,7 @@
 <p>The table contains the following columns:</p>
 <ul>
 <li>The date, in the format YYYY-MM-DD hh:mm:ss;</li>
-<li>The <em>a posteriori discharge</em> (maxpost) in m<span class="math inline">\(^3\)</span>/s;</li>
+<li>The <em>posterior discharge</em> (maxpost) in m<span class="math inline">\(^3\)</span>/s;</li>
 <li>The lower bound of the 95% <em>parametric</em> uncertainty interval, in m<span class="math inline">\(^3\)</span>/s;</li>
 <li>The upper bound of the 95% <em>parametric</em> uncertainty interval, in m<span class="math inline">\(^3\)</span>/s;</li>
 <li>The lower bound of the 95% <em>total</em> uncertainty interval, in m<span class="math inline">\(^3\)</span>/s;</li>
@@ -332,7 +332,7 @@
 </div>
 <div id="graphical-representations" class="section level1">
 <h1>Graphical representations</h1>
-<p>Zooming in on the graph panel reveals several uncertainty intervals around the calculated hydrograph, as shown below:</p>
+<p>Zooming in on the graph panel reveals several uncertainty intervals around the calculated discharge series, as shown below:</p>
 <p><img src="Hydrograph_Zoom.en.png" /></p>
 <p>The elements of this graph should be interpreted as follows:</p>
 <ul>
@@ -541,13 +541,13 @@
   
     <div class="col-xs-3">
       <p> 
-       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+       <a href="https://www.inrae.fr"><img style="max-width:90%;max-height:40px;" src="/img/Logo-INRAE_Transparent.png" alt="INRAE"> </a>
       </p>   
     </div>
     
     <div class="col-xs-3">
       <p> 
-       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+       <a href="https://gdh-hydrometrie.org/"><img style="max-width:90%;max-height:76px;" src="/img/Logo-GDH.png" alt="GDH"> </a>
       </p>   
     </div>
       

@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1710525651" rel="stylesheet">
+<link href="/css/custom.css?1713520952" rel="stylesheet">
 
 
 
@@ -299,9 +299,14 @@
                           
 
 
-<div id="ajout-dune-nouvelle-langue" class="section level1">
-<h1>Ajout d’une nouvelle langue</h1>
-<p>Pour ajouter une langue à l’interface, il “suffit” d’ajouter une colonne dans le fichier glossaire <em>/resources/i18n/translations.csv</em> (dans le répertoire d’installation de BaRatinAGE v3), et de traduire chaque item apparaissant dans l’interface graphique. Ce fichier texte (que vous pouvez ouvrir avec LibreOffice Calc par exemple) comporte en effet une colonne par langue, après une première colonne correspondant à la clé de chaque item à traduire, et une deuxième colonne pouvant contenir un commentaire. Les colonnes sont séparées par des tabulations La clé utilisée pour désigner la langue, dans la première ligne du fichier, <strong>doit</strong> être le code en deux lettres de la <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">norme ISO 639</a>. Une fois ceci fait, BaRatinAGE v3 devrait, après redémarrage, vous proposer la nouvelle langue créée via le menu <em>Options…Changer de langue</em>. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.</p>
+<div id="ajout-ou-correction-dune-langue" class="section level1">
+<h1>Ajout ou correction d’une langue</h1>
+<p>Pour traduire BaRatinAGE dans une nouvelle langue, ou pour corriger une langue existante, suivez les étapes suivantes.</p>
+<p>Premièrement, ouvrez un fichier de traduction existant ou créez-en un nouveau dans le répertoire <em>resources18n</em> nommé selon le format <em>translations_xx.properties</em>, où <em>xx</em> correspond à la clé à deux caractères de la langue selon la <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">norme ISO 639</a>. Le moyen le plus simple est de copier et coller l’un des fichiers existants contenant déjà la langue à partir de laquelle vous souhaitez traduire, puis de le renommer selon le format mentionné.</p>
+<p>Vous pouvez modifier ce fichier avec l’éditeur de texte de votre choix (Notepad++, par exemple).
+Les fichiers de traduction sont simplement constitués de paires clé-valeur séparées par un signe égale. Par exemple, <code>hello_message = Bonjour</code> dans le fichier français et <code>hello_message = Hi</code> dans le fichier anglais. Pour ajouter vos traductions, il vous suffit de traduire le texte situé à droite du signe égale (sans changer la clé située à gauche du signe égale).</p>
+<p>Certaines traductions peuvent inclure du HTML basique pour mettre en forme le texte, comme le gras ou l’italique. Par exemple, <code>bold_text_example = Voici un texte avec du &lt;b&gt;gras&lt;/b&gt;</code>. Certaines traductions contiennent des espaces réservés indiqués par des accolades avec un chiffre au milieu, par exemple <code>{0}</code>. Ces espaces réservés sont utilisés dans BaRatinAGE pour adapter le contenu de la phrase selon le contexte d’utilisation, par exemple, <code>hi_user = Bonjour {0}, bienvenue</code>. Des commentaires peuvent être ajoutés en commençant une ligne avec le caractère <code>#</code>.</p>
+<p>Une fois ce nouveau fichier créé, BaRatinAGE v3 devrait vous proposer la nouvelle langue créée via le menu <em>Options…Changer de langue</em>. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.</p>
 </div>
 <div id="contenu-du-fichier-de-sauvegarde-.bam" class="section level1">
 <h1>Contenu du fichier de sauvegarde .bam</h1>
@@ -540,13 +545,13 @@
   
     <div class="col-xs-3">
       <p> 
-       <a href="https://www.inrae.fr"><img src="/img/Logo-INRAE_Transparent.png" alt="INRAE" height="40"> </a>
+       <a href="https://www.inrae.fr"><img style="max-width:90%;max-height:40px;" src="/img/Logo-INRAE_Transparent.png" alt="INRAE"> </a>
       </p>   
     </div>
     
     <div class="col-xs-3">
       <p> 
-       <a href="https://gdh-hydrometrie.org/"><img src="/img/Logo-GDH.png" alt="GDH" height="76"> </a>
+       <a href="https://gdh-hydrometrie.org/"><img style="max-width:90%;max-height:76px;" src="/img/Logo-GDH.png" alt="GDH"> </a>
       </p>   
     </div>
       

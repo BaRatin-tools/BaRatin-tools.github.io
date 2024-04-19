@@ -33,7 +33,7 @@
       <link>https://baratin-tools.github.io/en/doc/baratinage/gaugings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/gaugings/</guid>
-      <description>The gaugings are nice…</description>
+      <description>Creating a set of gaugings A gauging is a pair of simultaneous point measurements of stage (water level) and discharge, together with their uncertainties.</description>
     </item>
     <item>
       <title>Structural error model</title>
@@ -54,21 +54,21 @@
       <link>https://baratin-tools.github.io/en/doc/baratinage/stage-series/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/stage-series/</guid>
-      <description>Creating a stage series A stage series (or limnigraph) is a time series of water levels.&#xA;By default, a stage series named Ht (1) pre-exists and can be used.</description>
+      <description>Creating a stage series A stage series (or stage hydrograph) is a time series of water levels (or stages).&#xA;By default, a stage series named Ht (1) pre-exists and can be used.</description>
     </item>
     <item>
       <title>Discharge series</title>
       <link>https://baratin-tools.github.io/en/doc/baratinage/discharge-series/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/discharge-series/</guid>
-      <description>Creating a discharge series A discharge series is a time series of discharge (or streamflow) values.&#xA;By default, a discharge series named Qt (1) pre-exists and can be used.</description>
+      <description>Creating a discharge series A discharge series (or discharge hydrograph) is a time series of discharge (or streamflow) values.&#xA;By default, a discharge series named Qt (1) pre-exists and can be used.</description>
     </item>
     <item>
       <title>Going further</title>
       <link>https://baratin-tools.github.io/en/doc/baratinage/going-further/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/going-further/</guid>
-      <description>Adding a new language To add a language to the interface, all you have to do is to add a column to the glossary file /resources/i18n/translations.</description>
+      <description>Adding or correcting a language To translate BaRatinAGE into a new language, or to correct an existing language, follow these steps.&#xA;First, open an existing translation file or create a new one in the resources18n directory named according to the format translations_xx.</description>
     </item>
     <item>
       <title>Frequently asked questions </title>

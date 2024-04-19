@@ -6,7 +6,7 @@
     <description>Recent content in Bienvenue on BaRatin - Bayesian Rating Curves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://baratin-tools.github.io/fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>L&#39;analyse hydraulique</title>
@@ -20,7 +20,7 @@
       <link>https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/</guid>
-      <description>1 Introduction 2 Analyse hydraulique 3 Spécification des a priori 4 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Ardeche-Meyras.</description>
+      <description>1 Introduction 2 Analyse hydraulique 3 Spécification des a priori 4 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude : Ardeche-Meyras.</description>
     </item>
     <item>
       <title>Tour d&#39;horizon</title>
@@ -48,7 +48,7 @@
       <link>https://baratin-tools.github.io/fr/doc/case/isere-grenoble/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/case/isere-grenoble/</guid>
-      <description>1 Analyse hydraulique 2 Spécification des a priori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Isere-Grenoble.bam&#xA;1 Analyse hydraulique Cette station peut se modéliser avec un seul contrôle par un chenal rectangulaire large (voir Figure ci-dessous).</description>
+      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Isere-Grenoble.</description>
     </item>
     <item>
       <title>Configuration hydraulique</title>
@@ -65,6 +65,13 @@
       <description>1 Les jaugeages incertains comme données de calage 2 Incertitude des débits jaugés 3 Incertitude des hauteurs jaugées 1 Les jaugeages incertains comme données de calage Pour l’analyse d’une courbe de tarage avec BaRatin, il faut fournir un ensemble de jaugeages représentatifs de la relation hauteur-débit pour la période considérée.</description>
     </item>
     <item>
+      <title>Le Mercier au pont de la D610</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/mercier-d610/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/case/mercier-d610/</guid>
+      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude : Mercier-D610.</description>
+    </item>
+    <item>
       <title>Equation de la courbe de tarage</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -79,6 +86,13 @@
       <description>Création d’un jeu de jaugeages Un jaugeage est un couple de mesures ponctuelles de hauteur d’eau et débit simultanés, assortis de leurs incertitudes.&#xA;Par défaut, un jeu de jaugeages vierge nommé JJ (1) pré-existe et peut être utilisé.</description>
     </item>
     <item>
+      <title>Le ruisseau de Charbonnières</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/charbonnieres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/case/charbonnieres/</guid>
+      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori 4 Approches alternatives Téléchargez le fichier BaRatinAGE de ce cas d’étude : Charbonnieres-CharbonnieresLesBains.</description>
+    </item>
+    <item>
       <title>Incertitudes dans les limnigrammes</title>
       <link>https://baratin-tools.github.io/fr/doc/topics/limni/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -91,13 +105,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/</guid>
       <description>Généralités Imaginons la situation suivante, qui est idéalisée et donc forcément irréaliste : sur une station hydrométrique, nous disposons de jaugeages parfaits (sans aucune incertitude), et en très grand nombre.</description>
-    </item>
-    <item>
-      <title>Utilisation de RBaM</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/rbam/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/rbam/</guid>
-      <description>1 Introduction 2 Estimation d’une courbe de tarage BaRatin 2.1 Définition des données de jaugeage 2.2 Définition du modèle de courbe de tarage 2.3 Lancer BaM et explorer les simulations MCMC 2.</description>
     </item>
     <item>
       <title>Courbe de tarage</title>
@@ -153,7 +160,7 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</guid>
-      <description>Ajout d’une nouvelle langue Pour ajouter une langue à l’interface, il “suffit” d’ajouter une colonne dans le fichier glossaire /resources/i18n/translations.csv (dans le répertoire d’installation de BaRatinAGE v3), et de traduire chaque item apparaissant dans l’interface graphique.</description>
+      <description>Ajout ou correction d’une langue Pour traduire BaRatinAGE dans une nouvelle langue, ou pour corriger une langue existante, suivez les étapes suivantes.&#xA;Premièrement, ouvrez un fichier de traduction existant ou créez-en un nouveau dans le répertoire resources18n nommé selon le format translations_xx.</description>
     </item>
     <item>
       <title>Foire aux questions</title>
@@ -163,32 +170,32 @@
       <description>Note : cette section sera mise à jour au fil des questions que nous recevrons.&#xA;Installation Question : je travaille sous Linux, puis-je utiliser BaRatinAGE ?</description>
     </item>
     <item>
-      <title>XXX</title>
-      <link>https://baratin-tools.github.io/fr/blog/mon-second-post/</link>
-      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/blog/mon-second-post/</guid>
-      <description>I have absolutely nothing to say.</description>
+      <title>Utilisation de RBaM</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/rbam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/case/rbam/</guid>
+      <description>1 Introduction 2 Estimation d’une courbe de tarage BaRatin 2.1 Définition des données de jaugeage 2.2 Définition du modèle de courbe de tarage 2.3 Lancer BaM et explorer les simulations MCMC 2.</description>
     </item>
     <item>
-      <title>Mon premier post</title>
-      <link>https://baratin-tools.github.io/fr/blog/mon-premier-post/</link>
-      <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/blog/mon-premier-post/</guid>
-      <description>blabla</description>
+      <title>En attente du premier post / First post wanted</title>
+      <link>https://baratin-tools.github.io/fr/blog/first-post-wanted/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/blog/first-post-wanted/</guid>
+      <description>[english follows]&#xA;Vous souhaitez partager une information, un événement, une trouvaille ou juste une pensée avec la communauté BaRatin ? Ecrivez un post de blog !</description>
     </item>
     <item>
       <title>L&#39;équipe BaRatin</title>
       <link>https://baratin-tools.github.io/fr/a-propos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/a-propos/</guid>
-      <description>Contactez-nous Pour toute question sur la méthode BaRatin, les logiciels associés comme BaRatinAGE ou RBaM, ou plus generalement sur l’estimation de courbes de tarage, vous pouvez nous contacter à cette adresse:</description>
+      <description>Contactez-nous Support Les gens derrière BaRatin… Contactez-nous Pour toute question sur la méthode BaRatin, les logiciels associés comme BaRatinAGE ou RBaM, ou plus generalement sur l’estimation de courbes de tarage, vous pouvez nous contacter à cette adresse:</description>
     </item>
     <item>
       <title>Ressources</title>
       <link>https://baratin-tools.github.io/fr/ressources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/ressources/</guid>
-      <description>Logiciels et codes La dernière version de BaRatinAGE est téléchargeable ici. Ce logiciel propose une interface graphique simple et intuitive pour utiliser la méthode BaRatin et constitue donc le point d’entrée que nous recommendons.</description>
+      <description>Logiciels et codes Documentation Références bibliographiques Logiciels et codes La dernière version de BaRatinAGE est téléchargeable ici. Ce logiciel propose une interface graphique simple et intuitive pour utiliser la méthode BaRatin et constitue donc le point d’entrée que nous recommandons.</description>
     </item>
   </channel>
 </rss>
