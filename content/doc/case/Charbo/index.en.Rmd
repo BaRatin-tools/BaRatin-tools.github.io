@@ -18,7 +18,7 @@ output:
 This [station](https://bdoh.irstea.fr/YZERON/station/V301502301) is part of the [Yzeron observatory](https://bdoh.irstea.fr/YZERON/) monitoring several peri-urban catchments around the city of Lyon since 1997. A "truncated triangle" weir is used at this station. This geometry is used quite frequently in practice, but its modelling within BaRatin is not straightforward because its $Q(H)$ equation is not compatible with some BaRatin hypotheses. This case study therefore aims at illustrating a possible way to make BaRatin-compliant approximations for this particular geometry.
 
 <img src="CharboAnalysis.jpg" width="90%">
-<p style="text-align: center;color: gray;"> Figure 1. Analysis of hydraulic controls for the Charbonnières stream at Charbonnières-Les-Bains. Left: photo taken from downstream, showing the "truncated triangle" inserted in a larger rectangular weir; right: schematics of a "truncated triangle" weir.</p>
+<p style="text-align: center;color: gray;"> Figure 1. Analysis of hydraulic controls for the Charbonnières stream at Charbonnières-Les-Bains. Top: photo taken from downstream, showing the "truncated triangle" inserted in a larger rectangular weir (photo: M. Lagouy); bottom: schematics of a "truncated triangle" weir considered in isolation.</p>
 
 The problematic part of this hydraulic configuration is the "truncated triangle" weir, schematized in Figure 1: a regular triangular weir laterally expands up to a given stage $b'$, then is framed with vertical walls. The equation of this control above stage $b'$ is given below. It can be interpreted as the addition of a « negative » triangular weir equation to remove the excess wetted area of the regular triangle when it reaches the vertical walls.
 
@@ -85,7 +85,7 @@ The prior rating curve resulting from these specifications is shown below and is
 
 # Gaugings and posterior rating curve
 
-88 gaugings are available to estimate the posterior rating curve. The highest ones (around $2 \mathrm{m}^3.\mathrm{s}^{−1}$) correspond to fairly frequent flood events, and are much smaller the highest discharges observed at this station (discharge for the November 2016 flood was estimated around ten times larger). The posterior rating curve indicates that gaugings allowed reducing the uncertainty for low to medium flows, but extrapolation toward higher flows remains very uncertain. 
+88 gaugings are available to estimate the posterior rating curve. The highest ones (around $2 \mathrm{m}^3.\mathrm{s}^{−1}$) correspond to fairly frequent flood events, and are much smaller than the highest discharges observed at this station (discharge for the November 2016 flood was estimated around ten times larger). The posterior rating curve indicates that gaugings allowed reducing the uncertainty for low to medium flows, but extrapolation toward higher flows remains very uncertain. 
 
 <br>
 <img src="CharboPosterior.en.svg" width="100%">
