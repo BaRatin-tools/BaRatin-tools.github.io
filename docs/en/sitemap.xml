@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://baratin-tools.github.io/en/doc/case/aisne-verrieres/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/case/aisne-verrieres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/case/aisne-verrieres/"
+                />
+  </url><url>
     <loc>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</loc>
     <xhtml:link
                 rel="alternate"
