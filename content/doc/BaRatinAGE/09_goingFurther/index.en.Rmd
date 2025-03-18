@@ -8,17 +8,16 @@ inTOC: "BaRatinAGE"
 
 # Adding or correcting a language
 
-To translate BaRatinAGE into a new language, or to correct an existing language, follow these steps. 
+To translate BaRatinAGE into a new language, or to correct an existing language, follow these steps.
 
-First, open an existing translation file or create a new one in the *resources\i18n* directory named according to the format *translations_xx.properties*, where *xx* is the two-character key for the language according to [ISO standard 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes). The easiest way to do this is to copy and paste one of the existing files already containing the language you want to translate from, and then rename it using the format mentioned.
+To correct an existing language, download the translation file you wish to modify [here](https://github.com/BaRatin-tools/BaRatinAGE/tree/develop/resources/i18n). Translation files are named according to the format *translations_xx.properties*, where *xx* is the two-character key for the language according to [ISO standard 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes). To add a new language, the easiest way to go is to download the file already containing the language you want to translate from, and then rename it using the format mentioned above.
 
 You can edit this file using the text editor of your choice (Notepad++, for example).
 Translation files are simply key-value pairs separated by an equals sign. For example, `hello_message = Bonjour` in the French file and `hello_message = Hi` in the English file. To add your translations, simply translate the text to the right of the equals sign (without changing the key to the left of the equals sign).
 
 Some translations may include basic HTML to format the text, such as bold or italics. For example, `bold_text_example = Here is a text with <b>bold</b>`. Some translations contain placeholders indicated by braces with a number in the middle, for example `{0}`. These placeholders are used in BaRatinAGE to adapt the content of the sentence to the context of use, for example, `hi_user = Hello {0}, welcome`. Comments can be added by starting a line with the `#` character.
 
-Once this new file has been created, BaRatinAGE v3 should suggest the new language via the *Options...Change language* menu. Please send us your glossary file so that we can share it with all the users.
-
+Once the translation file has been edited, you can save it in subfolder *resources/i18n* of BaRatinAGE installation folder. BaRatinAGE v3 should then suggest the new language via the *Options...Change language* menu. Please send us your glossary file so that we can share it with all the users.
 
 
 # Contents of the .bam backup file

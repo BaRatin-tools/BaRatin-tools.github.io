@@ -10,14 +10,14 @@ inTOC: "BaRatinAGE"
 
 Pour traduire BaRatinAGE dans une nouvelle langue, ou pour corriger une langue existante, suivez les étapes suivantes. 
 
-Premièrement, ouvrez un fichier de traduction existant ou créez-en un nouveau dans le répertoire *resources\i18n* nommé selon le format *translations_xx.properties*, où *xx* correspond à la clé à deux caractères de la langue selon la [norme ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes). Le moyen le plus simple est de copier et coller l'un des fichiers existants  contenant déjà la langue à partir de laquelle vous souhaitez traduire, puis de le renommer selon le format mentionné.
+Pour corriger une langue existante, téléchargez le fichier de traduction à corriger [ici](https://github.com/BaRatin-tools/BaRatinAGE/tree/develop/resources/i18n). Les fichiers sont nommés selon le format *translations_xx.properties*, où *xx* correspond à la clé à deux caractères de la langue selon la [norme ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes). Pour créer une nouvelle langue, le moyen le plus simple est de télécharger le fichier contenant la langue à partir de laquelle vous souhaitez traduire, puis de le renommer selon le format mentionné.
 
-Vous pouvez modifier ce fichier avec l'éditeur de texte de votre choix (Notepad++, par exemple).
+Vous pouvez ensuite modifier le fichier téléchargé avec l'éditeur de texte de votre choix (Notepad++, par exemple).
 Les fichiers de traduction sont simplement constitués de paires clé-valeur séparées par un signe égale. Par exemple, `hello_message = Bonjour` dans le fichier français et `hello_message = Hi` dans le fichier anglais. Pour ajouter vos traductions, il vous suffit de traduire le texte situé à droite du signe égale (sans changer la clé située à gauche du signe égale).
 
 Certaines traductions peuvent inclure du HTML basique pour mettre en forme le texte, comme le gras ou l'italique. Par exemple, `bold_text_example = Voici un texte avec du <b>gras</b>`. Certaines traductions contiennent des espaces réservés indiqués par des accolades avec un chiffre au milieu, par exemple `{0}`. Ces espaces réservés sont utilisés dans BaRatinAGE pour adapter le contenu de la phrase selon le contexte d'utilisation, par exemple, `hi_user = Bonjour {0}, bienvenue`. Des commentaires peuvent être ajoutés en commençant une ligne avec le caractère `#`.
 
-Une fois ce nouveau fichier créé, BaRatinAGE v3 devrait vous proposer la nouvelle langue créée via le menu *Options...Changer de langue*. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.
+Une fois le fichier de traduction édité, vous pouvez le sauvegarder dans le répertoire *resources/i18n* du dossier d'installation de BaRatinAGE. BaRatinAGE v3 devrait vous proposer la nouvelle langue créée via le menu *Options...Changer de langue*. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.
 
 
 # Contenu du fichier de sauvegarde .bam
