@@ -130,10 +130,10 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 Note : souvent l'ouvrage comprenant l'orifice produit un remous hydraulique qui influence la hauteur d'eau avant que l'orifice ne soit complètement rempli et que la loi précédente puisse s'appliquer. La modélisation hydraulique peut alors permettre de représenter cette phase de transition et l'effet de ce remous spécifique.
 
-## Chennal rectangulaire (large)
+## Chenal rectangulaire (large)
 
 <img src="rectangular_channel.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 5: Chennal rectangulaire large : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
+<p style="text-align: center;color: gray;"> Figure 5: chenal rectangulaire large : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
 
 La formule de Manning-Strickler est appliquée à un chenal rectangulaire large, i.e. $H-b \ll B_w$ (typiquement $5(H-b) < B_w$).
 
@@ -141,7 +141,7 @@ L’équation de ce type de contrôle est :
 
 $$Q(H) = K_S \sqrt{S} B_w (H-b)^c $$
 
-Pour chaque contrôle modélisé par un chennal rectangulaire large, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+Pour chaque contrôle modélisé par un chenal rectangulaire large, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
 
 * $\kappa$ = la hauteur d’eau (en $m$) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote moyenne $b$ du fond du chenal ;
 * $B_w$ = la largeur (en $m$), du chenal.
@@ -154,10 +154,10 @@ Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
 
 * $c$ = exposant pour un chenal rectangulaire large $\approx 1.67 ± 0.05$
 
-## Chennal parabolique (large)
+## Chenal parabolique (large)
 
 <img src="parabolic_channel.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 6: Chennal parabolique large : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
+<p style="text-align: center;color: gray;"> Figure 6: chenal parabolique large : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
 
 La formule de Manning-Strickler est appliquée à un chenal parabolique large, i.e. :
 $$H-b \ll \frac{3}{8}\frac{B_p^2}{H_p}$$
@@ -170,7 +170,7 @@ L’équation de ce type de contrôle est :
 
 $$Q(H) = K_S \sqrt{S} \left( \frac{2}{3} \right)^{5/3}\frac{B_p}{H_p} (H-b)^c $$
 
-Pour chaque contrôle modélisé par un chennal rectangulaire large, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+Pour chaque contrôle modélisé par un chenal rectangulaire large, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
 
 * $\kappa$ = la hauteur d’eau (en $m$) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote moyenne $b$ du fond du chenal (thalweg) ;
 * $B_p$ et $H_p$ = respectivement la largeur et la hauteur de la parabole (en $m$), mesurés à la même
@@ -184,16 +184,16 @@ Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
 
 * $c$ = exposant pour un chenal parabolique large $\approx 2.17 ± 0.05$
 
-## Chennal triangulaire
+## Chenal triangulaire
 
 <img src="triangular_channel.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 7: Chennal triangulaire : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
+<p style="text-align: center;color: gray;"> Figure 7: chenal triangulaire : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
 
 La formule de Manning-Strickler est appliquée à un chenal triangulaire. L’équation de ce type de contrôle est :
 
 $$Q(H) = K_S \sqrt{S} \tan(\nu/2) \left( \frac{\sin(\nu/2)}{2} \right)^{2/3} (H-b)^c $$
 
-Pour chaque contrôle modélisé par un chennal triangulaire, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+Pour chaque contrôle modélisé par un chenal triangulaire, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
 
 * $\kappa$ = la hauteur d’eau (en $m$) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote moyenne $b$ du fond du chenal (thalweg) ;
 * $\nu$ = l’angle d’ouverture du triangle (en degrés) ;
