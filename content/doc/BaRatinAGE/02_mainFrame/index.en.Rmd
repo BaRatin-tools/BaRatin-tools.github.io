@@ -70,9 +70,9 @@ The thematic tabs of certain components also offer results tables in various for
 
 This menu allows you to change the following options:
 
-- *change language*: select BaRatinAGE language (27 languages available to date, feel free to add another language! See explanations in the [*Going further*](/en/doc/baratinage/going-further) page).
+- *Change language*: select BaRatinAGE language (more than 25 languages available to date, feel free to add another language! See explanations in the [*Going further*](/en/doc/baratinage/going-further) page).
 
-
+- *Preferences*: preferences for the appearance and behaviour of BaRatinAGE that can be saved between sessions (language, dark mode, font size, icon size, hide BaM console outputs, close this window if BaM terminates successfully).
 
 <!--- Options à venir, développements en cours :
 

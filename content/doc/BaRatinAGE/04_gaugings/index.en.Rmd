@@ -40,6 +40,7 @@ The gaugings table contains the following columns:
 - Expanded uncertainty of the measured discharge, expressed as a percentage of this discharge;
 - Gauging status: if the box is unchecked, the gauging will be "inactive", i.e. it will not be used to estimate the rating curve.
 
+Clicking on a dot in the plot displays a cyan cross centered on that gauging, and the corresponding row in the gauging table is highlighted in gray.
 
 The set of gaugings can be exported in CSV format or copied to the clipboard. You can also open the gaugings graphic in a new window, export the image in SVG or PNG format, or copy it to the clipboard.
 
