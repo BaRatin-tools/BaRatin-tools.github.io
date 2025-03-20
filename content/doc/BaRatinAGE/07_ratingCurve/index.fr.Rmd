@@ -73,3 +73,23 @@ Le graphique des traces MCMC représente les valeurs de paramètres simulées de
 
 Outre les paramètres $\kappa$, $a$, $b$, et $c$ de chaque contrôle, les échantillons des paramètres $\gamma_1$ et $\gamma_2$ de l'écart-type de l'erreur structurelle ainsi que le logarithme de la densité a posteriori ("LogPost") sont également tracés. La position du jeu de paramètres maxpost (maximisant la distribution a posteriori) est indiquée par une ligne verticale rouge pour chaque paramètre. Ces résultats peuvent être exportés au format CSV.
 
+## Comparateur de courbes de tarage
+
+A partir de la version 3.1, vous pouvez créer un nouveau composant *Comparateur de courbes de tarage* permettant de tracer deux courbes de tarage dans un même graphique configurable, et ce de plusieurs façons :
+
+-   via le menu *Composants...Créer un comparateur de courbes de tarage* ;
+-   en effectuant un clic droit sur le noeud <img src="XXX.svg" style="display:inline-block"> *Outils* dans l'arborescence de l'Explorateur des composants, puis sélectionner *Comparateur de courbes de tarage* ;
+-   en cliquant sur le bouton <img src="XXX_add.svg" style="display:inline-block"> dans la barre d'outils.
+
+![](RC_Verrieres_Comparison.fr.png)
+Il vous sera possible de renommer ce comparateur de courbes de tarage et d'en saisir une description. Un comparateur de courbes de tarage existant peut être dupliqué ou supprimé.
+
+Vous pouvez configurer le graphique en sélectionnant les deux courbes de tarage (a priori ou a posteriori) que vous souhaitez superposer, modifier les étiquettes des axes et d'autres propriétés du graphique. En sélectionnant chaque élément affiché (dans la liste), vous pouvez choisir de :
+
+-   l'afficher ou pas sur le graphique ;
+-   l'inclure ou pas dans la légende ;
+-   modifier son intitulé dans la légende ;
+-   modifier son apparence (couleur, ligne, transparence).   
+
+
+
