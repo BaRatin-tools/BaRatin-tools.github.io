@@ -21,7 +21,7 @@ You will be able to rename this new rating curve and enter a description. An exi
 The properties of the rating curve are then specified by selecting :
 
 - A hydraulic configuration (which determines the equation of the rating curve and the priors);
-- A set of gaugings (used to estimate the rating curve);
+- A set of gaugings (used to estimate the rating curve), or possibly none (then, the results will be very similar to the priors);
 - A structural error model (we advise you to keep the default model).
 
 You are now ready to start calculating the rating curve (full details of the underlying statistical models can be found in [this document](/en/doc/topics/statistical-model). In the graphics panel, define a grid of stages as you did for the prior rating curve, then click on the *Compute posterior rating curve* button. After a calculation that should not take more than a few tens of seconds, the panel is updated as follows:
@@ -78,8 +78,8 @@ In addition to the $\kappa$, $a$, $b$, and $c$ parameters for each control, samp
 From version 3.1 onwards, you can create a new *Rating curves comparator* component to plot two rating curves in the same configurable graph, in several ways:
 
 - via the *Components...Create a rating curves comparator* menu;
-- by right-clicking on the <img src=‘XXX.svg’ style=‘display:inline-block’> *Tools* node in the Component Explorer tree, then selecting *Rating curves comparator*; ;
-- by clicking on the <img src=‘XXX_add.svg’ style=‘display:inline-block’> button in the toolbar.
+- by right-clicking on the <img src="tools.svg" style="display:inline-block"> *Tools* node in the Component Explorer tree, then selecting *Rating curves comparator*;
+- by clicking on the <img src="comparing_rating_curves_add.svg" style="display:inline-block"> button in the toolbar.
 
 ![](RC_Verrieres_Comparison.en.png)
 You can rename this rating curves comparator and enter a description. An existing rating curves comparator can be duplicated or deleted.

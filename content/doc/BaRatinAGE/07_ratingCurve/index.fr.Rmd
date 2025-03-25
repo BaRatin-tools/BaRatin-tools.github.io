@@ -21,7 +21,7 @@ Il vous sera possible de renommer cette nouvelle courbe de tarage et d'en saisir
 La spécification des propriétés de la courbe de tarage se fait alors en sélectionnant :
 
 -    Une configuration hydraulique (qui détermine l'équation de la courbe de tarage et les a priori) ;
--    Un jeu de jaugeages (utilisés pour estimer la courbe de tarage) ;
+-    Un jeu de jaugeages (utilisés pour estimer la courbe de tarage), ou éventuellement aucun (les résultats seront alors très proches des a priori) ;
 -    Un modèle d'erreur structurelle (nous conseillons de conserver le modèle proposé par défaut).
 
 Vous êtes à présent prêts à lancer le calcul de la courbe de tarage (tous les détails sur les modèles statistiques sous-jacents sont dans [ce document](/fr/doc/topics/modele-stat). Dans le panneau graphique, définissez une grille de hauteurs d'eau comme vous l'aviez fait pour la courbe a priori, puis cliquer sur le bouton *Calculer la courbe de tarage a posteriori*. Après un calcul qui ne devrait pas excéder quelques dizaines de secondes, le panneau se met à jour comme ceci :
@@ -78,8 +78,8 @@ Outre les paramètres $\kappa$, $a$, $b$, et $c$ de chaque contrôle, les échan
 A partir de la version 3.1, vous pouvez créer un nouveau composant *Comparateur de courbes de tarage* permettant de tracer deux courbes de tarage dans un même graphique configurable, et ce de plusieurs façons :
 
 -   via le menu *Composants...Créer un comparateur de courbes de tarage* ;
--   en effectuant un clic droit sur le noeud <img src="XXX.svg" style="display:inline-block"> *Outils* dans l'arborescence de l'Explorateur des composants, puis sélectionner *Comparateur de courbes de tarage* ;
--   en cliquant sur le bouton <img src="XXX_add.svg" style="display:inline-block"> dans la barre d'outils.
+-   en effectuant un clic droit sur le noeud <img src="tools.svg" style="display:inline-block"> *Outils* dans l'arborescence de l'Explorateur des composants, puis sélectionner *Comparateur de courbes de tarage* ;
+-   en cliquant sur le bouton <img src="comparing_rating_curves_add.svg" style="display:inline-block"> dans la barre d'outils.
 
 ![](RC_Verrieres_Comparison.fr.png)
 Il vous sera possible de renommer ce comparateur de courbes de tarage et d'en saisir une description. Un comparateur de courbes de tarage existant peut être dupliqué ou supprimé.
