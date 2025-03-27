@@ -58,3 +58,36 @@ Ceci implique que vous pouvez si vous le souhaitez piloter directement l'exécut
 *BaM!* (Bayesian Modeling) est une plateforme visant à estimer un modèle à l'aide d'une approche bayésienne et à l'utiliser pour la prédiction, avec un accent particulier sur la quantification de l'incertitude. Différents modèles variés sont et peuvent être implémentés dans *BaM!*, dont le modèle BaRatin utilisé dans BaRatinAGE v3. Si vous voulez aller plus loin en ayant accès à l'exécutable et aux fichiers de configuration, vous pouvez explorer l'écosystème de *BaM!* [ici](https://github.com/BaM-tools/BaMdocs).
 
 Vous pouvez également envoyer un mail à l'équipe de développement de BaRatinAGE si vous souhaitez en savoir plus.
+
+# Ajout d'une configuration hydraulique « Q=f(h) » prédéfinie 
+
+Les configurations hydrauliques de type « Q=f(h) » sont accompagnées d'un catalogue d'équations de courbe de tarage prédéfinies, avec des valeurs par défaut utiles pour certains paramètres. Si aucune des configurations hydrauliques prédéfinies ne correspond à vos besoins, il est possible d'écrire votre propre équation à la carte. De plus, il est possible d'ajouter cette équation au catalogue, de sorte que cette configuration hydraulique pourra ensuite être réutilisés dans d'autres projets. Cela se fait en éditant le fichier JSON `resources/baratin_qfh_presets.json`.
+
+Ce fichier JSON est structuré comme un tableau JSON `[{...},{...}, ..., {...}] ` où `{...}` est la configuration d'une configuration hydraulique prédéfinie particulière. Une configuration de préréglage contient les champs suivants (paires clé/valeur), certains étant obligatoires (ceux suivis d'une étoile ci-dessous), les autres étant facultatifs :
+
+- id * : un identifiant, qui doit être unique ; cette chaîne de caractères est utilisée pour identifier de manière unique chaque configuration hydraulique prédéfinie ; elle est également utilisée comme clé pour le nom de la configuration hydraulique qui est recherché dans les fichiers de traduction dans `resources/i18n/`
+- icon_id : une chaîne de caractères utilisée comme identifiant pour rechercher l'icône qui doit être une image `24x24` au format svg stockée dans le dossier `resources/icons/custom/`
+- formula * : une chaîne de caractères contenant l'équation de la courbe de tarage
+- stage_symbol * : une chaîne de caractères qui indique le symbole utilisé pour la variable hauteur d'eau dans l'équation de la courbe de tarage
+- parameters * : un tableau JSON de configuration des paramètres (tous les paramètres utilisés dans l'équation de la courbe de tarage doivent être ici), chaque élément contenant les champs suivants :
+
+  - symbole * : une chaîne de caractères indiquant le symbole utilisé pour ce paramètre particulier dans l'équation de la courbe de tarage ; c'est le seul champ obligatoire
+  - type : une chaîne de caractères indiquant le type de paramètre ; ceci est utile pour définir un nom, une icône et une unité pour le paramètre ; les valeurs possibles sont :
+    - « activation_stage » : un paramètre de hauteur d'activation ; `m`
+    - « slope » : un paramètre de pente ; `-` (sans unité)
+    - « strickler_coef » : un paramètre de coefficient de Strickler ; `m^(1/3)/s`
+    - « angle » : un paramètre d'angle ; `°` 
+    - « width » : un paramètre de largeur ; `m`
+    - « area » : un paramètre de surface ; `m^2`
+    - « gravity_acceleration » : un paramètre d'accélération de la gravité ; `m/s^2`
+    - « exponent » : un paramètre d'exposant, `-`
+    - « weir_coefficient » : un paramètre de coefficient de déversoir ; `-`
+  - default_distribution : un objet JSON avec le champ suivant décrivant la distribution par défaut : 
+    - type * : chaîne de caractères indiquant le type de distribution ; toutes les distributions supportées par BaM sont possibles (`Gaussien`, `Uniforme`, etc.)
+    - « inital_guess » : une valeur double indiquant la valeur initiale de ce paramètre
+    - « parameters » : un tableau de valeurs doubles, chaque valeur représentant les paramètres de la distribution (par exemple, la moyenne et l'écart-type pour une distribution `Gaussienne`)
+
+Des exemples dans le fichier `resources/baratin_qfh_presets.json` peuvent être trouvés pour créer votre propre configuration hydraulique prédéfinie. 
+
+
+
