@@ -116,3 +116,47 @@ The parametric uncertainty (at the 95% probability level) around the *prior rati
 - Second golden rule: **be honest!** You should not hesitate setting a large uncertainty when you do not know much about a parameter. Of course this will result in a very uncertain prior rating curve, but that curve is not the final curve since the information provided by the gaugings will be used in the next step to decrease the uncertainty. Here are some typical examples:
      - parameters that are often poorly known a priori: the activation stage of a control when it corresponds to the drowning of a weir; the geometric properties of a natural channel that is not very uniform along the controlling reach; the roughness of a natural channel (Strickler or Manning coefficient), etc.;
      -   parameters that are often quite well known a priori: the geometric properties of an artificial structure or channel; the exponent c, which depends only on the type of control; discharge coefficients of artificial controlling sections (rectangle, triangle, orifice, etc.), etc.
+
+# 'Q=f(h)' hydraulic configuration 
+
+Since version 3.1 of BaRatinAGE, you can write your own rating curve equation by creating a new 'Q=f(h)' hydraulic configuration in several ways:
+
+- via the menu *Components... Create new Q=f(h) hydraulic configuration*;
+- by right-clicking on the <img src='hydraulic_config.svg' style='display:inline-block'> *Hydraulic configuration* node in the explorer tree;
+- by clicking on the <img src='hydraulic_config_qfh_add.svg' style='display:inline-block'> button in the toolbar.
+
+You will be able to rename this new 'Q=f(h)' hydraulic configuration and enter a description. An existing 'Q=f(h)' hydraulic configuration can be duplicated or deleted.
+
+In general, the tabs and operation of a 'Q=f(h)' hydraulic configuration are similar to those of a standard BaRatin hydraulic configuration. The main difference is that instead of defining the rating curve equation via the matrix of controls, the equation is entered directly, after selecting the 'Custom equation' option from the drop-down menu of the 'Rating curve equation' tab. Typically, the equation for a standard BaRatin control $Q=a(h-b)^c$ will be written as follows:
+
+![](Qfh.en.png)
+
+
+The name of the stage variable ($h$, typically) must be defined. By the way, note the usefulness of the *ispos(...)* function, to be placed in the term raised to the power $c$, to have zero discharge when $h<b$.
+
+Being able to write one's own equation $Q=f(h)$ makes it possible to use controls whose formulation is not permitted by the general equation of the standard BaRatin model. 
+
+A number of preset 'Q=f(h)' hydraulic configurations are available in the drop-down menu, including:
+
+- trapezoidal (or even rectangular) channel control without the condition of a width much greater than the water depth ($B_w>5(h-b)$) imposed for BaRatin's rectangular channel control
+- various weirs with non-rectangular notches, a situation which is difficult to represent effectively with the BaRatin model (see this [case study](/en/doc/case/charbonnieres)).
+
+It is possible to add a preset to the catalogue of 'Q=f(h)' hydraulic configurations offered in the drop-down menu: the procedure is explained [here](/en/doc/baratinage/going-further). Don't hesitate to suggest case studies that might be useful to share with other users!
+
+
+The *prior* parameters of a 'Q=f(h)' hydraulic configuration are specified by directly defining the parameter distributions, as for the *k-a-c parameters* mode of a standard hydraulic configuration. The next steps, up to the calculation of the posterior rating curve and the discharge series, are the same as when using a standard hydraulic configuration.
+
+
+# BAC hydraulic configuration
+
+Since version 3.1 of BaRatinAGE, you can use the *BaRatin BAC* model (instead of the standard *BaRatin KAC* model) by creating a new BAC hydraulic configuration in several ways:
+
+- via the menu *Components... Create a new BAC hydraulic configuration*;
+- by right-clicking on the <img src='hydraulic_config.svg' style='display:inline-block'> *Hydraulic configuration* node in the explorer tree ;
+- by clicking on the <img src='hydraulic_config_bac_add.svg' style='display:inline-block'> button in the toolbar.
+
+You will be able to rename this new BAC hydraulic configuration and enter a description for it. An existing BAC hydraulic configuration can be duplicated or deleted.
+
+Generally speaking, the tabs and operation of a BAC hydraulic configuration are similar to those of a standard BaRatin hydraulic configuration. The general equation of the rating curve is the same, and it is defined via the same matrix of controls. The difference is that instead of estimating the parameters $k$ (activation stage), $a$ (coefficient) and $c$ (exponent) for each hydraulic control, we estimate $b$ (offset), $a$ and $c$. Instead of $b$, $k$ is determined from the other parameters, based on the continuity condition of the rating curve, which requires numerical resolution that can sometimes cause problems.
+
+For the moment, this new option is mostly a first step towards the future integration of a model enabling the estimation of a family of rating curves separated by rating shifts due to the evolution of the streambed. It is not recommended to use it unless there is a specific need for it.
