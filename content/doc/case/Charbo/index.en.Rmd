@@ -15,7 +15,11 @@ output:
 
 # Hydraulic analysis
 
-This [station](https://bdoh.irstea.fr/YZERON/station/V301502301) is part of the [Yzeron observatory](https://bdoh.irstea.fr/YZERON/) monitoring several peri-urban catchments around the city of Lyon since 1997. A "truncated triangle" weir is used at this station. This geometry is used quite frequently in practice, but its modelling within BaRatin is not straightforward because its $Q(H)$ equation is not compatible with some BaRatin hypotheses. This case study therefore aims at illustrating a possible way to make BaRatin-compliant approximations for this particular geometry.
+This [station](https://bdoh.irstea.fr/YZERON/station/V301502301) is part of the [Yzeron catchment observatory](https://bdoh.irstea.fr/YZERON/) which has monitored the streamflows of several rivers  since 1997 in this peri-urban catchment located west of the city of Lyon, France. This station is located upstream of a rectangular weir fitted with a triangular notch, to improve the sensitivity of the stage-discharge relation for low flows (see Figure 1, top). This hydraulic configuration is encountered quite frequently in practice, but modelling it in BaRatin is not trivial because the exact $Q(H)$ equation of the ‘truncated triangle’ weir (limited by fictitious vertical walls) which is added to the rectangular weir is not compatible with the assumptions made by BaRatin. This case study therefore illustrates how:
+
+- either use a BaRatin-compliant approximation;
+- or use the exact equation in the form of a ‘Q=f(h)’ hydraulic configuration.
+
 
 <img src="CharboAnalysis.jpg" width="90%">
 <p style="text-align: center;color: gray;"> Figure 1. Analysis of hydraulic controls for the Charbonnières stream at Charbonnières-Les-Bains. Top: photo taken from downstream, showing the "truncated triangle" inserted in a larger rectangular weir (photo: M. Lagouy); bottom: schematics of a "truncated triangle" weir considered in isolation.</p>
