@@ -26,7 +26,7 @@ Cette [station](https://bdoh.irstea.fr/YZERON/station/V301502301) fait partie de
 La partie problématique de cette configuration hydraulique est le déversoir de type "triangle tronqué" inséré dans le plus large déversoir rectangulaire, et qui est schématisé isolément sur la Figure 1 (bas). Le déversoir "triangle tronqué" est constitué d'un déversoir triangulaire dont l’évasement s'interrompt à partir d’une certaine hauteur pour être bordé de parois verticales fictives. L'équation de ce type de déversoir au-dessus de la cote $b'$ à laquelle les bords du triangle rencontrent les parois verticales est donnée ci-dessous. Elle peut être interprétée comme l’ajout d'un déversoir triangulaire « négatif » au déversoir triangulaire réel pour retrancher l’excès de section mouillée quand la hauteur d’eau atteint les parois verticales.
 
 $$
-Q(H)=\underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_1}(H-b)^c - \underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_2}(H-b')^c
+Q(H)=\underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_1}(H-b)^{c_t} - \underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_2}(H-b')^{c_t}
 $$
 
 Cette équation ne rentre pas dans le cadre de BaRatin pour les raisons suivantes :
@@ -34,7 +34,7 @@ Cette équation ne rentre pas dans le cadre de BaRatin pour les raisons suivante
 1. Elle ne peut pas être factorisée sous la forme d'une équation puissance simple de type $Q(H)=a(H-b)^c$
 2. Il semblerait naturel d'utiliser une soustraction de deux contrôles, mais cette approche ne fonctionne pas car :
     a. BaRatin ne permet pas de soustraire des équations puissance, seulement de les ajouter; on serait tenté de dire qu'il suffit alors d'ajouter un contrôle avec un coefficient $a'_2=-a_2$ négatif, mais BaRatin n'autorise pas les coefficients négatifs.
-    b. Les paramètres des 2 contrôles qu'il faudrait soustraire sont liés : en particulier ils ont les mêmes coefficients $(a_1=a_2)$ et le même exposant $c$. BaRatin ne permet pas d'imposer de tels liens.
+    b. Les paramètres des 2 contrôles qu'il faudrait soustraire sont liés : en particulier ils ont les mêmes coefficients $(a_1=a_2)$ et le même exposant $c_t$. BaRatin ne permet pas d'imposer de tels liens.
     
 Ces contraintes imposées par BaRatin sont liées à la [formulation générale de la courbe de tarage](/fr/doc/topics/courbe-de-tarage/), et en particulier à la nécessité de résoudre une équation de continuité. Nous décrivons à la fin de cette page des pistes en cours d'investigation pour contourner ces contraintes, mais en attendant une approche par approximation est nécessaire pour "faire rentrer" ce type de contrôle dans le cadre de BaRatin. Un moyen commode de modéliser ce type de situation est d'utiliser un déversoir triangulaire pour les hauteurs inférieures à $b'$, puis de le remplacer par un déversoir rectangulaire pour les hauteurs supérieures à $b'$. La cote du fond de ce rectangle (offset) devrait être estimée au-dessus de la côte du fond du triangle, et l'avantage est que l'exposant $c=1.5$ correspond plus à la géométrie contrainte latéralement par les parois verticales (à comparer avec l'exposant $c=2.5$ du triangle). Eventuellement, une transition acceptable entre les approximations triangles et rectangles peut être obtenue avec un déversoir parabolique équivalent, d'offset intermédiaire et de dimensions appropriées.
 
@@ -102,17 +102,29 @@ Une analyse plus poussée des paramètres estimés a posteriori révèle que la 
 
 # Approche alternative : configuration hydraulique "Q=f(h)"
 
-Modèle "déversoir rectangulaire avec encoche triangulaire", menu déroulant
+En utilisant une configuration hydraulique "Q=f(h)" au lieu du modèle BaRatin standard, il est possible de représenter le déversoir en triangle tronqué avec l'équation plus exacte indiquée précédemment. En fait, le catalogue de configurations hydrauliques "Q=f(h)" prédéfinies propose, via le menu déroulant, le contrôle "Déversoir rectangulaire avec encoche triangulaire" qui correspond exactement à la configuration de la station Charbonnières, à savoir un déversoir triangulaire tronqué ajouté à un déversoir rectangulaire de même cote $b'$ et de largeur $B_r$ :
 
-équation
+$$
+Q(H)=C_t \sqrt{2g}\tan({\nu/2})(H-b)^{c_t} - C_t \sqrt{2g}\tan({\nu/2})(H-b')^{c_t} + C_r \sqrt{2g} B_r (H-b')^{c_r}
+$$
+Les mêmes a priori que précédemment sont définis pour les différents paramètres physiques des contrôles, ce qui permet de calculer une nouvelle courbe de tarage a priori :
 
-variable "hauteur d'eau" : $h$
+<br>
+<img src="Qfh_Prior_Charbo.fr.png" width="100%">
+<p style="text-align: center;color: gray;"> Figure 5. Configuration hydraulique "Q=f(h)" et courbe de tarage a priori pour le ruisseau de Charbonnières à Charbonnières-Les-Bains.</p>
 
-comparaison des courbes de tarage a priori
 
-paramètres a priori / a posteriori
+Cette courbe de tarage a priori "Q=f(h)" est proche de la courbe de tarage a priori obtenue précédemment avec l'approximation BaRatin, comme le montre cette comparaison :
 
-comparaison des courbes de tarage a posteriori
+<br>
+<img src="CharboPriorComp.fr.svg" width="100%">
+<p style="text-align: center;color: gray;"> Figure 6. Comparaison des courbes de tarage a priori "Q=f(h)" et BaRatin pour le ruisseau de Charbonnières à Charbonnières-Les-Bains (l'axe des débits est en échelle log).</p>
+
+Il n'y a pas de conflit entre les résultats et les paramètres a priori, et la courbe de tarage a posteriori "Q=f(h)" est proche de la courbe de tarage a posteriori obtenue précédemment avec l'approximation BaRatin, comme le montre cette comparaison :
+
+<br>
+<img src="CharboPosteriorComp.fr.svg" width="100%">
+<p style="text-align: center;color: gray;"> Figure 7. Comparaison des courbes de tarage a posteriori "Q=f(h)" et BaRatin pour le ruisseau de Charbonnières à Charbonnières-Les-Bains (l'axe des débits est en échelle log).</p>
 
 
 
