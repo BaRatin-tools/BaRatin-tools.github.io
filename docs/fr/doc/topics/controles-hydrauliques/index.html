@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1740664769" rel="stylesheet">
+<link href="/css/custom.css?1744619212" rel="stylesheet">
 
 
 
@@ -311,9 +311,9 @@
 <li><a href="#déversoir-parabolique" id="toc-déversoir-parabolique"><span class="toc-section-number">2.2</span> Déversoir parabolique</a></li>
 <li><a href="#déversoir-triangulaire" id="toc-déversoir-triangulaire"><span class="toc-section-number">2.3</span> Déversoir triangulaire</a></li>
 <li><a href="#orifice-dénoyé" id="toc-orifice-dénoyé"><span class="toc-section-number">2.4</span> Orifice dénoyé</a></li>
-<li><a href="#chennal-rectangulaire-large" id="toc-chennal-rectangulaire-large"><span class="toc-section-number">2.5</span> Chennal rectangulaire (large)</a></li>
-<li><a href="#chennal-parabolique-large" id="toc-chennal-parabolique-large"><span class="toc-section-number">2.6</span> Chennal parabolique (large)</a></li>
-<li><a href="#chennal-triangulaire" id="toc-chennal-triangulaire"><span class="toc-section-number">2.7</span> Chennal triangulaire</a></li>
+<li><a href="#chenal-rectangulaire-large" id="toc-chenal-rectangulaire-large"><span class="toc-section-number">2.5</span> Chenal rectangulaire (large)</a></li>
+<li><a href="#chenal-parabolique-large" id="toc-chenal-parabolique-large"><span class="toc-section-number">2.6</span> Chenal parabolique (large)</a></li>
+<li><a href="#chenal-triangulaire" id="toc-chenal-triangulaire"><span class="toc-section-number">2.7</span> Chenal triangulaire</a></li>
 <li><a href="#autres-types-de-contrôles" id="toc-autres-types-de-contrôles"><span class="toc-section-number">2.8</span> Autres types de contrôles</a></li>
 </ul></li>
 <li><a href="#spécification-des-a-priori" id="toc-spécification-des-a-priori"><span class="toc-section-number">3</span> Spécification des a priori</a>
@@ -441,16 +441,16 @@ Figure 4 : Orifice dénoyé : vue en long (à gauche) et vue en travers de la se
 </ul>
 <p>Note : souvent l’ouvrage comprenant l’orifice produit un remous hydraulique qui influence la hauteur d’eau avant que l’orifice ne soit complètement rempli et que la loi précédente puisse s’appliquer. La modélisation hydraulique peut alors permettre de représenter cette phase de transition et l’effet de ce remous spécifique.</p>
 </div>
-<div id="chennal-rectangulaire-large" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Chennal rectangulaire (large)</h2>
+<div id="chenal-rectangulaire-large" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Chenal rectangulaire (large)</h2>
 <img src="rectangular_channel.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 5: Chennal rectangulaire large : vue en long (à gauche) et section en travers à l’échelle (à droite).
+Figure 5: chenal rectangulaire large : vue en long (à gauche) et section en travers à l’échelle (à droite).
 </p>
 <p>La formule de Manning-Strickler est appliquée à un chenal rectangulaire large, i.e. <span class="math inline">\(H-b \ll B_w\)</span> (typiquement <span class="math inline">\(5(H-b) &lt; B_w\)</span>).</p>
 <p>L’équation de ce type de contrôle est :</p>
 <p><span class="math display">\[Q(H) = K_S \sqrt{S} B_w (H-b)^c \]</span></p>
-<p>Pour chaque contrôle modélisé par un chennal rectangulaire large, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
+<p>Pour chaque contrôle modélisé par un chenal rectangulaire large, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
 <ul>
 <li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote moyenne <span class="math inline">\(b\)</span> du fond du chenal ;</li>
 <li><span class="math inline">\(B_w\)</span> = la largeur (en <span class="math inline">\(m\)</span>), du chenal.</li>
@@ -464,11 +464,11 @@ Figure 5: Chennal rectangulaire large : vue en long (à gauche) et section en tr
 <li><span class="math inline">\(c\)</span> = exposant pour un chenal rectangulaire large <span class="math inline">\(\approx 1.67 ± 0.05\)</span></li>
 </ul>
 </div>
-<div id="chennal-parabolique-large" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Chennal parabolique (large)</h2>
+<div id="chenal-parabolique-large" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Chenal parabolique (large)</h2>
 <img src="parabolic_channel.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 6: Chennal parabolique large : vue en long (à gauche) et section en travers à l’échelle (à droite).
+Figure 6: chenal parabolique large : vue en long (à gauche) et section en travers à l’échelle (à droite).
 </p>
 <p>La formule de Manning-Strickler est appliquée à un chenal parabolique large, i.e. :
 <span class="math display">\[H-b \ll \frac{3}{8}\frac{B_p^2}{H_p}\]</span></p>
@@ -476,7 +476,7 @@ Figure 6: Chennal parabolique large : vue en long (à gauche) et section en trav
 <p><span class="math display">\[5(H-b) &lt; \frac{3}{8}\frac{B_p^2}{H_p}\]</span></p>
 <p>L’équation de ce type de contrôle est :</p>
 <p><span class="math display">\[Q(H) = K_S \sqrt{S} \left( \frac{2}{3} \right)^{5/3}\frac{B_p}{H_p} (H-b)^c \]</span></p>
-<p>Pour chaque contrôle modélisé par un chennal rectangulaire large, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
+<p>Pour chaque contrôle modélisé par un chenal rectangulaire large, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
 <ul>
 <li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote moyenne <span class="math inline">\(b\)</span> du fond du chenal (thalweg) ;</li>
 <li><span class="math inline">\(B_p\)</span> et <span class="math inline">\(H_p\)</span> = respectivement la largeur et la hauteur de la parabole (en <span class="math inline">\(m\)</span>), mesurés à la même
@@ -491,15 +491,15 @@ cote (par exemple au plein-bord).</li>
 <li><span class="math inline">\(c\)</span> = exposant pour un chenal parabolique large <span class="math inline">\(\approx 2.17 ± 0.05\)</span></li>
 </ul>
 </div>
-<div id="chennal-triangulaire" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Chennal triangulaire</h2>
+<div id="chenal-triangulaire" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Chenal triangulaire</h2>
 <img src="triangular_channel.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 7: Chennal triangulaire : vue en long (à gauche) et section en travers à l’échelle (à droite).
+Figure 7: chenal triangulaire : vue en long (à gauche) et section en travers à l’échelle (à droite).
 </p>
 <p>La formule de Manning-Strickler est appliquée à un chenal triangulaire. L’équation de ce type de contrôle est :</p>
 <p><span class="math display">\[Q(H) = K_S \sqrt{S} \tan(\nu/2) \left( \frac{\sin(\nu/2)}{2} \right)^{2/3} (H-b)^c \]</span></p>
-<p>Pour chaque contrôle modélisé par un chennal triangulaire, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
+<p>Pour chaque contrôle modélisé par un chenal triangulaire, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
 <ul>
 <li><span class="math inline">\(\kappa\)</span> = la hauteur d’eau (en <span class="math inline">\(m\)</span>) à partir de laquelle le contrôle devient actif ; quand le contrôle est le premier, ou qu’il s’ajoute à des contrôles existants, cette hauteur d’activation est égale à la cote moyenne <span class="math inline">\(b\)</span> du fond du chenal (thalweg) ;</li>
 <li><span class="math inline">\(\nu\)</span> = l’angle d’ouverture du triangle (en degrés) ;</li>

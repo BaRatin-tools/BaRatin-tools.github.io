@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1740664769" rel="stylesheet">
+<link href="/css/custom.css?1744619212" rel="stylesheet">
 
 
 
@@ -303,7 +303,7 @@
 <li><a href="#hydraulic-analysis" id="toc-hydraulic-analysis"><span class="toc-section-number">1</span> Hydraulic analysis</a></li>
 <li><a href="#prior-specification" id="toc-prior-specification"><span class="toc-section-number">2</span> Prior specification</a></li>
 <li><a href="#gaugings-and-posterior-rating-curve" id="toc-gaugings-and-posterior-rating-curve"><span class="toc-section-number">3</span> Gaugings and posterior rating curve</a></li>
-<li><a href="#alternative-approaches" id="toc-alternative-approaches"><span class="toc-section-number">4</span> Alternative approaches</a></li>
+<li><a href="#alternative-approach-qfh-hydraulic-configuration" id="toc-alternative-approach-qfh-hydraulic-configuration"><span class="toc-section-number">4</span> Alternative approach: “Q=f(h)” hydraulic configuration</a></li>
 </ul>
 </div>
 
@@ -312,14 +312,18 @@
 </blockquote>
 <div id="hydraulic-analysis" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Hydraulic analysis</h1>
-<p>This <a href="https://bdoh.irstea.fr/YZERON/station/V301502301">station</a> is part of the <a href="https://bdoh.irstea.fr/YZERON/">Yzeron observatory</a> monitoring several peri-urban catchments around the city of Lyon since 1997. A “truncated triangle” weir is used at this station. This geometry is used quite frequently in practice, but its modelling within BaRatin is not straightforward because its <span class="math inline">\(Q(H)\)</span> equation is not compatible with some BaRatin hypotheses. This case study therefore aims at illustrating a possible way to make BaRatin-compliant approximations for this particular geometry.</p>
+<p>This <a href="https://bdoh.irstea.fr/YZERON/station/V301502301">station</a> is part of the <a href="https://bdoh.irstea.fr/YZERON/">Yzeron catchment observatory</a> which has monitored the streamflows of several rivers since 1997 in this peri-urban catchment located west of the city of Lyon, France. This station is located upstream of a rectangular weir fitted with a triangular notch, to improve the sensitivity of the stage-discharge relation for low flows (see Figure 1, top). This hydraulic configuration is encountered quite frequently in practice, but modelling it in BaRatin is not trivial because the exact <span class="math inline">\(Q(H)\)</span> equation of the ‘truncated triangle’ weir (limited by fictitious vertical walls) which is added to the rectangular weir is not compatible with the assumptions made by BaRatin. This case study therefore illustrates how:</p>
+<ul>
+<li>either use a BaRatin-compliant approximation;</li>
+<li>or use the exact equation in the form of a ‘Q=f(h)’ hydraulic configuration.</li>
+</ul>
 <img src="CharboAnalysis.jpg" width="90%">
 <p style="text-align: center;color: gray;">
 Figure 1. Analysis of hydraulic controls for the Charbonnières stream at Charbonnières-Les-Bains. Top: photo taken from downstream, showing the “truncated triangle” inserted in a larger rectangular weir (photo: M. Lagouy); bottom: schematics of a “truncated triangle” weir considered in isolation.
 </p>
 <p>The problematic part of this hydraulic configuration is the “truncated triangle” weir, schematized in Figure 1: a regular triangular weir laterally expands up to a given stage <span class="math inline">\(b&#39;\)</span>, then is framed with vertical walls. The equation of this control above stage <span class="math inline">\(b&#39;\)</span> is given below. It can be interpreted as the addition of a « negative » triangular weir equation to remove the excess wetted area of the regular triangle when it reaches the vertical walls.</p>
 <p><span class="math display">\[
-Q(H)=\underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_1}(H-b)^c - \underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_2}(H-b&#39;)^c
+Q(H)=\underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_1}(H-b)^{c_t} - \underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_2}(H-b&#39;)^{c_t}
 \]</span></p>
 <p>This equation is not BaRatin-compliant for the following reasons:</p>
 <ol style="list-style-type: decimal">
@@ -327,7 +331,7 @@ Q(H)=\underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_1}(H-b)^c - \underbrace{C_t \sqr
 <li>Using a subtraction of two controls as suggested by the equation does not work because:
 <ol style="list-style-type: lower-alpha">
 <li>BaRatin does not allow subtracting power equations, only adding them up; it would then be tempting to add a control with a negative coefficient <span class="math inline">\(a&#39;_2=-a_2\)</span>, but BaRatin does not allow negative coefficients either.</li>
-<li>The parameters of the two controls that should be subtracted are linked: in particular, they have the same coefficients <span class="math inline">\((a_1=a_2)\)</span> and the same exponent <span class="math inline">\(c\)</span>. BaRatin has no functionality to enforce such links.</li>
+<li>The parameters of the two controls that should be subtracted are linked: in particular, they have the same coefficients <span class="math inline">\((a_1=a_2)\)</span> and the same exponent <span class="math inline">\(c_t\)</span>. BaRatin has no functionality to enforce such links.</li>
 </ol></li>
 </ol>
 <p>These constraints that BaRatin enforces are a consequence of the <a href="/en/doc/topics/rating-curve/">general formulation of the rating curve equation</a> and in particular the need to solve a continuity equation. Two possible approaches to circumvent these constraints are currently under investigation and are described at the end of this page. In the meantime, it is possible to use an approximation to make this type of control compliant with the BaRatin framework. A possible approximation is to use a triangular weir for stage values lower than <span class="math inline">\(b&#39;\)</span>, then to replace it with a rectangular weir for stage values higher than <span class="math inline">\(b&#39;\)</span>. The bottom stage of this rectangle (offset) should be estimated above the offset of the triangle, and the advantage of the rectangle weir is that its exponent <span class="math inline">\(c=1.5\)</span> is more in line with the laterally-constrained geometry (compare it with the triangle exponent <span class="math inline">\(c=2.5\)</span>). It might also be desired in some situations to smooth the transition between the triangle and the rectangle. A parabolic weir may be used for this purpose, with an offset in between those of the triangle and the rectangle and dimensions to be adapted to the studied control.</p>
@@ -394,14 +398,30 @@ Figure 3. Posterior rating curve for the Charbonnières stream at Charbonnières
 Figure 4. Estimated geometries for the triangle (active for <span class="math inline">\(H &lt; 41 \mathrm{cm}\)</span>) and the equivalent rectangle (replacing the triangle when <span class="math inline">\(H \geq 41 \mathrm{cm}\)</span>).
 </p>
 </div>
-<div id="alternative-approaches" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Alternative approaches</h1>
-<p>Two alternative approaches are currently being investigated to allow using controls such as the Charbonnières one that do not fit into the BaRatin framework. These two approaches are not yet available in BaRatinAGE, but they have already been implemented in <a href="/en/doc/case/rbam">RBaM</a>. We are currently working on documenting them and we will propose illustrative case studies soon. These two approaches are as follows:</p>
-<ol style="list-style-type: decimal">
-<li>Type the equation of the control: this can be done in RBaM by means of a specific model called <a href="https://github.com/BaM-tools/RBaM/blob/main/vignettes/TextFileModel.Rmd"><code>TextFileModel</code></a> which allows defining a new model “on the fly” by just typing its equation.</li>
-<li>Deduce the equation of the control from its bathymetry. This can be done for a section-type control by means of the model <code>HydraulicControl_section</code> implemented in RBaM and that is currently being documented.</li>
-</ol>
-<p>The two approaches above should enable estimating the parameters of a single arbitrary control. However, they do not enable the estimation of a combination of such arbitrary controls, as may be encountered in a multi-segment rating curve. As already mentioned earlier, solving the continuity equation may become difficult outside of the simple-power-law framework enforced by BaRatin. In particular, the solution of the continuity equation is in general not explicit, and its existence and unicity are not even ensured.</p>
+<div id="alternative-approach-qfh-hydraulic-configuration" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Alternative approach: “Q=f(h)” hydraulic configuration</h1>
+<p>By using a “Q=f(h)” hydraulic configuration instead of the standard BaRatin model, it is possible to represent the truncated triangular weir control with the more exact equation indicated above. In fact, the set of predefined “Q=f(h)” hydraulic configurations offers, via the drop-down menu, the “Rectangular weir with triangular notch” control, which corresponds exactly to the configuration of the Charbonnières station, i.e. a truncated triangular weir added to a rectangular weir of the same height <span class="math inline">\(b&#39;\)</span> and of width <span class="math inline">\(B_r\)</span> :</p>
+<p><span class="math display">\[
+Q(H)=C_t \sqrt{2g}\tan({\nu/2})(H-b)^{c_t} - C_t \sqrt{2g}\tan({\nu/2})(H-b&#39;)^{c_t} + C_r \sqrt{2g} B_r (H-b&#39;)^{c_r}
+\]</span></p>
+<p>The same priors as above are defined for the various physical parameters of the control, providing a new prior rating curve:</p>
+<br>
+<img src="Qfh_Prior_Charbo.en.png" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 5. “Q=f(h)” hydraulic configuration and prior rating curve for the Charbonnières stream at Charbonnières-Les-Bains.
+</p>
+<p>This prior “Q=f(h)” rating curve is close to the prior rating curve previously obtained with the BaRatin approximation, as this comparison shows:</p>
+<br>
+<img src="CharboPriorComp.en.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 6. Comparison of prior “Q=f(h)” and BaRatin rating curves for the Charbonnières stream at Charbonnières-Les-Bains (discharge axis is in log scale).
+</p>
+<p>There is no conflict between the results and the prior parameters, and the “Q=f(h)” posterior rating curve is close to the posterior rating curve previously obtained with the BaRatin approximation, as this comparison shows:</p>
+<br>
+<img src="CharboPosteriorComp.en.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 7. Comparison of the “Q=f(h)” and BaRatin posterior rating curves for the Charbonnières stream at Charbonnières-Les-Bains (discharge axis is in log scale).
+</p>
 </div>
 
 

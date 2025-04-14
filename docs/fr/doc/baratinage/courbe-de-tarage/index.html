@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1740664769" rel="stylesheet">
+<link href="/css/custom.css?1744619212" rel="stylesheet">
 
 
 
@@ -312,7 +312,7 @@
 <p>La spécification des propriétés de la courbe de tarage se fait alors en sélectionnant :</p>
 <ul>
 <li>Une configuration hydraulique (qui détermine l’équation de la courbe de tarage et les a priori) ;</li>
-<li>Un jeu de jaugeages (utilisés pour estimer la courbe de tarage) ;</li>
+<li>Un jeu de jaugeages (utilisés pour estimer la courbe de tarage), ou éventuellement aucun (les résultats seront alors très proches des a priori) ;</li>
 <li>Un modèle d’erreur structurelle (nous conseillons de conserver le modèle proposé par défaut).</li>
 </ul>
 <p>Vous êtes à présent prêts à lancer le calcul de la courbe de tarage (tous les détails sur les modèles statistiques sous-jacents sont dans <a href="/fr/doc/topics/modele-stat">ce document</a>. Dans le panneau graphique, définissez une grille de hauteurs d’eau comme vous l’aviez fait pour la courbe a priori, puis cliquer sur le bouton <em>Calculer la courbe de tarage a posteriori</em>. Après un calcul qui ne devrait pas excéder quelques dizaines de secondes, le panneau se met à jour comme ceci :</p>
@@ -345,6 +345,24 @@
 <p><img src="RC_Verrieres_MCMC.fr.png" /></p>
 <p>Le graphique des traces MCMC représente les valeurs de paramètres simulées depuis la distribution a posteriori grâce au simulateur MCMC (tous les détails techniques sont expliqués dans <a href="/fr/doc/topics/mcmc">ce document</a>). Notez que le graphique ne montre que 500 valeurs simulées, mais en fait 10 000 valeurs ont été initialement générées, les 5 000 premières étant éliminées. Ces 5 000 valeurs initiales ont simplement été décimées et réduites à 500 valeurs pour éviter de conserver un nombre de simulations trop important.</p>
 <p>Outre les paramètres <span class="math inline">\(\kappa\)</span>, <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, et <span class="math inline">\(c\)</span> de chaque contrôle, les échantillons des paramètres <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span> de l’écart-type de l’erreur structurelle ainsi que le logarithme de la densité a posteriori (“LogPost”) sont également tracés. La position du jeu de paramètres maxpost (maximisant la distribution a posteriori) est indiquée par une ligne verticale rouge pour chaque paramètre. Ces résultats peuvent être exportés au format CSV.</p>
+</div>
+<div id="comparateur-de-courbes-de-tarage" class="section level2">
+<h2>Comparateur de courbes de tarage</h2>
+<p>A partir de la version 3.1, vous pouvez créer un nouveau composant <em>Comparateur de courbes de tarage</em> permettant de tracer deux courbes de tarage dans un même graphique configurable, et ce de plusieurs façons :</p>
+<ul>
+<li>via le menu <em>Composants…Créer un comparateur de courbes de tarage</em> ;</li>
+<li>en effectuant un clic droit sur le noeud <img src="tools.svg" style="display:inline-block"> <em>Outils</em> dans l’arborescence de l’Explorateur des composants, puis sélectionner <em>Comparateur de courbes de tarage</em> ;</li>
+<li>en cliquant sur le bouton <img src="comparing_rating_curves_add.svg" style="display:inline-block"> dans la barre d’outils.</li>
+</ul>
+<p><img src="RC_Verrieres_Comparison.fr.png" />
+Il vous sera possible de renommer ce comparateur de courbes de tarage et d’en saisir une description. Un comparateur de courbes de tarage existant peut être dupliqué ou supprimé.</p>
+<p>Vous pouvez configurer le graphique en sélectionnant les deux courbes de tarage (a priori ou a posteriori) que vous souhaitez superposer, modifier les étiquettes des axes et d’autres propriétés du graphique. En sélectionnant chaque élément affiché (dans la liste), vous pouvez choisir de :</p>
+<ul>
+<li>l’afficher ou pas sur le graphique ;</li>
+<li>l’inclure ou pas dans la légende ;</li>
+<li>modifier son intitulé dans la légende ;</li>
+<li>modifier son apparence (couleur, ligne, transparence).</li>
+</ul>
 </div>
 </div>
 

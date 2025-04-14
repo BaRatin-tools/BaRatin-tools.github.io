@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1740664769" rel="stylesheet">
+<link href="/css/custom.css?1744619212" rel="stylesheet">
 
 
 
@@ -303,7 +303,7 @@
 <li><a href="#analyse-hydraulique" id="toc-analyse-hydraulique"><span class="toc-section-number">1</span> Analyse hydraulique</a></li>
 <li><a href="#spécification-des-a-priori" id="toc-spécification-des-a-priori"><span class="toc-section-number">2</span> Spécification des a priori</a></li>
 <li><a href="#jaugeages-et-courbe-de-tarage-a-posteriori" id="toc-jaugeages-et-courbe-de-tarage-a-posteriori"><span class="toc-section-number">3</span> Jaugeages et courbe de tarage a posteriori</a></li>
-<li><a href="#approches-alternatives" id="toc-approches-alternatives"><span class="toc-section-number">4</span> Approches alternatives</a></li>
+<li><a href="#approche-alternative-configuration-hydraulique-qfh" id="toc-approche-alternative-configuration-hydraulique-qfh"><span class="toc-section-number">4</span> Approche alternative : configuration hydraulique “Q=f(h)”</a></li>
 </ul>
 </div>
 
@@ -312,14 +312,18 @@
 </blockquote>
 <div id="analyse-hydraulique" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Analyse hydraulique</h1>
-<p>Cette <a href="https://bdoh.irstea.fr/YZERON/station/V301502301">station</a> fait partie de <a href="https://bdoh.irstea.fr/YZERON/">l’observatoire du bassin versant de l’Yzeron</a> qui suit plusieurs bassins peri-urbains autour de la ville de Lyon depuis 1997. Un déversoir de type “triangle tronqué” est utilisé à cette station. Cette géométrie est rencontrée assez fréquemment en pratique, mais sa modélisation dans le cadre de BaRatin n’est pas triviale car l’équation exacte de ce déversoir n’est pas compatible avec les hypothèses faites par BaRatin. Ce cas d’étude illustre donc comment s’en sortir avec une approximation compatible avec le cadre imposé par BaRatin.</p>
+<p>Cette <a href="https://bdoh.irstea.fr/YZERON/station/V301502301">station</a> fait partie de <a href="https://bdoh.irstea.fr/YZERON/">l’observatoire du bassin versant de l’Yzeron</a> qui suit depuis 1997 les débits de plusieurs cours d’eau de ce bassin péri-urbain situé à l’ouest de la ville de Lyon. Cette station est située en amont d’un déversoir rectangulaire muni d’une encoche triangulaire, pour améliorer la sensibilité de la relation hauteur-débit pour les bas débits (cf. Figure 1, haut). Cette configuration hydraulique est rencontrée assez fréquemment en pratique, mais sa modélisation dans le cadre de BaRatin n’est pas triviale car l’équation exacte du déversoir de type “triangle tronqué” (limité par des parois verticales fictives) qui s’ajoute au déversoir rectangulaire n’est pas compatible avec les hypothèses faites par BaRatin. Ce cas d’étude illustre donc comment :</p>
+<ul>
+<li>ou bien s’en sortir avec une approximation compatible avec le cadre imposé par BaRatin ;</li>
+<li>ou bien utiliser l’équation exacte sous la forme d’une configuration hydraulique “Q=f(h)”.</li>
+</ul>
 <img src="CharboAnalysis.jpg" width="80%">
 <p style="text-align: center;color: gray;">
 Figure 1. Analyse des contrôles hydrauliques pour le ruisseau de Charbonnières à Charbonnières-Les-Bains. Haut: photo prise depuis l’aval, avec vue du déversoir “triangle tronqué” inséré dans un déversoir rectangulaire plus large (photo: M. Lagouy); bas: schéma d’un déversoir de type “triangle tronqué” pris isolément.
 </p>
-<p>La partie problématique de cette configuration hydraulique est le déversoir de type “triangle tronqué” inséré dans le plus large déversoir rectangulaire, et qui est schématisé en isolation dans la Figure 1. Le déversoir “triangle tronqué” est constitué d’un déversoir triangulaire dont l’évasement s’interrompt à partir d’une certaine hauteur pour être bordé de parois verticales. L’équation de ce type de déversoir au-dessus de la cote <span class="math inline">\(b&#39;\)</span> à laquelle les bords du triangle rencontrent les parois verticales est donnée ci-dessous. Elle peut être interprétée comme l’ajout d’un déversoir triangulaire « négatif » au déversoir triangulaire réel pour retrancher l’excès de section mouillée quand la hauteur d’eau atteint les parois verticales.</p>
+<p>La partie problématique de cette configuration hydraulique est le déversoir de type “triangle tronqué” inséré dans le plus large déversoir rectangulaire, et qui est schématisé isolément sur la Figure 1 (bas). Le déversoir “triangle tronqué” est constitué d’un déversoir triangulaire dont l’évasement s’interrompt à partir d’une certaine hauteur pour être bordé de parois verticales fictives. L’équation de ce type de déversoir au-dessus de la cote <span class="math inline">\(b&#39;\)</span> à laquelle les bords du triangle rencontrent les parois verticales est donnée ci-dessous. Elle peut être interprétée comme l’ajout d’un déversoir triangulaire « négatif » au déversoir triangulaire réel pour retrancher l’excès de section mouillée quand la hauteur d’eau atteint les parois verticales.</p>
 <p><span class="math display">\[
-Q(H)=\underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_1}(H-b)^c - \underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_2}(H-b&#39;)^c
+Q(H)=\underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_1}(H-b)^{c_t} - \underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_2}(H-b&#39;)^{c_t}
 \]</span></p>
 <p>Cette équation ne rentre pas dans le cadre de BaRatin pour les raisons suivantes :</p>
 <ol style="list-style-type: decimal">
@@ -327,7 +331,7 @@ Q(H)=\underbrace{C_t \sqrt{2g}\tan({\nu/2})}_{a_1}(H-b)^c - \underbrace{C_t \sqr
 <li>Il semblerait naturel d’utiliser une soustraction de deux contrôles, mais cette approche ne fonctionne pas car :
 <ol style="list-style-type: lower-alpha">
 <li>BaRatin ne permet pas de soustraire des équations puissance, seulement de les ajouter; on serait tenté de dire qu’il suffit alors d’ajouter un contrôle avec un coefficient <span class="math inline">\(a&#39;_2=-a_2\)</span> négatif, mais BaRatin n’autorise pas les coefficients négatifs.</li>
-<li>Les paramètres des 2 contrôles qu’il faudrait soustraire sont liés : en particulier ils ont les mêmes coefficients <span class="math inline">\((a_1=a_2)\)</span> et le même exposant <span class="math inline">\(c\)</span>. BaRatin ne permet pas d’imposer de tels liens.</li>
+<li>Les paramètres des 2 contrôles qu’il faudrait soustraire sont liés : en particulier ils ont les mêmes coefficients <span class="math inline">\((a_1=a_2)\)</span> et le même exposant <span class="math inline">\(c_t\)</span>. BaRatin ne permet pas d’imposer de tels liens.</li>
 </ol></li>
 </ol>
 <p>Ces contraintes imposées par BaRatin sont liées à la <a href="/fr/doc/topics/courbe-de-tarage/">formulation générale de la courbe de tarage</a>, et en particulier à la nécessité de résoudre une équation de continuité. Nous décrivons à la fin de cette page des pistes en cours d’investigation pour contourner ces contraintes, mais en attendant une approche par approximation est nécessaire pour “faire rentrer” ce type de contrôle dans le cadre de BaRatin. Un moyen commode de modéliser ce type de situation est d’utiliser un déversoir triangulaire pour les hauteurs inférieures à <span class="math inline">\(b&#39;\)</span>, puis de le remplacer par un déversoir rectangulaire pour les hauteurs supérieures à <span class="math inline">\(b&#39;\)</span>. La cote du fond de ce rectangle (offset) devrait être estimée au-dessus de la côte du fond du triangle, et l’avantage est que l’exposant <span class="math inline">\(c=1.5\)</span> correspond plus à la géométrie contrainte latéralement par les parois verticales (à comparer avec l’exposant <span class="math inline">\(c=2.5\)</span> du triangle). Eventuellement, une transition acceptable entre les approximations triangles et rectangles peut être obtenue avec un déversoir parabolique équivalent, d’offset intermédiaire et de dimensions appropriées.</p>
@@ -394,14 +398,30 @@ Figure 3. Courbe de tarage a posteriori pour le ruisseau de Charbonnières à Ch
 Figure 4. Géométries estimées du triangle actif pour <span class="math inline">\(H &lt; 41 \mathrm{cm}\)</span> et du rectangle équivalent qui le remplace lorsque <span class="math inline">\(H \geq 41 \mathrm{cm}\)</span>.
 </p>
 </div>
-<div id="approches-alternatives" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Approches alternatives</h1>
-<p>Deux approches sont en cours d’investigation pour utiliser des contrôle comme celui de Charbonnières qui n’entrent dans le cadre classique de BaRatin. Ces deux approches ne sont pas encore disponibles dans BaRatinAGE, mais elles sont d’ores et déjà implémentées dans <a href="/fr/doc/case/rbam">RBaM</a>. Nous travaillons à leur documentation et proposerons prochainement des cas d’étude pour illustrer leur utilisation. Ces deux approches sont les suivantes :</p>
-<ol style="list-style-type: decimal">
-<li>Ecrire “à la main” l’équation du contrôle: ceci peut etre fait dans RBaM via un modèle particulier nommé <a href="https://github.com/BaM-tools/RBaM/blob/main/vignettes/TextFileModel.Rmd"><code>TextFileModel</code></a> qui permet de définir un nouveau modèle “à la volée” à partir de son équation.</li>
-<li>Déduire l’équation du contrôle à partir de sa bathymétrie. Ceci est possible pour un contrôle de type section via le modèle <code>HydraulicControl_section</code> implementé dans RBaM et en cours de documentation.</li>
-</ol>
-<p>Si les deux approches ci-dessus devraient permettrent d’estimer les paramètres d’un contrôle quelconque pris en isolation, elles ne permettront pas forcément d’estimer une combinaison de plusieurs de ces contrôles dans une courbe de tarage multi-segments. Comme mentionné précédemment, la résolution de l’équation de continuité est en effet plus compliquée hors du cadre des équations puissance simples imposé par BaRatin. En particulier, cette équation n’a en général pas de solution explicite, et existence et unicité de cette solution ne sont pas toujours assurées.</p>
+<div id="approche-alternative-configuration-hydraulique-qfh" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Approche alternative : configuration hydraulique “Q=f(h)”</h1>
+<p>En utilisant une configuration hydraulique “Q=f(h)” au lieu du modèle BaRatin standard, il est possible de représenter le déversoir en triangle tronqué avec l’équation plus exacte indiquée précédemment. En fait, le catalogue de configurations hydrauliques “Q=f(h)” prédéfinies propose, via le menu déroulant, le contrôle “Déversoir rectangulaire avec encoche triangulaire” qui correspond exactement à la configuration de la station Charbonnières, à savoir un déversoir triangulaire tronqué ajouté à un déversoir rectangulaire de même cote <span class="math inline">\(b&#39;\)</span> et de largeur <span class="math inline">\(B_r\)</span> :</p>
+<p><span class="math display">\[
+Q(H)=C_t \sqrt{2g}\tan({\nu/2})(H-b)^{c_t} - C_t \sqrt{2g}\tan({\nu/2})(H-b&#39;)^{c_t} + C_r \sqrt{2g} B_r (H-b&#39;)^{c_r}
+\]</span>
+Les mêmes a priori que précédemment sont définis pour les différents paramètres physiques des contrôles, ce qui permet de calculer une nouvelle courbe de tarage a priori :</p>
+<br>
+<img src="Qfh_Prior_Charbo.fr.png" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 5. Configuration hydraulique “Q=f(h)” et courbe de tarage a priori pour le ruisseau de Charbonnières à Charbonnières-Les-Bains.
+</p>
+<p>Cette courbe de tarage a priori “Q=f(h)” est proche de la courbe de tarage a priori obtenue précédemment avec l’approximation BaRatin, comme le montre cette comparaison :</p>
+<br>
+<img src="CharboPriorComp.fr.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 6. Comparaison des courbes de tarage a priori “Q=f(h)” et BaRatin pour le ruisseau de Charbonnières à Charbonnières-Les-Bains (l’axe des débits est en échelle log).
+</p>
+<p>Il n’y a pas de conflit entre les résultats et les paramètres a priori, et la courbe de tarage a posteriori “Q=f(h)” est proche de la courbe de tarage a posteriori obtenue précédemment avec l’approximation BaRatin, comme le montre cette comparaison :</p>
+<br>
+<img src="CharboPosteriorComp.fr.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Figure 7. Comparaison des courbes de tarage a posteriori “Q=f(h)” et BaRatin pour le ruisseau de Charbonnières à Charbonnières-Les-Bains (l’axe des débits est en échelle log).
+</p>
 </div>
 
 

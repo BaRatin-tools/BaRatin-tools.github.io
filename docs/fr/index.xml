@@ -69,7 +69,7 @@
       <link>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/jaugeages/</guid>
-      <description>1 Les jaugeages incertains comme données de calage 2 Incertitude des débits jaugés 3 Incertitude des hauteurs jaugées 1 Les jaugeages incertains comme données de calage Pour l’analyse d’une courbe de tarage avec BaRatin, il faut fournir un ensemble de jaugeages représentatifs de la relation hauteur-débit pour la période considérée.</description>
+      <description>1 Les jaugeages incertains comme données de calage 2 Incertitude des débits jaugés 1 Les jaugeages incertains comme données de calage Pour l’analyse d’une courbe de tarage avec BaRatin, il faut fournir un ensemble de jaugeages représentatifs de la relation hauteur-débit pour la période considérée.</description>
     </item>
     <item>
       <title>Le Mercier au pont de la D610</title>
@@ -97,7 +97,7 @@
       <link>https://baratin-tools.github.io/fr/doc/case/charbonnieres/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/case/charbonnieres/</guid>
-      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori 4 Approches alternatives Téléchargez le fichier BaRatinAGE de ce cas d’étude : Charbonnieres-CharbonnieresLesBains.</description>
+      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori 4 Approche alternative : configuration hydraulique “Q=f(h)” Téléchargez le fichier BaRatinAGE de ce cas d’étude : Charbonnieres-CharbonnieresLesBains.</description>
     </item>
     <item>
       <title>Incertitudes dans les limnigrammes</title>
@@ -167,7 +167,7 @@
       <link>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</guid>
-      <description>Ajout ou correction d’une langue Pour traduire BaRatinAGE dans une nouvelle langue, ou pour corriger une langue existante, suivez les étapes suivantes.&#xA;Premièrement, ouvrez un fichier de traduction existant ou créez-en un nouveau dans le répertoire resources18n nommé selon le format translations_xx.</description>
+      <description>Ajout ou correction d’une langue Pour traduire BaRatinAGE dans une nouvelle langue, ou pour corriger une langue existante, suivez les étapes suivantes.&#xA;Pour corriger une langue existante, téléchargez le fichier de traduction à corriger ici.</description>
     </item>
     <item>
       <title>Foire aux questions</title>

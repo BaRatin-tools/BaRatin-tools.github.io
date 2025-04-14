@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1740664769" rel="stylesheet">
+<link href="/css/custom.css?1744619212" rel="stylesheet">
 
 
 
@@ -302,11 +302,11 @@
 <div id="adding-or-correcting-a-language" class="section level1">
 <h1>Adding or correcting a language</h1>
 <p>To translate BaRatinAGE into a new language, or to correct an existing language, follow these steps.</p>
-<p>First, open an existing translation file or create a new one in the <em>resources18n</em> directory named according to the format <em>translations_xx.properties</em>, where <em>xx</em> is the two-character key for the language according to <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">ISO standard 639</a>. The easiest way to do this is to copy and paste one of the existing files already containing the language you want to translate from, and then rename it using the format mentioned.</p>
+<p>To correct an existing language, download the translation file you wish to modify <a href="https://github.com/BaRatin-tools/BaRatinAGE/tree/develop/resources/i18n">here</a>. Translation files are named according to the format <em>translations_xx.properties</em>, where <em>xx</em> is the two-character key for the language according to <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">ISO standard 639</a>. To add a new language, the easiest way to go is to download the file already containing the language you want to translate from, and then rename it using the format mentioned above.</p>
 <p>You can edit this file using the text editor of your choice (Notepad++, for example).
 Translation files are simply key-value pairs separated by an equals sign. For example, <code>hello_message = Bonjour</code> in the French file and <code>hello_message = Hi</code> in the English file. To add your translations, simply translate the text to the right of the equals sign (without changing the key to the left of the equals sign).</p>
 <p>Some translations may include basic HTML to format the text, such as bold or italics. For example, <code>bold_text_example = Here is a text with &lt;b&gt;bold&lt;/b&gt;</code>. Some translations contain placeholders indicated by braces with a number in the middle, for example <code>{0}</code>. These placeholders are used in BaRatinAGE to adapt the content of the sentence to the context of use, for example, <code>hi_user = Hello {0}, welcome</code>. Comments can be added by starting a line with the <code>#</code> character.</p>
-<p>Once this new file has been created, BaRatinAGE v3 should suggest the new language via the <em>Options…Change language</em> menu. Please send us your glossary file so that we can share it with all the users.</p>
+<p>Once the translation file has been edited, you can save it in subfolder <em>resources/i18n</em> of BaRatinAGE installation folder. BaRatinAGE v3 should then suggest the new language via the <em>Options…Change language</em> menu. Please send us your glossary file so that we can share it with all the users.</p>
 </div>
 <div id="contents-of-the-.bam-backup-file" class="section level1">
 <h1>Contents of the .bam backup file</h1>
@@ -346,6 +346,40 @@ Translation files are simply key-value pairs separated by an equals sign. For ex
 <p>This means that if you wish, you can control the BaM executable directly, without using the BaRatinAGE interface. This can be useful, for example, if you use a programming language and want to perform calculations directly in one of your programs. In particular, there is an R controller called RBaM, available <a href="https://github.com/BaM-tools/RBaM">here</a>. The example provided with RBaM is the BaRatin model.</p>
 <p><em>BaM!</em> (Bayesian Modeling) is a platform for estimating a model using a Bayesian approach and using it for prediction, with particular emphasis on quantifying uncertainty. Various models are and can be implemented in <em>BaM!</em>, including the BaRatin model used in BaRatinAGE v3. If you want to go further and have access to the executable and configuration files, you can explore the <em>BaM!</em> ecosystem <a href="https://github.com/BaM-tools/BaMdocs">here</a>.</p>
 <p>You can also email the BaRatinAGE development team if you’d like to find out more.</p>
+</div>
+<div id="adding-a-preset-qfh-hydraulic-configuration" class="section level1">
+<h1>Adding a preset “Q=f(h)” hydraulic configuration</h1>
+<p>Hydraulic configurations of type “Q=f(h)” come with a set of presets for possible rating curve equations to use with useful default values for some parameters. When none of the presets fits your needs, it is possible to write you own custom equation. In addition, it is also possible to create you own preset that can then be reused in other projects. This is done by editing the json file <code>resources/baratin_qfh_presets.json</code>.</p>
+<p>This json file is structured as a JSON array <code>[{...},{...}, ..., {...}]</code> where <code>{...}</code> is the configuration of a particular preset. A preset configuration contains the following fields (key/value pairs), some of them being mandatory (those followed by a star below), others being optional:</p>
+<ul>
+<li>id * : a string ID that must be unique; this ID is used to uniquely identify each preset; it is also used as a key for the preset name that is looked for within the translation files in <code>resources/i18n/</code></li>
+<li>icon_id : a string ID that is used to look for the icon which must be a <code>24x24</code> image in a svg format stored in the folder <code>resources/icons/custom/</code></li>
+<li>formula * : a string containing the rating curve equation</li>
+<li>stage_symbol * : a string that indicates the symbole used for the stage variable within the rating curve equation</li>
+<li>parameters * : an JSON array of parameter configuration (all the parameters using the rating curve equation must be here), each element containing the following fields:
+<ul>
+<li>symbole * : a string that indicates the symbole used for that particular parameter within the rating curve equation; this is the only mandatory field</li>
+<li>type : a string indicating the type of parameter; this is useful to set a name, icon and unit for the parameter; possible values are :
+<ul>
+<li>“activation_stage” : an activation stage parameter; <code>m</code></li>
+<li>“slope” : a slope parameter; <code>-</code> (unitless )</li>
+<li>“strickler_coef” : a Strickler coefficient parameter; <code>m^(1/3)/s</code></li>
+<li>“angle” : an angle parameter; <code>°</code></li>
+<li>“width” : a width parameter; <code>m</code></li>
+<li>“area” : an area parameter; <code>m^2</code></li>
+<li>“gravity_acceleration”: a gravity acceleration parameter; <code>m/s^2</code></li>
+<li>“exponent”: an exponent parameter, <code>-</code></li>
+<li>“weir_coefficient”: a weir coefficient parameter; <code>-</code></li>
+</ul></li>
+<li>default_distribution : a JSON object with the following field describing the default distribution:
+<ul>
+<li>type * : string indicating the type of the distribution; all the distributions supported by BaM are possible (<code>Gaussian</code>, <code>Uniform</code>, etc.)</li>
+<li>inital_guess: a double value indicating the initial value of this parameter</li>
+<li>parameters: an array of double values, each value being the distribution’s parameters (e.g. mean and standard-deviation for a <code>Gaussian</code> distribution)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Examples within the <code>resources/baratin_qfh_presets.json</code> file can be found to create your own preset.</p>
 </div>
 
 

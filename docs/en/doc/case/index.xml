@@ -40,7 +40,7 @@
       <link>https://baratin-tools.github.io/en/doc/case/charbonnieres/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/case/charbonnieres/</guid>
-      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve 4 Alternative approaches Download the BaRatinAGE file for this case study: Charbonnieres-CharbonnieresLesBains.bam</description>
+      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve 4 Alternative approach: “Q=f(h)” hydraulic configuration Download the BaRatinAGE file for this case study: Charbonnieres-CharbonnieresLesBains.</description>
     </item>
     <item>
       <title>Using RBaM</title>

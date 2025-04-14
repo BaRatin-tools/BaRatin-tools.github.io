@@ -68,7 +68,7 @@
       <link>https://baratin-tools.github.io/en/doc/baratinage/going-further/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/going-further/</guid>
-      <description>Adding or correcting a language To translate BaRatinAGE into a new language, or to correct an existing language, follow these steps.&#xA;First, open an existing translation file or create a new one in the resources18n directory named according to the format translations_xx.</description>
+      <description>Adding or correcting a language To translate BaRatinAGE into a new language, or to correct an existing language, follow these steps.&#xA;To correct an existing language, download the translation file you wish to modify here.</description>
     </item>
     <item>
       <title>Frequently asked questions </title>

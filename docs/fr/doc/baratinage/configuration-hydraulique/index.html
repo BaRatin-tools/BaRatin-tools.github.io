@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1740664769" rel="stylesheet">
+<link href="/css/custom.css?1744619212" rel="stylesheet">
 
 
 
@@ -376,6 +376,39 @@ Et pour le lit moyen :</p>
 <li>paramètres souvent bien connus a priori : les propriétés géométriques d’un déversoir ou d’un chenal artificiels ; l’exposant c, qui ne dépend que du type de contrôle; les coefficients d’ouvrage pour les sections de contrôle artificielles (rectangle, triangle, orifice, etc.), etc.</li>
 </ul></li>
 </ul>
+</div>
+<div id="configuration-hydraulique-qfh" class="section level1">
+<h1>Configuration hydraulique “Q=f(h)”</h1>
+<p>Depuis la version 3.1 de BaRatinAGE, vous pouvez écrire votre propre équation de courbe de tarage en créant une nouvelle configuration hydraulique “Q=f(h)” de plusieurs façons :</p>
+<ul>
+<li>via le menu <em>Composants… Créer une nouvelle configuration hydraulique Q=f(h)</em> ;</li>
+<li>en effectuant un clic droit sur le noeud <img src="hydraulic_config.svg" style="display:inline-block"> <em>Configuration hydraulique</em> dans l’arborescence de l’explorateur ;</li>
+<li>en cliquant sur le bouton <img src="hydraulic_config_qfh_add.svg" style="display:inline-block"> dans la barre d’outils.</li>
+</ul>
+<p>Il vous sera possible de renommer cette nouvelle configuration hydraulique “Q=f(h)” et d’en saisir une description. Une configuration hydraulique “Q=f(h)” existante peut être dupliquée ou supprimée.</p>
+<p>De façon générale, les onglets et l’utilisation d’une configuration hydraulique “Q=f(h)” sont similaires à ceux d’une configuration hydraulique standard de BaRatin. La principale différence est qu’au lieu de définir l’équation de la courbe de tarage via la matrice des contrôles, l’équation est saisie directement, après avoir sélectionné l’option <em>Equation personnalisée</em> dans le menu déroulant de l’onglet <em>Equation de la courbe de tarage</em>. Typiquement, l’équation d’un contrôle standard de BaRatin <span class="math inline">\(Q=a(h-b)^c\)</span> sera la suivante :</p>
+<p><img src="Qfh.fr.png" /></p>
+<p>Le nom de variable de la hauteur d’eau (<span class="math inline">\(h\)</span>, typiquement) doit être spécifié. Au passage, notez l’utilité de la fonction <em>ispos(…)</em>, à placer dans la parenthèse élevée à la puissance <span class="math inline">\(c\)</span>, pour annuler le débit quand <span class="math inline">\(h&lt;b\)</span>.</p>
+<p>Pouvoir écrire sa propre équation <span class="math inline">\(Q=f(h)\)</span> permet d’utiliser des contrôles dont la formulation n’est pas permise par l’équation générale du modèle BaRatin standard.</p>
+<p>Un certain nombre de configuration hydraulique “Q=f(h)” prédéfinies sont proposées dans le menu déroulant, notamment :</p>
+<ul>
+<li>le contrôle chenal trapézoïdal (voire rectangulaire) sans la condition de largeur grande devant la profondeur d’eau (<span class="math inline">\(B_w&gt;5(h-b)\)</span>) imposée pour le contrôle chenal rectangulaire de BaRatin</li>
+<li>différents déversoirs avec encoche non rectangulaire, situation difficile à représenter efficacement avec le modèle BaRatin (voir ce <a href="/fr/doc/case/charbonnieres">cas d’étude</a>)</li>
+</ul>
+<p>Il est possible d’ajouter une configuration hydraulique “Q=f(h)” prédéfinie au catalogue proposé dans le menu déroulant : la procédure est expliquée <a href="/fr/doc/baratinage/aller-plus-loin">ici</a>. N’hésitez pas à nous proposer des cas d’étude qui pourraient être utiles à partager avec les autres utilisateurs!</p>
+<p>La spécification des paramètres <em>a priori</em> d’une configuration hydraulique “Q=f(h)” se fait en définissant directement les distributions des paramètres, comme pour le mode <em>paramètres k-a-c</em> d’une configuration hydraulique standard. Les étapes suivantes, jusqu’au calcul de la courbe de tarage a posteriori et de l’hydrogramme, sont les mêmes que lorsqu’on utilise une configuration hydraulique standard.</p>
+</div>
+<div id="configuration-hydraulique-bac" class="section level1">
+<h1>Configuration hydraulique BAC</h1>
+<p>Depuis la version 3.1 de BaRatinAGE, vous pouvez utiliser le modèle <em>BaRatin BAC</em> (au lieu du modèle <em>BaRatin KAC</em> standard) en créant une nouvelle configuration hydraulique BAC de plusieurs façons :</p>
+<ul>
+<li>via le menu <em>Composants… Créer une nouvelle configuration hydraulique BAC</em> ;</li>
+<li>en effectuant un clic droit sur le noeud <img src="hydraulic_config.svg" style="display:inline-block"> <em>Configuration hydraulique</em> dans l’arborescence de l’explorateur ;</li>
+<li>en cliquant sur le bouton <img src="hydraulic_config_bac_add.svg" style="display:inline-block"> dans la barre d’outils.</li>
+</ul>
+<p>Il vous sera possible de renommer cette nouvelle configuration hydraulique BAC et d’en saisir une description. Une configuration hydraulique BAC existante peut être dupliquée ou supprimée.</p>
+<p>De façon générale, les onglets et l’utilisation d’une configuration hydraulique BAC sont similaires à ceux d’une configuration hydraulique standard de BaRatin. L’équation générale de la courbe de tarage est la même, et elle se définit via la même matrice de contrôles. La différence est qu’au lieu d’estimer les paramètres <span class="math inline">\(k\)</span> (hauteur d’activation), <span class="math inline">\(a\)</span> (coefficient) et <span class="math inline">\(c\)</span> (exposant) de chaque contrôle hydraulique, on estime les <span class="math inline">\(b\)</span> (offset), <span class="math inline">\(a\)</span> et <span class="math inline">\(c\)</span>. Au lieu de <span class="math inline">\(b\)</span>, c’est <span class="math inline">\(k\)</span> qui est déterminé à partir des autres paramètres, par condition de continuité de la courbe de tarage, ce qui nécessite une résolution numérique pouvant parfois poser problème.</p>
+<p>Pour le moment, cette nouvelle option est surtout un premier pas vers la future intégration d’un modèle permettant d’estimer une famille de courbes de tarage séparées par des détarages dus à l’évolution du lit du cours d’eau. Il n’est pas conseillé de l’utiliser sauf besoin spécifique.</p>
 </div>
 
 

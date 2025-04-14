@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1740664769" rel="stylesheet">
+<link href="/css/custom.css?1744619212" rel="stylesheet">
 
 
 
@@ -302,11 +302,11 @@
 <div id="ajout-ou-correction-dune-langue" class="section level1">
 <h1>Ajout ou correction d’une langue</h1>
 <p>Pour traduire BaRatinAGE dans une nouvelle langue, ou pour corriger une langue existante, suivez les étapes suivantes.</p>
-<p>Premièrement, ouvrez un fichier de traduction existant ou créez-en un nouveau dans le répertoire <em>resources18n</em> nommé selon le format <em>translations_xx.properties</em>, où <em>xx</em> correspond à la clé à deux caractères de la langue selon la <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">norme ISO 639</a>. Le moyen le plus simple est de copier et coller l’un des fichiers existants contenant déjà la langue à partir de laquelle vous souhaitez traduire, puis de le renommer selon le format mentionné.</p>
-<p>Vous pouvez modifier ce fichier avec l’éditeur de texte de votre choix (Notepad++, par exemple).
+<p>Pour corriger une langue existante, téléchargez le fichier de traduction à corriger <a href="https://github.com/BaRatin-tools/BaRatinAGE/tree/develop/resources/i18n">ici</a>. Les fichiers sont nommés selon le format <em>translations_xx.properties</em>, où <em>xx</em> correspond à la clé à deux caractères de la langue selon la <a href="https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes">norme ISO 639</a>. Pour créer une nouvelle langue, le moyen le plus simple est de télécharger le fichier contenant la langue à partir de laquelle vous souhaitez traduire, puis de le renommer selon le format mentionné.</p>
+<p>Vous pouvez ensuite modifier le fichier téléchargé avec l’éditeur de texte de votre choix (Notepad++, par exemple).
 Les fichiers de traduction sont simplement constitués de paires clé-valeur séparées par un signe égale. Par exemple, <code>hello_message = Bonjour</code> dans le fichier français et <code>hello_message = Hi</code> dans le fichier anglais. Pour ajouter vos traductions, il vous suffit de traduire le texte situé à droite du signe égale (sans changer la clé située à gauche du signe égale).</p>
 <p>Certaines traductions peuvent inclure du HTML basique pour mettre en forme le texte, comme le gras ou l’italique. Par exemple, <code>bold_text_example = Voici un texte avec du &lt;b&gt;gras&lt;/b&gt;</code>. Certaines traductions contiennent des espaces réservés indiqués par des accolades avec un chiffre au milieu, par exemple <code>{0}</code>. Ces espaces réservés sont utilisés dans BaRatinAGE pour adapter le contenu de la phrase selon le contexte d’utilisation, par exemple, <code>hi_user = Bonjour {0}, bienvenue</code>. Des commentaires peuvent être ajoutés en commençant une ligne avec le caractère <code>#</code>.</p>
-<p>Une fois ce nouveau fichier créé, BaRatinAGE v3 devrait vous proposer la nouvelle langue créée via le menu <em>Options…Changer de langue</em>. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.</p>
+<p>Une fois le fichier de traduction édité, vous pouvez le sauvegarder dans le répertoire <em>resources/i18n</em> du dossier d’installation de BaRatinAGE. BaRatinAGE v3 devrait vous proposer la nouvelle langue créée via le menu <em>Options…Changer de langue</em>. Merci de nous transmettre votre fichier glossaire pour que nous puissions en faire profiter tous les utilisateurs.</p>
 </div>
 <div id="contenu-du-fichier-de-sauvegarde-.bam" class="section level1">
 <h1>Contenu du fichier de sauvegarde .bam</h1>
@@ -346,6 +346,40 @@ Les fichiers de traduction sont simplement constitués de paires clé-valeur sé
 <p>Ceci implique que vous pouvez si vous le souhaitez piloter directement l’exécutable BaM, sans passer par l’interface BaRatinAGE. Ceci peut être utile par exemple si vous utilisez un langage de programmation et souhaitez effectuer des calculs directement dans un de vos programmes. Notamment, il existe un contôleur R nommé RBaM, disponible <a href="https://github.com/BaM-tools/RBaM">ici</a>. L’exemple fourni avec RBaM est justement le modèle BaRatin.</p>
 <p><em>BaM!</em> (Bayesian Modeling) est une plateforme visant à estimer un modèle à l’aide d’une approche bayésienne et à l’utiliser pour la prédiction, avec un accent particulier sur la quantification de l’incertitude. Différents modèles variés sont et peuvent être implémentés dans <em>BaM!</em>, dont le modèle BaRatin utilisé dans BaRatinAGE v3. Si vous voulez aller plus loin en ayant accès à l’exécutable et aux fichiers de configuration, vous pouvez explorer l’écosystème de <em>BaM!</em> <a href="https://github.com/BaM-tools/BaMdocs">ici</a>.</p>
 <p>Vous pouvez également envoyer un mail à l’équipe de développement de BaRatinAGE si vous souhaitez en savoir plus.</p>
+</div>
+<div id="ajout-dune-configuration-hydraulique-qfh-prédéfinie" class="section level1">
+<h1>Ajout d’une configuration hydraulique « Q=f(h) » prédéfinie</h1>
+<p>Les configurations hydrauliques de type « Q=f(h) » sont accompagnées d’un catalogue d’équations de courbe de tarage prédéfinies, avec des valeurs par défaut utiles pour certains paramètres. Si aucune des configurations hydrauliques prédéfinies ne correspond à vos besoins, il est possible d’écrire votre propre équation à la carte. De plus, il est possible d’ajouter cette équation au catalogue, de sorte que cette configuration hydraulique pourra ensuite être réutilisés dans d’autres projets. Cela se fait en éditant le fichier JSON <code>resources/baratin_qfh_presets.json</code>.</p>
+<p>Ce fichier JSON est structuré comme un tableau JSON <code>[{...},{...}, ..., {...}]</code> où <code>{...}</code> est la configuration d’une configuration hydraulique prédéfinie particulière. Une configuration de préréglage contient les champs suivants (paires clé/valeur), certains étant obligatoires (ceux suivis d’une étoile ci-dessous), les autres étant facultatifs :</p>
+<ul>
+<li><p>id * : un identifiant, qui doit être unique ; cette chaîne de caractères est utilisée pour identifier de manière unique chaque configuration hydraulique prédéfinie ; elle est également utilisée comme clé pour le nom de la configuration hydraulique qui est recherché dans les fichiers de traduction dans <code>resources/i18n/</code></p></li>
+<li><p>icon_id : une chaîne de caractères utilisée comme identifiant pour rechercher l’icône qui doit être une image <code>24x24</code> au format svg stockée dans le dossier <code>resources/icons/custom/</code></p></li>
+<li><p>formula * : une chaîne de caractères contenant l’équation de la courbe de tarage</p></li>
+<li><p>stage_symbol * : une chaîne de caractères qui indique le symbole utilisé pour la variable hauteur d’eau dans l’équation de la courbe de tarage</p></li>
+<li><p>parameters * : un tableau JSON de configuration des paramètres (tous les paramètres utilisés dans l’équation de la courbe de tarage doivent être ici), chaque élément contenant les champs suivants :</p>
+<ul>
+<li>symbole * : une chaîne de caractères indiquant le symbole utilisé pour ce paramètre particulier dans l’équation de la courbe de tarage ; c’est le seul champ obligatoire</li>
+<li>type : une chaîne de caractères indiquant le type de paramètre ; ceci est utile pour définir un nom, une icône et une unité pour le paramètre ; les valeurs possibles sont :
+<ul>
+<li>« activation_stage » : un paramètre de hauteur d’activation ; <code>m</code></li>
+<li>« slope » : un paramètre de pente ; <code>-</code> (sans unité)</li>
+<li>« strickler_coef » : un paramètre de coefficient de Strickler ; <code>m^(1/3)/s</code></li>
+<li>« angle » : un paramètre d’angle ; <code>°</code></li>
+<li>« width » : un paramètre de largeur ; <code>m</code></li>
+<li>« area » : un paramètre de surface ; <code>m^2</code></li>
+<li>« gravity_acceleration » : un paramètre d’accélération de la gravité ; <code>m/s^2</code></li>
+<li>« exponent » : un paramètre d’exposant, <code>-</code></li>
+<li>« weir_coefficient » : un paramètre de coefficient de déversoir ; <code>-</code></li>
+</ul></li>
+<li>default_distribution : un objet JSON avec le champ suivant décrivant la distribution par défaut :
+<ul>
+<li>type * : chaîne de caractères indiquant le type de distribution ; toutes les distributions supportées par BaM sont possibles (<code>Gaussien</code>, <code>Uniforme</code>, etc.)</li>
+<li>« inital_guess » : une valeur double indiquant la valeur initiale de ce paramètre</li>
+<li>« parameters » : un tableau de valeurs doubles, chaque valeur représentant les paramètres de la distribution (par exemple, la moyenne et l’écart-type pour une distribution <code>Gaussienne</code>)</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Des exemples dans le fichier <code>resources/baratin_qfh_presets.json</code> peuvent être trouvés pour créer votre propre configuration hydraulique prédéfinie.</p>
 </div>
 
 

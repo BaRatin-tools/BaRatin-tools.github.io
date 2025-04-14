@@ -26,7 +26,7 @@
       <link>https://baratin-tools.github.io/en/doc/topics/gaugings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/gaugings/</guid>
-      <description>1 Uncertain gaugings as calibration data 2 Uncertainties of gauged discharges 3 Uncertainties of gauged stages 1 Uncertain gaugings as calibration data For the analysis of a rating curve with BaRatin, you need to provide a set of gaugings representative of the stage-discharge relation for the study period.</description>
+      <description>1 Uncertain gaugings as calibration data 2 Uncertainties of gauged discharges 1 Uncertain gaugings as calibration data For the analysis of a rating curve with BaRatin, you need to provide a set of gaugings representative of the stage-discharge relation for the study period.</description>
     </item>
     <item>
       <title>Rating curve equation</title>
