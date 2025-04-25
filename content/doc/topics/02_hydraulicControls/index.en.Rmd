@@ -215,7 +215,7 @@ However, there are some controls that cannot be modelled trivially by combining 
 Since version 3.1 of BaRatinAGE, it has been possible to define a ‘Q=f(h)’ configuration, i.e. to write the equation for one or more controls. A set of predefined controls is available, described below.
 
 
-## Parametric weir shape
+## Parametric weir
 
 As with other types of weir, the equation $Q=f(H)$ is established by applying Bernoulli's theorem between the water level $H$ measurement cross-section and the critical-flow cross-section. Since the velocity head due to the approach flow velocity is assumed to be negligible, the hydrostatic head $H$ is close to the total hydraulic head.
 
