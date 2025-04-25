@@ -37,16 +37,16 @@ Pour les contrôles par section, la relation hauteur-débit à la section de mes
 
 $$Q(H) = C\sqrt{2g}A_w(H)\sqrt{H-b}$$
 
-avec $C$ un coefficient de débit dépendant de la forme de la section de contrôle et reflétant les pertes de charge entre la section de mesure et la section critique située à l’aval, $A_w$ l'aire mouillée (en $m^2$), $g$ l'accélération de la gravité ($g \approx 9.81 m.s^{-2}$).
+avec $C$ un coefficient de débit dépendant de la forme de la section de contrôle et reflétant les pertes de charge entre la section de mesure et la section critique située à l’aval, $A_w$ l'aire mouillée (en $m^2$), $g$ l'accélération de la gravité ($g \approx 9.81 $ m.s$^{-2}$).
 
 Pour les contrôles par chenal, i.e. quand la relation hauteur-débit est déterminée par les frottements, on établit l’équation puissance à partir de la formule de Manning-Strickler appliquée à la géométrie du chenal. La formule de Manning-Strickler s’écrit :
 
 $$Q(H) = K_S A_w R_h^{2/3} \sqrt{S_f}$$
 
-Avec $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en $m^{1/3}.s^{-1}$) ; le
-coefficient de Manning $n = 1 / K_S$ (en $m^{-1/3}.s$) peut être utilisé à la place. $A_w$ = aire mouillée (en $m^2$), $R_h=A_w/P_w$ = rayon hydraulique (en $m$), $P_w$ = périmètre mouillé (en $m$), $S_f$ = pente de la ligne d’énergie (ou pente de frottement), approximée par la pente longitudinale du fond ou de la ligne d’eau pour un écoulement permanent uniforme.
+Avec $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en m$^{1/3}.$s$^{-1}$) ; le
+coefficient de Manning $n = 1 / K_S$ (en m$^{-1/3}.$s) peut être utilisé à la place. $A_w$ = aire mouillée (en $m^2$), $R_h=A_w/P_w$ = rayon hydraulique (en $m$), $P_w$ = périmètre mouillé (en $m$), $S_f$ = pente de la ligne d’énergie (ou pente de frottement), approximée par la pente longitudinale du fond ou de la ligne d’eau pour un écoulement permanent uniforme.
 
-# Equations des contrôles-types
+# Equations des contrôles-types (configuration BaRatin)
 
 ## Déversoir rectangulaire
 
@@ -64,7 +64,7 @@ Pour chaque contrôle modélisé par un déversoir rectangulaire, les paramètre
 Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 * $C_r$ = coefficient de débit $\approx 0.4 ± 0.1$
-* $g$ = accélération de la gravité $\approx 9.81 ± 0.01 m.s^{-2}$
+* $g$ = accélération de la gravité $\approx 9.81 ± 0.01 $ m.s$^{-2}$
 * $c$ = exposant pour une section critique rectangulaire $\approx 1.5 ± 0.05$
 
 ## Déversoir parabolique
@@ -84,7 +84,7 @@ Pour chaque contrôle modélisé par un déversoir parabolique, les paramètres 
 Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 * $C_p$ = coefficient de débit $\approx 0.22 ± 0.04$ ([Igathinathane et al. 2007](https://doi.org/10.1016/j.biosystemseng.2006.09.006))
-* $g$ = accélération de la gravité $\approx 9.81 ± 0.01 m.s^{-2}$
+* $g$ = accélération de la gravité $\approx 9.81 ± 0.01 $ m.s$^{-2}$
 * $c$ = exposant pour une section critique parabolique $\approx 2.0 ± 0.05$
 
 Note: le coefficient de débit semble être plus grand que 0.22 pour les déversoirs paraboliques les
@@ -106,7 +106,7 @@ Pour chaque contrôle modélisé par un déversoir triangulaire, les paramètres
 Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 * $C_t$ = coefficient de débit $\approx 0.31 ± 0.05$
-* $g$ = accélération de la gravité $\approx 9.81 ± 0.01 m.s^{-2}$
+* $g$ = accélération de la gravité $\approx 9.81 ± 0.01 $ m.s$^{-2}$
 * $c$ = exposant pour une section critique triangulaire $\approx 2.5 ± 0.05$
 
 ## Orifice dénoyé
@@ -125,7 +125,7 @@ Pour chaque contrôle modélisé par un orifice dénoyé (l’écoulement rempli
 Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 * $C_o$ = coefficient de débit $\approx 0.6 ± 0.1$
-* $g$ = accélération de la gravité $\approx 9.81 ± 0.01 m.s^{-2}$
+* $g$ = accélération de la gravité $\approx 9.81 ± 0.01 $ m.s$^{-2}$
 * $c$ = exposant pour une section critique triangulaire $\approx 0.5 ± 0.05$
 
 Note : souvent l'ouvrage comprenant l'orifice produit un remous hydraulique qui influence la hauteur d'eau avant que l'orifice ne soit complètement rempli et que la loi précédente puisse s'appliquer. La modélisation hydraulique peut alors permettre de représenter cette phase de transition et l'effet de ce remous spécifique.
@@ -147,8 +147,8 @@ Pour chaque contrôle modélisé par un chenal rectangulaire large, les paramèt
 * $B_w$ = la largeur (en $m$), du chenal.
 * $S$ = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
 0.01 pour 1%, etc.)
-* $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en $m^{1/3}.s^{-1}$)
-* Le coefficient de Manning $n=1/K_S$ ($m^{-1/3}.s$) peut être utilisé à la place.
+* $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en m$^{1/3}.$s$^{-1}$)
+* Le coefficient de Manning $n=1/K_S$ (m$^{-1/3}.$s) peut être utilisé à la place.
 
 Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
 
@@ -177,8 +177,8 @@ Pour chaque contrôle modélisé par un chenal rectangulaire large, les paramèt
 cote (par exemple au plein-bord).
 * $S$ = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
 0.01 pour 1%, etc.)
-* $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en $m^{1/3}.s^{-1}$)
-* Le coefficient de Manning $n=1/K_S$ ($m^{-1/3}.s$) peut être utilisé à la place.
+* $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en m$^{1/3}.$s$^{-1}$)
+* Le coefficient de Manning $n=1/K_S$ (m$^{-1/3}.$s) peut être utilisé à la place.
 
 Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
 
@@ -199,29 +199,269 @@ Pour chaque contrôle modélisé par un chenal triangulaire, les paramètres non
 * $\nu$ = l’angle d’ouverture du triangle (en degrés) ;
 * $S$ = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
 0.01 pour 1%, etc.) ;
-* $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en $m^{1/3}.s^{-1}$)
-* Le coefficient de Manning $n=1/K_S$ ($m^{-1/3}.s$) peut être utilisé à la place.
+* $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en m$^{1/3}.$s$^{-1}$)
+* Le coefficient de Manning $n=1/K_S$ (m$^{-1/3}.$s) peut être utilisé à la place.
 
 Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
 
 * $c$ = exposant pour un chenal triangulaire large $\approx 2.67 ± 0.05$
 
-## Autres types de contrôles
+# Autres types de contrôles (configuration "Q=f(h)")
 
 L’expérience montre qu’avec le petit nombre de contrôles-type présentés jusqu’ici, on peut décrire de très nombreuses situations rencontrées en pratique. La clé est de combiner ces contrôles-type (en les faisant se succéder les uns aux autres ou en les ajoutant) pour décrire au mieux la configuration hydraulique.
 
-Il existe néanmoins certains contrôles qui ne peuvent pas être modélisés de façon triviale en combinant les contrôles-type. La Figure 8 ci-dessous fournit un exemple : un seuil triangulaire dont l’évasement s'interrompt à partir d’une certaine hauteur pour être bordé de parois verticales. La meilleure façon de modéliser ce type d’ouvrage serait d’ajouter un déversoir triangulaire « négatif » au déversoir triangulaire réel pour retrancher l’excès de section mouillée quand la hauteur d’eau atteint les parois verticales. 
+Il existe néanmoins certains contrôles qui ne peuvent pas être modélisés de façon triviale en combinant les contrôles-type de la configuration BaRatin classique. Ce [cas d'étude](/fr/doc/case/charbonnieres)) en fournit un exemple : un seuil triangulaire dont l’évasement s'interrompt à partir d’une certaine hauteur pour être bordé de parois verticales. 
 
-L’équation de ce type de contrôle (« triangle tronqué ») serait donc :
+Depuis la version 3.1 de BaRatinAGE, il est possible de définir une configuration "Q=f(h)", c'est-à-dire d'écrire l'équation d'un ou plusieurs contrôles. Un ensemble de contrôles prédéfinis est proposé, dont la description est fournie ci-après.
 
-$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-b)^c - C_t \sqrt{2g} \tan(\nu/2) (H-b')^c $$
 
-pour $H>b'$ avec $b'$ = la cote à laquelle les bords du triangle rencontrent les parois verticales. Ceci ne pourrait cependant pas être implémenté dans BaRatinAGE puisque les coefficients négatifs n’y sont pas autorisés.
+## Déversoir à forme paramétrée
 
-Un moyen commode de modéliser ce type de situation est de combiner un déversoir triangulaire pour les bas débits et un déversoir rectangulaire pour les hauts débits. Pour les débits intermédiaires, une transition acceptable entre les approximations triangles et rectangles peut être calculée avec un déversoir parabolique équivalent, d’offset intermédiaire et de dimensions appropriées.
+Comme pour les autres types de déversoirs, l'équation $Q=f(H)$ s’établit en appliquant le théorème de Bernoulli entre la section de mesure du niveau d'eau $H$ et la section critique. La charge dynamique liée à la vitesse d'approche étant supposée négligeable, la charge hydrostatique $H$ est proche de la charge hydraulique totale.
 
-<img src="Charbo_weir.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 8: Déversoir triangulaire confiné par des parois verticales: vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
+On considère toute forme de déversoir dont l'aire mouillée $A$ est proportionnelle au tirant d'eau $H-b$ élevé à la puissance $k$ :
+
+$$A(H)=\frac{B_s}{kH_s^{k-1}} (H-b)^k$$
+avec $B_s$ et $H_s$ respectivement la largeur et la hauteur de la section prises pour une même cote $H_0$ (quelconque). 
+
+Ce type de forme de déversoir inclut les cas particuliers des contrôles section rectangle ($k=1$), parabole ($k=1.5$) et triangle ($k=2$) de BaRatin, ainsi que toutes les formes intermédiaires. 
+
+L’équation de ce type de contrôle permet d'expliciter la relation directe entre le coefficient de débit $C(k)$ et l'exposant $k+1/2$ du contrôle :
+
+$$Q(H)= C(k) \sqrt{2g} \frac{B_s}{H_s^{k-1}} (H-b)^{k+1/2}$$
+avec :
+
+$$C(k) = \frac{C_0}{\sqrt{2}} \frac{k^{k-1}}{(k+\frac{1}{2})^{k+\frac{1}{2}}}  $$
+$C_0$ ($\approx 1$) est un coefficient de calage empirique, représentant l'écart entre le coefficient de débit réel et le coefficient de débit théorique, en fonction des conditions réelles d'approche, de géométrie, d'état de surface, etc.
+
+On retrouve à peu de chose près les valeurs a priori des coefficients proposées par défaut pour les contrôles section classiques dans BaRatinAGE : 
+
+*	déversoir rectangulaire : $C(1) = 0.385$ (valeur théorique pour seuil rectangulaire épais, arrondie à 0.4 dans BaRatinAGE)
+*	déversoir parabolique : $C(1.5) = 0.217$ (arrondie à 0.22 dans BaRatinAGE)
+*	déversoir triangulaire : $C(2) = 0.143$ (correspond au double dans l'équation BaRatin puisque $B_s/H_s=2 {\rm tan}(\nu/2)$, soit 0.286, qui est bien la valeur théorique seuil triangulaire épais, le 0.31 de BaRatinAGE étant la valeur pour seuil mince)
+
+Les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+
+* $b$ = l'offset (en $m$) égal à la cote du point le plus bas de la section
+* $B_s$ = la largeur (en $m$) de la section à une cote $H_0$ (quelconque)
+* $H_s$ = la hauteur (en $m$) de la section à la même cote $H_0$
+
+Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
+
+* $C_0$ = coefficient d'ajustement ($\approx 1 ± 0.05$)
+* $g$ = accélération de la gravité ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $k$ = l'exposant de la relation entre surface mouillée $A$ et tirant d'eau $H-b$ (distribution uniforme entre 1 et 2, c'est-à-dire entre une section rectangulaire et une section triangulaire)
+
+## Déversoir trapézoïdal
+
+Le déversoir trapézoïdal est modélisé en ajoutant un déversoir triangulaire (représentant les bords du trapèze) au déversoir rectangulaire représentant le centre du trapèze. Les deux déversoirs ont la même cote $\kappa_1$.
+
+L’équation de ce type de contrôle est donc :
+
+
+$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} + C_r \sqrt{2g} B_r (H-\kappa_1)^{c_r}$$ 
+
+si $H>\kappa_1$
+
+
+Les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+
+* $\kappa_1$ = la hauteur d’activation (en $m$) égale à la cote de la pointe de l'encoche triangulaire, et à la cote de la crête du déversoir rectangulaire
+* $\nu$ = l'angle d'ouverture du triangle (en degrés), qui est la somme des angles des deux triangles aux bords du déversoir trapézoïdal
+* $B_r$ = la largeur déversante (en $m$) du déversoir rectangulaire, perpendiculairement à la direction de l’écoulement.
+
+Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
+
+* $C_t$ = coefficient de débit ($\approx 0.31 ± 0.05$) du déversoir triangulaire
+* $g$ = accélération de la gravité ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $c_t$ = exposant pour une section critique triangulaire $\approx 2.5 ± 0.05$
+* $C_r$ = coefficient de débit $\approx 0.4 ± 0.1$ du déversoir rectangulaire
+* $c_r$ = exposant pour une section critique rectangulaire $\approx 1.5 ± 0.05$
+
+
+## Déversoir circulaire
+
+Bientôt disponible!
+
+
+
+
+
+## Déversoir rectangulaire avec encoche triangulaire
+
+Le « triangle tronqué » est modélisé en ajoutant un déversoir triangulaire « négatif » au déversoir triangulaire réel pour retrancher l’excès de section mouillée quand la hauteur d’eau atteint les parois verticales. On ajoute simplement un déversoir rectangulaire classique pour modéliser les deux banquettes horizontales (de même cote $\kappa_2$) de part et d'autre de l'encoche.
+
+L’équation de ce type de contrôle est donc :
+
+$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t}$$ 
+
+si $\kappa_1\leq H \leq \kappa_2$
+
+
+$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} - C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_2)^{c_t} + C_r \sqrt{2g} B_r (H-\kappa_2)^{c_r}$$ 
+
+si $H>\kappa_2$
+
+Les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+
+* $\kappa_1$ = la hauteur d’activation (en $m$) égale à la cote de la pointe de l'encoche triangulaire
+* $\nu$ = l'angle d'ouverture du triangle (en degrés)
+* $\kappa_2$ = la hauteur d’activation (en $m$) égale à la cote de la crête du déversoir rectangulaire
+* $B_r$ = la largeur déversante (en $m$), i.e. la longueur transversale du déversoir rectangulaire, perpendiculairement à la direction de l’écoulement.
+
+Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
+
+* $C_t$ = coefficient de débit ($\approx 0.31 ± 0.05$) de l'encoche triangulaire
+* $g$ = accélération de la gravité ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $c_t$ = exposant pour une section critique triangulaire $\approx 2.5 ± 0.05$
+* $C_r$ = coefficient de débit $\approx 0.4 ± 0.1$ du déversoir rectangulaire
+* $c_r$ = exposant pour une section critique rectangulaire $\approx 1.5 ± 0.05$
+
+
+## Déversoir rectangulaire avec encoche trapézoïdale
+
+Le déversoir rectangulaire avec encoche trapézoïdale est modélisé en ajoutant un déversoir rectangulaire (de même cote $\kappa_1$) au déversoir rectangulaire avec encoche triangulaire, de façon à représenter l'encoche en « trapèze tronqué ». On distingue deux coefficients $C_{r1}$ et $C_{r2}$ différents pour les deux déversoirs rectangulaires car les conditions d'approche de l'écoulement (et les hauteurs de pelle) ne sont pas les mêmes en amont de l'encoche et en amont des banquettes.
+
+L’équation de ce type de contrôle est donc :
+
+$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} +  C_{r1} \sqrt{2g} B_{r1} (H-\kappa_1)^{c_r}$$ 
+
+si $\kappa_1\leq H \leq \kappa_2$
+
+
+$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} - C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_2)^{c_t}  + C_{r1} \sqrt{2g} B_{r1} (H-\kappa_1)^{c_r} + C_{r2} \sqrt{2g} B_{r2} (H-\kappa_2)^{c_r}$$ 
+
+si $H>\kappa_2$
+
+Les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+
+* $\kappa_1$ = la hauteur d’activation (en $m$) égale à la cote de la pointe de l'encoche triangulaire et à la cote du fond du déversoir trapézoïdal
+* $\nu$ = l'angle d'ouverture du triangle (en degrés)
+* $\kappa_2$ = la hauteur d’activation (en $m$) égale à la cote de la crête du déversoir rectangulaire (banquettes)
+* $B_{r1}$ = la largeur déversante (en $m$) du fond du déversoir trapézoïdal
+* $B_{r2}$ = la largeur déversante (en $m$) du déversoir rectangulaire (banquettes)
+
+Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
+
+* $C_t$ = coefficient de débit ($\approx 0.31 ± 0.05$) de l'encoche triangulaire
+* $g$ = accélération de la gravité ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $c_t$ = exposant pour une section critique triangulaire $\approx 2.5 ± 0.05$
+* $C_{r1}$ = coefficient de débit $\approx 0.4 ± 0.1$ du déversoir rectangulaire corerspondant au fond du déversoir trapézoïdal
+* $C_{r2}$ = coefficient de débit $\approx 0.4 ± 0.1$ du déversoir rectangulaire (banquettes)
+* $c_r$ = exposant pour une section critique rectangulaire $\approx 1.5 ± 0.05$
+
+## Déversoir triangulaire avec encoche triangulaire
+
+Le déversoir triangulaire avec encoche triangulaire est modélisé comme le déversoir rectangulaire avec encoche triangulaire, en remplaçant simplement le déversoir rectangulaire par un déversoir triangulaire. On distingue deux coefficients $C_{t1}$ et $C_{t2}$ différents pour les deux déversoirs triangulaires car les conditions d'approche de l'écoulement (et les hauteurs de pelle) ne sont pas les mêmes en amont de l'encoche et en amont des banquettes.
+
+L’équation de ce type de contrôle est donc :
+
+$$ Q(H) = C_{t1} \sqrt{2g} \tan(\nu_1/2) (H-\kappa_1)^{c_t}$$ 
+
+si $\kappa_1\leq H \leq \kappa_2$
+
+
+$$ Q(H) = C_{t1} \sqrt{2g} \tan(\nu_1/2) (H-\kappa_1)^{c_t} - C_{t1} \sqrt{2g} \tan(\nu_1/2) (H-\kappa_2)^{c_t} + C_{t2} \sqrt{2g}\tan(\nu_2/2) (H-\kappa_2)^{c_t}$$ 
+
+si $H>\kappa_2$
+
+Les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+
+* $\kappa_1$ = la hauteur d’activation (en $m$) égale à la cote de la pointe de l'encoche triangulaire
+* $\nu_1$ = l'angle d'ouverture du triangle de l'encoche (en degrés)
+* $\kappa_2$ = la hauteur d’activation (en $m$) égale à la cote de la pointe du déversoir triangulaire, là où les banquettes rejoignent les bords de l'encoche
+* $\nu_1$ = l'angle d'ouverture du triangle des banquettes (en degrés)
+
+Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
+
+* $C_{t1}$ = coefficient de débit ($\approx 0.31 ± 0.05$) de l'encoche triangulaire
+* $g$ = accélération de la gravité ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $c_t$ = exposant pour une section critique triangulaire $\approx 2.5 ± 0.05$
+* $C_{t2}$ = coefficient de débit ($\approx 0.31 ± 0.05$) du déversoir triangulaire (banquettes)
+
+
+## Déversoir-orifice rectangulaire
+
+Le déversoir-orifice rectangulaire est modélisé en ajoutant un déversoir rectangulaire « négatif » au déversoir rectangulaire réel pour retrancher l’excès de section mouillée quand la hauteur d’eau atteint le plafond de l'orifice. Les deux déversoirs rectangulaires ont les mêmes largeur et coefficient, mais des cotes $\kappa_1$ et $\kappa_2$ différentes, correspondant au bas et au haut de l'orifice.
+
+L’équation de ce type de contrôle est donc :
+
+$$ Q(H) = C_r \sqrt{2g} B_r (H-\kappa_1)^{c_r}$$ 
+
+si $\kappa_1\leq H \leq \kappa_2$
+
+
+
+$$ Q(H) = C_r \sqrt{2g} B_r \left[ (H-\kappa_1)^{c_r} - (H-\kappa_2)^{c_r} \right]$$ 
+
+si $H>\kappa_2$
+
+
+Les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+
+* $\kappa_1$ = la hauteur d’activation (en $m$) égale à la cote du bas de l'orifice rectangulaire
+* $\kappa_2$ = la hauteur d’activation (en $m$) égale à la cote du haut de l'orifice rectangulaire
+* $B_r$ = la largeur (en $m$) de l'orifice rectangulaire
+
+Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
+
+* $C_r$ = coefficient de débit $\approx 0.4 ± 0.1$
+* $g$ = accélération de la gravité ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $c_r$ = exposant pour une section critique rectangulaire $\approx 1.5 ± 0.05$
+
+
+
+## Chenal trapézoïdal
+
+La formule de Manning-Strickler est appliquée à un chenal trapézoïdal quelconque (sans condition sur la largeur). La forme de la section trapézoïdale est définie par la largeur au fond $B_r$ et par le fruit $m$, c'est-à-dire la pente (par rapport à la verticale) des bords du chenal. Le fruit $m$ est la tangente de l'angle que fait la paroi avec la verticale, soit le rapport de la distance horizontale à la hauteur verticale. Pour un fruit nul ($m=0$), l'équation est celle d'un contrôle chenal rectangulaire (sans condition de largeur, contrairement au contrôle chenal rectangulaire large de BaRatin).
+
+L’équation de ce type de contrôle est :
+
+$$Q(H) = K_S \sqrt{S_0} \frac{\left[B_r (H-b) + m (H-b)^2 \right]^{c+1}}{\left[B_r + 2 (H-b) \sqrt{1+m^2} \right]^{c}} $$
+
+Pour chaque contrôle modélisé par un chenal trapézoïdal, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+
+* $b$ = la cote moyenne du fond du chenal
+* $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en m$^{1/3}.$s$^{-1}$)
+* $B_r$ = la largeur (en $m$) du fond du chenal
+* $m$ = le fruit des bords de la section (distance horizontale sur hauteur verticale, sans dimension)
+* $S_0$ = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
+0.01 pour 1%, etc.)
+
+* Le coefficient de Manning $n=1/K_S$ (m$^{-1/3}.$s) peut être utilisé à la place du coefficient de Strickler.
+
+Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
+
+* $c$ = exposant de la formule de Manning-Strickler $\approx 0.67 ± 0.05$
+
+## Chenal circulaire
+
+La formule de Manning-Strickler est appliquée à un chenal circulaire : cas d'un écoulement uniforme à surface libre, et non en charge, dans une buse, conduite ou canalisation de section circulaire, de rayon $r$. 
+
+Malgré une géométrie très simple, l'équation de ce type de contrôle est relativement compliquée :
+
+$$Q(H) = K_S \sqrt{S_0} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} $$
+si $b < H\leq b+r$.
+
+$$Q(H) = K_S \sqrt{S_0} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} $$
+si $b+r < H < b+2r$.
+
+La formule ne se simplifie pas vraiment, même en considérant que ${\rm sin}(2{\rm acos}(x))=2x\sqrt{1-x^2}$. 
+
+Pour chaque contrôle modélisé par un chenal circulaire, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+
+* $b$ = la cote moyenne du fond du chenal
+* $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en m$^{1/3}.$s$^{-1}$)
+* $r$ = le rayon (en $m$) du chenal (ou de la conduite) circulaire
+* $S_0$ = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
+0.01 pour 1%, etc.)
+
+* Le coefficient de Manning $n=1/K_S$ (m$^{-1/3}.$s) peut être utilisé à la place du coefficient de Strickler.
+
+Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
+
+* $c$ = exposant de la formule de Manning-Strickler $\approx 0.67 ± 0.05$
+
 
 # Spécification des a priori
 

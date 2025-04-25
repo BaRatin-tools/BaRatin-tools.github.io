@@ -38,15 +38,15 @@ For section controls, the stage-discharge relation at the measurement cross-sect
 $$Q(H) = C\sqrt{2g}A_w(H)\sqrt{H-b}$$
 
 where $C$ is a discharge coefficient accounting for the head losses between the measurement cross-section (upstream) and the critical cross-section (downstream) and depending on the cross-section shape, $A_w$ is the wetted area ($m^2$), $g$ is the gravity
-acceleration ($g \approx 9.81 m.s^{-2}$).
+acceleration ($g \approx 9.81 $ m.s$^{-2}$).
 
 For channel controls, i.e. when the stage-discharge relation is determined by friction, equation 1 is established from the Manning-Strickler equation applied to the given geometry of the channel. The Manning-Strickler equation is:
 
 $$Q(H) = K_S A_w R_h^{2/3} \sqrt{S_f}$$
 
-where $K_S$ = flow resistance coefficient (Strickler coefficient in $m^{1/3}.s^{-1}$) ; Manning coefficient $n = 1 / K_S$ ($m^{-1/3}.s$) can be used instead. $A_w$ = wetted area ($m^2$), $R_h=A_w/P_w$ = hydraulic radius ($m$), $P_w$ = wetted perimeter ($m$), $S_f$ = head line slope (or friction slope), approximated by the longitudinal slope of the bed or of the water profile for steady uniform flows.
+where $K_S$ = flow resistance coefficient (Strickler coefficient in m$^{1/3}.$s$^{-1}$) ; Manning coefficient $n = 1 / K_S$ (m$^{-1/3}.$s) can be used instead. $A_w$ = wetted area ($m^2$), $R_h=A_w/P_w$ = hydraulic radius ($m$), $P_w$ = wetted perimeter ($m$), $S_f$ = head line slope (or friction slope), approximated by the longitudinal slope of the bed or of the water profile for steady uniform flows.
 
-# Equations of the standard controls
+# Equations of the standard controls (BaRatin configuration)
 
 ## Rectangular weir
 
@@ -65,7 +65,7 @@ For each control modelled as a rectangular weir, priors must be assigned for the
 Default priors are already specified for the other parameters:
 
 * $C_r$ = discharge coefficient $\approx 0.4 ± 0.1$
-* $g$ = gravitational acceleration $\approx 9.81 ± 0.01 m.s^{-2}$
+* $g$ = gravitational acceleration $\approx 9.81 ± 0.01 $ m.s$^{-2}$
 * $c$ = exponent for a rectangular critical cross-section $\approx 1.5 ± 0.05$
 
 ## Parabolic weir
@@ -85,7 +85,7 @@ For each control modelled as a parabolic weir, priors must be assigned for the f
 Default priors are already specified for the other parameters:
 
 * $C_p$ = discharge coefficient $\approx 0.22 ± 0.04$ ([Igathinathane et al. 2007](https://doi.org/10.1016/j.biosystemseng.2006.09.006))
-* $g$ = gravitational acceleration $\approx 9.81 ± 0.01 m.s^{-2}$
+* $g$ = gravitational acceleration $\approx 9.81 ± 0.01 $ m.s$^{-2}$
 * $c$ = exponent for a parabolic critical cross-section $\approx 2.0 ± 0.05$
 
 Note: The discharge coefficient seems to be larger than 0.22 for wider parabolic weirs: according to [Igathinathane et al. (2007)](https://doi.org/10.1016/j.biosystemseng.2006.09.006), $C_p \approx 0.25$ for $B_p=2H_p$. There is no precise information on very wide
@@ -108,7 +108,7 @@ For each control modelled as a triangular weir, priors must be assigned for the 
 Default priors are already specified for the other parameters:
 
 * $C_t$ = discharge coefficient $\approx 0.31 ± 0.05$
-* $g$ = gravitational acceleration $\approx 9.81 ± 0.01 m.s^{-2}$
+* $g$ = gravitational acceleration $\approx 9.81 ± 0.01 $ m.s$^{-2}$
 * $c$ = exponent for a triangular critical cross-section $\approx 2.5 ± 0.05$
 
 ## Free-flowing orifice
@@ -127,7 +127,7 @@ For each control modelled as a free-flowing orifice (flow fills the orifice but 
 Default priors are already specified for the other parameters:
 
 * $C_o$ = discharge coefficient $\approx 0.6 ± 0.1$
-* $g$ = gravitational acceleration $\approx 9.81 ± 0.01 m.s^{-2}$
+* $g$ = gravitational acceleration $\approx 9.81 ± 0.01 $ m.s$^{-2}$
 * $c$ = exponent for a free-flowing orifice $\approx 0.5 ± 0.05$
 
 Note. The hydraulic structure featuring the orifice may produce a backwater that influences the water level before the hole is completely filled and that the previous equation to apply. Hydraulic modelling can then be used to represent this transition phase and this specific backwater effect.
@@ -148,8 +148,8 @@ For each control modelled as a wide rectangular channel control, priors must be 
 * $\kappa$ = the water level (in $m$) above which the control becomes active; when the control is the first, or when the control adds to existing controls this activation stage is equal to the mean bed elevation $b$ at the gauge;
 * $B_w$ = the width (in $m$) of the rectangular channel;
 * $S$ = the longitudinal slope of the river channel (dimensionless, e.g. write 0.01 for a 1% slope, etc.);
-* $K_S$ = the flow resistance parameter (Strickler coefficient in $m^{1/3}.s^{-1}$);
-* The  Manning coefficient $n=1/K_S$ ($m^{-1/3}.s$) can be used instead.
+* $K_S$ = the flow resistance parameter (Strickler coefficient in m$^{1/3}.$s$^{-1}$);
+* The  Manning coefficient $n=1/K_S$ (m$^{-1/3}.$s) can be used instead.
 
 Default priors are already specified for the remaining parameter:
 
@@ -176,8 +176,8 @@ For each control modelled as a wide parabolic channel control, priors must be as
 * $\kappa$ = the water level (in $m$) above which the control becomes active; when the control is the first, or when the control adds to existing controls this activation stage is equal to the mean thalweg elevation $b$ at the gauge;
 * $B_p$ and $H_p$ = the width and height (in $m$) of the parabola, respectively, measured at the same given elevation (e.g. the bankful stage);
 * $S$ = the longitudinal slope of the river channel (dimensionless, e.g. write 0.01 for a 1% slope, etc.);
-* $K_S$ = the flow resistance parameter (Strickler coefficient in $m^{1/3}.s^{-1}$)
-* Manning's $n=1/K_S$ ($m^{-1/3}.s$) can be used instead.
+* $K_S$ = the flow resistance parameter (Strickler coefficient in m$^{1/3}.$s$^{-1}$)
+* Manning's $n=1/K_S$ (m$^{-1/3}.$s) can be used instead.
 
 Default priors are already specified for the remaining parameter:
 
@@ -197,28 +197,269 @@ For each control modelled as a triangular channel control, priors must be assign
 * $\kappa$ = the water level (in $m$) above which the control becomes active; when the control is the first, or when the control adds to existing controls this activation stage is equal to the mean thalweg elevation $b$ at the gauge;
 * $\nu$ = the triangle opening angle (in degrees);
 * $S$ = the longitudinal slope of the river channel (dimensionless, e.g. write 0.01 for a 1% slope,etc.);
-* $K_S$ = the flow resistance parameter (Strickler coefficient in $m^{1/3}.s^{-1}$)
-* Manning's $n=1/K_S$ ($m^{-1/3}.s$) can be used instead.
+* $K_S$ = the flow resistance parameter (Strickler coefficient in m$^{1/3}.$s$^{-1}$)
+* Manning's $n=1/K_S$ (m$^{-1/3}.$s) can be used instead.
 
 Default priors are already specified for the remaining parameter:
 
 * $c$ = exponent for a triangular channel control $\approx 2.67 ± 0.05$
 
-## Other types of controls
-Experience shows that with the small number of standard controls presented so far, many situations encountered in practice can be described. The key is to combine these standard controls (by making them succeed or add to each other) to best describe the actual hydraulic configuration.
 
-Nevertheless, there are some controls that cannot be modelled trivially by combining the standard controls. Figure 8 shows an example: a triangular weir which laterally expands up to a given stage, then is framed with vertical walls. The best way to model such a section control would be consider the excess wetted area by removing a second triangular weir equation from the first triangular weir equation.
 
-The equation of this type of control (`truncated triangle’) would be:
+# Other types of control (‘Q=f(h)’ configuration)
 
-$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-b)^c - C_t \sqrt{2g} \tan(\nu/2) (H-b')^c $$
+Experience shows that with the small number of standard controls presented so far, it is possible to describe a very large number of situations encountered in practice. The key is to combine these standard controls (by making them succeed one another or by adding them) to best describe the hydraulic configuration.
 
-for $H>b'$ with $b'$ = the water level at which the triangle meets the vertical walls. However, this is not possible with BaRatinAGE since negative coefficients are not allowed.
+However, there are some controls that cannot be modelled trivially by combining the standard controls of the classic BaRatin configuration. This [case study](/en/doc/case/charbonnieres)) provides an example: a triangular weir whose sides stop at a given height and is bordered by (fictitious) vertical walls. 
 
-A practical way to model this type of configuration is to combine a triangular section control for low stages and a rectangular section control for high stages. For intermediate stages, a fair transition between triangle and rectangle approximations can be computed using a parabolic section control of intermediate offset and suitable height and width.
+Since version 3.1 of BaRatinAGE, it has been possible to define a ‘Q=f(h)’ configuration, i.e. to write the equation for one or more controls. A set of predefined controls is available, described below.
 
-<img src="Charbo_weir.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 8: Triangular weir framed with vertical walls: longitudinal view (left) and front view of control cross-section (right). </p>
+
+## Parametric weir shape
+
+As with other types of weir, the equation $Q=f(H)$ is established by applying Bernoulli's theorem between the water level $H$ measurement cross-section and the critical-flow cross-section. Since the velocity head due to the approach flow velocity is assumed to be negligible, the hydrostatic head $H$ is close to the total hydraulic head.
+
+Any form of weir is considered whose wetted area $A$ is proportional to the flow depth $H-b$ to the power $k$:
+
+$$A(H)=\frac{B_s}{kH_s^{k-1}} (H-b)^k$$
+with $B_s$ and $H_s$ respectively the width and height of the cross-section taken for the same (any) height $H_0$. 
+
+This type of weir shape includes the special cases of BaRatin's rectangular ($k=1$), parabolic ($k=1.5$) and triangular ($k=2$) section controls, as well as all intermediate shapes. 
+
+The equation for this type of control explains the direct relationship between the flow coefficient $C(k)$ and the exponent $k+1/2$ of the control:
+
+$$Q(H)= C(k) \sqrt{2g} \frac{B_s}{H_s^{k-1}} (H-b)^{k+1/2}$$
+where
+
+$$C(k) = \frac{C_0}{\sqrt{2}} \frac{k^{k-1}}{(k+\frac{1}{2})^{k+\frac{1}{2}}} $$
+
+$C_0$ ($\approx 1$) is an empirical calibration coefficient, representing the difference between the actual discharge coefficient and the theoretical discharge coefficient, as a function of the actual conditions of flow approach, weir geometry, weir surface condition, and so on.
+
+The prior values of the coefficients proposed by default for the classic section controls in BaRatinAGE are more or less the same: 
+
+* rectangular weir: $C(1) = 0.385$ (theoretical value for broad-crested rectangular weir, rounded to 0.4 in BaRatinAGE)
+* parabolic weir: $C(1.5) = 0.217$ (rounded to 0.22 in BaRatinAGE)
+* triangular weir: $C(2) = 0.143$ (corresponds to double in the BaRatin equation since $B_s/H_s=2 {\rm tan}(\nu/2)$, i.e. 0.286, which is the theoretical value for the thick triangular weir, the 0.31 value in BaRatinAGE being the value for the thin weir).
+
+The default parameters to which prior values must be assigned are:
+
+* $b$ = the offset (in $m$) equal to the elevation of the lowest point of the cross-section
+* $B_s$ = the width (in $m$) of the cross-section at a height $H_0$ (any height)
+* $H_s$ = the height (in $m$) of the cross-section at the same height $H_0$
+
+For the other parameters, default prior values are already specified:
+
+* $C_0$ = calibration coefficient ($\approx 1 ± 0.05$)
+* $g$ = acceleration due to gravity ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $k$ = the exponent of the relationship between wetted area $A$ and flow depth $H-b$ (uniform distribution between 1 and 2, i.e. between a rectangular cross-section and a triangular cross-section)
+
+## Trapezoidal weir
+
+The trapezoidal weir is modelled by adding a triangular weir (representing the edges of the trapezoid) to the rectangular weir representing the centre of the trapezoid. Both weirs have the same activation stage $\kappa_1$.
+
+The equation for this type of control is therefore:
+
+$$Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} + C_r \sqrt{2g} B_r (H-\kappa_1)^{c_r}$$. 
+
+if $H>\kappa_1$
+
+The parameters not entered by default to which prior values must be assigned are:
+
+* $\kappa_1$ = the activation stage (in $m$) equal to the height of the tip of the triangular notch and the height of the crest of the rectangular weir
+* $\nu$ = the opening angle of the triangle (in degrees), which is the sum of the angles of the two triangles at the edges of the trapezoidal weir
+* $B_r$ = the overflow width (in $m$) of the rectangular weir, perpendicular to the direction of flow
+
+For the other parameters, default prior values are already specified:
+
+* $C_t$ = discharge coefficient ($\approx 0.31 ± 0.05$) of the triangular weir
+* $g$ = gravity acceleration ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $c_t$ = exponent for a triangular critical cross-section $\approx 2.5 ± 0.05$
+* $C_r$ = discharge coefficient $\approx 0.4 ± 0.1$ of the rectangular weir
+* $c_r$ = exponent for a rectangular critical cross-section $\approx 1.5 ± 0.05$
+
+
+## Circular weir 
+
+Available soon!
+
+
+
+
+
+## Rectangular weir with triangular notch
+
+The ‘truncated triangle’ is modelled by adding a ‘negative’ triangular weir to the actual triangular weir to remove the excess wetted section when the water reaches the vertical walls. We simply add a conventional rectangular weir to model the horizontal sills (of the same $\kappa_2$) on either side of the notch.
+
+The equation for this type of control is:
+
+$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t}$$ 
+
+if $\kappa_1\leq H \leq \kappa_2$.
+
+
+$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} - C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_2)^{c_t} + C_r \sqrt{2g} B_r (H-\kappa_2)^{c_r}$$. 
+
+if $H>\kappa_2$.
+
+The default parameters to which prior values must be assigned are :
+
+* $\kappa_1$ = the activation stage (in $m$) equal to the height of the tip of the triangular notch.
+* $\nu$ = the opening angle of the triangle (in degrees)
+* $\kappa_2$ = the activation stage (in $m$) equal to the height of the crest of the rectangular weir
+* $B_r$ = the overflow width (in $m$), i.e. the transverse length of the rectangular weir, perpendicular to the direction of flow.
+
+For the other parameters, default prior values are already specified:
+
+* $C_t$ = discharge coefficient ($\approx 0.31 ± 0.05$) of the triangular notch.
+* $g$ = acceleration due to gravity ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $c_t$ = exponent for a triangular critical cross-section $\approx 2.5 ± 0.05$
+* $C_r$ = discharge coefficient $\approx 0.4 ± 0.1$ of the rectangular weir
+* $c_r$ = exponent for a rectangular critical cross-section $\approx 1.5 ± 0.05$
+
+
+## Rectangular weir with trapezoidal notch
+
+The rectangular weir with trapezoidal notch is modelled by adding a rectangular weir (of the same height $\kappa_1$) to the rectangular weir with triangular notch, so as to represent the notch as a ‘truncated trapezoid’. There are two different coefficients $C_{r1}$ and $C_{r2}$ for the two rectangular weirs because the flow approach conditions (and gate height) are not the same upstream of the notch and upstream of the sill.
+
+The equation for this type of control is therefore:
+
+$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} + C_{r1} \sqrt{2g} B_{r1} (H-\kappa_1)^{c_r}$$ 
+
+if $\kappa_1\leq H \leq \kappa_2$.
+
+
+$$ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} - C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_2)^{c_t} + C_{r1} \sqrt{2g} B_{r1} (H-\kappa_1)^{c_r} + C_{r2} \sqrt{2g} B_{r2} (H-\kappa_2)^{c_r}$$ 
+
+if $H>\kappa_2$.
+
+
+The default parameters to which prior values must be assigned are:
+
+* $\kappa_1$ = the activation stage (in $m$) equal to the height of the tip of the triangular notch and the height of the bottom of the trapezoidal weir.
+* $\nu$ = the opening angle of the triangle (in degrees)
+* $\kappa_2$ = the activation height (in $m$) equal to the elevation of the crest of the rectangular weir (sill)
+* $B_{r1}$ = the overflow width (in $m$) of the bottom of the trapezoidal weir
+* $B_{r2}$ = the overflow width (in $m$) of the rectangular weir (sill)
+
+For the other parameters, default priors are already specified:
+
+* $C_t$ = discharge coefficient ($\approx 0.31 ± 0.05$) of the triangular notch
+* $g$ = acceleration due to gravity ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $c_t$ = exponent for a triangular critical cross-section $\approx 2.5 ± 0.05$
+* $C_{r1}$ = discharge coefficient $\approx 0.4 ± 0.1$ of the rectangular weir corresponding to the bottom of the trapezoidal weir
+* $C_{r2}$ = discharge coefficient $\approx 0.4 ± 0.1$ of the rectangular weir (sill)
+* $c_r$ = exponent for a rectangular critical cross-section $\approx 1.5 ± 0.05$
+
+## Triangular weir with triangular notch
+
+The triangular weir with triangular notch is modelled in the same way as the rectangular weir with triangular notch, simply by replacing the rectangular weir with a triangular weir. There are two different coefficients $C_{t1}$ and $C_{t2}$ for the two triangular weirs because the flow approach conditions (and gate heights) are not the same upstream of the notch and upstream of the sill.
+
+The equation for this type of control is therefore:
+
+$$Q(H) = C_{t1} \sqrt{2g} \tan(\nu_1/2) (H-\kappa_1)^{c_t}$$ 
+
+if $\kappa_1\leq H \leq \kappa_2$.
+
+
+$$ Q(H) = C_{t1} \sqrt{2g} \tan(\nu_1/2) (H-\kappa_1)^{c_t} - C_{t1} \sqrt{2g} \tan(\nu_1/2) (H-\kappa_2)^{c_t} + C_{t2} \sqrt{2g}\tan(\nu_2/2) (H-\kappa_2)^{c_t}$$ 
+
+if $H>\kappa_2$.
+
+The parameters which are not set by default and to which priori values must be assigned are:
+
+* $\kappa_1$ = the activation stage (in $m$) equal to the height of the tip of the triangular notch
+* $\nu_1$ = the opening angle of the triangular notch (in degrees)
+* $\kappa_2$ = the activation stage (in $m$) equal to the elevation of the tip of the triangular weir, where the sill meets the edges of the notch.
+* $\nu_1$ = the opening angle of the triangle of the sill (in degrees)
+
+For the other parameters, default prior values are already specified:
+
+* $C_{t1}$ = discharge coefficient ($\approx 0.31 ± 0.05$) of the triangular notch
+* $g$ = acceleration due to gravity ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $c_t$ = exponent for a triangular critical cross-section $\approx 2.5 ± 0.05$
+* $C_{t2}$ = discharge coefficient ($\approx 0.31 ± 0.05$) of the triangular weir (sill).
+
+
+## Rectangular weir-orifice
+
+The rectangular weir-orifice is modelled by adding a ‘negative’ rectangular weir to the actual rectangular weir to remove the excess wetted section when the water level reaches the orifice ceiling. The two rectangular weirs have the same width and coefficient, but different activation stages $\kappa_1$ and $\kappa_2$, corresponding to the bottom and top of the orifice.
+
+The equation for this type of control is therefore:
+
+$$Q(H) = C_r \sqrt{2g} B_r (H-\kappa_1)^{c_r}$$. 
+
+if $\kappa_1\leq H \leq \kappa_2$.
+
+$$ Q(H) = C_r \sqrt{2g} B_r \left[ (H-\kappa_1)^{c_r} - (H-\kappa_2)^{c_r} \right]$$ 
+
+if $H>\kappa_2$.
+
+
+The default parameters to which prior values must be assigned are:
+
+* $\kappa_1$ = the activation stage (in $m$) equal to the height of the bottom of the rectangular orifice.
+* $\kappa_2$ = the activation stage (in $m$) equal to the height of the top of the rectangular orifice
+* $B_r$ = the width (in $m$) of the rectangular orifice.
+
+For the other parameters, default prior values are already specified:
+
+* $C_r$ = discharge coefficient $0.4 ± 0.1$
+* $g$ = acceleration due to gravity ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
+* $c_r$ = exponent for a rectangular critical cross-section $\approx 1.5 ± 0.05$
+
+
+
+## Trapezoidal channel
+
+The Manning-Strickler formula is applied to any trapezoidal channel (with no condition on width). The shape of the trapezoidal cross-section is defined by the width at the bottom $B_r$ and by the batter $m$, i.e. the slope (with respect to the vertical) of the walls of the channel. The batter $m$ is the tangent of the angle between the wall and the vertical, i.e. the ratio of the horizontal distance to the vertical height. For zero batter ($m=0$), the equation is that of a rectangular channel control (with no width condition, unlike BaRatin's wide rectangular channel control).
+
+The equation for this type of control is:
+
+$$Q(H) = K_S \sqrt{S_0} \frac{\left[B_r (H-b) + m (H-b)^2 \right]^{c+1}}{\left[B_r + 2 (H-b) \sqrt{1+m^2} \right]^{c}} $$
+
+For each control modelled as a trapezoidal channel, the default parameters to which prior values must be assigned are:
+
+* $b$ = average channel bottom elevation
+* $K_S$ = the flow resistance coefficient (Strickler coefficient in m$^{1/3}.$s$^{-1}$)
+* $B_r$ = the width (in $m$) of the channel bottom
+* $m$ = the batter of the cross-section walls (horizontal distance over vertical height, dimensionless)
+* $S_0$ = the longitudinal slope of the channel around the gauge (unitless, enter 0.01 for 1%, etc.)
+
+* The Manning coefficient $n=1/K_S$ (m$^{-1/3}.$s) can be used instead of the Strickler coefficient.
+
+For the remaining parameter, default prior values are already specified:
+
+* $c$ = exponent of the Manning-Strickler formula $\approx 0.67 ± 0.05$
+
+## Circular channel
+
+The Manning-Strickler formula is applied to a circular channel: the case of uniform open-channel flow, not pipe flow, in a canal, pipe or duct of circular cross-section, with radius $r$. 
+
+Despite the very simple geometry, the equation for this type of control is relatively complicated:
+
+$$Q(H) = K_S \sqrt{S_0} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} $$
+
+if $b < H\leq b+r$.
+
+$$Q(H) = K_S \sqrt{S_0} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} $$
+
+if $b+r < H < b+2r$.
+
+The formula is not really simplified, even considering that ${\rm sin}(2{\rm acos}(x))=2x\sqrt{1-x^2}$. 
+
+For each control modelled as a circular channel, the default parameters to which prior values must be assigned are:
+
+* $b$ = the average channel bottom elevation
+* $K_S$ = the flow resistance coefficient (Strickler coefficient in m$^{1/3}.$s$^{-1}$)
+* $r$ = the radius (in $m$) of the circular channel (or pipe)
+* $S_0$ = the longitudinal slope of the channel around the gauge (unitless, enter 0.01 for 1%, etc.)
+
+* Manning's coefficient $n=1/K_S$ (m$^{-1/3}.$s) can be used instead of Strickler's coefficient.
+
+For the remaining parameter, default prior values are already specified:
+
+* $c$ = exponent of the Manning-Strickler formula $\approx 0.67 ± 0.05$
+
 
 # Prior specification
 
