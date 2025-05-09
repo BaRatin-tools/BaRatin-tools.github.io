@@ -280,9 +280,27 @@ For the other parameters, default prior values are already specified:
 
 ## Circular weir 
 
-Available soon!
+Despite its simple geometry, there is no explicit formulation for the exact rating curve of a circular weir. Several approximate formulations have been proposed in the literature. They give similar results. We propose one of the oldest (Addison, 1941, p. 107), because it is classical and predicts a discharge close to that of the orifice, when the circular weir is full.
+
+The equation for this type of control is therefore :
 
 
+$$ Q(H) = 0.001 \times [C_c + (110(H-b)/D)^{-1} + 0.041 (H-b)/D ] \times (10D)^{2.5} \times [a_1 ((H-b)/D)^{c_1} - a_2 ((H-b)/D)^{c_2} ]$$ 
+
+if $b \leq H \leq D$
+
+The default parameters to which prior values must be assigned are:
+
+* $b$ = the elevation (in $m$) of the bottom of the circular weir crest
+* $D$ = the diameter (in $m$) of the circular weir.
+
+For the other parameters, default prior values are already specified:
+
+* $C_c$ = constant part of the discharge coefficient ($\approx 0.5550 ± 0.05$) of the circular weir
+* $c_1$ = exponent $\approx 1.975 ± 0.001$
+* $a_1$ = coefficient $\approx 10.12 ± 0.1$
+* $c_2$ = exponent $\approx 3.78 ± 0.001$
+* $a_2$ = coefficient $\approx 2.66 ± 0.03$
 
 
 

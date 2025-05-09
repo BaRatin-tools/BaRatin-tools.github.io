@@ -281,11 +281,27 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 ## Déversoir circulaire
 
-Bientôt disponible!
+Malgré sa géométrie simple, il n'existe pas de formulation explicite exacte de la courbe de tarage d'un déversoir circulaire. Plusieurs formulations approchées sont proposées dans la littérature. Elles fournissent des résultats similaires. Nous proposons une des plus anciennes (Addison, 1941, p. 107), parce qu'elle est classique et qu'elle prédit un débit proche de celui de l'orifice dénoyé, lorsque le déversoir circulaire est plein.
+
+L’équation de ce type de contrôle est donc :
 
 
+$$ Q(H) = 0.001 \times [C_c + (110(H-b)/D)^{-1} + 0.041 (H-b)/D ] \times (10D)^{2.5} \times [a_1 ((H-b)/D)^{c_1} - a_2 ((H-b)/D)^{c_2} ]$$ 
 
+si $b \leq H \leq D$
 
+Les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+
+* $b$ = la cote (en $m$) du bas de la crête du déversoir circulaire
+* $D$ = le diamètre (en $m$) du déversoir circulaire
+
+Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
+
+* $C_c$ = partie constante du coefficient de débit ($\approx 0.5550 ± 0.05$) du déversoir circulaire
+* $c_1$ = exposant $\approx 1.975 ± 0.001$
+* $a_1$ = coefficient $\approx 10.12 ± 0.1$
+* $c_2$ = exposant $\approx 3.78 ± 0.001$
+* $a_2$ = coefficient $\approx 2.66 ± 0.03$
 
 ## Déversoir rectangulaire avec encoche triangulaire
 
