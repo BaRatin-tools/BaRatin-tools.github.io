@@ -287,7 +287,7 @@ The equation for this type of control is therefore :
 
 $$ Q(H) = 0.001 \times [C_c + (110(H-b)/D)^{-1} + 0.041 (H-b)/D ] \times (10D)^{2.5} \times [a_1 ((H-b)/D)^{c_1} - a_2 ((H-b)/D)^{c_2} ]$$ 
 
-if $b \leq H \leq D$
+if $b \leq H \leq b+D$
 
 The default parameters to which prior values must be assigned are:
 

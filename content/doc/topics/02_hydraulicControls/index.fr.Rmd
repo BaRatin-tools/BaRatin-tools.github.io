@@ -288,7 +288,7 @@ L’équation de ce type de contrôle est donc :
 
 $$ Q(H) = 0.001 \times [C_c + (110(H-b)/D)^{-1} + 0.041 (H-b)/D ] \times (10D)^{2.5} \times [a_1 ((H-b)/D)^{c_1} - a_2 ((H-b)/D)^{c_2} ]$$ 
 
-si $b \leq H \leq D$
+si $b \leq H \leq b+D$
 
 Les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
 
