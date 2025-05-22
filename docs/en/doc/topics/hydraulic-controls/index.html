@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1744619212" rel="stylesheet">
+<link href="/css/custom.css?1747923050" rel="stylesheet">
 
 
 
@@ -305,7 +305,7 @@
 <li><a href="#the-basic-equation" id="toc-the-basic-equation"><span class="toc-section-number">1.1</span> The basic equation</a></li>
 <li><a href="#section-controls-and-channel-controls" id="toc-section-controls-and-channel-controls"><span class="toc-section-number">1.2</span> Section controls and channel controls</a></li>
 </ul></li>
-<li><a href="#equations-of-the-standard-controls" id="toc-equations-of-the-standard-controls"><span class="toc-section-number">2</span> Equations of the standard controls</a>
+<li><a href="#equations-of-the-standard-controls-baratin-configuration" id="toc-equations-of-the-standard-controls-baratin-configuration"><span class="toc-section-number">2</span> Equations of the standard controls (BaRatin configuration)</a>
 <ul>
 <li><a href="#rectangular-weir" id="toc-rectangular-weir"><span class="toc-section-number">2.1</span> Rectangular weir</a></li>
 <li><a href="#parabolic-weir" id="toc-parabolic-weir"><span class="toc-section-number">2.2</span> Parabolic weir</a></li>
@@ -314,13 +314,24 @@
 <li><a href="#rectangular-channel-wide" id="toc-rectangular-channel-wide"><span class="toc-section-number">2.5</span> Rectangular channel (wide)</a></li>
 <li><a href="#parabolic-channel-wide" id="toc-parabolic-channel-wide"><span class="toc-section-number">2.6</span> Parabolic channel (wide)</a></li>
 <li><a href="#triangular-channel" id="toc-triangular-channel"><span class="toc-section-number">2.7</span> Triangular channel</a></li>
-<li><a href="#other-types-of-controls" id="toc-other-types-of-controls"><span class="toc-section-number">2.8</span> Other types of controls</a></li>
 </ul></li>
-<li><a href="#prior-specification" id="toc-prior-specification"><span class="toc-section-number">3</span> Prior specification</a>
+<li><a href="#other-types-of-control-qfh-configuration" id="toc-other-types-of-control-qfh-configuration"><span class="toc-section-number">3</span> Other types of control (‘Q=f(h)’ configuration)</a>
 <ul>
-<li><a href="#determination-of-prior-parameters" id="toc-determination-of-prior-parameters"><span class="toc-section-number">3.1</span> Determination of prior parameters</a></li>
-<li><a href="#approximation-of-actual-complex-controls" id="toc-approximation-of-actual-complex-controls"><span class="toc-section-number">3.2</span> Approximation of actual, complex controls</a></li>
-<li><a href="#remarks" id="toc-remarks"><span class="toc-section-number">3.3</span> Remarks</a></li>
+<li><a href="#parametric-weir" id="toc-parametric-weir"><span class="toc-section-number">3.1</span> Parametric weir</a></li>
+<li><a href="#trapezoidal-weir" id="toc-trapezoidal-weir"><span class="toc-section-number">3.2</span> Trapezoidal weir</a></li>
+<li><a href="#circular-weir" id="toc-circular-weir"><span class="toc-section-number">3.3</span> Circular weir</a></li>
+<li><a href="#rectangular-weir-with-triangular-notch" id="toc-rectangular-weir-with-triangular-notch"><span class="toc-section-number">3.4</span> Rectangular weir with triangular notch</a></li>
+<li><a href="#rectangular-weir-with-trapezoidal-notch" id="toc-rectangular-weir-with-trapezoidal-notch"><span class="toc-section-number">3.5</span> Rectangular weir with trapezoidal notch</a></li>
+<li><a href="#triangular-weir-with-triangular-notch" id="toc-triangular-weir-with-triangular-notch"><span class="toc-section-number">3.6</span> Triangular weir with triangular notch</a></li>
+<li><a href="#rectangular-weir-orifice" id="toc-rectangular-weir-orifice"><span class="toc-section-number">3.7</span> Rectangular weir-orifice</a></li>
+<li><a href="#trapezoidal-channel" id="toc-trapezoidal-channel"><span class="toc-section-number">3.8</span> Trapezoidal channel</a></li>
+<li><a href="#circular-channel" id="toc-circular-channel"><span class="toc-section-number">3.9</span> Circular channel</a></li>
+</ul></li>
+<li><a href="#prior-specification" id="toc-prior-specification"><span class="toc-section-number">4</span> Prior specification</a>
+<ul>
+<li><a href="#determination-of-prior-parameters" id="toc-determination-of-prior-parameters"><span class="toc-section-number">4.1</span> Determination of prior parameters</a></li>
+<li><a href="#approximation-of-actual-complex-controls" id="toc-approximation-of-actual-complex-controls"><span class="toc-section-number">4.2</span> Approximation of actual, complex controls</a></li>
+<li><a href="#remarks" id="toc-remarks"><span class="toc-section-number">4.3</span> Remarks</a></li>
 </ul></li>
 </ul>
 </div>
@@ -350,19 +361,19 @@ a(H-b)^c \text { sinon}
 <p>For section controls, the stage-discharge relation at the measurement cross-section is determined by a downstream cross-section where the flow is critical (Froude number is equal to 1). For simple cross-section shapes such as the ones used in BaRatinAGE (rectangular, triangular, parabolic), the following equation holds:</p>
 <p><span class="math display">\[Q(H) = C\sqrt{2g}A_w(H)\sqrt{H-b}\]</span></p>
 <p>where <span class="math inline">\(C\)</span> is a discharge coefficient accounting for the head losses between the measurement cross-section (upstream) and the critical cross-section (downstream) and depending on the cross-section shape, <span class="math inline">\(A_w\)</span> is the wetted area (<span class="math inline">\(m^2\)</span>), <span class="math inline">\(g\)</span> is the gravity
-acceleration (<span class="math inline">\(g \approx 9.81 m.s^{-2}\)</span>).</p>
+acceleration ($g $ m.s<span class="math inline">\(^{-2}\)</span>).</p>
 <p>For channel controls, i.e. when the stage-discharge relation is determined by friction, equation 1 is established from the Manning-Strickler equation applied to the given geometry of the channel. The Manning-Strickler equation is:</p>
 <p><span class="math display">\[Q(H) = K_S A_w R_h^{2/3} \sqrt{S_f}\]</span></p>
-<p>where <span class="math inline">\(K_S\)</span> = flow resistance coefficient (Strickler coefficient in <span class="math inline">\(m^{1/3}.s^{-1}\)</span>) ; Manning coefficient <span class="math inline">\(n = 1 / K_S\)</span> (<span class="math inline">\(m^{-1/3}.s\)</span>) can be used instead. <span class="math inline">\(A_w\)</span> = wetted area (<span class="math inline">\(m^2\)</span>), <span class="math inline">\(R_h=A_w/P_w\)</span> = hydraulic radius (<span class="math inline">\(m\)</span>), <span class="math inline">\(P_w\)</span> = wetted perimeter (<span class="math inline">\(m\)</span>), <span class="math inline">\(S_f\)</span> = head line slope (or friction slope), approximated by the longitudinal slope of the bed or of the water profile for steady uniform flows.</p>
+<p>where <span class="math inline">\(K_S\)</span> = flow resistance coefficient (Strickler coefficient in m<span class="math inline">\(^{1/3}.\)</span>s<span class="math inline">\(^{-1}\)</span>) ; Manning coefficient <span class="math inline">\(n = 1 / K_S\)</span> (m<span class="math inline">\(^{-1/3}.\)</span>s) can be used instead. <span class="math inline">\(A_w\)</span> = wetted area (<span class="math inline">\(m^2\)</span>), <span class="math inline">\(R_h=A_w/P_w\)</span> = hydraulic radius (<span class="math inline">\(m\)</span>), <span class="math inline">\(P_w\)</span> = wetted perimeter (<span class="math inline">\(m\)</span>), <span class="math inline">\(S_f\)</span> = head line slope (or friction slope), approximated by the longitudinal slope of the bed or of the water profile for steady uniform flows.</p>
 </div>
 </div>
-<div id="equations-of-the-standard-controls" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Equations of the standard controls</h1>
+<div id="equations-of-the-standard-controls-baratin-configuration" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Equations of the standard controls (BaRatin configuration)</h1>
 <div id="rectangular-weir" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Rectangular weir</h2>
 <img src="rectangular_weir.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 1: Rectangular weir: longitudinal view (left) and front view of control cross-section (right).
+Rectangular weir: longitudinal view (left) and front view of control cross-section (right).
 </p>
 <p>The equation of this type of control is:</p>
 <p><span class="math display">\[Q(H) = C_r \sqrt{2g} B_w (H-b)^c \]</span></p>
@@ -374,7 +385,7 @@ Figure 1: Rectangular weir: longitudinal view (left) and front view of control c
 <p>Default priors are already specified for the other parameters:</p>
 <ul>
 <li><span class="math inline">\(C_r\)</span> = discharge coefficient <span class="math inline">\(\approx 0.4 ± 0.1\)</span></li>
-<li><span class="math inline">\(g\)</span> = gravitational acceleration <span class="math inline">\(\approx 9.81 ± 0.01 m.s^{-2}\)</span></li>
+<li><span class="math inline">\(g\)</span> = gravitational acceleration $ ± 0.01 $ m.s<span class="math inline">\(^{-2}\)</span></li>
 <li><span class="math inline">\(c\)</span> = exponent for a rectangular critical cross-section <span class="math inline">\(\approx 1.5 ± 0.05\)</span></li>
 </ul>
 </div>
@@ -382,7 +393,7 @@ Figure 1: Rectangular weir: longitudinal view (left) and front view of control c
 <h2><span class="header-section-number">2.2</span> Parabolic weir</h2>
 <img src="parabolic_weir.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 2. Parabolic weir: longitudinal view (left) and front view of control cross-section (right).
+Parabolic weir: longitudinal view (left) and front view of control cross-section (right).
 </p>
 <p>Re-arranging the results of <a href="https://doi.org/10.1016/j.biosystemseng.2006.09.006">Igathinathane et al. (2007)</a>, the equation of this type of control is:</p>
 <p><span class="math display">\[Q(H) = C_p \sqrt{2g} \frac{B_p}{\sqrt{H_p}} (H-b)^c \]</span></p>
@@ -394,7 +405,7 @@ Figure 2. Parabolic weir: longitudinal view (left) and front view of control cro
 <p>Default priors are already specified for the other parameters:</p>
 <ul>
 <li><span class="math inline">\(C_p\)</span> = discharge coefficient <span class="math inline">\(\approx 0.22 ± 0.04\)</span> (<a href="https://doi.org/10.1016/j.biosystemseng.2006.09.006">Igathinathane et al. 2007</a>)</li>
-<li><span class="math inline">\(g\)</span> = gravitational acceleration <span class="math inline">\(\approx 9.81 ± 0.01 m.s^{-2}\)</span></li>
+<li><span class="math inline">\(g\)</span> = gravitational acceleration $ ± 0.01 $ m.s<span class="math inline">\(^{-2}\)</span></li>
 <li><span class="math inline">\(c\)</span> = exponent for a parabolic critical cross-section <span class="math inline">\(\approx 2.0 ± 0.05\)</span></li>
 </ul>
 <p>Note: The discharge coefficient seems to be larger than 0.22 for wider parabolic weirs: according to <a href="https://doi.org/10.1016/j.biosystemseng.2006.09.006">Igathinathane et al. (2007)</a>, <span class="math inline">\(C_p \approx 0.25\)</span> for <span class="math inline">\(B_p=2H_p\)</span>. There is no precise information on very wide
@@ -404,7 +415,7 @@ parabolic weirs and on broad-crested parabolic weirs.</p>
 <h2><span class="header-section-number">2.3</span> Triangular weir</h2>
 <img src="triangular_weir.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 3: Triangular weir: longitudinal view (left) and front view of control cross-section
+Triangular weir: longitudinal view (left) and front view of control cross-section
 (right).
 </p>
 <p>The equation of this type of control is:
@@ -417,7 +428,7 @@ Figure 3: Triangular weir: longitudinal view (left) and front view of control cr
 <p>Default priors are already specified for the other parameters:</p>
 <ul>
 <li><span class="math inline">\(C_t\)</span> = discharge coefficient <span class="math inline">\(\approx 0.31 ± 0.05\)</span></li>
-<li><span class="math inline">\(g\)</span> = gravitational acceleration <span class="math inline">\(\approx 9.81 ± 0.01 m.s^{-2}\)</span></li>
+<li><span class="math inline">\(g\)</span> = gravitational acceleration $ ± 0.01 $ m.s<span class="math inline">\(^{-2}\)</span></li>
 <li><span class="math inline">\(c\)</span> = exponent for a triangular critical cross-section <span class="math inline">\(\approx 2.5 ± 0.05\)</span></li>
 </ul>
 </div>
@@ -425,11 +436,11 @@ Figure 3: Triangular weir: longitudinal view (left) and front view of control cr
 <h2><span class="header-section-number">2.4</span> Free-flowing orifice</h2>
 <img src="orifice.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 4: Free-flowing orifice: longitudinal view (left) and front view of the control cross-section (right).
+Free-flowing orifice: longitudinal view (left) and front view of the control cross-section (right).
 </p>
 <p>The equation of this type of control is:
 <span class="math display">\[Q(H) = C_o \sqrt{2g} A_w (H-b)^c \]</span></p>
-<p>For each control modelled as a free-flowing orifice (flow fills the orifice but there is a free fall at the outlet, with no influence of the downstream stage on the stage-discharge relation, see Figure 4), priors must be assigned for the following parameters:</p>
+<p>For each control modelled as a free-flowing orifice (flow fills the orifice but there is a free fall at the outlet, with no influence of the downstream stage on the stage-discharge relation, see Figure above), priors must be assigned for the following parameters:</p>
 <ul>
 <li><span class="math inline">\(\kappa\)</span> = the water level (in <span class="math inline">\(m\)</span>) above which the control becomes active;</li>
 <li><span class="math inline">\(A_w\)</span> = the cross-sectional area (en <span class="math inline">\(m²\)</span>) of the orifice.</li>
@@ -437,7 +448,7 @@ Figure 4: Free-flowing orifice: longitudinal view (left) and front view of the c
 <p>Default priors are already specified for the other parameters:</p>
 <ul>
 <li><span class="math inline">\(C_o\)</span> = discharge coefficient <span class="math inline">\(\approx 0.6 ± 0.1\)</span></li>
-<li><span class="math inline">\(g\)</span> = gravitational acceleration <span class="math inline">\(\approx 9.81 ± 0.01 m.s^{-2}\)</span></li>
+<li><span class="math inline">\(g\)</span> = gravitational acceleration $ ± 0.01 $ m.s<span class="math inline">\(^{-2}\)</span></li>
 <li><span class="math inline">\(c\)</span> = exponent for a free-flowing orifice <span class="math inline">\(\approx 0.5 ± 0.05\)</span></li>
 </ul>
 <p>Note. The hydraulic structure featuring the orifice may produce a backwater that influences the water level before the hole is completely filled and that the previous equation to apply. Hydraulic modelling can then be used to represent this transition phase and this specific backwater effect.</p>
@@ -446,7 +457,7 @@ Figure 4: Free-flowing orifice: longitudinal view (left) and front view of the c
 <h2><span class="header-section-number">2.5</span> Rectangular channel (wide)</h2>
 <img src="rectangular_channel.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 5: Wide rectangular channel: longitudinal view (left) and cross-section at the staff gauge (right).
+Wide rectangular channel: longitudinal view (left) and cross-section at the staff gauge (right).
 </p>
 <p>The Manning-Strickler equation is applied to a wide rectangular channel, i.e. <span class="math inline">\(H-b \ll B_w\)</span> (typically <span class="math inline">\(5(H-b) &lt; B_w\)</span>).</p>
 <p>The equation of this type of control is:</p>
@@ -456,8 +467,8 @@ Figure 5: Wide rectangular channel: longitudinal view (left) and cross-section a
 <li><span class="math inline">\(\kappa\)</span> = the water level (in <span class="math inline">\(m\)</span>) above which the control becomes active; when the control is the first, or when the control adds to existing controls this activation stage is equal to the mean bed elevation <span class="math inline">\(b\)</span> at the gauge;</li>
 <li><span class="math inline">\(B_w\)</span> = the width (in <span class="math inline">\(m\)</span>) of the rectangular channel;</li>
 <li><span class="math inline">\(S\)</span> = the longitudinal slope of the river channel (dimensionless, e.g. write 0.01 for a 1% slope, etc.);</li>
-<li><span class="math inline">\(K_S\)</span> = the flow resistance parameter (Strickler coefficient in <span class="math inline">\(m^{1/3}.s^{-1}\)</span>);</li>
-<li>The Manning coefficient <span class="math inline">\(n=1/K_S\)</span> (<span class="math inline">\(m^{-1/3}.s\)</span>) can be used instead.</li>
+<li><span class="math inline">\(K_S\)</span> = the flow resistance parameter (Strickler coefficient in m<span class="math inline">\(^{1/3}.\)</span>s<span class="math inline">\(^{-1}\)</span>);</li>
+<li>The Manning coefficient <span class="math inline">\(n=1/K_S\)</span> (m<span class="math inline">\(^{-1/3}.\)</span>s) can be used instead.</li>
 </ul>
 <p>Default priors are already specified for the remaining parameter:</p>
 <ul>
@@ -468,7 +479,7 @@ Figure 5: Wide rectangular channel: longitudinal view (left) and cross-section a
 <h2><span class="header-section-number">2.6</span> Parabolic channel (wide)</h2>
 <img src="parabolic_channel.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 6: Wide parabolic channel: longitudinal view (left) and cross-section at the staff gauge (right).
+Wide parabolic channel: longitudinal view (left) and cross-section at the staff gauge (right).
 </p>
 <p>The Manning-Strickler equation is applied to a wide parabolic channel, i.e.
 <span class="math display">\[H-b \ll \frac{3}{8}\frac{B_p^2}{H_p}\]</span></p>
@@ -481,8 +492,8 @@ Figure 6: Wide parabolic channel: longitudinal view (left) and cross-section at 
 <li><span class="math inline">\(\kappa\)</span> = the water level (in <span class="math inline">\(m\)</span>) above which the control becomes active; when the control is the first, or when the control adds to existing controls this activation stage is equal to the mean thalweg elevation <span class="math inline">\(b\)</span> at the gauge;</li>
 <li><span class="math inline">\(B_p\)</span> and <span class="math inline">\(H_p\)</span> = the width and height (in <span class="math inline">\(m\)</span>) of the parabola, respectively, measured at the same given elevation (e.g. the bankful stage);</li>
 <li><span class="math inline">\(S\)</span> = the longitudinal slope of the river channel (dimensionless, e.g. write 0.01 for a 1% slope, etc.);</li>
-<li><span class="math inline">\(K_S\)</span> = the flow resistance parameter (Strickler coefficient in <span class="math inline">\(m^{1/3}.s^{-1}\)</span>)</li>
-<li>Manning’s <span class="math inline">\(n=1/K_S\)</span> (<span class="math inline">\(m^{-1/3}.s\)</span>) can be used instead.</li>
+<li><span class="math inline">\(K_S\)</span> = the flow resistance parameter (Strickler coefficient in m<span class="math inline">\(^{1/3}.\)</span>s<span class="math inline">\(^{-1}\)</span>)</li>
+<li>Manning’s <span class="math inline">\(n=1/K_S\)</span> (m<span class="math inline">\(^{-1/3}.\)</span>s) can be used instead.</li>
 </ul>
 <p>Default priors are already specified for the remaining parameter:</p>
 <ul>
@@ -493,7 +504,7 @@ Figure 6: Wide parabolic channel: longitudinal view (left) and cross-section at 
 <h2><span class="header-section-number">2.7</span> Triangular channel</h2>
 <img src="triangular_channel.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 7: Triangular channel: longitudinal view (left) and cross-section at the staff gauge (right).
+Triangular channel: longitudinal view (left) and cross-section at the staff gauge (right).
 </p>
 <p>The Manning-Strickler equation is applied to a triangular channel. The equation of this type of control is:</p>
 <p><span class="math display">\[Q(H) = K_S \sqrt{S} \tan(\nu/2) \left( \frac{\sin(\nu/2)}{2} \right)^{2/3} (H-b)^c \]</span></p>
@@ -502,32 +513,274 @@ Figure 7: Triangular channel: longitudinal view (left) and cross-section at the 
 <li><span class="math inline">\(\kappa\)</span> = the water level (in <span class="math inline">\(m\)</span>) above which the control becomes active; when the control is the first, or when the control adds to existing controls this activation stage is equal to the mean thalweg elevation <span class="math inline">\(b\)</span> at the gauge;</li>
 <li><span class="math inline">\(\nu\)</span> = the triangle opening angle (in degrees);</li>
 <li><span class="math inline">\(S\)</span> = the longitudinal slope of the river channel (dimensionless, e.g. write 0.01 for a 1% slope,etc.);</li>
-<li><span class="math inline">\(K_S\)</span> = the flow resistance parameter (Strickler coefficient in <span class="math inline">\(m^{1/3}.s^{-1}\)</span>)</li>
-<li>Manning’s <span class="math inline">\(n=1/K_S\)</span> (<span class="math inline">\(m^{-1/3}.s\)</span>) can be used instead.</li>
+<li><span class="math inline">\(K_S\)</span> = the flow resistance parameter (Strickler coefficient in m<span class="math inline">\(^{1/3}.\)</span>s<span class="math inline">\(^{-1}\)</span>)</li>
+<li>Manning’s <span class="math inline">\(n=1/K_S\)</span> (m<span class="math inline">\(^{-1/3}.\)</span>s) can be used instead.</li>
 </ul>
 <p>Default priors are already specified for the remaining parameter:</p>
 <ul>
 <li><span class="math inline">\(c\)</span> = exponent for a triangular channel control <span class="math inline">\(\approx 2.67 ± 0.05\)</span></li>
 </ul>
 </div>
-<div id="other-types-of-controls" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Other types of controls</h2>
-<p>Experience shows that with the small number of standard controls presented so far, many situations encountered in practice can be described. The key is to combine these standard controls (by making them succeed or add to each other) to best describe the actual hydraulic configuration.</p>
-<p>Nevertheless, there are some controls that cannot be modelled trivially by combining the standard controls. Figure 8 shows an example: a triangular weir which laterally expands up to a given stage, then is framed with vertical walls. The best way to model such a section control would be consider the excess wetted area by removing a second triangular weir equation from the first triangular weir equation.</p>
-<p>The equation of this type of control (`truncated triangle’) would be:</p>
-<p><span class="math display">\[ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-b)^c - C_t \sqrt{2g} \tan(\nu/2) (H-b&#39;)^c \]</span></p>
-<p>for <span class="math inline">\(H&gt;b&#39;\)</span> with <span class="math inline">\(b&#39;\)</span> = the water level at which the triangle meets the vertical walls. However, this is not possible with BaRatinAGE since negative coefficients are not allowed.</p>
-<p>A practical way to model this type of configuration is to combine a triangular section control for low stages and a rectangular section control for high stages. For intermediate stages, a fair transition between triangle and rectangle approximations can be computed using a parabolic section control of intermediate offset and suitable height and width.</p>
-<img src="Charbo_weir.svg" width="100%">
+</div>
+<div id="other-types-of-control-qfh-configuration" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Other types of control (‘Q=f(h)’ configuration)</h1>
+<p>Experience shows that with the small number of standard controls presented so far, it is possible to describe a very large number of situations encountered in practice. The key is to combine these standard controls (by making them succeed one another or by adding them) to best describe the hydraulic configuration.</p>
+<p>However, there are some controls that cannot be modelled trivially by combining the standard controls of the classic BaRatin configuration. This <a href="/en/doc/case/charbonnieres">case study</a>) provides an example: a triangular weir whose sides stop at a given height and is bordered by (fictitious) vertical walls.</p>
+<p>Since version 3.1 of BaRatinAGE, it has been possible to define a ‘Q=f(h)’ configuration, i.e. to write the equation for one or more controls. A set of predefined controls is available, described below.</p>
+<div id="parametric-weir" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Parametric weir</h2>
+<img src="parametric_weir.svg" width="100%">
 <p style="text-align: center;color: gray;">
-Figure 8: Triangular weir framed with vertical walls: longitudinal view (left) and front view of control cross-section (right).
+Parametric weir: longitudinal view (left) and front view of control cross-section
+(right).
 </p>
+<p>As with other types of weir, the equation <span class="math inline">\(Q=f(H)\)</span> is established by applying Bernoulli’s theorem between the water level <span class="math inline">\(H\)</span> measurement cross-section and the critical-flow cross-section. Since the velocity head due to the approach flow velocity is assumed to be negligible, the hydrostatic head <span class="math inline">\(H\)</span> is close to the total hydraulic head.</p>
+<p>Any form of weir is considered whose wetted area <span class="math inline">\(A\)</span> is proportional to the flow depth <span class="math inline">\(H-b\)</span> to the power <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[A(H)=\frac{B_s}{kH_s^{k-1}} (H-b)^k\]</span>
+with <span class="math inline">\(B_s\)</span> and <span class="math inline">\(H_s\)</span> respectively the width and height of the cross-section taken for the same (any) height <span class="math inline">\(H_0\)</span>.</p>
+<p>This type of weir shape includes the special cases of BaRatin’s rectangular (<span class="math inline">\(k=1\)</span>), parabolic (<span class="math inline">\(k=1.5\)</span>) and triangular (<span class="math inline">\(k=2\)</span>) section controls, as well as all intermediate shapes.</p>
+<p>The equation for this type of control explains the direct relationship between the flow coefficient <span class="math inline">\(C(k)\)</span> and the exponent <span class="math inline">\(k+1/2\)</span> of the control:</p>
+<p><span class="math display">\[Q(H)= C(k) \sqrt{2g} \frac{B_s}{H_s^{k-1}} (H-b)^{k+1/2}\]</span>
+where</p>
+<p><span class="math display">\[C(k) = \frac{C_0}{\sqrt{2}} \frac{k^{k-1}}{(k+\frac{1}{2})^{k+\frac{1}{2}}} \]</span></p>
+<p><span class="math inline">\(C_0\)</span> (<span class="math inline">\(\approx 1\)</span>) is an empirical calibration coefficient, representing the difference between the actual discharge coefficient and the theoretical discharge coefficient, as a function of the actual conditions of flow approach, weir geometry, weir surface condition, and so on.</p>
+<p>The prior values of the coefficients proposed by default for the classic section controls in BaRatinAGE are more or less the same:</p>
+<ul>
+<li>rectangular weir: <span class="math inline">\(C(1) = 0.385\)</span> (theoretical value for broad-crested rectangular weir, rounded to 0.4 in BaRatinAGE)</li>
+<li>parabolic weir: <span class="math inline">\(C(1.5) = 0.217\)</span> (rounded to 0.22 in BaRatinAGE)</li>
+<li>triangular weir: <span class="math inline">\(C(2) = 0.143\)</span> (corresponds to double in the BaRatin equation since <span class="math inline">\(B_s/H_s=2 {\rm tan}(\nu/2)\)</span>, i.e. 0.286, which is the theoretical value for the thick triangular weir, the 0.31 value in BaRatinAGE being the value for the thin weir).</li>
+</ul>
+<p>The default parameters to which prior values must be assigned are:</p>
+<ul>
+<li><span class="math inline">\(b\)</span> = the offset (in <span class="math inline">\(m\)</span>) equal to the elevation of the lowest point of the cross-section</li>
+<li><span class="math inline">\(B_s\)</span> = the width (in <span class="math inline">\(m\)</span>) of the cross-section at a height <span class="math inline">\(H_0\)</span> (any height)</li>
+<li><span class="math inline">\(H_s\)</span> = the height (in <span class="math inline">\(m\)</span>) of the cross-section at the same height <span class="math inline">\(H_0\)</span></li>
+</ul>
+<p>For the other parameters, default prior values are already specified:</p>
+<ul>
+<li><span class="math inline">\(C_0\)</span> = calibration coefficient (<span class="math inline">\(\approx 1 ± 0.05\)</span>)</li>
+<li><span class="math inline">\(g\)</span> = acceleration due to gravity ($ ± 0.01 $ m.s<span class="math inline">\(^{-2}\)</span>)</li>
+<li><span class="math inline">\(k\)</span> = the exponent of the relationship between wetted area <span class="math inline">\(A\)</span> and flow depth <span class="math inline">\(H-b\)</span> (uniform distribution between 1 and 2, i.e. between a rectangular cross-section and a triangular cross-section)</li>
+</ul>
+</div>
+<div id="trapezoidal-weir" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Trapezoidal weir</h2>
+<img src="trapezoidal_weir.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Trapezoidal weir: longitudinal view (left) and front view of control cross-section
+(right).
+</p>
+<p>The trapezoidal weir is modelled by adding a triangular weir (representing the edges of the trapezoid) to the rectangular weir representing the centre of the trapezoid. Both weirs have the same activation stage <span class="math inline">\(\kappa_1\)</span>.</p>
+<p>The equation for this type of control is therefore:</p>
+<p><span class="math display">\[Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} + C_r \sqrt{2g} B_r (H-\kappa_1)^{c_r}\]</span>.</p>
+<p>if <span class="math inline">\(H&gt;\kappa_1\)</span></p>
+<p>The parameters not entered by default to which prior values must be assigned are:</p>
+<ul>
+<li><span class="math inline">\(\kappa_1\)</span> = the activation stage (in <span class="math inline">\(m\)</span>) equal to the height of the tip of the triangular notch and the height of the crest of the rectangular weir</li>
+<li><span class="math inline">\(\nu\)</span> = the opening angle of the triangle (in degrees), which is the sum of the angles of the two triangles at the edges of the trapezoidal weir</li>
+<li><span class="math inline">\(B_r\)</span> = the overflow width (in <span class="math inline">\(m\)</span>) of the rectangular weir, perpendicular to the direction of flow</li>
+</ul>
+<p>For the other parameters, default prior values are already specified:</p>
+<ul>
+<li><span class="math inline">\(C_t\)</span> = discharge coefficient (<span class="math inline">\(\approx 0.31 ± 0.05\)</span>) of the triangular weir</li>
+<li><span class="math inline">\(g\)</span> = gravity acceleration ($ ± 0.01 $ m.s<span class="math inline">\(^{-2}\)</span>)</li>
+<li><span class="math inline">\(c_t\)</span> = exponent for a triangular critical cross-section <span class="math inline">\(\approx 2.5 ± 0.05\)</span></li>
+<li><span class="math inline">\(C_r\)</span> = discharge coefficient <span class="math inline">\(\approx 0.4 ± 0.1\)</span> of the rectangular weir</li>
+<li><span class="math inline">\(c_r\)</span> = exponent for a rectangular critical cross-section <span class="math inline">\(\approx 1.5 ± 0.05\)</span></li>
+</ul>
+</div>
+<div id="circular-weir" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Circular weir</h2>
+<img src="circular_weir.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Circular weir: longitudinal view (left) and front view of control cross-section
+(right).
+</p>
+<p>Despite its simple geometry, there is no explicit formulation for the exact rating curve of a circular weir. Several approximate formulations have been proposed in the literature. They give similar results. We propose one of the oldest (Addison, 1941, p. 107), because it is classical and predicts a discharge close to that of the orifice, when the circular weir is full.</p>
+<p>The equation for this type of control is therefore :</p>
+<p><span class="math display">\[ Q(H) = 0.001 \times [C_c + (110(H-b)/D)^{-1} + 0.041 (H-b)/D ] \times (10D)^{2.5} \times [a_1 ((H-b)/D)^{c_1} - a_2 ((H-b)/D)^{c_2} ]\]</span></p>
+<p>if <span class="math inline">\(b \leq H \leq b+D\)</span></p>
+<p>The default parameters to which prior values must be assigned are:</p>
+<ul>
+<li><span class="math inline">\(b\)</span> = the elevation (in <span class="math inline">\(m\)</span>) of the bottom of the circular weir crest</li>
+<li><span class="math inline">\(D\)</span> = the diameter (in <span class="math inline">\(m\)</span>) of the circular weir.</li>
+</ul>
+<p>For the other parameters, default prior values are already specified:</p>
+<ul>
+<li><span class="math inline">\(C_c\)</span> = constant part of the discharge coefficient (<span class="math inline">\(\approx 0.5550 ± 0.05\)</span>) of the circular weir</li>
+<li><span class="math inline">\(c_1\)</span> = exponent <span class="math inline">\(\approx 1.975 ± 0.001\)</span></li>
+<li><span class="math inline">\(a_1\)</span> = coefficient <span class="math inline">\(\approx 10.12 ± 0.1\)</span></li>
+<li><span class="math inline">\(c_2\)</span> = exponent <span class="math inline">\(\approx 3.78 ± 0.001\)</span></li>
+<li><span class="math inline">\(a_2\)</span> = coefficient <span class="math inline">\(\approx 2.66 ± 0.03\)</span></li>
+</ul>
+</div>
+<div id="rectangular-weir-with-triangular-notch" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Rectangular weir with triangular notch</h2>
+<img src="rectangular+triangleNotch_weir.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Rectangular weir with triangular notch: longitudinal view (left) and front view of control cross-section
+(right).
+</p>
+<p>The ‘truncated triangle’ is modelled by adding a ‘negative’ triangular weir to the actual triangular weir to remove the excess wetted section when the water reaches the vertical walls. We simply add a conventional rectangular weir to model the horizontal sills (of the same <span class="math inline">\(\kappa_2\)</span>) on either side of the notch.</p>
+<p>The equation for this type of control is:</p>
+<p><span class="math display">\[ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t}\]</span></p>
+<p>if <span class="math inline">\(\kappa_1\leq H \leq \kappa_2\)</span>.</p>
+<p><span class="math display">\[ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} - C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_2)^{c_t} + C_r \sqrt{2g} B_r (H-\kappa_2)^{c_r}\]</span>.</p>
+<p>if <span class="math inline">\(H&gt;\kappa_2\)</span>.</p>
+<p>The default parameters to which prior values must be assigned are :</p>
+<ul>
+<li><span class="math inline">\(\kappa_1\)</span> = the activation stage (in <span class="math inline">\(m\)</span>) equal to the height of the tip of the triangular notch.</li>
+<li><span class="math inline">\(\nu\)</span> = the opening angle of the triangle (in degrees)</li>
+<li><span class="math inline">\(\kappa_2\)</span> = the activation stage (in <span class="math inline">\(m\)</span>) equal to the height of the crest of the rectangular weir</li>
+<li><span class="math inline">\(B_r\)</span> = the overflow width (in <span class="math inline">\(m\)</span>), i.e. the transverse length of the rectangular weir, perpendicular to the direction of flow.</li>
+</ul>
+<p>For the other parameters, default prior values are already specified:</p>
+<ul>
+<li><span class="math inline">\(C_t\)</span> = discharge coefficient (<span class="math inline">\(\approx 0.31 ± 0.05\)</span>) of the triangular notch.</li>
+<li><span class="math inline">\(g\)</span> = acceleration due to gravity ($ ± 0.01 $ m.s<span class="math inline">\(^{-2}\)</span>)</li>
+<li><span class="math inline">\(c_t\)</span> = exponent for a triangular critical cross-section <span class="math inline">\(\approx 2.5 ± 0.05\)</span></li>
+<li><span class="math inline">\(C_r\)</span> = discharge coefficient <span class="math inline">\(\approx 0.4 ± 0.1\)</span> of the rectangular weir</li>
+<li><span class="math inline">\(c_r\)</span> = exponent for a rectangular critical cross-section <span class="math inline">\(\approx 1.5 ± 0.05\)</span></li>
+</ul>
+</div>
+<div id="rectangular-weir-with-trapezoidal-notch" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Rectangular weir with trapezoidal notch</h2>
+<img src="rectangular+trapezeNotch_weir.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Rectangular weir with trapezoidal notch: longitudinal view (left) and front view of control cross-section
+(right).
+</p>
+<p>The rectangular weir with trapezoidal notch is modelled by adding a rectangular weir (of the same height <span class="math inline">\(\kappa_1\)</span>) to the rectangular weir with triangular notch, so as to represent the notch as a ‘truncated trapezoid’. There are two different coefficients <span class="math inline">\(C_{r1}\)</span> and <span class="math inline">\(C_{r2}\)</span> for the two rectangular weirs because the flow approach conditions (and gate height) are not the same upstream of the notch and upstream of the sill.</p>
+<p>The equation for this type of control is therefore:</p>
+<p><span class="math display">\[ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} + C_{r1} \sqrt{2g} B_{r1} (H-\kappa_1)^{c_r}\]</span></p>
+<p>if <span class="math inline">\(\kappa_1\leq H \leq \kappa_2\)</span>.</p>
+<p><span class="math display">\[ Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_1)^{c_t} - C_t \sqrt{2g} \tan(\nu/2) (H-\kappa_2)^{c_t} + C_{r1} \sqrt{2g} B_{r1} (H-\kappa_1)^{c_r} + C_{r2} \sqrt{2g} B_{r2} (H-\kappa_2)^{c_r}\]</span></p>
+<p>if <span class="math inline">\(H&gt;\kappa_2\)</span>.</p>
+<p>The default parameters to which prior values must be assigned are:</p>
+<ul>
+<li><span class="math inline">\(\kappa_1\)</span> = the activation stage (in <span class="math inline">\(m\)</span>) equal to the height of the tip of the triangular notch and the height of the bottom of the trapezoidal weir.</li>
+<li><span class="math inline">\(\nu\)</span> = the opening angle of the triangle (in degrees)</li>
+<li><span class="math inline">\(\kappa_2\)</span> = the activation height (in <span class="math inline">\(m\)</span>) equal to the elevation of the crest of the rectangular weir (sill)</li>
+<li><span class="math inline">\(B_{r1}\)</span> = the overflow width (in <span class="math inline">\(m\)</span>) of the bottom of the trapezoidal weir</li>
+<li><span class="math inline">\(B_{r2}\)</span> = the overflow width (in <span class="math inline">\(m\)</span>) of the rectangular weir (sill)</li>
+</ul>
+<p>For the other parameters, default priors are already specified:</p>
+<ul>
+<li><span class="math inline">\(C_t\)</span> = discharge coefficient (<span class="math inline">\(\approx 0.31 ± 0.05\)</span>) of the triangular notch</li>
+<li><span class="math inline">\(g\)</span> = acceleration due to gravity ($ ± 0.01 $ m.s<span class="math inline">\(^{-2}\)</span>)</li>
+<li><span class="math inline">\(c_t\)</span> = exponent for a triangular critical cross-section <span class="math inline">\(\approx 2.5 ± 0.05\)</span></li>
+<li><span class="math inline">\(C_{r1}\)</span> = discharge coefficient <span class="math inline">\(\approx 0.4 ± 0.1\)</span> of the rectangular weir corresponding to the bottom of the trapezoidal weir</li>
+<li><span class="math inline">\(C_{r2}\)</span> = discharge coefficient <span class="math inline">\(\approx 0.4 ± 0.1\)</span> of the rectangular weir (sill)</li>
+<li><span class="math inline">\(c_r\)</span> = exponent for a rectangular critical cross-section <span class="math inline">\(\approx 1.5 ± 0.05\)</span></li>
+</ul>
+</div>
+<div id="triangular-weir-with-triangular-notch" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Triangular weir with triangular notch</h2>
+<img src="triangular_triangleNotch_weir.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Triangular weir with triangular notch: longitudinal view (left) and front view of control cross-section
+(right).
+</p>
+<p>The triangular weir with triangular notch is modelled in the same way as the rectangular weir with triangular notch, simply by replacing the rectangular weir with a triangular weir. There are two different coefficients <span class="math inline">\(C_{t1}\)</span> and <span class="math inline">\(C_{t2}\)</span> for the two triangular weirs because the flow approach conditions (and gate heights) are not the same upstream of the notch and upstream of the sill.</p>
+<p>The equation for this type of control is therefore:</p>
+<p><span class="math display">\[Q(H) = C_{t1} \sqrt{2g} \tan(\nu_1/2) (H-\kappa_1)^{c_t}\]</span></p>
+<p>if <span class="math inline">\(\kappa_1\leq H \leq \kappa_2\)</span>.</p>
+<p><span class="math display">\[ Q(H) = C_{t1} \sqrt{2g} \tan(\nu_1/2) (H-\kappa_1)^{c_t} - C_{t1} \sqrt{2g} \tan(\nu_1/2) (H-\kappa_2)^{c_t} + C_{t2} \sqrt{2g}\tan(\nu_2/2) (H-\kappa_2)^{c_t}\]</span></p>
+<p>if <span class="math inline">\(H&gt;\kappa_2\)</span>.</p>
+<p>The parameters which are not set by default and to which priori values must be assigned are:</p>
+<ul>
+<li><span class="math inline">\(\kappa_1\)</span> = the activation stage (in <span class="math inline">\(m\)</span>) equal to the height of the tip of the triangular notch</li>
+<li><span class="math inline">\(\nu_1\)</span> = the opening angle of the triangular notch (in degrees)</li>
+<li><span class="math inline">\(\kappa_2\)</span> = the activation stage (in <span class="math inline">\(m\)</span>) equal to the elevation of the tip of the triangular weir, where the sill meets the edges of the notch.</li>
+<li><span class="math inline">\(\nu_1\)</span> = the opening angle of the triangle of the sill (in degrees)</li>
+</ul>
+<p>For the other parameters, default prior values are already specified:</p>
+<ul>
+<li><span class="math inline">\(C_{t1}\)</span> = discharge coefficient (<span class="math inline">\(\approx 0.31 ± 0.05\)</span>) of the triangular notch</li>
+<li><span class="math inline">\(g\)</span> = acceleration due to gravity ($ ± 0.01 $ m.s<span class="math inline">\(^{-2}\)</span>)</li>
+<li><span class="math inline">\(c_t\)</span> = exponent for a triangular critical cross-section <span class="math inline">\(\approx 2.5 ± 0.05\)</span></li>
+<li><span class="math inline">\(C_{t2}\)</span> = discharge coefficient (<span class="math inline">\(\approx 0.31 ± 0.05\)</span>) of the triangular weir (sill).</li>
+</ul>
+</div>
+<div id="rectangular-weir-orifice" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Rectangular weir-orifice</h2>
+<img src="rectangular_orifice.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Rectangular weir-orifice: longitudinal view (left) and front view of the control cross-section (right).
+</p>
+<p>The rectangular weir-orifice is modelled by adding a ‘negative’ rectangular weir to the actual rectangular weir to remove the excess wetted section when the water level reaches the orifice ceiling. The two rectangular weirs have the same width and coefficient, but different activation stages <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span>, corresponding to the bottom and top of the orifice.</p>
+<p>The equation for this type of control is therefore:</p>
+<p><span class="math display">\[Q(H) = C_r \sqrt{2g} B_r (H-\kappa_1)^{c_r}\]</span>.</p>
+<p>if <span class="math inline">\(\kappa_1\leq H \leq \kappa_2\)</span>.</p>
+<p><span class="math display">\[ Q(H) = C_r \sqrt{2g} B_r \left[ (H-\kappa_1)^{c_r} - (H-\kappa_2)^{c_r} \right]\]</span></p>
+<p>if <span class="math inline">\(H&gt;\kappa_2\)</span>.</p>
+<p>The default parameters to which prior values must be assigned are:</p>
+<ul>
+<li><span class="math inline">\(\kappa_1\)</span> = the activation stage (in <span class="math inline">\(m\)</span>) equal to the height of the bottom of the rectangular orifice.</li>
+<li><span class="math inline">\(\kappa_2\)</span> = the activation stage (in <span class="math inline">\(m\)</span>) equal to the height of the top of the rectangular orifice</li>
+<li><span class="math inline">\(B_r\)</span> = the width (in <span class="math inline">\(m\)</span>) of the rectangular orifice.</li>
+</ul>
+<p>For the other parameters, default prior values are already specified:</p>
+<ul>
+<li><span class="math inline">\(C_r\)</span> = discharge coefficient <span class="math inline">\(0.4 ± 0.1\)</span></li>
+<li><span class="math inline">\(g\)</span> = acceleration due to gravity ($ ± 0.01 $ m.s<span class="math inline">\(^{-2}\)</span>)</li>
+<li><span class="math inline">\(c_r\)</span> = exponent for a rectangular critical cross-section <span class="math inline">\(\approx 1.5 ± 0.05\)</span></li>
+</ul>
+</div>
+<div id="trapezoidal-channel" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> Trapezoidal channel</h2>
+<img src="trapezoidal_channel.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Trapezoidal channel: longitudinal view (left) and cross-section at the staff gauge (right).
+</p>
+<p>The Manning-Strickler formula is applied to any trapezoidal channel (with no condition on width). The shape of the trapezoidal cross-section is defined by the width at the bottom <span class="math inline">\(B_r\)</span> and by the batter <span class="math inline">\(m\)</span>, i.e. the slope (with respect to the vertical) of the walls of the channel. The batter <span class="math inline">\(m\)</span> is the tangent of the angle between the wall and the vertical, i.e. the ratio of the horizontal distance to the vertical height. For zero batter (<span class="math inline">\(m=0\)</span>), the equation is that of a rectangular channel control (with no width condition, unlike BaRatin’s wide rectangular channel control).</p>
+<p>The equation for this type of control is:</p>
+<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{\left[B_r (H-b) + m (H-b)^2 \right]^{c+1}}{\left[B_r + 2 (H-b) \sqrt{1+m^2} \right]^{c}} \]</span></p>
+<p>For each control modelled as a trapezoidal channel, the default parameters to which prior values must be assigned are:</p>
+<ul>
+<li><p><span class="math inline">\(b\)</span> = average channel bottom elevation</p></li>
+<li><p><span class="math inline">\(K_S\)</span> = the flow resistance coefficient (Strickler coefficient in m<span class="math inline">\(^{1/3}.\)</span>s<span class="math inline">\(^{-1}\)</span>)</p></li>
+<li><p><span class="math inline">\(B_r\)</span> = the width (in <span class="math inline">\(m\)</span>) of the channel bottom</p></li>
+<li><p><span class="math inline">\(m\)</span> = the batter of the cross-section walls (horizontal distance over vertical height, dimensionless)</p></li>
+<li><p><span class="math inline">\(S\)</span> = the longitudinal slope of the channel around the gauge (unitless, enter 0.01 for 1%, etc.)</p></li>
+<li><p>The Manning coefficient <span class="math inline">\(n=1/K_S\)</span> (m<span class="math inline">\(^{-1/3}.\)</span>s) can be used instead of the Strickler coefficient.</p></li>
+</ul>
+<p>For the remaining parameter, default prior values are already specified:</p>
+<ul>
+<li><span class="math inline">\(c\)</span> = exponent of the Manning-Strickler formula <span class="math inline">\(\approx 0.67 ± 0.05\)</span></li>
+</ul>
+</div>
+<div id="circular-channel" class="section level2" number="3.9">
+<h2><span class="header-section-number">3.9</span> Circular channel</h2>
+<img src="circular_channel.svg" width="100%">
+<p style="text-align: center;color: gray;">
+Circular channel: longitudinal view (left) and cross-section at the staff gauge (right).
+</p>
+<p>The Manning-Strickler formula is applied to a circular channel: the case of uniform open-channel flow, not pipe flow, in a canal, pipe or duct of circular cross-section, with radius <span class="math inline">\(r\)</span>.</p>
+<p>Despite the very simple geometry, the equation for this type of control is relatively complicated:</p>
+<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} \]</span></p>
+<p>if <span class="math inline">\(b &lt; H\leq b+r\)</span>.</p>
+<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} \]</span></p>
+<p>if <span class="math inline">\(b+r &lt; H &lt; b+2r\)</span>.</p>
+<p>The formula is not really simplified, even considering that <span class="math inline">\({\rm sin}(2{\rm acos}(x))=2x\sqrt{1-x^2}\)</span>.</p>
+<p>For each control modelled as a circular channel, the default parameters to which prior values must be assigned are:</p>
+<ul>
+<li><p><span class="math inline">\(b\)</span> = the average channel bottom elevation</p></li>
+<li><p><span class="math inline">\(K_S\)</span> = the flow resistance coefficient (Strickler coefficient in m<span class="math inline">\(^{1/3}.\)</span>s<span class="math inline">\(^{-1}\)</span>)</p></li>
+<li><p><span class="math inline">\(r\)</span> = the radius (in <span class="math inline">\(m\)</span>) of the circular channel (or pipe)</p></li>
+<li><p><span class="math inline">\(S\)</span> = the longitudinal slope of the channel around the gauge (unitless, enter 0.01 for 1%, etc.)</p></li>
+<li><p>Manning’s coefficient <span class="math inline">\(n=1/K_S\)</span> (m<span class="math inline">\(^{-1/3}.\)</span>s) can be used instead of Strickler’s coefficient.</p></li>
+</ul>
+<p>For the remaining parameter, default prior values are already specified:</p>
+<ul>
+<li><span class="math inline">\(c\)</span> = exponent of the Manning-Strickler formula <span class="math inline">\(\approx 0.67 ± 0.05\)</span></li>
+</ul>
 </div>
 </div>
-<div id="prior-specification" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Prior specification</h1>
-<div id="determination-of-prior-parameters" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Determination of prior parameters</h2>
+<div id="prior-specification" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Prior specification</h1>
+<div id="determination-of-prior-parameters" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Determination of prior parameters</h2>
 <p>The hydraulic analysis (matrix of controls) induced the mathematical model of the rating curve by combining the equations of the standard controls (for more details on the rating curve equation, see <a href="/en/doc/topics/rating-curve/">this page</a>).</p>
 <p>At this stage of the method the objective is to give plausible values to the different parameters of this model. The Bayesian inference, i.e. the basis of the method, requires assigning a central value and a non-zero uncertainty to each parameter. This is what we call prior parameters (see this page: <a href="/en/doc/topics/bayesian/">Bayesian basics</a>).</p>
 <p>Therefore, prior parameters <span class="math inline">\(\kappa\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> must be specified for every control. However, it is not necessary to specify a prior parameter <span class="math inline">\(b\)</span>: the discharge continuity of the rating curve is a constraint which implies that the parameter <span class="math inline">\(b\)</span> is automatically inferred from the other three parameters.</p>
@@ -613,19 +866,19 @@ u^2(a) = &amp; \left( \sqrt{S} \tan(\nu/2) \left( \frac{\sin(\nu/2)}{2} \right)^
 \end{align}
 \]</span></p>
 </div>
-<div id="approximation-of-actual-complex-controls" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Approximation of actual, complex controls</h2>
-<p>Modelling real controls using idealised, standard controls usually requires to approximate the actual geometry by an equivalent, simple shape. For instance, estimating the prior parameters of rectangular section or channel controls requires finding the rectangle that would be the best approximation of the average shape of the natural riffle or channel (see Figure 9). Note the “average” controlling channel actually extends upstream and downstream of the station, so the geometry approximation should be done at the reach scale, based on representative cross-sections.</p>
+<div id="approximation-of-actual-complex-controls" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Approximation of actual, complex controls</h2>
+<p>Modelling real controls using idealised, standard controls usually requires to approximate the actual geometry by an equivalent, simple shape. For instance, estimating the prior parameters of rectangular section or channel controls requires finding the rectangle that would be the best approximation of the average shape of the natural riffle or channel (see Figure below). Note the “average” controlling channel actually extends upstream and downstream of the station, so the geometry approximation should be done at the reach scale, based on representative cross-sections.</p>
 <img src="equivalentRectangle.en.png" width="60%">
 <p style="text-align: center;color: gray;">
-Figure 9. Cross-section of the controlling channel and the principle of its modelling by an equivalent rectangle (green).
+Cross-section of the controlling channel and the principle of its modelling by an equivalent rectangle (green).
 </p>
 <p>The flow resistance parameter <span class="math inline">\(K_S\)</span> or <span class="math inline">\(n\)</span> of channel controls is often difficult to determine precisely. There exist look-up tables of typical values (e.g. <a href="Chow_en.xlsx">Chow’s table</a>) and calculation
 methods that rely on a more detailed description of flow conditions (e.g. <a href="Cowan_en.xlsx">Cowan’s method</a>).</p>
 <p>In channel controls equations, the friction slope is approximated by the longitudinal slope <span class="math inline">\(S\)</span> of the bed or of the water profile. The slope of the water profile in flood conditions is rarely known. By default, we use the average slope of the bed or the low flow water profile, which is easier to measure.</p>
 </div>
-<div id="remarks" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Remarks</h2>
+<div id="remarks" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Remarks</h2>
 <p>Priors reflect what the user knows about the configuration of the studied station, but also the
 uncertainty of such knowledge. This is not about guessing the “right” results. The objective is to
 determine “honest” priors, i.e. reasonable estimates of each parameter and its uncertainty.</p>
