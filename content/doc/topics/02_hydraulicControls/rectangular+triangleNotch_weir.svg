@@ -163,11 +163,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.79611187"
-     inkscape:cx="481.08817"
-     inkscape:cy="73.482135"
+     inkscape:zoom="1.1258722"
+     inkscape:cx="657.2682"
+     inkscape:cy="250.91658"
      inkscape:document-units="px"
-     inkscape:current-layer="g3059"
+     inkscape:current-layer="layer1"
      showgrid="false"
      units="mm"
      fit-margin-top="5"
@@ -649,13 +649,13 @@
                id="tspan2-2-3">1</tspan></tspan></text>
         <path
            style="fill:none;stroke:#000000;stroke-width:0.999215;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-7-7);marker-end:url(#Arrow1Lend-3-3)"
-           d="m 745.76925,861.80235 h 77.35268"
+           d="m 745.76925,809.80235 h 77.35268"
            id="path4138-6"
            inkscape:connector-curvature="0"
            sodipodi:nodetypes="cc" />
         <path
            style="fill:none;stroke:#000000;stroke-width:0.999215;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-7-7-6);marker-end:url(#Arrow1Lend-3-3-5)"
-           d="m 880.80588,861.80235 h 77.35268"
+           d="m 880.80588,809.80235 h 77.35268"
            id="path4138-6-5"
            inkscape:connector-curvature="0"
            sodipodi:nodetypes="cc" />
@@ -663,28 +663,28 @@
            xml:space="preserve"
            style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
            x="836.30316"
-           y="741.08423"
+           y="731.08423"
            id="text3869-5-8-2-3"><tspan
              sodipodi:role="line"
              id="tspan3894-65-8-6"
              x="836.30316"
-             y="741.08423"
+             y="731.08423"
              style="font-size:34.8845px;line-height:1.25">B<tspan
    style="font-size:65%;baseline-shift:sub"
    id="tspan1-3">r</tspan></tspan></text>
         <path
-           style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#ArrowWide);stroke-dasharray:3,3;stroke-dashoffset:0"
-           d="m 786.6336,861.64999 c 0,0 0.89434,-23.9924 14.57005,-42.77674 13.67572,-18.78433 38.35229,-30.09559 38.35229,-30.09559"
+           style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#ArrowWide)"
+           d="m 786.6336,810.08624 c 0,0 0.89434,-10.33886 14.57005,-18.43345 13.67572,-8.09459 38.35229,-12.96887 38.35229,-12.96887"
            id="path2"
            sodipodi:nodetypes="czc" />
         <path
            style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#ArrowWide-2)"
-           d="m 915.87659,861.64999 c 0,0 -0.89434,-23.9924 -14.57005,-42.77674 -13.67572,-18.78433 -38.35229,-30.09559 -38.35229,-30.09559"
+           d="m 915.87659,810.08624 c 0,0 -0.89434,-10.33886 -14.57005,-18.43345 -13.67572,-8.09459 -38.35229,-12.96887 -38.35229,-12.96887"
            id="path2-1"
            sodipodi:nodetypes="czc" />
         <g
            id="g1"
-           transform="translate(0.17682519,6)">
+           transform="translate(0.17682519,-4)">
           <path
              style="fill:#eaeffc;fill-rule:evenodd;stroke:#000000;stroke-width:0.666667;stroke-linecap:round;stroke-linejoin:round"
              id="path1"
@@ -711,8 +711,8 @@
                style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:34.8845px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Bold';stroke:#000000">+</tspan></text>
         </g>
         <path
-           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#ArrowWide-2);stroke-dasharray:3,3;stroke-dashoffset:0"
-           d="m 851.63233,771.3797 -0.21338,-24.50878"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#ArrowWide-2)"
+           d="m 851.63233,761.3797 -0.21338,-24.50878"
            id="path4" />
       </g>
       <path

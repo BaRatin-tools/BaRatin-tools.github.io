@@ -51,7 +51,7 @@ coefficient de Manning $n = 1 / K_S$ (en m$^{-1/3}.$s) peut être utilisé à la
 ## Déversoir rectangulaire
 
 <img src="rectangular_weir.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 1: Déversoir rectangulaire : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
+<p style="text-align: center;color: gray;"> Déversoir rectangulaire : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
 
 L’équation de ce type de contrôle est :
 $$Q(H) = C_r \sqrt{2g} B_w (H-b)^c $$
@@ -70,7 +70,7 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 ## Déversoir parabolique
 
 <img src="parabolic_weir.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 2. Déversoir parabolique : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
+<p style="text-align: center;color: gray;"> Déversoir parabolique : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
 
 L’équation de ce type de contrôle est :
 
@@ -93,7 +93,7 @@ plus larges : selon les résultats d’[Igathinathane et al. (2007)](https://doi
 ## Déversoir triangulaire
 
 <img src="triangular_weir.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 3: Déversoir triangulaire : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
+<p style="text-align: center;color: gray;"> Déversoir triangulaire : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
 
 L’équation de ce type de contrôle est :
 $$Q(H) = C_t \sqrt{2g} \tan(\nu/2) (H-b)^c $$
@@ -112,12 +112,12 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 ## Orifice dénoyé
 
 <img src="orifice.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 4 : Orifice dénoyé : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
+<p style="text-align: center;color: gray;"> Orifice dénoyé : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
 
 L’équation de ce type de contrôle est :
 $$Q(H) = C_o \sqrt{2g} A_w (H-b)^c $$
 
-Pour chaque contrôle modélisé par un orifice dénoyé (l’écoulement remplit tout l’orifice mais sort librement à l’aval, sans influence de la hauteur d’eau aval sur la relation hauteur-débit, voir Figure 4), les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
+Pour chaque contrôle modélisé par un orifice dénoyé (l’écoulement remplit tout l’orifice mais sort librement à l’aval, sans influence de la hauteur d’eau aval sur la relation hauteur-débit, voir Figure ci-dessus), les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
 
 * $\kappa$ = la hauteur d’eau (en $m$) à partir de laquelle le contrôle devient actif ;
 * $A_w$ = l'aire mouillée (en $m²$) de la section de l’orifice.
@@ -133,7 +133,7 @@ Note : souvent l'ouvrage comprenant l'orifice produit un remous hydraulique qui 
 ## Chenal rectangulaire (large)
 
 <img src="rectangular_channel.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 5: chenal rectangulaire large : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
+<p style="text-align: center;color: gray;"> Chenal rectangulaire large : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
 
 La formule de Manning-Strickler est appliquée à un chenal rectangulaire large, i.e. $H-b \ll B_w$ (typiquement $5(H-b) < B_w$).
 
@@ -157,7 +157,7 @@ Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
 ## Chenal parabolique (large)
 
 <img src="parabolic_channel.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 6: chenal parabolique large : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
+<p style="text-align: center;color: gray;"> Chenal parabolique large : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
 
 La formule de Manning-Strickler est appliquée à un chenal parabolique large, i.e. :
 $$H-b \ll \frac{3}{8}\frac{B_p^2}{H_p}$$
@@ -187,7 +187,7 @@ Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
 ## Chenal triangulaire
 
 <img src="triangular_channel.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 7: chenal triangulaire : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
+<p style="text-align: center;color: gray;"> Chenal triangulaire : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
 
 La formule de Manning-Strickler est appliquée à un chenal triangulaire. L’équation de ce type de contrôle est :
 
@@ -216,6 +216,9 @@ Depuis la version 3.1 de BaRatinAGE, il est possible de définir une configurati
 
 
 ## Déversoir à forme paramétrée
+
+<img src="parametric_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Déversoir à forme paramétrée : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
 
 Comme pour les autres types de déversoirs, l'équation $Q=f(H)$ s’établit en appliquant le théorème de Bernoulli entre la section de mesure du niveau d'eau $H$ et la section critique. La charge dynamique liée à la vitesse d'approche étant supposée négligeable, la charge hydrostatique $H$ est proche de la charge hydraulique totale.
 
@@ -254,6 +257,9 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 ## Déversoir trapézoïdal
 
+<img src="trapezoidal_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Déversoir trapézoïdal : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
+
 Le déversoir trapézoïdal est modélisé en ajoutant un déversoir triangulaire (représentant les bords du trapèze) au déversoir rectangulaire représentant le centre du trapèze. Les deux déversoirs ont la même cote $\kappa_1$.
 
 L’équation de ce type de contrôle est donc :
@@ -281,6 +287,9 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 ## Déversoir circulaire
 
+<img src="circular_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Déversoir circulaire : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
+
 Malgré sa géométrie simple, il n'existe pas de formulation explicite exacte de la courbe de tarage d'un déversoir circulaire. Plusieurs formulations approchées sont proposées dans la littérature. Elles fournissent des résultats similaires. Nous proposons une des plus anciennes (Addison, 1941, p. 107), parce qu'elle est classique et qu'elle prédit un débit proche de celui de l'orifice dénoyé, lorsque le déversoir circulaire est plein.
 
 L’équation de ce type de contrôle est donc :
@@ -304,6 +313,9 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 * $a_2$ = coefficient $\approx 2.66 ± 0.03$
 
 ## Déversoir rectangulaire avec encoche triangulaire
+
+<img src="rectangular+triangleNotch_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Déversoir rectangulaire avec encoche triangulaire : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
 
 Le « triangle tronqué » est modélisé en ajoutant un déversoir triangulaire « négatif » au déversoir triangulaire réel pour retrancher l’excès de section mouillée quand la hauteur d’eau atteint les parois verticales. On ajoute simplement un déversoir rectangulaire classique pour modéliser les deux banquettes horizontales (de même cote $\kappa_2$) de part et d'autre de l'encoche.
 
@@ -335,6 +347,9 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 
 ## Déversoir rectangulaire avec encoche trapézoïdale
+
+<img src="rectangular+trapezeNotch_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Déversoir rectangulaire avec encoche trapézoïdale : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
 
 Le déversoir rectangulaire avec encoche trapézoïdale est modélisé en ajoutant un déversoir rectangulaire (de même cote $\kappa_1$) au déversoir rectangulaire avec encoche triangulaire, de façon à représenter l'encoche en « trapèze tronqué ». On distingue deux coefficients $C_{r1}$ et $C_{r2}$ différents pour les deux déversoirs rectangulaires car les conditions d'approche de l'écoulement (et les hauteurs de pelle) ne sont pas les mêmes en amont de l'encoche et en amont des banquettes.
 
@@ -368,6 +383,9 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 ## Déversoir triangulaire avec encoche triangulaire
 
+<img src="triangular_triangleNotch_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Déversoir triangulaire avec encoche triangulaire : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
+
 Le déversoir triangulaire avec encoche triangulaire est modélisé comme le déversoir rectangulaire avec encoche triangulaire, en remplaçant simplement le déversoir rectangulaire par un déversoir triangulaire. On distingue deux coefficients $C_{t1}$ et $C_{t2}$ différents pour les deux déversoirs triangulaires car les conditions d'approche de l'écoulement (et les hauteurs de pelle) ne sont pas les mêmes en amont de l'encoche et en amont des banquettes.
 
 L’équation de ce type de contrôle est donc :
@@ -398,6 +416,9 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
 ## Déversoir-orifice rectangulaire
 
+<img src="rectangular_orifice.svg" width="100%">
+<p style="text-align: center;color: gray;"> Déversoir-orifice rectangulaire : vue en long (à gauche) et vue en travers de la section de contrôle (à droite). </p>
+
 Le déversoir-orifice rectangulaire est modélisé en ajoutant un déversoir rectangulaire « négatif » au déversoir rectangulaire réel pour retrancher l’excès de section mouillée quand la hauteur d’eau atteint le plafond de l'orifice. Les deux déversoirs rectangulaires ont les mêmes largeur et coefficient, mais des cotes $\kappa_1$ et $\kappa_2$ différentes, correspondant au bas et au haut de l'orifice.
 
 L’équation de ce type de contrôle est donc :
@@ -425,15 +446,16 @@ Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 * $g$ = accélération de la gravité ($\approx 9.81 ± 0.01 $ m.s$^{-2}$)
 * $c_r$ = exposant pour une section critique rectangulaire $\approx 1.5 ± 0.05$
 
-
-
 ## Chenal trapézoïdal
+
+<img src="trapezoidal_channel.svg" width="100%">
+<p style="text-align: center;color: gray;"> Chenal trapézoïdal : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
 
 La formule de Manning-Strickler est appliquée à un chenal trapézoïdal quelconque (sans condition sur la largeur). La forme de la section trapézoïdale est définie par la largeur au fond $B_r$ et par le fruit $m$, c'est-à-dire la pente (par rapport à la verticale) des bords du chenal. Le fruit $m$ est la tangente de l'angle que fait la paroi avec la verticale, soit le rapport de la distance horizontale à la hauteur verticale. Pour un fruit nul ($m=0$), l'équation est celle d'un contrôle chenal rectangulaire (sans condition de largeur, contrairement au contrôle chenal rectangulaire large de BaRatin).
 
 L’équation de ce type de contrôle est :
 
-$$Q(H) = K_S \sqrt{S_0} \frac{\left[B_r (H-b) + m (H-b)^2 \right]^{c+1}}{\left[B_r + 2 (H-b) \sqrt{1+m^2} \right]^{c}} $$
+$$Q(H) = K_S \sqrt{S} \frac{\left[B_r (H-b) + m (H-b)^2 \right]^{c+1}}{\left[B_r + 2 (H-b) \sqrt{1+m^2} \right]^{c}} $$
 
 Pour chaque contrôle modélisé par un chenal trapézoïdal, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
 
@@ -441,7 +463,7 @@ Pour chaque contrôle modélisé par un chenal trapézoïdal, les paramètres no
 * $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en m$^{1/3}.$s$^{-1}$)
 * $B_r$ = la largeur (en $m$) du fond du chenal
 * $m$ = le fruit des bords de la section (distance horizontale sur hauteur verticale, sans dimension)
-* $S_0$ = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
+* $S$ = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
 0.01 pour 1%, etc.)
 
 * Le coefficient de Manning $n=1/K_S$ (m$^{-1/3}.$s) peut être utilisé à la place du coefficient de Strickler.
@@ -452,14 +474,17 @@ Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
 
 ## Chenal circulaire
 
+<img src="circular_channel.svg" width="100%">
+<p style="text-align: center;color: gray;"> Chenal circulaire : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
+
 La formule de Manning-Strickler est appliquée à un chenal circulaire : cas d'un écoulement uniforme à surface libre, et non en charge, dans une buse, conduite ou canalisation de section circulaire, de rayon $r$. 
 
 Malgré une géométrie très simple, l'équation de ce type de contrôle est relativement compliquée :
 
-$$Q(H) = K_S \sqrt{S_0} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} $$
+$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} $$
 si $b < H\leq b+r$.
 
-$$Q(H) = K_S \sqrt{S_0} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} $$
+$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} $$
 si $b+r < H < b+2r$.
 
 La formule ne se simplifie pas vraiment, même en considérant que ${\rm sin}(2{\rm acos}(x))=2x\sqrt{1-x^2}$. 
@@ -469,7 +494,7 @@ Pour chaque contrôle modélisé par un chenal circulaire, les paramètres non r
 * $b$ = la cote moyenne du fond du chenal
 * $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en m$^{1/3}.$s$^{-1}$)
 * $r$ = le rayon (en $m$) du chenal (ou de la conduite) circulaire
-* $S_0$ = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
+* $S$ = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
 0.01 pour 1%, etc.)
 
 * Le coefficient de Manning $n=1/K_S$ (m$^{-1/3}.$s) peut être utilisé à la place du coefficient de Strickler.
@@ -590,10 +615,10 @@ $$
 
 ## Approximation des contrôles réels complexes
 
-Modéliser les contrôles reels avec des contrôles-types idéalisés nécessite d’approximer la géométrie réelle par une forme simple équivalente. Par exemple, pour estimer les paramètres a priori des contrôles rectangulaires par section ou par chenal, il faut trouver le rectangle qui fournit la meilleure approximation de la forme moyenne du radier naturel ou du chenal moyen (voir Figure 9). Attention, le chenal de contrôle "moyen" s’étend en fait à l’amont et à l’aval de la station, de sorte que l’approximation devrait être conduite à l’échelle du tronçon, à partir de sections en travers représentatives.
+Modéliser les contrôles reels avec des contrôles-types idéalisés nécessite d’approximer la géométrie réelle par une forme simple équivalente. Par exemple, pour estimer les paramètres a priori des contrôles rectangulaires par section ou par chenal, il faut trouver le rectangle qui fournit la meilleure approximation de la forme moyenne du radier naturel ou du chenal moyen (voir Figure ci-dessous). Attention, le chenal de contrôle "moyen" s’étend en fait à l’amont et à l’aval de la station, de sorte que l’approximation devrait être conduite à l’échelle du tronçon, à partir de sections en travers représentatives.
 
 <img src="equivalentRectangle.fr.png" width="60%">
-<p style="text-align: center;color: gray;"> Figure 9. Profil en travers du chenal de contrôle et principe de sa modélisation par un rectangle équivalent (en vert). </p>
+<p style="text-align: center;color: gray;"> Profil en travers du chenal de contrôle et principe de sa modélisation par un rectangle équivalent (en vert). </p>
 
 Le paramètre de résistance à l’écoulement $K_S$ ou $n$ des contrôles par chenal est souvent délicat à déterminer. Il existe des tables des valeurs courantes (par exemple [table de Chow](Chow_fr.xlsx)) mais également des modes de calcul qui s'appuient sur une description plus fine des conditions d'écoulement (par exemple [méthode de Cowan](Cowan_fr.xlsx)).
 

@@ -51,7 +51,7 @@ where $K_S$ = flow resistance coefficient (Strickler coefficient in m$^{1/3}.$s$
 ## Rectangular weir
 
 <img src="rectangular_weir.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 1: Rectangular weir: longitudinal view (left) and front view of control cross-section (right). </p>
+<p style="text-align: center;color: gray;"> Rectangular weir: longitudinal view (left) and front view of control cross-section (right). </p>
 
 The equation of this type of control is:
 
@@ -71,7 +71,7 @@ Default priors are already specified for the other parameters:
 ## Parabolic weir
 
 <img src="parabolic_weir.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 2. Parabolic weir: longitudinal view (left) and front view of control cross-section (right). </p>
+<p style="text-align: center;color: gray;"> Parabolic weir: longitudinal view (left) and front view of control cross-section (right). </p>
 
 Re-arranging the results of [Igathinathane et al. (2007)](https://doi.org/10.1016/j.biosystemseng.2006.09.006), the equation of this type of control is:
 
@@ -94,7 +94,7 @@ parabolic weirs and on broad-crested parabolic weirs.
 ## Triangular weir
 
 <img src="triangular_weir.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 3: Triangular weir: longitudinal view (left) and front view of control cross-section
+<p style="text-align: center;color: gray;"> Triangular weir: longitudinal view (left) and front view of control cross-section
 (right). </p>
 
 The equation of this type of control is:
@@ -114,12 +114,12 @@ Default priors are already specified for the other parameters:
 ## Free-flowing orifice
 
 <img src="orifice.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 4: Free-flowing orifice: longitudinal view (left) and front view of the control cross-section (right). </p>
+<p style="text-align: center;color: gray;"> Free-flowing orifice: longitudinal view (left) and front view of the control cross-section (right). </p>
 
 The equation of this type of control is:
 $$Q(H) = C_o \sqrt{2g} A_w (H-b)^c $$
 
-For each control modelled as a free-flowing orifice (flow fills the orifice but there is a free fall at the outlet, with no influence of the downstream stage on the stage-discharge relation, see Figure 4), priors must be assigned for the following parameters:
+For each control modelled as a free-flowing orifice (flow fills the orifice but there is a free fall at the outlet, with no influence of the downstream stage on the stage-discharge relation, see Figure above), priors must be assigned for the following parameters:
 
 * $\kappa$ = the water level (in $m$) above which the control becomes active;
 * $A_w$ = the cross-sectional area (en $m²$) of the orifice.
@@ -135,7 +135,7 @@ Note. The hydraulic structure featuring the orifice may produce a backwater that
 ## Rectangular channel (wide)
 
 <img src="rectangular_channel.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 5: Wide rectangular channel: longitudinal view (left) and cross-section at the staff gauge (right). </p>
+<p style="text-align: center;color: gray;"> Wide rectangular channel: longitudinal view (left) and cross-section at the staff gauge (right). </p>
 
 The Manning-Strickler equation is applied to a wide rectangular channel, i.e. $H-b \ll B_w$ (typically $5(H-b) < B_w$).
 
@@ -158,7 +158,7 @@ Default priors are already specified for the remaining parameter:
 ## Parabolic channel (wide)
 
 <img src="parabolic_channel.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 6: Wide parabolic channel: longitudinal view (left) and cross-section at the staff gauge (right). </p>
+<p style="text-align: center;color: gray;"> Wide parabolic channel: longitudinal view (left) and cross-section at the staff gauge (right). </p>
 
 The Manning-Strickler equation is applied to a wide parabolic channel, i.e.
 $$H-b \ll \frac{3}{8}\frac{B_p^2}{H_p}$$
@@ -186,7 +186,7 @@ Default priors are already specified for the remaining parameter:
 ## Triangular channel
 
 <img src="triangular_channel.svg" width="100%">
-<p style="text-align: center;color: gray;"> Figure 7: Triangular channel: longitudinal view (left) and cross-section at the staff gauge (right).</p>
+<p style="text-align: center;color: gray;"> Triangular channel: longitudinal view (left) and cross-section at the staff gauge (right).</p>
 
 The Manning-Strickler equation is applied to a triangular channel. The equation of this type of control is:
 
@@ -216,6 +216,10 @@ Since version 3.1 of BaRatinAGE, it has been possible to define a ‘Q=f(h)’ c
 
 
 ## Parametric weir
+
+<img src="parametric_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Parametric weir: longitudinal view (left) and front view of control cross-section
+(right). </p>
 
 As with other types of weir, the equation $Q=f(H)$ is established by applying Bernoulli's theorem between the water level $H$ measurement cross-section and the critical-flow cross-section. Since the velocity head due to the approach flow velocity is assumed to be negligible, the hydrostatic head $H$ is close to the total hydraulic head.
 
@@ -255,6 +259,10 @@ For the other parameters, default prior values are already specified:
 
 ## Trapezoidal weir
 
+<img src="trapezoidal_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Trapezoidal weir: longitudinal view (left) and front view of control cross-section
+(right). </p>
+
 The trapezoidal weir is modelled by adding a triangular weir (representing the edges of the trapezoid) to the rectangular weir representing the centre of the trapezoid. Both weirs have the same activation stage $\kappa_1$.
 
 The equation for this type of control is therefore:
@@ -279,6 +287,10 @@ For the other parameters, default prior values are already specified:
 
 
 ## Circular weir 
+
+<img src="circular_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Circular weir: longitudinal view (left) and front view of control cross-section
+(right). </p>
 
 Despite its simple geometry, there is no explicit formulation for the exact rating curve of a circular weir. Several approximate formulations have been proposed in the literature. They give similar results. We propose one of the oldest (Addison, 1941, p. 107), because it is classical and predicts a discharge close to that of the orifice, when the circular weir is full.
 
@@ -305,6 +317,10 @@ For the other parameters, default prior values are already specified:
 
 
 ## Rectangular weir with triangular notch
+
+<img src="rectangular+triangleNotch_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Rectangular weir with triangular notch: longitudinal view (left) and front view of control cross-section
+(right). </p>
 
 The ‘truncated triangle’ is modelled by adding a ‘negative’ triangular weir to the actual triangular weir to remove the excess wetted section when the water reaches the vertical walls. We simply add a conventional rectangular weir to model the horizontal sills (of the same $\kappa_2$) on either side of the notch.
 
@@ -336,6 +352,10 @@ For the other parameters, default prior values are already specified:
 
 
 ## Rectangular weir with trapezoidal notch
+
+<img src="rectangular+trapezeNotch_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Rectangular weir with trapezoidal notch: longitudinal view (left) and front view of control cross-section
+(right). </p>
 
 The rectangular weir with trapezoidal notch is modelled by adding a rectangular weir (of the same height $\kappa_1$) to the rectangular weir with triangular notch, so as to represent the notch as a ‘truncated trapezoid’. There are two different coefficients $C_{r1}$ and $C_{r2}$ for the two rectangular weirs because the flow approach conditions (and gate height) are not the same upstream of the notch and upstream of the sill.
 
@@ -370,6 +390,10 @@ For the other parameters, default priors are already specified:
 
 ## Triangular weir with triangular notch
 
+<img src="triangular_triangleNotch_weir.svg" width="100%">
+<p style="text-align: center;color: gray;"> Triangular weir with triangular notch: longitudinal view (left) and front view of control cross-section
+(right). </p>
+
 The triangular weir with triangular notch is modelled in the same way as the rectangular weir with triangular notch, simply by replacing the rectangular weir with a triangular weir. There are two different coefficients $C_{t1}$ and $C_{t2}$ for the two triangular weirs because the flow approach conditions (and gate heights) are not the same upstream of the notch and upstream of the sill.
 
 The equation for this type of control is therefore:
@@ -400,6 +424,9 @@ For the other parameters, default prior values are already specified:
 
 ## Rectangular weir-orifice
 
+<img src="rectangular_orifice.svg" width="100%">
+<p style="text-align: center;color: gray;"> Rectangular weir-orifice: longitudinal view (left) and front view of the control cross-section (right). </p>
+
 The rectangular weir-orifice is modelled by adding a ‘negative’ rectangular weir to the actual rectangular weir to remove the excess wetted section when the water level reaches the orifice ceiling. The two rectangular weirs have the same width and coefficient, but different activation stages $\kappa_1$ and $\kappa_2$, corresponding to the bottom and top of the orifice.
 
 The equation for this type of control is therefore:
@@ -429,11 +456,14 @@ For the other parameters, default prior values are already specified:
 
 ## Trapezoidal channel
 
+<img src="trapezoidal_channel.svg" width="100%">
+<p style="text-align: center;color: gray;"> Trapezoidal channel: longitudinal view (left) and cross-section at the staff gauge (right). </p>
+
 The Manning-Strickler formula is applied to any trapezoidal channel (with no condition on width). The shape of the trapezoidal cross-section is defined by the width at the bottom $B_r$ and by the batter $m$, i.e. the slope (with respect to the vertical) of the walls of the channel. The batter $m$ is the tangent of the angle between the wall and the vertical, i.e. the ratio of the horizontal distance to the vertical height. For zero batter ($m=0$), the equation is that of a rectangular channel control (with no width condition, unlike BaRatin's wide rectangular channel control).
 
 The equation for this type of control is:
 
-$$Q(H) = K_S \sqrt{S_0} \frac{\left[B_r (H-b) + m (H-b)^2 \right]^{c+1}}{\left[B_r + 2 (H-b) \sqrt{1+m^2} \right]^{c}} $$
+$$Q(H) = K_S \sqrt{S} \frac{\left[B_r (H-b) + m (H-b)^2 \right]^{c+1}}{\left[B_r + 2 (H-b) \sqrt{1+m^2} \right]^{c}} $$
 
 For each control modelled as a trapezoidal channel, the default parameters to which prior values must be assigned are:
 
@@ -441,7 +471,7 @@ For each control modelled as a trapezoidal channel, the default parameters to wh
 * $K_S$ = the flow resistance coefficient (Strickler coefficient in m$^{1/3}.$s$^{-1}$)
 * $B_r$ = the width (in $m$) of the channel bottom
 * $m$ = the batter of the cross-section walls (horizontal distance over vertical height, dimensionless)
-* $S_0$ = the longitudinal slope of the channel around the gauge (unitless, enter 0.01 for 1%, etc.)
+* $S$ = the longitudinal slope of the channel around the gauge (unitless, enter 0.01 for 1%, etc.)
 
 * The Manning coefficient $n=1/K_S$ (m$^{-1/3}.$s) can be used instead of the Strickler coefficient.
 
@@ -451,15 +481,18 @@ For the remaining parameter, default prior values are already specified:
 
 ## Circular channel
 
+<img src="circular_channel.svg" width="100%">
+<p style="text-align: center;color: gray;"> Circular channel: longitudinal view (left) and cross-section at the staff gauge (right). </p>
+
 The Manning-Strickler formula is applied to a circular channel: the case of uniform open-channel flow, not pipe flow, in a canal, pipe or duct of circular cross-section, with radius $r$. 
 
 Despite the very simple geometry, the equation for this type of control is relatively complicated:
 
-$$Q(H) = K_S \sqrt{S_0} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} $$
+$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} $$
 
 if $b < H\leq b+r$.
 
-$$Q(H) = K_S \sqrt{S_0} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} $$
+$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} $$
 
 if $b+r < H < b+2r$.
 
@@ -470,7 +503,7 @@ For each control modelled as a circular channel, the default parameters to which
 * $b$ = the average channel bottom elevation
 * $K_S$ = the flow resistance coefficient (Strickler coefficient in m$^{1/3}.$s$^{-1}$)
 * $r$ = the radius (in $m$) of the circular channel (or pipe)
-* $S_0$ = the longitudinal slope of the channel around the gauge (unitless, enter 0.01 for 1%, etc.)
+* $S$ = the longitudinal slope of the channel around the gauge (unitless, enter 0.01 for 1%, etc.)
 
 * Manning's coefficient $n=1/K_S$ (m$^{-1/3}.$s) can be used instead of Strickler's coefficient.
 
@@ -587,10 +620,10 @@ $$
 
 ## Approximation of actual, complex controls
 
-Modelling real controls using idealised, standard controls usually requires to approximate the actual geometry by an equivalent, simple shape. For instance, estimating the prior parameters of rectangular section or channel controls requires finding the rectangle that would be the best approximation of the average shape of the natural riffle or channel (see Figure 9). Note the "average" controlling channel actually extends upstream and downstream of the station, so the geometry approximation should be done at the reach scale, based on representative cross-sections.
+Modelling real controls using idealised, standard controls usually requires to approximate the actual geometry by an equivalent, simple shape. For instance, estimating the prior parameters of rectangular section or channel controls requires finding the rectangle that would be the best approximation of the average shape of the natural riffle or channel (see Figure below). Note the "average" controlling channel actually extends upstream and downstream of the station, so the geometry approximation should be done at the reach scale, based on representative cross-sections.
 
 <img src="equivalentRectangle.en.png" width="60%">
-<p style="text-align: center;color: gray;"> Figure 9. Cross-section of the controlling channel and the principle of its modelling by an equivalent rectangle (green). </p>
+<p style="text-align: center;color: gray;"> Cross-section of the controlling channel and the principle of its modelling by an equivalent rectangle (green). </p>
 
 The flow resistance parameter $K_S$ or $n$ of channel controls is often difficult to determine precisely. There exist look-up tables of typical values (e.g. [Chow's table](Chow_en.xlsx)) and calculation
 methods that rely on a more detailed description of flow conditions (e.g. [Cowan's method](Cowan_en.xlsx)).
