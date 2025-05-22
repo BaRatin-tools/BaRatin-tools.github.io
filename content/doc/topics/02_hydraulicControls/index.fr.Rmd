@@ -386,7 +386,7 @@ Les paramètres non renseignés par défaut auxquels il faut affecter des a prio
 * $\kappa_1$ = la hauteur d’activation (en $m$) égale à la cote de la pointe de l'encoche triangulaire
 * $\nu_1$ = l'angle d'ouverture du triangle de l'encoche (en degrés)
 * $\kappa_2$ = la hauteur d’activation (en $m$) égale à la cote de la pointe du déversoir triangulaire, là où les banquettes rejoignent les bords de l'encoche
-* $\nu_1$ = l'angle d'ouverture du triangle des banquettes (en degrés)
+* $\nu_2$ = l'angle d'ouverture du triangle des banquettes (en degrés)
 
 Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :
 
