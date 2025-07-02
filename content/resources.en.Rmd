@@ -100,7 +100,9 @@ Le Coz, J., Renard, B., Bonnifait, L., Branger, F., Le Boursicaud, R. Uncertaint
 
 Kazimierski, L.D., García, P.E., Ortiz, N., Morale, M., Re, M., Aforos de ríos y arroyos en la Cuenca Matanza-Riachuelo. Elaboración de relaciones altura - caudal (curvas HQ). Informe LHA 05-397-21, Instituto Nacional del Agua (INA) – ACUMAR, Ezeiza, Argentina, 2021.
 
-[Kiang, J.E., Gazoorian, C., McMillan, H., Coxon, G., Le Coz, J., Westerberg, I., Belleville, A., Sevrez, D., Sikorska, A.E., Petersen-Øverleir, A., Reitan, T., Freer, J., Renard, B., Mansanarez, V., Mason, R. A comparison of methods for streamflow uncertainty estimation, Water Resources Research, 54(10), 7149-7176, 2018.](https://doi.org/10.1029/2018WR022708)
+[Kiang, J.E., Gazoorian, C., McMillan, H., Coxon, G., Le Coz, J., Westerberg, I., Belleville, A., Sevrez, D., Sikorska, A.E., Petersen-Øverleir, A., Reitan, T., Freer, J., Renard, B., Mansanarez, V., Mason, R., A comparison of methods for streamflow uncertainty estimation, Water Resources Research, 54(10), 7149-7176, 2018.](https://doi.org/10.1029/2018WR022708)
+
+[Kona S.V., Das Bhowmik R., Understanding the interannual variation in the river stage-discharge relationship and its impact on flood discharge estimation, Journal of Hydrologic Engineering, 30(4), 04025020, 2025.](https://doi.org/10.1061/JHYEFF.HEENG-6484)
 
 [Lang, M., Darienzo, M., Le Coz, J., Renard, B., Evaluation des incertitudes et de l'homogénéité de longues séries de débits de crue sur le Rhin à Bâle (1225-2017) et Maxau (1815-2018), LHB-Hydroscience, 108:1, 2053313, 2022.](https://doi.org/10.1080/27678490.2022.2053313)
 
