@@ -484,15 +484,15 @@ For the remaining parameter, default prior values are already specified:
 <img src="circular_channel.svg" width="100%">
 <p style="text-align: center;color: gray;"> Circular channel: longitudinal view (left) and cross-section at the staff gauge (right). </p>
 
-The Manning-Strickler formula is applied to a circular channel: the case of uniform open-channel flow, not pipe flow, in a canal, pipe or duct of circular cross-section, with radius $r$. 
+The Manning-Strickler formula is applied to a circular channel: the case of uniform open-channel flow, not pipe flow, in a canal, pipe or duct of circular cross-section, with radius $r$ and bottom elevation $b$. 
 
 Despite the very simple geometry, the equation for this type of control is relatively complicated:
 
-$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} $$
+$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H-b}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H-b}{r}))}{2{\rm acos}(1-\frac{H-b}{r})} \right]^{c+1} $$
 
 if $b < H\leq b+r$.
 
-$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} $$
+$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H-b}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H-b}{r}-1))}{2\pi - 2{\rm acos}(\frac{H-b}{r}-1)} \right]^{c+1} $$
 
 if $b+r < H < b+2r$.
 
@@ -500,7 +500,7 @@ The formula is not really simplified, even considering that ${\rm sin}(2{\rm aco
 
 For each control modelled as a circular channel, the default parameters to which prior values must be assigned are:
 
-* $b$ = the average channel bottom elevation
+* $b$ = the channel bottom elevation
 * $K_S$ = the flow resistance coefficient (Strickler coefficient in m$^{1/3}.$s$^{-1}$)
 * $r$ = the radius (in $m$) of the circular channel (or pipe)
 * $S$ = the longitudinal slope of the channel around the gauge (unitless, enter 0.01 for 1%, etc.)

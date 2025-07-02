@@ -477,21 +477,21 @@ Pour le paramètre restant, des a priori par défaut sont déjà spécifiés :
 <img src="circular_channel.svg" width="100%">
 <p style="text-align: center;color: gray;"> Chenal circulaire : vue en long (à gauche) et section en travers à l'échelle (à droite). </p>
 
-La formule de Manning-Strickler est appliquée à un chenal circulaire : cas d'un écoulement uniforme à surface libre, et non en charge, dans une buse, conduite ou canalisation de section circulaire, de rayon $r$. 
+La formule de Manning-Strickler est appliquée à un chenal circulaire : cas d'un écoulement uniforme à surface libre, et non en charge, dans une buse, conduite ou canalisation de section circulaire, de rayon $r$ et de cote du fond $b$. 
 
 Malgré une géométrie très simple, l'équation de ce type de contrôle est relativement compliquée :
 
-$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} $$
+$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H-b}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H-b}{r}))}{2{\rm acos}(1-\frac{H-b}{r})} \right]^{c+1} $$
 si $b < H\leq b+r$.
 
-$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} $$
+$$Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H-b}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H-b}{r}-1))}{2\pi - 2{\rm acos}(\frac{H-b}{r}-1)} \right]^{c+1} $$
 si $b+r < H < b+2r$.
 
 La formule ne se simplifie pas vraiment, même en considérant que ${\rm sin}(2{\rm acos}(x))=2x\sqrt{1-x^2}$. 
 
 Pour chaque contrôle modélisé par un chenal circulaire, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :
 
-* $b$ = la cote moyenne du fond du chenal
+* $b$ = la cote du fond du chenal
 * $K_S$ = le coefficient de résistance à l’écoulement (coefficient de Strickler en m$^{1/3}.$s$^{-1}$)
 * $r$ = le rayon (en $m$) du chenal (ou de la conduite) circulaire
 * $S$ = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
