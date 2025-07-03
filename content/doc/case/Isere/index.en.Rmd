@@ -2,7 +2,7 @@
 title: "Isère River at Grenoble-Campus"
 subtitle: "single channel control"
 slug: "isere-grenoble"
-weight: 2
+weight: 30
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"
 output:

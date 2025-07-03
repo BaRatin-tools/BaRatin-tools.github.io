@@ -2,7 +2,7 @@
 title: "Mercier River at D610 road"
 subtitle: "combination of artificial weirs"
 slug: "mercier-d610"
-weight: 3
+weight: 40
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"
 output:

@@ -1,7 +1,7 @@
 ---
 title: "Rating curve"
 slug: "rating-curve"
-weight: 6
+weight: 60
 layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---

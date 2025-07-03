@@ -2,7 +2,7 @@
 title: "Using RBaM"
 subtitle: "BaRatin in R!"
 slug: "rbam"
-weight: 100
+weight: 500
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"    
 output:

@@ -2,7 +2,7 @@
 title: "L'Aisne à Verrières"
 subtitle: "l'exemple fourni avec BaRatinAGE"
 slug: "Aisne-Verrieres"
-weight: 1
+weight: 10
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"    
 output:

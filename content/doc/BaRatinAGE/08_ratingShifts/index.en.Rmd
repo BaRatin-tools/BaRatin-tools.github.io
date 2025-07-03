@@ -1,0 +1,11 @@
+---
+title: "Rating Shifts"
+slug: "rating-shifts"
+weight: 85
+layout: "doc_BaRatinAGEPage"
+inTOC: "BaRatinAGE"
+---
+
+# Title 1
+
+it happens.

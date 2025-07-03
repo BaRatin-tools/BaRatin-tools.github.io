@@ -2,7 +2,7 @@
 title: "Aisne River at Verrières"
 subtitle: "the example provided with BaRatinAGE"
 slug: "Aisne-Verrieres"
-weight: 1
+weight: 10
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"    
 output:

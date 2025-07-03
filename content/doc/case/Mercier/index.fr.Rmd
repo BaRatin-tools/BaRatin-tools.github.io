@@ -2,7 +2,7 @@
 title: "Le Mercier au pont de la D610"
 subtitle: "une combinaison de déversoirs artificiels"
 slug: "mercier-d610"
-weight: 3
+weight: 40
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"
 output:

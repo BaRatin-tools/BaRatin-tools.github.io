@@ -1,7 +1,7 @@
 ---
 title: "Hydraulic controls"
 slug: "hydraulic-controls"
-weight: 2
+weight: 20
 layout: "doc_topicsPage"
 inTOC: "topics"
 output:

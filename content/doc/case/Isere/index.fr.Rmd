@@ -2,7 +2,7 @@
 title: "L'Isère à Grenoble-Campus"
 subtitle: "un unique contôle chenal"
 slug: "isere-grenoble"
-weight: 2
+weight: 30
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"
 output:

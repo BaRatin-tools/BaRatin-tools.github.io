@@ -2,7 +2,7 @@
 title: "Ardèche River at Meyras"
 subtitle: "a standard 3-control configuration"
 slug: "ardeche-meyras"
-weight: 1
+weight: 20
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"    
 output:

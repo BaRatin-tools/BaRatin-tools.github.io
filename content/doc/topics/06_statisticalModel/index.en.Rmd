@@ -1,7 +1,7 @@
 ---
 title: "Statistical model"
 slug: "statistical-model"
-weight: 6
+weight: 60
 layout: "doc_topicsPage"
 inTOC: "topics"
 output:

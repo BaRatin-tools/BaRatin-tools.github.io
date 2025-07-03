@@ -1,7 +1,7 @@
 ---
 title: "Modèle statistique"
 slug: "modele-stat"
-weight: 6
+weight: 60
 layout: "doc_topicsPage"
 inTOC: "topics"
 output:

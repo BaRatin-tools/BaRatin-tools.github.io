@@ -1,7 +1,7 @@
 ---
 title: "Hydraulic configuration"
 slug: "hydraulic-configuration"
-weight: 3
+weight: 30
 layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---

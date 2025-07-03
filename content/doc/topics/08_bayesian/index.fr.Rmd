@@ -1,7 +1,7 @@
 ---
 title: "Le B.A.-BA de l’inférence Bayesienne"
 slug: "bayesien"
-weight: 8
+weight: 80
 layout: "doc_topicsPage"
 inTOC: "topics"
 output:

@@ -1,7 +1,7 @@
 ---
 title: "Tour d'horizon"
 slug: "tour-d-horizon"
-weight: 1
+weight: 10
 layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---

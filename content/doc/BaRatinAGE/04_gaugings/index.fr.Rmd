@@ -1,7 +1,7 @@
 ---
 title: "Jaugeages"
 slug: "jaugeages"
-weight: 4
+weight: 40
 layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---

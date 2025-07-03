@@ -1,7 +1,7 @@
 ---
 title: "Discharge series"
 slug: "discharge-series"
-weight: 8
+weight: 80
 layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---

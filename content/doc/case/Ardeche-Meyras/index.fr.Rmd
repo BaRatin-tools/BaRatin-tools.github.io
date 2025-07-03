@@ -2,7 +2,7 @@
 title: "L'Ardèche à Meyras"
 subtitle: "une configuration classique à 3 contrôles"
 slug: "ardeche-meyras"
-weight: 1
+weight: 20
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"    
 output:

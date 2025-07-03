@@ -1,7 +1,7 @@
 ---
 title: "Bayesian basics"
 slug: "bayesian"
-weight: 8
+weight: 80
 layout: "doc_topicsPage"
 inTOC: "topics"
 output:

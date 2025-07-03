@@ -1,7 +1,7 @@
 ---
 title: "MCMC Sampling"
 slug: "mcmc"
-weight: 9
+weight: 90
 layout: "doc_topicsPage"
 inTOC: "topics"
 output:
