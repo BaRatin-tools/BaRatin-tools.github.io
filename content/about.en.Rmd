@@ -137,6 +137,19 @@ Developer of R package `RatingShiftHappens`.
 <a href="https://github.com/Felipemendezrios/">
 <img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/Felipemendezrios/ </a>
 
+### Martin Morlot
+
+Development of a model for vegetation adjustment to Discharge-Height rating curves relationship
+
+Co-developer of `BaRatinAGE v3`.
+
+<a href="https://orcid.org/0000-0001-8763-082X">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0001-8763-082X </a>
+
+<a href="https://github.com/MartinMorlot/">
+<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/MartinMorlot/ </a>
+
+
 ### Emeline Perret
 
 Detection of hydraulic hysteresis

@@ -137,6 +137,18 @@ Développeur principal du package R `RatingShiftHappens`.
 <a href="https://github.com/Felipemendezrios/">
 <img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/Felipemendezrios/ </a>
 
+### Martin Morlot
+
+Développement d'une approche simple pour la végétation aquatique pour l'inclure dans les courbes de tarages
+
+Co-développeur des logiciels `BaRatinAGE v3`.
+
+<a href="https://orcid.org/0000-0001-8763-082X">
+<img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_32x32.png" width="32" height="32" /> https://orcid.org/0000-0001-8763-082X </a>
+
+<a href="https://github.com/MartinMorlot/">
+<img alt="GitHub logo" src="/img/github-mark.svg" width="32" height="32" /> https://github.com/MartinMorlot/ </a>
+
 ### Emeline Perret
 
 Détection de l'hystérésis hydraulique
