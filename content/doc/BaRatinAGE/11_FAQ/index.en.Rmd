@@ -1,7 +1,7 @@
 ---
 title: "Frequently asked questions "
 slug: "faq"
-weight: 100
+weight: 110
 layout: "doc_BaRatinAGEPage"
 inTOC: "BaRatinAGE"
 ---
