@@ -39,13 +39,13 @@ $$\tilde{Q}_i = f(\tilde{H}_i;\boldsymbol{\theta}) + \varepsilon_i^f + \varepsil
 
 where $\tilde{H}_i$ and $\tilde{Q}_i$ are the gauged stage/discharge, and $\varepsilon_i^f$ and $\varepsilon_i^Q$ are the Gaussian structural and gauging errors, respectively. This equation therefore states that the gauged discharge is equal to the discharge computed with the rating curve, plus an error due to gauging uncertainty, plus an error due to the imperfect formulation of the rating curve.
 
-Several unknown quantities appear in the equation above: the rating curve parameters $\boldsymbol{\theta}$ and the parameters $\boldsymbol{\gamma}$ describing the standard deviation of strutural errors. Inference for these unknown quantities is based on a Bayesian approach(see [bayesian estimation](/en/doc/topics/bayesian) page). This requires deriving the likelihood function and specifying a prior distribution, as described next.
+Several unknown quantities appear in the equation above: the rating curve parameters $\boldsymbol{\theta}$ and the parameters $\boldsymbol{\gamma}$ describing the standard deviation of structural errors. Inference for these unknown quantities is based on a Bayesian approach(see [bayesian estimation](/en/doc/topics/bayesian) page). This requires deriving the likelihood function and specifying a prior distribution, as described next.
 
 # Bayesian estimation
 
 ## Information brought by the gaugings: likelihood
 
-Acccording to the equation above, the gauged discharge $\tilde{Q}_i$ is a realisation from a Gaussian distribution with mean  $f(\tilde{H}_i;\boldsymbol{\theta})$ (i.e. the rating curve discharge) and standard deviation $\sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}$. Assuming that arors affecting all gauged discharges are mutually independent, the likelihood can be written as:
+According to the equation above, the gauged discharge $\tilde{Q}_i$ is a realisation from a Gaussian distribution with mean  $f(\tilde{H}_i;\boldsymbol{\theta})$ (i.e. the rating curve discharge) and standard deviation $\sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}$. Assuming that errors affecting all gauged discharges are mutually independent, the likelihood can be written as:
 
 $$p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \tilde{\boldsymbol{H}}\right)
 =\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \tilde{Q}_i ; f(\tilde{H}_i;\boldsymbol{\theta}), \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\right)}$$
