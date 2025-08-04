@@ -1,7 +1,7 @@
 ---
 title: "Using RBaM"
 subtitle: "BaRatin in R!"
-slug: "rbam"
+slug: "using-RBaM"
 weight: 500
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"    
@@ -27,11 +27,12 @@ BaM (Bayesian Modeling) is a framework to estimate a model using Bayesian infere
 3. Perform Bayesian-MCMC inference.
 4. Perform predictions.
 
-`RBaM` needs to be installed once then loaded every time it is used.
+`RBaM` needs to be installed once then loaded every time it is used. `BaM` needs to be downloaded at the first usage of the package.
 
 ```{r message=FALSE}
-# devtools::install_github('BaM-tools/RBaM') # First use: install the package from GitHub
+# install.packages("RBaM") First usage: install the package from CRAN
 library(RBaM) # Load package
+# downloadBaM(distFolder) # Download BaM during the first usage of RBaM, be sure to point distFolder to where you would like to install it
 ```
 
 The catalog of distributions that can be used for prior specification can be accessed as shown below. The command also gives the list of available models, but here we'll solely focus on BaRatin.
@@ -42,9 +43,9 @@ getCatalogue()
 
 # Estimation of a BaRatin rating curve
 
-The first thing to do is to define the workspace, i.e. the folder where all result files will be written.
+The first thing to do is to define its workspace, i.e. the folder where all result files will be written.
 
-```{r}
+```{r, message=FALSE}
 workspace=file.path(getwd(),'BaM_workspace')
 ```
 
@@ -120,7 +121,7 @@ We have now defined the model `M` to be calibrated and the calibration dataset `
 The function `BaM` is used to perform parameter estimation. This will run a [MCMC sampler](/en/doc/topics/mcmc) and save the result into the workspace.
 
 ```{r results='markup', eval=reRun}
-BaM(mod=M,data=D) # Estimate the parameters of model M using calibration data D
+BaM(workspace=workspace,mod=M,data=D) # Estimate the parameters of model M using calibration data D
 ```
 
 MCMC samples can now be read. There are 2 MCMC files: 'Results_MCMC.txt' contains raw MCMC simulations and is hence quite big. 'Results_Cooking.txt' contains 'cooked' simulations, i.e. after 'burning' the first part of iterations and 'slicing' what remains (see [here](/en/doc/topics/mcmc) for more detailed explanations), and may be favored in most cases. Note that MCMC properties can be modified if needed (see help files `?BaM`, `?mcmcOptions` and `?mcmcCooking`).
@@ -173,7 +174,8 @@ Uncertainty propagation is then performed by the same function `BaM` as before, 
 
 ```{r, eval=reRun}
 # Re-run BaM, but in prediction mode
-BaM(mod=M,data=D, # model and data
+BaM(workspace=workspace, # the bam workspace
+    mod=M,data=D, # model and data
     pred=totalU, # prediction to be performed
     doCalib=FALSE,doPred=TRUE) # Do not re-calibrate but do predictions
 ```
@@ -200,7 +202,8 @@ paramU=prediction(X=hgrid,spagFiles='hQ_paramU.spag',data.dir=workspace,
 maxpost=prediction(X=hgrid,spagFiles='hQ_maxpost.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # Run BaM in prediction mode
-BaM(mod=M,data=D, # model and data
+BaM(workspace=workspace, # the bam workspace
+    mod=M,data=D, # model and data
     pred=list(paramU,maxpost), # predictions to be performed - when multiple, they have to be put in a list
     doCalib=FALSE,doPred=TRUE) # Do not re-calibrate but do predictions
 ```
@@ -245,7 +248,7 @@ paramU=prediction(X=ht['stage'],spagFiles='Qt_paramU.spag',data.dir=workspace,
 maxpost=prediction(X=ht['stage'],spagFiles='Qt_maxpost.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # Run BaM in prediction mode
-BaM(mod=M,data=D,pred=list(totalU,paramU,maxpost),doCalib=FALSE,doPred=TRUE)
+BaM(workspace=workspace,mod=M,data=D,pred=list(totalU,paramU,maxpost),doCalib=FALSE,doPred=TRUE)
 ```
 
 The resulting discharge series can be plotted with its uncertainties.
@@ -286,7 +289,7 @@ param_hU=prediction(X=list(htrep),spagFiles='Qt_param_hU.spag',data.dir=workspac
 hU=prediction(X=list(htrep),spagFiles='Qt_hU.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # Run BaM in prediction mode
-BaM(mod=M,data=D,pred=list(totalU,param_hU,hU),doCalib=FALSE,doPred=TRUE)
+BaM(workspace=workspace,mod=M,data=D,pred=list(totalU,param_hU,hU),doCalib=FALSE,doPred=TRUE)
 ```
 
 This leads to the following plot. Note that a logarithmic y-axis is used to emphasize low and medium flows where the stage-induced uncertainty is noticeable.

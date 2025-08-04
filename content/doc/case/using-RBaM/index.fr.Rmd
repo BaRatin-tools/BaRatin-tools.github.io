@@ -1,7 +1,7 @@
 ---
 title: "Utilisation de RBaM"
 subtitle: "contrôler BaRatin depuis R !"
-slug: "rbam"
+slug: "Utilisation-de-RBaM"
 weight: 500
 layout: "doc_caseStudiesPage"
 inTOC: "caseStudies"    
@@ -10,7 +10,6 @@ output:
     number_sections: true
     toc: true
 ---
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=TRUE,results='hide',
@@ -22,16 +21,17 @@ reRun=FALSE # When TRUE, BaM is re-run, potentially changing runs and hence figu
 
 BaM (Bayesian Modeling) est un outil permettant d'estimer un modèle par inférence Bayésienne - n'importe quel modèle en principe, mais ici nous nous intéresserons au [modèle de courbe de tarage](/fr/doc/topics/courbe-de-tarage) de BaRatin. Le package [RBaM](https://github.com/BaM-tools/RBaM) est une interface `R` au [code de calcul de BaM](https://github.com/BaM-tools/BaM). Il permet de définir les objets qui constituent les briques de base d'un cas d’étude opéré avec BaM, et fournit les outils d'analyse associés. Son utilisation typique peut être résumée comme suit:
 
-1. Rassembler les données qui serviront à caler le modèle.
-2. Définir le modèle et spécifier des distributions a priori pour ses paramètres.
-3. Effectuer un inférence Bayésienne par simulation MCMC.
-4. Effectuer les prédictions désirées.
+1.  Rassembler les données qui serviront à caler le modèle.
+2.  Définir le modèle et spécifier des distributions a priori pour ses paramètres.
+3.  Effectuer un inférence Bayésienne par simulation MCMC.
+4.  Effectuer les prédictions désirées.
 
-`RBaM` doit être installé une fois lors de la première utilisation, puis chargé avant chaque utilisation. 
+`RBaM` doit être installé une fois lors de la première utilisation, puis chargé avant chaque utilisation. `BaM` doit être télécharger lors de la première utilisation du package.
 
 ```{r message=FALSE}
-# devtools::install_github('BaM-tools/RBaM') # Première utilisation : installer le package depuis GitHub
-library(RBaM) # Charger le package
+# install.packages("RBaM") Première utilisation: installer le package depuis CRAN
+library(RBaM) # Charger le package 
+# downloadBaM(dossierDestination) # Télécharger BaM lors de la première utilisation de RBaM, tout en prenant soin de préciser un dossier de destination
 ```
 
 Le catalogue des distributions a priori disponibles peut être affiché comme indiqué ci-dessous. La commande montre aussi le catalogue des modèles disponibles, mais ici nous aborderons uniquement le modèle BaRatin.
@@ -42,17 +42,18 @@ getCatalogue()
 
 # Estimation d'une courbe de tarage BaRatin
 
-La première chose à faire est de définir un dossier faisant office d'espace de travail (workspace), dans lequel seront sauvegardés tous les resultats.
+La première chose à faire est de définir où Bam est définir un dossier faisant office d'espace de travail (workspace), dans lequel seront sauvegardés tous les resultats.
 
-```{r}
+```{r, message=FALSE}
+# setPathToBaM("~/dev/BaM/makefile") #à executer à la première utilis
 workspace=file.path(getwd(),'BaM_workspace')
 ```
 
-L'exemple utilisé ci-dessous est la courbe de tarage de l'[Ardèche](https://fr.wikipedia.org/wiki/Ard%C3%A8che_(rivi%C3%A8re)) à la station de [Sauze-Saint-Martin](https://www.hydro.eaufrance.fr/stationhydro/V506401001/fiche). 
+L'exemple utilisé ci-dessous est la courbe de tarage de l'[Ardèche](https://fr.wikipedia.org/wiki/Ard%C3%A8che_(rivi%C3%A8re)) à la station de [Sauze-Saint-Martin](https://www.hydro.eaufrance.fr/stationhydro/V506401001/fiche).
 
 ## Définition des données de jaugeage
 
-Les données de jaugeage utilisées pour estimer cette courbe de tarage sont incluses dans le package `RBaM` sous la forme d'un dataframe nommé `SauzeGaugings` qui contient trois colonnes : la hauteur `H`, le débit `Q` et l'incertitude-type du débit `uQ`. **ATTENTION**: l'incertitude est exprimée comme un *écart-type* et non sous la forme d'une *incertitude étendue* comme dans `BaRatinAGE`. Cette dernière est égale à 1.96 fois l’écart-type, et correspond à la demie-longueur d'un intervalle d'incertitude à 95\% sous hypothèse Gaussienne.
+Les données de jaugeage utilisées pour estimer cette courbe de tarage sont incluses dans le package `RBaM` sous la forme d'un dataframe nommé `SauzeGaugings` qui contient trois colonnes : la hauteur `H`, le débit `Q` et l'incertitude-type du débit `uQ`. **ATTENTION**: l'incertitude est exprimée comme un *écart-type* et non sous la forme d'une *incertitude étendue* comme dans `BaRatinAGE`. Cette dernière est égale à 1.96 fois l’écart-type, et correspond à la demie-longueur d'un intervalle d'incertitude à 95% sous hypothèse Gaussienne.
 
 ```{r}
 # Tracé des données du data frame SauzeGaugings
@@ -61,7 +62,7 @@ plot(x=SauzeGaugings$H,y=SauzeGaugings$Q)
 segments(x0=SauzeGaugings$H,y0=SauzeGaugings$Q-1.96*SauzeGaugings$uQ,y1=SauzeGaugings$Q+1.96*SauzeGaugings$uQ)
 ```
 
-Le code ci-dessous est utilisé pour définir les variables d'entrée/sortie du modèle. Le modèle utilisé ici étant une courbe de tarage, la hauteur est la variable d’entrée et le débit la variable de sortie. L'incertitude-type sur le débit jaugé est également indiquée, et en cas d'omission elle sera considérée comme nulle. Notez qu'encore une fois c'est l'incertitude-type qui est attendue par `RBaM`\, et non l'incertitude étendue comme dans `BaRatinAGE`. 
+Le code ci-dessous est utilisé pour définir les variables d'entrée/sortie du modèle. Le modèle utilisé ici étant une courbe de tarage, la hauteur est la variable d’entrée et le débit la variable de sortie. L'incertitude-type sur le débit jaugé est également indiquée, et en cas d'omission elle sera considérée comme nulle. Notez qu'encore une fois c'est l'incertitude-type qui est attendue par `RBaM`, et non l'incertitude étendue comme dans `BaRatinAGE`.
 
 ```{r}
 # Définition du jeu de données de calage:  
@@ -73,11 +74,15 @@ D=dataset(X=SauzeGaugings['H'],Y=SauzeGaugings['Q'],Yu=SauzeGaugings['uQ'],data.
 
 ## Définition du modèle de courbe de tarage
 
-La station de Sauze-Saint-Martin est caractérisée par une configuration hydraulique assez simple à 2 contrôles: un radier naturel fait office de contrôle section pour les basses eaux, puis un chenal rectangulaire large contrôle les hautes eaux, comme illustré ci-dessous. 
+La station de Sauze-Saint-Martin est caractérisée par une configuration hydraulique assez simple à 2 contrôles: un radier naturel fait office de contrôle section pour les basses eaux, puis un chenal rectangulaire large contrôle les hautes eaux, comme illustré ci-dessous.
 
-<br>
-<img src="Sauze.jpg" width="70%">
-<p style="text-align: center;color: gray;"> Configuration hydraulique pour l'Ardèche à Sauze-Saint-Martin (l'eau s’écoule du haut vers le bas de l'image, l’échelle est indiquée en jaune). (a) Propriétés du chenal contrôlant les hautes eaux ; (b) zoom sur la section de contrôle des basses eaux.</p>
+<br> <img src="Sauze.jpg" width="70%"/>
+
+<p style="text-align: center;color: gray;">
+
+Configuration hydraulique pour l'Ardèche à Sauze-Saint-Martin (l'eau s’écoule du haut vers le bas de l'image, l’échelle est indiquée en jaune). (a) Propriétés du chenal contrôlant les hautes eaux ; (b) zoom sur la section de contrôle des basses eaux.
+
+</p>
 
 Le code ci-dessous spécifie les distributions a priori des 6 paramètres de la courbe de tarage: hauteur d'activation, coefficient et exposant de chacun des deux contrôles. Pour plus de détails sur la spécification des a priori à cette station, vous pouvez consulter l'article de [Le Coz et al., 2014](https://hal.science/hal-00934237).
 
@@ -119,7 +124,7 @@ Nous avons donc à présent défini le modèle à estimer `M` ainsi que les donn
 La fonction `BaM` est utilisée pour effectuer l'estimation des paramètres. Ceci lancera un [simulateur MCMC](/fr/doc/topics/mcmc) et sauvegardera les résultats dans le workspace.
 
 ```{r results='markup', eval=reRun}
-BaM(mod=M,data=D) # Estimer les paramètres du modèle M en utilisant les données de calage D
+BaM(workspace=workspace,mod=M,data=D) # Estimer les paramètres du modèle M en utilisant les données de calage D
 ```
 
 Les échantillons MCMC peuvent à présent être lus. Il y a 2 fichiers MCMC: 'Results_MCMC.txt' contient les simulations brutes et est donc assez volumineux. 'Results_Cooking.txt' contient les simulations post-traitées avec un 'brûlage' de la première partie des itérations et un 'affinage' des simulations restantes (voir [cette page](/fr/doc/topics/mcmc) pour des explications plus détaillées). Ce dernier fichier devrait être favorisé dans la plupart des cas. Les propriétés des simulations MCMC peuvent évidemment être modifiées si nécessaire : pour cela voir les pages d'aide `?BaM`, `?mcmcOptions` et `?mcmcCooking`.
@@ -146,7 +151,7 @@ plots=densityPlot(MCMC)
 patchwork::wrap_plots(plots,ncol=3)
 ```
 
-La troisième fonction crée un  "[violin plot](https://en.wikipedia.org/wiki/Violin_plot)" qui est utile pour comparer les distributions a posteriori de plusieurs paramètres dans un unique graphique (ici par exemple l'exposant de chaque contrôle).
+La troisième fonction crée un "[violin plot](https://en.wikipedia.org/wiki/Violin_plot)" qui est utile pour comparer les distributions a posteriori de plusieurs paramètres dans un unique graphique (ici par exemple l'exposant de chaque contrôle).
 
 ```{r fig.height=3, fig.width=6}
 # Violin plot, utile pour des paramètres 'comparables'
@@ -155,7 +160,7 @@ violinPlot(MCMC[c('c1','c2')])
 
 ## Estimer la courbe de tarage et ses incertitudes
 
-La courbe de tarage et ses incertitudes peuvent être estimées à partir des simulations MCMC. Pour y parvenir, il faut d'abord définir la grille de valeurs de hauteur sur laquelle la courbe de tarage est calculée. Il faut ensuite définir un objet de type `prediction` qui spécifie quels types d'incertitude doivent être propagés. Par exemple, l'incertitude totale réclame de propager à la fois l'incertitude paramétrique (induite par la connaissance imparfaite des paramètres de la courbe) et l'[incertitude structurelle](/fr/doc/baratinage/erreurs-structurelles/) (induite par le caractère approximatif de toute courbe de tarage).  
+La courbe de tarage et ses incertitudes peuvent être estimées à partir des simulations MCMC. Pour y parvenir, il faut d'abord définir la grille de valeurs de hauteur sur laquelle la courbe de tarage est calculée. Il faut ensuite définir un objet de type `prediction` qui spécifie quels types d'incertitude doivent être propagés. Par exemple, l'incertitude totale réclame de propager à la fois l'incertitude paramétrique (induite par la connaissance imparfaite des paramètres de la courbe) et l'[incertitude structurelle](/fr/doc/baratinage/erreurs-structurelles/) (induite par le caractère approximatif de toute courbe de tarage).
 
 ```{r}
 # Définition de la grille de hauteurs sur laquelle la courbe de tarage est calculée
@@ -172,7 +177,8 @@ La propagation d'incertitude est ensuite effectuée en utilisant la même foncti
 
 ```{r, eval=reRun}
 # Re-lancer BaM, mais en mode "prédiction"
-BaM(mod=M,data=D, # modèle et données
+BaM(workspace=workspace, # espace de travail
+    mod=M,data=D, # modèle et données
     pred=totalU, # prédiction à effectuer
     doCalib=FALSE,doPred=TRUE) # Ne pas re-caler mais faire les prédictions
 ```
@@ -199,7 +205,8 @@ paramU=prediction(X=hgrid,spagFiles='hQ_paramU.spag',data.dir=workspace,
 maxpost=prediction(X=hgrid,spagFiles='hQ_maxpost.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # Lancer BaM en mode prédiction
-BaM(mod=M,data=D, # model and data
+BaM(workspace=workspace, # espace de travail
+    mod=M,data=D, # model and data
     pred=list(paramU,maxpost), # prédictions à effectuer - quand il y en a plusieurs, il faut les rassembler dans une liste
     doCalib=FALSE,doPred=TRUE) # Ne pas re-caler mais faire les prédictions
 ```
@@ -244,7 +251,7 @@ paramU=prediction(X=ht['stage'],spagFiles='Qt_paramU.spag',data.dir=workspace,
 maxpost=prediction(X=ht['stage'],spagFiles='Qt_maxpost.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # lancer BaM en mode prédiction
-BaM(mod=M,data=D,pred=list(totalU,paramU,maxpost),doCalib=FALSE,doPred=TRUE)
+BaM(workspace=workspace,mod=M,data=D,pred=list(totalU,paramU,maxpost),doCalib=FALSE,doPred=TRUE)
 ```
 
 L'hydrogramme résultant de ce calcul peut être tracé avec ses incertitudes.
@@ -261,7 +268,7 @@ Q=read.table(file.path(workspace,'Qt_maxpost.spag'))
 matplot(ht$time,Q,col='black',type='l',lty=1,add=TRUE)
 ```
 
-Notez qu'aucune incertitude n'a été considérée sur le limnigramme. Il est possible de rajouter cette composante en utilisant, plutôt qu'un unique limnigramme, des "spaghetti de limnigramme", c'est à dire de nombreux limnigrammes répliqués qui quantifient l'incertitude. L'exemple ci-dessous montre comment générer ces spaghetti dans le cas d'erreurs Gaussiennes indépendantes d’écart-type constant $\sigma_h=5 \mathrm{cm}$. Des modèles d’erreurs plus avancés pourraient être  utilisés (comme décrit dans [cette page](/fr/doc/topics/limni/)) mais pour le moment `RBaM` ne propose pas de fonctionnalité dédiée - la génération des spaghetti de limnigramme reste donc de votre responsabilité.
+Notez qu'aucune incertitude n'a été considérée sur le limnigramme. Il est possible de rajouter cette composante en utilisant, plutôt qu'un unique limnigramme, des "spaghetti de limnigramme", c'est à dire de nombreux limnigrammes répliqués qui quantifient l'incertitude. L'exemple ci-dessous montre comment générer ces spaghetti dans le cas d'erreurs Gaussiennes indépendantes d’écart-type constant $\sigma_h=5 \mathrm{cm}$. Des modèles d’erreurs plus avancés pourraient être utilisés (comme décrit dans [cette page](/fr/doc/topics/limni/)) mais pour le moment `RBaM` ne propose pas de fonctionnalité dédiée - la génération des spaghetti de limnigramme reste donc de votre responsabilité.
 
 ```{r fig.height=4, fig.width=9}
 set.seed(82487)
@@ -285,10 +292,10 @@ param_hU=prediction(X=list(htrep),spagFiles='Qt_param_hU.spag',data.dir=workspac
 hU=prediction(X=list(htrep),spagFiles='Qt_hU.spag',data.dir=workspace,
                   doParametric=FALSE,doStructural=FALSE)
 # lancer BaM en mode prédiction
-BaM(mod=M,data=D,pred=list(totalU,param_hU,hU),doCalib=FALSE,doPred=TRUE)
+BaM(workspace=workspace,mod=M,data=D,pred=list(totalU,param_hU,hU),doCalib=FALSE,doPred=TRUE)
 ```
 
-Ceci conduit à la figure ci-dessous. Notez qu'un axe des ordonnées logarithmique a été utilise pour mettre en avant les moyennes et basses eaux pour lesquelles l'incertitude due aux hauteurs est notable. 
+Ceci conduit à la figure ci-dessous. Notez qu'un axe des ordonnées logarithmique a été utilise pour mettre en avant les moyennes et basses eaux pour lesquelles l'incertitude due aux hauteurs est notable.
 
 ```{r fig.height=6, fig.width=9}
 # Incertitude totale en rouge
@@ -309,12 +316,12 @@ matplot(ht$time,Q,col='black',type='l',lty=1,add=TRUE)
 
 Le package `RBaM` permet de piloter BaRatin directement depuis `R` sans passer par l'interface graphique `BaRatinAGE`. Bien que cela demande un apprentissage plus long, le jeu peut en valoir la chandelle, surtout pour les utilisateurs qui sont déjà familiers avec le language `R`:
 
-* `RBaM` offre plus de flexibilité dans l'application de BaRatin
-* `RBaM` facilite l’intégration d'analyses BaRatin dans d'autres processus d'analyse existants
-* `RBaM` permet d’accéder à tous les outils de l'écosystème `R`, en particulier pour préparer les données, visualiser les résultats, effectuer des analyses statistiques, etc.
-* Enfin, et c'est important, `RBaM` ne se restreint pas au modèle de courbe de tarage de BaRatin. En particulier, des modèles de courbes de tarage non-univoques (par exemple dans le cas de remous variable, d'influence de la végétation, de détarages multiples etc.) sont disponibles dans `RBaM` mais pas encore dans `BaRatinAGE`. De manière générale, tout nouveau modèle sera disponible dans `RBaM` bien avant qu'il le soit dans `BaRatinAGE`.
+-   `RBaM` offre plus de flexibilité dans l'application de BaRatin
+-   `RBaM` facilite l’intégration d'analyses BaRatin dans d'autres processus d'analyse existants
+-   `RBaM` permet d’accéder à tous les outils de l'écosystème `R`, en particulier pour préparer les données, visualiser les résultats, effectuer des analyses statistiques, etc.
+-   Enfin, et c'est important, `RBaM` ne se restreint pas au modèle de courbe de tarage de BaRatin. En particulier, des modèles de courbes de tarage non-univoques (par exemple dans le cas de remous variable, d'influence de la végétation, de détarages multiples etc.) sont disponibles dans `RBaM` mais pas encore dans `BaRatinAGE`. De manière générale, tout nouveau modèle sera disponible dans `RBaM` bien avant qu'il le soit dans `BaRatinAGE`.
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 # Cleanup
-# unlink(workspace, recursive=TRUE)
+#unlink(workspace, recursive=TRUE)
 ```
