@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1747923050" rel="stylesheet">
+<link href="/css/custom.css?1754407368" rel="stylesheet">
 
 
 
@@ -337,14 +337,14 @@
 <p>Assuming that the remnant error and the gauging error are independent, the total error can be written as follows by combining the preceding equations:</p>
 <p><span class="math display">\[\tilde{Q}_i = f(\tilde{H}_i;\boldsymbol{\theta}) + \varepsilon_i^f + \varepsilon_i^Q, \text{ with } \varepsilon_i^f + \varepsilon_i^Q \sim \mathcal{N} \left( 0, \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})} \right) \]</span></p>
 <p>where <span class="math inline">\(\tilde{H}_i\)</span> and <span class="math inline">\(\tilde{Q}_i\)</span> are the gauged stage/discharge, and <span class="math inline">\(\varepsilon_i^f\)</span> and <span class="math inline">\(\varepsilon_i^Q\)</span> are the Gaussian structural and gauging errors, respectively. This equation therefore states that the gauged discharge is equal to the discharge computed with the rating curve, plus an error due to gauging uncertainty, plus an error due to the imperfect formulation of the rating curve.</p>
-<p>Several unknown quantities appear in the equation above: the rating curve parameters <span class="math inline">\(\boldsymbol{\theta}\)</span> and the parameters <span class="math inline">\(\boldsymbol{\gamma}\)</span> describing the standard deviation of strutural errors. Inference for these unknown quantities is based on a Bayesian approach(see <a href="/en/doc/topics/bayesian">bayesian estimation</a> page). This requires deriving the likelihood function and specifying a prior distribution, as described next.</p>
+<p>Several unknown quantities appear in the equation above: the rating curve parameters <span class="math inline">\(\boldsymbol{\theta}\)</span> and the parameters <span class="math inline">\(\boldsymbol{\gamma}\)</span> describing the standard deviation of structural errors. Inference for these unknown quantities is based on a Bayesian approach(see <a href="/en/doc/topics/bayesian">bayesian estimation</a> page). This requires deriving the likelihood function and specifying a prior distribution, as described next.</p>
 </div>
 </div>
 <div id="bayesian-estimation" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Bayesian estimation</h1>
 <div id="information-brought-by-the-gaugings-likelihood" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Information brought by the gaugings: likelihood</h2>
-<p>Acccording to the equation above, the gauged discharge <span class="math inline">\(\tilde{Q}_i\)</span> is a realisation from a Gaussian distribution with mean <span class="math inline">\(f(\tilde{H}_i;\boldsymbol{\theta})\)</span> (i.e. the rating curve discharge) and standard deviation <span class="math inline">\(\sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\)</span>. Assuming that arors affecting all gauged discharges are mutually independent, the likelihood can be written as:</p>
+<p>According to the equation above, the gauged discharge <span class="math inline">\(\tilde{Q}_i\)</span> is a realisation from a Gaussian distribution with mean <span class="math inline">\(f(\tilde{H}_i;\boldsymbol{\theta})\)</span> (i.e. the rating curve discharge) and standard deviation <span class="math inline">\(\sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\)</span>. Assuming that errors affecting all gauged discharges are mutually independent, the likelihood can be written as:</p>
 <p><span class="math display">\[p \left( \tilde{\boldsymbol{Q}} | \boldsymbol{\theta}, \boldsymbol{\gamma}, \tilde{\boldsymbol{H}}\right)
 =\prod_{i=1}^{N}{d_{\mathcal{N}}\left( \tilde{Q}_i ; f(\tilde{H}_i;\boldsymbol{\theta}), \sqrt{u_{Q_i}^2 + \sigma_f^2(\tilde{H}_i;\boldsymbol{\gamma})}\right)}\]</span></p>
 <p>where <span class="math inline">\(\tilde{\boldsymbol{Q}} = (\tilde{Q}_1,\ldots,\tilde{Q}_N)\)</span> denote the <span class="math inline">\(N\)</span> gauged discharge and <span class="math inline">\(d_{\mathcal{N}}(z;m,s)\)</span> denote the probability density function (pdf) of a Gaussian distribution with mean <span class="math inline">\(m\)</span> and standard deviation <span class="math inline">\(s\)</span>, evaluated at some value <span class="math inline">\(z\)</span>.</p>
@@ -458,6 +458,8 @@
 		    <a href="https://baratin-tools.github.io/en/doc/topics/mcmc/">MCMC Sampling</a> 
 		
 
+		
+		    &nbsp; | &nbsp;
 		
     
          

@@ -45,7 +45,6 @@ getCatalogue()
 La première chose à faire est de définir où Bam est définir un dossier faisant office d'espace de travail (workspace), dans lequel seront sauvegardés tous les resultats.
 
 ```{r, message=FALSE}
-# setPathToBaM("~/dev/BaM/makefile") #à executer à la première utilis
 workspace=file.path(getwd(),'BaM_workspace')
 ```
 

@@ -44,9 +44,9 @@
     </item>
     <item>
       <title>Utilisation de RBaM</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/rbam/</link>
+      <link>https://baratin-tools.github.io/fr/doc/case/utilisation-de-rbam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/rbam/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/case/utilisation-de-rbam/</guid>
       <description>1 Introduction 2 Estimation d’une courbe de tarage BaRatin 2.1 Définition des données de jaugeage 2.2 Définition du modèle de courbe de tarage 2.3 Lancer BaM et explorer les simulations MCMC 2.</description>
     </item>
   </channel>

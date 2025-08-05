@@ -64,6 +64,13 @@
       <description>Création d’un hydrogramme Un hydrogramme est une série temporelle de débit.&#xA;Par défaut, un hydrogramme nommé Qt (1) pré-existe et peut être utilisé. Vous pouvez créer un nouvel hydrogramme de plusieurs façons :</description>
     </item>
     <item>
+      <title>Détarages</title>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/detarages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/detarages/</guid>
+      <description>Détarages Dans la pratique, les courbes de tarages ne sont pas statiques en raison des changements dans les configurations hydrauliques et les paramètres de la rivière.</description>
+    </item>
+    <item>
       <title>Pour aller plus loin</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

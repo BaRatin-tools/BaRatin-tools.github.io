@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Détarages</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1754407368" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="fr">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="Détarages">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/fr/doc/baratinage/detarages/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Détarages">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/fr/">
+                    
+                      <img src="/img/logoWithText.png" alt="Détarages logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Détarages logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Détarages - aller à l&#39;accueil</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Basculer la Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">Accueil</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/fr/doc/baratinage">BaRatinAGE v3</a></li>
+                            
+                            <li><a href="/fr/doc/topics">Fiches Thématiques</a></li>
+                            
+                            <li><a href="/fr/doc/case">Cas d&#39;étude</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/ressources">Ressources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/blog/">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/a-propos">A propos</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">🇬🇧 en</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Détarages</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+
+<div id="détarages" class="section level1">
+<h1>Détarages</h1>
+<p>Dans la pratique, les courbes de tarages ne sont pas statiques en raison des changements dans les configurations hydrauliques et les paramètres de la rivière. Ceux-ci peuvent être dus à d’innombrables causes telles que les dépôts de sédiments, les embâcles, les inondations, etc.</p>
+<p>Il est important de prendre en compte les détarages et de les détecter, ce qui peut être fait en évaluant les données de jaugeage au fil des années et en déterminant les moments où un détarage a lieu.</p>
+<p>À partir de BaRatinAGE 3.2, la possibilité de détecter les détarages est implémentée. Pour utiliser cette fonctionnalité, un détecteur de détarages doit être créé dans votre projet :
+- via le menu <em>Composants…Créer un détecteur de détarages</em> ;
+- en cliquant avec le bouton droit de la souris sur les outils, puis sur le nœud <img src="rating_shift_happens.svg" style="display:inline-block"> <em>Détecteur de détarages</em> dans l’arborescence de l’explorateur de composants ;
+- en cliquant sur le bouton <img src="rating_shift_happens_add.svg" style="display:inline-block"> dans la barre d’outils.</p>
+<p>Vous pourrez renommer ce nouveau détecteur de détarages et saisir une description. Un détecteur de détarages existant peut être dupliqué ou supprimé.</p>
+<p>Les propriétés de la série de décharges sont ensuite spécifiées en sélectionnant :</p>
+<ul>
+<li>Une configuration hydraulique ;</li>
+<li>Un jeu de jaugeages.</li>
+</ul>
+<p>Vous êtes maintenant prêt à commencer le calcul des détarahges en cliquant sur le bouton <em>Launch the rating shift detection</em>. À la fin du calcul, le panneau est mis à jour comme suit :</p>
+<p><img src="Shift_time.fr.png" /></p>
+<p>Les lignes verticales indiquent le moment où un déterages se produit.</p>
+<p>Sous la section « Jeu de jaugeages », vous trouverez différentes périodes de Jaugeages, dont la durée est indiquée à gauche. Les différents jeu de jaugeages peuvent être exportées vers le menu « Jeu de jeaugeages » à l’aide du bouton « Constuire tous les composants jeu de jaugeages ». Cela permet de calculer, potentiellement, les courbes de tarages pour chaque période à l’aide de leur jeu de jaugeages respectif.</p>
+<p><img src="Gauging_sets.fr.png" /></p>
+<div id="remarques-sur-la-méthodologie" class="section level2">
+<h2>Remarques sur la méthodologie :</h2>
+<p>La méthodologie utilisée pour calculer les détarages a été initialement mise en œuvre dans le package R <a href="https://github.com/Felipemendezrios/RatingShiftHappens"><em>RatingShiftHappens</em></a> développé par Felipe MENDEZ et Benjamin RENARD (INRAE, RiverLy et RECOVER). L’objectif de ce package est de créer un outil permettant de détecter, de visualiser et d’estimer les changements de notation. Il est dérivé de <a href="https://github.com/MatteoDarienzo/BayDERS">BayDERS</a> développé par <a href="https://theses.hal.science/tel-03211343">M. Darienzo et al.(2021)</a>.</p>
+</div>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/">Tour d&#39;horizon</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/">Fenêtre principale</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/">Configuration hydraulique</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/">Jaugeages</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/hydrogramme/">Hydrogramme</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/baratinage/detarages/">Détarages</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/">Pour aller plus loin</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/faq/">Foire aux questions</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                        
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/">Tour d&#39;horizon</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/fenetre-principale/">Fenêtre principale</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/">Configuration hydraulique</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/jaugeages/">Jaugeages</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/erreurs-structurelles/">Modèle d&#39;erreur structurelle</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/courbe-de-tarage/">Courbe de tarage</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/limnigramme/">Limnigramme</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/hydrogramme/">Hydrogramme</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/baratinage/detarages/">Détarages</a> </strong></br>
+		</div>
+		</br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/">Pour aller plus loin</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/baratinage/faq/">Foire aux questions</a> </br> </br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img style="max-width:90%;max-height:40px;" src="/img/Logo-INRAE_Transparent.png" alt="INRAE"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img style="max-width:90%;max-height:76px;" src="/img/Logo-GDH.png" alt="GDH"> </a>
+      </p>   
+    </div>
+      
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

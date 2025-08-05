@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1747923050" rel="stylesheet">
+<link href="/css/custom.css?1754407368" rel="stylesheet">
 
 
 
@@ -689,7 +689,7 @@ Déversoir triangulaire avec encoche triangulaire : vue en long (à gauche) et v
 <li><span class="math inline">\(\kappa_1\)</span> = la hauteur d’activation (en <span class="math inline">\(m\)</span>) égale à la cote de la pointe de l’encoche triangulaire</li>
 <li><span class="math inline">\(\nu_1\)</span> = l’angle d’ouverture du triangle de l’encoche (en degrés)</li>
 <li><span class="math inline">\(\kappa_2\)</span> = la hauteur d’activation (en <span class="math inline">\(m\)</span>) égale à la cote de la pointe du déversoir triangulaire, là où les banquettes rejoignent les bords de l’encoche</li>
-<li><span class="math inline">\(\nu_1\)</span> = l’angle d’ouverture du triangle des banquettes (en degrés)</li>
+<li><span class="math inline">\(\nu_2\)</span> = l’angle d’ouverture du triangle des banquettes (en degrés)</li>
 </ul>
 <p>Pour les autres paramètres, des a priori par défaut sont déjà spécifiés :</p>
 <ul>
@@ -754,16 +754,16 @@ Chenal trapézoïdal : vue en long (à gauche) et section en travers à l’éch
 <p style="text-align: center;color: gray;">
 Chenal circulaire : vue en long (à gauche) et section en travers à l’échelle (à droite).
 </p>
-<p>La formule de Manning-Strickler est appliquée à un chenal circulaire : cas d’un écoulement uniforme à surface libre, et non en charge, dans une buse, conduite ou canalisation de section circulaire, de rayon <span class="math inline">\(r\)</span>.</p>
+<p>La formule de Manning-Strickler est appliquée à un chenal circulaire : cas d’un écoulement uniforme à surface libre, et non en charge, dans une buse, conduite ou canalisation de section circulaire, de rayon <span class="math inline">\(r\)</span> et de cote du fond <span class="math inline">\(b\)</span>.</p>
 <p>Malgré une géométrie très simple, l’équation de ce type de contrôle est relativement compliquée :</p>
-<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} \]</span>
+<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H-b}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H-b}{r}))}{2{\rm acos}(1-\frac{H-b}{r})} \right]^{c+1} \]</span>
 si <span class="math inline">\(b &lt; H\leq b+r\)</span>.</p>
-<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} \]</span>
+<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H-b}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H-b}{r}-1))}{2\pi - 2{\rm acos}(\frac{H-b}{r}-1)} \right]^{c+1} \]</span>
 si <span class="math inline">\(b+r &lt; H &lt; b+2r\)</span>.</p>
 <p>La formule ne se simplifie pas vraiment, même en considérant que <span class="math inline">\({\rm sin}(2{\rm acos}(x))=2x\sqrt{1-x^2}\)</span>.</p>
 <p>Pour chaque contrôle modélisé par un chenal circulaire, les paramètres non renseignés par défaut auxquels il faut affecter des a priori sont :</p>
 <ul>
-<li><p><span class="math inline">\(b\)</span> = la cote moyenne du fond du chenal</p></li>
+<li><p><span class="math inline">\(b\)</span> = la cote du fond du chenal</p></li>
 <li><p><span class="math inline">\(K_S\)</span> = le coefficient de résistance à l’écoulement (coefficient de Strickler en m<span class="math inline">\(^{1/3}.\)</span>s<span class="math inline">\(^{-1}\)</span>)</p></li>
 <li><p><span class="math inline">\(r\)</span> = le rayon (en <span class="math inline">\(m\)</span>) du chenal (ou de la conduite) circulaire</p></li>
 <li><p><span class="math inline">\(S\)</span> = la pente longitudinale du chenal autour de la station (sans unité, il faut saisir
@@ -963,6 +963,8 @@ Profil en travers du chenal de contrôle et principe de sa modélisation par un 
 		    <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Algorithmes MCMC</a> 
 		
 
+		
+		    &nbsp; | &nbsp;
 		
     
          

@@ -16,13 +16,6 @@
       <description>1 Introduction 2 Hydraulic analysis 3 Specification of priors 4 Gaugings and posterior rating curves 5 Stage series and discharge series 1 Introduction This case is provided as an example in the distribution of the BaRatinAGE software (folder /example, file Aisne_Verrière_Example_v1.</description>
     </item>
     <item>
-      <title>Ardèche River at Meyras</title>
-      <link>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</guid>
-      <description>1 Introduction 2 Hydraulic analysis 3 Prior specification 4 Gaugings and posterior rating curve Download the BaRatinAGE file for this case study: Ardeche-Meyras.bam&#xA;1 Introduction The Ardèche River at Meyras station is of interest because it illustrates a frequently-encountered 3-control configuration (riffle, main channel, floodway).</description>
-    </item>
-    <item>
       <title>Hydraulic analysis</title>
       <link>https://baratin-tools.github.io/en/doc/topics/hydraulic-analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -37,18 +30,18 @@
       <description>General information BaRatinAGE v3 is a software package for estimating rating curves and their uncertainties, and for propagating these uncertainties to discharge series. The BaRatin (BAyesian RATINg curve) method is based on a hydraulic analysis of the hydrometric station and Bayesian estimation of the rating curve.</description>
     </item>
     <item>
+      <title>Ardèche River at Meyras</title>
+      <link>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/ardeche-meyras/</guid>
+      <description>1 Introduction 2 Hydraulic analysis 3 Prior specification 4 Gaugings and posterior rating curve Download the BaRatinAGE file for this case study: Ardeche-Meyras.bam&#xA;1 Introduction The Ardèche River at Meyras station is of interest because it illustrates a frequently-encountered 3-control configuration (riffle, main channel, floodway).</description>
+    </item>
+    <item>
       <title>Hydraulic controls</title>
       <link>https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/hydraulic-controls/</guid>
       <description>1 Controls 1.1 The basic equation 1.2 Section controls and channel controls 2 Equations of the standard controls (BaRatin configuration) 2.1 Rectangular weir 2.2 Parabolic weir 2.</description>
-    </item>
-    <item>
-      <title>Isère River at Grenoble-Campus</title>
-      <link>https://baratin-tools.github.io/en/doc/case/isere-grenoble/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/doc/case/isere-grenoble/</guid>
-      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve Download the BaRatinAGE file for this case study: Isere-Grenoble.bam&#xA;1 Hydraulic analysis This station can be modeled with a single control as a wide rectangular channel (see Figure below).</description>
     </item>
     <item>
       <title>Main frame</title>
@@ -65,11 +58,11 @@
       <description>Overview The hydraulic configuration is the definition of all the controls that govern the physical stage-discharge relation, and their succession/combination as the water level increases.</description>
     </item>
     <item>
-      <title>Mercier River at D610 road</title>
-      <link>https://baratin-tools.github.io/en/doc/case/mercier-d610/</link>
+      <title>Isère River at Grenoble-Campus</title>
+      <link>https://baratin-tools.github.io/en/doc/case/isere-grenoble/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/doc/case/mercier-d610/</guid>
-      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve Download the BaRatinAGE file for this case study: Mercier-D610.bam&#xA;1 Hydraulic analysis This station is part of the Yzeron observatory monitoring several peri-urban catchments around the city of Lyon since 1997.</description>
+      <guid>https://baratin-tools.github.io/en/doc/case/isere-grenoble/</guid>
+      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve Download the BaRatinAGE file for this case study: Isere-Grenoble.bam&#xA;1 Hydraulic analysis This station can be modeled with a single control as a wide rectangular channel (see Figure below).</description>
     </item>
     <item>
       <title>The uncertainties of gaugings</title>
@@ -86,6 +79,13 @@
       <description>Creating a set of gaugings A gauging is a pair of simultaneous point measurements of stage (water level) and discharge, together with their uncertainties.</description>
     </item>
     <item>
+      <title>Mercier River at D610 road</title>
+      <link>https://baratin-tools.github.io/en/doc/case/mercier-d610/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/mercier-d610/</guid>
+      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve Download the BaRatinAGE file for this case study: Mercier-D610.bam&#xA;1 Hydraulic analysis This station is part of the Yzeron observatory monitoring several peri-urban catchments around the city of Lyon since 1997.</description>
+    </item>
+    <item>
       <title>Rating curve equation</title>
       <link>https://baratin-tools.github.io/en/doc/topics/rating-curve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -93,18 +93,18 @@
       <description>The equation of the rating curve used in BaRatinAGE is entirely determined by the matrix of controls, an example of which is recalled in the Figure below.</description>
     </item>
     <item>
-      <title>The Charbonnières stream</title>
-      <link>https://baratin-tools.github.io/en/doc/case/charbonnieres/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/doc/case/charbonnieres/</guid>
-      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve 4 Alternative approach: “Q=f(h)” hydraulic configuration Download the BaRatinAGE file for this case study: Charbonnieres-CharbonnieresLesBains.</description>
-    </item>
-    <item>
       <title>Structural error model</title>
       <link>https://baratin-tools.github.io/en/doc/baratinage/structural-errors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/baratinage/structural-errors/</guid>
       <description>Overview Consider the following situation, which is obviously idealised and unrealistic: at a hydrometric station, we have perfect gaugings (i.e. zero uncertainty), and many of them.</description>
+    </item>
+    <item>
+      <title>The Charbonnières stream</title>
+      <link>https://baratin-tools.github.io/en/doc/case/charbonnieres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/case/charbonnieres/</guid>
+      <description>1 Hydraulic analysis 2 Prior specification 3 Gaugings and posterior rating curve 4 Alternative approach: “Q=f(h)” hydraulic configuration Download the BaRatinAGE file for this case study: Charbonnieres-CharbonnieresLesBains.</description>
     </item>
     <item>
       <title>Uncertainties in stage time series</title>
@@ -156,18 +156,25 @@
       <description>Creating a discharge series A discharge series (or discharge hydrograph) is a time series of discharge (or streamflow) values.&#xA;By default, a discharge series named Qt (1) pre-exists and can be used.</description>
     </item>
     <item>
-      <title>Going further</title>
-      <link>https://baratin-tools.github.io/en/doc/baratinage/going-further/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/doc/baratinage/going-further/</guid>
-      <description>Adding or correcting a language To translate BaRatinAGE into a new language, or to correct an existing language, follow these steps.&#xA;To correct an existing language, download the translation file you wish to modify here.</description>
-    </item>
-    <item>
       <title>MCMC Sampling</title>
       <link>https://baratin-tools.github.io/en/doc/topics/mcmc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/topics/mcmc/</guid>
       <description>1 Introduction 2 General principle of MCMC samplers 3 The Metropolis algorithm 4 Convergence and representativeness of MCMC simulations 5 Building efficient MCMC samplers 6 MCMC algorithm implemented in BaRatinAGE 1 Introduction The tutorials proposed in the Bayesian Basics page have one peculiarity: there is only one unknown parameter \(\theta\).</description>
+    </item>
+    <item>
+      <title>Rating Shifts</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/rating-shifts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/rating-shifts/</guid>
+      <description>Rating Curves Shifts In the pratical world, rating curves are not static due to changes in the hydraulic conbtrols and parameters of the river. These can be due to countless number of causes such as sediment deposits, débris-jams, floods, etc.</description>
+    </item>
+    <item>
+      <title>Going further</title>
+      <link>https://baratin-tools.github.io/en/doc/baratinage/going-further/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/en/doc/baratinage/going-further/</guid>
+      <description>Adding or correcting a language To translate BaRatinAGE into a new language, or to correct an existing language, follow these steps.&#xA;To correct an existing language, download the translation file you wish to modify here.</description>
     </item>
     <item>
       <title>Frequently asked questions </title>
@@ -178,9 +185,9 @@
     </item>
     <item>
       <title>Using RBaM</title>
-      <link>https://baratin-tools.github.io/en/doc/case/rbam/</link>
+      <link>https://baratin-tools.github.io/en/doc/case/using-rbam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/en/doc/case/rbam/</guid>
+      <guid>https://baratin-tools.github.io/en/doc/case/using-rbam/</guid>
       <description>1 Introduction 2 Estimation of a BaRatin rating curve 2.1 Defining streamgauging data 2.2 Defining the rating curve model 2.3 Running BaM and exploring MCMC samples 2.</description>
     </item>
     <item>

@@ -23,13 +23,6 @@
       <description>1 La relation hauteur-débit : les contrôles hydrauliques 1.1 Deux grandes familles de contrôles hydrauliques 1.1.1 Contrôle par une section 1.1.2 Contrôle par un chenal 1.</description>
     </item>
     <item>
-      <title>L&#39;Ardèche à Meyras</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/</guid>
-      <description>1 Introduction 2 Analyse hydraulique 3 Spécification des a priori 4 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude : Ardeche-Meyras.</description>
-    </item>
-    <item>
       <title>Tour d&#39;horizon</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/tour-d-horizon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -51,11 +44,11 @@
       <description>Organisation générale La fenêtre représentée ci-dessous apparaît au démarrage de BaRatinAGE v3 :&#xA;Outre les classiques barres de menus et d’outils (dont le fonctionnement sera détaillé ultérieurement), cette fenêtre comporte plusieurs zones principales :</description>
     </item>
     <item>
-      <title>L&#39;Isère à Grenoble-Campus</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/isere-grenoble/</link>
+      <title>L&#39;Ardèche à Meyras</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/isere-grenoble/</guid>
-      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Isere-Grenoble.</description>
+      <guid>https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/</guid>
+      <description>1 Introduction 2 Analyse hydraulique 3 Spécification des a priori 4 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude : Ardeche-Meyras.</description>
     </item>
     <item>
       <title>Configuration hydraulique</title>
@@ -72,11 +65,11 @@
       <description>1 Les jaugeages incertains comme données de calage 2 Incertitude des débits jaugés 1 Les jaugeages incertains comme données de calage Pour l’analyse d’une courbe de tarage avec BaRatin, il faut fournir un ensemble de jaugeages représentatifs de la relation hauteur-débit pour la période considérée.</description>
     </item>
     <item>
-      <title>Le Mercier au pont de la D610</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/mercier-d610/</link>
+      <title>L&#39;Isère à Grenoble-Campus</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/isere-grenoble/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/mercier-d610/</guid>
-      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude : Mercier-D610.</description>
+      <guid>https://baratin-tools.github.io/fr/doc/case/isere-grenoble/</guid>
+      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude: Isere-Grenoble.</description>
     </item>
     <item>
       <title>Equation de la courbe de tarage</title>
@@ -93,11 +86,11 @@
       <description>Création d’un jeu de jaugeages Un jaugeage est un couple de mesures ponctuelles de hauteur d’eau et débit simultanés, assortis de leurs incertitudes.&#xA;Par défaut, un jeu de jaugeages vierge nommé JJ (1) pré-existe et peut être utilisé.</description>
     </item>
     <item>
-      <title>Le ruisseau de Charbonnières</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/charbonnieres/</link>
+      <title>Le Mercier au pont de la D610</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/mercier-d610/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/charbonnieres/</guid>
-      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori 4 Approche alternative : configuration hydraulique “Q=f(h)” Téléchargez le fichier BaRatinAGE de ce cas d’étude : Charbonnieres-CharbonnieresLesBains.</description>
+      <guid>https://baratin-tools.github.io/fr/doc/case/mercier-d610/</guid>
+      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude : Mercier-D610.</description>
     </item>
     <item>
       <title>Incertitudes dans les limnigrammes</title>
@@ -105,6 +98,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/fr/doc/topics/limni/</guid>
       <description>1 Sources d’erreur 1.1 Erreurs instrumentales ou « bruit de mesure » 1.2 Erreurs dues aux fluctuations de la surface libre 1.3 Erreurs dues au calage du capteur 1.</description>
+    </item>
+    <item>
+      <title>Le ruisseau de Charbonnières</title>
+      <link>https://baratin-tools.github.io/fr/doc/case/charbonnieres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/case/charbonnieres/</guid>
+      <description>1 Analyse hydraulique 2 Spécification des a priori 3 Jaugeages et courbe de tarage a posteriori 4 Approche alternative : configuration hydraulique “Q=f(h)” Téléchargez le fichier BaRatinAGE de ce cas d’étude : Charbonnieres-CharbonnieresLesBains.</description>
     </item>
     <item>
       <title>Modèle d&#39;erreur structurelle</title>
@@ -163,6 +163,13 @@
       <description>1 Introduction 2 Principe général des méthodes MCMC 3 L’algorithme de Metropolis 4 Convergence et représentativité des simulations MCMC 5 Construire des simulateurs MCMC efficaces 6 L’algorithme MCMC implémenté dans BaRatin 1 Introduction Les TPs proposés dans la page B.</description>
     </item>
     <item>
+      <title>Détarages</title>
+      <link>https://baratin-tools.github.io/fr/doc/baratinage/detarages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/baratinage/detarages/</guid>
+      <description>Détarages Dans la pratique, les courbes de tarages ne sont pas statiques en raison des changements dans les configurations hydrauliques et les paramètres de la rivière.</description>
+    </item>
+    <item>
       <title>Pour aller plus loin</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/aller-plus-loin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -178,9 +185,9 @@
     </item>
     <item>
       <title>Utilisation de RBaM</title>
-      <link>https://baratin-tools.github.io/fr/doc/case/rbam/</link>
+      <link>https://baratin-tools.github.io/fr/doc/case/utilisation-de-rbam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://baratin-tools.github.io/fr/doc/case/rbam/</guid>
+      <guid>https://baratin-tools.github.io/fr/doc/case/utilisation-de-rbam/</guid>
       <description>1 Introduction 2 Estimation d’une courbe de tarage BaRatin 2.1 Définition des données de jaugeage 2.2 Définition du modèle de courbe de tarage 2.3 Lancer BaM et explorer les simulations MCMC 2.</description>
     </item>
     <item>

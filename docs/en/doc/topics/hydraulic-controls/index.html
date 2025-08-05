@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1747923050" rel="stylesheet">
+<link href="/css/custom.css?1754407368" rel="stylesheet">
 
 
 
@@ -692,7 +692,7 @@ Triangular weir with triangular notch: longitudinal view (left) and front view o
 <li><span class="math inline">\(\kappa_1\)</span> = the activation stage (in <span class="math inline">\(m\)</span>) equal to the height of the tip of the triangular notch</li>
 <li><span class="math inline">\(\nu_1\)</span> = the opening angle of the triangular notch (in degrees)</li>
 <li><span class="math inline">\(\kappa_2\)</span> = the activation stage (in <span class="math inline">\(m\)</span>) equal to the elevation of the tip of the triangular weir, where the sill meets the edges of the notch.</li>
-<li><span class="math inline">\(\nu_1\)</span> = the opening angle of the triangle of the sill (in degrees)</li>
+<li><span class="math inline">\(\nu_2\)</span> = the opening angle of the triangle of the sill (in degrees)</li>
 </ul>
 <p>For the other parameters, default prior values are already specified:</p>
 <ul>
@@ -756,16 +756,16 @@ Trapezoidal channel: longitudinal view (left) and cross-section at the staff gau
 <p style="text-align: center;color: gray;">
 Circular channel: longitudinal view (left) and cross-section at the staff gauge (right).
 </p>
-<p>The Manning-Strickler formula is applied to a circular channel: the case of uniform open-channel flow, not pipe flow, in a canal, pipe or duct of circular cross-section, with radius <span class="math inline">\(r\)</span>.</p>
+<p>The Manning-Strickler formula is applied to a circular channel: the case of uniform open-channel flow, not pipe flow, in a canal, pipe or duct of circular cross-section, with radius <span class="math inline">\(r\)</span> and bottom elevation <span class="math inline">\(b\)</span>.</p>
 <p>Despite the very simple geometry, the equation for this type of control is relatively complicated:</p>
-<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H}{r}))}{2{\rm acos}(1-\frac{H}{r})} \right]^{c+1} \]</span></p>
+<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} {\rm acos}(1-\frac{H-b}{r}) \left[ 1- \frac{{\rm sin}(2{\rm acos}(1-\frac{H-b}{r}))}{2{\rm acos}(1-\frac{H-b}{r})} \right]^{c+1} \]</span></p>
 <p>if <span class="math inline">\(b &lt; H\leq b+r\)</span>.</p>
-<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H}{r}-1))}{2\pi - 2{\rm acos}(\frac{H}{r}-1)} \right]^{c+1} \]</span></p>
+<p><span class="math display">\[Q(H) = K_S \sqrt{S} \frac{r^{8/3}}{2^{2/3}} \left[ \pi - {\rm acos}(\frac{H-b}{r}-1) \right] \left[ 1+ \frac{{\rm sin}(2{\rm acos}(\frac{H-b}{r}-1))}{2\pi - 2{\rm acos}(\frac{H-b}{r}-1)} \right]^{c+1} \]</span></p>
 <p>if <span class="math inline">\(b+r &lt; H &lt; b+2r\)</span>.</p>
 <p>The formula is not really simplified, even considering that <span class="math inline">\({\rm sin}(2{\rm acos}(x))=2x\sqrt{1-x^2}\)</span>.</p>
 <p>For each control modelled as a circular channel, the default parameters to which prior values must be assigned are:</p>
 <ul>
-<li><p><span class="math inline">\(b\)</span> = the average channel bottom elevation</p></li>
+<li><p><span class="math inline">\(b\)</span> = the channel bottom elevation</p></li>
 <li><p><span class="math inline">\(K_S\)</span> = the flow resistance coefficient (Strickler coefficient in m<span class="math inline">\(^{1/3}.\)</span>s<span class="math inline">\(^{-1}\)</span>)</p></li>
 <li><p><span class="math inline">\(r\)</span> = the radius (in <span class="math inline">\(m\)</span>) of the circular channel (or pipe)</p></li>
 <li><p><span class="math inline">\(S\)</span> = the longitudinal slope of the channel around the gauge (unitless, enter 0.01 for 1%, etc.)</p></li>
@@ -970,6 +970,8 @@ examples are provided in the <a href="/en/doc/case">case study</a> section.</p>
 		    <a href="https://baratin-tools.github.io/en/doc/topics/mcmc/">MCMC Sampling</a> 
 		
 
+		
+		    &nbsp; | &nbsp;
 		
     
          
