@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1754407368" rel="stylesheet">
+<link href="/css/custom.css?1754472067" rel="stylesheet">
 
 
 
@@ -303,8 +303,8 @@
 <li><a href="#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
 <li><a href="#estimation-dune-courbe-de-tarage-baratin" id="toc-estimation-dune-courbe-de-tarage-baratin"><span class="toc-section-number">2</span> Estimation d’une courbe de tarage BaRatin</a>
 <ul>
-<li><a href="#d%C3%A9finition-des-donn%C3%A9es-de-jaugeage" id="toc-définition-des-données-de-jaugeage"><span class="toc-section-number">2.1</span> Définition des données de jaugeage</a></li>
-<li><a href="#d%C3%A9finition-du-mod%C3%A8le-de-courbe-de-tarage" id="toc-définition-du-modèle-de-courbe-de-tarage"><span class="toc-section-number">2.2</span> Définition du modèle de courbe de tarage</a></li>
+<li><a href="#définition-des-données-de-jaugeage" id="toc-définition-des-données-de-jaugeage"><span class="toc-section-number">2.1</span> Définition des données de jaugeage</a></li>
+<li><a href="#définition-du-modèle-de-courbe-de-tarage" id="toc-définition-du-modèle-de-courbe-de-tarage"><span class="toc-section-number">2.2</span> Définition du modèle de courbe de tarage</a></li>
 <li><a href="#lancer-bam-et-explorer-les-simulations-mcmc" id="toc-lancer-bam-et-explorer-les-simulations-mcmc"><span class="toc-section-number">2.3</span> Lancer BaM et explorer les simulations MCMC</a></li>
 <li><a href="#estimer-la-courbe-de-tarage-et-ses-incertitudes" id="toc-estimer-la-courbe-de-tarage-et-ses-incertitudes"><span class="toc-section-number">2.4</span> Estimer la courbe de tarage et ses incertitudes</a></li>
 <li><a href="#production-dun-hydrogramme-incertain" id="toc-production-dun-hydrogramme-incertain"><span class="toc-section-number">2.5</span> Production d’un hydrogramme incertain</a></li>
@@ -322,10 +322,10 @@
 <li>Effectuer un inférence Bayésienne par simulation MCMC.</li>
 <li>Effectuer les prédictions désirées.</li>
 </ol>
-<p><code>RBaM</code> doit être installé une fois lors de la première utilisation, puis chargé avant chaque utilisation. <code>BaM</code> doit être télécharger lors de la première utilisation du package.</p>
-<pre class="r"><code># install.packages(&quot;RBaM&quot;) Première utilisation: installer le package depuis CRAN
+<p><code>RBaM</code> doit être installé une fois lors de la première utilisation, puis chargé avant chaque utilisation. L’executable <code>BaM</code> doit également être téléchargé lors de la première utilisation du package.</p>
+<pre class="r"><code># install.packages(&quot;RBaM&quot;) Première utilisation seulement: installer le package RBaM
 library(RBaM) # Charger le package 
-# downloadBaM(dossierDestination) # Télécharger BaM lors de la première utilisation de RBaM, tout en prenant soin de préciser un dossier de destination</code></pre>
+# downloadBaM(destination_folder_on_your_computer) # Première utilisation seulement: télécharger l&#39;executable BaM</code></pre>
 <p>Le catalogue des distributions a priori disponibles peut être affiché comme indiqué ci-dessous. La commande montre aussi le catalogue des modèles disponibles, mais ici nous aborderons uniquement le modèle BaRatin.</p>
 <pre class="r"><code>getCatalogue()</code></pre>
 <pre><code>## $distributions

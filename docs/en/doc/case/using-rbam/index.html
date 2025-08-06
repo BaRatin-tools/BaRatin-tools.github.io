@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1754407368" rel="stylesheet">
+<link href="/css/custom.css?1754472067" rel="stylesheet">
 
 
 
@@ -322,10 +322,10 @@
 <li>Perform Bayesian-MCMC inference.</li>
 <li>Perform predictions.</li>
 </ol>
-<p><code>RBaM</code> needs to be installed once then loaded every time it is used. <code>BaM</code> needs to be downloaded at the first usage of the package.</p>
-<pre class="r"><code># install.packages(&quot;RBaM&quot;) First usage: install the package from CRAN
+<p><code>RBaM</code> needs to be installed once then loaded every time it is used. <code>BaM</code> executable also needs to be downloaded at the first usage of the package.</p>
+<pre class="r"><code># install.packages(&quot;RBaM&quot;) First use only: install the package RBaM from CRAN
 library(RBaM) # Load package
-# downloadBaM(distFolder) # Download BaM during the first usage of RBaM, be sure to point distFolder to where you would like to install it</code></pre>
+# downloadBaM(destination_folder_on_your_computer) # First use only: download BaM executable</code></pre>
 <p>The catalog of distributions that can be used for prior specification can be accessed as shown below. The command also gives the list of available models, but here we’ll solely focus on BaRatin.</p>
 <pre class="r"><code>getCatalogue()</code></pre>
 <pre><code>## $distributions
@@ -357,7 +357,7 @@ library(RBaM) # Load package
 <h1><span class="header-section-number">2</span> Estimation of a BaRatin rating curve</h1>
 <p>The first thing to do is to define its workspace, i.e. the folder where all result files will be written.</p>
 <pre class="r"><code>workspace=file.path(getwd(),&#39;BaM_workspace&#39;)</code></pre>
-<p>The example used below is based on the rating curve for the <a href="https://en.wikipedia.org/wiki/Ard%C3%A8che_(river)">Ardèche river</a> at the <a href="https://www.hydro.eaufrance.fr/stationhydro/V506401001/fiche">Sauze-Saint-Martin</a> hydrometric station.</p>
+<p>The example used below is based on the rating curve for the <a href="https://en.wikipedia.org/wiki/Ardèche_(river)">Ardèche river</a> at the <a href="https://www.hydro.eaufrance.fr/stationhydro/V506401001/fiche">Sauze-Saint-Martin</a> hydrometric station.</p>
 <div id="defining-streamgauging-data" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Defining streamgauging data</h2>
 <p>The streamgauging dataset used to calibrate the rating curve is provided with the <code>RBaM</code> package. This data frame is named <code>SauzeGaugings</code> and contains three columns: stage <code>H</code>, discharge <code>Q</code> and discharge standard uncertainty <code>uQ</code>. <strong>WARNING</strong>: note that uncertainty is expressed here as a <em>standard deviation</em>, not as an <em>expanded uncertainty</em> as in <code>BaRatinAGE</code>. The latter is equal to 1.96 times the former, and corresponds to the half-length of a 95% interval under a Gaussian assumption.</p>
