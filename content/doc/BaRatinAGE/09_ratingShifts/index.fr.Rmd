@@ -13,22 +13,23 @@ Dans la pratique, les courbes de tarages ne sont pas statiques en raison des cha
 Il est important de prendre en compte les détarages et de les détecter, ce qui peut être fait en évaluant les données de jaugeage au fil des années et en déterminant les moments où un détarage a lieu.
 
 À partir de BaRatinAGE 3.2, la possibilité de détecter les détarages est implémentée. Pour utiliser cette fonctionnalité, un détecteur de détarages doit être créé dans votre projet :
+
 - via le menu *Composants...Créer un détecteur de détarages* ;
 - en cliquant avec le bouton droit de la souris sur les outils, puis sur le nœud <img src="rating_shift_happens.svg" style="display:inline-block"> *Détecteur de détarages* dans l'arborescence de l'explorateur de composants ;
 - en cliquant sur le bouton <img src="rating_shift_happens_add.svg" style="display:inline-block"> dans la barre d'outils.
 
 Vous pourrez renommer ce nouveau détecteur de détarages et saisir une description. Un détecteur de détarages existant peut être dupliqué ou supprimé.
 
-Les propriétés de la série de décharges sont ensuite spécifiées en sélectionnant :
+Les propriétés de la série de débits sont ensuite spécifiées en sélectionnant :
 
 - Une configuration hydraulique ;
 - Un jeu de jaugeages.
 
-Vous êtes maintenant prêt à commencer le calcul des détarahges en cliquant sur le bouton *Launch the rating shift detection*. À la fin du calcul, le panneau est mis à jour comme suit :
+Vous êtes maintenant prêt à commencer le calcul des détarages en cliquant sur le bouton *Launch the rating shift detection*. À la fin du calcul, le panneau est mis à jour comme suit :
 
 ![](Shift_time.fr.png)
 
-Les lignes verticales indiquent le moment où un déterages se produit. 
+Les lignes verticales indiquent le moment où un déterage se produit. 
 
 Sous la section « Jeu de jaugeages », vous trouverez différentes périodes de Jaugeages, dont la durée est indiquée à gauche. Les différents jeu de jaugeages peuvent être exportées vers le menu « Jeu de jeaugeages » à l'aide du bouton « Constuire tous les composants jeu de jaugeages ». Cela permet de calculer, potentiellement, les courbes de tarages pour chaque période à l'aide de leur jeu de jaugeages respectif. 
 
@@ -38,4 +39,4 @@ Sous la section « Jeu de jaugeages », vous trouverez différentes périodes de
 
 ## Remarques sur la méthodologie :
 
-La méthodologie utilisée pour calculer les détarages a été initialement mise en œuvre dans le package R [*RatingShiftHappens*](https://github.com/Felipemendezrios/RatingShiftHappens) développé par Felipe MENDEZ et Benjamin RENARD (INRAE, RiverLy et RECOVER). L'objectif de ce package est de créer un outil permettant de détecter, de visualiser et d'estimer les changements de notation. Il est dérivé de [BayDERS](https://github.com/MatteoDarienzo/BayDERS) développé par [M. Darienzo et al.(2021)](https://theses.hal.science/tel-03211343).
+La méthodologie utilisée pour calculer les détarages est décrite dans [Darienzo et al. (2021)](https://doi.org/10.1029/2020WR028607) et a été initialement mise en œuvre dans le package R [*RatingShiftHappens*](https://github.com/Felipemendezrios/RatingShiftHappens) développé par Felipe MENDEZ et Benjamin RENARD (INRAE, RiverLy et RECOVER). L'objectif de ce package est de créer un outil permettant de détecter, de visualiser et d'estimer les détarages. Il est dérivé du package [BayDERS](https://github.com/MatteoDarienzo/BayDERS) développé par [M. Darienzo et al.(2021)](https://theses.hal.science/tel-03211343).

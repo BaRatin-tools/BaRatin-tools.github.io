@@ -27,12 +27,12 @@ BaM (Bayesian Modeling) is a framework to estimate a model using Bayesian infere
 3. Perform Bayesian-MCMC inference.
 4. Perform predictions.
 
-`RBaM` needs to be installed once then loaded every time it is used. `BaM` needs to be downloaded at the first usage of the package.
+`RBaM` needs to be installed once then loaded every time it is used. `BaM` executable also needs to be downloaded at the first usage of the package.
 
 ```{r message=FALSE}
-# install.packages("RBaM") First usage: install the package from CRAN
+# install.packages("RBaM") First use only: install the package RBaM from CRAN
 library(RBaM) # Load package
-# downloadBaM(distFolder) # Download BaM during the first usage of RBaM, be sure to point distFolder to where you would like to install it
+# downloadBaM(destination_folder_on_your_computer) # First use only: download BaM executable
 ```
 
 The catalog of distributions that can be used for prior specification can be accessed as shown below. The command also gives the list of available models, but here we'll solely focus on BaRatin.
