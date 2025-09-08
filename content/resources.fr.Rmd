@@ -32,10 +32,6 @@ output:
 
 <br>
 
-Pour la détection de détarages, deux outils ont été développés. Le code [BayDERS](https://github.com/MatteoDarienzo/BayDERS) implémente un ensemble de techniques issues des travaux de thèse de [Matteo Darienzo (2021)](https://theses.hal.science/tel-03211343) pour détecter des détarages en utilisant diverses sources d'information (jaugeages et limnigramme). Le package R [RatingShiftHappens](https://github.com/Felipemendezrios/RatingShiftHappens), en cours de développement, est dérivé de BayDERS et implémente un ensemble plus restreint mais plus simple d'utilisation de techniques.
-
-<br>
-
 <table style="width:100%">
   <tr>
     <td style="width:90px"> <a href="https://github.com/BaM-tools/BaM"> <img alt="BaM logo" src="/img/BaM_logo.svg" height="64" />  </a> </td>

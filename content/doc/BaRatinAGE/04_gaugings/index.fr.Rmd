@@ -26,6 +26,8 @@ Il ne vous reste plus qu'à importer le fichier de jaugeages en cliquant sur le 
 
 Des détails sur la spécification des incertitudes des jaugeages sont donnés dans [ce document](/fr/doc/topics/jaugeages).
 
+Depuis la version 3.2 de BaRatinAGE, il est possible d'importer la date/heure des jaugeages et les incertitudes sur les hauteurs (pour le détecteur de détarage) ainsi que le code de validité des jaugeages.
+
 A titre d'exemple, vous pouvez sélectionner le fichier *gauging_set.csv* dans le répertoire *example*, qui contient 58 jaugeages pour l'Aisne à Verrières, en spécifiant les paramètres d'import suivants :
 
 ![](Gaugings_Verrieres_Import.fr.png)

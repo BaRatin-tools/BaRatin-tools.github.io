@@ -30,9 +30,6 @@ output:
 
 
 
-<br>
-
-Two codes have been developed for detecting rating shifts. [BayDERS](https://github.com/MatteoDarienzo/BayDERS) is a R script that implements a set of tools developed by [Matteo Darienzo (2021)](https://theses.hal.science/tel-03211343) to detect rating shifts using various sources of information, including gaugings and the stage time series. The R package [RatingShiftHappens](https://github.com/Felipemendezrios/RatingShiftHappens) is currently in development and implements only some of the tools available in BayDERS - it has hence less features than BayDERS but it should be simpler to apply.
 
 <br>
 

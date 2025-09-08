@@ -26,6 +26,8 @@ All that remains is to import the gaugings file by clicking on the *Import a set
 
 Details of how to specify the uncertainty of gaugings are given in [this document](/en/doc/topics/gaugings).
 
+Since version 3.2 of BaRatinAGE, it has been possible to import the date/time of gaugings and the uncertainty of their stages (for the rating shift detector) as well as the validity code of gaugings.
+
 As an example, you can select the *gauging_set.csv* file in the *example* directory, which contains 58 gaugings for the Aisne at Verrières, specifying the following import parameters:
 ![](Gaugings_Verrieres_Import.en.png)
 The panel is then updated as follows, after deactivating the penultimate gauging:
