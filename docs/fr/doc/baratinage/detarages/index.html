@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1754472067" rel="stylesheet">
+<link href="/css/custom.css?1757344881" rel="stylesheet">
 
 
 
@@ -301,7 +301,7 @@
 
 <div id="détarages" class="section level1">
 <h1>Détarages</h1>
-<p>Dans la pratique, les courbes de tarages ne sont pas statiques en raison des changements dans les configurations hydrauliques et les paramètres de la rivière. Ceux-ci peuvent être dus à d’innombrables causes telles que les dépôts de sédiments, les embâcles, les inondations, etc.</p>
+<p>Dans la pratique, les courbes de tarages ne sont pas statiques en raison des changements dans les configurations hydrauliques et les paramètres des contrôles. Ces changements peuvent être dus à diverses causes telles que les dépôts de sédiments, les embâcles, les inondations, etc.</p>
 <p>Il est important de prendre en compte les détarages et de les détecter, ce qui peut être fait en évaluant les données de jaugeage au fil des années et en déterminant les moments où un détarage a lieu.</p>
 <p>À partir de BaRatinAGE 3.2, la possibilité de détecter les détarages est implémentée. Pour utiliser cette fonctionnalité, un détecteur de détarages doit être créé dans votre projet :</p>
 <ul>
@@ -310,19 +310,21 @@
 <li>en cliquant sur le bouton <img src="rating_shift_happens_add.svg" style="display:inline-block"> dans la barre d’outils.</li>
 </ul>
 <p>Vous pourrez renommer ce nouveau détecteur de détarages et saisir une description. Un détecteur de détarages existant peut être dupliqué ou supprimé.</p>
-<p>Les propriétés de la série de débits sont ensuite spécifiées en sélectionnant :</p>
+<p>Les propriétés du détecteur de détarages sont ensuite spécifiées en sélectionnant :</p>
 <ul>
 <li>Une configuration hydraulique ;</li>
 <li>Un jeu de jaugeages.</li>
 </ul>
-<p>Vous êtes maintenant prêt à commencer le calcul des détarages en cliquant sur le bouton <em>Launch the rating shift detection</em>. À la fin du calcul, le panneau est mis à jour comme suit :</p>
-<p><img src="Shift_time.fr.png" /></p>
-<p>Les lignes verticales indiquent le moment où un déterage se produit.</p>
-<p>Sous la section « Jeu de jaugeages », vous trouverez différentes périodes de Jaugeages, dont la durée est indiquée à gauche. Les différents jeu de jaugeages peuvent être exportées vers le menu « Jeu de jeaugeages » à l’aide du bouton « Constuire tous les composants jeu de jaugeages ». Cela permet de calculer, potentiellement, les courbes de tarages pour chaque période à l’aide de leur jeu de jaugeages respectif.</p>
-<p><img src="Gauging_sets.fr.png" /></p>
+<p>Vous êtes maintenant prêt(e) à commencer le calcul des détarages en cliquant sur le bouton <em>Lancer la détection des détarages</em>. À la fin du calcul, le panneau est mis à jour comme suit :</p>
+<p><img src="Shift_time.fr.png" />
+Les points représentent la hauteur (ou le débit) des jaugeages au fil du temps. Les lignes verticales indiquent le moment où un détarage est susceptible de s’être produit. Elles sont définies comme les valeurs MaxPost des distributions a posteriori des temps de détarage, distributions qui sont affichées sous forme d’histogrammes.</p>
+<p>Sous la section <em>Jeu de jaugeages</em>, vous trouverez différents jeux de jaugeages, dont la période est indiquée à gauche. Les différents jeux de jaugeages peuvent être exportés vers le composant <em>Jeu de jaugeages</em> à l’aide du bouton <em>Construire tous les composants jeu de jaugeages</em>. Cela permet de calculer, potentiellement, les courbes de tarage pour chaque période à l’aide de leur jeu de jaugeages respectif.</p>
+<p><img src="Gauging_sets.fr.png" />
+L’onglet <em>Résumé des paramètres</em> liste les temps MaxPost des détarages ainsi que les bornes de l’intervalle à 95% de probabilité. L’onglet <em>Résultats intermédiaires</em> présente les résultats obtenus à chaque itération du processus de segmentation des écarts entre le débit des jaugeages et le débit de la courbe de tarage établie pour chaque période.</p>
 <div id="remarques-sur-la-méthodologie" class="section level2">
 <h2>Remarques sur la méthodologie :</h2>
-<p>La méthodologie utilisée pour calculer les détarages est décrite dans <a href="https://doi.org/10.1029/2020WR028607">Darienzo et al. (2021)</a> et a été initialement mise en œuvre dans le package R <a href="https://github.com/Felipemendezrios/RatingShiftHappens"><em>RatingShiftHappens</em></a> développé par Felipe MENDEZ et Benjamin RENARD (INRAE, RiverLy et RECOVER). L’objectif de ce package est de créer un outil permettant de détecter, de visualiser et d’estimer les détarages. Il est dérivé du package <a href="https://github.com/MatteoDarienzo/BayDERS">BayDERS</a> développé par <a href="https://theses.hal.science/tel-03211343">M. Darienzo et al.(2021)</a>.</p>
+<p>La méthodologie utilisée pour calculer les détarages est décrite dans <a href="https://doi.org/10.1029/2020WR028607">Darienzo et al. (2021)</a> et a été initialement mise en œuvre dans le package R <a href="https://github.com/Felipemendezrios/RatingShiftHappens"><em>RatingShiftHappens</em></a> développé par Felipe MENDEZ et Ben RENARD (INRAE, RiverLy et RECOVER). L’objectif de ce package est de créer un outil permettant de détecter, de visualiser et d’estimer les détarages. Il est dérivé du package <a href="https://github.com/MatteoDarienzo/BayDERS">BayDERS</a> développé par <a href="https://theses.hal.science/tel-03211343">Darienzo et al. (2021)</a>.</p>
+<p>Attention, cet outil ne détecte pas nécessairement tous les détarages, et ne positionne pas précisément la date de détarage (il ne fait que séparer des séries de jaugeages, que vous pouvez ensuite utiliser pour calculer des courbes de tarage indépendantes). Il peut aider à identifier des détarages, mais aussi à fusionner des périodes de validité en ré-analyse, si aucun détarage significatif n’apparaît finalement. N’hésitez pas à nous faire des retours sur la pertinence des résultats sur vos stations tests.</p>
 </div>
 </div>
 

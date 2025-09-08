@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1754472067" rel="stylesheet">
+<link href="/css/custom.css?1757344881" rel="stylesheet">
 
 
 
@@ -317,6 +317,8 @@
 <li>The index of the period with constant systematic error;</li>
 <li>The expanded uncertainty related to the constant systematic error.</li>
 </ul>
+<p>The treatment of the stage series uncertainties makes it possible to differentiate between two types of water level measurement errors: non-systematic errors (which vary at each time step) and systematic errors (which remain identical over a set of time steps). Typically, non-systematic errors are associated with sensor noise and waves; systematic errors are associated with the periodic recalibration of the sensor relative to the staff gauge (for a more detailed explanation, see <a href="/en/doc/topics/stage-series">this document</a>). The latter type of error is in fact an unknown bias, which is assumed to be constant between two sensor recalibrations. An index value of 0 means that this error is ignored. Enter the value 1 on all rows corresponding to the first period, then the value 2 for the second period, and so on.</p>
+<p>As an example, you can select the file <em>limnigraph_mv.csv</em> in the <em>example</em> directory, which contains a stage series for the Aisne at Verrières for the months of April and May 2022 (with data gaps coded <em>NA</em>), specifying the following import parameters:</p>
 <p><img src="StageSeries_Import_mv.en.png" /></p>
 <p>The window then updates, displaying the stage series table as well as the graph in the <img src="limnigraph.svg" style="display:inline-block"> <em>Chart</em> tab:</p>
 <p><img src="StageSeries.en.png" /></p>

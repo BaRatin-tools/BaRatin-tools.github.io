@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1754472067" rel="stylesheet">
+<link href="/css/custom.css?1757344881" rel="stylesheet">
 
 
 
@@ -346,7 +346,7 @@ The recommended practice in BaRatinAGE is to break down the real critical cross-
 <p>You can enter uncertain values for the physical parameters in the fields at the top of the window. Some fields are pre-filled because they depend only on the type of control, but you can always change them if you wish. Note that throughout BaRatinAGE, uncertainties are expressed as 95% expanded uncertainties, i.e. as the half-length of a 95% probability interval. For a Gaussian distribution, this corresponds to 1.96 times the standard deviation. Using the example of the Aisne at Verrières, the first control (weir) can be specified as follows:</p>
 <p><img src="SpecPriors_Verrieres.en.png" /></p>
 <p><br>
-Once the fields for all the physical parameters of a control have been filled in, the values and uncertainties of the parameters <span class="math inline">\(\kappa\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are propagated to the fields at the bottom of the window. It is also possible to directly specify the prior distributions of the <span class="math inline">\(\kappa\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> parameters, by clicking on the <em>Switch to k, a, c parameters mode</em> button. In this case, unlike the <em>physical parameters mode</em>, it is possible to specify a distribution type other than Gaussian (from the choices offered in the drop-down menu), and the parameters of each distribution as well as the initial value that must be specified for the MCMC simulations. You can also select “Fixed value”: in this case, the parameter will not be estimated but fixed at the specified value.</p>
+Once the fields for all the physical parameters of a control have been filled in, the values and uncertainties of the parameters <span class="math inline">\(\kappa\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are propagated to the fields at the bottom of the window. It is also possible to directly specify the prior distributions of the <span class="math inline">\(\kappa\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> parameters, by clicking on the <em>Switch to k, a, c parameters mode</em> button. In this case, unlike the <em>physical parameters mode</em>, it is possible to specify a distribution type other than Gaussian (from the choices offered in the drop-down menu), and the parameters of each distribution as well as the initial value that must be specified for the MCMC simulations. By default, this initial value is calculated automatically by taking the median of the distribution. You can also select “Fixed value”: in this case, the parameter will not be estimated but fixed at the specified value.</p>
 <p><img src="SpecPriors_Verrieres_kac.en.png" />
 <br>
 You can proceed similarly for next control until all the controls have been completed. For the low-flow channel of the Aisne at Verrières:</p>
