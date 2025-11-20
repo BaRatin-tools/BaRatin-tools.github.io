@@ -42,7 +42,7 @@ getCatalogue()
 
 # Estimation d'une courbe de tarage BaRatin
 
-La première chose à faire est de définir où Bam est définir un dossier faisant office d'espace de travail (workspace), dans lequel seront sauvegardés tous les resultats.
+La première chose à faire est de définir un dossier faisant office d'espace de travail (workspace), dans lequel seront sauvegardés tous les resultats.
 
 ```{r, message=FALSE}
 workspace=file.path(getwd(),'BaM_workspace')
@@ -77,11 +77,7 @@ La station de Sauze-Saint-Martin est caractérisée par une configuration hydrau
 
 <br> <img src="Sauze.jpg" width="70%"/>
 
-<p style="text-align: center;color: gray;">
-
-Configuration hydraulique pour l'Ardèche à Sauze-Saint-Martin (l'eau s’écoule du haut vers le bas de l'image, l’échelle est indiquée en jaune). (a) Propriétés du chenal contrôlant les hautes eaux ; (b) zoom sur la section de contrôle des basses eaux.
-
-</p>
+<p style="text-align: center;color: gray;"> Configuration hydraulique pour l'Ardèche à Sauze-Saint-Martin (l'eau s’écoule du haut vers le bas de l'image, l’échelle est indiquée en jaune). (a) Propriétés du chenal contrôlant les hautes eaux ; (b) zoom sur la section de contrôle des basses eaux. </p>
 
 Le code ci-dessous spécifie les distributions a priori des 6 paramètres de la courbe de tarage: hauteur d'activation, coefficient et exposant de chacun des deux contrôles. Pour plus de détails sur la spécification des a priori à cette station, vous pouvez consulter l'article de [Le Coz et al., 2014](https://hal.science/hal-00934237).
 

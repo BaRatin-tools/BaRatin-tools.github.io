@@ -43,7 +43,7 @@ getCatalogue()
 
 # Estimation of a BaRatin rating curve
 
-The first thing to do is to define its workspace, i.e. the folder where all result files will be written.
+The first thing to do is to define the workspace, i.e. the folder where all result files will be written.
 
 ```{r, message=FALSE}
 workspace=file.path(getwd(),'BaM_workspace')
