@@ -29,7 +29,9 @@ Figure 1. L’Aisne à Verrières (H6021020) : situation de la station (Hydropor
 
 
 
-# Analyse hydraulique
+# Première analyse BaRatin
+
+## Configuration hydraulique
 
 Il semble y avoir un seuil ou radier peu élevé en aval du pont et de la station. Un lit majeur s’étend en rive droite sur environ 100 m de large, très grossièrement. On considère donc trois contrôles hydrauliques: un déversoir rectangulaire, un chenal rectangulaire représentant le lit mineur, et un autre chenal rectangulaire représentant le lit majeur :
 
@@ -67,7 +69,7 @@ $$
 \end{array}
 $$
 
-# Spécification des a priori
+## Spécification des a priori
 
 Les a priori définis sur ces trois contrôles sont déduits de Géoportail :
 
@@ -83,16 +85,16 @@ Les a priori définis sur ces trois contrôles sont déduits de Géoportail :
   <li> Lit mineur (contrôle de moyennes et hautes eaux) :
  <ul>
   <li>$\kappa = 1~\mathrm{m} \pm 1~\mathrm{m}$ (estimé grossièrement à partir des altitudes Geoportail)
-  <li>$B_w  = 12~\mathrm{m} \pm 5~\mathrm{m}$ (déduit des mesures de distance sur la vue aérienne Géoportail, cf. Fig. 1)
   <li>$K_S = 25~\mathrm{m}^{1/3}\mathrm{/s}  \pm  10~\mathrm{m}^{1/3}\mathrm{/s}$ (valeur typique pour ce type de lit mineur, cf. table de Chow 1959 rappelée dans la documentation de BaRatinAGE)
+  <li>$B_w  = 12~\mathrm{m} \pm 5~\mathrm{m}$ (déduit des mesures de distance sur la vue aérienne Géoportail, cf. Fig. 1)
   <li>$S = 0.001 \pm 0.001$ (estimée par défaut pour une rivière de plaine)
 </ul>
 
   <li> Lit majeur (contrôle de hautes eaux) :
  <ul>
   <li>$\kappa = = 2.5~\mathrm{m} \pm 0.5~\mathrm{m}$ (estimé grossièrement à partir des altitudes Geoportail)
-  <li>$B_w  = 100~\mathrm{m} \pm 50~\mathrm{m}$ (estimé grossièrement à partir de distance sur la vue aérienne Géoportail, cf. Fig. 1)
   <li>$K_S = 20~\mathrm{m}^{1/3}\mathrm{/s}  \pm 10~\mathrm{m}^{1/3}\mathrm{/s}$(valeur typique pour ce type de lit majeur, cf. table de Chow 1959 rappelée dans la documentation de BaRatinAGE)
+  <li>$B_w  = 100~\mathrm{m} \pm 50~\mathrm{m}$ (estimé grossièrement à partir de distance sur la vue aérienne Géoportail, cf. Fig. 1)
   <li>$S = 0.001 \pm 0.001$ (estimée par défaut pour une rivière de plaine)
 </ul> 
 </ul> 
@@ -104,15 +106,103 @@ Avec ces spécifications, on obtient la courbe de tarage a priori représentée 
 <img src="Verrieres_priorRC.fr.svg" width="90%">
 <p style="text-align: center;color: gray;"> Figure 2. Courbe de tarage a priori pour l’Aisne à Verrières</p>
 
-# Jaugeages et courbe de tarage a posteriori
+## Jaugeages et courbe de tarage a posteriori
 
-La courbe de tarage "normale" est estimée en utilisant les jaugeages associés à la courbe de tarage en vigueur sans l’unique jaugeage de la crue de juillet 2021 mesuré le 16/07/2021 (Fig. 2). On ne constate pas de conflit entre les résultats a posteriori et les a priori, avec un calage plus précis des paramètres du lit mineur. La courbe de tarage estimée avec BaRatin est très proche de la courbe de tarage en vigueur.
+La courbe de tarage "normale" est estimée en utilisant les jaugeages associés à la courbe de tarage en vigueur sans l’unique jaugeage de la crue de juillet 2021 mesuré le 16/07/2021 (Fig. 2). Aucun conflit entre les résultats a posteriori et les a priori n'est détecté (cependant, certaines distributions a priori comme celle de $k_1$ sont très larges). La courbe de tarage estimée avec BaRatin est très proche de la courbe de tarage en vigueur.
+
+Cependant, la courbe de tarage calculée ne correspond pas bien aux cinq jaugeages les plus bas, qui présentent des débits nettement supérieurs à ceux de la courbe de tarage MaxPost. Cet écart suggère qu'il manque certainement un contrôle pour les débits très faibles dans la configuration hydraulique supposée. Il y a probablement une encoche dans le déversoir, ou une partie de celui-ci dont la crête est plus basse, qui expliquerait des débits plus élevés que prévu pour les hauteurs d'eau les plus basses. Nos premières hypothèses hydrauliques doivent donc être révisées.
+
+
+<br>
+a) <img src="Verrieres_0a.fr.png" width="90%">
+b) <img src="Verrieres_0b.fr.png" width="90%">
+c) <img src="Verrieres_0b_zoom.fr.png" width="90%">
+<p style="text-align: center;color: gray;"> Figure 2. L’Aisne à Verrières (H6021020), courbes de tarage "normales" : a) distribution a priori et a posteriori des paramètres, b) courbe de tarage BaRatin avec enveloppe d’incertitude paramétrique (rose) et totale (rouge), c) zoom sur les plus bas débits (débit en échelle log).</p>
+
+
+
+
+# Deuxième analyse BaRatin
+
+## Configuration hydraulique
+
+Le seuil identifié dans notre première configuration hydraulique est désormais divisé en deux déversoirs additifs : l'encoche à faible débit et le reste du déversoir.
+Nous considérons donc quatre contrôles hydrauliques : un déversoir rectangulaire représentant l'encoche, un autre déversoir rectangulaire qui s'ajoute au premier, un chenal rectangulaire représentant le lit mineur, qui remplace les déversoirs (lorsqu'ils s'ennoient et que leur chute disparaît), et un autre chenal rectangulaire représentant le lit majeur, qui s'ajoute au premier :
+
+$$
+\begin{array}{|c|c|c|c|}
+\hline
+  \text{Contrôle} & \text{Nature} & \text{Type} \\ 
+\hline
+     1 & \text{Encoche dans le déversoir / radier} & \text{section} \\ 
+\hline
+     2 & \text{Reste du déversoir / radier} & \text{section} \\ 
+\hline
+     3 & \text{Lit mineur} & \text{chenal} \\ 
+\hline
+     4 & \text{Lit majeur} & \text{chenal} \\ 
+\hline
+\end{array}
+$$
+
+La matrice des contrôles correspondant à cette configuration est donnée ci-dessous.
+
+
+$$
+\begin{array}{|c|}
+\hline
+  &\text{contrôle 1} & \text{contrôle 2} & \text{contrôle 3} & \text{contrôle 4}\\
+\hline
+  \text{segment 1} &\color{lime}{1} &\color{darkslategray}{0} &\color{darkslategray}{0} &\color{darkslategray}{0}\\
+\hline
+  \text{segment 2} &\color{lime}{1} &\color{lime}{1} &\color{darkslategray}{0} &\color{darkslategray}{0}\\
+\hline
+  \text{segment 3} & \color{darkslategray}{0} & \color{darkslategray}{0} & \color{lime}{1} &\color{darkslategray}{0}\\
+\hline
+  \text{segment 4}  & \color{darkslategray}{0}& \color{darkslategray}{0} & \color{lime}{1} & \color{lime}{1} \\
+\hline
+\end{array}
+$$
+
+## Spécification des a priori
+
+Les a priori des contrôles section sont mis à jour comme suit, en estimant qu'une partie inconnue du déversoir est plus basse :
+
+<ul>
+  <li> Encoche dans le déversoir (contrôle des très bas débits) :
+
+ <ul>
+  <li>$\kappa = 0~\mathrm{m} \pm 0,5~\mathrm{m}$ (déduit des plus basses eaux du limnigramme)</li>
+  <li>$B_w = 6~\mathrm{m} \pm 2~\mathrm{m}$ (hypothèse considérée comme réaliste)</li>
+</ul> 
+
+  <li> Reste du déversoir (contrôle des bas débits) :
+
+ <ul>
+  <li>$\kappa = 0,5~\mathrm{m} \pm 0,5~\mathrm{m}$ (hypothèse considérée comme réaliste)</li>
+  <li>$B_w = 8~\mathrm{m} \pm 3~\mathrm{m}$ (largeur totale tirée des mesures de distance sur la vue aérienne de Géoportail, voir Fig. 1)</li>
+</ul>
+</ul>
+
+Les a priori pour les contrôles chenal (lit mineur et lit majeur) restent les mêmes que ceux définis précédemment.
+
+
+
+
+
+
+
+
+## Jaugeages et courbes de tarage a posteriori
+
+La courbe de tarage "normale" est estimée en utilisant les jaugeages associés à la courbe de tarage en vigueur sans l’unique jaugeage de la crue de juillet 2021 mesuré le 16/07/2021 (Fig. 2). On ne constate pas de conflit entre les résultats a posteriori et les a priori, avec un calage plus précis des paramètres du lit mineur. La courbe de tarage estimée avec BaRatin est très proche de la courbe de tarage en vigueur. Grâce à l'ajout de l'encoche dans la matrice des contrôles, la courbe de tarage a posteriori correspond désormais assez bien aux jaugeages à très bas débit.
 
 
 <br>
 a) <img src="Verrieres_1a.fr.png" width="90%">
 b) <img src="Verrieres_1b.fr.png" width="90%">
-<p style="text-align: center;color: gray;"> Figure 2. L’Aisne à Verrières (H6021020), courbes de tarage "normales" : a) distribution a priori et a posteriori des paramètres, b) courbe de tarage BaRatin avec enveloppe d’incertitude paramétrique (rose) et totale (rouge).</p>
+c) <img src="Verrieres_1b_zoom.fr.png" width="90%">
+<p style="text-align: center;color: gray;"> Figure 2. L’Aisne à Verrières (H6021020), courbes de tarage "normales" : a) distribution a priori et a posteriori des paramètres, b) courbe de tarage BaRatin avec enveloppe d’incertitude paramétrique (rose) et totale (rouge), c) zoom sur les plus bas débits (débit en échelle log).</p>
 
 
 
@@ -123,10 +213,10 @@ a) <img src="Verrieres_2a.fr.png" width="90%">
 b) <img src="Verrieres_2b.fr.png" width="90%">
 <p style="text-align: center;color: gray;"> Figure 3. L’Aisne à Verrières (H6021020), courbes de tarage "juillet 2021" : a) distribution a priori et a posteriori des paramètres, b) courbe de tarage BaRatin avec enveloppe d’incertitude paramétrique (rose) et totale (rouge).</p>
 
-On ne constate pas de conflit entre les résultats a posteriori et les a priori, mais l’incertitude de la courbe de tarage est plus grande que précédemment, surtout en crue. La courbe de tarage estimée avec BaRatin s’écarte de la courbe de tarage en vigueur, qui tombe sur le bord supérieur de l’enveloppe d’incertitude. Pour le lit majeur, on trouve un coefficient $a_3 = 39 \pm 24$ pour la crue 2021 contre $a_3 = 63.5 \pm 22$ hors crue 2021, soit une réduction d’un facteur 1.6, exactement comme à la station de Mouron plus en aval sur l’Aisne, analysée de façon similaire. Le coefficient de Strickler supposé $K_S = 20~\mathrm{m}^{1/3}\mathrm{/s}$ serait donc réduit à 12.5 $\mathrm{m}^{1/3}\mathrm{/s}$, toutes choses étant égales par ailleurs.
+On ne constate pas de conflit entre les résultats a posteriori et les a priori, mais l’incertitude de la courbe de tarage est plus grande que précédemment, surtout en crue. La courbe de tarage estimée avec BaRatin s’écarte de la courbe de tarage en vigueur, qui tombe sur le bord supérieur de l’enveloppe d’incertitude. 
 
 
-# Limnigrammes et hydrogrammes
+## Limnigrammes et hydrogrammes
 
 A titre d’exemple de manipulation de données variées, deux limnigrammes extraits de l’Hydroportail (hauteurs instantanées au mm) sont proposés en plusieurs versions :
 
