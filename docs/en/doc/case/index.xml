@@ -12,7 +12,7 @@
       <link>https://baratin-tools.github.io/en/doc/case/aisne-verrieres/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://baratin-tools.github.io/en/doc/case/aisne-verrieres/</guid>
-      <description>1 Introduction 2 Hydraulic analysis 3 Specification of priors 4 Gaugings and posterior rating curves 5 Stage series and discharge series 1 Introduction This case is provided as an example in the distribution of the BaRatinAGE software (folder /example, file Aisne_Verrière_Example_v1.</description>
+      <description>1 Introduction 2 First BaRatin analysis 2.1 Hydraulic configuration 2.2 Specification of priors 2.3 Gaugings and first posterior rating curve 3 Second BaRatin analysis 3.</description>
     </item>
     <item>
       <title>Ardèche River at Meyras</title>

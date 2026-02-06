@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1757344881" rel="stylesheet">
+<link href="/css/custom.css?1770402045" rel="stylesheet">
 
 
 
@@ -355,7 +355,7 @@ library(RBaM) # Charger le package
 </div>
 <div id="estimation-dune-courbe-de-tarage-baratin" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Estimation d’une courbe de tarage BaRatin</h1>
-<p>La première chose à faire est de définir où Bam est définir un dossier faisant office d’espace de travail (workspace), dans lequel seront sauvegardés tous les resultats.</p>
+<p>La première chose à faire est de définir un dossier faisant office d’espace de travail (workspace), dans lequel seront sauvegardés tous les resultats.</p>
 <pre class="r"><code>workspace=file.path(getwd(),&#39;BaM_workspace&#39;)</code></pre>
 <p>L’exemple utilisé ci-dessous est la courbe de tarage de l’<a href="https://fr.wikipedia.org/wiki/Ard%C3%A8che_(rivi%C3%A8re)">Ardèche</a> à la station de <a href="https://www.hydro.eaufrance.fr/stationhydro/V506401001/fiche">Sauze-Saint-Martin</a>.</p>
 <div id="définition-des-données-de-jaugeage" class="section level2" number="2.1">
@@ -377,7 +377,7 @@ D=dataset(X=SauzeGaugings[&#39;H&#39;],Y=SauzeGaugings[&#39;Q&#39;],Yu=SauzeGaug
 <p>La station de Sauze-Saint-Martin est caractérisée par une configuration hydraulique assez simple à 2 contrôles: un radier naturel fait office de contrôle section pour les basses eaux, puis un chenal rectangulaire large contrôle les hautes eaux, comme illustré ci-dessous.</p>
 <p><br> <img src="Sauze.jpg" width="70%"/></p>
 <p style="text-align: center;color: gray;">
-<p>Configuration hydraulique pour l’Ardèche à Sauze-Saint-Martin (l’eau s’écoule du haut vers le bas de l’image, l’échelle est indiquée en jaune). (a) Propriétés du chenal contrôlant les hautes eaux ; (b) zoom sur la section de contrôle des basses eaux.</p>
+Configuration hydraulique pour l’Ardèche à Sauze-Saint-Martin (l’eau s’écoule du haut vers le bas de l’image, l’échelle est indiquée en jaune). (a) Propriétés du chenal contrôlant les hautes eaux ; (b) zoom sur la section de contrôle des basses eaux.
 </p>
 <p>Le code ci-dessous spécifie les distributions a priori des 6 paramètres de la courbe de tarage: hauteur d’activation, coefficient et exposant de chacun des deux contrôles. Pour plus de détails sur la spécification des a priori à cette station, vous pouvez consulter l’article de <a href="https://hal.science/hal-00934237">Le Coz et al., 2014</a>.</p>
 <pre class="r"><code># Paramètres du contrôle section en basses eaux: hauteur d&#39;activation k, coefficient a et exposant c
