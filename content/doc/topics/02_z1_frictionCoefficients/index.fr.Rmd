@@ -12,16 +12,224 @@ output:
 
 # Introduction
 
-# Table de Chow
+# Table de Chow, 1959 (Strickler)
+
+Le tableau suivant donne les valeurs du coefficient de Strickler en m$^{1/3}$/s, pour des types de chenal donnés, et pour une friction minimum, "normale" et maximum.
+
 
 | Type de chenal et description          | Minimum | Normal  | Maximum |
 |:---------------------------------------|:--------|:--------|:--------|
 | **1. Lits mineurs, cours d'eau naturels - petits cours d'eau (largeur au plein bord < 30 m / 100 pieds)** ||||
-| a. propres, rectilignes, bien remplis d'eau, sans failles ni mouilles profondes | 40 | 33 | 30 |
-| b. comme ci-dessus, mais plus de pierres et d'herbiers | 33 | 29 | 25 |
-| c. propres, sinueux, quelques mouilles et hauts-fonds | 30 | 25 | 22 |
-| etc... ||||
-| **2. Cours d'eau de montagne, pas de végétation dans le lit, berges généralement abruptes, arbres et broussailles le long des berges immergées en hautes eaux** ||||
+|            a. propres, rectilignes, bien remplis d'eau, sans failles ni mouilles profondes | 40 | 33 | 30 |
+|            b. comme ci-dessus, mais plus de pierres et d'herbiers | 33 | 29 | 25 |
+|            c. propres, sinueux, quelques mouilles et hauts-fonds | 30 | 25 | 22 |
+|            d. comme ci-dessus, mais quelques herbiers et pierres | 29 |	22 |	20 |
+|            e. comme ci-dessus, hauteurs d'eau plus faibles, avec des pentes et tronçons plus inefficaces |	25 |	21 |	18 |
+|            f. identiques à "d" avec plus de pierres |	22 |	20 |	17 |
+|            g. tronçons lents, herbeux, mouilles profondes |	20 |	14 |	13 |
+|            h. tronçons très herbeux, mouilles profondes, ou lits moyens encombrés de bois et sous-bois |	13 |	10 |	7 |
+| 	**2. Cours d'eau de montagne, pas de végétation dans le lit, berges généralement abruptes, arbres et broussailles le long des berges immergées en hautes eaux**	 | 		 | 		 | 		 | 
+| 	           a. fond : graviers, pavés, et quelques rochers	 | 	33	 | 	25	 | 	20	 | 
+| 	           b. fond : pavés avec de gros rochers	 | 	25	 | 	20	 | 	14	 | 
+| 	**3. Lits majeurs**	 | 		 | 		 | 		 | 
+| 	           a. Prairie, sans broussailles	 | 		 | 		 | 		 | 
+| 	                    1. herbe rase	 | 	40	 | 	33	 | 	29	 | 
+| 	                    2. herbe haute	 | 	33	 | 	29	 | 	20	 | 
+| 	           b. Surfaces cultivées	 | 		 | 		 | 		 | 
+| 	                    1. aucune culture	 | 	50	 | 	33	 | 	25	 | 
+| 	                    2. cultures matures en rang 	 | 	40	 | 	29	 | 	22	 | 
+| 	                    3. cultures matures en champ	 | 	33	 | 	25	 | 	20	 | 
+| 	           c. Broussailles	 | 		 | 		 | 		 | 
+| 	                    1. broussailles dispersées, herbes denses	 | 	29	 | 	20	 | 	14	 | 
+| 	                    2. broussailles aérées et arbres, en hiver	 | 	29	 | 	20	 | 	17	 | 
+| 	                    3. broussailles aérées et arbres, en été	 | 	25	 | 	17	 | 	13	 | 
+| 	                    4. broussailles moyennes à denses, en hiver	 | 	22	 | 	14	 | 	9	 | 
+| 	                    5. broussailles moyennes à denses, en été	 | 	14	 | 	10	 | 	6	 | 
+| 	           d. Arbres	 | 		 | 		 | 		 | 
+| 	                    1. saules denses, en été, alignés	 | 	9	 | 	7	 | 	5	 | 
+| 	                    2. terres défrichées avec des souches d'arbres, pas de pousses	 | 	33	 | 	25	 | 	20	 | 
+| 	                    3. comme ci-dessus, mais avec fort développement de pousses	 | 	20	 | 	17	 | 	13	 | 
+| 	                    4. dense présence de bois, quelques arbres couchés, 	 | 	20	 | 	21	 | 	22	 | 
+| 	un peu de sous-bois, hautes eaux sous les branches	 | 		 | 		 | 		 | 
+| 	                    5. comme le 4., les hautes eaux atteignant les branches	 | 	10	 | 	8	 | 	6	 | 
+| 	**4. Chenaux creusés ou dragués**	 | 		 | 		 | 		 | 
+| 	           a. En terre, droits, et uniformes	 | 		 | 		 | 		 | 
+| 	                    1. propres, récemment achevés	 | 	63	 | 	56	 | 	50	 | 
+| 	                    2. propres, après exposition aux intempéries	 | 	56	 | 	45	 | 	40	 | 
+| 	                    3. graviers, tronçon uniforme, propre	 | 	45	 | 	40	 | 	33	 | 
+| 	                    4. herbe rase, peu d'herbiers	 | 	45	 | 	37	 | 	30	 | 
+| 	           b. En terre, sinueux, et ralentis	 | 		 | 		 | 		 | 
+| 	                    1. pas de végétation	 | 	43	 | 	40	 | 	33	 | 
+| 	                    2. herbe, quelques herbiers	 | 	40	 | 	33	 | 	30	 | 
+| 	                    3. herbiers denses ou plantes aquatiques dans les chenaux profonds	 | 	33	 | 	29	 | 	25	 | 
+| 	                    4. fond en terre et bords en déblais	 | 	36	 | 	33	 | 	29	 | 
+| 	                    5. fond pierreux et berges herbeuses	 | 	40	 | 	29	 | 	25	 | 
+| 	                    6. fond en galets et bords propres	 | 	33	 | 	25	 | 	20	 | 
+| 	           c. Excavé par dragline ou dragué	 | 		 | 		 | 		 | 
+| 	                    1. pas de végétation	 | 	40	 | 	36	 | 	30	 | 
+| 	                    2. broussailles aérées sur les berges	 | 	29	 | 	20	 | 	17	 | 
+| 	           d. Tranchées dans la roche	 | 		 | 		 | 		 | 
+| 	                    1. lisses et uniformes	 | 	40	 | 	29	 | 	25	 | 
+| 	                    2. déchiquetées et irrégulières	 | 	29	 | 	25	 | 	20	 | 
+| 	           e. Chenaux pas entretenus, herbiers et broussailles non coupées	 | 		 | 		 | 		 | 
+| 	                    1. herbiers denses, sur toute la hauteur d'écoulement	 | 	20	 | 	13	 | 	8	 | 
+| 	                    2. fond propre, broussailles sur les bords	 | 	25	 | 	20	 | 	13	 | 
+| 	                    3. comme ci-dessus, plus hautes eaux	 | 	22	 | 	14	 | 	9	 | 
+| 	                    4. broussailles denses, hautes eaux	 | 	13	 | 	10	 | 	7	 | 
+| 	**5. Chenaux rectifiés ou construits**	 | 		 | 		 | 		 | 
+| 	           a. Ciment	 | 		 | 		 | 		 | 
+| 	                    1. surface nette	 | 	100	 | 	91	 | 	77	 | 
+| 	                    2. mortier	 | 	91	 | 	77	 | 	67	 | 
+| 	           b. Bois	 | 		 | 		 | 		 | 
+| 	                    1. raboté, non traité	 | 	100	 | 	83	 | 	71	 | 
+| 	                    2. raboté, créosoté	 | 	91	 | 	83	 | 	67	 | 
+| 	                    3. non raboté	 | 	91	 | 	77	 | 	67	 | 
+| 	                    4. planche avec tasseaux	 | 	83	 | 	67	 | 	56	 | 
+| 	                    5. recouvert de textile imperméabilisant	 | 	100	 | 	71	 | 	59	 | 
+| 	           c. Béton	 | 		 | 		 | 		 | 
+| 	                    1. finition à la truelle	 | 	91	 | 	77	 | 	67	 | 
+| 	                    2. finition à l'aplanissoir	 | 	77	 | 	67	 | 	63	 | 
+| 	                    3. avec finition, avec du gravier sur le fond	 | 	67	 | 	59	 | 	50	 | 
+| 	                    4. sans finition	 | 	71	 | 	59	 | 	50	 | 
+| 	                    5. gunite, bonne section	 | 	63	 | 	53	 | 	43	 | 
+| 	                    6. gunite, section ondulée	 | 	56	 | 	45	 | 	40	 | 
+| 	                    7. sur de la bonne roche excavée	 | 	59	 | 	50	 | 		 | 
+| 	                    8. sur de la roche excavée irrégulière	 | 	45	 | 	37	 | 		 | 
+| 	           d. Fond en béton, finition à l'aplanissoir, avec bords en :	 | 		 | 		 | 		 | 
+| 	                    1. pierre de taille liée au mortier	 | 	67	 | 	59	 | 	50	 | 
+| 	                    2. pierre brute liée au mortier	 | 	59	 | 	50	 | 	42	 | 
+| 	                    3. maçonnerie de ciment moellons, enduit	 | 	63	 | 	50	 | 	42	 | 
+| 	                    4. maçonnerie de ciment moellons	 | 	50	 | 	40	 | 	33	 | 
+| 	                    5. moellons non liés ou enrochements	 | 	50	 | 	33	 | 	29	 | 
+| 	           e. Fond en graviers, avec bords en :	 | 		 | 		 | 		 | 
+| 	                    1. béton coffré	 | 	59	 | 	50	 | 	40	 | 
+| 	                    2. mortier de pierre brute	 | 	50	 | 	43	 | 	38	 | 
+| 	                    3. déblais non liés ou enrochements	 | 	43	 | 	30	 | 	28	 | 
+| 	           f. Brique	 | 		 | 		 | 		 | 
+| 	                    1. brique vernissée	 | 	91	 | 	77	 | 	67	 | 
+| 	                    2. liée au mortier de ciment	 | 	83	 | 	67	 | 	56	 | 
+| 	           g. Maçonnerie	 | 		 | 		 | 		 | 
+| 	                    1. moellons cimentés	 | 	59	 | 	40	 | 	33	 | 
+| 	                    2. moellons non liés	 | 	43	 | 	31	 | 	29	 | 
+| 	           h. Pierre de taille / dallage en pierre	 | 	77	 | 	67	 | 	59	 | 
+| 	           i. Asphalte	 | 		 | 		 | 		 | 
+| 	                    1. lisse	 | 	77	 | 	77	 | 		 | 
+| 	                    2. rugueux	 | 	63	 | 	63	 | 		 | 
+| 	           j. Revêtement végétal	 | 	33	 | 		 | 	2	 | 
+
+
+
+# Table de Chow, 1959 (Manning)
+
+
+Le tableau suivant donne les valeurs du coefficient de Manning en s/m$^{1/3}$, pour des types de chenal donnés, et pour une friction minimum, "normale" et maximum.
+
+
+| Type de chenal et description          | Minimum | Normal  | Maximum |
+|:---------------------------------------|:--------|:--------|:--------|
+| **1. Lits mineurs, cours d'eau naturels - petits cours d'eau (largeur au plein bord < 30 m / 100 pieds)** ||||
+|            a. propres, rectilignes, bien remplis d'eau, sans failles ni mouilles profondes | 0.025  | 0.030 | 0.033 |
+|            b. comme ci-dessus, mais plus de pierres et d'herbiers | 0.030 | 0.035 | 0.040 |
+|            c. propres, sinueux, quelques mouilles et hauts-fonds | 0.033 | 0.040 | 0.045 |
+|            d. comme ci-dessus, mais quelques herbiers et pierres | 0.035 |	0.045 |	0.050 |
+|            e. comme ci-dessus, hauteurs d'eau plus faibles, avec des pentes et tronçons plus inefficaces |	0.040 |	0.048 |	0.055 |
+|            f. identiques à "d" avec plus de pierres |	0.045 |	0.050 |	0.060 |
+|            g. tronçons lents, herbeux, mouilles profondes |	0.050 |	0.070 |	0.080 |
+|            h. tronçons très herbeux, mouilles profondes, ou lits moyens encombrés de bois et sous-bois |	0.075 |	0.100 |	0.150 |
+| 	**2. Cours d'eau de montagne, pas de végétation dans le lit, berges généralement abruptes, arbres et broussailles le long des berges immergées en hautes eaux**	 | 		 | 		 | 		 | 
+| 	           a. fond : graviers, pavés, et quelques rochers	 | 	0.030	 | 	0.040	 | 	0.050	 | 
+| 	           b. fond : pavés avec de gros rochers	 | 	0.040	 | 	0.050	 | 	0.070	 | 
+| 	**3. Lits majeurs**	 | 		 | 		 | 		 | 
+| 	           a. Prairie, sans broussailles	 | 		 | 		 | 		 | 
+| 	                    1. herbe rase	 | 	0.025 	 | 	0.030	 | 	0.035	 | 
+| 	                    2. herbe haute	 | 	0.030	 | 	0.035	 | 	0.050	 | 
+| 	           b. Surfaces cultivées	 | 		 | 		 | 		 | 
+| 	                    1. aucune culture	 | 	0.020	 | 	0.030	 | 	0.040	 | 
+| 	                    2. cultures matures en rang 	 | 	0.025 	 | 	0.035	 | 	0.045	 | 
+| 	                    3. cultures matures en champ	 | 	0.030	 | 	0.040	 | 	0.050	 | 
+| 	           c. Broussailles	 | 		 | 		 | 		 | 
+| 	                    1. broussailles dispersées, herbes denses	 | 	0.035	 | 	0.050 | 	0.070	 | 
+| 	                    2. broussailles aérées et arbres, en hiver	 | 	0.035	 | 	0.050	 | 	0.060	 | 
+| 	                    3. broussailles aérées et arbres, en été	 | 	0.040	 | 	0.060	 | 	0.080	 | 
+| 	                    4. broussailles moyennes à denses, en hiver	 | 	0.045	 | 	0.070	 |  0.110	 | 
+| 	                    5. broussailles moyennes à denses, en été	 | 	0.070	 | 	0.100	 | 	0.160	 | 
+| 	           d. Arbres	 | 		 | 		 | 		 | 
+| 	                    1. saules denses, en été, alignés	 | 	0.110	 | 	0.150	 | 	0.020	 | 
+| 	                    2. terres défrichées avec des souches d'arbres, pas de pousses	 | 	0.030	 | 	0.040	 | 	0.050	 | 
+| 	                    3. comme ci-dessus, mais avec fort développement de pousses	 | 	0.050	 | 	0.060	 | 	0.080	 | 
+| 	                    4. dense présence de bois, quelques arbres couchés, 	 | 	0.050	 | 	0.048	 | 	0.045	 | 
+| 	un peu de sous-bois, hautes eaux sous les branches	 | 		 | 		 | 		 | 
+| 	                    5. comme le 4., les hautes eaux atteignant les branches	 | 	0.100	 | 	0.120	 | 0.160	 | 
+| 	**4. Chenaux creusés ou dragués**	 | 		 | 		 | 		 | 
+| 	           a. En terre, droits, et uniformes	 | 		 | 		 | 		 | 
+| 	                    1. propres, récemment achevés	 | 	0.016	 | 	0.018	 | 	0.020	 | 
+| 	                    2. propres, après exposition aux intempéries	 | 	0.018	 | 	0.022	 | 	0.025                    	 | 
+| 	                    3. graviers, tronçon uniforme, propre	 | 	0.022	 | 	0.025 	 | 	0.030	 | 
+| 	                    4. herbe rase, peu d'herbiers	 | 	0.022	 | 	0.027	 | 	0.033	 | 
+| 	           b. En terre, sinueux, et ralentis	 | 		 | 		 | 		 | 
+| 	                    1. pas de végétation	 | 	0.023	 | 	0.025 	 | 	0.030	 | 
+| 	                    2. herbe, quelques herbiers	 | 	0.025	 | 	0.030	 | 	0.033	 | 
+| 	                    3. herbiers denses ou plantes aquatiques dans les chenaux profonds	 | 	0.030	 | 	0.035	 | 	0.040	 | 
+| 	                    4. fond en terre et bords en déblais	 | 	0.028	 | 	0.030	 | 	0.035	 | 
+| 	                    5. fond pierreux et berges herbeuses	 | 	0.025	 | 	0.035	 | 	0.040	 | 
+| 	                    6. fond en galets et bords propres	 | 	0.030	 | 	0.040	 | 	0.050	 | 
+| 	           c. Excavé par dragline ou dragué	 | 		 | 		 | 		 | 
+| 	                    1. pas de végétation	 | 	0.025	 | 	0.028	 | 	0.033	 | 
+| 	                    2. broussailles aérées sur les berges	 | 	0.035	 | 	0.050	 | 	0.060	 | 
+| 	           d. Tranchées dans la roche	 | 		 | 		 | 		 | 
+| 	                    1. lisses et uniformes	 | 	0.025	 | 	0.035	 | 	0.040	 | 
+| 	                    2. déchiquetées et irrégulières	 | 	0.035	 | 	0.040	 | 	0.050	 | 
+| 	           e. Chenaux pas entretenus, herbiers et broussailles non coupées	 | 		 | 		 | 		 | 
+| 	                    1. herbiers denses, sur toute la hauteur d'écoulement	 | 	0.050	 | 	0.080	 | 	0.120	 | 
+| 	                    2. fond propre, broussailles sur les bords	 | 	0.040	 | 	0.050	 | 	0.080	 | 
+| 	                    3. comme ci-dessus, plus hautes eaux	 | 	0.045	 | 	0.070	 | 	0.110	 | 
+| 	                    4. broussailles denses, hautes eaux	 | 	0.080	 | 	0.100	 | 	0.150	 | 
+| 	**5. Chenaux rectifiés ou construits**	 | 		 | 		 | 		 | 
+| 	           a. Ciment	 | 		 | 		 | 		 | 
+| 	                    1. surface nette	 | 	0.010	 | 	0.011	 | 	0.013	 | 
+| 	                    2. mortier	 | 	0.110	 | 	0.013	 | 	0.015	 | 
+| 	           b. Bois	 | 		 | 		 | 		 | 
+| 	                    1. raboté, non traité	 | 	0.010	 | 	0.012	 | 	0.014	 | 
+| 	                    2. raboté, créosoté	 | 	0.110	 | 	0.012	 | 	0.015	 | 
+| 	                    3. non raboté	 | 	0.110	 | 	0.013	 | 	0.015	 | 
+| 	                    4. planche avec tasseaux	 | 	0.012	 | 	0.015	 | 	0.018	 | 
+| 	                    5. recouvert de textile imperméabilisant	 | 	0.010	 | 	0.014	 | 	0.017	 | 
+| 	           c. Béton	 | 		 | 		 | 		 | 
+| 	                    1. finition à la truelle	 | 	0.110	 | 	0.013	 | 	0.015	 | 
+| 	                    2. finition à l'aplanissoir	 | 	0.013	 | 	0.015	 | 	0.016	 | 
+| 	                    3. avec finition, avec du gravier sur le fond	 | 	0.015	 | 	0.017	 | 	0.020	 | 
+| 	                    4. sans finition	 | 	0.014	 | 	0.017	 | 	0.020	 | 
+| 	                    5. gunite, bonne section	 | 	0.016	 | 	0.019	 | 	0.023	 | 
+| 	                    6. gunite, section ondulée	 | 	0.018	 | 	0.022	 | 	0.025	 | 
+| 	                    7. sur de la bonne roche excavée	 | 	0.017	 | 	0.020	 | 		 | 
+| 	                    8. sur de la roche excavée irrégulière	 | 	0.022	 | 	0.027	 | 		 | 
+| 	           d. Fond en béton, finition à l'aplanissoir, avec bords en :	 | 		 | 		 | 		 | 
+| 	                    1. pierre de taille liée au mortier	 | 	0.015	 | 	0.017	 | 	0.020	 | 
+| 	                    2. pierre brute liée au mortier	 | 	0.017	 | 	0.020	 | 	0.024	 | 
+| 	                    3. maçonnerie de ciment moellons, enduit	 | 	0.016	 | 	0.020	 | 	0.024	 | 
+| 	                    4. maçonnerie de ciment moellons	 | 	0.020	 | 	0.025	 | 	0.030	 | 
+| 	                    5. moellons non liés ou enrochements	 | 	0.020	 | 	0.030	 | 	0.035	 | 
+| 	           e. Fond en graviers, avec bords en :	 | 		 | 		 | 		 | 
+| 	                    1. béton coffré	 | 	0.017	 | 	0.020	 | 	0.025	 | 
+| 	                    2. mortier de pierre brute	 | 	0.020	 | 	0.023	 | 	0.026	 | 
+| 	                    3. déblais non liés ou enrochements	 | 	0.023	 | 	0.033	 | 	0.036	 | 
+| 	           f. Brique	 | 		 | 		 | 		 | 
+| 	                    1. brique vernissée	 | 	0.110	 | 	0.013	 | 	0.015	 | 
+| 	                    2. liée au mortier de ciment	 | 	0.012	 | 	0.015	 | 	0.018	 | 
+| 	           g. Maçonnerie	 | 		 | 		 | 		 | 
+| 	                    1. moellons cimentés	 | 	0.017	 | 	0.025	 | 	0.030	 | 
+| 	                    2. moellons non liés	 | 	0.023	 | 	0.032	 | 	0.035	 | 
+| 	           h. Pierre de taille / dallage en pierre	 | 	0.013	 | 	0.015	 | 	0.017	 | 
+| 	           i. Asphalte	 | 		 | 		 | 		 | 
+| 	                    1. lisse	 | 	0.013	 | 	0.013	 | 		 | 
+| 	                    2. rugueux	 | 	0.016	 | 	0.016	 | 		 | 
+| 	           j. Revêtement végétal	 | 	0.030	 | 		 | 	0.500	 | 
+
+
+
+
+
+
 
 # Table de Chow V2
 
