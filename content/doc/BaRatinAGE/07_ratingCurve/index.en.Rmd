@@ -64,12 +64,18 @@ The graph above shows how prior knowledge of the parameters (distributions in bl
 The same information is also available in table form, with a comparison between the prior and posterior estimates for each parameter of the rating curve, in the form of the lower and upper bounds of their 95% intervals. A consistency test between prior and posterior estimates is displayed for each parameter: an inconsistency is detected for a given parameter if at least 99% of the MCMC samples are greater (or less) than the samples taken from the prior distribution for that parameter. These results can be exported in CSV format or copied to the clipboard.
 
 ![](RC_Verrieres_Param_Summary.en.png)
+## Residuals
+
+Starting with version 3.3 of BaRatinAGE, a *Residuals* tab allows you to display the deviations of the gaugings from the MaxPost rating curve (as a percentage of discharge) with, on the horizontal axis, the stage, the observed discharge (gaugings), the estimated discharge (rating curve) or the gauging index.
+
+![](RC_Verrieres_Residuals.en.png)
+
 
 ## MCMC simulations
 
-![](RC_Verrieres_MCMC.en.png)
-
 The MCMC trace graph represents the parameter values simulated from the posterior distribution using the MCMC simulator (full technical details are explained in [this document](/en/doc/topics/mcmc)). Note that the graph only shows 500 simulated values, but in fact 10,000 values were initially generated, the first 5,000 being discarded. These 5,000 initial values were simply decimated and reduced to 500 values to avoid keeping too many simulations. 
+
+![](RC_Verrieres_MCMC.en.png)
 
 In addition to the $\kappa$, $a$, $b$, and $c$ parameters for each control, samples of the $\gamma_1$ and $\gamma_2$ parameters for the standard deviation of the structural error and the logarithm of the posterior density ("LogPost") are also plotted. The position of the maxpost parameter set (maximising the posterior distribution) is indicated by a vertical red line for each parameter. These results can be exported in CSV format.
 

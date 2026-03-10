@@ -49,4 +49,12 @@ Il est possible d'exporter le jeu de jaugeages au format CSV ou de le copier dan
 
 # Gestion des jaugeages dans BaRatinAGE
 
-A l'heure actuelle, la gestion des jaugeages est rudimentaire dans BaRatinAGE : la seule modification possible est l'activation/désactivation d'un jaugeage. Si vous souhaitez modifier une valeur ou ajouter un jaugeage, vous devez modifier le fichier source. La raison est qu'il existe déjà des logiciels spécialisés dans la gestion des jaugeages (Barème, Jacinthe en particulier), et qu'il nous semble préférable de favoriser la compatibilité avec ces logiciels plutôt que de ré-inventer la roue. Néanmoins, nous implémenterons quelques outils simples dans les futures versions de BaRatinAGE (saisie et modification des jaugeages, inclusion des dates et des méthodes de jaugeages, filtres élémentaires).
+Si vous souhaitez modifier, supprimer ou ajouter un ou plusieurs jaugeages, vous avez deux possibilités :
+
+* modifier le fichier source et le ré-importer (ce qui a l'avantage d'assurer la synchronisation entre votre fichier de jaugeages et l'étude BaRatinAGE)
+
+* ou bien, cliquer sur l'icône d'édition située sous le tableau des jaugeages, qui vous donne accès à la fenêtre d'édition suivante (attention, les modifications s'appliquent à tous les jaugeages sélectionnés, et sont irréversibles)
+
+![](Gaugings_Edition.fr.png)
+
+

@@ -48,5 +48,12 @@ The set of gaugings can be exported in CSV format or copied to the clipboard. Yo
 
 # Managing gaugings in BaRatinAGE
 
-At present, the management of gaugings is rudimentary in BaRatinAGE: the only modification possible is the activation/deactivation of a gauging. If you want to change a value or add a gauging, you have to modify the source file. The reason for this is that there are already hydrometric software packages dedicated to the management of gaugings (Barème, Jacinthe in particular), and we feel it is preferable to promote compatibility with these packages rather than re-invent the wheel. Nevertheless, we will be implementing a few simple tools in future versions of BaRatinAGE (entering and modifying gaugings, including dates and gauging methods, basic filters, etc.).
+If you wish to edit, delete or add one or more gaugings, you have two options:
+
+* modify the source file and re-import it (which has the advantage of ensuring synchronisation between your gaugings file and the BaRatinAGE study)
+
+* or click on the edit icon located below the gaugings table, which gives you access to the following edit window (please note that changes apply to all selected gaugings and are irreversible)
+
+![](Gaugings_Edition.en.png)
+
 
