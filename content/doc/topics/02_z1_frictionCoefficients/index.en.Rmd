@@ -12,6 +12,20 @@ output:
 
 # Introduction
 
+The flow resistance parameters (or flow friction factors)  of channel controls are often difficult to determine precisely.
+In engineering practice, they are often expressed as Strickler coefficient $K_S$ or Manning coefficient $n$, one being the opposite of the other ($n=1/K_S$).
+There exist look-up tables of typical values (e.g., [Chow's table](Chow_en.xlsx), or this [illustrated catalogue](https://wwwrcamnl.wr.usgs.gov/sws/fieldmethods/Indirects/nvalues/ index.htm)) and calculation methods based on a more detailed description of flow conditions (e.g., [Cowan method](Cowan_en.xlsx), or the method of [Arcement and Schneider, 1989](https://pubs.usgs.gov/publication/wsp2339)).
+
+Other interesting references on friction factor estimation:
+
+* Barnes, H.H. (1967) Roughness characteristics of natural channels. U.S. Geological Survey Water-Supply Paper 1849, 213.
+* Hey, R.D. (1979) Flow resistance in gravel-bed rivers. J. Hydraul. Div., Am. Soc. Civ. Eng., 105(4), 365–379.
+* Hicks, D.M., Mason, P.D. (1998) Roughness Characteristics of New Zealand Rivers, Water Resources Publications, Littleton, CO, 329 pp., ISBN:0-477-02608-7.
+* Jarrett, R.D. (1985) Determination of roughness coefficients for streams in Colorado. U.S. Geological Survey Water-Resources Investigations Rep. 85-4004, 54.
+* Limerinos, J.T. (1970) Determination of the Manning coefficient from measured bed roughness in natural channels. U.S. Geological Survey Water Supply Paper 1898-B, 47.
+
+
+
 # Chow Table, 1959 (Strickler)
 
 
@@ -134,100 +148,99 @@ Source: Ven Te Chow (1959). Open-Channel Hydraulics. McGraw-Hill, New York.
 
 | Channel type and description          | Minimum | Normal  | Maximum |
 |:---------------------------------------|:--------|:--------|:--------|
-| **1. Minor beds, natural watercourses - small watercourses (full width < 30 m / 100 feet)** ||||
-|            a. clean, straight, well filled with water, without faults or deep pools | 0.025  | 0.030 | 0.033 |
-|            b. as above, but with more stones and grass beds | 0.030 | 0.035 | 0.040 |
-|            c. clean, winding, some wet areas and shoals | 0.033 | 0.040 | 0.045 |
-|            d. as above, but some seaweed beds and stones | 0.035 |    0.045 |    0.050 |
-|            e. as above, lower water levels, with steeper slopes and less efficient sections |    0.040 |    0.048 |    0.055 |
-|            f. identical to ‘d’ with more stones |    0.045 |    0.050 |    0.060 |
-|            g. slow, grassy sections, deep pools |    0.050 |    0.070 |    0.080 |
-|            h. very grassy sections, deep pools, or medium beds cluttered with wood and undergrowth |    0.075 |    0.100 |    0.150 |
-|     **2. Mountain streams, no vegetation in the bed, generally steep banks, trees and scrub along the banks submerged at high water**     |          |          |          | 
-|                a. bottom: gravel, cobblestones, and a few rocks     |     0.030     |     0.040     |     0.050     | 
-|                b. bottom: cobblestones with large rocks     |     0.040     |     0.050     |     0.070	 | 
-|     **3. Major beds**     |          |          |          | 
-|                a. Grassland, without scrub     |          |          |          | 
+| **1. Main channels, natural watercourses - minor streams (full width < 30 m / 100 ft)** ||||
+|            a. clean, straight, full stage, no rifts or deep pools | 0.025  | 0.030 | 0.033 |
+|            b. same as above, but with more stones and weeds | 0.030 | 0.035 | 0.040 |
+|            c. clean, winding, some pools and shoals | 0.033 | 0.040 | 0.045 |
+|            d. same as above, but with some weeds and stones | 0.035 |    0.045 |    0.050 |
+|            e. same as above, lower stages, more ineffective slopes and sections |    0.040 |    0.048 |    0.055 |
+|            f. same as ‘d’ with more stones |    0.045 |    0.050 |    0.060 |
+|            g. sluggish reaches, weedy, deep pools |    0.050 |    0.070 |    0.080 |
+|            h. very weedy reaches, deep pools, or floodwayswith heavy stand of timber and underbrush |    0.075 |    0.100 |    0.150 |
+|     **2. Mountain streams, no vegetation in channel, banks usually steep, trees and brush along banks submerged at high stages**     |          |          |          | 
+|                a. bottom: gravel, cobbles, and a few boulders     |     0.030     |     0.040     |     0.050     | 
+|                b. bottom: cobbles with large boulders     |     0.040     |     0.050     |     0.070	 | 
+|     **3. Floodplains**     |          |          |          | 
+|                a. Pasture, no brushb     |          |          |          | 
 |                         1. Short grass     |     0.025      |     0.030     |     0.035	 | 
-|                         2. Tall grass     |     0.030     |     0.035     |     0.050     | 
+|                         2. High grass     |     0.030     |     0.035     |     0.050     | 
 |                b. Cultivated areas     |          |          |          | 
-|                         1. No crops     |     0.020     |     0.030	 |     0.040     | 
-|                         2. Mature crops in rows      |     0.025      |     0.035     |     0.045     | 
-|                         3. Mature crops in fields     |     0.030     |     0.040     |     0.050	 | 
+|                         1. No crop     |     0.020     |     0.030	 |     0.040     | 
+|                         2. Mature row crops      |     0.025      |     0.035     |     0.045     | 
+|                         3. Mature field crops      |     0.030     |     0.040     |     0.050	 | 
 |                c. Brush     |          |          |          | 
-|                         1. scattered brush, dense grasses     |     0.035     |     0.050 |     0.070     | 
-|                         2. sparse scrub and trees, in winter     |     0.035     |     0.050     |     0.060     | 
-|                         3. sparse scrub and trees, in summer     |     0.040     |     0.060     |     0.080	 | 
-|                         4. Medium to dense scrub, in winter     |     0.045     |     0.070     |  0.110     | 
-|                         5. Medium to dense scrub, in summer     |     0.070     |     0.100     |     0.160	 | 
+|                         1. Scattered brush, heavy weeds     |     0.035     |     0.050 |     0.070     | 
+|                         2. Light brush and trees, in winter     |     0.035     |     0.050     |     0.060     | 
+|                         3. Light brush and trees, in summer     |     0.040     |     0.060     |     0.080	 | 
+|                         4. Medium to dense brush, in winter     |     0.045     |     0.070     |  0.110     | 
+|                         5. Medium to dense brush, in summer     |     0.070     |     0.100     |     0.160	 | 
 |                d. Trees     |          |          |          | 
-|                         1. Dense willows, in summer, aligned     |     0.110     |     0.150     |     0.020	 | 
-|                         2. Cleared land with tree stumps, no shoots     |     0.030     |     0.040     |     0.050     | 
-|                         3. As above, but with strong shoot development     |     0.050     |     0.060	 |     0.080     | 
-|                         4. dense presence of wood, some fallen trees,      |     0.050     |     0.048     |     0.045     | 
-|     some undergrowth, high water under the branches     |          |          |          | 
-|                         5. as in 4., high water reaching the branches     |     0.100     |     0.120     | 0.160     | 
-|     **4. Dug or dredged channels**     |          |          |          | 
-|                a. Earthen, straight, and uniform     |          |          |          | 
+|                         1. Dense willows, in summer, straight     |     0.110     |     0.150     |     0.020	 | 
+|                         2. Cleared land with tree stumps, no sprouts     |     0.030     |     0.040     |     0.050     | 
+|                         3. Same as above, but with heavy growth of sprouts     |     0.050     |     0.060	 |     0.080     | 
+|                         4. Heavy stand of timber, a few down trees, little undergrowth, flood stage below branches      |     0.050     |     0.048     |     0.045     | 
+|                         5. Same as 4. with flood stage reaching  branches     |     0.100     |     0.120     | 0.160     | 
+|     **4. Excavated or dredged channels**     |          |          |          | 
+|                a. earth, straight, and uniform     |          |          |          | 
 |                         1. Clean, recently completed     |     0.016     |     0.018     |     0.020     | 
-|                         2. Clean, after exposure to the elements     |     0.018	 |     0.022     |     0.025                         | 
+|                         2. Clean, after weathering     |     0.018	 |     0.022     |     0.025                         | 
 |                         3. Gravel, uniform section, clean     |     0.022     |     0.025      |     0.030     | 
-|                         4. Short grass, few grasslands     |     0.022     |     0.027     |     0.033     | 
-|                b. On land, winding, and slowed down     |          |          |          | 
+|                         4. with short grass, few weeds     |     0.022     |     0.027     |     0.033     | 
+|                b. earth, winding, and sluggish     |          |          |          | 
 |                         1. no vegetation     |     0.023     |     0.025      |     0.030     | 
-|                         2. grass, some seagrass beds     |     0.025     |     0.030     |     0.033	 | 
-|                         3. dense seagrass beds or aquatic plants in deep channels     |     0.030     |     0.035     |     0.040     | 
-|                         4. earthen bottom and excavated banks     |     0.028     |     0.030     |     0.035	 | 
-|                         5. Rocky bottom and grassy banks     |     0.025     |     0.035     |     0.040     | 
-|                         6. Pebble bottom and clean banks     |     0.030     |     0.040     |     0.050	 | 
-|                c. Excavated by dragline or dredged     |          |          |          | 
+|                         2. grass, some weeds     |     0.025     |     0.030     |     0.033	 | 
+|                         3. dense weeds or aquatic plants in deep channels     |     0.030     |     0.035     |     0.040     | 
+|                         4. earth bottom and rubble sides     |     0.028     |     0.030     |     0.035	 | 
+|                         5. stony bottom and weedy banks     |     0.025     |     0.035     |     0.040     | 
+|                         6. cobble bottom and clean sides     |     0.030     |     0.040     |     0.050	 | 
+|                c. dragline-excavated or dredged     |          |          |          | 
 |                         1. No vegetation     |     0.025     |     0.028     |     0.033     | 
-|                         2. Sparse scrub on banks     |     0.035	 |     0.050     |     0.060     | 
-|                d. Trenches in rock     |          |          |          | 
+|                         2. light brush on banks     |     0.035	 |     0.050     |     0.060     | 
+|                d. Rock cuts     |          |          |          | 
 |                         1. smooth and uniform     |     0.025     |     0.035     |     0.040	 | 
 |                         2. jagged and irregular     |     0.035     |     0.040     |     0.050     | 
-|                e. Unmaintained channels, uncut grass beds and brush     |          |          |          | 
-|                         1. Dense vegetation, covering the entire flow height     |     0.050     |     0.080     |     0.120     | 
-|                         2. Clean bottom, brush on the edges     |     0.040     |     0.050     |     0.080     | 
-|                         3. as above, higher water     |     0.045     |     0.070     |     0.110     | 
-|                         4. dense scrub, high water     |     0.080     |     0.100     |     0.150	 | 
-|     **5. Rectified or constructed channels**     |          |          |          | 
+|                e. channels not maintained, weeds and brush uncut     |          |          |          | 
+|                         1. dense weeds, high as flow depth     |     0.050     |     0.080     |     0.120     | 
+|                         2. Clean bottom, brush on sides     |     0.040     |     0.050     |     0.080     | 
+|                         3. same as above, highest stage of flow     |     0.045     |     0.070     |     0.110     | 
+|                         4. dense brush, high stage     |     0.080     |     0.100     |     0.150	 | 
+|     **5. Lined or constructed channels**     |          |          |          | 
 |                a. Cement     |          |          |          | 
-|                         1. Clear surface     |     0.010     |     0.011     |     0.013	 | 
+|                         1. Neat surface     |     0.010     |     0.011     |     0.013	 | 
 |                         2. Mortar     |     0.110     |     0.013     |     0.015     | 
 |                b. Wood     |          |          |          | 
 |                         1. Planed, untreated     |     0.010     |     0.012	 |     0.014     | 
 |                         2. planed, creosoted     |     0.110     |     0.012     |     0.015     | 
 |                         3. unplaned     |     0.110     |     0.013     |     0.015	 | 
-|                         4. board with battens     |     0.012     |     0.015     |     0.018     | 
-|                         5. covered with waterproofing fabric     |     0.010     |     0.014     |     0.017	 | 
+|                         4. plank with battens     |     0.012     |     0.015     |     0.018     | 
+|                         5. lined with roofing paper     |     0.010     |     0.014     |     0.017	 | 
 |                c. Concrete     |          |          |          | 
 |                         1. Trowel finish     |     0.110     |     0.013     |     0.015	 | 
-|                         2. finished with a screed     |     0.013     |     0.015     |     0.016     | 
-|                         3. finished, with gravel on the bottom     |     0.015     |     0.017     |     0.020	 | 
-|                         4. without finishing     |     0.014     |     0.017     |     0.020     | 
+|                         2. Float finish     |     0.013     |     0.015     |     0.016     | 
+|                         3. finished, with gravel on bottom     |     0.015     |     0.017     |     0.020	 | 
+|                         4. unfinished     |     0.014     |     0.017     |     0.020     | 
 |                         5. gunite, good section     |     0.016     |     0.019     |     0.023	 | 
-|                         6. Gunite, undulating section     |     0.018     |     0.022     |     0.025     | 
+|                         6. Gunite, wavy section     |     0.018     |     0.022     |     0.025     | 
 |                         7. on good excavated rock     |     0.017     |     0.020     |          | 
 |                         8. on irregular excavated rock     |     0.022     |     0.027     |          | 
-|                d. Concrete base, finished with a trowel, with edges made of:     |          |          |          | 
-|                         1. Mortar-bound cut stone     |     0.015     |     0.017     |     0.020	 | 
-|                         2. rough stone bonded with mortar     |     0.017     |     0.020     |     0.024     | 
-|                         3. rubble cement masonry, rendered     |     0.016     |     0.020     |     0.024	 | 
-|                         4. Rubble masonry     |     0.020     |     0.025     |     0.030     | 
-|                         5. Unbound rubble or riprap     |     0.020     |     0.030     |     0.035	 | 
-|                e. Gravel base, with edges made of:     |          |          |          | 
-|                         1. Formwork concrete     |     0.017     |     0.020     |     0.025	 | 
-|                         2. rough stone mortar     |     0.020     |     0.023     |     0.026     | 
-|                         3. unbound spoil or riprap     |     0.023     |     0.033     |     0.036	 | 
+|                d. concrete bottom float finish with sides of:     |          |          |          | 
+|                         1. dressed stone in mortar     |     0.015     |     0.017     |     0.020	 | 
+|                         2. random stone in mortar     |     0.017     |     0.020     |     0.024     | 
+|                         3. cement rubble masonry, plastered     |     0.016     |     0.020     |     0.024	 | 
+|                         4. cement rubble masonry     |     0.020     |     0.025     |     0.030     | 
+|                         5. dry rubble or riprap     |     0.020     |     0.030     |     0.035	 | 
+|                e. gravel bottom with sides of:     |          |          |          | 
+|                         1. Formed concrete     |     0.017     |     0.020     |     0.025	 | 
+|                         2. Random stone mortar     |     0.020     |     0.023     |     0.026     | 
+|                         3. dry rubble or riprap     |     0.023     |     0.033     |     0.036	 | 
 |                f. Brick     |          |          |          | 
-|                         1. Glazed brick     |     0.110     |     0.013     |     0.015	 | 
-|                         2. cement mortar bonded     |     0.012     |     0.015     |     0.018     | 
+|                         1. Glazed     |     0.110     |     0.013     |     0.015	 | 
+|                         2. in cement mortar     |     0.012     |     0.015     |     0.018     | 
 |                g. Masonry     |          |          |          | 
 |                         1. cemented rubble     |     0.017     |     0.025     |     0.030     | 
-|                         2. unbound rubble     |     0.023     |     0.032     |     0.035     | 
-|                h. Cut stone/stone paving     |     0.013     |     0.015     |     0.017     | 
+|                         2. dry rubble     |     0.023     |     0.032     |     0.035     | 
+|                h. dressed ashlar/stone paving     |     0.013     |     0.015     |     0.017     | 
 |                i. Asphalt     |          |          |          | 
 |                         1. Smooth     |     0.013     |     0.013     |          | 
 |                         2. rough     |     0.016     |     0.016     |          | 
-|                j. Vegetation cover     |     0.030     |          |     0.500     | 
+|                j. Vegetation lining     |     0.030     |          |     0.500     | 

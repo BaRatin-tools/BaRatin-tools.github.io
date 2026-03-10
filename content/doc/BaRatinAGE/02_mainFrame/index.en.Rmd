@@ -54,6 +54,15 @@ The same applies to the associated *input, computation and chart area*. The foll
 
 This menu contains the usual tools for opening and saving a study, creating a new study and closing the application. It is only possible to open one study at a time, and the rationale of BaRatinAGE is that a study corresponds to a hydrometric station. For a given study, it is possible to define several hydraulic configurations, several sets of gaugings, several rating curves, etc.
 
+The *File* menu offers two useful features:
+
+* *Import a BaRatinAGE v2.x project*: you can import a *.bar.zip* study file saved with BaRatinAGE v2 software, the predecessor to the current BaRatinAGE v3 software.
+
+* *Export a report*: create and export a study report (PDF, DOCX, Markdown or HTML format) containing the main information and graphs from the project, according to the user's selection.
+
+![](Export_Report.en.png)
+
+
 ## Basic handling of components
 
 All BaRatinAGE components can be manipulated with a few basic actions, which can be accessed via the menus or by right-clicking in the tree structure: 
@@ -72,7 +81,7 @@ This menu allows you to change the following options:
 
 - *Change language*: select BaRatinAGE language (more than 25 languages available to date, feel free to add another language! See explanations in the [*Going further*](/en/doc/baratinage/going-further) page).
 
-- *Preferences*: preferences for the appearance and behaviour of BaRatinAGE that can be saved between sessions (language, dark mode, font size, icon size, hide BaM console outputs, close this window if BaM terminates successfully).
+- *Preferences*:Global preferences apply to all projects unless a project has its own specific preferences. If shown in italics, the preferences have not been edited. Preferences relate to the appearance and behaviour of BaRatinAGE: language, dark mode, font size, icon size, hide BaM console outputs, close this window if BaM finishes without errors, choice between Strickler or Manning coefficients for friction coefficients, number of samples used for propagation, etc.
 
 <!--- Options à venir, développements en cours :
 
