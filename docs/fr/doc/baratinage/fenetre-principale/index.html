@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1771927081" rel="stylesheet">
+<link href="/css/custom.css?1773422480" rel="stylesheet">
 
 
 
@@ -340,6 +340,12 @@
 <div id="menu-fichier" class="section level2">
 <h2>Menu “Fichier”</h2>
 <p>Ce menu comporte les outils habituels pour ouvrir et sauvegarder une étude, créer une nouvelle étude et fermer l’application. Il n’est possible d’ouvrir qu’une seule étude à la fois, et la logique de BaRatinAGE est qu’une étude corresponde à une station hydrométrique. Pour une étude donnée, il est possible de définir plusieurs configurations hydrauliques, plusieurs jeux de jaugeages, plusieurs courbes de tarage, etc.</p>
+<p>Le menu <em>Fichier</em> propose deux fonctionnalités utiles :</p>
+<ul>
+<li><p><em>Importer un projet BaRatinAGE v2.x</em> : il est possible d’importer un fichier étude <em>.bar.zip</em> enregistré avec le logiciel BaRatinAGE v2, prédécesseur de l’actuel logiciel BaRatinAGE v3.</p></li>
+<li><p><em>Exporter un rapport</em> : création et export d’un rapport d’étude (format PDF, DOCX, Markdown ou HTML), reprenant les principales informations et graphiques du projet, selon la sélection faite par l’utilisateur.</p></li>
+</ul>
+<p><img src="Export_Report.fr.png" /></p>
 </div>
 <div id="manipulations-de-base-des-composants" class="section level2">
 <h2>Manipulations de base des composants</h2>
@@ -358,11 +364,11 @@
 <p>Ce menu permet de modifier les options suivantes :</p>
 <ul>
 <li><p><em>Changer de langue</em> : langue de BaRatinAGE (plus de 25 langues disponibles à ce jour, n’hésitez pas à en ajouter ! Voir les explications dans la page <a href="/fr/doc/baratinage/aller-plus-loin"><em>Pour aller plus loin</em></a>).</p></li>
-<li><p><em>Préférences</em> : préférences sur l’apparence et le comportement de BaRatinAGE pouvant être sauvegardées entre sessions de travail (langue, mode sombre, taille de police, taille des icônes, cacher les sorties de la console de BaM, fermer cette fenêtre si BaM termine sans erreur).</p></li>
+<li><p><em>Préférences</em> : Les préférences globales s’appliquent par défaut à tous les projets, sauf si un projet a ses propres préférences. Les préférences sont en italique si elles n’ont pas été modifiées. Les préférences portent sur l’apparence et le comportement de BaRatinAGE : langue, mode sombre, taille de police, taille des icônes, cacher les sorties de la console de BaM, fermer cette fenêtre si BaM termine sans erreur, choix entre les coefficients de Strickler ou de Manning pour les coefficients de frottement, nombre d’échantillons utilisés pour la propagation, etc.</p></li>
 </ul>
 <!--- Options à venir, développements en cours :
 
--   *Préférences* : choix entre plusieurs coutumes régionales (choix entre les coefficients de Strickler ou de Manning, choix du système d'unités, etc.) ;
+-   *Préférences* : choix entre plusieurs coutumes régionales (choix du système d'unités, etc.) ;
 -   *Répertoire par défaut* : définit le répertoire par défaut qui sera proposé pour toutes les actions de sauvegarde, export, ouverture de fichiers, etc. (par défaut, ce répertoire est le dossier dans lequel est installé BaRatinAGE) ;
 -   *Options MCMC* : permet de régler les propriétés de l'échantillonneur MCMC ([détails techniques](/fr/doc/topics/mcmc)).
 -   *Options de sauvegarde* : permet d'activer ou de désactiver la sauvegarde de certains composants pouvant être très volumineux. L'activation de cette sauvegarde peut générer des fichiers extrêmement volumineux (potentiellement plusieurs Go !) et ralentir notablement les actions d'ouverture et de sauvegarde.

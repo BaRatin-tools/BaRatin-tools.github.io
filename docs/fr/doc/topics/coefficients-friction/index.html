@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    
+	    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
+    }
+  };
+</script>
+
+
+
+    
+
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Coefficients de friction</title>
+<meta name="author" content="" />
+
+
+
+
+
+<meta name="description" content="">
+
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/css/custom.css?1773422481" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/img/logo.png" />
+
+
+<link rel="alternate" href="https://baratin-tools.github.io/index.xml" type="application/rss+xml" title="BaRatin - Bayesian Rating Curves">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="fr">
+<meta property="og:site_name" content="BaRatin - Bayesian Rating Curves">
+<meta property="og:title" content="Coefficients de friction">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baratin-tools.github.io/fr/doc/topics/coefficients-friction/" />
+<meta property="og:description" content="">
+<meta property="og:image" content="https://baratin-tools.github.io/img/logo.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="145">
+  <meta property="og:image:height" content="145">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Coefficients de friction">
+
+<meta name="twitter:image" content="https://baratin-tools.github.io/img/logo.png">
+
+<meta name="twitter:description" content="">
+
+
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/fr/">
+                    
+                      <img src="/img/logoWithText.png" alt="Coefficients de friction logo" class="hidden-xs hidden-sm" />
+                      <img src="/img/logo.png" alt="Coefficients de friction logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Coefficients de friction - aller à l&#39;accueil</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Basculer la Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr">Accueil</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/fr/doc/baratinage">BaRatinAGE v3</a></li>
+                            
+                            <li><a href="/fr/doc/topics">Fiches Thématiques</a></li>
+                            
+                            <li><a href="/fr/doc/case">Cas d&#39;étude</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/ressources">Ressources</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/blog/">Blog</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/a-propos">A propos</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/fr/index.xml">rss</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/en">🇬🇧 en</a>
+                  </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Coefficients de friction</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-10" id="blog-post">
+
+                        <div id="post-content">
+                          
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="#table-de-chow-1959-strickler" id="toc-table-de-chow-1959-strickler"><span class="toc-section-number">2</span> Table de Chow, 1959 (Strickler)</a></li>
+<li><a href="#table-de-chow-1959-manning" id="toc-table-de-chow-1959-manning"><span class="toc-section-number">3</span> Table de Chow, 1959 (Manning)</a></li>
+</ul>
+</div>
+
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>Les paramètres de résistance hydraulique (ou coefficients de frottement) des contrôles par chenal sont souvent difficiles à déterminer avec précision.
+Dans la pratique, ils sont souvent exprimés sous forme de coefficient de Strickler <span class="math inline">\(K_S\)</span> ou de coefficient de Manning <span class="math inline">\(n\)</span>, l’un étant l’inverse de l’autre (<span class="math inline">\(n=1/K_S\)</span>).
+Il existe des tables ou catalogues de valeurs types (par exemple, <a href="Chow_en.xlsx">table de Chow</a>, ou ce <a href="https://wwwrcamnl.wr.usgs.gov/sws/fieldmethods/Indirects/nvalues/index.htm">catalogue illustré</a>) et des méthodes de calcul qui s’appuient sur une description plus détaillée des conditions d’écoulement (par exemple, <a href="Cowan_en.xlsx">méthode de Cowan</a>, ou la méthode d’<a href="https://pubs.usgs.gov/publication/wsp2339">Arcement et Schneider, 1989</a>).</p>
+<p>Autres références intéressantes sur l’estimation des coefficients de frottement :</p>
+<ul>
+<li>Barnes, H.H. (1967) Roughness characteristics of natural channels. U.S. Geological Survey Water-Supply Paper 1849, 213.</li>
+<li>Hey, R.D. (1979) Flow resistance in gravel-bed rivers. J. Hydraul. Div., Am. Soc. Civ. Eng., 105(4), 365–379.</li>
+<li>Hicks, D.M., Mason, P.D. (1998) Roughness Characteristics of New Zealand Rivers, Water Resources Publications, Littleton, CO, 329 pp., <a href="ISBN:0-477-02608-7" class="uri">ISBN:0-477-02608-7</a>.</li>
+<li>Jarrett, R.D. (1985) Determination of roughness coefficients for streams in Colorado. U.S. Geological Survey Water-Resources Investigations Rep. 85-4004, 54.</li>
+<li>Limerinos, J.T. (1970) Determination of the Manning coefficient from measured bed roughness in natural channels. U.S. Geological Survey Water Supply Paper 1898-B, 47.</li>
+</ul>
+</div>
+<div id="table-de-chow-1959-strickler" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Table de Chow, 1959 (Strickler)</h1>
+<p>Le tableau suivant donne les valeurs du coefficient de Strickler en m<span class="math inline">\(^{1/3}\)</span>/s, pour des types de chenal donnés, et pour une friction minimum, “normale” et maximum.</p>
+<p>Source: Ven Te Chow (1959). Open-Channel Hydraulics. McGraw-Hill, New York.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="59%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Type de chenal et description</th>
+<th align="left">Minimum</th>
+<th align="left">Normal</th>
+<th align="left">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>1. Lits mineurs, cours d’eau naturels - petits cours d’eau (largeur au plein bord &lt; 30 m / 100 pieds)</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           a. propres, rectilignes, bien remplis d’eau, sans failles ni mouilles profondes</td>
+<td align="left">40</td>
+<td align="left">33</td>
+<td align="left">30</td>
+</tr>
+<tr class="odd">
+<td align="left">           b. comme ci-dessus, mais plus de pierres et d’herbiers</td>
+<td align="left">33</td>
+<td align="left">29</td>
+<td align="left">25</td>
+</tr>
+<tr class="even">
+<td align="left">           c. propres, sinueux, quelques mouilles et hauts-fonds</td>
+<td align="left">30</td>
+<td align="left">25</td>
+<td align="left">22</td>
+</tr>
+<tr class="odd">
+<td align="left">           d. comme ci-dessus, mais quelques herbiers et pierres</td>
+<td align="left">29</td>
+<td align="left">22</td>
+<td align="left">20</td>
+</tr>
+<tr class="even">
+<td align="left">           e. comme ci-dessus, hauteurs d’eau plus faibles, avec des pentes et tronçons plus inefficaces</td>
+<td align="left">25</td>
+<td align="left">21</td>
+<td align="left">18</td>
+</tr>
+<tr class="odd">
+<td align="left">           f. identiques à “d” avec plus de pierres</td>
+<td align="left">22</td>
+<td align="left">20</td>
+<td align="left">17</td>
+</tr>
+<tr class="even">
+<td align="left">           g. tronçons lents, herbeux, mouilles profondes</td>
+<td align="left">20</td>
+<td align="left">14</td>
+<td align="left">13</td>
+</tr>
+<tr class="odd">
+<td align="left">           h. tronçons très herbeux, mouilles profondes, ou lits moyens encombrés de bois et sous-bois</td>
+<td align="left">13</td>
+<td align="left">10</td>
+<td align="left">7</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>2. Cours d’eau de montagne, pas de végétation dans le lit, berges généralement abruptes, arbres et broussailles le long des berges immergées en hautes eaux</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">           a. fond : graviers, pavés, et quelques rochers</td>
+<td align="left">33</td>
+<td align="left">25</td>
+<td align="left">20</td>
+</tr>
+<tr class="even">
+<td align="left">           b. fond : pavés avec de gros rochers</td>
+<td align="left">25</td>
+<td align="left">20</td>
+<td align="left">14</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>3. Lits majeurs</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           a. Prairie, sans broussailles</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. herbe rase</td>
+<td align="left">40</td>
+<td align="left">33</td>
+<td align="left">29</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. herbe haute</td>
+<td align="left">33</td>
+<td align="left">29</td>
+<td align="left">20</td>
+</tr>
+<tr class="odd">
+<td align="left">           b. Surfaces cultivées</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. aucune culture</td>
+<td align="left">50</td>
+<td align="left">33</td>
+<td align="left">25</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. cultures matures en rang</td>
+<td align="left">40</td>
+<td align="left">29</td>
+<td align="left">22</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. cultures matures en champ</td>
+<td align="left">33</td>
+<td align="left">25</td>
+<td align="left">20</td>
+</tr>
+<tr class="odd">
+<td align="left">           c. Broussailles</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. broussailles dispersées, herbes denses</td>
+<td align="left">29</td>
+<td align="left">20</td>
+<td align="left">14</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. broussailles aérées et arbres, en hiver</td>
+<td align="left">29</td>
+<td align="left">20</td>
+<td align="left">17</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. broussailles aérées et arbres, en été</td>
+<td align="left">25</td>
+<td align="left">17</td>
+<td align="left">13</td>
+</tr>
+<tr class="odd">
+<td align="left">                    4. broussailles moyennes à denses, en hiver</td>
+<td align="left">22</td>
+<td align="left">14</td>
+<td align="left">9</td>
+</tr>
+<tr class="even">
+<td align="left">                    5. broussailles moyennes à denses, en été</td>
+<td align="left">14</td>
+<td align="left">10</td>
+<td align="left">6</td>
+</tr>
+<tr class="odd">
+<td align="left">           d. Arbres</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. saules denses, en été, alignés</td>
+<td align="left">9</td>
+<td align="left">7</td>
+<td align="left">5</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. terres défrichées avec des souches d’arbres, pas de pousses</td>
+<td align="left">33</td>
+<td align="left">25</td>
+<td align="left">20</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. comme ci-dessus, mais avec fort développement de pousses</td>
+<td align="left">20</td>
+<td align="left">17</td>
+<td align="left">13</td>
+</tr>
+<tr class="odd">
+<td align="left">                    4. dense présence de bois, quelques arbres couchés, un peu de sous-bois, hautes eaux sous les branches</td>
+<td align="left">20</td>
+<td align="left">21</td>
+<td align="left">22</td>
+</tr>
+<tr class="even">
+<td align="left">                    5. comme le 4., les hautes eaux atteignant les branches</td>
+<td align="left">10</td>
+<td align="left">8</td>
+<td align="left">6</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>4. Chenaux creusés ou dragués</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           a. En terre, droits, et uniformes</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. propres, récemment achevés</td>
+<td align="left">63</td>
+<td align="left">56</td>
+<td align="left">50</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. propres, après exposition aux intempéries</td>
+<td align="left">56</td>
+<td align="left">45</td>
+<td align="left">40</td>
+</tr>
+<tr class="odd">
+<td align="left">                    3. graviers, tronçon uniforme, propre</td>
+<td align="left">45</td>
+<td align="left">40</td>
+<td align="left">33</td>
+</tr>
+<tr class="even">
+<td align="left">                    4. herbe rase, peu d’herbiers</td>
+<td align="left">45</td>
+<td align="left">37</td>
+<td align="left">30</td>
+</tr>
+<tr class="odd">
+<td align="left">           b. En terre, sinueux, et ralentis</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. pas de végétation</td>
+<td align="left">43</td>
+<td align="left">40</td>
+<td align="left">33</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. herbe, quelques herbiers</td>
+<td align="left">40</td>
+<td align="left">33</td>
+<td align="left">30</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. herbiers denses ou plantes aquatiques dans les chenaux profonds</td>
+<td align="left">33</td>
+<td align="left">29</td>
+<td align="left">25</td>
+</tr>
+<tr class="odd">
+<td align="left">                    4. fond en terre et bords en déblais</td>
+<td align="left">36</td>
+<td align="left">33</td>
+<td align="left">29</td>
+</tr>
+<tr class="even">
+<td align="left">                    5. fond pierreux et berges herbeuses</td>
+<td align="left">40</td>
+<td align="left">29</td>
+<td align="left">25</td>
+</tr>
+<tr class="odd">
+<td align="left">                    6. fond en galets et bords propres</td>
+<td align="left">33</td>
+<td align="left">25</td>
+<td align="left">20</td>
+</tr>
+<tr class="even">
+<td align="left">           c. Excavé par dragline ou dragué</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. pas de végétation</td>
+<td align="left">40</td>
+<td align="left">36</td>
+<td align="left">30</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. broussailles aérées sur les berges</td>
+<td align="left">29</td>
+<td align="left">20</td>
+<td align="left">17</td>
+</tr>
+<tr class="odd">
+<td align="left">           d. Tranchées dans la roche</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. lisses et uniformes</td>
+<td align="left">40</td>
+<td align="left">29</td>
+<td align="left">25</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. déchiquetées et irrégulières</td>
+<td align="left">29</td>
+<td align="left">25</td>
+<td align="left">20</td>
+</tr>
+<tr class="even">
+<td align="left">           e. Chenaux pas entretenus, herbiers et broussailles non coupées</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. herbiers denses, sur toute la hauteur d’écoulement</td>
+<td align="left">20</td>
+<td align="left">13</td>
+<td align="left">8</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. fond propre, broussailles sur les bords</td>
+<td align="left">25</td>
+<td align="left">20</td>
+<td align="left">13</td>
+</tr>
+<tr class="odd">
+<td align="left">                    3. comme ci-dessus, plus hautes eaux</td>
+<td align="left">22</td>
+<td align="left">14</td>
+<td align="left">9</td>
+</tr>
+<tr class="even">
+<td align="left">                    4. broussailles denses, hautes eaux</td>
+<td align="left">13</td>
+<td align="left">10</td>
+<td align="left">7</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>5. Chenaux rectifiés ou construits</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           a. Ciment</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. surface nette</td>
+<td align="left">100</td>
+<td align="left">91</td>
+<td align="left">77</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. mortier</td>
+<td align="left">91</td>
+<td align="left">77</td>
+<td align="left">67</td>
+</tr>
+<tr class="odd">
+<td align="left">           b. Bois</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. raboté, non traité</td>
+<td align="left">100</td>
+<td align="left">83</td>
+<td align="left">71</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. raboté, créosoté</td>
+<td align="left">91</td>
+<td align="left">83</td>
+<td align="left">67</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. non raboté</td>
+<td align="left">91</td>
+<td align="left">77</td>
+<td align="left">67</td>
+</tr>
+<tr class="odd">
+<td align="left">                    4. planche avec tasseaux</td>
+<td align="left">83</td>
+<td align="left">67</td>
+<td align="left">56</td>
+</tr>
+<tr class="even">
+<td align="left">                    5. recouvert de textile imperméabilisant</td>
+<td align="left">100</td>
+<td align="left">71</td>
+<td align="left">59</td>
+</tr>
+<tr class="odd">
+<td align="left">           c. Béton</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. finition à la truelle</td>
+<td align="left">91</td>
+<td align="left">77</td>
+<td align="left">67</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. finition à l’aplanissoir</td>
+<td align="left">77</td>
+<td align="left">67</td>
+<td align="left">63</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. avec finition, avec du gravier sur le fond</td>
+<td align="left">67</td>
+<td align="left">59</td>
+<td align="left">50</td>
+</tr>
+<tr class="odd">
+<td align="left">                    4. sans finition</td>
+<td align="left">71</td>
+<td align="left">59</td>
+<td align="left">50</td>
+</tr>
+<tr class="even">
+<td align="left">                    5. béton projeté, bon tronçon</td>
+<td align="left">63</td>
+<td align="left">53</td>
+<td align="left">43</td>
+</tr>
+<tr class="odd">
+<td align="left">                    6. béton projeté, tronçon ondulé</td>
+<td align="left">56</td>
+<td align="left">45</td>
+<td align="left">40</td>
+</tr>
+<tr class="even">
+<td align="left">                    7. sur de la bonne roche excavée</td>
+<td align="left">59</td>
+<td align="left">50</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    8. sur de la roche excavée irrégulière</td>
+<td align="left">45</td>
+<td align="left">37</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           d. Fond en béton, finition à l’aplanissoir, avec bords en :</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. pierre de taille liée au mortier</td>
+<td align="left">67</td>
+<td align="left">59</td>
+<td align="left">50</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. pierre brute liée au mortier</td>
+<td align="left">59</td>
+<td align="left">50</td>
+<td align="left">42</td>
+</tr>
+<tr class="odd">
+<td align="left">                    3. maçonnerie de ciment moellons, enduit</td>
+<td align="left">63</td>
+<td align="left">50</td>
+<td align="left">42</td>
+</tr>
+<tr class="even">
+<td align="left">                    4. maçonnerie de ciment moellons</td>
+<td align="left">50</td>
+<td align="left">40</td>
+<td align="left">33</td>
+</tr>
+<tr class="odd">
+<td align="left">                    5. moellons non liés ou enrochements</td>
+<td align="left">50</td>
+<td align="left">33</td>
+<td align="left">29</td>
+</tr>
+<tr class="even">
+<td align="left">           e. Fond en graviers, avec bords en :</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. béton coffré</td>
+<td align="left">59</td>
+<td align="left">50</td>
+<td align="left">40</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. mortier de pierre brute</td>
+<td align="left">50</td>
+<td align="left">43</td>
+<td align="left">38</td>
+</tr>
+<tr class="odd">
+<td align="left">                    3. déblais non liés ou enrochements</td>
+<td align="left">43</td>
+<td align="left">30</td>
+<td align="left">28</td>
+</tr>
+<tr class="even">
+<td align="left">           f. Brique</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. brique vernissée</td>
+<td align="left">91</td>
+<td align="left">77</td>
+<td align="left">67</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. liée au mortier de ciment</td>
+<td align="left">83</td>
+<td align="left">67</td>
+<td align="left">56</td>
+</tr>
+<tr class="odd">
+<td align="left">           g. Maçonnerie</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. moellons cimentés</td>
+<td align="left">59</td>
+<td align="left">40</td>
+<td align="left">33</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. moellons non liés</td>
+<td align="left">43</td>
+<td align="left">31</td>
+<td align="left">29</td>
+</tr>
+<tr class="even">
+<td align="left">           h. Pierre de taille / dallage en pierre</td>
+<td align="left">77</td>
+<td align="left">67</td>
+<td align="left">59</td>
+</tr>
+<tr class="odd">
+<td align="left">           i. Asphalte</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. lisse</td>
+<td align="left">77</td>
+<td align="left">77</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. rugueux</td>
+<td align="left">63</td>
+<td align="left">63</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           j. Revêtement végétal</td>
+<td align="left">33</td>
+<td align="left"></td>
+<td align="left">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="table-de-chow-1959-manning" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Table de Chow, 1959 (Manning)</h1>
+<p>Le tableau suivant donne les valeurs du coefficient de Manning en s/m<span class="math inline">\(^{1/3}\)</span>, pour des types de chenal donnés, et pour une friction minimum, “normale” et maximum.</p>
+<p>Source: Ven Te Chow (1959). Open-Channel Hydraulics. McGraw-Hill, New York.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="59%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Type de chenal et description</th>
+<th align="left">Minimum</th>
+<th align="left">Normal</th>
+<th align="left">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>1. Lits mineurs, cours d’eau naturels - petits cours d’eau (largeur au plein bord &lt; 30 m / 100 pieds)</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           a. propres, rectilignes, bien remplis d’eau, sans failles ni mouilles profondes</td>
+<td align="left">0.025</td>
+<td align="left">0.030</td>
+<td align="left">0.033</td>
+</tr>
+<tr class="odd">
+<td align="left">           b. comme ci-dessus, mais plus de pierres et d’herbiers</td>
+<td align="left">0.030</td>
+<td align="left">0.035</td>
+<td align="left">0.040</td>
+</tr>
+<tr class="even">
+<td align="left">           c. propres, sinueux, quelques mouilles et hauts-fonds</td>
+<td align="left">0.033</td>
+<td align="left">0.040</td>
+<td align="left">0.045</td>
+</tr>
+<tr class="odd">
+<td align="left">           d. comme ci-dessus, mais quelques herbiers et pierres</td>
+<td align="left">0.035</td>
+<td align="left">0.045</td>
+<td align="left">0.050</td>
+</tr>
+<tr class="even">
+<td align="left">           e. comme ci-dessus, hauteurs d’eau plus faibles, avec des pentes et tronçons plus inefficaces</td>
+<td align="left">0.040</td>
+<td align="left">0.048</td>
+<td align="left">0.055</td>
+</tr>
+<tr class="odd">
+<td align="left">           f. identiques à “d” avec plus de pierres</td>
+<td align="left">0.045</td>
+<td align="left">0.050</td>
+<td align="left">0.060</td>
+</tr>
+<tr class="even">
+<td align="left">           g. tronçons lents, herbeux, mouilles profondes</td>
+<td align="left">0.050</td>
+<td align="left">0.070</td>
+<td align="left">0.080</td>
+</tr>
+<tr class="odd">
+<td align="left">           h. tronçons très herbeux, mouilles profondes, ou lits moyens encombrés de bois et sous-bois</td>
+<td align="left">0.075</td>
+<td align="left">0.100</td>
+<td align="left">0.150</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>2. Cours d’eau de montagne, pas de végétation dans le lit, berges généralement abruptes, arbres et broussailles le long des berges immergées en hautes eaux</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">           a. fond : graviers, pavés, et quelques rochers</td>
+<td align="left">0.030</td>
+<td align="left">0.040</td>
+<td align="left">0.050</td>
+</tr>
+<tr class="even">
+<td align="left">           b. fond : pavés avec de gros rochers</td>
+<td align="left">0.040</td>
+<td align="left">0.050</td>
+<td align="left">0.070</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>3. Lits majeurs</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           a. Prairie, sans broussailles</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. herbe rase</td>
+<td align="left">0.025</td>
+<td align="left">0.030</td>
+<td align="left">0.035</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. herbe haute</td>
+<td align="left">0.030</td>
+<td align="left">0.035</td>
+<td align="left">0.050</td>
+</tr>
+<tr class="odd">
+<td align="left">           b. Surfaces cultivées</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. aucune culture</td>
+<td align="left">0.020</td>
+<td align="left">0.030</td>
+<td align="left">0.040</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. cultures matures en rang</td>
+<td align="left">0.025</td>
+<td align="left">0.035</td>
+<td align="left">0.045</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. cultures matures en champ</td>
+<td align="left">0.030</td>
+<td align="left">0.040</td>
+<td align="left">0.050</td>
+</tr>
+<tr class="odd">
+<td align="left">           c. Broussailles</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. broussailles dispersées, herbes denses</td>
+<td align="left">0.035</td>
+<td align="left">0.050</td>
+<td align="left">0.070</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. broussailles aérées et arbres, en hiver</td>
+<td align="left">0.035</td>
+<td align="left">0.050</td>
+<td align="left">0.060</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. broussailles aérées et arbres, en été</td>
+<td align="left">0.040</td>
+<td align="left">0.060</td>
+<td align="left">0.080</td>
+</tr>
+<tr class="odd">
+<td align="left">                    4. broussailles moyennes à denses, en hiver</td>
+<td align="left">0.045</td>
+<td align="left">0.070</td>
+<td align="left">0.110</td>
+</tr>
+<tr class="even">
+<td align="left">                    5. broussailles moyennes à denses, en été</td>
+<td align="left">0.070</td>
+<td align="left">0.100</td>
+<td align="left">0.160</td>
+</tr>
+<tr class="odd">
+<td align="left">           d. Arbres</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. saules denses, en été, alignés</td>
+<td align="left">0.110</td>
+<td align="left">0.150</td>
+<td align="left">0.020</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. terres défrichées avec des souches d’arbres, pas de pousses</td>
+<td align="left">0.030</td>
+<td align="left">0.040</td>
+<td align="left">0.050</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. comme ci-dessus, mais avec fort développement de pousses</td>
+<td align="left">0.050</td>
+<td align="left">0.060</td>
+<td align="left">0.080</td>
+</tr>
+<tr class="odd">
+<td align="left">                    4. dense présence de bois, quelques arbres couchés, un peu de sous-bois, hautes eaux sous les branches</td>
+<td align="left">0.050</td>
+<td align="left">0.048</td>
+<td align="left">0.045</td>
+</tr>
+<tr class="even">
+<td align="left">                    5. comme le 4., les hautes eaux atteignant les branches</td>
+<td align="left">0.100</td>
+<td align="left">0.120</td>
+<td align="left">0.160</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>4. Chenaux creusés ou dragués</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           a. En terre, droits, et uniformes</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. propres, récemment achevés</td>
+<td align="left">0.016</td>
+<td align="left">0.018</td>
+<td align="left">0.020</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. propres, après exposition aux intempéries</td>
+<td align="left">0.018</td>
+<td align="left">0.022</td>
+<td align="left">0.025                   </td>
+</tr>
+<tr class="odd">
+<td align="left">                    3. graviers, tronçon uniforme, propre</td>
+<td align="left">0.022</td>
+<td align="left">0.025</td>
+<td align="left">0.030</td>
+</tr>
+<tr class="even">
+<td align="left">                    4. herbe rase, peu d’herbiers</td>
+<td align="left">0.022</td>
+<td align="left">0.027</td>
+<td align="left">0.033</td>
+</tr>
+<tr class="odd">
+<td align="left">           b. En terre, sinueux, et ralentis</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. pas de végétation</td>
+<td align="left">0.023</td>
+<td align="left">0.025</td>
+<td align="left">0.030</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. herbe, quelques herbiers</td>
+<td align="left">0.025</td>
+<td align="left">0.030</td>
+<td align="left">0.033</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. herbiers denses ou plantes aquatiques dans les chenaux profonds</td>
+<td align="left">0.030</td>
+<td align="left">0.035</td>
+<td align="left">0.040</td>
+</tr>
+<tr class="odd">
+<td align="left">                    4. fond en terre et bords en déblais</td>
+<td align="left">0.028</td>
+<td align="left">0.030</td>
+<td align="left">0.035</td>
+</tr>
+<tr class="even">
+<td align="left">                    5. fond pierreux et berges herbeuses</td>
+<td align="left">0.025</td>
+<td align="left">0.035</td>
+<td align="left">0.040</td>
+</tr>
+<tr class="odd">
+<td align="left">                    6. fond en galets et bords propres</td>
+<td align="left">0.030</td>
+<td align="left">0.040</td>
+<td align="left">0.050</td>
+</tr>
+<tr class="even">
+<td align="left">           c. Excavé par dragline ou dragué</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. pas de végétation</td>
+<td align="left">0.025</td>
+<td align="left">0.028</td>
+<td align="left">0.033</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. broussailles aérées sur les berges</td>
+<td align="left">0.035</td>
+<td align="left">0.050</td>
+<td align="left">0.060</td>
+</tr>
+<tr class="odd">
+<td align="left">           d. Tranchées dans la roche</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. lisses et uniformes</td>
+<td align="left">0.025</td>
+<td align="left">0.035</td>
+<td align="left">0.040</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. déchiquetées et irrégulières</td>
+<td align="left">0.035</td>
+<td align="left">0.040</td>
+<td align="left">0.050</td>
+</tr>
+<tr class="even">
+<td align="left">           e. Chenaux pas entretenus, herbiers et broussailles non coupées</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. herbiers denses, sur toute la hauteur d’écoulement</td>
+<td align="left">0.050</td>
+<td align="left">0.080</td>
+<td align="left">0.120</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. fond propre, broussailles sur les bords</td>
+<td align="left">0.040</td>
+<td align="left">0.050</td>
+<td align="left">0.080</td>
+</tr>
+<tr class="odd">
+<td align="left">                    3. comme ci-dessus, plus hautes eaux</td>
+<td align="left">0.045</td>
+<td align="left">0.070</td>
+<td align="left">0.110</td>
+</tr>
+<tr class="even">
+<td align="left">                    4. broussailles denses, hautes eaux</td>
+<td align="left">0.080</td>
+<td align="left">0.100</td>
+<td align="left">0.150</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>5. Chenaux rectifiés ou construits</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           a. Ciment</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. surface nette</td>
+<td align="left">0.010</td>
+<td align="left">0.011</td>
+<td align="left">0.013</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. mortier</td>
+<td align="left">0.110</td>
+<td align="left">0.013</td>
+<td align="left">0.015</td>
+</tr>
+<tr class="odd">
+<td align="left">           b. Bois</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. raboté, non traité</td>
+<td align="left">0.010</td>
+<td align="left">0.012</td>
+<td align="left">0.014</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. raboté, créosoté</td>
+<td align="left">0.110</td>
+<td align="left">0.012</td>
+<td align="left">0.015</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. non raboté</td>
+<td align="left">0.110</td>
+<td align="left">0.013</td>
+<td align="left">0.015</td>
+</tr>
+<tr class="odd">
+<td align="left">                    4. planche avec tasseaux</td>
+<td align="left">0.012</td>
+<td align="left">0.015</td>
+<td align="left">0.018</td>
+</tr>
+<tr class="even">
+<td align="left">                    5. recouvert de textile imperméabilisant</td>
+<td align="left">0.010</td>
+<td align="left">0.014</td>
+<td align="left">0.017</td>
+</tr>
+<tr class="odd">
+<td align="left">           c. Béton</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. finition à la truelle</td>
+<td align="left">0.110</td>
+<td align="left">0.013</td>
+<td align="left">0.015</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. finition à l’aplanissoir</td>
+<td align="left">0.013</td>
+<td align="left">0.015</td>
+<td align="left">0.016</td>
+</tr>
+<tr class="even">
+<td align="left">                    3. avec finition, avec du gravier sur le fond</td>
+<td align="left">0.015</td>
+<td align="left">0.017</td>
+<td align="left">0.020</td>
+</tr>
+<tr class="odd">
+<td align="left">                    4. sans finition</td>
+<td align="left">0.014</td>
+<td align="left">0.017</td>
+<td align="left">0.020</td>
+</tr>
+<tr class="even">
+<td align="left">                    5. béton projeté, bon tronçon</td>
+<td align="left">0.016</td>
+<td align="left">0.019</td>
+<td align="left">0.023</td>
+</tr>
+<tr class="odd">
+<td align="left">                    6. béton projeté, tronçon ondulé</td>
+<td align="left">0.018</td>
+<td align="left">0.022</td>
+<td align="left">0.025</td>
+</tr>
+<tr class="even">
+<td align="left">                    7. sur de la bonne roche excavée</td>
+<td align="left">0.017</td>
+<td align="left">0.020</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    8. sur de la roche excavée irrégulière</td>
+<td align="left">0.022</td>
+<td align="left">0.027</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           d. Fond en béton, finition à l’aplanissoir, avec bords en :</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. pierre de taille liée au mortier</td>
+<td align="left">0.015</td>
+<td align="left">0.017</td>
+<td align="left">0.020</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. pierre brute liée au mortier</td>
+<td align="left">0.017</td>
+<td align="left">0.020</td>
+<td align="left">0.024</td>
+</tr>
+<tr class="odd">
+<td align="left">                    3. maçonnerie de ciment moellons, enduit</td>
+<td align="left">0.016</td>
+<td align="left">0.020</td>
+<td align="left">0.024</td>
+</tr>
+<tr class="even">
+<td align="left">                    4. maçonnerie de ciment moellons</td>
+<td align="left">0.020</td>
+<td align="left">0.025</td>
+<td align="left">0.030</td>
+</tr>
+<tr class="odd">
+<td align="left">                    5. moellons non liés ou enrochements</td>
+<td align="left">0.020</td>
+<td align="left">0.030</td>
+<td align="left">0.035</td>
+</tr>
+<tr class="even">
+<td align="left">           e. Fond en graviers, avec bords en :</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. béton coffré</td>
+<td align="left">0.017</td>
+<td align="left">0.020</td>
+<td align="left">0.025</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. mortier de pierre brute</td>
+<td align="left">0.020</td>
+<td align="left">0.023</td>
+<td align="left">0.026</td>
+</tr>
+<tr class="odd">
+<td align="left">                    3. déblais non liés ou enrochements</td>
+<td align="left">0.023</td>
+<td align="left">0.033</td>
+<td align="left">0.036</td>
+</tr>
+<tr class="even">
+<td align="left">           f. Brique</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    1. brique vernissée</td>
+<td align="left">0.110</td>
+<td align="left">0.013</td>
+<td align="left">0.015</td>
+</tr>
+<tr class="even">
+<td align="left">                    2. liée au mortier de ciment</td>
+<td align="left">0.012</td>
+<td align="left">0.015</td>
+<td align="left">0.018</td>
+</tr>
+<tr class="odd">
+<td align="left">           g. Maçonnerie</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. moellons cimentés</td>
+<td align="left">0.017</td>
+<td align="left">0.025</td>
+<td align="left">0.030</td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. moellons non liés</td>
+<td align="left">0.023</td>
+<td align="left">0.032</td>
+<td align="left">0.035</td>
+</tr>
+<tr class="even">
+<td align="left">           h. Pierre de taille / dallage en pierre</td>
+<td align="left">0.013</td>
+<td align="left">0.015</td>
+<td align="left">0.017</td>
+</tr>
+<tr class="odd">
+<td align="left">           i. Asphalte</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">                    1. lisse</td>
+<td align="left">0.013</td>
+<td align="left">0.013</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">                    2. rugueux</td>
+<td align="left">0.016</td>
+<td align="left">0.016</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">           j. Revêtement végétal</td>
+<td align="left">0.030</td>
+<td align="left"></td>
+<td align="left">0.500</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+                        </div>                        
+                        
+  <div class="container">
+    
+    
+
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/">L&#39;analyse hydraulique</a> 
+		
+
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/">Contrôles hydrauliques</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/coefficients-friction/">Coefficients de friction</a> </strong> 
+
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/jaugeages/">Incertitudes sur les jaugeages</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/">Equation de la courbe de tarage</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/limni/">Incertitudes dans les limnigrammes</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/">Incertitudes dans les hydrogrammes</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Le B.A.-BA de l’inférence Bayesienne</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Algorithmes MCMC</a> 
+		
+
+		
+		    &nbsp; | &nbsp;
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-2">
+
+                        
+                    
+                        
+  <div class="container">
+  	<h3> Sections </h3>
+    
+    
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/analyse-hydraulique/">L&#39;analyse hydraulique</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/controles-hydrauliques/">Contrôles hydrauliques</a> </br> </br>
+		
+    
+		
+		<div style="background-color:beige;">
+		   <strong> <a href="https://baratin-tools.github.io/fr/doc/topics/coefficients-friction/">Coefficients de friction</a> </strong></br>
+		</div>
+		</br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/jaugeages/">Incertitudes sur les jaugeages</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/courbe-de-tarage/">Equation de la courbe de tarage</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/limni/">Incertitudes dans les limnigrammes</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/modele-stat/">Modèle statistique</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/hydrogrammes/">Incertitudes dans les hydrogrammes</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/bayesien/">Le B.A.-BA de l’inférence Bayesienne</a> </br> </br>
+		
+    
+		
+		    <a href="https://baratin-tools.github.io/fr/doc/topics/mcmc/">Algorithmes MCMC</a> </br> </br>
+		
+    
+         
+  
+  </div>
+    
+
+
+
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+
+            </div>
+            
+            
+            
+        </div>
+        
+
+        <footer id="footer">
+  <div class="container">
+    
+  
+    <div class="col-xs-3">
+    	<p> <strong> BaRatin</strong> - Bayesian Rating Curves </p>
+        <p> <strong>Contact</strong>: baratin.dev %at% inrae.fr </p>
+    </div>
+  
+    <div class="col-xs-3">
+        <p> <a href="https://github.com/BaRatin-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaRatin-tools </a> </p>
+        <p> <a href="https://github.com/BaM-tools"> <img alt="GitHub logo" src="/img/github-mark.svg" width="24" height="24" /> https://github.com/BaM-tools </a> </p>
+    </div>
+  
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://www.inrae.fr"><img style="max-width:90%;max-height:40px;" src="/img/Logo-INRAE_Transparent.png" alt="INRAE"> </a>
+      </p>   
+    </div>
+    
+    <div class="col-xs-3">
+      <p> 
+       <a href="https://gdh-hydrometrie.org/"><img style="max-width:90%;max-height:76px;" src="/img/Logo-GDH.png" alt="GDH"> </a>
+      </p>   
+    </div>
+      
+  </div>
+    
+</footer>
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/js/front.js"></script>
+
+
+
+  </body>
+</html>

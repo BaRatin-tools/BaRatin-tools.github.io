@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1771927081" rel="stylesheet">
+<link href="/css/custom.css?1773422481" rel="stylesheet">
 
 
 
@@ -340,10 +340,15 @@
 <p>The same information is also available in table form, with a comparison between the prior and posterior estimates for each parameter of the rating curve, in the form of the lower and upper bounds of their 95% intervals. A consistency test between prior and posterior estimates is displayed for each parameter: an inconsistency is detected for a given parameter if at least 99% of the MCMC samples are greater (or less) than the samples taken from the prior distribution for that parameter. These results can be exported in CSV format or copied to the clipboard.</p>
 <p><img src="RC_Verrieres_Param_Summary.en.png" /></p>
 </div>
+<div id="residuals" class="section level2">
+<h2>Residuals</h2>
+<p>Starting with version 3.3 of BaRatinAGE, a <em>Residuals</em> tab allows you to display the deviations of the gaugings from the MaxPost rating curve (as a percentage of discharge) with, on the horizontal axis, the stage, the observed discharge (gaugings), the estimated discharge (rating curve) or the gauging index.</p>
+<p><img src="RC_Verrieres_Residuals.en.png" /></p>
+</div>
 <div id="mcmc-simulations" class="section level2">
 <h2>MCMC simulations</h2>
-<p><img src="RC_Verrieres_MCMC.en.png" /></p>
 <p>The MCMC trace graph represents the parameter values simulated from the posterior distribution using the MCMC simulator (full technical details are explained in <a href="/en/doc/topics/mcmc">this document</a>). Note that the graph only shows 500 simulated values, but in fact 10,000 values were initially generated, the first 5,000 being discarded. These 5,000 initial values were simply decimated and reduced to 500 values to avoid keeping too many simulations.</p>
+<p><img src="RC_Verrieres_MCMC.en.png" /></p>
 <p>In addition to the <span class="math inline">\(\kappa\)</span>, <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> parameters for each control, samples of the <span class="math inline">\(\gamma_1\)</span> and <span class="math inline">\(\gamma_2\)</span> parameters for the standard deviation of the structural error and the logarithm of the posterior density (“LogPost”) are also plotted. The position of the maxpost parameter set (maximising the posterior distribution) is indicated by a vertical red line for each parameter. These results can be exported in CSV format.</p>
 </div>
 <div id="rating-curves-comparator" class="section level2">

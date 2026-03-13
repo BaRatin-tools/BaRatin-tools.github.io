@@ -49,7 +49,7 @@
 
 
 
-<link href="/css/custom.css?1771927081" rel="stylesheet">
+<link href="/css/custom.css?1773422480" rel="stylesheet">
 
 
 
@@ -340,10 +340,15 @@
 <p>La même information est également disponible sous forme de tableau, avec pour chaque paramètre de la courbe de tarage une comparaison entre les estimations a priori et a posteriori, sous la forme des bornes inférieures et supérieures de leurs intervalles à 95%. Un test de cohérence entre a priori et a posteriori est affiché pour chaque paramètre : une incohérence est détectée pour un paramètre donné si au moins 99% des échantillons MCMC sont supérieurs (ou inférieurs) aux échantillons tirés de la loi a priori de ce paramètre. Il est possible d’exporter ces résultats au format CSV ou de les copier dans le presse-papier.</p>
 <p><img src="RC_Verrieres_Param_Summary.fr.png" /></p>
 </div>
+<div id="résidus" class="section level2">
+<h2>Résidus</h2>
+<p>A partir de la version 3.3 de BaRatinAGE, un onglet <em>Résidus</em> permet d’afficher les écarts des jaugeages à la courbe de tarage MaxPost (en % de débit) en fonction de la hauteur d’eau, du débit observé (jaugeages), du débit simulé (courbe de tarage) ou de l’indice du jaugeage.</p>
+<p><img src="RC_Verrieres_Residuals.fr.png" /></p>
+</div>
 <div id="simulations-mcmc" class="section level2">
 <h2>Simulations MCMC</h2>
-<p><img src="RC_Verrieres_MCMC.fr.png" /></p>
 <p>Le graphique des traces MCMC représente les valeurs de paramètres simulées depuis la distribution a posteriori grâce au simulateur MCMC (tous les détails techniques sont expliqués dans <a href="/fr/doc/topics/mcmc">ce document</a>). Notez que le graphique ne montre que 500 valeurs simulées, mais en fait 10 000 valeurs ont été initialement générées, les 5 000 premières étant éliminées. Ces 5 000 valeurs initiales ont simplement été décimées et réduites à 500 valeurs pour éviter de conserver un nombre de simulations trop important.</p>
+<p><img src="RC_Verrieres_MCMC.fr.png" /></p>
 <p>Outre les paramètres <span class="math inline">\(\kappa\)</span>, <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, et <span class="math inline">\(c\)</span> de chaque contrôle, les échantillons des paramètres <span class="math inline">\(\gamma_1\)</span> et <span class="math inline">\(\gamma_2\)</span> de l’écart-type de l’erreur structurelle ainsi que le logarithme de la densité a posteriori (“LogPost”) sont également tracés. La position du jeu de paramètres maxpost (maximisant la distribution a posteriori) est indiquée par une ligne verticale rouge pour chaque paramètre. Ces résultats peuvent être exportés au format CSV.</p>
 </div>
 <div id="comparateur-de-courbes-de-tarage" class="section level2">

@@ -74,6 +74,18 @@
                 href="https://baratin-tools.github.io/fr/doc/case/ardeche-meyras/"
                 />
   </url><url>
+    <loc>https://baratin-tools.github.io/fr/doc/topics/coefficients-friction/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/friction-coefficients/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/coefficients-friction/"
+                />
+  </url><url>
     <loc>https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/</loc>
     <xhtml:link
                 rel="alternate"

@@ -74,6 +74,18 @@
                 href="https://baratin-tools.github.io/en/doc/baratinage/main-frame/"
                 />
   </url><url>
+    <loc>https://baratin-tools.github.io/en/doc/topics/friction-coefficients/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://baratin-tools.github.io/fr/doc/topics/coefficients-friction/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://baratin-tools.github.io/en/doc/topics/friction-coefficients/"
+                />
+  </url><url>
     <loc>https://baratin-tools.github.io/en/doc/baratinage/hydraulic-configuration/</loc>
     <xhtml:link
                 rel="alternate"

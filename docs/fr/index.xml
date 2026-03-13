@@ -51,6 +51,13 @@
       <description>1 Introduction 2 Analyse hydraulique 3 Spécification des a priori 4 Jaugeages et courbe de tarage a posteriori Téléchargez le fichier BaRatinAGE de ce cas d’étude : Ardeche-Meyras.</description>
     </item>
     <item>
+      <title>Coefficients de friction</title>
+      <link>https://baratin-tools.github.io/fr/doc/topics/coefficients-friction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://baratin-tools.github.io/fr/doc/topics/coefficients-friction/</guid>
+      <description>1 Introduction 2 Table de Chow, 1959 (Strickler) 3 Table de Chow, 1959 (Manning) 1 Introduction Les paramètres de résistance hydraulique (ou coefficients de frottement) des contrôles par chenal sont souvent difficiles à déterminer avec précision.</description>
+    </item>
+    <item>
       <title>Configuration hydraulique</title>
       <link>https://baratin-tools.github.io/fr/doc/baratinage/configuration-hydraulique/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
