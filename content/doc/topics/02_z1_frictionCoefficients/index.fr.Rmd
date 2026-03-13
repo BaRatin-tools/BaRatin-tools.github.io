@@ -244,31 +244,3 @@ Source: Ven Te Chow (1959). Open-Channel Hydraulics. McGraw-Hill, New York.
 
 
 
-
-
-
-# Table de Chow V2
-
-## Lits mineurs, cours d'eau naturels - petits cours d'eau (largeur au plein bord < 30 m / 100 pieds)
-
-### propres, rectilignes, bien remplis d'eau, sans failles ni mouilles profondes
-$K_S= 33 \space [30;40]$; $n=0.03 \space [0.025;0.033]$
-
-### comme ci-dessus, mais plus de pierres et d'herbiers
-$K_S= 29 \space [25;33]$; $n=0.035 \space [0.03;0.04]$
-
-### propres, sinueux, quelques mouilles et hauts-fonds
-$K_S= 25 \space [22;30]$; $n=0.04 \space [0.033;0.045]$
-
-### etc... 
-
-## Cours d'eau de montagne, pas de végétation dans le lit, berges généralement abruptes, arbres et broussailles le long des berges immergées en hautes eaux
-
-### etc... 
-
-# Formule de Cowan
-
-Mettre un lien [vers le fichier](/doc/Cowan_fr.xlsx) pour le moment ?
-
-
-

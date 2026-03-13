@@ -64,6 +64,7 @@ The graph above shows how prior knowledge of the parameters (distributions in bl
 The same information is also available in table form, with a comparison between the prior and posterior estimates for each parameter of the rating curve, in the form of the lower and upper bounds of their 95% intervals. A consistency test between prior and posterior estimates is displayed for each parameter: an inconsistency is detected for a given parameter if at least 99% of the MCMC samples are greater (or less) than the samples taken from the prior distribution for that parameter. These results can be exported in CSV format or copied to the clipboard.
 
 ![](RC_Verrieres_Param_Summary.en.png)
+
 ## Residuals
 
 Starting with version 3.3 of BaRatinAGE, a *Residuals* tab allows you to display the deviations of the gaugings from the MaxPost rating curve (as a percentage of discharge) with, on the horizontal axis, the stage, the observed discharge (gaugings), the estimated discharge (rating curve) or the gauging index.
