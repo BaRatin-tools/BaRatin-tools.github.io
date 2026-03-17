@@ -14,7 +14,7 @@ output:
 
 For any question on BaRatin, on associated software [BaRatinAGE](https://github.com/BaRatin-tools/BaRatinAGE) or [RBaM](https://github.com/BaM-tools/RBaM), or more generally on rating curve estimation, feel free to get in touch with us at the following address: 
 
-#### baratin.dev %at% inrae.fr
+#### baratin.dev %at% listes.inrae.fr
 
 # Support 
 
