@@ -1,5 +1,5 @@
 ---
-title: "Coefficients de friction"
+title: "Coefficients de frottement"
 slug: "coefficients-friction"
 weight: 21
 layout: "doc_topicsPage"
